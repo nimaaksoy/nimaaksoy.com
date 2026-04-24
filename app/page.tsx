@@ -1,65 +1,902 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import {
+  IconBrain,
+  IconBrandLinkedin,
+  IconBrandMedium,
+  IconBrandTelegram,
+  IconBrandX,
+  IconBrandYoutube,
+  IconCalendarEvent,
+  IconCode,
+  IconGlassFull,
+  IconLock,
+  IconMail,
+  IconMapPin,
+  IconMountain,
+  IconMusic,
+  IconPlane,
+} from "@tabler/icons-react";
+import { AnimatePresence, motion, useInView } from "framer-motion";
+import { useEffect, useMemo, useRef, useState, type ComponentType } from "react";
+import SpotlightCard from "@/components/SpotlightCard";
+
+type IconType = ComponentType<{
+  size?: number | string;
+  stroke?: number | string;
+  className?: string;
+}>;
+
+type SocialLink = {
+  label: string;
+  href: string;
+  icon: IconType;
+};
+
+type InterestCard = {
+  title: string;
+  description: string;
+  image: string;
+  icon: IconType;
+};
+
+type Project = {
+  id: string;
+  name: string;
+  description: string;
+  status: "live" | "soon" | "mixed";
+  cta: string;
+  href?: string;
+};
+
+type WritingCard = {
+  title: string;
+  description: string;
+  href: string;
+  cta: string;
+  icon: IconType;
+};
+
+type ThinkCard = {
+  title: string;
+  description: string;
+};
+
+const socials: SocialLink[] = [
+  { label: "X", href: "https://x.com/Nima1980", icon: IconBrandX },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/nima1980/",
+    icon: IconBrandLinkedin,
+  },
+  {
+    label: "Medium",
+    href: "https://medium.com/@nima.aksoy",
+    icon: IconBrandMedium,
+  },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/@nimaaksoy",
+    icon: IconBrandYoutube,
+  },
+  {
+    label: "Substack",
+    href: "https://substack.com/@nimaaksoy",
+    icon: IconMail,
+  },
+  {
+    label: "Telegram",
+    href: "https://t.me/nimaaksoychannel",
+    icon: IconBrandTelegram,
+  },
+];
+
+const interests: InterestCard[] = [
+  {
+    title: "Travel",
+    description: "Some places get better when you return.",
+    image: "/travel.png",
+    icon: IconPlane,
+  },
+  {
+    title: "Wine",
+    description: "Less about quantity. More about the moment.",
+    image: "/wine.png",
+    icon: IconGlassFull,
+  },
+  {
+    title: "Turkey",
+    description: "Home, for now. For good reason.",
+    image: "/turkey.png",
+    icon: IconMapPin,
+  },
+  {
+    title: "Technology",
+    description: "Where things actually get interesting.",
+    image: "/tech.png",
+    icon: IconBrain,
+  },
+  {
+    title: "Sport",
+    description: "Less tennis and skiing. More time building.",
+    image: "/sport.png",
+    icon: IconMountain,
+  },
+  {
+    title: "Music",
+    description: "Rock, metal, alternative. Pink Floyd is enough.",
+    image: "/music.png",
+    icon: IconMusic,
+  },
+];
+
+const projects: Project[] = [
+  {
+    id: "01 / 03",
+    name: "Bowora",
+    description:
+      "A platform built around startups, visibility, traction, and the right connections.",
+    status: "live",
+    cta: "View project →",
+    href: "http://bowora.com/",
+  },
+  {
+    id: "02 / 03",
+    name: "Eldivio",
+    description:
+      "A premium travel concept focused on better decisions and better journeys.",
+    status: "soon",
+    cta: "Coming soon",
+  },
+];
+
+const writingCards: WritingCard[] = [
+  {
+    title: "Medium",
+    description:
+      "Thinking out loud about products, traction, and what actually matters.",
+    href: "https://medium.com/@nima.aksoy",
+    cta: "Read on Medium →",
+    icon: IconBrandMedium,
+  },
+  {
+    title: "Substack",
+    description: "Occasional notes from what I'm building.",
+    href: "https://substack.com/@nimaaksoy",
+    cta: "Open Substack →",
+    icon: IconMail,
+  },
+  {
+    title: "YouTube",
+    description: "Videos around ideas, products, and experiments.",
+    href: "https://www.youtube.com/@nimaaksoy",
+    cta: "Watch on YouTube →",
+    icon: IconBrandYoutube,
+  },
+  {
+    title: "X",
+    description:
+      "Short thoughts, quick signals, and what catches my attention.",
+    href: "https://x.com/Nima1980",
+    cta: "Open X →",
+    icon: IconBrandX,
+  },
+];
+
+const thinkCards: ThinkCard[] = [
+  {
+    title: "Building",
+    description:
+      "I like products that create movement, open doors, or make better decisions easier.",
+  },
+  {
+    title: "Exploring",
+    description:
+      "Some ideas turn into companies. Some stay as experiments. Both matter.",
+  },
+  {
+    title: "Connecting",
+    description:
+      "The best opportunities usually start with the right conversation, not a formal introduction.",
+  },
+];
+
+const sectionVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      staggerChildren: 0.1,
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+    },
+  },
+};
+
+function HeroSeamlessVideo() {
+  const videoARef = useRef<HTMLVideoElement | null>(null);
+  const videoBRef = useRef<HTMLVideoElement | null>(null);
+  const [activeVideo, setActiveVideo] = useState<0 | 1>(0);
+  const activeRef = useRef<0 | 1>(0);
+  const rafRef = useRef<number | null>(null);
+  const swapTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const isSwappingRef = useRef(false);
+
+  const playMuted = async (video: HTMLVideoElement | null) => {
+    if (!video) {
+      return;
+    }
+    video.muted = true;
+    try {
+      await video.play();
+    } catch {
+      // Ignore autoplay rejections; user interaction can start playback later.
+    }
+  };
+
+  useEffect(() => {
+    const videoA = videoARef.current;
+    const videoB = videoBRef.current;
+
+    if (!videoA || !videoB) {
+      return;
+    }
+
+    const initialize = async () => {
+      videoA.currentTime = 0;
+      videoB.currentTime = 0;
+
+      await playMuted(videoA);
+
+      // Prime the secondary decoder frame to reduce visible hitch during swap.
+      await playMuted(videoB);
+      videoB.pause();
+      videoB.currentTime = 0;
+    };
+
+    const tick = () => {
+      const currentIndex = activeRef.current;
+      const nextIndex: 0 | 1 = currentIndex === 0 ? 1 : 0;
+      const currentVideo = currentIndex === 0 ? videoARef.current : videoBRef.current;
+      const nextVideo = nextIndex === 0 ? videoARef.current : videoBRef.current;
+
+      if (
+        currentVideo &&
+        nextVideo &&
+        Number.isFinite(currentVideo.duration) &&
+        currentVideo.duration > 0 &&
+        !isSwappingRef.current
+      ) {
+        const remaining = currentVideo.duration - currentVideo.currentTime;
+
+        if (remaining <= 0.2) {
+          isSwappingRef.current = true;
+          nextVideo.currentTime = 0;
+          void playMuted(nextVideo);
+
+          activeRef.current = nextIndex;
+          setActiveVideo(nextIndex);
+
+          swapTimeoutRef.current = setTimeout(() => {
+            currentVideo.pause();
+            currentVideo.currentTime = 0;
+            isSwappingRef.current = false;
+          }, 260);
+        }
+      }
+
+      rafRef.current = requestAnimationFrame(tick);
+    };
+
+    void initialize();
+    rafRef.current = requestAnimationFrame(tick);
+
+    return () => {
+      if (rafRef.current !== null) {
+        cancelAnimationFrame(rafRef.current);
+      }
+      if (swapTimeoutRef.current) {
+        clearTimeout(swapTimeoutRef.current);
+      }
+      videoA.pause();
+      videoB.pause();
+    };
+  }, []);
+
+  return (
+    <>
+      <video
+        ref={videoARef}
+        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
+          activeVideo === 0 ? "opacity-100" : "opacity-0"
+        }`}
+        src="/nimaaksoy-hero-video.mp4"
+        autoPlay
+        muted
+        playsInline
+        preload="auto"
+      />
+      <video
+        ref={videoBRef}
+        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
+          activeVideo === 1 ? "opacity-100" : "opacity-0"
+        }`}
+        src="/nimaaksoy-hero-video.mp4"
+        autoPlay
+        muted
+        playsInline
+        preload="auto"
+      />
+    </>
+  );
+}
 
 export default function Home() {
+  const currentMonthYear = useMemo(
+    () =>
+      new Intl.DateTimeFormat("en-US", {
+        month: "long",
+        year: "numeric",
+      }).format(new Date()),
+    []
+  );
+
+  const aboutRef = useRef<HTMLElement | null>(null);
+  const projectsRef = useRef<HTMLElement | null>(null);
+  const writingRef = useRef<HTMLElement | null>(null);
+  const connectRef = useRef<HTMLElement | null>(null);
+
+  const aboutInView = useInView(aboutRef, { amount: 0.2, once: true });
+  const projectsInView = useInView(projectsRef, { amount: 0.2, once: true });
+  const writingInView = useInView(writingRef, { amount: 0.2, once: true });
+  const connectInView = useInView(connectRef, { amount: 0.35, once: true });
+
+  const navLinks = useMemo(
+    () => [
+      { label: "About", id: "about" },
+      { label: "Projects", id: "projects" },
+      { label: "Writing", id: "writing" },
+      { label: "Connect", id: "connect" },
+    ],
+    []
+  );
+
+  const scrollToSection = (id: string) => {
+    const target = document.getElementById(id);
+    target?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <>
+      <AnimatePresence mode="wait">
+        <motion.main
+          key="home"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -18 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="relative z-10"
+        >
+          <nav className="fixed left-0 top-0 z-50 w-full border-b border-[#1A1A1A] bg-black/80 backdrop-blur-sm">
+            <div className="mx-auto flex h-16 w-full max-w-[1280px] items-center justify-between px-6 md:px-10">
+              <button
+                className="font-jetbrains text-sm font-medium uppercase tracking-[0.24em] text-[#EAEAEA] transition-colors hover:text-[#2CFF05]"
+                onClick={() => scrollToSection("hero")}
+                type="button"
+              >
+                NIMA AKSOY
+              </button>
+              <div className="flex items-center gap-8 font-jetbrains text-[12px] font-normal uppercase tracking-[0.14em] text-[#EAEAEA]">
+                {navLinks.map((link) => (
+                  <button
+                    key={link.id}
+                    className="transition-colors duration-300 hover:text-[#2CFF05]"
+                    onClick={() => scrollToSection(link.id)}
+                    type="button"
+                  >
+                    {link.label}
+                  </button>
+                ))}
+                <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-[#2CFF05]" />
+              </div>
+            </div>
+          </nav>
+
+          <section
+            id="hero"
+            className="relative isolate min-h-screen overflow-hidden"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <HeroSeamlessVideo />
+
+            <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-[1280px] items-center px-6 pb-16 pt-24 md:px-10">
+              <div className="max-w-[760px]">
+                <motion.h1
+                  initial={{ opacity: 0, y: 45 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                  className="font-monroe text-[clamp(56px,7.3vw,90px)] font-light leading-[1.05] text-[#EAEAEA]"
+                >
+                  Building quietly.
+                  <br />
+                  Connecting selectively.
+                  <br />
+                  Working on things
+                  <br />
+                  that <span className="text-[#2CFF05]">matter.</span>
+                </motion.h1>
+
+                <div className="mt-10 flex flex-wrap items-center gap-10">
+                  <button
+                    type="button"
+                    onClick={() => scrollToSection("projects")}
+                    className="inline-flex items-center gap-3 font-jetbrains text-[clamp(18px,1.8vw,30px)] text-[#EAEAEA] transition-colors hover:text-[#2CFF05]"
+                  >
+                    <span className="text-[#2CFF05]">→</span>
+                    <span>What I&apos;m working on</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => scrollToSection("connect")}
+                    className="inline-flex items-center gap-3 font-jetbrains text-[clamp(18px,1.8vw,30px)] text-[#EAEAEA] transition-colors hover:text-[#2CFF05]"
+                  >
+                    <span className="text-[#2CFF05]">→</span>
+                    <span>Connect</span>
+                  </button>
+                </div>
+
+                <p className="mt-12 font-jetbrains text-[13px] text-[#9A9A9A]">
+                  Last updated:{" "}
+                  <span className="text-[#2CFF05]" suppressHydrationWarning>
+                    {currentMonthYear}
+                  </span>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <motion.section
+            id="about"
+            ref={aboutRef}
+            className="bg-[#111111] px-6 py-24 md:px-10"
+            variants={sectionVariants}
+            initial="hidden"
+            animate={aboutInView ? "show" : "hidden"}
           >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            <div className="mx-auto max-w-[1180px]">
+              <motion.h2
+                variants={itemVariants}
+                className="font-monroe text-[48px] font-light text-[#EAEAEA]"
+              >
+                A few things I&apos;m into
+              </motion.h2>
+              <motion.p
+                variants={itemVariants}
+                className="mt-2 font-jetbrains text-[11px] italic text-[#7F7F7F]"
+              >
+                beyond what I&apos;m building
+              </motion.p>
+
+              <motion.div
+                variants={itemVariants}
+                className="about-row mt-10 overflow-hidden"
+              >
+                <div className="about-track flex w-max gap-5">
+                  {[...interests, ...interests].map((card, index) => {
+                    const Icon = card.icon;
+
+                    return (
+                      <article
+                        key={`${card.title}-${index}`}
+                        className="group relative h-[330px] w-[280px] shrink-0 overflow-hidden rounded-2xl border border-[#1F1F1F] md:h-[380px] md:w-[340px]"
+                      >
+                        <img
+                          src={card.image}
+                          alt={`${card.title} background`}
+                          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+
+                        <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
+                          <div className="transition-transform duration-500 ease-out group-hover:-translate-y-4">
+                            <div className="flex items-center gap-3">
+                              <Icon size={22} className="text-[#EAEAEA]" stroke={1.8} />
+                              <h3 className="whitespace-nowrap font-monroe text-[24px] font-light text-[#EAEAEA]">
+                                {card.title}
+                              </h3>
+                            </div>
+                            <p className="mt-3 min-h-[44px] max-w-[95%] font-jetbrains text-[13px] leading-[1.7] text-[#EAEAEA] [text-shadow:0_1px_8px_rgba(0,0,0,0.8)]">
+                              {card.description}
+                            </p>
+                          </div>
+                        </div>
+                      </article>
+                    );
+                  })}
+                </div>
+              </motion.div>
+            </div>
+          </motion.section>
+
+          <motion.section
+            id="projects"
+            ref={projectsRef}
+            className="bg-[#111111] px-6 py-24 md:px-10"
+            variants={sectionVariants}
+            initial="hidden"
+            animate={projectsInView ? "show" : "hidden"}
+          >
+            <div className="mx-auto grid max-w-[1180px] gap-12 lg:grid-cols-[340px_1fr]">
+              <motion.div variants={itemVariants}>
+                <p className="font-jetbrains text-[11px] uppercase tracking-[0.16em] text-[#7F7F7F]">
+                  CURRENT FOCUS
+                </p>
+                <h2 className="mt-4 font-monroe text-[48px] font-light leading-[1.08] text-[#EAEAEA]">
+                  What I&apos;m working on now
+                </h2>
+              </motion.div>
+
+              <motion.div variants={itemVariants} className="border-b border-[#1F1F1F]">
+                {projects.map((project) => (
+                  <article
+                    key={project.id}
+                    className="group relative border-t border-[#1F1F1F] py-9 pl-0 transition-colors duration-300 hover:bg-[#151515] md:pl-5"
+                  >
+                    <span className="absolute left-0 top-0 h-full w-[1px] origin-top scale-y-0 bg-[#2CFF05] transition duration-300 group-hover:scale-y-100" />
+
+                    <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
+                      <div>
+                        <p className="font-jetbrains text-[11px] tracking-[0.14em] text-[#7F7F7F]">
+                          {project.id}
+                        </p>
+                        <h3 className="mt-3 font-monroe text-[32px] font-light leading-[1.1] text-[#EAEAEA]">
+                          {project.name}
+                        </h3>
+                        <p className="mt-2 max-w-xl font-monroe text-[16px] italic text-[#9A9A9A]">
+                          {project.description}
+                        </p>
+                      </div>
+
+                      <div className="flex flex-wrap items-center gap-4 md:justify-end">
+                        {project.status === "live" ? (
+                          <span className="inline-flex items-center gap-2 rounded-full border border-[#1F1F1F] px-3 py-1 font-jetbrains text-[10px] tracking-[0.14em] text-[#9A9A9A]">
+                            <span className="h-1.5 w-1.5 rounded-full bg-[#2CFF05]" /> LIVE
+                          </span>
+                        ) : null}
+
+                        {project.status === "soon" ? (
+                          <span className="inline-flex items-center gap-2 rounded-full border border-[#1F1F1F] px-3 py-1 font-jetbrains text-[10px] tracking-[0.14em] text-[#7F7F7F]">
+                            <span className="h-1.5 w-1.5 rounded-full bg-[#7F7F7F]" /> COMING SOON
+                          </span>
+                        ) : null}
+
+                        {project.status === "mixed" ? (
+                          <span className="inline-flex items-center gap-2 rounded-full border border-[#1F1F1F] px-3 py-1 font-jetbrains text-[10px] tracking-[0.14em] text-[#9A9A9A]">
+                            <IconLock size={12} stroke={2} />
+                            <IconCode size={12} stroke={2} />
+                            OPEN SOURCE / PRIVATE
+                          </span>
+                        ) : null}
+
+                        {project.href ? (
+                          project.href.startsWith("/") ? (
+                            <Link
+                              href={project.href}
+                              className="signal-button rounded-full px-5 py-2.5 font-jetbrains text-[12px] uppercase tracking-[0.12em]"
+                            >
+                              {project.cta}
+                            </Link>
+                          ) : (
+                            <a
+                              href={project.href}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="signal-button rounded-full px-5 py-2.5 font-jetbrains text-[12px] uppercase tracking-[0.12em]"
+                            >
+                              {project.cta}
+                            </a>
+                          )
+                        ) : (
+                          <button
+                            type="button"
+                            disabled
+                            className="rounded-full border border-[#1F1F1F] bg-transparent px-5 py-2.5 font-jetbrains text-[12px] uppercase tracking-[0.12em] text-[#7F7F7F]"
+                          >
+                            {project.cta}
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </motion.div>
+            </div>
+          </motion.section>
+
+          <section className="bg-[#111111] px-6 py-24 md:px-10">
+            <div className="mx-auto max-w-[1180px]">
+              <h2 className="font-monroe text-[48px] font-light text-[#EAEAEA]">
+                How I Think
+              </h2>
+
+              <div className="mt-10 grid gap-5 md:grid-cols-3">
+                {thinkCards.map((card, index) => {
+                  const videoSrc =
+                    index === 0
+                      ? "/line3.mp4"
+                      : index === 2
+                        ? "/nimaaksoy-hero-video.mp4"
+                        : "/line2.mp4";
+
+                  const videoConfig =
+                    index === 0
+                      ? {
+                          objectPosition: "18% 10%",
+                          transform: "scale(1)",
+                          startOffsetSeconds: 0.7,
+                        }
+                      : index === 1
+                        ? {
+                            objectPosition: "50% 50%",
+                            transform: "scale(1)",
+                            startOffsetSeconds: 4.3,
+                          }
+                        : {
+                            objectPosition: "85% 90%",
+                            transform: "scale(1)",
+                            startOffsetSeconds: 8.1,
+                          };
+
+                  return (
+                    <article
+                      key={card.title}
+                      className="relative min-h-[500px] overflow-hidden rounded-2xl border border-[#1F1F1F] bg-[#111111]"
+                    >
+                      <video
+                        className="absolute inset-0 h-full w-full object-cover"
+                        style={{
+                          objectPosition: videoConfig.objectPosition,
+                          transform: videoConfig.transform,
+                          transformOrigin: "center center",
+                        }}
+                        src={videoSrc}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="auto"
+                        onLoadedData={(event) => {
+                          const video = event.currentTarget;
+                          if (!Number.isFinite(video.duration) || video.duration <= 0) {
+                            return;
+                          }
+                          video.currentTime = videoConfig.startOffsetSeconds % video.duration;
+                        }}
+                      />
+
+                      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[62%] bg-gradient-to-t from-black via-black/70 to-transparent" />
+
+                      <div className="absolute inset-x-0 bottom-0 z-20 px-8 pb-6 pt-24">
+                        <h3 className="whitespace-nowrap font-monroe text-[48px] font-light leading-[1.08] text-[#EAEAEA]">
+                          {card.title}
+                        </h3>
+                        <p className="mt-4 min-h-[130px] max-w-[90%] font-jetbrains text-[15px] leading-[1.6] text-[#C8C8C8] md:min-h-[120px]">
+                          {card.description}
+                        </p>
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+
+          <motion.section
+            id="writing"
+            ref={writingRef}
+            className="bg-[#111111] px-6 py-24 md:px-10"
+            variants={sectionVariants}
+            initial="hidden"
+            animate={writingInView ? "show" : "hidden"}
+          >
+            <div className="mx-auto max-w-[1180px]">
+              <motion.h2
+                variants={itemVariants}
+                className="font-monroe text-[48px] font-light text-[#EAEAEA]"
+              >
+                Writing and presence
+              </motion.h2>
+
+              <motion.div
+                variants={itemVariants}
+                className="mt-10 grid gap-5 md:grid-cols-2"
+              >
+                {writingCards.map((card) => {
+                  const CardIcon = card.icon;
+
+                  return (
+                    <motion.a
+                      key={card.title}
+                      href={card.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      whileHover={{ y: -4 }}
+                      transition={{ duration: 0.24 }}
+                      className="block"
+                    >
+                      <SpotlightCard
+                        className="card-surface h-full rounded-2xl p-7 backdrop-blur-[20px]"
+                        spotlightColor="rgba(44, 255, 5, 0.14)"
+                      >
+                        <div className="flex items-center gap-3 text-[#EAEAEA]">
+                          <CardIcon size={20} stroke={1.8} />
+                          <h3 className="font-monroe text-[22px] font-normal text-[#EAEAEA]">
+                            {card.title}
+                          </h3>
+                        </div>
+                        <p className="mt-4 max-w-sm font-jetbrains text-[12px] leading-[1.8] text-[#9A9A9A]">
+                          {card.description}
+                        </p>
+                        <p className="mt-6 font-jetbrains text-[12px] uppercase tracking-[0.14em] text-[#2CFF05]">
+                          {card.cta}
+                        </p>
+                      </SpotlightCard>
+                    </motion.a>
+                  );
+                })}
+              </motion.div>
+            </div>
+          </motion.section>
+
+          <motion.section
+            id="connect"
+            ref={connectRef}
+            className="flex min-h-screen items-center bg-[#111111] px-6 py-24 md:px-10"
+            variants={sectionVariants}
+            initial="hidden"
+            animate={connectInView ? "show" : "hidden"}
+          >
+            <div className="mx-auto w-full max-w-2xl text-center">
+              <motion.div variants={itemVariants} className="mx-auto mb-8 w-fit">
+                <div className="h-24 w-24 overflow-hidden rounded-full border border-[#1F1F1F]">
+                  <img
+                    src="/nima.png"
+                    alt="Nima Aksoy"
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </motion.div>
+              <motion.p
+                variants={itemVariants}
+                className="font-jetbrains text-[11px] uppercase tracking-[0.2em] text-[#7F7F7F]"
+              >
+                LET&apos;S CONNECT
+              </motion.p>
+              <motion.h2
+                variants={itemVariants}
+                className="mt-5 font-monroe text-[clamp(40px,7vw,56px)] font-light leading-[1.05] text-[#EAEAEA]"
+              >
+                I&apos;m always interested in thoughtful people building interesting things.
+              </motion.h2>
+              <motion.p
+                variants={itemVariants}
+                className="mt-6 font-monroe text-[18px] italic text-[#9A9A9A]"
+              >
+                Founders, investors, operators, and curious builders are all welcome here. If something overlaps, there&apos;s probably a conversation worth having.
+              </motion.p>
+
+              <motion.div
+                variants={itemVariants}
+                className="mx-auto mt-10 h-px w-full max-w-md bg-[#1F1F1F]"
+              />
+
+              <motion.div
+                variants={itemVariants}
+                className="mt-10 flex flex-wrap items-center justify-center gap-4"
+              >
+                <a
+                  href="mailto:me@nimaaksoy.com"
+                  className="signal-button inline-flex items-center gap-2 rounded-full px-6 py-3 font-jetbrains text-[12px] uppercase tracking-[0.12em]"
+                >
+                  <IconMail size={16} stroke={1.9} />
+                  Send a message
+                </a>
+                <a
+                  href="https://calendar.app.google/Q5a2wh1ZEELQph5eA"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="signal-button inline-flex items-center gap-2 rounded-full px-6 py-3 font-jetbrains text-[12px] uppercase tracking-[0.12em]"
+                >
+                  <IconCalendarEvent size={16} stroke={1.9} />
+                  Schedule a call
+                </a>
+              </motion.div>
+
+              <motion.p
+                variants={itemVariants}
+                className="mt-8 font-jetbrains text-[11px] italic text-[#7F7F7F]"
+              >
+                Open to good conversations, sharp ideas, and unexpected alignment.
+              </motion.p>
+            </div>
+          </motion.section>
+
+          <footer className="border-t-[0.5px] border-[#1F1F1F] bg-[#0A0A0A] px-6 py-16 md:px-10">
+            <div className="mx-auto max-w-[1180px]">
+              <div className="grid gap-10 md:grid-cols-3">
+                <div>
+                  <h3 className="font-monroe text-[18px] font-normal text-[#EAEAEA]">
+                    Nima Aksoy
+                  </h3>
+                  <p className="mt-2 max-w-sm font-monroe text-[14px] text-[#7F7F7F]">
+                    Projects, ideas, and a few things in motion.
+                  </p>
+                </div>
+
+                <div>
+                  <p className="font-jetbrains text-[10px] uppercase tracking-[0.16em] text-[#7F7F7F]">
+                    NAVIGATION
+                  </p>
+                  <div className="mt-3 flex flex-col gap-2 font-jetbrains text-[12px] text-[#9A9A9A]">
+                    <Link href="/tools" className="transition hover:text-[#2CFF05]">
+                      Tools
+                    </Link>
+                    <button
+                      type="button"
+                      className="text-left transition hover:text-[#2CFF05]"
+                      onClick={() => scrollToSection("connect")}
+                    >
+                      Connect
+                    </button>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="font-jetbrains text-[10px] uppercase tracking-[0.16em] text-[#7F7F7F]">
+                    SOCIAL
+                  </p>
+                  <div className="mt-3 flex items-center gap-4 text-[#7F7F7F]">
+                    {socials.map((social) => {
+                      const SocialIcon = social.icon;
+                      return (
+                        <a
+                          key={social.label}
+                          href={social.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="transition hover:text-[#2CFF05]"
+                          aria-label={social.label}
+                        >
+                          <SocialIcon size={22} stroke={1.8} />
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-12 border-t-[0.5px] border-[#1F1F1F] pt-6">
+                <p className="font-jetbrains text-[11px] text-[#7F7F7F]">
+                  © 2026 Nima Aksoy
+                </p>
+              </div>
+            </div>
+          </footer>
+        </motion.main>
+      </AnimatePresence>
+    </>
   );
 }
