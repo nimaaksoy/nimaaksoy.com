@@ -63,6 +63,27 @@ type ThinkCard = {
   description: string;
 };
 
+const media = {
+  line3Video: "https://res.cloudinary.com/dzu2boxnl/video/upload/v1777052628/line3_p9zeuo.mp4",
+  line2Video: "https://res.cloudinary.com/dzu2boxnl/video/upload/v1777052627/line2_sgnmej.mp4",
+  heroVideo:
+    "https://res.cloudinary.com/dzu2boxnl/video/upload/v1777052581/nimaaksoy-hero-video_hyktho.mp4",
+  travelImage:
+    "https://res.cloudinary.com/dzu2boxnl/image/upload/v1777052497/travel_oedjvl.png",
+  wineImage:
+    "https://res.cloudinary.com/dzu2boxnl/image/upload/v1777052496/wine_tvxd97.png",
+  turkeyImage:
+    "https://res.cloudinary.com/dzu2boxnl/image/upload/v1777052495/turkey_s03sz7.png",
+  techImage:
+    "https://res.cloudinary.com/dzu2boxnl/image/upload/v1777052492/tech_wjmugu.png",
+  sportImage:
+    "https://res.cloudinary.com/dzu2boxnl/image/upload/v1777052497/sport_jtqg4y.png",
+  musicImage:
+    "https://res.cloudinary.com/dzu2boxnl/image/upload/v1777052499/music_uiafey.png",
+  profileImage:
+    "https://res.cloudinary.com/dzu2boxnl/image/upload/v1777052495/nima_kppch5.png",
+} as const;
+
 const socials: SocialLink[] = [
   { label: "X", href: "https://x.com/Nima1980", icon: IconBrandX },
   {
@@ -96,37 +117,37 @@ const interests: InterestCard[] = [
   {
     title: "Travel",
     description: "Some places get better when you return.",
-    image: "/travel.png",
+    image: media.travelImage,
     icon: IconPlane,
   },
   {
     title: "Wine",
     description: "Less about quantity. More about the moment.",
-    image: "/wine.png",
+    image: media.wineImage,
     icon: IconGlassFull,
   },
   {
     title: "Turkey",
     description: "Home, for now. For good reason.",
-    image: "/turkey.png",
+    image: media.turkeyImage,
     icon: IconMapPin,
   },
   {
     title: "Technology",
     description: "Where things actually get interesting.",
-    image: "/tech.png",
+    image: media.techImage,
     icon: IconBrain,
   },
   {
     title: "Sport",
     description: "Less tennis and skiing. More time building.",
-    image: "/sport.png",
+    image: media.sportImage,
     icon: IconMountain,
   },
   {
     title: "Music",
     description: "Rock, metal, alternative. Pink Floyd is enough.",
-    image: "/music.png",
+    image: media.musicImage,
     icon: IconMusic,
   },
 ];
@@ -324,7 +345,7 @@ function HeroSeamlessVideo() {
         className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
           activeVideo === 0 ? "opacity-100" : "opacity-0"
         }`}
-        src="/nimaaksoy-hero-video.mp4"
+        src={media.heroVideo}
         autoPlay
         muted
         playsInline
@@ -335,7 +356,7 @@ function HeroSeamlessVideo() {
         className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
           activeVideo === 1 ? "opacity-100" : "opacity-0"
         }`}
-        src="/nimaaksoy-hero-video.mp4"
+        src={media.heroVideo}
         autoPlay
         muted
         playsInline
@@ -635,10 +656,10 @@ export default function Home() {
                 {thinkCards.map((card, index) => {
                   const videoSrc =
                     index === 0
-                      ? "/line3.mp4"
+                      ? media.line3Video
                       : index === 2
-                        ? "/nimaaksoy-hero-video.mp4"
-                        : "/line2.mp4";
+                        ? media.heroVideo
+                        : media.line2Video;
 
                   const videoConfig =
                     index === 0
@@ -772,7 +793,7 @@ export default function Home() {
               <motion.div variants={itemVariants} className="mx-auto mb-8 w-fit">
                 <div className="h-24 w-24 overflow-hidden rounded-full border border-[#1F1F1F]">
                   <img
-                    src="/nima.png"
+                    src={media.profileImage}
                     alt="Nima Aksoy"
                     className="h-full w-full object-cover"
                     loading="lazy"

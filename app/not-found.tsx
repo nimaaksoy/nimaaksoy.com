@@ -15,7 +15,7 @@ export default function NotFound() {
     <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0A0A0A] px-6 py-16">
       <video
         className="absolute inset-0 h-full w-full object-cover"
-        src="/nimaaksoy-hero-video.mp4"
+        src="https://res.cloudinary.com/dzu2boxnl/video/upload/v1777052581/nimaaksoy-hero-video_hyktho.mp4"
         autoPlay
         muted
         loop
