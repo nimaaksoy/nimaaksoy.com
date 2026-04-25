@@ -367,6 +367,8 @@ function HeroSeamlessVideo() {
 }
 
 export default function Home() {
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
   const currentMonthYear = useMemo(
     () =>
       new Intl.DateTimeFormat("en-US", {
@@ -398,6 +400,7 @@ export default function Home() {
 
   const scrollToSection = (id: string) => {
     const target = document.getElementById(id);
+    setMobileNavOpen(false);
     target?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
@@ -413,15 +416,15 @@ export default function Home() {
           className="relative z-10"
         >
           <nav className="fixed left-0 top-0 z-50 w-full border-b border-[#1A1A1A] bg-black/80 backdrop-blur-sm">
-            <div className="mx-auto flex h-16 w-full max-w-[1280px] items-center justify-between px-6 md:px-10">
+            <div className="mx-auto flex h-14 w-full max-w-[1280px] items-center justify-between px-5 md:h-16 md:px-10">
               <button
-                className="font-jetbrains text-sm font-medium uppercase tracking-[0.24em] text-[#EAEAEA] transition-colors hover:text-[#2CFF05]"
+                className="font-jetbrains text-[11px] font-medium uppercase tracking-[0.2em] text-[#EAEAEA] transition-colors hover:text-[#2CFF05] md:text-sm md:tracking-[0.24em]"
                 onClick={() => scrollToSection("hero")}
                 type="button"
               >
                 NIMA AKSOY
               </button>
-              <div className="flex items-center gap-8 font-jetbrains text-[12px] font-normal uppercase tracking-[0.14em] text-[#EAEAEA]">
+              <div className="hidden items-center gap-8 font-jetbrains text-[12px] font-normal uppercase tracking-[0.14em] text-[#EAEAEA] md:flex">
                 {navLinks.map((link) => (
                   <button
                     key={link.id}
@@ -434,7 +437,30 @@ export default function Home() {
                 ))}
                 <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-[#2CFF05]" />
               </div>
+              <button
+                type="button"
+                onClick={() => setMobileNavOpen((prev) => !prev)}
+                className="font-jetbrains text-[11px] uppercase tracking-[0.18em] text-[#EAEAEA] transition-colors hover:text-[#2CFF05] md:hidden"
+              >
+                {mobileNavOpen ? "Close" : "Menu"}
+              </button>
             </div>
+            {mobileNavOpen ? (
+              <div className="border-t border-[#1A1A1A] bg-black/95 md:hidden">
+                <div className="mx-auto flex w-full max-w-[1280px] flex-col px-5 py-3">
+                  {navLinks.map((link) => (
+                    <button
+                      key={`mobile-${link.id}`}
+                      className="border-b border-[#1A1A1A] py-3 text-left font-jetbrains text-[11px] uppercase tracking-[0.16em] text-[#EAEAEA] last:border-b-0"
+                      onClick={() => scrollToSection(link.id)}
+                      type="button"
+                    >
+                      {link.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ) : null}
           </nav>
 
           <section
@@ -443,13 +469,13 @@ export default function Home() {
           >
             <HeroSeamlessVideo />
 
-            <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-[1280px] items-center px-6 pb-16 pt-24 md:px-10">
+            <div className="relative z-10 mx-auto flex min-h-[88svh] w-full max-w-[1280px] items-center px-6 pb-12 pt-20 md:min-h-screen md:px-10 md:pb-16 md:pt-24">
               <div className="max-w-[760px]">
                 <motion.h1
                   initial={{ opacity: 0, y: 45 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                  className="font-monroe text-[clamp(56px,7.3vw,90px)] font-light leading-[1.05] text-[#EAEAEA]"
+                  className="font-monroe text-[clamp(42px,12vw,90px)] font-light leading-[1.05] text-[#EAEAEA]"
                 >
                   Building quietly.
                   <br />
@@ -460,11 +486,11 @@ export default function Home() {
                   that <span className="text-[#2CFF05]">matter.</span>
                 </motion.h1>
 
-                <div className="mt-10 flex flex-wrap items-center gap-10">
+                <div className="mt-8 flex flex-wrap items-center gap-6 md:mt-10 md:gap-10">
                   <button
                     type="button"
                     onClick={() => scrollToSection("projects")}
-                    className="inline-flex items-center gap-3 font-jetbrains text-[clamp(18px,1.8vw,30px)] text-[#EAEAEA] transition-colors hover:text-[#2CFF05]"
+                    className="inline-flex items-center gap-3 font-jetbrains text-[clamp(16px,4.6vw,30px)] text-[#EAEAEA] transition-colors hover:text-[#2CFF05]"
                   >
                     <span className="text-[#2CFF05]">→</span>
                     <span>What I&apos;m working on</span>
@@ -472,14 +498,14 @@ export default function Home() {
                   <button
                     type="button"
                     onClick={() => scrollToSection("connect")}
-                    className="inline-flex items-center gap-3 font-jetbrains text-[clamp(18px,1.8vw,30px)] text-[#EAEAEA] transition-colors hover:text-[#2CFF05]"
+                    className="inline-flex items-center gap-3 font-jetbrains text-[clamp(16px,4.6vw,30px)] text-[#EAEAEA] transition-colors hover:text-[#2CFF05]"
                   >
                     <span className="text-[#2CFF05]">→</span>
                     <span>Connect</span>
                   </button>
                 </div>
 
-                <p className="mt-12 font-jetbrains text-[13px] text-[#9A9A9A]">
+                <p className="mt-10 font-jetbrains text-[13px] text-[#9A9A9A] md:mt-12">
                   Last updated:{" "}
                   <span className="text-[#2CFF05]" suppressHydrationWarning>
                     {currentMonthYear}
@@ -492,7 +518,7 @@ export default function Home() {
           <motion.section
             id="about"
             ref={aboutRef}
-            className="bg-[#111111] px-6 py-24 md:px-10"
+            className="bg-[#111111] px-6 py-16 md:px-10 md:py-24"
             variants={sectionVariants}
             initial="hidden"
             animate={aboutInView ? "show" : "hidden"}
@@ -500,7 +526,7 @@ export default function Home() {
             <div className="mx-auto max-w-[1180px]">
               <motion.h2
                 variants={itemVariants}
-                className="font-monroe text-[48px] font-light text-[#EAEAEA]"
+                className="font-monroe text-[38px] font-light text-[#EAEAEA] md:text-[48px]"
               >
                 A few things I&apos;m into
               </motion.h2>
@@ -554,17 +580,17 @@ export default function Home() {
           <motion.section
             id="projects"
             ref={projectsRef}
-            className="bg-[#111111] px-6 py-24 md:px-10"
+            className="bg-[#111111] px-6 py-16 md:px-10 md:py-24"
             variants={sectionVariants}
             initial="hidden"
             animate={projectsInView ? "show" : "hidden"}
           >
-            <div className="mx-auto grid max-w-[1180px] gap-12 lg:grid-cols-[340px_1fr]">
+            <div className="mx-auto grid max-w-[1180px] gap-8 md:gap-12 lg:grid-cols-[340px_1fr]">
               <motion.div variants={itemVariants}>
                 <p className="font-jetbrains text-[11px] uppercase tracking-[0.16em] text-[#7F7F7F]">
                   CURRENT FOCUS
                 </p>
-                <h2 className="mt-4 font-monroe text-[48px] font-light leading-[1.08] text-[#EAEAEA]">
+                <h2 className="mt-4 font-monroe text-[38px] font-light leading-[1.08] text-[#EAEAEA] md:text-[48px]">
                   What I&apos;m working on now
                 </h2>
               </motion.div>
@@ -646,9 +672,9 @@ export default function Home() {
             </div>
           </motion.section>
 
-          <section className="bg-[#111111] px-6 py-24 md:px-10">
+          <section className="bg-[#111111] px-6 py-16 md:px-10 md:py-24">
             <div className="mx-auto max-w-[1180px]">
-              <h2 className="font-monroe text-[48px] font-light text-[#EAEAEA]">
+              <h2 className="font-monroe text-[38px] font-light text-[#EAEAEA] md:text-[48px]">
                 How I Think
               </h2>
 
@@ -727,7 +753,7 @@ export default function Home() {
           <motion.section
             id="writing"
             ref={writingRef}
-            className="bg-[#111111] px-6 py-24 md:px-10"
+            className="bg-[#111111] px-6 py-16 md:px-10 md:py-24"
             variants={sectionVariants}
             initial="hidden"
             animate={writingInView ? "show" : "hidden"}
@@ -735,7 +761,7 @@ export default function Home() {
             <div className="mx-auto max-w-[1180px]">
               <motion.h2
                 variants={itemVariants}
-                className="font-monroe text-[48px] font-light text-[#EAEAEA]"
+                className="font-monroe text-[38px] font-light text-[#EAEAEA] md:text-[48px]"
               >
                 Writing and presence
               </motion.h2>
@@ -784,7 +810,7 @@ export default function Home() {
           <motion.section
             id="connect"
             ref={connectRef}
-            className="flex min-h-screen items-center bg-[#111111] px-6 py-24 md:px-10"
+            className="flex min-h-[78svh] items-center bg-[#111111] px-6 py-16 md:min-h-screen md:px-10 md:py-24"
             variants={sectionVariants}
             initial="hidden"
             animate={connectInView ? "show" : "hidden"}
@@ -808,7 +834,7 @@ export default function Home() {
               </motion.p>
               <motion.h2
                 variants={itemVariants}
-                className="mt-5 font-monroe text-[clamp(40px,7vw,56px)] font-light leading-[1.05] text-[#EAEAEA]"
+                className="mt-5 font-monroe text-[clamp(32px,9vw,56px)] font-light leading-[1.05] text-[#EAEAEA]"
               >
                 I&apos;m always interested in thoughtful people building interesting things.
               </motion.h2>
@@ -855,7 +881,7 @@ export default function Home() {
             </div>
           </motion.section>
 
-          <footer className="border-t-[0.5px] border-[#1F1F1F] bg-[#0A0A0A] px-6 py-16 md:px-10">
+          <footer className="border-t-[0.5px] border-[#1F1F1F] bg-[#0A0A0A] px-6 py-12 md:px-10 md:py-16">
             <div className="mx-auto max-w-[1180px]">
               <div className="grid gap-10 md:grid-cols-3">
                 <div>
