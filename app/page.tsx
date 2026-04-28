@@ -9,7 +9,6 @@ import {
   IconBrandX,
   IconBrandYoutube,
   IconCalendarEvent,
-  IconCode,
   IconGlassFull,
   IconLock,
   IconMail,
@@ -17,6 +16,7 @@ import {
   IconMountain,
   IconMusic,
   IconPlane,
+  IconUsersGroup,
 } from "@tabler/icons-react";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { useEffect, useMemo, useRef, useState, type ComponentType } from "react";
@@ -39,15 +39,6 @@ type InterestCard = {
   description: string;
   image: string;
   icon: IconType;
-};
-
-type Project = {
-  id: string;
-  name: string;
-  description: string;
-  status: "live" | "soon" | "mixed";
-  cta: string;
-  href?: string;
 };
 
 type WritingCard = {
@@ -149,26 +140,6 @@ const interests: InterestCard[] = [
     description: "Rock, metal, alternative. Pink Floyd is enough.",
     image: media.musicImage,
     icon: IconMusic,
-  },
-];
-
-const projects: Project[] = [
-  {
-    id: "01 / 03",
-    name: "Bowora",
-    description:
-      "A platform built around startups, visibility, traction, and the right connections.",
-    status: "live",
-    cta: "View project →",
-    href: "http://bowora.com/",
-  },
-  {
-    id: "02 / 03",
-    name: "Eldivio",
-    description:
-      "A premium travel concept focused on better decisions and better journeys.",
-    status: "soon",
-    cta: "Coming soon",
   },
 ];
 
@@ -585,90 +556,136 @@ export default function Home() {
             initial="hidden"
             animate={projectsInView ? "show" : "hidden"}
           >
-            <div className="mx-auto grid max-w-[1180px] gap-8 md:gap-12 lg:grid-cols-[340px_1fr]">
-              <motion.div variants={itemVariants}>
-                <p className="font-jetbrains text-[11px] uppercase tracking-[0.16em] text-[#7F7F7F]">
-                  CURRENT FOCUS
-                </p>
-                <h2 className="mt-4 font-monroe text-[38px] font-light leading-[1.08] text-[#EAEAEA] md:text-[48px]">
-                  What I&apos;m working on now
-                </h2>
-              </motion.div>
+            <div className="mx-auto max-w-[1180px]">
+              <div className="grid gap-10 md:gap-12 lg:grid-cols-[300px_1fr]">
+                <motion.div variants={itemVariants} className="flex flex-col justify-between gap-10 lg:gap-0">
+                  <div>
+                    <p className="font-jetbrains text-[11px] uppercase tracking-[0.16em] text-[#7F7F7F]">
+                      CURRENT FOCUS
+                    </p>
+                    <h2 className="mt-4 font-monroe text-[38px] font-light leading-[1.08] text-[#EAEAEA] md:text-[48px]">
+                      What I&apos;m working on now
+                    </h2>
+                  </div>
 
-              <motion.div variants={itemVariants} className="border-b border-[#1F1F1F]">
-                {projects.map((project) => (
-                  <article
-                    key={project.id}
-                    className="group relative border-t border-[#1F1F1F] py-9 pl-0 transition-colors duration-300 hover:bg-[#151515] md:pl-5"
-                  >
-                    <span className="absolute left-0 top-0 h-full w-[1px] origin-top scale-y-0 bg-[#2CFF05] transition duration-300 group-hover:scale-y-100" />
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <span className="h-2 w-2 rounded-full bg-[#2CFF05]" />
+                      <p className="font-jetbrains text-[11px] uppercase tracking-[0.16em] text-[#2CFF05]">
+                        OPEN TO COLLABORATE
+                      </p>
+                    </div>
+                    <p className="mt-3 max-w-[240px] font-jetbrains text-[13px] leading-[1.7] text-[#9A9A9A]">
+                      I&apos;m always open to partnerships, investments, and new ideas.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => scrollToSection("connect")}
+                      className="signal-button mt-6 inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-jetbrains text-[12px] uppercase tracking-[0.12em]"
+                    >
+                      LET&apos;S CONNECT →
+                    </button>
+                  </div>
+                </motion.div>
 
-                    <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
+                <motion.div variants={itemVariants} className="border-b border-[#1F1F1F]">
+                  {/* Bowora */}
+                  <article className="border-t border-[#1F1F1F] py-9">
+                    <div className="grid gap-8 md:grid-cols-2">
                       <div>
                         <p className="font-jetbrains text-[11px] tracking-[0.14em] text-[#7F7F7F]">
-                          {project.id}
+                          01 / 02
                         </p>
                         <h3 className="mt-3 font-monroe text-[32px] font-light leading-[1.1] text-[#EAEAEA]">
-                          {project.name}
+                          Bowora
                         </h3>
-                        <p className="mt-2 max-w-xl font-monroe text-[16px] italic text-[#9A9A9A]">
-                          {project.description}
+                        <p className="mt-2 max-w-xs font-monroe text-[16px] italic text-[#9A9A9A]">
+                          A platform built around startups, visibility, traction, and the right connections.
                         </p>
+                        <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#1F1F1F] px-3 py-1 font-jetbrains text-[10px] tracking-[0.14em] text-[#9A9A9A]">
+                          <span className="h-1.5 w-1.5 rounded-full bg-[#2CFF05]" /> LIVE
+                        </span>
                       </div>
 
-                      <div className="flex flex-wrap items-center gap-4 md:justify-end">
-                        {project.status === "live" ? (
-                          <span className="inline-flex items-center gap-2 rounded-full border border-[#1F1F1F] px-3 py-1 font-jetbrains text-[10px] tracking-[0.14em] text-[#9A9A9A]">
-                            <span className="h-1.5 w-1.5 rounded-full bg-[#2CFF05]" /> LIVE
-                          </span>
-                        ) : null}
-
-                        {project.status === "soon" ? (
-                          <span className="inline-flex items-center gap-2 rounded-full border border-[#1F1F1F] px-3 py-1 font-jetbrains text-[10px] tracking-[0.14em] text-[#7F7F7F]">
-                            <span className="h-1.5 w-1.5 rounded-full bg-[#7F7F7F]" /> COMING SOON
-                          </span>
-                        ) : null}
-
-                        {project.status === "mixed" ? (
-                          <span className="inline-flex items-center gap-2 rounded-full border border-[#1F1F1F] px-3 py-1 font-jetbrains text-[10px] tracking-[0.14em] text-[#9A9A9A]">
-                            <IconLock size={12} stroke={2} />
-                            <IconCode size={12} stroke={2} />
-                            OPEN SOURCE / PRIVATE
-                          </span>
-                        ) : null}
-
-                        {project.href ? (
-                          project.href.startsWith("/") ? (
-                            <Link
-                              href={project.href}
-                              className="signal-button rounded-full px-5 py-2.5 font-jetbrains text-[12px] uppercase tracking-[0.12em]"
-                            >
-                              {project.cta}
-                            </Link>
-                          ) : (
-                            <a
-                              href={project.href}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="signal-button rounded-full px-5 py-2.5 font-jetbrains text-[12px] uppercase tracking-[0.12em]"
-                            >
-                              {project.cta}
-                            </a>
-                          )
-                        ) : (
-                          <button
-                            type="button"
-                            disabled
-                            className="rounded-full border border-[#1F1F1F] bg-transparent px-5 py-2.5 font-jetbrains text-[12px] uppercase tracking-[0.12em] text-[#7F7F7F]"
+                      <div className="border-l border-[#1F1F1F] pl-6 md:pl-8">
+                        <div className="flex items-center gap-2">
+                          <IconUsersGroup size={18} stroke={1.8} className="text-[#2CFF05]" />
+                          <p className="font-jetbrains text-[10px] uppercase tracking-[0.14em] text-[#2CFF05]">
+                            OPEN TO PARTNERSHIPS
+                          </p>
+                        </div>
+                        <p className="mt-3 font-monroe text-[16px] italic text-[#9A9A9A]">
+                          Open to partnerships, distribution, and growth collaborations.
+                        </p>
+                        <div className="mt-6 flex flex-wrap gap-3">
+                          <a
+                            href="http://bowora.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="signal-button rounded-full px-5 py-2.5 font-jetbrains text-[12px] uppercase tracking-[0.12em]"
                           >
-                            {project.cta}
-                          </button>
-                        )}
+                            VIEW PROJECT →
+                          </a>
+                          <a
+                            href={`mailto:me@nimaaksoy.com?subject=Investment%20opportunity%20in%20Bowora&body=Hi%20Nima%0AI%20came%20across%20Bowora%20and%20found%20it%20interesting%0A%0AI%27d%20like%20to%20learn%20more%20about%20the%20investment%20opportunity%20and%20where%20you%27re%20heading%20with%20it%0A%0AWould%20be%20great%20to%20connect%20and%20have%20a%20quick%20chat%0A%0ABest%0A%5BName%5D`}
+                            className="rounded-full border border-[#3A3A3A] px-5 py-2.5 font-jetbrains text-[12px] uppercase tracking-[0.12em] text-[#9A9A9A] transition hover:border-[#5A5A5A] hover:text-[#EAEAEA]"
+                          >
+                            PARTNER WITH US
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </article>
-                ))}
-              </motion.div>
+
+                  {/* Eldivio */}
+                  <article className="border-t border-[#1F1F1F] py-9">
+                    <div className="grid gap-8 md:grid-cols-2">
+                      <div>
+                        <p className="font-jetbrains text-[11px] tracking-[0.14em] text-[#7F7F7F]">
+                          02 / 02
+                        </p>
+                        <h3 className="mt-3 font-monroe text-[32px] font-light leading-[1.1] text-[#EAEAEA]">
+                          Eldivio
+                        </h3>
+                        <p className="mt-2 max-w-xs font-monroe text-[16px] italic text-[#9A9A9A]">
+                          A premium travel concept focused on better decisions and better journeys.
+                        </p>
+                        <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#1F1F1F] px-3 py-1 font-jetbrains text-[10px] tracking-[0.14em] text-[#C8A44A]">
+                          <span className="h-1.5 w-1.5 rounded-full bg-[#C8A44A]" /> PRIVATE ACCESS
+                        </span>
+                      </div>
+
+                      <div className="border-l border-[#1F1F1F] pl-6 md:pl-8">
+                        <div className="flex items-center gap-2">
+                          <IconLock size={18} stroke={1.8} className="text-[#C8A44A]" />
+                          <p className="font-jetbrains text-[10px] uppercase tracking-[0.14em] text-[#C8A44A]">
+                            BY INVITATION ONLY
+                          </p>
+                        </div>
+                        <p className="mt-3 font-monroe text-[16px] italic text-[#9A9A9A]">
+                          Private beta access for early members and investors.
+                        </p>
+                        <div className="mt-6 flex flex-wrap gap-3">
+                          <a
+                            href="https://eldivio.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center rounded-full border border-[#C8A44A] px-5 py-2.5 font-jetbrains text-[12px] uppercase tracking-[0.12em] text-[#C8A44A] transition hover:bg-[#C8A44A]/10"
+                          >
+                            VIEW PROJECT →
+                          </a>
+                          <a
+                            href={`mailto:me@nimaaksoy.com?subject=Interest%20in%20Eldivio&body=Hi%20Nima%0AI%20saw%20Eldivio%20and%20the%20concept%20stood%20out%20to%20me%0A%0AI%27m%20interested%20in%20learning%20more%2C%20especially%20around%20early%20access%20or%20potential%20investment%0A%0AHappy%20to%20jump%20on%20a%20quick%20call%20if%20that%20works%0A%0ABest%0A%5BName%5D`}
+                            className="rounded-full border border-[#3A3A3A] px-5 py-2.5 font-jetbrains text-[12px] uppercase tracking-[0.12em] text-[#9A9A9A] transition hover:border-[#5A5A5A] hover:text-[#EAEAEA]"
+                          >
+                            INVESTOR ACCESS
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </motion.div>
+              </div>
             </div>
           </motion.section>
 
