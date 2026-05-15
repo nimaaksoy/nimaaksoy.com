@@ -810,6 +810,49 @@ export default function Home() {
           </section>
 
           <motion.section
+            className="bg-[#111111] px-6 py-16 md:px-10 md:py-24"
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.25 }}
+          >
+            <div className="mx-auto max-w-[1180px]">
+              <motion.div
+                variants={itemVariants}
+                className="grid gap-8 border-y border-[#1F1F1F] py-10 md:grid-cols-[1.05fr_1fr]"
+              >
+                <div>
+                  <p className="font-jetbrains text-[11px] uppercase tracking-[0.16em] text-[#7F7F7F]">
+                    A few advisory conversations each year.
+                  </p>
+                  <h2 className="mt-4 font-monroe text-[32px] font-light leading-[1.08] text-[#EAEAEA] md:text-[40px]">
+                    Strategic AI integration
+                  </h2>
+                </div>
+
+                <div className="max-w-[560px]">
+                  <p className="font-monroe text-[18px] italic leading-[1.7] text-[#9A9A9A]">
+                    I occasionally help established businesses understand where AI can actually improve operations, workflows, and decision making.
+                  </p>
+                  <p className="mt-5 font-jetbrains text-[13px] leading-[1.9] text-[#9A9A9A]">
+                    Mostly around workflow automation, internal tools, decision systems, AI product strategy, and content and growth systems.
+                  </p>
+                  <p className="mt-5 font-jetbrains text-[13px] leading-[1.9] text-[#9A9A9A]">
+                    If it feels relevant, feel free to connect. If I&apos;m not the right person, I&apos;ll say so honestly.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => scrollToSection("connect")}
+                    className="signal-button mt-7 inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-jetbrains text-[12px] uppercase tracking-[0.12em]"
+                  >
+                    → Connect
+                  </button>
+                </div>
+              </motion.div>
+            </div>
+          </motion.section>
+
+          <motion.section
             id="writing"
             ref={writingRef}
             className="bg-[#111111] px-6 py-16 md:px-10 md:py-24"
