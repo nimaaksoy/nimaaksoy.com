@@ -594,7 +594,7 @@ export default function Home() {
                     <div className="grid gap-8 md:grid-cols-2">
                       <div>
                         <p className="font-jetbrains text-[11px] tracking-[0.14em] text-[#7F7F7F]">
-                          01 / 02
+                          01 / 03
                         </p>
                         <h3 className="mt-3 font-monroe text-[32px] font-light leading-[1.1] text-[#EAEAEA]">
                           Bowora
@@ -621,7 +621,7 @@ export default function Home() {
                           <a
                             href="http://bowora.com/"
                             target="_blank"
-                            rel="noreferrer"
+                            rel="noopener follow"
                             className="signal-button rounded-full px-5 py-2.5 font-jetbrains text-[12px] uppercase tracking-[0.12em]"
                           >
                             VIEW PROJECT →
@@ -637,12 +637,54 @@ export default function Home() {
                     </div>
                   </article>
 
+                  {/* Vestoin */}
+                  <article className="border-t border-[#1F1F1F] py-9">
+                    <div className="grid gap-8 md:grid-cols-2">
+                      <div>
+                        <p className="font-jetbrains text-[11px] tracking-[0.14em] text-[#7F7F7F]">
+                          02 / 03
+                        </p>
+                        <h3 className="mt-3 font-monroe text-[32px] font-light leading-[1.1] text-[#EAEAEA]">
+                          Vestoin
+                        </h3>
+                        <p className="mt-2 max-w-xs font-monroe text-[16px] italic text-[#9A9A9A]">
+                          Private presentation rooms with voice narration, AI Q&amp;A, and secure sharing.
+                        </p>
+                        <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#1F1F1F] px-3 py-1 font-jetbrains text-[10px] tracking-[0.14em] text-[#2F91EA]">
+                          <span className="h-1.5 w-1.5 rounded-full bg-[#2F91EA]" /> LIVE
+                        </span>
+                      </div>
+
+                      <div className="border-l border-[#1F1F1F] pl-6 md:pl-8">
+                        <div className="flex items-center gap-2">
+                          <IconBrain size={18} stroke={1.8} className="text-[#2F91EA]" />
+                          <p className="font-jetbrains text-[10px] uppercase tracking-[0.14em] text-[#2F91EA]">
+                            AI PRESENTATION ROOMS
+                          </p>
+                        </div>
+                        <p className="mt-3 font-monroe text-[16px] italic text-[#9A9A9A]">
+                          Upload your slides, share securely, and let visitors get answers instantly.
+                        </p>
+                        <div className="mt-6 flex flex-wrap gap-3">
+                          <a
+                            href="https://vestoin.com/"
+                            target="_blank"
+                            rel="noopener follow"
+                            className="inline-flex items-center rounded-full border border-[#2F91EA] px-5 py-2.5 font-jetbrains text-[12px] uppercase tracking-[0.12em] text-[#2F91EA] transition hover:bg-[#2F91EA]/10"
+                          >
+                            VIEW PROJECT →
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
                   {/* Eldivio */}
                   <article className="border-t border-[#1F1F1F] py-9">
                     <div className="grid gap-8 md:grid-cols-2">
                       <div>
                         <p className="font-jetbrains text-[11px] tracking-[0.14em] text-[#7F7F7F]">
-                          02 / 02
+                          03 / 03
                         </p>
                         <h3 className="mt-3 font-monroe text-[32px] font-light leading-[1.1] text-[#EAEAEA]">
                           Eldivio
@@ -669,7 +711,7 @@ export default function Home() {
                           <a
                             href="https://eldivio.com/"
                             target="_blank"
-                            rel="noreferrer"
+                            rel="noopener follow"
                             className="inline-flex items-center rounded-full border border-[#C8A44A] px-5 py-2.5 font-jetbrains text-[12px] uppercase tracking-[0.12em] text-[#C8A44A] transition hover:bg-[#C8A44A]/10"
                           >
                             VIEW PROJECT →
