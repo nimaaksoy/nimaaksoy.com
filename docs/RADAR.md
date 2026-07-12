@@ -112,12 +112,24 @@ Human, easy words. Casual Farsi (روان و خودمونی).
 - Plain sentences
 - Explain the real update or reason it matters
 - Prefer concrete change over hype
+- Farsi: start every sentence with Persian words (never English first — breaks RTL)
+- Farsi: put English product names later in the sentence, or use Persian spelling (کلیبری / اپن‌کات)
+- Farsi: avoid mid-sentence English tech words when a Persian phrase works
 
 **Don’t**
 - Bullet catalogs, colon lists, em-dash list glue
 - Bookish EN/FA
-- Public caption blocks
+- Public caption blocks on the webpage
 - Thin scrapes with no “why”
+- Farsi captions that begin with `Colibri` / `OpenCut` / `UI Skills` etc.
+
+### Social image
+
+Each item page generates its own Open Graph image at:
+- `/radar/DATE/slug/opengraph-image`
+- `/fa/radar/DATE/slug/opengraph-image`
+
+X/LinkedIn should pick this card image from the site (not broken external GitHub OG).
 
 ---
 
