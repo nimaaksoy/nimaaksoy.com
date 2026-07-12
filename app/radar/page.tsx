@@ -15,8 +15,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Radar | Nima Aksoy",
-    description:
-      "Curated open source and AI finds — short takes, no noise.",
+    description: "Open source and AI finds from Nima Aksoy.",
     url: "https://nimaaksoy.com/radar",
   },
 };
