@@ -58,24 +58,43 @@ One file = one day. Filenames must be ISO dates (`2026-07-12.json`).
       "tags": ["video", "opensource"],
       "starsGained": 370,
       "take": {
-        "en": "open-source CapCut alternative — actually usable",
-        "fa": "جایگزین متن‌باز کپ‌کات — واقعاً قابل استفاده"
+        "en": "Open source CapCut alternative people are actually shipping with.",
+        "fa": "جایگزین متن‌باز کپ‌کات که واقعاً باهاش کار می‌کنن."
       },
       "source": "github"
     }
   ],
   "social": {
     "x": {
-      "en": "Today on my radar — open source finds worth your time:\n\n• …\n\nhttps://nimaaksoy.com/radar/2026-07-12",
-      "fa": "امروز روی رادارم — چند پروژه متن‌باز که ارزش دیدن دارن:\n\n• …\n\nhttps://nimaaksoy.com/fa/radar/2026-07-12"
+      "en": "spotted a few open source things today that actually feel useful\n\nOpenCut is basically CapCut without the usual lock-in. Colibri runs a big model on a normal machine which is wild.\n\nhttps://nimaaksoy.com/radar/2026-07-12",
+      "fa": "امروز چند تا پروژه متن‌باز دیدم که حس واقعی بودن داشتن\n\nOpenCut تقریبا همون حس کپ‌کات رو داره ولی قفل ابری نداره. Colibri مدل بزرگ رو رو سیستم معمولی بالا میاره که خفنه.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-12"
     },
     "linkedin": {
-      "en": "… longer professional caption …\n\nhttps://nimaaksoy.com/radar/2026-07-12",
-      "fa": "…\n\nhttps://nimaaksoy.com/fa/radar/2026-07-12"
+      "en": "A few open source finds from today that felt worth saving.\n\nOpenCut is a CapCut-style editor without the usual lock-in. Colibri is interesting if you care about big models on normal hardware.\n\nWrote them up here if you want the links:\nhttps://nimaaksoy.com/radar/2026-07-12",
+      "fa": "چند تا پروژه متن‌باز امروز دیدم که ارزش نگه داشتن داشتن.\n\nOpenCut ادیتوری شبیه کپ‌کات بدون قفل‌های همیشگی. Colibri برای کسایی که مدل بزرگ رو رو سخت‌افزار معمولی می‌خوان جالبه.\n\nلینک‌ها اینجان:\nhttps://nimaaksoy.com/fa/radar/2026-07-12"
     }
   }
 }
 ```
+
+### Voice (critical)
+
+Captions and takes must sound like a real person, not a content template.
+
+**Do**
+- Short natural sentences
+- Talk about the thing in plain words
+- Casual Farsi (روان و خودمونی)
+- Easy English, no “book” words
+- End with the day URL
+
+**Don’t**
+- Bullet lists (`•`, `-`)
+- Colon catalogs (`OpenCut: …`)
+- Em-dash list glue (`OpenCut — …`)
+- Template openers like “Today on my radar — 3 finds worth a look”
+- Stiff literary Persian or formal essay English
+- “In the book” vocabulary, salesy CTAs, or AI-sounding polish
 
 ### Field notes
 
@@ -87,9 +106,9 @@ One file = one day. Filenames must be ISO dates (`2026-07-12.json`).
 | `items[].url` | yes | Prefer project homepage or GitHub |
 | `items[].tags` | no | Short lowercase tags |
 | `items[].starsGained` | no | Optional momentum hint |
-| `items[].take.en` / `take.fa` | yes | One line, original voice |
+| `items[].take.en` / `take.fa` | yes | One natural line, human voice |
 | `items[].source` | no | e.g. `github`, `huggingnews` |
-| `social.x` / `social.linkedin` | yes | EN + FA captions; always include day URL |
+| `social.x` / `social.linkedin` | yes | EN + FA human captions; day URL at end |
 
 ---
 
@@ -125,7 +144,8 @@ Optional checklist before merge:
 
 - [ ] 1–5 items only  
 - [ ] Takes are original (not scraped blurbs)  
-- [ ] Farsi is natural (روان و خودمونی), not machine-stiff  
+- [ ] Farsi is natural (روان و خودمونی), not machine-stiff or bookish  
+- [ ] Captions have no bullets / colon lists / em-dash catalogs  
 - [ ] Social captions include the correct day URL  
 - [ ] `npm run build` passes  
 

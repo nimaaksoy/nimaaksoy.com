@@ -8,8 +8,8 @@
       "tags": ["video", "opensource"],
       "starsGained": 370,
       "take": {
-        "en": "Open-source CapCut alternative that people are actually shipping with.",
-        "fa": "جایگزین متن‌باز کپ‌کات که واقعاً باهاش کار می‌کنن، نه فقط استار می‌دن."
+        "en": "Open source CapCut alternative people are actually shipping with.",
+        "fa": "جایگزین متن‌باز کپ‌کات که واقعاً باهاش کار می‌کنن."
       },
       "source": "github"
     },
@@ -20,8 +20,8 @@
       "tags": ["local-llm", "c"],
       "starsGained": 333,
       "take": {
-        "en": "Run a huge MoE model on a normal machine — pure C, experts streamed from disk.",
-        "fa": "مدل خیلی بزرگ رو روی سیستم معمولی اجرا می‌کنه؛ سی خالص، بدون دردسر اضافه."
+        "en": "Runs a huge model on a normal machine in pure C. Wild.",
+        "fa": "مدل خیلی بزرگ رو رو سیستم معمولی بالا میاره. جالبه."
       },
       "source": "github"
     },
@@ -32,20 +32,20 @@
       "tags": ["ai-skills", "design"],
       "starsGained": 436,
       "take": {
-        "en": "Skill files that make AI agents build cleaner UI — practical, not theoretical.",
-        "fa": "اسکیل‌هایی که به ایجنت‌ها کمک می‌کنن UI تمیزتر بسازن؛ کاربردی، نه تئوری."
+        "en": "Helps AI agents build cleaner UI without overthinking it.",
+        "fa": "کمک می‌کنه ایجنت‌ها UI تمیزتر بسازن، بدون پیچوندن موضوع."
       },
       "source": "github"
     }
   ],
   "social": {
     "x": {
-      "en": "Today on my radar — 3 open source finds worth a look:\n\n• OpenCut — CapCut alternative people actually use\n• Colibri — huge MoE on a normal machine\n• UI Skills — better UI from AI agents\n\nhttps://nimaaksoy.com/radar/2026-07-12",
-      "fa": "امروز روی رادارم — سه پروژه متن‌باز که ارزش دیدن دارن:\n\n• OpenCut — جایگزین واقعی کپ‌کات\n• Colibri — مدل بزرگ روی سیستم معمولی\n• UI Skills — UI بهتر از ایجنت‌ها\n\nhttps://nimaaksoy.com/fa/radar/2026-07-12"
+      "en": "spotted a few open source things today that actually feel useful\n\nOpenCut is basically CapCut without the usual lock-in. Colibri runs a big model on a normal machine which is wild. And UI Skills makes agent-built interfaces less ugly.\n\nhttps://nimaaksoy.com/radar/2026-07-12",
+      "fa": "امروز چند تا پروژه متن‌باز دیدم که حس واقعی بودن داشتن\n\nOpenCut تقریبا همون حس کپ‌کات رو داره ولی قفل ابری نداره. Colibri مدل بزرگ رو رو سیستم معمولی بالا میاره که خفنه. UI Skills هم کمک می‌کنه ایجنت‌ها UI کمتر زشت بسازن.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-12"
     },
     "linkedin": {
-      "en": "A few open source projects that stood out today — short takes only, no noise.\n\nOpenCut: an open CapCut alternative people are shipping with.\nColibri: run a large MoE model on consumer hardware in pure C.\nUI Skills: skill files that push AI agents toward better UI craft.\n\nFull list with links:\nhttps://nimaaksoy.com/radar/2026-07-12",
-      "fa": "چند پروژه متن‌باز که امروز واقعاً به چشم اومدن — کوتاه و بدون حاشیه.\n\nOpenCut: جایگزین متن‌باز کپ‌کات که باهاش کار می‌کنن.\nColibri: اجرای مدل بزرگ روی سخت‌افزار معمولی.\nUI Skills: اسکیل‌هایی برای UI تمیزتر با ایجنت‌ها.\n\nلیست کامل با لینک:\nhttps://nimaaksoy.com/fa/radar/2026-07-12"
+      "en": "A few open source finds from today that felt worth saving.\n\nOpenCut is a CapCut-style editor without the usual lock-in. Colibri is interesting if you care about big models on normal hardware. UI Skills is a small thing that makes agent-built UI less messy.\n\nWrote them up here if you want the links:\nhttps://nimaaksoy.com/radar/2026-07-12",
+      "fa": "چند تا پروژه متن‌باز امروز دیدم که ارزش نگه داشتن داشتن.\n\nOpenCut ادیتوری شبیه کپ‌کات بدون قفل‌های همیشگی. Colibri برای کسایی که مدل بزرگ رو رو سخت‌افزار معمولی می‌خوان جالبه. UI Skills هم کمک می‌کنه UI ساخته‌شده با ایجنت کمتر شلخته باشه.\n\nلینک‌ها اینجان:\nhttps://nimaaksoy.com/fa/radar/2026-07-12"
     }
   }
 }
