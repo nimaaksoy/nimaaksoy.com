@@ -17,8 +17,6 @@ export function RadarIndex({ days, locale }: RadarIndexProps) {
     ? {
         eyebrow: "رادار",
         title: "چی دارم نگاه می‌کنم",
-        subtitle:
-          "هر روز ۱ تا ۵ پروژه یا آپدیت متن‌باز و هوش مصنوعی که واقعاً ارزش اشتراک دارن. نه همه‌چیز — فقط چیزایی که ارزش وقتت رو دارن.",
         empty: "هنوز روزی ثبت نشده.",
         items: "مورد",
         open: "باز کردن روز",
@@ -26,8 +24,6 @@ export function RadarIndex({ days, locale }: RadarIndexProps) {
     : {
         eyebrow: "RADAR",
         title: "What I’m watching",
-        subtitle:
-          "1–5 open source and AI finds a day — only things worth sharing. Short takes, no noise.",
         empty: "No days published yet.",
         items: "items",
         open: "Open day",
@@ -42,9 +38,6 @@ export function RadarIndex({ days, locale }: RadarIndexProps) {
         <h1 className="mt-4 font-monroe text-[clamp(38px,7vw,64px)] font-light leading-[1.04] text-[#EAEAEA]">
           {labels.title}
         </h1>
-        <p className="mt-5 max-w-2xl font-monroe text-[18px] italic leading-[1.55] text-[#9A9A9A]">
-          {labels.subtitle}
-        </p>
 
         <section className="mt-12 space-y-4">
           {days.length === 0 ? (
