@@ -1,49 +1,54 @@
 # Radar — how it works
 
-Curated daily picks of open source projects and AI updates worth sharing.  
-Not a dump of everything trending — only 1–5 items per day with a short human take.
+Curated signal page for AI + open source finds that are **worth a founder’s time**.  
+Inspired by dense value feeds like Perplexity Discover: short hook, clear “why it matters”, source, image when useful, shareable item URL.
 
-Live URLs:
-
-| Locale | Index | Day page |
-|--------|--------|----------|
-| English | `/radar` | `/radar/YYYY-MM-DD` |
-| Farsi (RTL) | `/fa/radar` | `/fa/radar/YYYY-MM-DD` |
+This page must stay **pure value**. No noise. No public social caption dumps.
 
 Canonical domain: `https://nimaaksoy.com`
 
----
-
-## Goals
-
-1. Highlight **only** things worth a founder/builder’s time.
-2. Keep Nima’s voice (short take, not a scrape).
-3. Store content in GitHub so Hermes (or anyone) can add days via PR.
-4. Make social sharing easy: each day has EN + FA captions for X and LinkedIn.
-5. Flow: **add content → site deploys → share day page on social** (link back to site).
+| Locale | Index | Day | Item |
+|--------|--------|-----|------|
+| English | `/radar` | `/radar/YYYY-MM-DD` | `/radar/YYYY-MM-DD/slug` |
+| Farsi (RTL) | `/fa/radar` | `/fa/radar/YYYY-MM-DD` | `/fa/radar/YYYY-MM-DD/slug` |
 
 ---
 
-## Cadence & quality bar
+## What Radar is (and is not)
 
-- **1–5 items per day** (skip the day if nothing is worth it).
-- Prefer: useful tools, strong launches, real momentum, things you’d actually try.
-- Avoid: pure hype, duplicate topics within ~24h, empty “top 10” lists, copy-paste from Trendshift/HuggingNews without a take.
-- Each item needs an original 1-line take in **English and Farsi**.
+**Is**
+- A human filter for important / useful AI + OSS signals
+- Each item strong enough to share alone
+- Short hook + expandable **why it matters** (or what actually changed)
 
-Sources to scan (not auto-publish):
+**Is not**
+- A dump of everything trending
+- A daily “top AI news of the world” wire by default
+- Public caption drafts for social
 
-- [Trendshift](https://trendshift.io/) — rising GitHub repos
-- [HuggingNews](https://huggingnews.com/) — AI news wire
-- GitHub / X / HN when something real is moving
+Does it always pick *the single most important AI update of the day*?  
+**No.** It picks **1–5 things worth sharing that day** (product update, OSS breakthrough, real capability shift). Sometimes that includes major AI news. Sometimes a quieter tool matters more for builders.
+
+Internal cadence (never show this on the public UI): **1–5/day**, skip the day if nothing is worth it.
+
+---
+
+## Page UX (pure value)
+
+1. **Hook** (`take`) — one short line
+2. **Toggle: Why it matters** (`why`) — only value: why this pick matters, or what new/important update landed. No fluff.
+3. **Source link** — original repo / product / announcement
+4. **Image** when available (OG image, product shot, paper figure)
+5. **Share on each item** — share the **item URL** (X / LinkedIn / copy / native share)
+6. **No public social captions** — never render caption text on the site
+
+Item pages are the share targets (Discover-style deep links).
 
 ---
 
 ## Content storage
 
 Path: `content/radar/YYYY-MM-DD.json`
-
-One file = one day. Filenames must be ISO dates (`2026-07-12.json`).
 
 ### Schema
 
@@ -55,60 +60,73 @@ One file = one day. Filenames must be ISO dates (`2026-07-12.json`).
       "slug": "opencut",
       "name": "OpenCut",
       "url": "https://github.com/OpenCut-app/OpenCut",
+      "image": "https://opengraph.githubassets.com/1/OpenCut-app/OpenCut",
       "tags": ["video", "opensource"],
-      "starsGained": 370,
       "take": {
         "en": "Open source CapCut alternative people are actually shipping with.",
         "fa": "جایگزین متن‌باز کپ‌کات که واقعاً باهاش کار می‌کنن."
       },
+      "why": {
+        "en": "Why this matters or what changed. Pure value only. 2–5 short sentences.",
+        "fa": "چرا مهمه یا چی عوض شده. فقط ارزش. چند جمله کوتاه."
+      },
       "source": "github"
     }
-  ],
-  "social": {
-    "x": {
-      "en": "spotted a few open source things today that actually feel useful\n\nOpenCut is basically CapCut without the usual lock-in. Colibri runs a big model on a normal machine which is wild.\n\nhttps://nimaaksoy.com/radar/2026-07-12",
-      "fa": "امروز چند تا پروژه متن‌باز دیدم که حس واقعی بودن داشتن\n\nOpenCut تقریبا همون حس کپ‌کات رو داره ولی قفل ابری نداره. Colibri مدل بزرگ رو رو سیستم معمولی بالا میاره که خفنه.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-12"
-    },
-    "linkedin": {
-      "en": "A few open source finds from today that felt worth saving.\n\nOpenCut is a CapCut-style editor without the usual lock-in. Colibri is interesting if you care about big models on normal hardware.\n\nWrote them up here if you want the links:\nhttps://nimaaksoy.com/radar/2026-07-12",
-      "fa": "چند تا پروژه متن‌باز امروز دیدم که ارزش نگه داشتن داشتن.\n\nOpenCut ادیتوری شبیه کپ‌کات بدون قفل‌های همیشگی. Colibri برای کسایی که مدل بزرگ رو رو سخت‌افزار معمولی می‌خوان جالبه.\n\nلینک‌ها اینجان:\nhttps://nimaaksoy.com/fa/radar/2026-07-12"
-    }
-  }
+  ]
 }
 ```
 
-### Voice (critical)
-
-Captions and takes must sound like a real person, not a content template.
-
-**Do**
-- Short natural sentences
-- Talk about the thing in plain words
-- Casual Farsi (روان و خودمونی)
-- Easy English, no “book” words
-- End with the day URL
-
-**Don’t**
-- Bullet lists (`•`, `-`)
-- Colon catalogs (`OpenCut: …`)
-- Em-dash list glue (`OpenCut — …`)
-- Template openers like “Today on my radar — 3 finds worth a look”
-- Stiff literary Persian or formal essay English
-- “In the book” vocabulary, salesy CTAs, or AI-sounding polish
+`social` is optional and **private** (for Hermes only). Do not render it.
 
 ### Field notes
 
 | Field | Required | Notes |
 |-------|----------|--------|
-| `date` | yes | Must match filename |
-| `items[].slug` | yes | kebab-case, unique within the day |
+| `date` | yes | Matches filename |
+| `items[].slug` | yes | kebab-case, unique per day |
 | `items[].name` | yes | Display name |
-| `items[].url` | yes | Prefer project homepage or GitHub |
-| `items[].tags` | no | Short lowercase tags |
-| `items[].starsGained` | no | Optional momentum hint |
-| `items[].take.en` / `take.fa` | yes | One natural line, human voice |
-| `items[].source` | no | e.g. `github`, `huggingnews` |
-| `social.x` / `social.linkedin` | yes | EN + FA human captions; day URL at end |
+| `items[].url` | yes | Source of truth (repo/product/post) |
+| `items[].image` | preferred | OG image or product image URL |
+| `items[].take` | yes | Short hook EN+FA |
+| `items[].why` | yes | Why it matters / what changed EN+FA |
+| `items[].tags` | no | Short tags |
+| `social` | no | Never public |
+
+---
+
+## Voice
+
+Human, easy words. Casual Farsi (روان و خودمونی).
+
+**Do**
+- Plain sentences
+- Explain the real update or reason it matters
+- Prefer concrete change over hype
+
+**Don’t**
+- Bullet catalogs, colon lists, em-dash list glue
+- Bookish EN/FA
+- Public caption blocks
+- Thin scrapes with no “why”
+
+---
+
+## How to add a day
+
+1. Scan Trendshift, HuggingNews, GitHub/X for real signal.
+2. Keep only items that are share-worthy alone.
+3. Write `take` + `why` (EN+FA). Prefer `image`.
+4. Save `content/radar/YYYY-MM-DD.json`.
+5. PR → merge → Vercel deploy.
+6. Share **item URLs**, not caption drafts from the site.
+
+Checklist:
+
+- [ ] 1–5 items or skip day  
+- [ ] Each item has `why` with real value  
+- [ ] Image when possible  
+- [ ] Human voice EN+FA  
+- [ ] `npm run build` passes  
 
 ---
 
@@ -117,96 +135,18 @@ Captions and takes must sound like a real person, not a content template.
 | Path | Role |
 |------|------|
 | `content/radar/*.json` | Day content |
-| `lib/radar.ts` | Load + sort days, types |
-| `components/radar/*` | Shared UI (chrome, day view, share) |
-| `app/radar/page.tsx` | EN index |
-| `app/radar/[date]/page.tsx` | EN day |
-| `app/fa/layout.tsx` | Farsi RTL + font |
-| `app/fa/radar/*` | FA routes |
-| `app/sitemap.ts` | Includes radar URLs |
-| Footer on `app/page.tsx` | Link to `/radar` |
-
-No database. Content is read from the filesystem at build/request time.
+| `lib/radar.ts` / `lib/radar-shared.ts` | Loaders + paths |
+| `components/radar/RadarItemCard.tsx` | List card + why toggle + share |
+| `components/radar/RadarItemView.tsx` | Item page |
+| `app/radar/**` | EN routes |
+| `app/fa/radar/**` | FA routes |
+| `docs/RADAR.md` | This file |
 
 ---
 
-## How to add a new day (Hermes / human)
+## SEO
 
-1. Scan sources; pick **1–5** items only.
-2. Create `content/radar/YYYY-MM-DD.json` with EN + FA takes and social captions.
-3. Captions must link to:
-   - EN social → `https://nimaaksoy.com/radar/YYYY-MM-DD`
-   - FA social → `https://nimaaksoy.com/fa/radar/YYYY-MM-DD`
-4. Open a PR (or push to the working branch). Vercel/CI deploys on merge to `main`.
-5. After deploy, open the day page → use **Share** (X / LinkedIn / copy caption).
-
-Optional checklist before merge:
-
-- [ ] 1–5 items only  
-- [ ] Takes are original (not scraped blurbs)  
-- [ ] Farsi is natural (روان و خودمونی), not machine-stiff or bookish  
-- [ ] Captions have no bullets / colon lists / em-dash catalogs  
-- [ ] Social captions include the correct day URL  
-- [ ] `npm run build` passes  
-
----
-
-## SEO rules (avoid thin content)
-
-**Do**
-
-- Original takes on every item  
-- Stable day URLs  
-- Link from homepage footer → `/radar`  
-- Share day pages on social (real traffic + signals)
-
-**Don’t**
-
-- Auto-mirror Trendshift/HuggingNews with no filter  
-- Post 20+ empty link cards  
-- Duplicate the same item across many days without new angle  
-
-Radar supports brand + social; it is not the main SEO engine of the site.
-
----
-
-## Social flow
-
-```
-Hermes/human writes day JSON
-        ↓
-PR → merge → deploy (Vercel)
-        ↓
-Day page live (/radar/DATE and /fa/radar/DATE)
-        ↓
-Share buttons / captions → X + LinkedIn
-        ↓
-Clicks land on the site
-```
-
-X intent URL is prefilled with the caption.  
-LinkedIn share uses the day URL (LinkedIn often strips prefilled text); full caption is always one-click copyable on the page.
-
----
-
-## Design tokens (match site)
-
-- Background `#0A0A0A` / cards `#111111`
-- Text `#EAEAEA` / secondary `#9A9A9A` / muted `#7F7F7F`
-- Border `#1F1F1F`
-- Accent `#2CFF05`
-- Fonts: Manrope (EN), Vazirmatn (FA), JetBrains Mono (labels)
-
----
-
-## Changing this system later
-
-If you change URLs, schema, or cadence:
-
-1. Update this file first (`docs/RADAR.md`).
-2. Update `lib/radar.ts` types + loaders.
-3. Update pages/components.
-4. Migrate existing JSON files if the schema breaks.
-5. Refresh sitemap if route patterns change.
+Item pages with original `why` text + images help.  
+Scraped link dumps without `why` are thin content. Do not ship those.
 
 Last updated: 2026-07-12

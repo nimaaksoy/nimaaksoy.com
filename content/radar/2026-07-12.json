@@ -5,11 +5,16 @@
       "slug": "opencut",
       "name": "OpenCut",
       "url": "https://github.com/OpenCut-app/OpenCut",
+      "image": "https://opengraph.githubassets.com/1/OpenCut-app/OpenCut",
       "tags": ["video", "opensource"],
       "starsGained": 370,
       "take": {
         "en": "Open source CapCut alternative people are actually shipping with.",
         "fa": "جایگزین متن‌باز کپ‌کات که واقعاً باهاش کار می‌کنن."
+      },
+      "why": {
+        "en": "Most open video editors die as demos. OpenCut is getting real use as a CapCut-style timeline without cloud lock-in, which matters if you want local control over cuts, exports, and privacy. The jump in stars is secondary. The useful part is a free timeline workflow that does not force you into one vendor.",
+        "fa": "بیشتر ادیتورهای متن‌باز ویدیو تو مرحله دمو می‌مونن. OpenCut داره مثل کپ‌کات استفاده واقعی می‌گیره، بدون قفل ابری. برای کسی که کنترل لوکال روی کات و خروجی و حریم خصوصی می‌خواد مهمه. استار فقط سیگناله. ارزش اصلیش یه ورک‌فلو تایم‌لاین آزاده که به یک سرویس گیر نده."
       },
       "source": "github"
     },
@@ -17,11 +22,16 @@
       "slug": "colibri",
       "name": "Colibri",
       "url": "https://github.com/JustVugg/colibri",
+      "image": "https://opengraph.githubassets.com/1/JustVugg/colibri",
       "tags": ["local-llm", "c"],
       "starsGained": 333,
       "take": {
         "en": "Runs a huge model on a normal machine in pure C. Wild.",
         "fa": "مدل خیلی بزرگ رو رو سیستم معمولی بالا میاره. جالبه."
+      },
+      "why": {
+        "en": "The important update is not another chat UI. Colibri streams experts from disk in pure C so a very large MoE can run on consumer RAM instead of a cluster. That changes who can test big models locally and how cheap experiments get. If local inference is part of your stack, this is a real capability shift, not a toy wrapper.",
+        "fa": "آپدیت مهمش یه چت‌بات جدید نیست. Colibri expertها رو از دیسک استریم می‌کنه و با سی خالص یه مدل خیلی بزرگ رو رو رم معمولی بالا میاره. یعنی تست مدل‌های بزرگ دیگه فقط مال کلستر نیست. اگه inference لوکال برات مهمه، این یه تغییر قابلیته، نه یه رپر تزئینی."
       },
       "source": "github"
     },
@@ -29,23 +39,18 @@
       "slug": "ui-skills",
       "name": "UI Skills",
       "url": "https://github.com/emilkowalski/skills",
+      "image": "https://opengraph.githubassets.com/1/emilkowalski/skills",
       "tags": ["ai-skills", "design"],
       "starsGained": 436,
       "take": {
         "en": "Helps AI agents build cleaner UI without overthinking it.",
         "fa": "کمک می‌کنه ایجنت‌ها UI تمیزتر بسازن، بدون پیچوندن موضوع."
       },
+      "why": {
+        "en": "Agent-built interfaces usually look generic because the model has no taste constraints. These skill files encode practical UI judgment from real product writing, so agents ship cleaner spacing, hierarchy, and interaction defaults. The value is better output quality with almost no process change. Small file, visible difference in agent UI work.",
+        "fa": "UI ساخته‌شده با ایجنت معمولاً بی‌شخصیت می‌شه چون مدل سلیقه و محدودیت درست نداره. این اسکیل‌ها قضاوت عملی UI رو به ایجنت می‌دن تا فاصله‌ها، سلسله‌مراتب و رفتار پیش‌فرض تمیزتر بشه. ارزشش کیفیت بهتر خروجی با کمترین تغییر فرآینده. فایل کوچیک، تفاوت واضح تو کار UI ایجنت."
+      },
       "source": "github"
     }
-  ],
-  "social": {
-    "x": {
-      "en": "spotted a few open source things today that actually feel useful\n\nOpenCut is basically CapCut without the usual lock-in. Colibri runs a big model on a normal machine which is wild. And UI Skills makes agent-built interfaces less ugly.\n\nhttps://nimaaksoy.com/radar/2026-07-12",
-      "fa": "امروز چند تا پروژه متن‌باز دیدم که حس واقعی بودن داشتن\n\nOpenCut تقریبا همون حس کپ‌کات رو داره ولی قفل ابری نداره. Colibri مدل بزرگ رو رو سیستم معمولی بالا میاره که خفنه. UI Skills هم کمک می‌کنه ایجنت‌ها UI کمتر زشت بسازن.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-12"
-    },
-    "linkedin": {
-      "en": "A few open source finds from today that felt worth saving.\n\nOpenCut is a CapCut-style editor without the usual lock-in. Colibri is interesting if you care about big models on normal hardware. UI Skills is a small thing that makes agent-built UI less messy.\n\nWrote them up here if you want the links:\nhttps://nimaaksoy.com/radar/2026-07-12",
-      "fa": "چند تا پروژه متن‌باز امروز دیدم که ارزش نگه داشتن داشتن.\n\nOpenCut ادیتوری شبیه کپ‌کات بدون قفل‌های همیشگی. Colibri برای کسایی که مدل بزرگ رو رو سخت‌افزار معمولی می‌خوان جالبه. UI Skills هم کمک می‌کنه UI ساخته‌شده با ایجنت کمتر شلخته باشه.\n\nلینک‌ها اینجان:\nhttps://nimaaksoy.com/fa/radar/2026-07-12"
-    }
-  }
+  ]
 }
