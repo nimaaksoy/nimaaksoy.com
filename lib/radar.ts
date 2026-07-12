@@ -11,6 +11,7 @@ export {
   formatRadarDate,
   indexPath,
   itemPath,
+  withShareUrl,
 } from "@/lib/radar-shared";
 
 const RADAR_DIR = path.join(process.cwd(), "content", "radar");
@@ -36,7 +37,10 @@ function isRadarItem(value: unknown): value is RadarItem {
     typeof item.name === "string" &&
     typeof item.url === "string" &&
     isLocalized(item.take) &&
-    isLocalized(item.why)
+    isLocalized(item.why) &&
+    !!item.share &&
+    isLocalized(item.share.x) &&
+    isLocalized(item.share.linkedin)
   );
 }
 

@@ -114,7 +114,13 @@ export function RadarItemView({ day, item, locale }: RadarItemViewProps) {
           >
             {labels.source} ↗
           </a>
-          <ItemShare url={shareUrl} title={item.name} locale={locale} />
+          <ItemShare
+            url={shareUrl}
+            title={item.name}
+            locale={locale}
+            xCaption={copyForLocale(item.share.x, locale)}
+            linkedinCaption={copyForLocale(item.share.linkedin, locale)}
+          />
         </div>
       </div>
     </div>
