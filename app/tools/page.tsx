@@ -7,9 +7,11 @@ type ToolCard = {
 
 const toolCards: ToolCard[] = [
   {
-    name: "XDL",
-    description: "Download videos from social media. Simple, fast, no friction.",
-    cta: "→",
+    name: "Verinio",
+    description:
+      "Content tools for AI agents. Pull media, clean it up, and feed your workflows.",
+    cta: "→ verinio.com",
+    href: "https://verinio.com",
   },
   {
     name: "PDF",
@@ -35,11 +37,14 @@ export default function ToolsPage() {
     <main className="min-h-screen bg-[#0A0A0A] px-6 py-24 md:px-10">
       <div className="mx-auto max-w-[1180px]">
         <p className="font-jetbrains text-[11px] uppercase tracking-[0.2em] text-[#7F7F7F]">
-          PRIVATE TOOLS
+          TOOLS
         </p>
         <h1 className="mt-4 font-monroe text-[clamp(38px,7vw,64px)] font-light leading-[1.04] text-[#EAEAEA]">
-          Private tools
+          Content tools for AI agents
         </h1>
+        <p className="mt-5 max-w-2xl font-monroe text-[18px] italic leading-[1.55] text-[#9A9A9A]">
+          Small utilities I use when building, shipping, and feeding agent workflows.
+        </p>
 
         <section className="mt-12 grid gap-5 md:grid-cols-2">
           {toolCards.map((card) => (
