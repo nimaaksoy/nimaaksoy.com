@@ -5,8 +5,7 @@ import { getAllRadarDays } from "@/lib/radar";
 
 export const metadata: Metadata = {
   title: "Radar",
-  description:
-    "What I’m watching — 1–5 open source and AI finds a day, only things worth sharing.",
+  description: "What I’m watching — open source and AI finds from Nima Aksoy.",
   alternates: {
     canonical: "/radar",
     languages: {
