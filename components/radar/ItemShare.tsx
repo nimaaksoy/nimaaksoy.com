@@ -2,43 +2,76 @@
 
 import { useState } from "react";
 import type { Locale } from "@/lib/radar-shared";
+import { withShareUrl } from "@/lib/radar-shared";
 
 type ItemShareProps = {
   url: string;
   title: string;
   locale: Locale;
+  /** Human caption for X — never shown on page, only used in share intent */
+  xCaption: string;
+  /** Human caption for LinkedIn — never shown on page */
+  linkedinCaption: string;
 };
 
-export function ItemShare({ url, title, locale }: ItemShareProps) {
-  const [copied, setCopied] = useState(false);
+export function ItemShare({
+  url,
+  title,
+  locale,
+  xCaption,
+  linkedinCaption,
+}: ItemShareProps) {
+  const [copied, setCopied] = useState<"link" | "post" | null>(null);
   const isFa = locale === "fa";
   const labels = isFa
-    ? { share: "اشتراک", copy: "کپی لینک", copied: "کپی شد", x: "X" }
-    : { share: "Share", copy: "Copy link", copied: "Copied", x: "X" };
+    ? {
+        share: "اشتراک",
+        copyLink: "کپی لینک",
+        copyPost: "کپی پست",
+        copied: "کپی شد",
+        x: "X",
+      }
+    : {
+        share: "Share",
+        copyLink: "Copy link",
+        copyPost: "Copy post",
+        copied: "Copied",
+        x: "X",
+      };
 
-  const xHref = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`;
+  const xText = withShareUrl(xCaption, url);
+  const linkedinText = withShareUrl(linkedinCaption, url);
+
+  // Full caption in text only so X compose is not just "Name + url"
+  const xHref = `https://twitter.com/intent/tweet?text=${encodeURIComponent(xText)}`;
   const linkedinHref = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
 
-  const onCopy = async () => {
+  const copyValue = async (key: "link" | "post", value: string) => {
     try {
-      await navigator.clipboard.writeText(url);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 1600);
+      await navigator.clipboard.writeText(value);
+      setCopied(key);
+      window.setTimeout(() => setCopied(null), 1600);
     } catch {
-      setCopied(false);
+      setCopied(null);
     }
   };
 
   const onNativeShare = async () => {
     if (typeof navigator !== "undefined" && navigator.share) {
       try {
-        await navigator.share({ title, url });
+        await navigator.share({ title, text: xText, url });
         return;
       } catch {
-        // user cancelled or unsupported — fall through
+        // cancelled
       }
     }
-    await onCopy();
+    await copyValue("post", xText);
+  };
+
+  const onLinkedIn = async () => {
+    // LinkedIn often strips prefilled text — copy caption so paste is ready
+    await copyValue("post", linkedinText);
+    window.open(linkedinHref, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -58,20 +91,26 @@ export function ItemShare({ url, title, locale }: ItemShareProps) {
       >
         {labels.x}
       </a>
-      <a
-        href={linkedinHref}
-        target="_blank"
-        rel="noreferrer"
+      <button
+        type="button"
+        onClick={onLinkedIn}
         className="rounded-full border border-[#1F1F1F] px-4 py-2 font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#9A9A9A] transition hover:border-[#2CFF05] hover:text-[#2CFF05]"
       >
         LinkedIn
-      </a>
+      </button>
       <button
         type="button"
-        onClick={onCopy}
+        onClick={() => copyValue("post", xText)}
         className="rounded-full border border-[#1F1F1F] px-4 py-2 font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#9A9A9A] transition hover:border-[#2CFF05] hover:text-[#2CFF05]"
       >
-        {copied ? labels.copied : labels.copy}
+        {copied === "post" ? labels.copied : labels.copyPost}
+      </button>
+      <button
+        type="button"
+        onClick={() => copyValue("link", url)}
+        className="rounded-full border border-[#1F1F1F] px-4 py-2 font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#9A9A9A] transition hover:border-[#2CFF05] hover:text-[#2CFF05]"
+      >
+        {copied === "link" ? labels.copied : labels.copyLink}
       </button>
     </div>
   );

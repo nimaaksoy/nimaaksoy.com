@@ -113,7 +113,13 @@ export function RadarItemCard({
               {labels.openSource} ↗
             </a>
           </div>
-          <ItemShare url={shareUrl} title={item.name} locale={locale} />
+          <ItemShare
+            url={shareUrl}
+            title={item.name}
+            locale={locale}
+            xCaption={copyForLocale(item.share.x, locale)}
+            linkedinCaption={copyForLocale(item.share.linkedin, locale)}
+          />
         </div>
       </div>
     </article>

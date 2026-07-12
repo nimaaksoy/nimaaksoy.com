@@ -39,8 +39,8 @@ Internal cadence (never show this on the public UI): **1–5/day**, skip the day
 2. **Toggle: Why it matters** (`why`) — only value: why this pick matters, or what new/important update landed. No fluff.
 3. **Source link** — original repo / product / announcement
 4. **Image** when available (OG image, product shot, paper figure)
-5. **Share on each item** — share the **item URL** (X / LinkedIn / copy / native share)
-6. **No public social captions** — never render caption text on the site
+5. **Share on each item** — buttons open X/LinkedIn with the **saved human caption** + item URL  
+6. **Captions exist, but stay off the page** — stored in JSON only, used by share intents / copy post. Never rendered as visible page text.
 
 Item pages are the share targets (Discover-style deep links).
 
@@ -70,13 +70,23 @@ Path: `content/radar/YYYY-MM-DD.json`
         "en": "Why this matters or what changed. Pure value only. 2–5 short sentences.",
         "fa": "چرا مهمه یا چی عوض شده. فقط ارزش. چند جمله کوتاه."
       },
+      "share": {
+        "x": {
+          "en": "human caption for X. ends with item url.\n\nhttps://nimaaksoy.com/radar/2026-07-12/opencut",
+          "fa": "کپشن انسانی برای X با لینک آیتم.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-12/opencut"
+        },
+        "linkedin": {
+          "en": "human caption for LinkedIn.\n\nhttps://nimaaksoy.com/radar/2026-07-12/opencut",
+          "fa": "کپشن انسانی برای لینکدین.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-12/opencut"
+        }
+      },
       "source": "github"
     }
   ]
 }
 ```
 
-`social` is optional and **private** (for Hermes only). Do not render it.
+`share` captions power the share buttons. **Do not render them on the webpage.**
 
 ### Field notes
 
@@ -87,10 +97,10 @@ Path: `content/radar/YYYY-MM-DD.json`
 | `items[].name` | yes | Display name |
 | `items[].url` | yes | Source of truth (repo/product/post) |
 | `items[].image` | preferred | OG image or product image URL |
-| `items[].take` | yes | Short hook EN+FA |
-| `items[].why` | yes | Why it matters / what changed EN+FA |
+| `items[].take` | yes | Short hook EN+FA (shown) |
+| `items[].why` | yes | Why it matters / what changed EN+FA (toggle) |
+| `items[].share.x` / `share.linkedin` | yes | Human captions EN+FA for share intents only (hidden on page) |
 | `items[].tags` | no | Short tags |
-| `social` | no | Never public |
 
 ---
 

@@ -5,6 +5,11 @@ export type LocalizedText = {
   fa: string;
 };
 
+export type RadarItemShare = {
+  x: LocalizedText;
+  linkedin: LocalizedText;
+};
+
 export type RadarItem = {
   slug: string;
   name: string;
@@ -17,19 +22,17 @@ export type RadarItem = {
   take: LocalizedText;
   /** Why it matters / what changed — pure value, no fluff */
   why: LocalizedText;
+  /**
+   * Social captions used only by share buttons (X/LinkedIn intent).
+   * Never render this text on the public page.
+   */
+  share: RadarItemShare;
   source?: string;
 };
 
 export type RadarDay = {
   date: string;
   items: RadarItem[];
-  /**
-   * Optional private drafts for Hermes. Never render on the public site.
-   */
-  social?: {
-    x?: LocalizedText;
-    linkedin?: LocalizedText;
-  };
 };
 
 export function dayPath(date: string, locale: Locale = "en"): string {
@@ -79,4 +82,11 @@ export function copyForLocale(
   locale: Locale
 ): string {
   return locale === "fa" ? value.fa : value.en;
+}
+
+/** Ensure caption ends with the item URL (for share intents). */
+export function withShareUrl(caption: string, url: string): string {
+  const trimmed = caption.trim();
+  if (trimmed.includes(url)) return trimmed;
+  return `${trimmed}\n\n${url}`;
 }

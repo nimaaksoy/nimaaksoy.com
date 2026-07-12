@@ -16,6 +16,16 @@
         "en": "Most open video editors die as demos. OpenCut is getting real use as a CapCut-style timeline without cloud lock-in, which matters if you want local control over cuts, exports, and privacy. The jump in stars is secondary. The useful part is a free timeline workflow that does not force you into one vendor.",
         "fa": "بیشتر ادیتورهای متن‌باز ویدیو تو مرحله دمو می‌مونن. OpenCut داره مثل کپ‌کات استفاده واقعی می‌گیره، بدون قفل ابری. برای کسی که کنترل لوکال روی کات و خروجی و حریم خصوصی می‌خواد مهمه. استار فقط سیگناله. ارزش اصلیش یه ورک‌فلو تایم‌لاین آزاده که به یک سرویس گیر نده."
       },
+      "share": {
+        "x": {
+          "en": "OpenCut is basically CapCut without the usual cloud lock-in. people are actually shipping with it, not just starring it.\n\nhttps://nimaaksoy.com/radar/2026-07-12/opencut",
+          "fa": "OpenCut تقریبا همون حس کپ‌کات رو داره ولی قفل ابری نداره. دارن واقعا باهاش کار می‌کنن، نه فقط استار.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-12/opencut"
+        },
+        "linkedin": {
+          "en": "OpenCut stood out today. an open CapCut-style editor people are actually using, with local control over the timeline instead of another cloud lock-in.\n\nhttps://nimaaksoy.com/radar/2026-07-12/opencut",
+          "fa": "OpenCut امروز به چشم اومد. ادیتوری شبیه کپ‌کات که واقعا استفاده می‌شه و کنترل لوکال روی تایم‌لاین می‌ده، نه یه قفل ابری دیگه.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-12/opencut"
+        }
+      },
       "source": "github"
     },
     {
@@ -33,6 +43,16 @@
         "en": "The important update is not another chat UI. Colibri streams experts from disk in pure C so a very large MoE can run on consumer RAM instead of a cluster. That changes who can test big models locally and how cheap experiments get. If local inference is part of your stack, this is a real capability shift, not a toy wrapper.",
         "fa": "آپدیت مهمش یه چت‌بات جدید نیست. Colibri expertها رو از دیسک استریم می‌کنه و با سی خالص یه مدل خیلی بزرگ رو رو رم معمولی بالا میاره. یعنی تست مدل‌های بزرگ دیگه فقط مال کلستر نیست. اگه inference لوکال برات مهمه، این یه تغییر قابلیته، نه یه رپر تزئینی."
       },
+      "share": {
+        "x": {
+          "en": "Colibri is wild. it runs a huge model on a normal machine in pure C by streaming experts from disk. that is a real local inference shift, not another chat wrapper.\n\nhttps://nimaaksoy.com/radar/2026-07-12/colibri",
+          "fa": "Colibri خفنه. مدل خیلی بزرگ رو رو سیستم معمولی با سی خالص بالا میاره و expertها رو از دیسک استریم می‌کنه. این تغییر واقعی تو inference لوکاله، نه یه رپر چت.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-12/colibri"
+        },
+        "linkedin": {
+          "en": "Colibri is interesting if you care about local inference. pure C, experts streamed from disk, big MoE on consumer hardware. that changes who can experiment without a cluster.\n\nhttps://nimaaksoy.com/radar/2026-07-12/colibri",
+          "fa": "اگه inference لوکال برات مهمه Colibri جالبه. سی خالص، استریم expert از دیسک، مدل بزرگ رو سخت‌افزار معمولی. یعنی آزمایش دیگه فقط مال کلستر نیست.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-12/colibri"
+        }
+      },
       "source": "github"
     },
     {
@@ -49,6 +69,16 @@
       "why": {
         "en": "Agent-built interfaces usually look generic because the model has no taste constraints. These skill files encode practical UI judgment from real product writing, so agents ship cleaner spacing, hierarchy, and interaction defaults. The value is better output quality with almost no process change. Small file, visible difference in agent UI work.",
         "fa": "UI ساخته‌شده با ایجنت معمولاً بی‌شخصیت می‌شه چون مدل سلیقه و محدودیت درست نداره. این اسکیل‌ها قضاوت عملی UI رو به ایجنت می‌دن تا فاصله‌ها، سلسله‌مراتب و رفتار پیش‌فرض تمیزتر بشه. ارزشش کیفیت بهتر خروجی با کمترین تغییر فرآینده. فایل کوچیک، تفاوت واضح تو کار UI ایجنت."
+      },
+      "share": {
+        "x": {
+          "en": "UI Skills is a small thing with a visible effect. it gives agents better taste defaults so the UI they ship is less generic.\n\nhttps://nimaaksoy.com/radar/2026-07-12/ui-skills",
+          "fa": "UI Skills کوچیکه ولی اثرش معلومه. به ایجنت‌ها سلیقه بهتر می‌ده تا UI شون کمتر بی‌شخصیت بشه.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-12/ui-skills"
+        },
+        "linkedin": {
+          "en": "UI Skills is worth a look if you use coding agents for product UI. practical skill files that push spacing and hierarchy toward something less generic.\n\nhttps://nimaaksoy.com/radar/2026-07-12/ui-skills",
+          "fa": "اگه با ایجنت‌ها UI می‌سازی UI Skills ارزش دیدن داره. اسکیل‌های عملی که فاصله‌ها و سلسله‌مراتب رو تمیزتر می‌کنن.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-12/ui-skills"
+        }
       },
       "source": "github"
     }
