@@ -12,8 +12,12 @@ const socials = [
 ] as const;
 
 type SiteChromeProps = {
-  locale: Locale;
+  locale?: Locale;
   children: ReactNode;
+  /** Highlight current section in nav */
+  active?: "home" | "radar" | "tools";
+  /** Show EN/FA switch (radar only by default) */
+  showLocaleSwitch?: boolean;
 };
 
 const copy = {
@@ -43,7 +47,18 @@ const copy = {
   },
 } as const;
 
-export function SiteChrome({ locale, children }: SiteChromeProps) {
+function navClass(isActive: boolean) {
+  return isActive
+    ? "text-[#2CFF05] transition-colors hover:opacity-80"
+    : "text-[#EAEAEA] transition-colors hover:text-[#2CFF05]";
+}
+
+export function SiteChrome({
+  locale = "en",
+  children,
+  active,
+  showLocaleSwitch = false,
+}: SiteChromeProps) {
   const t = copy[locale];
   const radarHref = indexPath(locale);
 
@@ -57,28 +72,27 @@ export function SiteChrome({ locale, children }: SiteChromeProps) {
           >
             {t.brand}
           </Link>
-          <div className="flex items-center gap-5 font-jetbrains text-[11px] uppercase tracking-[0.14em] text-[#EAEAEA] md:gap-8 md:text-[12px]">
-            <Link href="/" className="transition-colors hover:text-[#2CFF05]">
+          <div className="flex items-center gap-5 font-jetbrains text-[11px] uppercase tracking-[0.14em] md:gap-8 md:text-[12px]">
+            <Link href="/" className={navClass(active === "home")}>
               {t.home}
             </Link>
-            <Link
-              href={radarHref}
-              className="text-[#2CFF05] transition-colors hover:opacity-80"
-            >
+            <Link href={radarHref} className={navClass(active === "radar")}>
               {t.radar}
             </Link>
             <Link
               href="/tools"
-              className="hidden transition-colors hover:text-[#2CFF05] sm:inline"
+              className={`${navClass(active === "tools")} hidden sm:inline`}
             >
               {t.tools}
             </Link>
-            <Link
-              href={t.altHref}
-              className="rounded-full border border-[#1F1F1F] px-3 py-1 text-[10px] tracking-[0.12em] text-[#9A9A9A] transition-colors hover:border-[#2CFF05] hover:text-[#2CFF05]"
-            >
-              {t.altLocale}
-            </Link>
+            {showLocaleSwitch ? (
+              <Link
+                href={t.altHref}
+                className="rounded-full border border-[#1F1F1F] px-3 py-1 text-[10px] tracking-[0.12em] text-[#9A9A9A] transition-colors hover:border-[#2CFF05] hover:text-[#2CFF05]"
+              >
+                {t.altLocale}
+              </Link>
+            ) : null}
           </div>
         </div>
       </nav>

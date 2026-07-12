@@ -60,7 +60,7 @@ export default async function FaRadarDayPage({ params }: PageProps) {
   const prevDate = index >= 0 && index < dates.length - 1 ? dates[index + 1] : null;
 
   return (
-    <SiteChrome locale="fa">
+    <SiteChrome locale="fa" active="radar" showLocaleSwitch>
       <RadarDayView
         day={day}
         locale="fa"
