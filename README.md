@@ -11,8 +11,11 @@ This is a personal site focused on:
 - Writing and presence
 - Contact
 - Private tools page
+- Radar (`/radar` + `/fa/radar`) — curated open source & AI finds
 
 The design direction is minimal, dark, and content-first, with subtle green accents.
+
+Radar docs: [`docs/RADAR.md`](./docs/RADAR.md)
 
 ## Tech Stack
 
@@ -51,7 +54,12 @@ app/
   robots.ts
   sitemap.ts
   tools/page.tsx
+  radar/
+  fa/radar/
 components/
+  radar/
+content/radar/   # daily JSON (YYYY-MM-DD.json)
+docs/RADAR.md    # how Radar works
 lib/
 public/
 ```

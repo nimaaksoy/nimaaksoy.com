@@ -1000,6 +1000,9 @@ export default function Home() {
                     NAVIGATION
                   </p>
                   <div className="mt-3 flex flex-col gap-2 font-jetbrains text-[12px] text-[#9A9A9A]">
+                    <Link href="/radar" className="transition hover:text-[#2CFF05]">
+                      Radar
+                    </Link>
                     <Link href="/tools" className="transition hover:text-[#2CFF05]">
                       Tools
                     </Link>
