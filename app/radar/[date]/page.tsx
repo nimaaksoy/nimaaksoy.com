@@ -27,10 +27,8 @@ export async function generateMetadata({
   }
 
   const names = day.items.map((item) => item.name).join(", ");
-  const description = day.items
-    .map((item) => `${item.name}: ${item.take.en}`)
-    .slice(0, 2)
-    .join(" · ");
+  const description =
+    day.items[0]?.why.en || day.items[0]?.take.en || `Radar picks for ${date}: ${names}`;
 
   return {
     title: `Radar · ${date}`,

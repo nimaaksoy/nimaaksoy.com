@@ -1,29 +1,49 @@
 export type Locale = "en" | "fa";
 
+export type LocalizedText = {
+  en: string;
+  fa: string;
+};
+
 export type RadarItem = {
   slug: string;
   name: string;
   url: string;
+  /** Optional cover / product image URL */
+  image?: string;
   tags?: string[];
   starsGained?: number;
-  take: {
-    en: string;
-    fa: string;
-  };
+  /** Short hook shown in the list */
+  take: LocalizedText;
+  /** Why it matters / what changed — pure value, no fluff */
+  why: LocalizedText;
   source?: string;
 };
 
 export type RadarDay = {
   date: string;
   items: RadarItem[];
-  social: {
-    x: { en: string; fa: string };
-    linkedin: { en: string; fa: string };
+  /**
+   * Optional private drafts for Hermes. Never render on the public site.
+   */
+  social?: {
+    x?: LocalizedText;
+    linkedin?: LocalizedText;
   };
 };
 
 export function dayPath(date: string, locale: Locale = "en"): string {
   return locale === "fa" ? `/fa/radar/${date}` : `/radar/${date}`;
+}
+
+export function itemPath(
+  date: string,
+  slug: string,
+  locale: Locale = "en"
+): string {
+  return locale === "fa"
+    ? `/fa/radar/${date}/${slug}`
+    : `/radar/${date}/${slug}`;
 }
 
 export function indexPath(locale: Locale = "en"): string {
@@ -32,6 +52,14 @@ export function indexPath(locale: Locale = "en"): string {
 
 export function absoluteDayUrl(date: string, locale: Locale = "en"): string {
   return `https://nimaaksoy.com${dayPath(date, locale)}`;
+}
+
+export function absoluteItemUrl(
+  date: string,
+  slug: string,
+  locale: Locale = "en"
+): string {
+  return `https://nimaaksoy.com${itemPath(date, slug, locale)}`;
 }
 
 export function formatRadarDate(date: string, locale: Locale): string {
@@ -46,8 +74,8 @@ export function formatRadarDate(date: string, locale: Locale): string {
   }).format(value);
 }
 
-export function copyForLocale<T extends { en: string; fa: string }>(
-  value: T,
+export function copyForLocale(
+  value: LocalizedText,
   locale: Locale
 ): string {
   return locale === "fa" ? value.fa : value.en;

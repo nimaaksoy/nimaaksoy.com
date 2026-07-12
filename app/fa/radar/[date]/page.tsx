@@ -27,10 +27,8 @@ export async function generateMetadata({
   }
 
   const names = day.items.map((item) => item.name).join("، ");
-  const description = day.items
-    .map((item) => `${item.name}: ${item.take.fa}`)
-    .slice(0, 2)
-    .join(" · ");
+  const description =
+    day.items[0]?.why.fa || day.items[0]?.take.fa || `انتخاب‌های رادار برای ${date}: ${names}`;
 
   return {
     title: `رادار · ${date}`,

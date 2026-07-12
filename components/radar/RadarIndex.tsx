@@ -4,6 +4,7 @@ import {
   copyForLocale,
   dayPath,
   formatRadarDate,
+  itemPath,
 } from "@/lib/radar-shared";
 
 type RadarIndexProps = {
@@ -43,42 +44,71 @@ export function RadarIndex({ days, locale }: RadarIndexProps) {
           {days.length === 0 ? (
             <p className="font-monroe text-[16px] text-[#7F7F7F]">{labels.empty}</p>
           ) : (
-            days.map((day) => (
-              <Link
-                key={day.date}
-                href={dayPath(day.date, locale)}
-                className="card-surface block rounded-2xl p-6 md:p-7"
-              >
-                <div className="flex flex-wrap items-start justify-between gap-3">
-                  <div>
-                    <p className="font-jetbrains text-[11px] uppercase tracking-[0.16em] text-[#7F7F7F]">
-                      {formatRadarDate(day.date, locale)}
-                    </p>
-                    <h2 className="mt-2 font-monroe text-[24px] font-light text-[#EAEAEA] md:text-[28px]">
-                      {day.items.map((item) => item.name).join(" · ")}
-                    </h2>
-                  </div>
-                  <p className="font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#2CFF05]">
-                    {day.items.length} {labels.items}
-                  </p>
-                </div>
-                <ul className="mt-4 space-y-2">
-                  {day.items.slice(0, 3).map((item) => (
-                    <li
-                      key={item.slug}
-                      className="font-monroe text-[15px] leading-relaxed text-[#9A9A9A]"
+            days.map((day) => {
+              const lead = day.items[0];
+              return (
+                <article
+                  key={day.date}
+                  className="card-surface overflow-hidden rounded-2xl"
+                >
+                  {lead?.image ? (
+                    <Link
+                      href={dayPath(day.date, locale)}
+                      className="block border-b border-[#1F1F1F]"
                     >
-                      <span className="text-[#EAEAEA]">{item.name}</span>
-                      {" — "}
-                      {copyForLocale(item.take, locale)}
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-5 font-jetbrains text-[12px] uppercase tracking-[0.14em] text-[#2CFF05]">
-                  {labels.open} →
-                </p>
-              </Link>
-            ))
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={lead.image}
+                        alt={lead.name}
+                        className="h-44 w-full object-cover md:h-52"
+                        loading="lazy"
+                      />
+                    </Link>
+                  ) : null}
+                  <div className="p-6 md:p-7">
+                    <div className="flex flex-wrap items-start justify-between gap-3">
+                      <div>
+                        <p className="font-jetbrains text-[11px] uppercase tracking-[0.16em] text-[#7F7F7F]">
+                          {formatRadarDate(day.date, locale)}
+                        </p>
+                        <h2 className="mt-2 font-monroe text-[24px] font-light text-[#EAEAEA] md:text-[28px]">
+                          <Link
+                            href={dayPath(day.date, locale)}
+                            className="transition hover:text-[#2CFF05]"
+                          >
+                            {day.items.map((item) => item.name).join(" · ")}
+                          </Link>
+                        </h2>
+                      </div>
+                      <p className="font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#2CFF05]">
+                        {day.items.length} {labels.items}
+                      </p>
+                    </div>
+                    <ul className="mt-4 space-y-3">
+                      {day.items.map((item) => (
+                        <li key={item.slug}>
+                          <Link
+                            href={itemPath(day.date, item.slug, locale)}
+                            className="block font-monroe text-[15px] leading-relaxed text-[#9A9A9A] transition hover:text-[#EAEAEA]"
+                          >
+                            <span className="text-[#EAEAEA]">{item.name}</span>
+                            <span className="mt-1 block">
+                              {copyForLocale(item.take, locale)}
+                            </span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                    <Link
+                      href={dayPath(day.date, locale)}
+                      className="mt-5 inline-block font-jetbrains text-[12px] uppercase tracking-[0.14em] text-[#2CFF05]"
+                    >
+                      {labels.open} →
+                    </Link>
+                  </div>
+                </article>
+              );
+            })
           )}
         </section>
       </div>
