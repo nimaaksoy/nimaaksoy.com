@@ -42,13 +42,14 @@ export async function generateMetadata({
       description,
       url,
       locale: "fa_IR",
-      images: item.image ? [{ url: item.image }] : undefined,
+      type: "article",
+      siteName: "Nima Aksoy",
     },
     twitter: {
-      card: item.image ? "summary_large_image" : "summary",
+      card: "summary_large_image",
       title: `${item.name} | رادار`,
       description,
-      images: item.image ? [item.image] : undefined,
+      creator: "@Nima1980",
     },
   };
 }

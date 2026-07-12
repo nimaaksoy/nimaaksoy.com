@@ -41,13 +41,14 @@ export async function generateMetadata({
       title: `${item.name} | Nima Aksoy Radar`,
       description,
       url,
-      images: item.image ? [{ url: item.image }] : undefined,
+      type: "article",
+      siteName: "Nima Aksoy",
     },
     twitter: {
-      card: item.image ? "summary_large_image" : "summary",
+      card: "summary_large_image",
       title: `${item.name} | Radar`,
       description,
-      images: item.image ? [item.image] : undefined,
+      creator: "@Nima1980",
     },
   };
 }
