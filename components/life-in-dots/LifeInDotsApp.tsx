@@ -13,7 +13,6 @@ import MonthsDots from "./MonthsDots";
 import DaysDots from "./DaysDots";
 import HoursDots from "./HoursDots";
 import TodayPanel from "./TodayPanel";
-import DailyIntention from "./DailyIntention";
 import LifeFacts from "./LifeFacts";
 import SleepEstimate from "./SleepEstimate";
 import PrivacyPanel from "./PrivacyPanel";
@@ -150,8 +149,8 @@ export default function LifeInDotsApp() {
   return (
     <div className="max-w-[1280px] mx-auto px-4 md:px-8 py-6 md:py-8 space-y-8">
       
-      {/* Top Greeting & Controls */}
-      <div className="border-b border-[#1F1F1F] pb-5">
+      {/* Top Greeting & Summary */}
+      <div className="grid gap-6 border-b border-[#1F1F1F] pb-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(560px,1.35fr)] lg:items-end">
         <div className="space-y-1">
           <span className="font-jetbrains text-[10px] uppercase tracking-[0.16em] text-[#7F7F7F]" suppressHydrationWarning>
             {time.toLocaleDateString(undefined, {
@@ -165,25 +164,24 @@ export default function LifeInDotsApp() {
             {greetingText}
           </h1>
         </div>
-      </div>
 
-      {/* Main life stats summary */}
-      {calcs && (
-        <LifeSummary
-          profile={profile}
-          calcs={calcs}
-          settingsControl={
-            <SettingsPanel
-              profile={profile}
-              onUpdateProfile={handleUpdateProfile}
-              compact
-            />
-          }
-          shareControl={
-            <ShareCardButton profile={profile} calcs={calcs} date={time} />
-          }
-        />
-      )}
+        {calcs && (
+          <LifeSummary
+            profile={profile}
+            calcs={calcs}
+            settingsControl={
+              <SettingsPanel
+                profile={profile}
+                onUpdateProfile={handleUpdateProfile}
+                compact
+              />
+            }
+            shareControl={
+              <ShareCardButton profile={profile} calcs={calcs} date={time} />
+            }
+          />
+        )}
+      </div>
 
       {/* Visualizations Segment */}
       <div className="space-y-3">
@@ -210,9 +208,6 @@ export default function LifeInDotsApp() {
       {/* Today Panel details */}
       {calcs && <TodayPanel calcs={calcs} />}
 
-      {/* Daily Intention editor */}
-      <DailyIntention />
-
       {/* Sleep stats estimate */}
       {calcs && (
         <SleepEstimate
@@ -237,10 +232,11 @@ export default function LifeInDotsApp() {
         </div>
       )}
 
-      {/* About Section */}
+      {/* About and Methodology Section */}
       <div className="w-full py-8 border-b border-[#1F1F1F] space-y-4" id="about-section">
+        <span id="methodology-section" className="sr-only" />
         <h3 className="font-monroe text-[18px] text-[#EAEAEA] font-normal">
-          This is not a death clock
+          Source and methodology
         </h3>
         <p className="font-monroe text-[14px] text-[#9A9A9A] leading-relaxed max-w-2xl">
           Life in Dots does not know how long anyone will live. The future timeline is only a reference chosen by you. The purpose is not to watch time disappear. It is to notice the time you already had, appreciate the time that may be ahead, and use today a little more intentionally.
@@ -248,13 +244,6 @@ export default function LifeInDotsApp() {
         <p className="font-monroe text-[13px] text-[#7F7F7F] italic max-w-2xl">
           Life expectancy is a statistical population measure. It cannot tell anyone how long they will live.
         </p>
-      </div>
-
-      {/* Methodology Section */}
-      <div className="w-full py-8 border-b border-[#1F1F1F] space-y-4" id="methodology-section">
-        <h3 className="font-monroe text-[18px] text-[#EAEAEA] font-normal">
-          Source and methodology
-        </h3>
         <p className="font-monroe text-[14px] text-[#9A9A9A] leading-relaxed max-w-2xl">
           The population expectancy metric references the{" "}
           <a

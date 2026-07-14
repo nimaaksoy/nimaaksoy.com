@@ -36,10 +36,7 @@ export default function HoursDots({ profile, calcs }: HoursDotsProps) {
     <div className="py-6 space-y-8" id="panel-hours" role="tabpanel" aria-labelledby="tab-hours">
       {/* Today's 24 hours */}
       <div className="space-y-3">
-        <h3 className="font-monroe text-[15px] text-[#EAEAEA] font-normal">
-          Today&apos;s Hours (24 Hours)
-        </h3>
-        <div className="flex flex-wrap gap-2 max-w-[280px]">
+        <div className="mx-auto flex max-w-[280px] flex-wrap justify-center gap-2 md:mx-0 md:justify-start">
           {todayHours.map((hour) => {
             const isLived = hour < currentHour;
             const isCurrent = hour === currentHour;
@@ -75,7 +72,7 @@ export default function HoursDots({ profile, calcs }: HoursDotsProps) {
             );
           })}
         </div>
-        <p className="font-monroe text-[13px] text-[#9A9A9A]">
+        <p className="font-monroe text-[13px] text-[#9A9A9A] text-center md:text-left">
           Hours passed today: <span className="text-[#EAEAEA] font-semibold">{currentHour}</span> • Remaining today:{" "}
           <span className="text-[#2CFF05] font-semibold">{24 - currentHour}</span>
         </p>
@@ -93,7 +90,7 @@ export default function HoursDots({ profile, calcs }: HoursDotsProps) {
         </div>
 
         {/* Small high-density dot grid */}
-        <div className="flex flex-wrap gap-1 max-w-full">
+        <div className="flex flex-wrap justify-center gap-1 max-w-full">
           {dots.map((dotIndex) => {
             const isLived = dotIndex < livedDotsCount;
             const isCurrent = dotIndex === currentDotIndex;

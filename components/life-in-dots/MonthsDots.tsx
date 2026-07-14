@@ -41,7 +41,7 @@ export default function MonthsDots({ profile, calcs, birthDate }: MonthsDotsProp
   return (
     <div className="py-6 space-y-6" id="panel-months" role="tabpanel" aria-labelledby="tab-months">
       {/* 12-column Grid */}
-      <div className="max-w-[340px] mx-auto md:mx-0 overflow-x-auto">
+      <div className="max-w-[340px] mx-auto overflow-x-auto">
         <div className="grid grid-cols-12 gap-1.5 min-w-[280px]">
           {rows.map((yearIndex) =>
             cols.map((monthCol) => {

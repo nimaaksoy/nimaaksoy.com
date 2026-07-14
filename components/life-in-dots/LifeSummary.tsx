@@ -18,13 +18,13 @@ export default function LifeSummary({
   const targetAge = profile.targetAge;
 
   return (
-    <div className="w-full py-5 border-b border-[#1F1F1F] grid gap-6 md:grid-cols-[1fr_1fr_auto] md:items-end">
+    <div className="grid w-full gap-5 md:grid-cols-[minmax(170px,0.8fr)_minmax(230px,1fr)_auto] md:items-end">
       {/* Lived Section */}
       <div className="flex flex-col">
         <span className="font-jetbrains text-[10px] uppercase tracking-[0.16em] text-[#7F7F7F]">
           You have lived · today is day
         </span>
-        <span className="mt-2 font-monroe text-[36px] md:text-[48px] font-light text-[#EAEAEA] leading-none">
+        <span className="mt-2 font-monroe text-[34px] md:text-[44px] font-light text-[#EAEAEA] leading-none">
           {calcs.daysLived.toLocaleString()}{" "}
           <span className="text-[16px] md:text-[20px] font-normal text-[#7F7F7F]">
             days
@@ -40,7 +40,7 @@ export default function LifeSummary({
             Your possible {targetAge}-year timeline
           </span>
         </div>
-        <span className="mt-2 font-monroe text-[36px] md:text-[48px] font-light text-[#EAEAEA] leading-none">
+        <span className="mt-2 font-monroe text-[34px] md:text-[44px] font-light text-[#EAEAEA] leading-none">
           ~{calcs.daysAheadInTimeline.toLocaleString()}{" "}
           <span className="text-[16px] md:text-[20px] font-normal text-[#7F7F7F]">
             days ahead
