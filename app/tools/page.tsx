@@ -1,3 +1,14 @@
+import type { Metadata } from "next";
+import { SiteChrome } from "@/components/radar/SiteChrome";
+
+export const metadata: Metadata = {
+  title: "Tools",
+  description: "Content tools for AI agents — utilities I use when building and shipping.",
+  alternates: {
+    canonical: "/tools",
+  },
+};
+
 type ToolCard = {
   name: string;
   description: string;
@@ -34,48 +45,50 @@ const toolCards: ToolCard[] = [
 
 export default function ToolsPage() {
   return (
-    <main className="min-h-screen bg-[#0A0A0A] px-6 py-24 md:px-10">
-      <div className="mx-auto max-w-[1180px]">
-        <p className="font-jetbrains text-[11px] uppercase tracking-[0.2em] text-[#7F7F7F]">
-          TOOLS
-        </p>
-        <h1 className="mt-4 font-monroe text-[clamp(38px,7vw,64px)] font-light leading-[1.04] text-[#EAEAEA]">
-          Content tools for AI agents
-        </h1>
-        <p className="mt-5 max-w-2xl font-monroe text-[18px] italic leading-[1.55] text-[#9A9A9A]">
-          Small utilities I use when building, shipping, and feeding agent workflows.
-        </p>
+    <SiteChrome locale="en" active="tools">
+      <div className="px-6 py-16 md:px-10 md:py-20">
+        <div className="mx-auto max-w-[1180px]">
+          <p className="font-jetbrains text-[11px] uppercase tracking-[0.2em] text-[#7F7F7F]">
+            TOOLS
+          </p>
+          <h1 className="mt-4 font-monroe text-[clamp(38px,7vw,64px)] font-light leading-[1.04] text-[#EAEAEA]">
+            Content tools for AI agents
+          </h1>
+          <p className="mt-5 max-w-2xl font-monroe text-[18px] italic leading-[1.55] text-[#9A9A9A]">
+            Small utilities I use when building, shipping, and feeding agent workflows.
+          </p>
 
-        <section className="mt-12 grid gap-5 md:grid-cols-2">
-          {toolCards.map((card) => (
-            <article
-              key={card.name}
-              className="rounded-2xl border border-[#1F1F1F] bg-[#111111] p-7"
-            >
-              <h2 className="font-monroe text-[32px] font-light leading-none text-[#EAEAEA]">
-                {card.name}
-              </h2>
-              <p className="mt-4 max-w-md font-monroe text-[18px] italic leading-[1.55] text-[#9A9A9A]">
-                {card.description}
-              </p>
-              {card.href ? (
-                <a
-                  href={card.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-8 inline-block font-jetbrains text-[12px] uppercase tracking-[0.14em] text-[#2CFF05] transition-opacity hover:opacity-80"
-                >
-                  {card.cta}
-                </a>
-              ) : (
-                <span className="mt-8 inline-block font-jetbrains text-[12px] uppercase tracking-[0.14em] text-[#2CFF05]">
-                  {card.cta}
-                </span>
-              )}
-            </article>
-          ))}
-        </section>
+          <section className="mt-12 grid gap-5 md:grid-cols-2">
+            {toolCards.map((card) => (
+              <article
+                key={card.name}
+                className="card-surface rounded-2xl border border-[#1F1F1F] bg-[#111111] p-7"
+              >
+                <h2 className="font-monroe text-[32px] font-light leading-none text-[#EAEAEA]">
+                  {card.name}
+                </h2>
+                <p className="mt-4 max-w-md font-monroe text-[18px] italic leading-[1.55] text-[#9A9A9A]">
+                  {card.description}
+                </p>
+                {card.href ? (
+                  <a
+                    href={card.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-8 inline-block font-jetbrains text-[12px] uppercase tracking-[0.14em] text-[#2CFF05] transition-opacity hover:opacity-80"
+                  >
+                    {card.cta}
+                  </a>
+                ) : (
+                  <span className="mt-8 inline-block font-jetbrains text-[12px] uppercase tracking-[0.14em] text-[#2CFF05]">
+                    {card.cta}
+                  </span>
+                )}
+              </article>
+            ))}
+          </section>
+        </div>
       </div>
-    </main>
+    </SiteChrome>
   );
 }

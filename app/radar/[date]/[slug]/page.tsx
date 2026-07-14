@@ -59,7 +59,7 @@ export default async function RadarItemPage({ params }: PageProps) {
   if (!result) notFound();
 
   return (
-    <SiteChrome locale="en">
+    <SiteChrome locale="en" active="radar" showLocaleSwitch>
       <RadarItemView day={result.day} item={result.item} locale="en" />
     </SiteChrome>
   );

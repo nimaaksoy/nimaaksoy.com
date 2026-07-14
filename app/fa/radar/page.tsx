@@ -25,7 +25,7 @@ export default async function FaRadarPage() {
   const days = await getAllRadarDays();
 
   return (
-    <SiteChrome locale="fa">
+    <SiteChrome locale="fa" active="radar" showLocaleSwitch>
       <RadarIndex days={days} locale="fa" />
     </SiteChrome>
   );
