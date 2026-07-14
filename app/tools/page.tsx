@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { SiteChrome } from "@/components/radar/SiteChrome";
 
 export const metadata: Metadata = {
@@ -17,6 +18,13 @@ type ToolCard = {
 };
 
 const toolCards: ToolCard[] = [
+  {
+    name: "Life in Dots",
+    description:
+      "A thoughtful life calendar and Chrome new-tab ritual for seeing today in context.",
+    cta: "→ nimaaksoy.com/life-in-dots",
+    href: "/life-in-dots",
+  },
   {
     name: "Verinio",
     description:
@@ -70,7 +78,14 @@ export default function ToolsPage() {
                 <p className="mt-4 max-w-md font-monroe text-[18px] italic leading-[1.55] text-[#9A9A9A]">
                   {card.description}
                 </p>
-                {card.href ? (
+                {card.href?.startsWith("/") ? (
+                  <Link
+                    href={card.href}
+                    className="mt-8 inline-block font-jetbrains text-[12px] uppercase tracking-[0.14em] text-[#2CFF05] transition-opacity hover:opacity-80"
+                  >
+                    {card.cta}
+                  </Link>
+                ) : card.href ? (
                   <a
                     href={card.href}
                     target="_blank"

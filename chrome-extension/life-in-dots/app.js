@@ -218,7 +218,7 @@ function getDailyMessage(date) {
 let userProfile = null;
 let userPreferences = { selectedUnit: "Days" };
 let userIntentions = {};
-let daysViewMode = "current-year"; // current-year vs overview
+let daysViewMode = "overview"; // current-year vs overview
 
 // DOM Elements
 const onboardingView = document.getElementById("onboarding-view");
@@ -256,6 +256,7 @@ const intentionTextLbl = document.getElementById("intention-text-lbl");
 const intentionEditor = document.getElementById("intention-editor");
 const intentionTextarea = document.getElementById("intention-textarea");
 const charCounter = document.getElementById("char-counter");
+const intentionStatusLbl = document.getElementById("intention-status-lbl");
 
 // Settings Elements
 const toggleSettingsBtn = document.getElementById("toggle-settings-btn");
@@ -289,7 +290,9 @@ async function init() {
     day: "numeric"
   });
 
-  dailyMessageLbl.innerHTML = `&ldquo;${getDailyMessage(today)}&rdquo;`;
+  if (dailyMessageLbl) {
+    dailyMessageLbl.innerHTML = `&ldquo;${getDailyMessage(today)}&rdquo;`;
+  }
 
   setupEventListeners();
 
@@ -456,7 +459,7 @@ function setupEventListeners() {
   intentionDisplayBtn.addEventListener("click", () => {
     intentionDisplayBtn.classList.add("hidden");
     intentionEditor.classList.remove("hidden");
-    intentionTextarea.value = intentionTextLbl.textContent === "Click to write one small thing" ? "" : intentionTextLbl.textContent;
+    intentionTextarea.value = intentionTextLbl.classList.contains("italic-placeholder") ? "" : intentionTextLbl.textContent;
     intentionTextarea.focus();
     charCounter.textContent = `${intentionTextarea.value.length} / 160`;
   });
@@ -604,10 +607,16 @@ function saveIntention() {
     userIntentions[todayKey] = val;
     intentionTextLbl.textContent = val;
     intentionTextLbl.classList.remove("italic-placeholder");
+    if (intentionStatusLbl) {
+      intentionStatusLbl.textContent = "Today has a direction.";
+    }
   } else {
     delete userIntentions[todayKey];
-    intentionTextLbl.textContent = "Click to write one small thing";
+    intentionTextLbl.textContent = "writing one small thing";
     intentionTextLbl.classList.add("italic-placeholder");
+    if (intentionStatusLbl) {
+      intentionStatusLbl.textContent = "A small direction is enough.";
+    }
   }
 
   storage.set(STORAGE_KEYS.INTENTIONS, userIntentions);
@@ -641,7 +650,9 @@ function renderDashboard() {
   // Calculations
   const calcs = performLifeCalculations(birthDate, today, targetAge);
 
-  daysLivedLbl.textContent = calcs.daysLived.toLocaleString();
+  if (daysLivedLbl) {
+    daysLivedLbl.textContent = calcs.daysLived.toLocaleString();
+  }
   currentDayLbl.textContent = calcs.daysLived.toLocaleString();
   timelineAheadTitle.textContent = `${targetAge}-year timeline`;
   daysAheadLbl.textContent = `~${calcs.daysAheadInTimeline.toLocaleString()}`;
@@ -659,9 +670,15 @@ function renderDashboard() {
   if (todayIntention) {
     intentionTextLbl.textContent = todayIntention;
     intentionTextLbl.classList.remove("italic-placeholder");
+    if (intentionStatusLbl) {
+      intentionStatusLbl.textContent = "Today has a direction.";
+    }
   } else {
-    intentionTextLbl.textContent = "Click to write one small thing";
+    intentionTextLbl.textContent = "writing one small thing";
     intentionTextLbl.classList.add("italic-placeholder");
+    if (intentionStatusLbl) {
+      intentionStatusLbl.textContent = "A small direction is enough.";
+    }
   }
 
   // Pre-load tab button state
@@ -930,6 +947,7 @@ function drawDaysCanvas() {
 function handleCanvasMouseMove(e) {
   if (!userProfile) return;
   const rect = lifeCanvas.getBoundingClientRect();
+  const wrapperRect = lifeCanvas.closest(".visualization-wrapper").getBoundingClientRect();
   const mouseX = e.clientX - rect.left;
   const mouseY = e.clientY - rect.top;
 
@@ -979,8 +997,20 @@ function handleCanvasMouseMove(e) {
       }
 
       canvasTooltip.classList.remove("hidden");
-      canvasTooltip.style.left = `${Math.min(lifeCanvas.clientWidth - 160, mouseX + 12)}px`;
-      canvasTooltip.style.top = `${mouseY - 45}px`;
+      const tooltipWidth = 220;
+      const tooltipHeight = 86;
+      const localCanvasLeft = rect.left - wrapperRect.left;
+      const localCanvasTop = rect.top - wrapperRect.top;
+      const desiredLeft = localCanvasLeft + mouseX + 14;
+      const desiredTop = localCanvasTop + mouseY - tooltipHeight - 12;
+      const maxLeft = localCanvasLeft + rect.width - tooltipWidth - 8;
+      const minLeft = localCanvasLeft + 8;
+      const maxTop = localCanvasTop + rect.height - tooltipHeight - 8;
+      const minTop = localCanvasTop + 8;
+      const nextLeft = Math.min(Math.max(desiredLeft, minLeft), maxLeft);
+      const nextTop = Math.min(Math.max(desiredTop, minTop), maxTop);
+      canvasTooltip.style.left = `${nextLeft}px`;
+      canvasTooltip.style.top = `${nextTop}px`;
       
       const formatted = dotDate.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
       canvasTooltip.innerHTML = `

@@ -64,109 +64,95 @@
     <section id="dashboard-view" class="view-panel hidden">
       <div class="dashboard-container">
         
-        <!-- Greeting & Date -->
-        <div class="greeting-row">
-          <span id="current-date-lbl" class="date-label">Tuesday, July 14, 2026</span>
-          <h2 id="greeting-lbl" class="greeting-heading">Good morning, Nima</h2>
-        </div>
-
-        <!-- Daily Message -->
-        <div class="message-row">
-          <p id="daily-message-lbl" class="daily-message">&ldquo;A small good day still counts.&rdquo;</p>
-        </div>
-
-        <!-- Summary Statistics -->
-        <div class="summary-grid">
-          <div class="summary-card">
-            <span class="card-label">You have lived</span>
-            <span class="card-value"><span id="days-lived-lbl">0</span> <span class="val-unit">days</span></span>
-          </div>
-          <div class="summary-card border-x-cell">
-            <span class="card-label">Current Day</span>
-            <span class="card-value highlight-text">Day <span id="current-day-lbl">0</span></span>
-          </div>
-          <div class="summary-card">
-            <span class="card-label" id="timeline-ahead-title">100-year timeline</span>
-            <span class="card-value"><span id="days-ahead-lbl">0</span> <span class="val-unit">days ahead</span></span>
-            <span class="card-disclaimer">This timeline is chosen by you. It is not a prediction.</span>
-          </div>
-        </div>
-
-        <!-- Time Unit Tabs -->
-        <div class="tab-control-row">
-          <div class="tab-list" role="tablist">
-            <button class="tab-btn active" data-unit="Days" role="tab">Days</button>
-            <button class="tab-btn" data-unit="Years" role="tab">Years</button>
-            <button class="tab-btn" data-unit="Months" role="tab">Months</button>
-            <button class="tab-btn" data-unit="Hours" role="tab">Hours</button>
-          </div>
-          <span class="tab-hint">Hover dots to view details</span>
-        </div>
-
-        <!-- Legend -->
-        <div class="legend-row">
-          <div class="legend-item">
-            <span class="dot-indicator dot-lived"></span>
-            <span>Completed <span class="legend-unit-name">day</span></span>
-          </div>
-          <div class="legend-item">
-            <span class="dot-indicator dot-current pulsing"></span>
-            <span>Current <span class="legend-unit-name">day</span></span>
-          </div>
-          <div class="legend-item">
-            <span class="dot-indicator dot-future"></span>
-            <span>Possible future <span class="legend-unit-name">day</span></span>
-          </div>
-        </div>
-
-        <!-- Visual Grid Area -->
-        <div class="visualization-wrapper">
-          <!-- Days View Toggles -->
-          <div id="days-view-options" class="sub-toggle-row">
-            <button id="toggle-days-detail" class="sub-toggle-btn active">Current Year Detail</button>
-            <button id="toggle-days-canvas" class="sub-toggle-btn">Full Timeline (Canvas)</button>
+        <section class="ritual-hero" aria-labelledby="greeting-lbl">
+          <div class="ritual-copy">
+            <span id="current-date-lbl" class="date-label">Tuesday, July 14, 2026</span>
+            <h2 id="greeting-lbl" class="greeting-heading">Good morning, Nima</h2>
           </div>
 
-          <div id="grid-container" class="grid-display-container">
-            <!-- Dynamic grids injected here by JS, or Canvas -->
-            <canvas id="life-canvas" class="hidden"></canvas>
-            <div id="dom-grid" class="dom-dot-grid"></div>
+          <div class="ritual-day-card" aria-live="polite">
+            <span class="card-label">Today is day</span>
+            <span class="card-value highlight-text"><span id="current-day-lbl">0</span></span>
+            <span class="day-card-note">One of your days. Use it with intention.</span>
           </div>
-          
-          <!-- Dynamic Canvas Tooltip -->
-          <div id="canvas-tooltip" class="canvas-tooltip hidden"></div>
-        </div>
+        </section>
 
-        <!-- Daily Intention Section -->
-        <div class="intention-row">
-          <span class="section-tag">Daily Intention</span>
-          <h3 class="section-title">What would make today count?</h3>
-          <div class="intention-input-wrapper">
+        <section class="intention-ritual" aria-label="Daily intention">
+          <div class="intention-line">
+            <span>Make this day count by</span>
             <button id="intention-display-btn" class="intention-trigger-btn">
-              <span id="intention-text-lbl">Click to write one small thing</span>
+              <span id="intention-text-lbl">writing one small thing</span>
             </button>
-            <div id="intention-editor" class="hidden">
-              <textarea id="intention-textarea" maxlength="160" placeholder="It does not need to be big."></textarea>
-              <div class="editor-footer">
-                <span id="char-counter">0 / 160</span>
-                <span class="editor-hint">Press Enter to save, Esc to cancel</span>
-              </div>
+          </div>
+          <div id="intention-editor" class="hidden intention-editor-panel">
+            <textarea id="intention-textarea" maxlength="160" placeholder="It does not need to be big."></textarea>
+            <div class="editor-footer">
+              <span id="char-counter">0 / 160</span>
+              <span class="editor-hint">Enter saves, Esc cancels</span>
             </div>
           </div>
-        </div>
+          <p id="intention-status-lbl" class="intention-status">A small direction is enough.</p>
+        </section>
 
-        <!-- Metrics facts -->
-        <div class="facts-row">
-          <span class="section-tag">Life Metrics</span>
-          <h3 class="section-title">Time, in context</h3>
-          <div id="facts-grid" class="facts-display-grid"></div>
-        </div>
+        <section class="timeline-context" aria-label="Timeline context">
+          <div>
+            <span class="card-label" id="timeline-ahead-title">100-year timeline</span>
+            <p><span id="days-ahead-lbl">0</span> <span class="val-unit">days ahead</span></p>
+          </div>
+          <a href="https://nimaaksoy.com/life-in-dots" target="_blank" class="open-full-link">Open full experience</a>
+        </section>
 
-        <!-- Milestone Row -->
-        <div class="milestone-row border-top-divider">
-          <span class="section-tag">Milestones</span>
-          <p id="milestone-lbl" class="milestone-text">Calculating next milestone...</p>
-        </div>
+        <section class="dot-stage" aria-label="Life in dots visualization">
+          <div class="tab-control-row">
+            <div class="tab-list" role="tablist">
+              <button class="tab-btn active" data-unit="Days" role="tab">Days</button>
+              <button class="tab-btn" data-unit="Years" role="tab">Years</button>
+              <button class="tab-btn" data-unit="Months" role="tab">Months</button>
+              <button class="tab-btn" data-unit="Hours" role="tab">Hours</button>
+            </div>
+          </div>
+
+          <div class="legend-row">
+            <div class="legend-item">
+              <span class="dot-indicator dot-lived"></span>
+              <span>Completed <span class="legend-unit-name">day</span></span>
+            </div>
+            <div class="legend-item">
+              <span class="dot-indicator dot-current pulsing"></span>
+              <span>Current <span class="legend-unit-name">day</span></span>
+            </div>
+            <div class="legend-item">
+              <span class="dot-indicator dot-future"></span>
+              <span>Possible future <span class="legend-unit-name">day</span></span>
+            </div>
+          </div>
+
+          <div class="visualization-wrapper">
+            <div id="days-view-options" class="sub-toggle-row">
+              <button id="toggle-days-detail" class="sub-toggle-btn">This year</button>
+              <button id="toggle-days-canvas" class="sub-toggle-btn active">Full timeline</button>
+            </div>
+
+            <div id="grid-container" class="grid-display-container">
+              <canvas id="life-canvas" class="hidden"></canvas>
+              <div id="dom-grid" class="dom-dot-grid"></div>
+            </div>
+
+            <div id="canvas-tooltip" class="canvas-tooltip hidden"></div>
+          </div>
+        </section>
+
+        <section class="below-fold-context">
+          <div class="milestone-row">
+            <span class="section-tag">Next marker</span>
+            <p id="milestone-lbl" class="milestone-text">Calculating next milestone...</p>
+          </div>
+
+          <div class="facts-row">
+            <span class="section-tag">Time, in context</span>
+            <div id="facts-grid" class="facts-display-grid"></div>
+          </div>
+        </section>
 
       </div>
     </section>

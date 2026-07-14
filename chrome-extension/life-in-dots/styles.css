@@ -437,6 +437,7 @@ a {
 .visualization-wrapper {
   margin-top: 16px;
   width: 100%;
+  position: relative;
 }
 
 .sub-toggle-row {
@@ -924,5 +925,345 @@ a {
   }
   .pulsing {
     animation: none !important;
+  }
+}
+
+/* Daily new-tab experience */
+.main-content {
+  align-items: flex-start;
+  padding: 32px 20px 56px;
+}
+
+.dashboard-container {
+  gap: 20px;
+}
+
+.ritual-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 22px;
+  align-items: end;
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 18px 0 24px;
+}
+
+.ritual-copy {
+  min-width: 0;
+}
+
+.greeting-heading {
+  max-width: 760px;
+  font-size: clamp(34px, 5.8vw, 76px);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.ritual-day-card {
+  border-left: 1px solid var(--border-subtle);
+  padding-left: 28px;
+  min-width: 300px;
+}
+
+.ritual-day-card .card-value {
+  display: block;
+  font-size: clamp(54px, 7vw, 96px);
+  letter-spacing: -0.01em;
+}
+
+.day-card-note {
+  display: block;
+  margin-top: 6px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.intention-ritual {
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 4px 0 22px;
+}
+
+.intention-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  font-size: clamp(22px, 3vw, 36px);
+  font-weight: 300;
+  color: var(--text-primary);
+}
+
+.intention-trigger-btn {
+  width: auto;
+  max-width: 100%;
+  padding: 0 2px 3px;
+  border: 0;
+  border-bottom: 1px dashed rgba(44, 255, 5, 0.52);
+  border-radius: 0;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  line-height: 1.15;
+}
+
+.intention-trigger-btn:hover,
+.intention-trigger-btn:focus-visible {
+  background: transparent;
+  border-color: var(--accent);
+  color: var(--text-primary);
+  outline: none;
+}
+
+#intention-text-lbl.italic-placeholder {
+  color: var(--accent);
+  font-style: normal;
+}
+
+#intention-text-lbl.italic-placeholder::after {
+  content: "";
+}
+
+.intention-status {
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.intention-editor-panel {
+  margin-top: 14px;
+  max-width: 720px;
+}
+
+.timeline-context {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 18px;
+}
+
+.timeline-context p {
+  margin-top: 4px;
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.open-full-link {
+  flex: 0 0 auto;
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  padding: 10px 14px;
+  color: var(--text-secondary);
+  font-family: monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.open-full-link:hover,
+.open-full-link:focus-visible {
+  border-color: rgba(44, 255, 5, 0.5);
+  color: var(--accent);
+  outline: none;
+}
+
+.dot-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tab-control-row {
+  justify-content: center;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.tab-list {
+  margin: 0 auto;
+}
+
+.legend-row {
+  justify-content: center;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.visualization-wrapper {
+  margin-top: 0;
+}
+
+.sub-toggle-row {
+  justify-content: center;
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin-bottom: 14px;
+}
+
+.grid-display-container {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  padding: 4px 0 10px;
+}
+
+.dom-dot-grid {
+  justify-content: center;
+}
+
+.dom-dot-grid.cols-10,
+.dom-dot-grid.cols-12,
+.dom-dot-grid.cols-7 {
+  margin: 0 auto;
+}
+
+.dom-dot-grid.cols-7 {
+  max-width: min(100%, 440px);
+  gap: 7px;
+}
+
+.dom-dot.size-md {
+  width: 12px;
+  height: 12px;
+}
+
+.below-fold-context {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 22px;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 24px;
+}
+
+.milestone-row,
+.facts-row {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.milestone-text {
+  margin-top: 8px;
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+.facts-display-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.fact-card {
+  min-height: 72px;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.fact-card-val {
+  font-size: 20px;
+}
+
+@media (min-width: 900px) {
+  .ritual-hero {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .below-fold-context {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .main-content {
+    padding: 18px 16px 40px;
+  }
+
+  .header-container {
+    padding: 0 16px;
+  }
+
+  .site-link,
+  .nav-sep {
+    display: none;
+  }
+
+  .ritual-hero {
+    gap: 14px;
+    padding: 6px 0 16px;
+  }
+
+  .greeting-heading {
+    font-size: clamp(34px, 11vw, 46px);
+  }
+
+  .ritual-day-card {
+    border-left: 0;
+    border-top: 1px solid var(--border-subtle);
+    padding: 14px 0 0;
+    min-width: 0;
+  }
+
+  .ritual-day-card .card-value {
+    font-size: clamp(58px, 19vw, 78px);
+  }
+
+  .day-card-note {
+    font-size: 13px;
+  }
+
+  .intention-ritual {
+    padding-bottom: 16px;
+  }
+
+  .intention-line {
+    gap: 6px;
+    font-size: clamp(24px, 8vw, 32px);
+  }
+
+  .intention-status {
+    margin-top: 6px;
+  }
+
+  .timeline-context {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 14px;
+  }
+
+  .timeline-context p {
+    font-size: 26px;
+  }
+
+  .open-full-link {
+    padding: 8px 12px;
+    font-size: 10px;
+  }
+
+  .legend-row {
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .tab-list {
+    width: 100%;
+  }
+
+  .tab-btn {
+    flex: 1;
+    padding: 9px 8px;
+  }
+
+  .dot-stage {
+    gap: 12px;
+  }
+
+  .sub-toggle-row {
+    margin-bottom: 10px;
+  }
+
+  .facts-display-grid {
+    grid-template-columns: 1fr;
   }
 }
