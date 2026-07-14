@@ -20,7 +20,7 @@ export default function YearsDots({ profile, calcs }: YearsDotsProps) {
     <div className="py-6 space-y-6" id="panel-years" role="tabpanel" aria-labelledby="tab-years">
       {/* 10-column Grid */}
       <div className="relative">
-        <div className="grid grid-cols-10 gap-3 max-w-[280px] mx-auto md:mx-0">
+        <div className="grid grid-cols-10 gap-3 max-w-[280px] mx-auto">
           {years.map((yearIndex) => {
             const isLived = yearIndex < currentAge;
             const isCurrent = yearIndex === currentAge;
