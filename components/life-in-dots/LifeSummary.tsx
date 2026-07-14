@@ -6,23 +6,21 @@ interface LifeSummaryProps {
   profile: UserProfile;
   calcs: LifeCalculations;
   settingsControl?: React.ReactNode;
-  shareControl?: React.ReactNode;
 }
 
 export default function LifeSummary({
   profile,
   calcs,
   settingsControl,
-  shareControl,
 }: LifeSummaryProps) {
   const targetAge = profile.targetAge;
 
   return (
-    <div className="grid w-full gap-5 md:grid-cols-[minmax(170px,0.8fr)_minmax(230px,1fr)_auto] md:items-end">
+    <div className="grid w-full gap-5 md:grid-cols-[minmax(170px,0.8fr)_minmax(230px,1fr)] md:items-end">
       {/* Lived Section */}
       <div className="flex flex-col">
         <span className="font-jetbrains text-[10px] uppercase tracking-[0.16em] text-[#7F7F7F]">
-          You have lived · today is day
+          Today is day
         </span>
         <span className="mt-2 font-monroe text-[34px] md:text-[44px] font-light text-[#EAEAEA] leading-none">
           {calcs.daysLived.toLocaleString()}{" "}
@@ -37,7 +35,7 @@ export default function LifeSummary({
         <div className="flex items-center gap-2">
           {settingsControl}
           <span className="font-jetbrains text-[10px] uppercase tracking-[0.16em] text-[#7F7F7F]">
-            Your possible {targetAge}-year timeline
+            {targetAge}-year timeline
           </span>
         </div>
         <span className="mt-2 font-monroe text-[34px] md:text-[44px] font-light text-[#EAEAEA] leading-none">
@@ -46,10 +44,6 @@ export default function LifeSummary({
             days ahead
           </span>
         </span>
-      </div>
-
-      <div className="flex md:justify-end">
-        {shareControl}
       </div>
     </div>
   );

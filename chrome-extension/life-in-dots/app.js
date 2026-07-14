@@ -326,20 +326,20 @@ function setupEventListeners() {
   });
 
   setupInlineEdit(obAgeText, obAgeInput, (val) => {
-    obAgeText.textContent = val || "90";
+    obAgeText.textContent = val || "100";
     checkOnboardingValid();
   });
 
   startBtn.addEventListener("click", () => {
     const name = obNameInput.value.trim();
     const birthday = obBdayInput.value;
-    const targetAge = parseInt(obAgeInput.value) || 90;
+    const targetAge = parseInt(obAgeInput.value) || 100;
 
     userProfile = {
       name: name || undefined,
       birthday,
       targetAge,
-      timelineMode: targetAge === 90 ? "default" : "custom",
+      timelineMode: targetAge === 100 ? "default" : "custom",
       sleepHours: 8,
       storageMode: "persistent"
     };
@@ -406,7 +406,7 @@ function setupEventListeners() {
       e.target.classList.add("active");
 
       if (mode === "default") {
-        userProfile.targetAge = 90;
+        userProfile.targetAge = 100;
         userProfile.timelineMode = "default";
         setCustomAgeRow.classList.add("hidden");
       } else if (mode === "expectancy") {
@@ -543,7 +543,7 @@ function setupInlineEdit(textEl, inputEl, onSave) {
 
 function checkOnboardingValid() {
   const birthday = obBdayInput.value;
-  const targetAge = parseInt(obAgeInput.value) || 90;
+  const targetAge = parseInt(obAgeInput.value) || 100;
   
   if (!birthday) {
     startBtn.classList.add("hidden");
@@ -643,7 +643,7 @@ function renderDashboard() {
 
   daysLivedLbl.textContent = calcs.daysLived.toLocaleString();
   currentDayLbl.textContent = calcs.daysLived.toLocaleString();
-  timelineAheadTitle.textContent = `Your possible ${targetAge}-year timeline`;
+  timelineAheadTitle.textContent = `${targetAge}-year timeline`;
   daysAheadLbl.textContent = `~${calcs.daysAheadInTimeline.toLocaleString()}`;
 
   // Milestone

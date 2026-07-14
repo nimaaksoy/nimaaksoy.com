@@ -49,14 +49,14 @@ export default function SettingsPanel({
     if (isNaN(age) || age < currentAge || age > 120) return false;
     onUpdateProfile({ 
       targetAge: age,
-      timelineMode: age === 90 ? "default" : "custom"
+      timelineMode: age === 100 ? "default" : "custom"
     });
     return true;
   };
 
   const handleSelectMode = (mode: TimelineMode) => {
     if (mode === "default") {
-      onUpdateProfile({ timelineMode: "default", targetAge: 90 });
+      onUpdateProfile({ timelineMode: "default", targetAge: 100 });
     } else if (mode === "expectancy") {
       onUpdateProfile({ 
         timelineMode: "expectancy", 
@@ -149,7 +149,7 @@ export default function SettingsPanel({
                     : "border-[#1F1F1F] text-[#7F7F7F] hover:border-[#9A9A9A]"
                 }`}
               >
-                90
+                100
               </button>
               <button
                 type="button"
