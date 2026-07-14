@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life in Dots</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <span class="brand">Life in Dots</span>
+      <div class="header-nav">
+        <button id="toggle-settings-btn" class="nav-btn">Settings</button>
+        <span class="nav-sep">|</span>
+        <a href="https://nimaaksoy.com/life-in-dots" target="_blank" class="nav-link site-link">nimaaksoy.com</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Workspace -->
+  <main class="main-content">
+    
+    <!-- Onboarding Screen -->
+    <section id="onboarding-view" class="view-panel hidden">
+      <div class="intro-container">
+        <h1>See your life in dots</h1>
+        <p class="intro-text">A gentle look at the time you have lived, the time that may be ahead, and the day you have right now.</p>
+        
+        <div class="onboarding-form font-monroe">
+          <p>
+            You can call me 
+            <span class="inline-edit-wrapper">
+              <span id="ob-name-text" class="dotted-underline cursor-pointer">Add your name</span>
+              <input type="text" id="ob-name-input" class="hidden-input hidden" placeholder="Your name">
+            </span>
+          </p>
+          <p>
+            I was born on 
+            <span class="inline-edit-wrapper">
+              <span id="ob-bday-text" class="dotted-underline cursor-pointer">Select birthday</span>
+              <input type="date" id="ob-bday-input" class="hidden-input hidden">
+            </span>
+          </p>
+          <p>
+            Show my possible timeline to age 
+            <span class="inline-edit-wrapper">
+              <span id="ob-age-text" class="dotted-underline cursor-pointer">90</span>
+              <input type="number" id="ob-age-input" class="hidden-input hidden" min="1" max="120" value="90">
+            </span>
+          </p>
+        </div>
+
+        <div id="ob-warning" class="warning-box hidden">
+          You have already lived beyond this age. Choose a longer timeline to explore the days ahead.
+        </div>
+
+        <button id="start-btn" class="signal-btn hidden">Explore My Timeline →</button>
+      </div>
+    </section>
+
+    <!-- Main Personalized View -->
+    <section id="dashboard-view" class="view-panel hidden">
+      <div class="dashboard-container">
+        
+        <!-- Greeting & Date -->
+        <div class="greeting-row">
+          <span id="current-date-lbl" class="date-label">Tuesday, July 14, 2026</span>
+          <h2 id="greeting-lbl" class="greeting-heading">Good morning, Nima</h2>
+        </div>
+
+        <!-- Daily Message -->
+        <div class="message-row">
+          <p id="daily-message-lbl" class="daily-message">&ldquo;A small good day still counts.&rdquo;</p>
+        </div>
+
+        <!-- Summary Statistics -->
+        <div class="summary-grid">
+          <div class="summary-card">
+            <span class="card-label">You have lived</span>
+            <span class="card-value"><span id="days-lived-lbl">0</span> <span class="val-unit">days</span></span>
+          </div>
+          <div class="summary-card border-x-cell">
+            <span class="card-label">Current Day</span>
+            <span class="card-value highlight-text">Day <span id="current-day-lbl">0</span></span>
+          </div>
+          <div class="summary-card">
+            <span class="card-label" id="timeline-ahead-title">Your possible 90-year timeline</span>
+            <span class="card-value"><span id="days-ahead-lbl">0</span> <span class="val-unit">days ahead</span></span>
+            <span class="card-disclaimer">This timeline is chosen by you. It is not a prediction.</span>
+          </div>
+        </div>
+
+        <!-- Time Unit Tabs -->
+        <div class="tab-control-row">
+          <div class="tab-list" role="tablist">
+            <button class="tab-btn active" data-unit="Days" role="tab">Days</button>
+            <button class="tab-btn" data-unit="Years" role="tab">Years</button>
+            <button class="tab-btn" data-unit="Months" role="tab">Months</button>
+            <button class="tab-btn" data-unit="Hours" role="tab">Hours</button>
+          </div>
+          <span class="tab-hint">Hover dots to view details</span>
+        </div>
+
+        <!-- Legend -->
+        <div class="legend-row">
+          <div class="legend-item">
+            <span class="dot-indicator dot-lived"></span>
+            <span>Completed <span class="legend-unit-name">day</span></span>
+          </div>
+          <div class="legend-item">
+            <span class="dot-indicator dot-current pulsing"></span>
+            <span>Current <span class="legend-unit-name">day</span></span>
+          </div>
+          <div class="legend-item">
+            <span class="dot-indicator dot-future"></span>
+            <span>Possible future <span class="legend-unit-name">day</span></span>
+          </div>
+        </div>
+
+        <!-- Visual Grid Area -->
+        <div class="visualization-wrapper">
+          <!-- Days View Toggles -->
+          <div id="days-view-options" class="sub-toggle-row">
+            <button id="toggle-days-detail" class="sub-toggle-btn active">Current Year Detail</button>
+            <button id="toggle-days-canvas" class="sub-toggle-btn">Full Timeline (Canvas)</button>
+          </div>
+
+          <div id="grid-container" class="grid-display-container">
+            <!-- Dynamic grids injected here by JS, or Canvas -->
+            <canvas id="life-canvas" class="hidden"></canvas>
+            <div id="dom-grid" class="dom-dot-grid"></div>
+          </div>
+          
+          <!-- Dynamic Canvas Tooltip -->
+          <div id="canvas-tooltip" class="canvas-tooltip hidden"></div>
+        </div>
+
+        <!-- Daily Intention Section -->
+        <div class="intention-row">
+          <span class="section-tag">Daily Intention</span>
+          <h3 class="section-title">What would make today count?</h3>
+          <div class="intention-input-wrapper">
+            <button id="intention-display-btn" class="intention-trigger-btn">
+              <span id="intention-text-lbl">Click to write one small thing</span>
+            </button>
+            <div id="intention-editor" class="hidden">
+              <textarea id="intention-textarea" maxlength="160" placeholder="It does not need to be big."></textarea>
+              <div class="editor-footer">
+                <span id="char-counter">0 / 160</span>
+                <span class="editor-hint">Press Enter to save, Esc to cancel</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metrics facts -->
+        <div class="facts-row">
+          <span class="section-tag">Life Metrics</span>
+          <h3 class="section-title">Time, in context</h3>
+          <div id="facts-grid" class="facts-display-grid"></div>
+        </div>
+
+        <!-- Milestone Row -->
+        <div class="milestone-row border-top-divider">
+          <span class="section-tag">Milestones</span>
+          <p id="milestone-lbl" class="milestone-text">Calculating next milestone...</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Settings Slide-out / Modal -->
+  <div id="settings-overlay" class="settings-overlay hidden">
+    <div class="settings-drawer">
+      <div class="drawer-header">
+        <h3>Settings</h3>
+        <button id="close-settings-btn" class="close-btn">&times;</button>
+      </div>
+
+      <div class="drawer-body">
+        
+        <!-- Name -->
+        <div class="settings-group">
+          <span class="group-label">Your Name</span>
+          <div class="group-editable-row">
+            <span id="set-name-text" class="dotted-underline font-monroe cursor-pointer">Add your name</span>
+            <input type="text" id="set-name-input" class="hidden-input hidden">
+          </div>
+        </div>
+
+        <!-- Birthday -->
+        <div class="settings-group">
+          <span class="group-label">Birthday</span>
+          <div class="group-editable-row">
+            <span id="set-bday-text" class="dotted-underline font-monroe cursor-pointer">Select birthday</span>
+            <input type="date" id="set-bday-input" class="hidden-input hidden">
+          </div>
+        </div>
+
+        <!-- Age Limit -->
+        <div class="settings-group">
+          <span class="group-label">Timeline age limit</span>
+          <div class="preset-buttons">
+            <button class="preset-btn" data-mode="default">90</button>
+            <button class="preset-btn" data-mode="expectancy">Global Average</button>
+            <button class="preset-btn" data-mode="custom">Custom</button>
+          </div>
+          <div id="set-custom-age-row" class="group-editable-row pt-2 hidden">
+            <span>Age limit:</span>
+            <span id="set-age-text" class="dotted-underline font-monroe cursor-pointer">90</span>
+            <input type="number" id="set-age-input" class="hidden-input hidden" min="1" max="120">
+          </div>
+        </div>
+
+        <!-- Sleep Hours -->
+        <div class="settings-group">
+          <span class="group-label">Sleep estimation</span>
+          <div class="group-editable-row">
+            <span>Daily sleep:</span>
+            <span id="set-sleep-text" class="dotted-underline font-monroe cursor-pointer">8</span>
+            <input type="number" id="set-sleep-input" class="hidden-input hidden" min="4" max="12">
+            <span>hours</span>
+          </div>
+        </div>
+
+        <!-- Storage Reset -->
+        <div class="settings-group reset-group border-top-divider">
+          <span class="group-label text-red">Danger Zone</span>
+          <div id="reset-confirm-box" class="confirm-box hidden">
+            <p>Delete all local Life in Dots data from this browser?</p>
+            <div class="confirm-buttons">
+              <button id="confirm-reset-btn" class="danger-btn">Yes, Forget Data</button>
+              <button id="cancel-reset-btn" class="cancel-btn">Cancel</button>
+            </div>
+          </div>
+          <button id="forget-data-btn" class="border-danger-btn">Forget my data</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
