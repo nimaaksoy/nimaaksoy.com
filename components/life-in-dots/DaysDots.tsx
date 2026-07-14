@@ -18,7 +18,7 @@ interface YearLifeInfo {
 }
 
 export default function DaysDots({ profile, calcs, birthDate }: DaysDotsProps) {
-  const [viewMode, setViewMode] = useState<"current-year" | "overview">("current-year");
+  const [viewMode, setViewMode] = useState<"current-year" | "overview">("overview");
   const [canvasWidth, setCanvasWidth] = useState(300);
   const [hoveredDot, setHoveredDot] = useState<{
     date: Date;
@@ -91,9 +91,12 @@ export default function DaysDots({ profile, calcs, birthDate }: DaysDotsProps) {
     const rows = targetAge;
     
     // Gaps and dot size
-    const dotSize = Math.max(1, (width - columns * 0.8) / columns);
-    const gapX = 0.8;
-    const gapY = 2;
+    const gapX = width < 600 ? 0.35 : 0.8;
+    const dotSize = Math.max(
+      0.45,
+      Math.min(2.6, (width - (columns - 1) * gapX) / columns)
+    );
+    const gapY = 1.6;
     
     // Calculate total height needed
     const rowHeight = dotSize + gapY;
@@ -112,10 +115,12 @@ export default function DaysDots({ profile, calcs, birthDate }: DaysDotsProps) {
 
     // Draw grid
     yearsList.forEach((yearInfo) => {
+      const rowWidth = yearInfo.daysCount * dotSize + (yearInfo.daysCount - 1) * gapX;
+      const xOffset = Math.max(0, (width - rowWidth) / 2);
       const y = yearInfo.yearIndex * rowHeight;
       
       for (let dayIndex = 0; dayIndex < yearInfo.daysCount; dayIndex++) {
-        const x = dayIndex * (dotSize + gapX);
+        const x = xOffset + dayIndex * (dotSize + gapX);
         const isLived = dayIndex < yearInfo.livedDaysCount;
         const isCurrentDay = yearInfo.isCurrent && dayIndex === yearInfo.livedDaysCount - 1;
 
@@ -148,17 +153,21 @@ export default function DaysDots({ profile, calcs, birthDate }: DaysDotsProps) {
     const rows = targetAge;
 
     const width = rect.width;
-    const dotSize = Math.max(1, (width - columns * 0.8) / columns);
-    const gapX = 0.8;
-    const gapY = 2;
+    const gapX = width < 600 ? 0.35 : 0.8;
+    const dotSize = Math.max(
+      0.45,
+      Math.min(2.6, (width - (columns - 1) * gapX) / columns)
+    );
+    const gapY = 1.6;
     const rowHeight = dotSize + gapY;
 
     const yearIndex = Math.floor(mouseY / rowHeight);
-    const dayIndex = Math.floor(mouseX / (dotSize + gapX));
-
-    if (yearIndex >= 0 && yearIndex < rows && dayIndex >= 0) {
+    if (yearIndex >= 0 && yearIndex < rows) {
       const yearInfo = yearsList[yearIndex];
-      if (dayIndex < yearInfo.daysCount) {
+      const rowWidth = yearInfo.daysCount * dotSize + (yearInfo.daysCount - 1) * gapX;
+      const xOffset = Math.max(0, (width - rowWidth) / 2);
+      const dayIndex = Math.floor((mouseX - xOffset) / (dotSize + gapX));
+      if (dayIndex >= 0 && dayIndex < yearInfo.daysCount) {
         // Calculate day date
         const dotDate = new Date(yearInfo.startDate);
         dotDate.setDate(yearInfo.startDate.getDate() + dayIndex);
@@ -210,7 +219,7 @@ export default function DaysDots({ profile, calcs, birthDate }: DaysDotsProps) {
           </span>
         </div>
 
-        <div className="grid grid-cols-7 gap-2 max-w-[280px]">
+        <div className="mx-auto grid grid-cols-7 gap-2 max-w-[280px] md:mx-0">
           {days.map((dayIndex) => {
             const isLived = dayIndex < completedDays;
             const isToday = currentYearInfo.isCurrent && dayIndex === completedDays - 1;
@@ -263,9 +272,9 @@ export default function DaysDots({ profile, calcs, birthDate }: DaysDotsProps) {
   };
 
   return (
-    <div className="py-6 space-y-6" id="panel-days" role="tabpanel" aria-labelledby="tab-days">
+    <div className="py-3 space-y-4" id="panel-days" role="tabpanel" aria-labelledby="tab-days">
       {/* Toggles */}
-      <div className="flex items-center gap-4 border-b border-[#1F1F1F] pb-4">
+      <div className="flex items-center justify-center gap-4 pb-1">
         <button
           type="button"
           onClick={() => setViewMode("current-year")}
@@ -273,7 +282,7 @@ export default function DaysDots({ profile, calcs, birthDate }: DaysDotsProps) {
             viewMode === "current-year" ? "text-[#2CFF05] font-semibold" : "text-[#7F7F7F] hover:text-[#EAEAEA]"
           }`}
         >
-          Current Year Detail
+          Current year
         </button>
         <button
           type="button"
@@ -282,14 +291,14 @@ export default function DaysDots({ profile, calcs, birthDate }: DaysDotsProps) {
             viewMode === "overview" ? "text-[#2CFF05] font-semibold" : "text-[#7F7F7F] hover:text-[#EAEAEA]"
           }`}
         >
-          Full Timeline (Canvas)
+          Full timeline
         </button>
       </div>
 
       {viewMode === "current-year" ? (
         renderCurrentYearDOM()
       ) : (
-        <div ref={containerRef} className="relative w-full overflow-hidden bg-[#0A0A0A] border border-[#1F1F1F]/40 p-4 rounded-xl">
+        <div ref={containerRef} className="relative w-full overflow-visible bg-[#0A0A0A] px-1 py-2">
           <span className="sr-only">
             Visual canvas grid displaying {targetAge} rows of years. Each row has 365 or 366 dots representing calendar days.
           </span>
@@ -305,8 +314,8 @@ export default function DaysDots({ profile, calcs, birthDate }: DaysDotsProps) {
             <div
               className="absolute bg-[#111111] border border-[#2CFF05]/40 text-[#EAEAEA] text-[11px] font-jetbrains px-3 py-1.5 rounded-lg shadow-2xl pointer-events-none z-30"
               style={{
-                left: `${Math.min(canvasWidth - 160, hoveredDot.x + 12)}px`,
-                top: `${hoveredDot.y - 45}px`,
+                left: `${Math.max(8, Math.min(Math.max(8, canvasWidth - 190), hoveredDot.x + 12))}px`,
+                top: `${Math.max(8, hoveredDot.y - 45)}px`,
               }}
             >
               <div className="font-semibold">
@@ -328,7 +337,7 @@ export default function DaysDots({ profile, calcs, birthDate }: DaysDotsProps) {
       )}
 
       {/* Narrative facts below */}
-      <div className="space-y-2 pt-4 border-t border-[#1F1F1F] font-monroe text-[14px] text-[#9A9A9A] leading-relaxed">
+      <div className="grid gap-2 pt-3 border-t border-[#1F1F1F] font-monroe text-[13px] text-[#9A9A9A] leading-relaxed md:grid-cols-3">
         <p>
           You have lived <span className="text-[#EAEAEA] font-semibold">{calcs.daysLived.toLocaleString()}</span> full days.
         </p>

@@ -14,11 +14,11 @@ import DaysDots from "./DaysDots";
 import HoursDots from "./HoursDots";
 import TodayPanel from "./TodayPanel";
 import DailyIntention from "./DailyIntention";
-import DailyMessage from "./DailyMessage";
 import LifeFacts from "./LifeFacts";
 import SleepEstimate from "./SleepEstimate";
 import PrivacyPanel from "./PrivacyPanel";
 import SettingsPanel from "./SettingsPanel";
+import ShareCardButton from "./ShareCardButton";
 import { LIFE_EXPECTANCY_REFERENCE } from "@/lib/life-in-dots/life-expectancy";
 
 export default function LifeInDotsApp() {
@@ -148,10 +148,10 @@ export default function LifeInDotsApp() {
   ) : null;
 
   return (
-    <div className="max-w-[1280px] mx-auto px-4 md:px-8 py-10 space-y-12">
+    <div className="max-w-[1280px] mx-auto px-4 md:px-8 py-6 md:py-8 space-y-8">
       
       {/* Top Greeting & Controls */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-[#1F1F1F] pb-6 gap-4">
+      <div className="border-b border-[#1F1F1F] pb-5">
         <div className="space-y-1">
           <span className="font-jetbrains text-[10px] uppercase tracking-[0.16em] text-[#7F7F7F]" suppressHydrationWarning>
             {time.toLocaleDateString(undefined, {
@@ -165,24 +165,33 @@ export default function LifeInDotsApp() {
             {greetingText}
           </h1>
         </div>
-        <div className="flex items-center gap-3">
-          <SettingsPanel profile={profile} onUpdateProfile={handleUpdateProfile} />
-        </div>
       </div>
 
-      {/* Daily message */}
-      <DailyMessage />
-
       {/* Main life stats summary */}
-      {calcs && <LifeSummary profile={profile} calcs={calcs} />}
+      {calcs && (
+        <LifeSummary
+          profile={profile}
+          calcs={calcs}
+          settingsControl={
+            <SettingsPanel
+              profile={profile}
+              onUpdateProfile={handleUpdateProfile}
+              compact
+            />
+          }
+          shareControl={
+            <ShareCardButton profile={profile} calcs={calcs} date={time} />
+          }
+        />
+      )}
 
       {/* Visualizations Segment */}
-      <div className="space-y-4">
+      <div className="space-y-3">
         <UnitTabs selected={preferences.selectedUnit} onChange={handleUnitChange} />
         <DotLegend unit={preferences.selectedUnit} />
         
         {/* Render correct grid based on selection */}
-        <div className="mt-6">
+        <div>
           {preferences.selectedUnit === "Years" && calcs && (
             <YearsDots profile={profile} calcs={calcs} />
           )}
@@ -238,16 +247,6 @@ export default function LifeInDotsApp() {
         </p>
         <p className="font-monroe text-[13px] text-[#7F7F7F] italic max-w-2xl">
           Life expectancy is a statistical population measure. It cannot tell anyone how long they will live.
-        </p>
-      </div>
-
-      {/* Privacy Section */}
-      <div className="w-full py-8 border-b border-[#1F1F1F] space-y-4" id="privacy-section">
-        <h3 className="font-monroe text-[18px] text-[#EAEAEA] font-normal">
-          Private by design
-        </h3>
-        <p className="font-monroe text-[14px] text-[#9A9A9A] leading-relaxed max-w-2xl">
-          Your birthday, name, settings, and daily intentions stay inside your browser. Life in Dots does not require an account and does not send this information to a server.
         </p>
       </div>
 

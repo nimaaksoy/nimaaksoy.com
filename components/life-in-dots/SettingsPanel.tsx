@@ -8,9 +8,14 @@ import { IconSettings, IconX } from "@tabler/icons-react";
 interface SettingsPanelProps {
   profile: UserProfile;
   onUpdateProfile: (updated: Partial<UserProfile>) => void;
+  compact?: boolean;
 }
 
-export default function SettingsPanel({ profile, onUpdateProfile }: SettingsPanelProps) {
+export default function SettingsPanel({
+  profile,
+  onUpdateProfile,
+  compact = false,
+}: SettingsPanelProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const today = new Date();
@@ -79,15 +84,19 @@ export default function SettingsPanel({ profile, onUpdateProfile }: SettingsPane
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-[#1F1F1F] bg-[#111111]/30 hover:border-[#2CFF05]/40 text-[#9A9A9A] hover:text-[#EAEAEA] font-jetbrains text-[11px] uppercase tracking-[0.08em] transition-all"
-        aria-label="Open settings panel"
+        className={
+          compact
+            ? "inline-flex h-7 w-7 items-center justify-center rounded-full border border-[#1F1F1F] bg-[#111111]/50 text-[#7F7F7F] transition-all hover:border-[#2CFF05]/50 hover:text-[#2CFF05] focus:outline-none focus:ring-1 focus:ring-[#2CFF05]/60"
+            : "flex items-center gap-2 px-3 py-1.5 rounded-lg border border-[#1F1F1F] bg-[#111111]/30 hover:border-[#2CFF05]/40 text-[#9A9A9A] hover:text-[#EAEAEA] font-jetbrains text-[11px] uppercase tracking-[0.08em] transition-all"
+        }
+        aria-label="Edit timeline settings"
       >
         <IconSettings size={14} />
-        <span>Settings</span>
+        {!compact && <span>Settings</span>}
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 top-full mt-2 w-[320px] bg-[#111111] border border-[#1F1F1F] rounded-xl p-5 shadow-2xl z-40 space-y-5 animate-in fade-in slide-in-from-top-2 duration-200">
+        <div className="absolute right-0 top-full mt-2 w-[min(320px,calc(100vw-2rem))] bg-[#111111] border border-[#1F1F1F] rounded-xl p-5 shadow-2xl z-40 space-y-5 animate-in fade-in slide-in-from-top-2 duration-200">
           <div className="flex justify-between items-center pb-2 border-b border-[#1F1F1F]">
             <h4 className="font-monroe text-[14px] text-[#EAEAEA] font-medium">Settings</h4>
             <button

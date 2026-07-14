@@ -10,7 +10,7 @@ const UNITS: ViewUnit[] = ["Years", "Months", "Days", "Hours"];
 
 export default function UnitTabs({ selected, onChange }: UnitTabsProps) {
   return (
-    <div className="w-full flex items-center justify-between border-b border-[#1F1F1F] py-4">
+    <div className="w-full flex items-center justify-center border-b border-[#1F1F1F] py-3">
       {/* Unit Tab Buttons */}
       <div 
         className="flex bg-[#111111] p-1 rounded-lg border border-[#1F1F1F]"
@@ -38,10 +38,6 @@ export default function UnitTabs({ selected, onChange }: UnitTabsProps) {
             </button>
           );
         })}
-      </div>
-
-      <div className="hidden sm:block text-[11px] font-jetbrains text-[#7F7F7F]">
-        Select unit to change the detail grid
       </div>
     </div>
   );
