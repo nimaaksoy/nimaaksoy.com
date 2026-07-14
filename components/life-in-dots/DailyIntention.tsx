@@ -80,17 +80,10 @@ export default function DailyIntention() {
   }, [intentions, todayKey]);
 
   return (
-    <div className="w-full py-8 border-b border-[#1F1F1F] space-y-4">
+    <div className="w-full py-6 border-b border-[#1F1F1F] space-y-4">
       <div className="flex flex-col items-start max-w-[640px]">
-        <span className="font-jetbrains text-[10px] uppercase tracking-[0.16em] text-[#7F7F7F]">
-          Daily Intention
-        </span>
-        <h3 className="mt-2 font-monroe text-[18px] text-[#EAEAEA] font-normal">
-          What would make today count?
-        </h3>
-
         {/* Input/Display area */}
-        <div className="mt-3 w-full">
+        <div className="w-full">
           {isEditing ? (
             <div className="space-y-2">
               <textarea

@@ -23,11 +23,8 @@ export default function PrivacyPanel({ onReset }: PrivacyPanelProps) {
   };
 
   return (
-    <div className="w-full py-8 border-b border-[#1F1F1F] space-y-6">
+    <div id="privacy-section" className="w-full py-8 border-b border-[#1F1F1F] space-y-6">
       <div className="flex flex-col">
-        <span className="font-jetbrains text-[10px] uppercase tracking-[0.16em] text-[#7F7F7F]">
-          Security
-        </span>
         <h3 className="mt-2 font-monroe text-[18px] text-[#EAEAEA] font-normal">
           Private by design
         </h3>

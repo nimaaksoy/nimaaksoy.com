@@ -5,17 +5,24 @@ import { UserProfile } from "@/lib/life-in-dots/types";
 interface LifeSummaryProps {
   profile: UserProfile;
   calcs: LifeCalculations;
+  settingsControl?: React.ReactNode;
+  shareControl?: React.ReactNode;
 }
 
-export default function LifeSummary({ profile, calcs }: LifeSummaryProps) {
+export default function LifeSummary({
+  profile,
+  calcs,
+  settingsControl,
+  shareControl,
+}: LifeSummaryProps) {
   const targetAge = profile.targetAge;
 
   return (
-    <div className="w-full py-8 border-b border-[#1F1F1F] grid gap-8 md:grid-cols-3">
+    <div className="w-full py-5 border-b border-[#1F1F1F] grid gap-6 md:grid-cols-[1fr_1fr_auto] md:items-end">
       {/* Lived Section */}
       <div className="flex flex-col">
         <span className="font-jetbrains text-[10px] uppercase tracking-[0.16em] text-[#7F7F7F]">
-          You have lived
+          You have lived · today is day
         </span>
         <span className="mt-2 font-monroe text-[36px] md:text-[48px] font-light text-[#EAEAEA] leading-none">
           {calcs.daysLived.toLocaleString()}{" "}
@@ -25,30 +32,24 @@ export default function LifeSummary({ profile, calcs }: LifeSummaryProps) {
         </span>
       </div>
 
-      {/* Today Section */}
-      <div className="flex flex-col border-y border-[#1F1F1F] py-6 md:border-y-0 md:py-0 md:border-x md:px-8">
-        <span className="font-jetbrains text-[10px] uppercase tracking-[0.16em] text-[#7F7F7F]">
-          Current Day
-        </span>
-        <span className="mt-2 font-monroe text-[36px] md:text-[48px] font-light text-[#2CFF05] leading-none">
-          Day {calcs.todayLivedIndex.toLocaleString()}
-        </span>
-      </div>
-
       {/* Ahead Section */}
-      <div className="flex flex-col">
-        <span className="font-jetbrains text-[10px] uppercase tracking-[0.16em] text-[#7F7F7F]">
-          Your possible {targetAge}-year timeline
-        </span>
+      <div className="flex flex-col border-t border-[#1F1F1F] pt-5 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+        <div className="flex items-center gap-2">
+          {settingsControl}
+          <span className="font-jetbrains text-[10px] uppercase tracking-[0.16em] text-[#7F7F7F]">
+            Your possible {targetAge}-year timeline
+          </span>
+        </div>
         <span className="mt-2 font-monroe text-[36px] md:text-[48px] font-light text-[#EAEAEA] leading-none">
           ~{calcs.daysAheadInTimeline.toLocaleString()}{" "}
           <span className="text-[16px] md:text-[20px] font-normal text-[#7F7F7F]">
             days ahead
           </span>
         </span>
-        <span className="mt-2 font-jetbrains text-[11px] text-[#7F7F7F] leading-normal">
-          This timeline is chosen by you. It is not a prediction.
-        </span>
+      </div>
+
+      <div className="flex md:justify-end">
+        {shareControl}
       </div>
     </div>
   );
