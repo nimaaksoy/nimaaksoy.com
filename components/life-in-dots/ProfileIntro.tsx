@@ -18,7 +18,7 @@ export default function ProfileIntro({
   // Temporary local values for onboarding if profile is null
   const name = profile?.name || "";
   const birthday = profile?.birthday || "";
-  const targetAge = profile?.targetAge || 90;
+  const targetAge = profile?.targetAge || 100;
   const timelineMode = profile?.timelineMode || "default";
 
   const today = new Date();
@@ -62,14 +62,14 @@ export default function ProfileIntro({
     }
     onUpdateProfile({ 
       targetAge: age,
-      timelineMode: age === 90 ? "default" : "custom"
+      timelineMode: age === 100 ? "default" : "custom"
     });
     return true;
   };
 
   const handleSelectMode = (mode: TimelineMode) => {
     if (mode === "default") {
-      onUpdateProfile({ timelineMode: "default", targetAge: 90 });
+      onUpdateProfile({ timelineMode: "default", targetAge: 100 });
     } else if (mode === "expectancy") {
       onUpdateProfile({ 
         timelineMode: "expectancy", 
@@ -159,7 +159,7 @@ export default function ProfileIntro({
                     : "border-[#1F1F1F] text-[#9A9A9A] hover:border-[#EAEAEA] hover:text-[#EAEAEA]"
                 }`}
               >
-                90 Years (Default)
+                100 Years (Default)
               </button>
               <button
                 type="button"
@@ -198,10 +198,10 @@ export default function ProfileIntro({
           </p>
           <button
             type="button"
-            onClick={() => onUpdateProfile({ targetAge: 90, timelineMode: "default" })}
+            onClick={() => onUpdateProfile({ targetAge: 100, timelineMode: "default" })}
             className="mt-3 font-jetbrains text-[12px] text-[#2CFF05] hover:underline"
           >
-            Use 90 years
+            Use 100 years
           </button>
         </div>
       )}

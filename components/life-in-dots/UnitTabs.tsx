@@ -4,16 +4,21 @@ import { ViewUnit } from "@/lib/life-in-dots/types";
 interface UnitTabsProps {
   selected: ViewUnit;
   onChange: (unit: ViewUnit) => void;
+  trailingControl?: React.ReactNode;
 }
 
 const UNITS: ViewUnit[] = ["Years", "Months", "Days", "Hours"];
 
-export default function UnitTabs({ selected, onChange }: UnitTabsProps) {
+export default function UnitTabs({
+  selected,
+  onChange,
+  trailingControl,
+}: UnitTabsProps) {
   return (
-    <div className="w-full flex items-center justify-center border-b border-[#1F1F1F] py-3">
+    <div className="relative w-full border-b border-[#1F1F1F] py-3">
       {/* Unit Tab Buttons */}
       <div 
-        className="flex bg-[#111111] p-1 rounded-lg border border-[#1F1F1F]"
+        className="mx-auto flex w-max bg-[#111111] p-1 rounded-lg border border-[#1F1F1F]"
         role="tablist"
         aria-label="Life visualization time units"
       >
@@ -39,6 +44,11 @@ export default function UnitTabs({ selected, onChange }: UnitTabsProps) {
           );
         })}
       </div>
+      {trailingControl ? (
+        <div className="mt-3 flex justify-center lg:absolute lg:right-0 lg:top-1/2 lg:mt-0 lg:-translate-y-1/2">
+          {trailingControl}
+        </div>
+      ) : null}
     </div>
   );
 }

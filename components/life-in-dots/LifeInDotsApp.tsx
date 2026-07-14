@@ -51,7 +51,7 @@ export default function LifeInDotsApp() {
       // Initialize a default profile if onboarding is starting
       currentProfile = {
         birthday: "",
-        targetAge: 90,
+        targetAge: 100,
         timelineMode: "default",
         sleepHours: 8,
         storageMode: "persistent",
@@ -176,16 +176,21 @@ export default function LifeInDotsApp() {
                 compact
               />
             }
-            shareControl={
-              <ShareCardButton profile={profile} calcs={calcs} date={time} />
-            }
           />
         )}
       </div>
 
       {/* Visualizations Segment */}
       <div className="space-y-3">
-        <UnitTabs selected={preferences.selectedUnit} onChange={handleUnitChange} />
+        <UnitTabs
+          selected={preferences.selectedUnit}
+          onChange={handleUnitChange}
+          trailingControl={
+            calcs ? (
+              <ShareCardButton profile={profile} calcs={calcs} date={time} />
+            ) : null
+          }
+        />
         <DotLegend unit={preferences.selectedUnit} />
         
         {/* Render correct grid based on selection */}
