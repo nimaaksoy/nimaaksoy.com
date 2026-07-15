@@ -1,0 +1,112 @@
+{
+  "date": "2026-07-15",
+  "items": [
+    {
+      "slug": "graphify",
+      "name": "Graphify",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "image": "https://opengraph.githubassets.com/1/Graphify-Labs/graphify",
+      "tags": ["ai-skills", "knowledge-graph", "coding-agents"],
+      "starsGained": 28,
+      "take": {
+        "en": "Turns a messy folder into a graph your coding agent can actually query.",
+        "fa": "یه پوشه شلوغ رو تبدیل می‌کنه به گرافی که ایجنت کدنویسی واقعا بتونه روش سوال بپرسه."
+      },
+      "why": {
+        "en": "Coding agents waste tokens rereading the same repo, notes, and PDFs every session. Graphify builds a persistent knowledge graph from code, docs, screenshots, and papers, then lets the agent query structure instead of raw files. The practical win is cheaper context, better connections across a codebase, and a graph that survives between runs.",
+        "fa": "ایجنت‌های کدنویسی هر سشن کلی توکن هدر می‌دن که همون ریپو و نوت و پی‌دی‌اف رو دوباره بخونن. این ابزار از کد، داک، اسکرین‌شات و مقاله یه گراف دانش پایدار می‌سازه تا ایجنت به‌جای فایل خام، ساختار رو بپرسه. فایده‌ش کانتکست ارزون‌تر، ارتباط بهتر تو کدبیس، و گرافیه که بین سشن‌ها می‌مونه."
+      },
+      "share": {
+        "x": {
+          "en": "Graphify is the move if your coding agent keeps rereading the same mess. it turns a folder of code, notes, and papers into a graph the agent can query later.\n\nhttps://nimaaksoy.com/radar/2026-07-15/graphify",
+          "fa": "اگه ایجنت کدنویسی‌ت هی همون شلوغی رو دوباره می‌خونه این یکی به درد می‌خوره. پوشه کد و نوت و مقاله رو می‌کنه گراف که بعدا بشه روش سوال پرسید. اسمش گرافیفای.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-15/graphify"
+        },
+        "linkedin": {
+          "en": "Graphify stood out if you care about agent context. instead of rereading raw files every session, it builds a persistent graph from code, docs, and screenshots that agents can query.\n\nhttps://nimaaksoy.com/radar/2026-07-15/graphify",
+          "fa": "اگه کانتکست ایجنت برات مهمه این یکی به چشم اومد. به‌جای خوندن دوباره فایل خام تو هر سشن، از کد و داک و اسکرین‌شات یه گراف پایدار می‌سازه که بشه روش سوال پرسید. اسم پروژه گرافیفای.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-15/graphify"
+        }
+      },
+      "source": "github"
+    },
+    {
+      "slug": "hallmark",
+      "name": "Hallmark",
+      "url": "https://github.com/Nutlope/hallmark",
+      "image": "https://opengraph.githubassets.com/1/Nutlope/hallmark",
+      "tags": ["ai-skills", "design", "ui"],
+      "starsGained": 10,
+      "take": {
+        "en": "Design skill that pushes agents away from the usual AI-looking UI.",
+        "fa": "اسکیل طراحی که ایجنت‌ها رو از ظاهر تکراری مدل‌ها دور می‌کنه."
+      },
+      "why": {
+        "en": "Most agent UI still lands on the same safe defaults. Hallmark forces a real structure and theme choice, then runs a long anti-slop checklist before output. Audit, redesign, and study modes make it useful on existing pages too, not only greenfield work. The difference is taste constraints, not another component library.",
+        "fa": "رابط کاربری ایجنت‌ها هنوز معمولاً همون پیش‌فرض‌های بی‌خطر مدل رو می‌ده. این اسکیل اول ساختار و تم واقعی انتخاب می‌کنه، بعد یه چک‌لیست ضد ظاهر مصنوعی روش می‌ذاره. حالت‌های بررسی، بازطراحی و مطالعه حتی برای صفحات موجود هم کار می‌کنه، نه فقط پروژه صفر. فرقش محدودیت سلیقه‌ست، نه یه لایبرری کامپوننت دیگه."
+      },
+      "share": {
+        "x": {
+          "en": "Hallmark is useful if agent UI keeps looking the same. it picks real structure and themes, then blocks the usual AI-looking defaults before the page ships.\n\nhttps://nimaaksoy.com/radar/2026-07-15/hallmark",
+          "fa": "اگه رابط کاربری ایجنت‌هات همیشه یه شکل درمیاد این یکی به درد می‌خوره. ساختار و تم واقعی انتخاب می‌کنه و ظاهر تکراری مدل‌ها رو قبل از خروجی می‌بنده. اسمش هال‌مارک.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-15/hallmark"
+        },
+        "linkedin": {
+          "en": "Hallmark is worth a look if coding agents build your product UI. it is less about pretty components and more about blocking the default AI look with real structure and taste checks.\n\nhttps://nimaaksoy.com/radar/2026-07-15/hallmark",
+          "fa": "اگه ایجنت‌ها رابط کاربری محصولت رو می‌سازن این یکی ارزش دیدن داره. کمتر درباره کامپوننت قشنگه و بیشتر درباره بستن ظاهر پیش‌فرض مدل‌ها با ساختار واقعی و چک سلیقه. اسم پروژه هال‌مارک.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-15/hallmark"
+        }
+      },
+      "source": "github"
+    },
+    {
+      "slug": "destructive-command-guard",
+      "name": "Destructive Command Guard",
+      "url": "https://github.com/Dicklesworthstone/destructive_command_guard",
+      "image": "https://opengraph.githubassets.com/1/Dicklesworthstone/destructive_command_guard",
+      "tags": ["agent-safety", "rust", "devtools"],
+      "take": {
+        "en": "Stops coding agents before they run the shell command that wipes your work.",
+        "fa": "ایجنت کدنویسی رو قبل از اجرای دستوری که کارتو پاک کنه متوقف می‌کنه."
+      },
+      "why": {
+        "en": "As agents get more shell access, one bad command can delete a branch, force push, or trash a machine. This Rust hook sits in front of Claude Code, Codex, Cursor, and similar tools and blocks destructive git and shell patterns before they run. The value is simple: keep agents fast without giving them free rein to break production or local state.",
+        "fa": "هر چی دسترسی شل ایجنت‌ها بیشتر می‌شه، یه دستور بد می‌تونه برنچ رو پاک کنه، فورس‌پوش بزنه، یا سیستم رو به‌هم بریزه. این هوک راست جلوی ابزارهایی مثل کلود کد، کدکس و کرسر می‌شینه و الگوهای خطرناک گیت و شل رو قبل از اجرا می‌بنده. ارزشش ساده‌ست: ایجنت سریع بمونه، ولی آزاد نباشه پروداکشن یا استیت لوکال رو خراب کنه."
+      },
+      "share": {
+        "x": {
+          "en": "Destructive Command Guard is the boring safety layer agent setups need. it blocks the shell and git moves that can wipe work before the agent runs them.\n\nhttps://nimaaksoy.com/radar/2026-07-15/destructive-command-guard",
+          "fa": "لایه ایمنی ساده ولی لازم برای ستاپ ایجنته. دستورهای خطرناک شل و گیت رو قبل از اجرا می‌بنده تا کار پاک نشه. اسمش دیستراکتیو کامند گارد.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-15/destructive-command-guard"
+        },
+        "linkedin": {
+          "en": "Destructive Command Guard is worth installing if coding agents have shell access. it is a fast hook that blocks destructive git and shell commands before they hit your machine.\n\nhttps://nimaaksoy.com/radar/2026-07-15/destructive-command-guard",
+          "fa": "اگه ایجنت‌های کدنویسی دسترسی شل دارن ارزش نصب داره. هوک سریعی که دستورهای خطرناک گیت و شل رو قبل از رسیدن به سیستم می‌بنده. اسم پروژه دیستراکتیو کامند گارد.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-15/destructive-command-guard"
+        }
+      },
+      "source": "github"
+    },
+    {
+      "slug": "bonsai",
+      "name": "Bonsai",
+      "url": "https://github.com/PrismML-Eng/Bonsai-demo",
+      "image": "https://opengraph.githubassets.com/1/PrismML-Eng/Bonsai-demo",
+      "tags": ["local-llm", "1-bit", "edge"],
+      "starsGained": 9,
+      "take": {
+        "en": "1-bit models small enough for phones, with vision and tools in the demo.",
+        "fa": "مدل‌های یک‌بیتی به اندازه گوشی، با بینایی و ابزار تو دمو."
+      },
+      "why": {
+        "en": "Local models usually lose quality when they get small enough for real devices. Bonsai pushes 1-bit and ternary weights far enough that an 8B fits around a gigabyte and the newer 27B line adds vision, tool calling, and long context. The useful change is edge deployment that still looks like a modern assistant stack, not a toy chat demo.",
+        "fa": "مدل لوکال معمولاً وقتی به اندازه دستگاه واقعی کوچک می‌شه کیفیت از دست می‌ده. این خانواده وزن‌های یک‌بیتی و سه‌حالته رو آن‌قدر جلو برده که مدل هشت‌بی حدود یک گیگ جا می‌شه و خط جدید بیست‌وهفت‌بی بینایی، فراخوانی ابزار و کانتکست بلند هم داره. تغییر مفیدش اجرای لبه با حس یه دستیار مدرنـه، نه یه دمو چت اسباب‌بازی."
+      },
+      "share": {
+        "x": {
+          "en": "Bonsai is wild for local AI. true 1-bit models small enough for phones, and the newer line brings vision and tools with it.\n\nhttps://nimaaksoy.com/radar/2026-07-15/bonsai",
+          "fa": "برای هوش مصنوعی لوکال خفنه. مدل‌های واقعا یک‌بیتی به اندازه گوشی، و خط جدیدش بینایی و ابزار هم داره. اسمش بونسای.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-15/bonsai"
+        },
+        "linkedin": {
+          "en": "Bonsai is interesting if you care about edge inference. 1-bit and ternary models that fit tight memory budgets, with a demo path that includes vision and tool calling.\n\nhttps://nimaaksoy.com/radar/2026-07-15/bonsai",
+          "fa": "اگه اجرای مدل رو دستگاه لبه برات مهمه این یکی جالبه. مدل‌های یک‌بیتی و سه‌حالته با حافظه خیلی کم، به‌همراه دمویی که بینایی و فراخوانی ابزار هم داره. اسم پروژه بونسای.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-15/bonsai"
+        }
+      },
+      "source": "github"
+    }
+  ]
+}
