@@ -1,0 +1,112 @@
+{
+  "date": "2026-07-16",
+  "items": [
+    {
+      "slug": "grok-build",
+      "name": "Grok Build",
+      "url": "https://github.com/xai-org/grok-build",
+      "image": "https://opengraph.githubassets.com/1/xai-org/grok-build",
+      "tags": ["coding-agent", "tui", "rust"],
+      "starsGained": 599,
+      "take": {
+        "en": "xAI open-sourced its coding agent harness. Full-screen TUI, not a toy.",
+        "fa": "ایکس‌ای‌آی هارنس ایجنت کدنویسی‌ش رو متن‌باز کرد. تی‌یو‌آی تمام‌صفحه، نه یه دمو."
+      },
+      "why": {
+        "en": "Most coding agents stay closed or half-open. Grok Build ships the real Rust TUI and agent runtime: edit files, run shell, search the web, work headless for CI, and embed in editors over ACP. The useful shift is a serious terminal coding agent you can install, inspect, and extend, not another thin wrapper around a chat API.",
+        "fa": "بیشتر ایجنت‌های کدنویسی بسته می‌مونن یا نصفه باز می‌شن. این یکی تی‌یو‌آی راست و رانتایم واقعی رو می‌ده: ویرایش فایل، شل، جستجوی وب، حالت بدون رابط برای سی‌آی، و جا شدن تو ادیتور با پروتکل ایجنت. تغییر مفیدش یه ایجنت ترمینال جدیه که بشه نصب کرد و خوند و گسترش داد، نه یه رپر نازک دور یه ای‌پی‌آی چت."
+      },
+      "share": {
+        "x": {
+          "en": "Grok Build is out in the open. xAI shipped the real coding agent harness as a full-screen TUI in Rust, with headless and editor modes too. that is a serious terminal agent, not another chat wrapper.\n\nhttps://nimaaksoy.com/radar/2026-07-16/grok-build",
+          "fa": "متن‌باز شد. هارنس ایجنت کدنویسی ایکس‌ای‌آی اومد بیرون با تی‌یو‌آی تمام‌صفحه و راست. حالت بدون رابط و ادیتور هم داره. این ایجنت ترمینال جدیه، نه یه رپر چت. اسمش گروک بیلد.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-16/grok-build"
+        },
+        "linkedin": {
+          "en": "Grok Build is worth a look if you care about terminal coding agents. xAI open-sourced the harness: fullscreen TUI, shell and file tools, headless CI mode, and editor embedding via ACP.\n\nhttps://nimaaksoy.com/radar/2026-07-16/grok-build",
+          "fa": "اگه ایجنت کدنویسی ترمینال برات مهمه ارزش دیدن داره. هارنس متن‌باز شده: تی‌یو‌آی تمام‌صفحه، ابزار فایل و شل، حالت سی‌آی، و جا شدن تو ادیتور. اسم پروژه گروک بیلد.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-16/grok-build"
+        }
+      },
+      "source": "github"
+    },
+    {
+      "slug": "inkling",
+      "name": "Inkling",
+      "url": "https://huggingface.co/thinkingmachines/Inkling",
+      "image": "https://cdn-uploads.huggingface.co/production/uploads/630e8f0bf6f6d700f50ebd2e/AvmDwmrWRMnKjOWvmLieg.png",
+      "tags": ["open-weights", "multimodal", "moe"],
+      "take": {
+        "en": "Thinking Machines dropped open weights for a huge multimodal MoE.",
+        "fa": "تینکینگ ماشینز وزن‌های باز یه مدل چندرسانه‌ای خیلی بزرگ رو داد."
+      },
+      "why": {
+        "en": "Inkling is a 975B total / 41B active MoE that takes text, image, and audio, with day-0 paths on vLLM, SGLang, and fine-tuning stacks. Apache-2.0 open weights from a Western lab matters if you want frontier-class multimodal work you can run, tune, and ship without waiting on a closed API. The practical win is ownership and customization, not just another chat demo.",
+        "fa": "مدل اینکلینگ یه معماری متخصص‌محور با حدود نهصد و هفتاد و پنج میلیارد پارامتر کل و چهل و یک میلیارد فعال‌ه که متن و تصویر و صدا می‌گیره. از روز اول مسیر اجرای وی‌ال‌ال‌ام و اس‌جی‌لنگ و فاین‌تیون هم داره. وزن باز با لایسنس آزاد از یه لابراتوار غربی یعنی کار چندرسانه‌ای سطح بالا رو بشه خودت اجرا و تنظیم و محصول کرد، نه فقط منتظر ای‌پی‌آی بسته موند. فایده‌ش مالکیت و سفارشی‌سازیه، نه یه دمو چت دیگه."
+      },
+      "share": {
+        "x": {
+          "en": "Inkling is a real open-weights drop. huge multimodal MoE from Thinking Machines, text plus image plus audio, with day-0 serving and fine-tune paths. ownership over another closed API.\n\nhttps://nimaaksoy.com/radar/2026-07-16/inkling",
+          "fa": "وزن باز واقعی اومد. مدل چندرسانه‌ای خیلی بزرگ از تینکینگ ماشینز، متن و تصویر و صدا، با مسیر اجرا و فاین‌تیون از روز اول. مالکیت به‌جای یه ای‌پی‌آی بسته دیگه. اسمش اینکلینگ.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-16/inkling"
+        },
+        "linkedin": {
+          "en": "Inkling stood out if you track open multimodal models. Thinking Machines released Apache-2.0 weights for a large MoE with text, image, and audio inputs, plus early serving and fine-tune support.\n\nhttps://nimaaksoy.com/radar/2026-07-16/inkling",
+          "fa": "اگه مدل‌های چندرسانه‌ای باز رو دنبال می‌کنی این یکی به چشم اومد. تینکینگ ماشینز وزن آزاد یه مدل متخصص‌محور بزرگ با ورودی متن و تصویر و صدا رو داد، به‌همراه پشتیبانی زود برای سرو و فاین‌تیون. اسم پروژه اینکلینگ.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-16/inkling"
+        }
+      },
+      "source": "huggingface"
+    },
+    {
+      "slug": "eve",
+      "name": "eve",
+      "url": "https://github.com/vercel/eve",
+      "image": "https://opengraph.githubassets.com/1/vercel/eve",
+      "tags": ["agents", "framework", "typescript"],
+      "starsGained": 12,
+      "take": {
+        "en": "Vercel’s agent framework puts tools, skills, and channels on the filesystem.",
+        "fa": "فریم‌ورک ایجنت ورسل ابزار و اسکیل و کانال رو روی فایل‌سیستم می‌ذاره."
+      },
+      "why": {
+        "en": "Agent projects get messy fast when prompts, tools, and channels live only in code. eve keeps the durable pieces in plain folders: instructions, tools, skills, channels, and schedules. That makes agents easier to inspect, version, and hand to coding agents that already know how to read a repo. The value is an operable project shape, not another opaque runtime.",
+        "fa": "پروژه‌های ایجنت زود شلوغ می‌شن وقتی پرامپت و ابزار و کانال فقط تو کد گیر باشن. این فریم‌ورک بخش‌های پایدار رو تو پوشه‌های ساده نگه می‌داره: دستورالعمل، ابزار، اسکیل، کانال و زمان‌بندی. ایجنت رو راحت‌تر می‌شه دید، نسخه‌بندی کرد، و به ایجنت کدنویسی داد که ریپو می‌خونه. ارزشش شکل پروژه‌ی قابل‌عملیاته، نه یه رانتایم مبهم دیگه."
+      },
+      "share": {
+        "x": {
+          "en": "eve is the agent framework shape that finally feels operable. tools, skills, channels, and schedules live as files, so the project is easy to inspect and hand to coding agents.\n\nhttps://nimaaksoy.com/radar/2026-07-16/eve",
+          "fa": "شکل فریم‌ورک ایجنتی که بالاخره حس قابل‌عملیات داره. ابزار و اسکیل و کانال و زمان‌بندی فایل‌ان، پس پروژه راحت دیده می‌شه و به ایجنت کدنویسی داده می‌شه. اسمش ایو.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-16/eve"
+        },
+        "linkedin": {
+          "en": "eve is worth a look if you build product agents. Vercel’s filesystem-first layout puts instructions, tools, skills, and channels where teams and coding agents can actually work with them.\n\nhttps://nimaaksoy.com/radar/2026-07-16/eve",
+          "fa": "اگه ایجنت محصول می‌سازی ارزش دیدن داره. چیدمان فایل‌اول ورسل دستورالعمل و ابزار و اسکیل و کانال رو جایی می‌ذاره که تیم و ایجنت کدنویسی واقعا بتونن باهاش کار کنن. اسم پروژه ایو.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-16/eve"
+        }
+      },
+      "source": "github"
+    },
+    {
+      "slug": "archify",
+      "name": "Archify",
+      "url": "https://github.com/tt-a1i/archify",
+      "image": "https://opengraph.githubassets.com/1/tt-a1i/archify",
+      "tags": ["ai-skills", "diagrams", "architecture"],
+      "starsGained": 4,
+      "take": {
+        "en": "Agent skill that turns a system description into a shareable architecture diagram.",
+        "fa": "اسکیل ایجنت که توضیح سیستم رو تبدیل می‌کنه به دیاگرام معماری قابل‌اشتراک."
+      },
+      "why": {
+        "en": "Most agent diagram output is ugly Mermaid or a one-off image. Archify makes a self-contained HTML diagram with dark and light themes, clipboard PNG, and crisp export up to 4×. You describe the system in chat, iterate, and drop the result into Slack, Notion, or a README. The difference is diagram quality builders will actually send, not another sketch skill.",
+        "fa": "خروجی دیاگرام ایجنت‌ها معمولاً مرmaid زشته یا یه تصویر یک‌بارمصرفه. این اسکیل یه دیاگرام اچ‌تی‌ام‌ال مستقل می‌سازه با تم تیره و روشن، کپی تصویر، و خروجی تیز تا چهار برابر. سیستم رو تو چت توضیح می‌دی، اصلاح می‌کنی، و می‌فرستی تو اسلک یا نوشن یا ریدمی. فرقش کیفیت دیاگرامیه که واقعاً بشه فرستاد، نه یه اسکیل اسکچ دیگه."
+      },
+      "share": {
+        "x": {
+          "en": "Archify is useful if your agent diagrams still look rough. describe the system in chat, get a polished HTML diagram with theme toggle and clean exports you can actually share.\n\nhttps://nimaaksoy.com/radar/2026-07-16/archify",
+          "fa": "اگه دیاگرام‌های ایجنتت هنوز زشتن این یکی به درد می‌خوره. سیستم رو تو چت توضیح بده، دیاگرام اچ‌تی‌ام‌ال تمیز با تعویض تم و خروجی قابل‌اشتراک بگیر. اسمش آرچیفای.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-16/archify"
+        },
+        "linkedin": {
+          "en": "Archify is worth installing if coding agents write your architecture notes. it turns plain descriptions into shareable diagrams with dark/light themes and high-res export.\n\nhttps://nimaaksoy.com/radar/2026-07-16/archify",
+          "fa": "اگه ایجنت‌ها نوت معماری‌ت رو می‌نویسن ارزش نصب داره. توضیح ساده رو می‌کنه دیاگرام قابل‌اشتراک با تم تیره و روشن و خروجی باکیفیت. اسم پروژه آرچیفای.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-16/archify"
+        }
+      },
+      "source": "github"
+    }
+  ]
+}
