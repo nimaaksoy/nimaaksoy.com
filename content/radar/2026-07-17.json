@@ -1,0 +1,111 @@
+{
+  "date": "2026-07-17",
+  "items": [
+    {
+      "slug": "kimi-k3",
+      "name": "Kimi K3",
+      "url": "https://platform.kimi.ai/docs/guide/kimi-k3-quickstart",
+      "image": "https://platform.kimi.ai/og.png?v=1",
+      "tags": ["open-weights", "multimodal", "frontier"],
+      "take": {
+        "en": "Moonshot shipped a 2.8T flagship and promised open weights on July 27.",
+        "fa": "مون‌شات یه مدل پرچمدار خیلی بزرگ داد و وزن باز رو برای بیست‌وهفتم قول داد."
+      },
+      "why": {
+        "en": "Kimi K3 is not just another API drop. Moonshot launched a 2.8T sparse MoE with a 1M context and strong coding and knowledge-work claims, then committed to full open weights within about ten days. That combination matters if you plan local or self-hosted frontier work: you can try the hosted model now and prepare serving, evals, and product paths before the weights land.",
+        "fa": "این فقط یه ای‌پی‌آی جدید نیست. مون‌شات یه مدل متخصص‌محور خیلی بزرگ با کانتکست یک‌میلیونی و ادعای قوی تو کدنویسی و کار دانشی داد، و قول وزن کامل آزاد تا حدود ده روز دیگه رو هم گذاشت. اگه کار لوکال یا خودمیزبانی سطح بالا برات مهمه، الان می‌تونی نسخه میزبانی‌شده رو تست کنی و مسیر سرو و ارزیابی و محصول رو قبل از رسیدن وزن‌ها آماده کنی. اسم مدل کیمی کی‌۳."
+      },
+      "share": {
+        "x": {
+          "en": "Kimi K3 is the open-weights countdown that matters. Moonshot shipped a huge flagship with long context and coding strength, and the weights are promised for July 27. try it now, prep the stack before the files drop.\n\nhttps://nimaaksoy.com/radar/2026-07-17/kimi-k3",
+          "fa": "شمارش معکوس وزن باز جدی اومد. مون‌شات یه پرچمدار خیلی بزرگ با کانتکست بلند و قدرت کدنویسی داد و وزن‌ها رو برای بیست‌وهفتم قول داد. الان تست کن، قبل از فایل‌ها استک رو آماده کن. اسمش کیمی کی‌۳.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-17/kimi-k3"
+        },
+        "linkedin": {
+          "en": "Kimi K3 stood out if you track open frontier models. Moonshot launched a 2.8T-class flagship with 1M context, and open weights are scheduled for July 27. useful window to evaluate now and plan self-hosting before the release.\n\nhttps://nimaaksoy.com/radar/2026-07-17/kimi-k3",
+          "fa": "اگه مدل‌های باز سطح بالا رو دنبال می‌کنی این یکی به چشم اومد. مون‌شات یه پرچمدار خیلی بزرگ با کانتکست یک‌میلیونی داد و وزن آزاد رو برای بیست‌وهفتم گذاشته. پنجره خوبیه برای ارزیابی الان و آماده‌سازی خودمیزبانی قبل از انتشار. اسم مدل کیمی کی‌۳.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-17/kimi-k3"
+        }
+      },
+      "source": "product"
+    },
+    {
+      "slug": "wigolo",
+      "name": "wigolo",
+      "url": "https://github.com/KnockOutEZ/wigolo",
+      "image": "https://opengraph.githubassets.com/1/KnockOutEZ/wigolo",
+      "tags": ["mcp", "coding-agents", "local-first"],
+      "starsGained": 10,
+      "take": {
+        "en": "Local-first web search and crawl for coding agents over MCP. No API keys.",
+        "fa": "جستجو و خزیدن وب لوکال برای ایجنت کدنویسی روی ام‌سی‌پی. بدون کلید ای‌پی‌آی."
+      },
+      "why": {
+        "en": "Most agent web tools bill per query or need cloud keys. wigolo runs search, fetch, crawl, extract, and research loops on your machine as an MCP server, keeps data under a local folder, and wires into Claude Code, Cursor, Codex, and other agents in one install. The useful shift is web access that stays private and free to hammer while the agent thinks, not another metered scrape API.",
+        "fa": "بیشتر ابزارهای وب ایجنت یا به ازای هر کوئری پول می‌گیرن یا کلید ابری می‌خوان. این پروژه جستجو، گرفتن صفحه، خزیدن، استخراج و حلقه تحقیق رو روی خود سیستم به‌صورت سرور ام‌سی‌پی اجرا می‌کنه، داده رو تو پوشه لوکال نگه می‌داره، و با یه نصب به کلود کد و کرسر و کدکس و بقیه وصل می‌شه. تغییر مفیدش دسترسی وبیه که خصوصی بمونه و موقع فکر کردن ایجنت هزینه نسازه، نه یه ای‌پی‌آی اسکرپ با قبض. اسمش ویگولو."
+      },
+      "share": {
+        "x": {
+          "en": "wigolo is the web layer coding agents needed. local search, fetch, crawl, and research over MCP, no API keys, no cloud bill that grows with agent loops.\n\nhttps://nimaaksoy.com/radar/2026-07-17/wigolo",
+          "fa": "لایه وبی که ایجنت‌های کدنویسی لازم داشتن. جستجو و گرفتن صفحه و خزیدن و تحقیق لوکال روی ام‌سی‌پی، بدون کلید ای‌پی‌آی و بدون قبض ابری که با حلقه ایجنت بزرگ بشه. اسمش ویگولو.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-17/wigolo"
+        },
+        "linkedin": {
+          "en": "wigolo is worth a look if coding agents need the open web without metered APIs. it is a local-first MCP server for search, crawl, extract, and research that stays on your machine.\n\nhttps://nimaaksoy.com/radar/2026-07-17/wigolo",
+          "fa": "اگه ایجنت کدنویسی‌ت به وب باز نیاز داره ولی نمی‌خوای ای‌پی‌آی پولی ببندی ارزش دیدن داره. سرور ام‌سی‌پی لوکال برای جستجو و خزیدن و استخراج و تحقیق که رو خود سیستمت می‌مونه. اسم پروژه ویگولو.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-17/wigolo"
+        }
+      },
+      "source": "github"
+    },
+    {
+      "slug": "lingbot-map",
+      "name": "LingBot-Map",
+      "url": "https://github.com/Robbyant/lingbot-map",
+      "image": "https://opengraph.githubassets.com/1/Robbyant/lingbot-map",
+      "tags": ["3d", "computer-vision", "foundation-model"],
+      "starsGained": 37,
+      "take": {
+        "en": "Feed-forward 3D foundation model that rebuilds scenes from a video stream.",
+        "fa": "مدل پایه سه‌بعدی فیدفوروارد که صحنه رو از استریم ویدیو بازسازی می‌کنه."
+      },
+      "why": {
+        "en": "Most strong 3D reconstruction still leans on slow iterative optimization. LingBot-Map is a streaming foundation model that keeps geometric context in a feed-forward path, runs around 20 FPS on modest resolution, and stays stable over very long videos. Open weights and demos make this useful if you care about robotics, mapping, or real-time scene understanding without a heavy offline pipeline.",
+        "fa": "بیشتر بازسازی سه‌بعدی قوی هنوز به بهینه‌سازی کند و تکراری تکیه داره. این مدل پایه استریم، زمینه هندسی رو تو مسیر فیدفوروارد نگه می‌داره، حدود بیست فریم بر ثانیه رو رزولوشن معقول می‌ده، و رو ویدیوهای خیلی بلند هم پایدار می‌مونه. وزن باز و دموهاش برای رباتیک، نقشه‌سازی، یا فهم صحنه لحظه‌ای بدون پایپ‌لاین سنگین آفلاین به درد می‌خوره. اسم پروژه لینگ‌بات‌مپ."
+      },
+      "share": {
+        "x": {
+          "en": "LingBot-Map is a real shift for streaming 3D. feed-forward reconstruction from video, long sequences, open weights. useful if robotics or live mapping is on your stack.\n\nhttps://nimaaksoy.com/radar/2026-07-17/lingbot-map",
+          "fa": "برای سه‌بعدی استریم تغییر واقعیه. بازسازی فیدفوروارد از ویدیو، سکانس‌های بلند، وزن باز. اگه رباتیک یا نقشه‌سازی زنده تو استکت هست به درد می‌خوره. اسمش لینگ‌بات‌مپ.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-17/lingbot-map"
+        },
+        "linkedin": {
+          "en": "LingBot-Map stood out if you follow open 3D models. it reconstructs scenes from streaming video in a feed-forward setup that holds up on long sequences, with open weights and demos.\n\nhttps://nimaaksoy.com/radar/2026-07-17/lingbot-map",
+          "fa": "اگه مدل‌های سه‌بعدی باز رو دنبال می‌کنی این یکی به چشم اومد. صحنه رو از ویدیوی استریم با مسیر فیدفوروارد بازسازی می‌کنه و رو سکانس‌های بلند هم دوام میاره، با وزن باز و دمو. اسم پروژه لینگ‌بات‌مپ.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-17/lingbot-map"
+        }
+      },
+      "source": "github"
+    },
+    {
+      "slug": "palmclaw",
+      "name": "PalmClaw",
+      "url": "https://github.com/ModalityDance/PalmClaw",
+      "image": "https://opengraph.githubassets.com/1/ModalityDance/PalmClaw",
+      "tags": ["mobile-agents", "on-device", "android"],
+      "take": {
+        "en": "Full agent runtime on the phone, with typed device tools instead of GUI taps.",
+        "fa": "رانتایم کامل ایجنت رو گوشی، با ابزارهای تایپ‌شده دستگاه به‌جای لمس رابط."
+      },
+      "why": {
+        "en": "Most mobile agents still drive phones by tapping screens. PalmClaw runs memory, skills, tools, and the agent loop natively on Android and exposes device capabilities as structured tools. That is safer to bound and often faster than long GUI action chains. The practical win is a private on-device assistant stack you can install from an APK and inspect, not another remote agent that only pretends to live on the phone.",
+        "fa": "بیشتر ایجنت‌های موبایل هنوز با لمس صفحه گوشی رو راه می‌برن. این پروژه حافظه، اسکیل، ابزار و حلقه ایجنت رو مستقیم رو اندروید اجرا می‌کنه و قابلیت‌های دستگاه رو به‌صورت ابزار ساخت‌یافته می‌ده. مرز ایمنی‌ش واضح‌تره و معمولاً از زنجیره بلند لمس‌ها سریع‌تره. فایده‌ش یه استک دستیار خصوصی رو خود گوشیه که بشه از ای‌پی‌کی نصب کرد و خوند، نه یه ایجنت ریموت که فقط ظاهرش رو گوشی زندگی می‌کنه. اسمش پالم‌کلا."
+      },
+      "share": {
+        "x": {
+          "en": "PalmClaw is the mobile agent approach that feels right. full loop on Android, typed device tools instead of endless GUI taps, private by default.\n\nhttps://nimaaksoy.com/radar/2026-07-17/palmclaw",
+          "fa": "رویکرد ایجنت موبایلی که درست حس می‌شه. حلقه کامل رو اندروید، ابزار تایپ‌شده دستگاه به‌جای لمس بی‌پایان رابط، خصوصی به‌صورت پیش‌فرض. اسمش پالم‌کلا.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-17/palmclaw"
+        },
+        "linkedin": {
+          "en": "PalmClaw is worth a look if you care about on-device agents. it runs the full agent stack on Android and calls device capabilities as tools instead of driving the UI by taps.\n\nhttps://nimaaksoy.com/radar/2026-07-17/palmclaw",
+          "fa": "اگه ایجنت رو خود دستگاه برات مهمه ارزش دیدن داره. استک کامل ایجنت رو اندروید اجرا می‌شه و قابلیت‌های دستگاه رو به‌جای لمس رابط، به‌صورت ابزار صدا می‌زنه. اسم پروژه پالم‌کلا.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-17/palmclaw"
+        }
+      },
+      "source": "github"
+    }
+  ]
+}
