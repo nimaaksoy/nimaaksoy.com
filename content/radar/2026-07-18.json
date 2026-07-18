@@ -1,0 +1,112 @@
+{
+  "date": "2026-07-18",
+  "items": [
+    {
+      "slug": "code-review-graph",
+      "name": "code-review-graph",
+      "url": "https://github.com/tirth8205/code-review-graph",
+      "image": "https://opengraph.githubassets.com/1/tirth8205/code-review-graph",
+      "tags": ["mcp", "coding-agents", "knowledge-graph"],
+      "starsGained": 7,
+      "take": {
+        "en": "Structural code map for agents so reviews stop re-reading the whole repo.",
+        "fa": "نقشه ساختاری کد برای ایجنت تا ریویو دوباره کل ریپو رو نخونه."
+      },
+      "why": {
+        "en": "Coding agents still burn tokens rereading large repos on every review. code-review-graph builds a persistent Tree-sitter graph of your codebase, updates it incrementally, and serves precise slices over MCP so tools like Claude Code only pull what changed. The useful shift is cheaper large-repo review with structure, not another RAG wrapper over raw files.",
+        "fa": "ایجنت‌های کدنویسی هنوز تو هر ریویو کلی توکن هدر می‌دن که ریپوی بزرگ رو دوباره بخونن. این ابزار با تری‌سیتر یه گراف پایدار از کد می‌سازه، تغییرها رو تدریجی آپدیت می‌کنه، و از طریق ام‌سی‌پی تکه‌های دقیق می‌ده تا ابزارهایی مثل کلود کد فقط همون بخش لازم رو بکشن. تغییر مفیدش ریویوی ارزون‌تر رو ریپوی بزرگ با ساختاره، نه یه رپر جستجو رو فایل خام. اسمش کد-ریویو-گراف."
+      },
+      "share": {
+        "x": {
+          "en": "code-review-graph is the missing map for agent code review. persistent Tree-sitter graph, incremental updates, MCP so the agent reads only what matters instead of the whole repo again.\n\nhttps://nimaaksoy.com/radar/2026-07-18/code-review-graph",
+          "fa": "نقشه‌ای که ریویوی ایجنت لازم داشت. گراف پایدار از ساختار کد، آپدیت تدریجی، ام‌سی‌پی تا ایجنت فقط همون بخش لازم رو بخونه نه دوباره کل ریپو. اسمش کد-ریویو-گراف.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-18/code-review-graph"
+        },
+        "linkedin": {
+          "en": "code-review-graph is worth a look if coding agents review large repos. it keeps a local structural graph and serves tight context over MCP so reviews stop reloading the whole tree.\n\nhttps://nimaaksoy.com/radar/2026-07-18/code-review-graph",
+          "fa": "اگه ایجنت‌هات ریپوی بزرگ ریویو می‌کنن ارزش دیدن داره. گراف ساختاری لوکال نگه می‌داره و از ام‌سی‌پی کانتکست تنگ می‌ده تا ریویو دوباره کل درخت فایل رو لود نکنه. اسم پروژه کد-ریویو-گراف.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-18/code-review-graph"
+        }
+      },
+      "source": "github"
+    },
+    {
+      "slug": "alaya-world",
+      "name": "AlayaWorld",
+      "url": "https://github.com/AlayaLab/AlayaWorld",
+      "image": "https://opengraph.githubassets.com/1/AlayaLab/AlayaWorld",
+      "tags": ["world-model", "video", "open-weights"],
+      "take": {
+        "en": "Open interactive world model you can steer with camera and mid-run prompts.",
+        "fa": "مدل دنیای تعاملی باز که با دوربین و پرامپت وسط اجرا کنترل می‌شه."
+      },
+      "why": {
+        "en": "Most video world demos collapse after a short clip or stay non-interactive. AlayaWorld ships open inference plus weights for a long-horizon playable generator with real-time camera control, prompt switching, and memory that keeps revisited places stable. That is useful if you care about games, simulation, or spatial agents that need minutes of consistent rollout, not a one-shot cinematic clip.",
+        "fa": "بیشتر دموهای دنیای ویدیویی یا زود به‌هم می‌ریزن یا تعاملی نیستن. این پروژه اینفرنس و وزن باز یه ژنراتور قابل‌بازی بلندمدت رو می‌ده با کنترل لحظه‌ای دوربین، عوض کردن پرامپت وسط کار، و حافظه‌ای که جاهای دیده‌شده رو پایدار نگه می‌داره. برای بازی، شبیه‌سازی، یا ایجنت فضایی که به چند دقیقه رولاوت پایدار نیاز داره به درد می‌خوره، نه فقط یه کلیپ سینمایی یک‌باره. اسمش آلایا ورلد."
+      },
+      "share": {
+        "x": {
+          "en": "AlayaWorld just got more real. open inference and weights for an interactive long-horizon world model with camera control and mid-run prompt switches that hold up past a short clip.\n\nhttps://nimaaksoy.com/radar/2026-07-18/alaya-world",
+          "fa": "جدی‌تر شد. اینفرنس و وزن باز برای مدل دنیای تعاملی بلندمدت با کنترل دوربین و عوض کردن پرامپت وسط اجرا که از یه کلیپ کوتاه دوام میاره. اسمش آلایا ورلد.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-18/alaya-world"
+        },
+        "linkedin": {
+          "en": "AlayaWorld stood out if you follow open world models. the team released inference code and weights for interactive long-horizon video generation with camera control and chunk-level prompt switching.\n\nhttps://nimaaksoy.com/radar/2026-07-18/alaya-world",
+          "fa": "اگه مدل‌های دنیای باز رو دنبال می‌کنی این یکی به چشم اومد. تیم اینفرنس و وزن باز برای تولید ویدیوی تعاملی بلندمدت با کنترل دوربین و تعویض پرامپت در سطح چانک رو داد. اسم پروژه آلایا ورلد.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-18/alaya-world"
+        }
+      },
+      "source": "github"
+    },
+    {
+      "slug": "moss-transcribe-diarize",
+      "name": "MOSS-Transcribe-Diarize",
+      "url": "https://github.com/OpenMOSS/MOSS-Transcribe-Diarize",
+      "image": "https://opengraph.githubassets.com/1/OpenMOSS/MOSS-Transcribe-Diarize",
+      "tags": ["speech", "open-weights", "multimodal"],
+      "starsGained": 3,
+      "take": {
+        "en": "Tiny open model that does long multi-speaker transcripts in one pass.",
+        "fa": "مدل باز کوچیک که ترنسکریپت چندگوینده بلند رو یه‌جا می‌ده."
+      },
+      "why": {
+        "en": "Meeting and podcast pipelines still glue separate ASR and diarization stacks together. MOSS-Transcribe-Diarize is a 0.9B open model that jointly outputs speaker labels, timestamps, and text for long messy audio, and it just took first place in the INTERSPEECH 2026 MLC-SLM challenge across 14 languages. The practical win is one end-to-end open path for speaker-aware transcripts without a fragile multi-stage pipeline.",
+        "fa": "پایپ‌لاین میتینگ و پادکست هنوز معمولاً تشخیص گفتار و جداسازی گوینده رو جدا به هم می‌چسبونه. این مدل باز نه‌دهم‌میلیاردی متن و برچسب گوینده و زمان‌بندی رو با هم برای صوت بلند و شلوغ می‌ده، و تازه تو چالش چندزبانه گفتار اینتراسپیچ بیست‌وشش اول شد رو چهارده زبان. فایده‌ش یه مسیر سر‌به‌سر باز برای ترنسکریپت گوینده‌آگاهه، نه یه پایپ‌لاین چندمرحله‌ای شکننده. اسمش ماس-ترنسکرایب-دیاراایز."
+      },
+      "share": {
+        "x": {
+          "en": "MOSS-Transcribe-Diarize is the open audio stack worth watching. 0.9B model does long multi-speaker transcripts with timestamps in one pass, and it just won the INTERSPEECH 2026 multilingual challenge.\n\nhttps://nimaaksoy.com/radar/2026-07-18/moss-transcribe-diarize",
+          "fa": "استک صوت باز که ارزش دنبال کردن داره. مدل نه‌دهم‌میلیاردی ترنسکریپت چندگوینده بلند با زمان‌بندی رو یه‌جا می‌ده و تازه چالش چندزبانه گفتار اینتراسپیچ بیست‌وشش رو برد. اسمش ماس-ترنسکرایب-دیاراایز.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-18/moss-transcribe-diarize"
+        },
+        "linkedin": {
+          "en": "MOSS-Transcribe-Diarize is worth a look if you ship meeting or podcast tooling. one small open model jointly handles transcription, diarization, and timestamps, with a fresh INTERSPEECH 2026 win behind it.\n\nhttps://nimaaksoy.com/radar/2026-07-18/moss-transcribe-diarize",
+          "fa": "اگه ابزار میتینگ یا پادکست می‌سازی ارزش دیدن داره. یه مدل باز کوچیک ترنسکریپت و جداسازی گوینده و زمان‌بندی رو با هم انجام می‌ده و تازه تو اینتراسپیچ بیست‌وشش هم اول شده. اسم پروژه ماس-ترنسکرایب-دیاراایز.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-18/moss-transcribe-diarize"
+        }
+      },
+      "source": "github"
+    },
+    {
+      "slug": "turbovec",
+      "name": "turbovec",
+      "url": "https://github.com/RyanCodrai/turbovec",
+      "image": "https://opengraph.githubassets.com/1/RyanCodrai/turbovec",
+      "tags": ["vector-search", "rag", "rust"],
+      "starsGained": 2,
+      "take": {
+        "en": "Local vector index that shrinks a 31GB float corpus to about 4GB.",
+        "fa": "ایندکس برداری لوکال که کورپوس سی‌ویک گیگی رو حدود چهار گیگ می‌کنه."
+      },
+      "why": {
+        "en": "Local RAG often dies on memory before quality. turbovec is a Rust vector index with Python bindings built on Google Research TurboQuant, so you can ingest online with no train step, search with SIMD kernels, and keep a ten-million vector corpus near 4GB instead of 31GB float32. The value is private high-speed retrieval you can actually host, not another managed vector database.",
+        "fa": "رگ لوکال اغلب قبل از کیفیت رو حافظه می‌میره. این ایندکس برداری راست با بایندینگ پایتون رو الگوریتم توربوکوانت گوگل ریسرچ سوار شده، پس بدون مرحله ترین آنلاین اینجست می‌کنی، با کرنل سیم‌دی سرچ می‌زنی، و کورپوس ده‌میلیون برداری رو نزدیک چهار گیگ نگه می‌داری به‌جای سی‌ویک گیگ فلوت. ارزشش بازیابی خصوصی و سریعه که واقعا بشه خودت هاست کرد، نه یه دیتابیس برداری مدیریت‌شده دیگه. اسمش توربووک."
+      },
+      "share": {
+        "x": {
+          "en": "turbovec is the local vector index people actually need. TurboQuant in Rust, online ingest, SIMD search, and a 31GB float corpus that lands around 4GB without a managed DB.\n\nhttps://nimaaksoy.com/radar/2026-07-18/turbovec",
+          "fa": "ایندکس برداری لوکالی که واقعا لازم می‌شه. توربوکوانت تو راست، اینجست آنلاین، سرچ سیم‌دی، و کورپوس سی‌ویک گیگی فلوت که حدود چهار گیگ می‌شه بدون دیتابیس مدیریت‌شده. اسمش توربووک.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-18/turbovec"
+        },
+        "linkedin": {
+          "en": "turbovec is worth a look if local RAG is memory-bound. it implements Google Research TurboQuant in Rust with Python bindings so large embedding indexes stay small and fast on your own machines.\n\nhttps://nimaaksoy.com/radar/2026-07-18/turbovec",
+          "fa": "اگه رگ لوکالت رو حافظه گیر می‌کنه ارزش دیدن داره. توربوکوانت گوگل ریسرچ رو تو راست با بایندینگ پایتون پیاده کرده تا ایندکس امبدینگ بزرگ رو خود سیستم کوچک و سریع بمونه. اسم پروژه توربووک.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-18/turbovec"
+        }
+      },
+      "source": "github"
+    }
+  ]
+}
