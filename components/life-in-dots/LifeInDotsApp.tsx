@@ -20,6 +20,9 @@ import SettingsPanel from "./SettingsPanel";
 import ShareCardButton from "./ShareCardButton";
 import { LIFE_EXPECTANCY_REFERENCE } from "@/lib/life-in-dots/life-expectancy";
 
+const CHROME_WEB_STORE_URL =
+  "https://chromewebstore.google.com/detail/life-in-dots/ikigeadefhhdifjmgppbhhnchcodcmmh";
+
 export default function LifeInDotsApp() {
   const [mounted, setMounted] = useState(false);
   const [profile, setProfile] = useState<UserProfile | null>(null);
@@ -270,6 +273,16 @@ export default function LifeInDotsApp() {
         </h3>
         <p className="font-monroe text-[14px] text-[#9A9A9A] leading-relaxed max-w-2xl">
           You can replace your browser&apos;s New Tab page with Life in Dots. The extension works fully offline and preserves your privacy, storing data locally inside Chrome secure storage.
+        </p>
+        <p>
+          <a
+            href={CHROME_WEB_STORE_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center border border-[#2CFF05] px-4 py-2 font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#2CFF05] transition-colors hover:bg-[#2CFF05] hover:text-[#0A0A0A]"
+          >
+            View on Chrome Web Store
+          </a>
         </p>
         <p className="font-jetbrains text-[12px] text-[#7F7F7F]">
           Installation instructions are available in the project repository under{" "}

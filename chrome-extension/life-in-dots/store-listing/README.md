@@ -35,6 +35,10 @@ Privacy:
 
 Your birthday, name, settings, and daily intentions stay in Chrome storage on your device. Life in Dots does not send this information to a server.
 
+Privacy policy URL:
+
+https://nimaaksoy.com/life-in-dots/privacy
+
 Permissions:
 
 - `storage`: used only to remember your local Life in Dots profile, settings, and daily intentions between new tabs.

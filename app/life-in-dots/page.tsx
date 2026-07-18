@@ -75,9 +75,9 @@ export default function LifeInDotsPage() {
             <a href="#about-section" className="transition-colors hover:text-[#2CFF05]">
               About
             </a>
-            <a href="#privacy-section" className="transition-colors hover:text-[#2CFF05]">
+            <Link href="/life-in-dots/privacy" className="transition-colors hover:text-[#2CFF05]">
               Privacy
-            </a>
+            </Link>
             <a href="#chrome-extension" className="transition-colors hover:text-[#2CFF05] hidden sm:inline">
               Add to Chrome
             </a>
@@ -119,9 +119,9 @@ export default function LifeInDotsPage() {
             <a href="#about-section" className="hover:text-[#2CFF05] transition-colors">
               About
             </a>
-            <a href="#privacy-section" className="hover:text-[#2CFF05] transition-colors">
+            <Link href="/life-in-dots/privacy" className="hover:text-[#2CFF05] transition-colors">
               Privacy
-            </a>
+            </Link>
             <a href="#methodology-section" className="hover:text-[#2CFF05] transition-colors">
               Source and methodology
             </a>
