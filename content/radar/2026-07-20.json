@@ -1,0 +1,111 @@
+{
+  "date": "2026-07-20",
+  "items": [
+    {
+      "slug": "orca",
+      "name": "Orca",
+      "url": "https://github.com/stablyai/orca",
+      "image": "https://opengraph.githubassets.com/1/stablyai/orca",
+      "tags": ["coding-agents", "orchestration", "desktop"],
+      "starsGained": 16,
+      "take": {
+        "en": "Desktop app for a fleet of coding agents, each in its own worktree.",
+        "fa": "اپ دسکتاپ برای ناوگان ایجنت کدنویسی، هر کدوم تو ورک‌تری خودش."
+      },
+      "why": {
+        "en": "Running five coding agents usually means five terminals and a mess of branches. Orca is an open ADE that fans one prompt across Codex, Claude Code, OpenCode, or Pi in isolated git worktrees, then lets you compare and merge the winner. Mobile companion, SSH remote worktrees, design mode into Chromium, and in-app PR review keep the fleet steerable without leaving the desk. The useful shift is parallel agent work as a product surface, not a pile of tabs.",
+        "fa": "اجرای پنج ایجنت کدنویسی معمولا یعنی پنج ترمینال و یه شلوغی از برنچ. این اپ باز یه محیط کاره که یه پرامپت رو بین کدکس و کلود کد و اپن‌کد و پی پخش می‌کنه، هر کدوم تو ورک‌تری جدا، بعد نتیجه رو مقایسه و مرج می‌کنی. همراه موبایل، ورک‌تری ریموت روی اس‌اس‌اچ، حالت طراحی تو کرومیوم، و ریویوی پی‌آر داخل اپ باعث می‌شه ناوگان بدون ترک میز قابل‌هدایت بمونه. تغییر مفیدش کار موازی ایجنته به‌صورت محصول، نه یه توده تب. اسمش اورکا."
+      },
+      "share": {
+        "x": {
+          "en": "Orca is the missing desk for parallel coding agents. one prompt across isolated worktrees, compare the runs, steer from phone, merge the winner. that is fleet work as a product, not five messy terminals.\n\nhttps://nimaaksoy.com/radar/2026-07-20/orca",
+          "fa": "میز کاری که ایجنت‌های موازی لازم داشتن. یه پرامپت تو ورک‌تری‌های جدا، مقایسه ران‌ها، هدایت از گوشی، مرج برنده‌. کار ناوگانی به‌صورت محصول، نه پنج ترمینال شلوغ. اسمش اورکا.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-20/orca"
+        },
+        "linkedin": {
+          "en": "Orca stood out if you run more than one coding agent at a time. open desktop ADE with parallel git worktrees, mobile companion, SSH remotes, and in-app review so the fleet stays in one place.\n\nhttps://nimaaksoy.com/radar/2026-07-20/orca",
+          "fa": "اگه همزمان بیشتر از یک ایجنت کدنویسی راه می‌ندازی این یکی به چشم اومد. محیط کار باز دسکتاپ با ورک‌تری موازی، همراه موبایل، ریموت اس‌اس‌اچ، و ریویو داخل اپ تا ناوگان یه‌جا بمونه. اسم پروژه اورکا.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-20/orca"
+        }
+      },
+      "source": "github"
+    },
+    {
+      "slug": "jcode",
+      "name": "jcode",
+      "url": "https://github.com/1jehuang/jcode",
+      "image": "https://opengraph.githubassets.com/1/1jehuang/jcode",
+      "tags": ["coding-agents", "harness", "rust"],
+      "starsGained": 15,
+      "take": {
+        "en": "Rust coding-agent harness built for many sessions without melting RAM.",
+        "fa": "هارنس ایجنت کدنویسی با راست، برای چند سشن بدون داغ کردن رم."
+      },
+      "why": {
+        "en": "Most coding agents get heavy the moment you keep several sessions open. jcode is a MIT-licensed Rust harness aimed at multi-session workflows: fast boot, low memory, and enough custom surface to raise the skill ceiling instead of locking you into one vendor loop. Their own numbers show single-digit tens of milliseconds to first frame and much leaner multi-session RAM than Claude Code, OpenCode, or Cursor Agent. Useful if you treat the harness as infrastructure and want density, not another electron slab.",
+        "fa": "بیشتر ایجنت‌های کدنویسی وقتی چند سشن باز می‌مونه سنگین می‌شن. این هارنس راست با لایسنس آزاد برای ورک‌فلو چندسشنه ساخته شده: بوت سریع، حافظه کم، و سطح سفارشی‌سازی کافی تا سقف مهارت بره بالا، نه اینکه تو یه حلقه یه فروشنده قفل شی. عددهای خودشون نشون می‌ده تا فریم اول چند ده میلی‌ثانیه طول می‌کشه و رم چندسشن خیلی سبک‌تر از کلود کد و اپن‌کد و کرسر ایجنته. اگه هارنس رو زیرساخت می‌بینی و به تراکم نیاز داری به درد می‌خوره، نه یه لایه سنگین الکترون دیگه. اسمش جیکد."
+      },
+      "share": {
+        "x": {
+          "en": "jcode is the coding-agent harness people wanted when multi-session got heavy. rust, fast boot, lean RAM, built to raise the skill ceiling instead of shipping another fat electron shell.\n\nhttps://nimaaksoy.com/radar/2026-07-20/jcode",
+          "fa": "هارنس ایجنت کدنویسی که وقتی چندسشن سنگین شد لازم می‌شد. راست، بوت سریع، رم سبک، ساخته شده تا سقف مهارت بره بالا نه یه شل الکترون چاق دیگه. اسمش جیکد.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-20/jcode"
+        },
+        "linkedin": {
+          "en": "jcode is worth a look if coding agents eat too much RAM once you keep several sessions open. it is an open Rust harness optimized for multi-session density and fast interactive start.\n\nhttps://nimaaksoy.com/radar/2026-07-20/jcode",
+          "fa": "اگه ایجنت کدنویسی با چند سشن باز رم رو می‌خوره ارزش دیدن داره. هارنس باز راست برای تراکم چندسشن و استارت تعاملی سریعه. اسم پروژه جیکد.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-20/jcode"
+        }
+      },
+      "source": "github"
+    },
+    {
+      "slug": "omniroute",
+      "name": "OmniRoute",
+      "url": "https://github.com/diegosouzapw/OmniRoute",
+      "image": "https://opengraph.githubassets.com/1/diegosouzapw/OmniRoute",
+      "tags": ["gateway", "routing", "coding-agents"],
+      "take": {
+        "en": "One local endpoint that routes coding tools across free and paid model tiers.",
+        "fa": "یه اندپوینت لوکال که ابزار کدنویسی رو بین لایه رایگان و پولی مدل‌ها روت می‌کنه."
+      },
+      "why": {
+        "en": "Builder stacks still die mid-session on one dead key or one spent free tier. OmniRoute is an open MIT gateway that sits on your machine, speaks the usual OpenAI-style endpoint, and auto-falls back across subscriptions, API keys, cheap models, and free tiers. Token compression and circuit breakers try to keep long coding sessions alive without babysitting ten dashboards. The practical win is continuity for Claude Code, Codex, Cursor, Cline, and friends through one config you control.",
+        "fa": "استک سازنده‌ها هنوز وسط سشن با یه کلید مرده یا تموم شدن لایه رایگان می‌میره. این گیت‌وی باز رو خود سیستم می‌شینه، اندپوینت آشنای شبیه اوپن‌ای‌آی رو می‌ده، و بین اشتراک، کلید ای‌پی‌آی، مدل ارزون و لایه رایگان خودکار سوئیچ می‌کنه. فشرده‌سازی توکن و مدارشکن سعی می‌کنن سشن بلند کدنویسی بدون نگهبانی ده داشبورد زنده بمونه. فایده‌ش پیوستگی برای کلود کد و کدکس و کرسر و کلاین و بقیه از یه کانفیگه که خودت کنترل می‌کنی. اسمش اومنی‌روت."
+      },
+      "share": {
+        "x": {
+          "en": "OmniRoute is the local gateway coding stacks needed. one endpoint, auto-fallback across free and paid tiers, compression so long agent sessions stop dying on the first rate limit.\n\nhttps://nimaaksoy.com/radar/2026-07-20/omniroute",
+          "fa": "گیت‌وی لوکالی که استک کدنویسی لازم داشت. یه اندپوینت، سوئیچ خودکار بین لایه رایگان و پولی، فشرده‌سازی تا سشن بلند ایجنت رو اولین ریت‌لیمیت نمیره. اسمش اومنی‌روت.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-20/omniroute"
+        },
+        "linkedin": {
+          "en": "OmniRoute is worth a look if your coding agents keep bouncing between keys and free tiers. open local gateway, one endpoint, quota-aware fallback, and compression aimed at long tool-heavy sessions.\n\nhttps://nimaaksoy.com/radar/2026-07-20/omniroute",
+          "fa": "اگه ایجنت‌های کدنویسی‌ت بین کلید و لایه رایگان هی قطع می‌شن ارزش دیدن داره. گیت‌وی باز لوکال، یه اندپوینت، فال‌بک حساس به سهمیه، و فشرده‌سازی برای سشن‌های بلند ابزارمحور. اسم پروژه اومنی‌روت.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-20/omniroute"
+        }
+      },
+      "source": "github"
+    },
+    {
+      "slug": "agent-reach",
+      "name": "Agent Reach",
+      "url": "https://github.com/Panniantong/Agent-Reach",
+      "image": "https://opengraph.githubassets.com/1/Panniantong/Agent-Reach",
+      "tags": ["agents", "web", "research"],
+      "take": {
+        "en": "One install so agents can read X, Reddit, YouTube, and more without paid APIs.",
+        "fa": "یه نصب تا ایجنت بتونه اکس و ردیت و یوتیوب و بیشتر رو بدون ای‌پی‌آی پولی بخونه."
+      },
+      "why": {
+        "en": "Generic web fetch still fails where the dense signal lives. Agent Reach packages install and health-checked backends so coding agents can read tweets, Reddit threads, YouTube captions, GitHub, Bilibili, Xiaohongshu, and more without wiring a paid API per platform. Preferred plus fallback paths get swapped when a site blocks a tool, and a doctor command shows what works. Complementary to plain local search: this is platform reach, not another generic crawler.",
+        "fa": "گرفتن صفحه عمومی هنوز جایی که سیگنال غلیظه شکست می‌خوره. این پروژه نصب و بک‌اندهای چک‌شده رو جمع کرده تا ایجنت کدنویسی بتونه توییت، ترد ردیت، زیرنویس یوتیوب، گیت‌هاب، بیلی‌بیلی، شیائوهونگ‌شو و بیشتر رو بدون ای‌پی‌آی پولی هر پلتفرم بخونه. مسیر اصلی و پشتیبان وقتی سایت یه ابزار رو ببنده عوض می‌شه، و یه دستور تشخیص نشون می‌ده چی وصله. مکمل جستجوی لوکال ساده‌ست: این دسترسی به پلتفرمه، نه یه خزنده عمومی دیگه. اسمش ایجنت‌ریچ."
+      },
+      "share": {
+        "x": {
+          "en": "Agent Reach is the internet layer agents still lacked. one install for X, Reddit, YouTube, GitHub and more, free backends with fallbacks, so research stops dying on paid APIs and 403s.\n\nhttps://nimaaksoy.com/radar/2026-07-20/agent-reach",
+          "fa": "لایه اینترنتی که ایجنت‌ها هنوز نداشتن. یه نصب برای اکس و ردیت و یوتیوب و گیت‌هاب و بیشتر، بک‌اند رایگان با پشتیبان، تا تحقیق رو ای‌پی‌آی پولی و خطای ممنوعه نمیره. اسمش ایجنت‌ریچ.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-20/agent-reach"
+        },
+        "linkedin": {
+          "en": "Agent Reach is worth a look if coding agents need social and video platforms without paid APIs. open install path, health checks, and preferred-plus-fallback backends for X, Reddit, YouTube, and more.\n\nhttps://nimaaksoy.com/radar/2026-07-20/agent-reach",
+          "fa": "اگه ایجنت کدنویسی به پلتفرم‌های اجتماعی و ویدیو بدون ای‌پی‌آی پولی نیاز داره ارزش دیدن داره. مسیر نصب باز، چک سلامت، و بک‌اند اصلی به‌علاوه پشتیبان برای اکس و ردیت و یوتیوب و بیشتر. اسم پروژه ایجنت‌ریچ.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-20/agent-reach"
+        }
+      },
+      "source": "github"
+    }
+  ]
+}
