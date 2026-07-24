@@ -6,7 +6,11 @@
       "name": "Bento",
       "url": "https://github.com/nyblnet/bento",
       "image": "https://opengraph.githubassets.com/1/nyblnet/bento",
-      "tags": ["presentations", "local-first", "agents"],
+      "tags": [
+        "presentations",
+        "local-first",
+        "agents"
+      ],
       "starsGained": 14,
       "take": {
         "en": "A full slide app that lives inside one HTML file you can send anyone.",
@@ -18,12 +22,12 @@
       },
       "share": {
         "x": {
-          "en": "Bento is wild. the whole slide app lives in one HTML file you can email. viewer, editor, charts, and plain JSON for agents, no account required.\n\nhttps://nimaaksoy.com/radar/2026-07-23/bento",
-          "fa": "خفنه. کل اپ اسلاید تو یه فایل اچ‌تی‌ام‌اله که می‌تونی ایمیل کنی. ویوئر، ادیتور، چارت، و جیسون ساده برای ایجنت، بدون اکانت. اسمش بنتو.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-23/bento"
+          "en": "Bento is wild. the whole slide app lives in one HTML file you can email. viewer, editor, charts, and plain JSON for agents, no account required.\n\nhttps://nimaaksoy.com/radar/bento",
+          "fa": "خفنه. کل اپ اسلاید تو یه فایل اچ‌تی‌ام‌اله که می‌تونی ایمیل کنی. ویوئر، ادیتور، چارت، و جیسون ساده برای ایجنت، بدون اکانت. اسمش بنتو.\n\nhttps://nimaaksoy.com/radar/bento"
         },
         "linkedin": {
-          "en": "Bento is worth a look if your decks still need cloud logins. one self-contained HTML file carries the editor, presenter, and plain JSON so people and agents can open and change it anywhere.\n\nhttps://nimaaksoy.com/radar/2026-07-23/bento",
-          "fa": "اگه ارائه‌هات هنوز لاگین ابری می‌خوان ارزش دیدن داره. یه فایل اچ‌تی‌ام‌ال خودش ادیتور و پرزنتر و جیسون ساده رو حمل می‌کنه تا آدم و ایجنت هرجا بازش کنن و عوضش کنن. اسم پروژه بنتو.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-23/bento"
+          "en": "Bento is worth a look if your decks still need cloud logins. one self-contained HTML file carries the editor, presenter, and plain JSON so people and agents can open and change it anywhere.\n\nhttps://nimaaksoy.com/radar/bento",
+          "fa": "اگه ارائه‌هات هنوز لاگین ابری می‌خوان ارزش دیدن داره. یه فایل اچ‌تی‌ام‌ال خودش ادیتور و پرزنتر و جیسون ساده رو حمل می‌کنه تا آدم و ایجنت هرجا بازش کنن و عوضش کنن. اسم پروژه بنتو.\n\nhttps://nimaaksoy.com/radar/bento"
         }
       },
       "source": "github"
@@ -33,7 +37,11 @@
       "name": "Page Agent",
       "url": "https://github.com/alibaba/page-agent",
       "image": "https://opengraph.githubassets.com/1/alibaba/page-agent",
-      "tags": ["web-agents", "javascript", "gui"],
+      "tags": [
+        "web-agents",
+        "javascript",
+        "gui"
+      ],
       "starsGained": null,
       "take": {
         "en": "Drop one script and the page itself becomes a natural-language GUI agent.",
@@ -45,12 +53,12 @@
       },
       "share": {
         "x": {
-          "en": "Page Agent is the in-page GUI agent people actually ship with. one script, DOM as text, bring your own model, no headless browser required for the basic path.\n\nhttps://nimaaksoy.com/radar/2026-07-23/page-agent",
-          "fa": "ایجنت رابط تو خود صفحه که واقعاً باهاش محصول می‌سازن. یه اسکریپت، دام به صورت متن، مدل خودت، بدون مرورگر هدلس برای مسیر ساده. اسم پروژه‌ش Page Agent.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-23/page-agent"
+          "en": "Page Agent is the in-page GUI agent people actually ship with. one script, DOM as text, bring your own model, no headless browser required for the basic path.\n\nhttps://nimaaksoy.com/radar/page-agent",
+          "fa": "ایجنت رابط تو خود صفحه که واقعاً باهاش محصول می‌سازن. یه اسکریپت، دام به صورت متن، مدل خودت، بدون مرورگر هدلس برای مسیر ساده. اسم پروژه‌ش Page Agent.\n\nhttps://nimaaksoy.com/radar/page-agent"
         },
         "linkedin": {
-          "en": "Page Agent is worth a look if you want a copilot inside your web app, not a separate automation bot. open JavaScript agent that works from the DOM with your own LLM and optional MCP for multi-page tasks.\n\nhttps://nimaaksoy.com/radar/2026-07-23/page-agent",
-          "fa": "اگه کوپایلوت داخل وب‌اپ می‌خوای نه یه بات اتوماسیون جدا ارزش دیدن داره. ایجنت باز جاوااسکریپت که از دام کار می‌کنه با مدل خودت و ام‌سی‌پی اختیاری برای کار چندصفحه‌ای. اسم پروژه‌ش Page Agent.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-23/page-agent"
+          "en": "Page Agent is worth a look if you want a copilot inside your web app, not a separate automation bot. open JavaScript agent that works from the DOM with your own LLM and optional MCP for multi-page tasks.\n\nhttps://nimaaksoy.com/radar/page-agent",
+          "fa": "اگه کوپایلوت داخل وب‌اپ می‌خوای نه یه بات اتوماسیون جدا ارزش دیدن داره. ایجنت باز جاوااسکریپت که از دام کار می‌کنه با مدل خودت و ام‌سی‌پی اختیاری برای کار چندصفحه‌ای. اسم پروژه‌ش Page Agent.\n\nhttps://nimaaksoy.com/radar/page-agent"
         }
       },
       "source": "github"
@@ -60,7 +68,11 @@
       "name": "OfficeCLI",
       "url": "https://github.com/iOfficeAI/OfficeCLI",
       "image": "https://opengraph.githubassets.com/1/iOfficeAI/OfficeCLI",
-      "tags": ["office", "agents", "cli"],
+      "tags": [
+        "office",
+        "agents",
+        "cli"
+      ],
       "starsGained": null,
       "take": {
         "en": "Word, Excel, and PowerPoint as a single binary agents can drive end to end.",
@@ -72,12 +84,12 @@
       },
       "share": {
         "x": {
-          "en": "OfficeCLI is the Office stack agents actually needed. one binary, no Microsoft install, real docx xlsx pptx, plus HTML and PNG render so the model can look and fix.\n\nhttps://nimaaksoy.com/radar/2026-07-23/officecli",
-          "fa": "استک آفیس که ایجنت واقعاً لازم داشت. یه باینری، بدون نصب مایکروسافت، فایل واقعی ورد و اکسل و پاورپوینت، به‌علاوه رندر اچ‌تی‌ام‌ال و پی‌ان‌جی تا مدل ببینه و درست کنه. اسمش آفیس‌سی‌ال‌آی.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-23/officecli"
+          "en": "OfficeCLI is the Office stack agents actually needed. one binary, no Microsoft install, real docx xlsx pptx, plus HTML and PNG render so the model can look and fix.\n\nhttps://nimaaksoy.com/radar/officecli",
+          "fa": "استک آفیس که ایجنت واقعاً لازم داشت. یه باینری، بدون نصب مایکروسافت، فایل واقعی ورد و اکسل و پاورپوینت، به‌علاوه رندر اچ‌تی‌ام‌ال و پی‌ان‌جی تا مدل ببینه و درست کنه. اسمش آفیس‌سی‌ال‌آی.\n\nhttps://nimaaksoy.com/radar/officecli"
         },
         "linkedin": {
-          "en": "OfficeCLI is worth a look if your agents still generate blind Office files. open single binary for Word, Excel, and PowerPoint with a render loop so agents can inspect HTML or PNG output and iterate.\n\nhttps://nimaaksoy.com/radar/2026-07-23/officecli",
-          "fa": "اگه ایجنت‌هات هنوز فایل آفیس کور می‌سازن ارزش دیدن داره. باینری باز برای ورد و اکسل و پاورپوینت با حلقه رندر تا ایجنت خروجی اچ‌تی‌ام‌ال یا پی‌ان‌جی رو ببینه و اصلاح کنه. اسم پروژه آفیس‌سی‌ال‌آی.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-23/officecli"
+          "en": "OfficeCLI is worth a look if your agents still generate blind Office files. open single binary for Word, Excel, and PowerPoint with a render loop so agents can inspect HTML or PNG output and iterate.\n\nhttps://nimaaksoy.com/radar/officecli",
+          "fa": "اگه ایجنت‌هات هنوز فایل آفیس کور می‌سازن ارزش دیدن داره. باینری باز برای ورد و اکسل و پاورپوینت با حلقه رندر تا ایجنت خروجی اچ‌تی‌ام‌ال یا پی‌ان‌جی رو ببینه و اصلاح کنه. اسم پروژه آفیس‌سی‌ال‌آی.\n\nhttps://nimaaksoy.com/radar/officecli"
         }
       },
       "source": "github"
@@ -87,7 +99,11 @@
       "name": "OpenWiki",
       "url": "https://github.com/langchain-ai/openwiki",
       "image": "https://opengraph.githubassets.com/1/langchain-ai/openwiki",
-      "tags": ["docs", "agents", "cli"],
+      "tags": [
+        "docs",
+        "agents",
+        "cli"
+      ],
       "starsGained": null,
       "take": {
         "en": "CLI that keeps an agent-readable wiki fresh for your repo or personal brain.",
@@ -99,12 +115,12 @@
       },
       "share": {
         "x": {
-          "en": "OpenWiki is the agent docs tool that actually keeps up. local wiki from your repo or personal sources, CI that opens PRs, and OKF so other tools can read it.\n\nhttps://nimaaksoy.com/radar/2026-07-23/openwiki",
-          "fa": "ابزار مستند ایجنت که واقعاً عقب نمی‌مونه. ویکی محلی از ریپو یا منابع شخصی، سی‌آی که پول ریکوئست باز می‌کنه، و فرمت دانش باز تا ابزار دیگه بخونن. اسمش اوپن‌ویکی.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-23/openwiki"
+          "en": "OpenWiki is the agent docs tool that actually keeps up. local wiki from your repo or personal sources, CI that opens PRs, and OKF so other tools can read it.\n\nhttps://nimaaksoy.com/radar/openwiki",
+          "fa": "ابزار مستند ایجنت که واقعاً عقب نمی‌مونه. ویکی محلی از ریپو یا منابع شخصی، سی‌آی که پول ریکوئست باز می‌کنه، و فرمت دانش باز تا ابزار دیگه بخونن. اسمش اوپن‌ویکی.\n\nhttps://nimaaksoy.com/radar/openwiki"
         },
         "linkedin": {
-          "en": "OpenWiki is worth a look if agent context still dies when the repo changes. LangChain CLI for living code and personal wikis, with CI update flows and Open Knowledge Format output.\n\nhttps://nimaaksoy.com/radar/2026-07-23/openwiki",
-          "fa": "اگه کانتکست ایجنت هنوز با عوض شدن ریپو می‌میره ارزش دیدن داره. خط فرمان لنگ‌چین برای ویکی زنده کد و شخصی، با جریان آپدیت سی‌آی و خروجی فرمت دانش باز. اسم پروژه اوپن‌ویکی.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-23/openwiki"
+          "en": "OpenWiki is worth a look if agent context still dies when the repo changes. LangChain CLI for living code and personal wikis, with CI update flows and Open Knowledge Format output.\n\nhttps://nimaaksoy.com/radar/openwiki",
+          "fa": "اگه کانتکست ایجنت هنوز با عوض شدن ریپو می‌میره ارزش دیدن داره. خط فرمان لنگ‌چین برای ویکی زنده کد و شخصی، با جریان آپدیت سی‌آی و خروجی فرمت دانش باز. اسم پروژه اوپن‌ویکی.\n\nhttps://nimaaksoy.com/radar/openwiki"
         }
       },
       "source": "github"
@@ -114,7 +130,11 @@
       "name": "No AI Slop",
       "url": "https://github.com/petergyang/no-ai-slop",
       "image": "https://opengraph.githubassets.com/1/petergyang/no-ai-slop",
-      "tags": ["writing", "skills", "quality"],
+      "tags": [
+        "writing",
+        "skills",
+        "quality"
+      ],
       "starsGained": 28,
       "take": {
         "en": "A coding-agent skill that strips twenty-plus AI writing tics from a draft.",
@@ -126,12 +146,12 @@
       },
       "share": {
         "x": {
-          "en": "No AI Slop is the writing skill agents needed after all the design anti-slop packs. twenty-plus patterns, minimum edits, and a self-check eval instead of a vague sound-human prompt.\n\nhttps://nimaaksoy.com/radar/2026-07-23/no-ai-slop",
-          "fa": "اسکیل نوشتن که بعد از کلی بسته ضد شلختگی طراحی لازم بود. بیشتر از بیست الگو، ویرایش حداقلی، و ارزیابی خودچک به‌جای پرامپت مبهم انسانی حرف بزن. اسم پروژه‌ش No AI Slop.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-23/no-ai-slop"
+          "en": "No AI Slop is the writing skill agents needed after all the design anti-slop packs. twenty-plus patterns, minimum edits, and a self-check eval instead of a vague sound-human prompt.\n\nhttps://nimaaksoy.com/radar/no-ai-slop",
+          "fa": "اسکیل نوشتن که بعد از کلی بسته ضد شلختگی طراحی لازم بود. بیشتر از بیست الگو، ویرایش حداقلی، و ارزیابی خودچک به‌جای پرامپت مبهم انسانی حرف بزن. اسم پروژه‌ش No AI Slop.\n\nhttps://nimaaksoy.com/radar/no-ai-slop"
         },
         "linkedin": {
-          "en": "No AI Slop is worth a look if your agent drafts still sound machine-made. open skill that removes common AI writing patterns and can detect them line by line with a built-in eval pass.\n\nhttps://nimaaksoy.com/radar/2026-07-23/no-ai-slop",
-          "fa": "اگه پیش‌نویس ایجنت هنوز بوی ماشین می‌ده ارزش دیدن داره. اسکیل باز که الگوهای رایج نوشتار هوش مصنوعی رو برمی‌داره و می‌تونه خط‌به‌خط با ارزیابی داخلی پیداشون کنه. اسم پروژه‌ش No AI Slop.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-23/no-ai-slop"
+          "en": "No AI Slop is worth a look if your agent drafts still sound machine-made. open skill that removes common AI writing patterns and can detect them line by line with a built-in eval pass.\n\nhttps://nimaaksoy.com/radar/no-ai-slop",
+          "fa": "اگه پیش‌نویس ایجنت هنوز بوی ماشین می‌ده ارزش دیدن داره. اسکیل باز که الگوهای رایج نوشتار هوش مصنوعی رو برمی‌داره و می‌تونه خط‌به‌خط با ارزیابی داخلی پیداشون کنه. اسم پروژه‌ش No AI Slop.\n\nhttps://nimaaksoy.com/radar/no-ai-slop"
         }
       },
       "source": "github"

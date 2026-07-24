@@ -6,7 +6,10 @@
       "name": "OpenCut",
       "url": "https://github.com/OpenCut-app/OpenCut",
       "image": "https://opengraph.githubassets.com/1/OpenCut-app/OpenCut",
-      "tags": ["video", "opensource"],
+      "tags": [
+        "video",
+        "opensource"
+      ],
       "starsGained": 370,
       "take": {
         "en": "Open source CapCut alternative people are actually shipping with.",
@@ -18,12 +21,12 @@
       },
       "share": {
         "x": {
-          "en": "OpenCut is basically CapCut without the usual cloud lock-in. people are actually shipping with it, not just starring it.\n\nhttps://nimaaksoy.com/radar/2026-07-12/opencut",
-          "fa": "تقریبا همون حس کپ‌کات رو داره ولی قفل ابری نداره. دارن واقعا باهاش کار می‌کنن، نه فقط استار. اسمش اپن‌کات.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-12/opencut"
+          "en": "OpenCut is basically CapCut without the usual cloud lock-in. people are actually shipping with it, not just starring it.\n\nhttps://nimaaksoy.com/radar/opencut",
+          "fa": "تقریبا همون حس کپ‌کات رو داره ولی قفل ابری نداره. دارن واقعا باهاش کار می‌کنن، نه فقط استار. اسمش اپن‌کات.\n\nhttps://nimaaksoy.com/radar/opencut"
         },
         "linkedin": {
-          "en": "OpenCut stood out today. an open CapCut-style editor people are actually using, with local control over the timeline instead of another cloud lock-in.\n\nhttps://nimaaksoy.com/radar/2026-07-12/opencut",
-          "fa": "امروز به چشم اومد. ادیتوری شبیه کپ‌کات که واقعا استفاده می‌شه و کنترل لوکال روی تایم‌لاین می‌ده، نه یه قفل ابری دیگه. اسم پروژه اپن‌کات.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-12/opencut"
+          "en": "OpenCut stood out today. an open CapCut-style editor people are actually using, with local control over the timeline instead of another cloud lock-in.\n\nhttps://nimaaksoy.com/radar/opencut",
+          "fa": "امروز به چشم اومد. ادیتوری شبیه کپ‌کات که واقعا استفاده می‌شه و کنترل لوکال روی تایم‌لاین می‌ده، نه یه قفل ابری دیگه. اسم پروژه اپن‌کات.\n\nhttps://nimaaksoy.com/radar/opencut"
         }
       },
       "source": "github"
@@ -33,7 +36,10 @@
       "name": "Colibri",
       "url": "https://github.com/JustVugg/colibri",
       "image": "https://opengraph.githubassets.com/1/JustVugg/colibri",
-      "tags": ["local-llm", "c"],
+      "tags": [
+        "local-llm",
+        "c"
+      ],
       "starsGained": 333,
       "take": {
         "en": "Runs a huge model on a normal machine in pure C. Wild.",
@@ -45,12 +51,12 @@
       },
       "share": {
         "x": {
-          "en": "Colibri is wild. it runs a huge model on a normal machine in pure C by streaming experts from disk. that is a real local inference shift, not another chat wrapper.\n\nhttps://nimaaksoy.com/radar/2026-07-12/colibri",
-          "fa": "خفنه. مدل خیلی بزرگ رو رو سیستم معمولی با سی خالص بالا میاره و متخصص‌های مدل رو از دیسک می‌خونه. این تغییر واقعی تو اجرای مدل لوکاله، نه یه رپر چت. اسمش کلیبری.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-12/colibri"
+          "en": "Colibri is wild. it runs a huge model on a normal machine in pure C by streaming experts from disk. that is a real local inference shift, not another chat wrapper.\n\nhttps://nimaaksoy.com/radar/colibri",
+          "fa": "خفنه. مدل خیلی بزرگ رو رو سیستم معمولی با سی خالص بالا میاره و متخصص‌های مدل رو از دیسک می‌خونه. این تغییر واقعی تو اجرای مدل لوکاله، نه یه رپر چت. اسمش کلیبری.\n\nhttps://nimaaksoy.com/radar/colibri"
         },
         "linkedin": {
-          "en": "Colibri is interesting if you care about local inference. pure C, experts streamed from disk, big MoE on consumer hardware. that changes who can experiment without a cluster.\n\nhttps://nimaaksoy.com/radar/2026-07-12/colibri",
-          "fa": "اگه اجرای مدل لوکال برات مهمه این یکی جالبه. سی خالص، خوندن متخصص‌ها از دیسک، مدل بزرگ رو سخت‌افزار معمولی. یعنی آزمایش دیگه فقط مال کلستر نیست. اسم پروژه کلیبری.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-12/colibri"
+          "en": "Colibri is interesting if you care about local inference. pure C, experts streamed from disk, big MoE on consumer hardware. that changes who can experiment without a cluster.\n\nhttps://nimaaksoy.com/radar/colibri",
+          "fa": "اگه اجرای مدل لوکال برات مهمه این یکی جالبه. سی خالص، خوندن متخصص‌ها از دیسک، مدل بزرگ رو سخت‌افزار معمولی. یعنی آزمایش دیگه فقط مال کلستر نیست. اسم پروژه کلیبری.\n\nhttps://nimaaksoy.com/radar/colibri"
         }
       },
       "source": "github"
@@ -60,7 +66,10 @@
       "name": "UI Skills",
       "url": "https://github.com/emilkowalski/skills",
       "image": "https://opengraph.githubassets.com/1/emilkowalski/skills",
-      "tags": ["ai-skills", "design"],
+      "tags": [
+        "ai-skills",
+        "design"
+      ],
       "starsGained": 436,
       "take": {
         "en": "Helps AI agents build cleaner UI without overthinking it.",
@@ -72,12 +81,12 @@
       },
       "share": {
         "x": {
-          "en": "UI Skills is a small thing with a visible effect. it gives agents better taste defaults so the UI they ship is less generic.\n\nhttps://nimaaksoy.com/radar/2026-07-12/ui-skills",
-          "fa": "کوچیکه ولی اثرش معلومه. به ایجنت‌ها سلیقه بهتر می‌ده تا رابط کاربریشون کمتر بی‌شخصیت بشه. اسم پروژه یوآی اسکیلز.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-12/ui-skills"
+          "en": "UI Skills is a small thing with a visible effect. it gives agents better taste defaults so the UI they ship is less generic.\n\nhttps://nimaaksoy.com/radar/ui-skills",
+          "fa": "کوچیکه ولی اثرش معلومه. به ایجنت‌ها سلیقه بهتر می‌ده تا رابط کاربریشون کمتر بی‌شخصیت بشه. اسم پروژه یوآی اسکیلز.\n\nhttps://nimaaksoy.com/radar/ui-skills"
         },
         "linkedin": {
-          "en": "UI Skills is worth a look if you use coding agents for product UI. practical skill files that push spacing and hierarchy toward something less generic.\n\nhttps://nimaaksoy.com/radar/2026-07-12/ui-skills",
-          "fa": "اگه با ایجنت‌ها رابط کاربری می‌سازی این یکی ارزش دیدن داره. اسکیل‌های عملی که فاصله‌ها و سلسله‌مراتب رو تمیزتر می‌کنن. اسم پروژه یوآی اسکیلز.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-12/ui-skills"
+          "en": "UI Skills is worth a look if you use coding agents for product UI. practical skill files that push spacing and hierarchy toward something less generic.\n\nhttps://nimaaksoy.com/radar/ui-skills",
+          "fa": "اگه با ایجنت‌ها رابط کاربری می‌سازی این یکی ارزش دیدن داره. اسکیل‌های عملی که فاصله‌ها و سلسله‌مراتب رو تمیزتر می‌کنن. اسم پروژه یوآی اسکیلز.\n\nhttps://nimaaksoy.com/radar/ui-skills"
         }
       },
       "source": "github"

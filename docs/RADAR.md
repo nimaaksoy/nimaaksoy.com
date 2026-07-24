@@ -1,16 +1,18 @@
 # Radar — how it works
 
 Curated signal page for AI + open source finds that are **worth a founder’s time**.  
-Inspired by dense value feeds like Perplexity Discover: short hook, clear “why it matters”, source, image when useful, shareable item URL.
+Dense value feed: short explanation, clear “why it matters”, verdict and capability badges when known, source links, image when useful.
 
-This page must stay **pure value**. No noise. No public social caption dumps.
+This page must stay **pure value**. No noise. No public social caption dumps.  
+**Do not** paste GitHub descriptions or README sections onto the page.
 
 Canonical domain: `https://nimaaksoy.com`
 
-| Locale | Index | Day | Item |
-|--------|--------|-----|------|
-| English | `/radar` | `/radar/YYYY-MM-DD` | `/radar/YYYY-MM-DD/slug` |
-| Farsi (RTL) | `/fa/radar` | `/fa/radar/YYYY-MM-DD` | `/fa/radar/YYYY-MM-DD/slug` |
+| Locale | Index | Item |
+|--------|--------|------|
+| English only | `/radar` | `/radar/{slug}` |
+
+Farsi routes were removed. Historical JSON may still contain `fa` strings; the UI only renders English.
 
 ---
 
@@ -18,66 +20,97 @@ Canonical domain: `https://nimaaksoy.com`
 
 **Is**
 - A human filter for important / useful AI + OSS signals
+- Flat project feed (up to 50 per page), newest first
 - Each item strong enough to share alone
-- Short hook + expandable **why it matters** (or what actually changed)
+- Short explanation + expandable “why it matters” + optional richer sections
 
 **Is not**
 - A dump of everything trending
-- A daily “top AI news of the world” wire by default
+- Day-grouped archive UI (storage may still be one JSON file per day)
 - Public caption drafts for social
 
-Does it always pick *the single most important AI update of the day*?  
-**No.** It picks **1–5 things worth sharing that day** (product update, OSS breakthrough, real capability shift). Sometimes that includes major AI news. Sometimes a quieter tool matters more for builders.
-
-Internal cadence (never show this on the public UI): **1–5/day**, skip the day if nothing is worth it.
+Internal cadence (never show this on the public UI): **1–5/day** is fine; skip the day if nothing is worth it. Day files may hold up to **10** items if needed.
 
 ---
 
-## Page UX (pure value)
+## Page UX
 
-1. **Hook** (`take`) — one short line
-2. **Toggle: Why it matters** (`why`) — only value: why this pick matters, or what new/important update landed. No fluff.
-3. **Source link** — original repo / product / announcement
-4. **Image** when available (OG image, product shot, paper figure)
-5. **Share on each item** — buttons open X/LinkedIn with the **saved human caption** + item URL  
-6. **Captions exist, but stay off the page** — stored in JSON only, used by share intents / copy post. Never rendered as visible page text.
+### Main feed (`/radar`)
+- Horizontal cards: ~30% image / 70% content on desktop; stacked on mobile
+- Image uses `object-contain` (no crop of logos/screenshots); fallback SVG when missing
+- Sticky toolbar: sort/filter chips that only appear when data exists, plus search
+- Pagination at 50 projects per page
+- Expandable explanation; separate collapsible “why it matters” when it adds signal
 
-Item pages are the share targets (Discover-style deep links).
+### Item page (`/radar/{slug}`)
+- Not an enlarged list card
+- Sections only when content exists: explanation, why it matters, how it works, what makes it different, trending, capabilities, similar tools
+- Verdict + Demo/API/MCP badges
+- Source + share intents
+
+### Share
+- Buttons open X/LinkedIn with the **saved human caption** + item URL  
+- Captions stay off the page (JSON only)
 
 ---
 
 ## Content storage
 
-Path: `content/radar/YYYY-MM-DD.json`
+Path: `content/radar/YYYY-MM-DD.json`  
+The loader flattens all days into projects sorted by date (newest first).  
+**Slug must be unique across all days.**
 
 ### Schema
 
 ```json
 {
-  "date": "2026-07-12",
+  "date": "2026-07-24",
   "items": [
     {
-      "slug": "opencut",
-      "name": "OpenCut",
-      "url": "https://github.com/OpenCut-app/OpenCut",
-      "image": "https://opengraph.githubassets.com/1/OpenCut-app/OpenCut",
-      "tags": ["video", "opensource"],
+      "slug": "firecrawl",
+      "name": "Firecrawl",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "image": "https://opengraph.githubassets.com/1/firecrawl/firecrawl",
+      "tags": ["web-scraping", "agents", "api", "mcp"],
+      "stars": 78000,
+      "starsGained": 420,
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": true,
+      "hasMcp": true,
+      "trending": ["Agent + MCP install path"],
+      "similar": [
+        { "name": "Page Agent", "slug": "page-agent" },
+        { "name": "Browserbase", "url": "https://www.browserbase.com" }
+      ],
       "take": {
-        "en": "Open source CapCut alternative people are actually shipping with.",
-        "fa": "جایگزین متن‌باز کپ‌کات که واقعاً باهاش کار می‌کنن."
+        "en": "Short scannable explanation (what it is / does).",
+        "fa": "kept for historical files; UI is English-only"
       },
       "why": {
-        "en": "Why this matters or what changed. Pure value only. 2–5 short sentences.",
-        "fa": "چرا مهمه یا چی عوض شده. فقط ارزش. چند جمله کوتاه."
+        "en": "Why this pick matters. Pure value. Not a repeat of take.",
+        "fa": "..."
+      },
+      "explanation": {
+        "en": "Optional longer explanation for the detail page.",
+        "fa": "..."
+      },
+      "howItWorks": {
+        "en": "Optional: how it works.",
+        "fa": "..."
+      },
+      "different": {
+        "en": "Optional: what makes it different.",
+        "fa": "..."
       },
       "share": {
         "x": {
-          "en": "human caption for X. ends with item url.\n\nhttps://nimaaksoy.com/radar/2026-07-12/opencut",
-          "fa": "کپشن انسانی برای X با لینک آیتم.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-12/opencut"
+          "en": "human caption for X. ends with item url.\n\nhttps://nimaaksoy.com/radar/firecrawl",
+          "fa": "..."
         },
         "linkedin": {
-          "en": "human caption for LinkedIn.\n\nhttps://nimaaksoy.com/radar/2026-07-12/opencut",
-          "fa": "کپشن انسانی برای لینکدین.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-12/opencut"
+          "en": "human caption for LinkedIn.\n\nhttps://nimaaksoy.com/radar/firecrawl",
+          "fa": "..."
         }
       },
       "source": "github"
@@ -93,61 +126,68 @@ Path: `content/radar/YYYY-MM-DD.json`
 | Field | Required | Notes |
 |-------|----------|--------|
 | `date` | yes | Matches filename |
-| `items[].slug` | yes | kebab-case, unique per day |
+| `items[].slug` | yes | kebab-case, **globally unique** |
 | `items[].name` | yes | Display name |
 | `items[].url` | yes | Source of truth (repo/product/post) |
 | `items[].image` | preferred | OG image or product image URL |
-| `items[].take` | yes | Short hook EN+FA (shown) |
-| `items[].why` | yes | Why it matters / what changed EN+FA (toggle) |
-| `items[].share.x` / `share.linkedin` | yes | Human captions EN+FA for share intents only (hidden on page) |
-| `items[].tags` | no | Short tags |
+| `items[].take` | yes | Short explanation EN+FA (EN shown) |
+| `items[].why` | yes | Why it matters EN+FA (EN shown) |
+| `items[].explanation` | no | Longer explanation for detail |
+| `items[].howItWorks` | no | How it works |
+| `items[].different` | no | What makes it different |
+| `items[].verdict` | no | `must-watch` \| `worth-testing` \| `worth-sharing` \| `interesting` \| `skip` |
+| `items[].hasDemo` / `hasApi` / `hasMcp` | no | boolean capability flags |
+| `items[].stars` / `starsGained` | no | Star metrics when known |
+| `items[].trending` | no | Short signal labels |
+| `items[].similar` | no | `{ name, url?, slug? }[]` |
+| `items[].share.x` / `share.linkedin` | yes | Human captions EN+FA (hidden on page) |
+| `items[].tags` | no | Short tags / tech |
+
+**Reference item with full fields:** `content/radar/2026-07-24.json` → Firecrawl.  
+Existing items may leave optional fields empty; fill them over time.
 
 ---
 
 ## Voice
 
-Human, easy words. Casual Farsi (روان و خودمونی).
+Human, easy words. UI is English-only.
 
 **Do**
 - Plain sentences
 - Explain the real update or reason it matters
 - Prefer concrete change over hype
-- Farsi: start every sentence with Persian words (never English first — breaks RTL)
-- Farsi: put English product names later in the sentence, or use Persian spelling (کلیبری / اپن‌کات)
-- Farsi: avoid mid-sentence English tech words when a Persian phrase works
+- No repeated copy across `take` / `why` / `explanation`
 
 **Don’t**
 - Bullet catalogs, colon lists, em-dash list glue
-- Bookish EN/FA
 - Public caption blocks on the webpage
 - Thin scrapes with no “why”
-- Farsi captions that begin with `Colibri` / `OpenCut` / `UI Skills` etc.
+- Pasted README or GitHub about text
 
 ### Social image
 
 Each item page generates its own Open Graph image at:
-- `/radar/DATE/slug/opengraph-image`
-- `/fa/radar/DATE/slug/opengraph-image`
-
-X/LinkedIn should pick this card image from the site (not broken external GitHub OG).
+- `/radar/{slug}/opengraph-image`
 
 ---
 
-## How to add a day
+## How to add a project
 
 1. Scan Trendshift, HuggingNews, GitHub/X for real signal.
 2. Keep only items that are share-worthy alone.
-3. Write `take` + `why` (EN+FA). Prefer `image`.
-4. Save `content/radar/YYYY-MM-DD.json`.
-5. PR → merge → Vercel deploy.
-6. Share **item URLs**, not caption drafts from the site.
+3. Write `take` + `why` (EN required in `en`; keep `fa` non-empty for schema). Prefer optional full fields when you know them.
+4. Prefer unique `slug`, image, and share URLs pointing at `https://nimaaksoy.com/radar/{slug}`.
+5. Save under `content/radar/YYYY-MM-DD.json` (new day or append to day).
+6. PR → merge → deploy.
+7. Share **item URLs**, not caption drafts from the site.
 
 Checklist:
 
 - [ ] 1–5 items or skip day  
+- [ ] Globally unique slug  
 - [ ] Each item has `why` with real value  
 - [ ] Image when possible  
-- [ ] Human voice EN+FA  
+- [ ] Share captions use `/radar/{slug}`  
 - [ ] `npm run build` passes  
 
 ---
@@ -156,19 +196,19 @@ Checklist:
 
 | Path | Role |
 |------|------|
-| `content/radar/*.json` | Day content |
-| `lib/radar.ts` / `lib/radar-shared.ts` | Loaders + paths |
-| `components/radar/RadarItemCard.tsx` | List card + why toggle + share |
-| `components/radar/RadarItemView.tsx` | Item page |
-| `app/radar/**` | EN routes |
-| `app/fa/radar/**` | FA routes |
+| `content/radar/*.json` | Day content (flattened at load) |
+| `lib/radar.ts` / `lib/radar-shared.ts` | Loaders + paths + types |
+| `components/radar/RadarFeed.tsx` | Index feed + sticky toolbar |
+| `components/radar/RadarProjectCard.tsx` | Horizontal list card |
+| `components/radar/RadarProjectView.tsx` | Item detail page |
+| `app/radar/**` | Routes |
 | `docs/RADAR.md` | This file |
 
 ---
 
 ## SEO
 
-Item pages with original `why` text + images help.  
+Item pages with original text + images help.  
 Scraped link dumps without `why` are thin content. Do not ship those.
 
-Last updated: 2026-07-12
+Last updated: 2026-07-24

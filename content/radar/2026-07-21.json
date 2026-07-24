@@ -6,7 +6,11 @@
       "name": "SkillOpt",
       "url": "https://github.com/microsoft/SkillOpt",
       "image": "https://opengraph.githubassets.com/1/microsoft/SkillOpt",
-      "tags": ["agents", "skills", "optimization"],
+      "tags": [
+        "agents",
+        "skills",
+        "optimization"
+      ],
       "starsGained": 11,
       "take": {
         "en": "Trains reusable skill docs for frozen agents like you train a model.",
@@ -18,12 +22,12 @@
       },
       "share": {
         "x": {
-          "en": "SkillOpt is the missing optimizer for agent skills. it trains a markdown skill file against a frozen model with validation gates, then ships a compact best_skill.md that actually moves Codex and Claude Code.\n\nhttps://nimaaksoy.com/radar/2026-07-21/skillopt",
-          "fa": "بهینه‌سازی که اسکیل ایجنت لازم داشت. فایل مارک‌داون اسکیل رو رو مدل فریز‌شده با گیت اعتبارسنجی ترین می‌کنه و یه اسکیل جمع‌وجور می‌ده که واقعاً کدکس و کلود کد رو جابه‌جا می‌کنه. اسمش اسکیل‌آپت.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-21/skillopt"
+          "en": "SkillOpt is the missing optimizer for agent skills. it trains a markdown skill file against a frozen model with validation gates, then ships a compact best_skill.md that actually moves Codex and Claude Code.\n\nhttps://nimaaksoy.com/radar/skillopt",
+          "fa": "بهینه‌سازی که اسکیل ایجنت لازم داشت. فایل مارک‌داون اسکیل رو رو مدل فریز‌شده با گیت اعتبارسنجی ترین می‌کنه و یه اسکیل جمع‌وجور می‌ده که واقعاً کدکس و کلود کد رو جابه‌جا می‌کنه. اسمش اسکیل‌آپت.\n\nhttps://nimaaksoy.com/radar/skillopt"
         },
         "linkedin": {
-          "en": "SkillOpt is worth a look if your agent skills still feel hand-tuned and stuck. Microsoft Research treats the skill document as trainable state for a frozen model, with validation-gated edits and a deployable best_skill.md.\n\nhttps://nimaaksoy.com/radar/2026-07-21/skillopt",
-          "fa": "اگه اسکیل ایجنت‌هات هنوز دستی و گیر کرده حس می‌شه ارزش دیدن داره. مایکروسافت ریسرچ سند اسکیل رو مثل حالت قابل‌ترین برای مدل فریز‌شده می‌بینه، با ویرایش‌های گیت‌شده و فایل اسکیل آماده دیپلوی. اسم پروژه اسکیل‌آپت.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-21/skillopt"
+          "en": "SkillOpt is worth a look if your agent skills still feel hand-tuned and stuck. Microsoft Research treats the skill document as trainable state for a frozen model, with validation-gated edits and a deployable best_skill.md.\n\nhttps://nimaaksoy.com/radar/skillopt",
+          "fa": "اگه اسکیل ایجنت‌هات هنوز دستی و گیر کرده حس می‌شه ارزش دیدن داره. مایکروسافت ریسرچ سند اسکیل رو مثل حالت قابل‌ترین برای مدل فریز‌شده می‌بینه، با ویرایش‌های گیت‌شده و فایل اسکیل آماده دیپلوی. اسم پروژه اسکیل‌آپت.\n\nhttps://nimaaksoy.com/radar/skillopt"
         }
       },
       "source": "github"
@@ -33,7 +37,11 @@
       "name": "Unlimited-OCR",
       "url": "https://github.com/baidu/Unlimited-OCR",
       "image": "https://opengraph.githubassets.com/1/baidu/Unlimited-OCR",
-      "tags": ["ocr", "documents", "vision"],
+      "tags": [
+        "ocr",
+        "documents",
+        "vision"
+      ],
       "starsGained": 63,
       "take": {
         "en": "One-shot long document parsing that pushes past short-page OCR demos.",
@@ -45,12 +53,12 @@
       },
       "share": {
         "x": {
-          "en": "Unlimited-OCR is the document model worth watching. open long-horizon parsing for multi-page PDFs, real serving paths, and a push past short-page OCR demos.\n\nhttps://nimaaksoy.com/radar/2026-07-21/unlimited-ocr",
-          "fa": "مدل سندی که ارزش دنبال کردن داره. پارس بلندمدت باز برای پی‌دی‌اف چندصفحه، مسیر سرو واقعی، و یه قدم فراتر از دموهای اوسی‌آر صفحه کوتاه. اسمش آنلیمیتد-اوسی‌آر.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-21/unlimited-ocr"
+          "en": "Unlimited-OCR is the document model worth watching. open long-horizon parsing for multi-page PDFs, real serving paths, and a push past short-page OCR demos.\n\nhttps://nimaaksoy.com/radar/unlimited-ocr",
+          "fa": "مدل سندی که ارزش دنبال کردن داره. پارس بلندمدت باز برای پی‌دی‌اف چندصفحه، مسیر سرو واقعی، و یه قدم فراتر از دموهای اوسی‌آر صفحه کوتاه. اسمش آنلیمیتد-اوسی‌آر.\n\nhttps://nimaaksoy.com/radar/unlimited-ocr"
         },
         "linkedin": {
-          "en": "Unlimited-OCR is worth a look if multi-page document parsing is still fragile. Baidu open-sourced long-horizon OCR with multi-page and PDF inference plus modern serving stacks.\n\nhttps://nimaaksoy.com/radar/2026-07-21/unlimited-ocr",
-          "fa": "اگه پارس سند چندصفحه هنوز شکننده‌ست ارزش دیدن داره. بایدو اوسی‌آر بلندمدت باز با اینفرنس چندصفحه و پی‌دی‌اف و استک سرو مدرن منتشر کرده. اسم پروژه آنلیمیتد-اوسی‌آر.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-21/unlimited-ocr"
+          "en": "Unlimited-OCR is worth a look if multi-page document parsing is still fragile. Baidu open-sourced long-horizon OCR with multi-page and PDF inference plus modern serving stacks.\n\nhttps://nimaaksoy.com/radar/unlimited-ocr",
+          "fa": "اگه پارس سند چندصفحه هنوز شکننده‌ست ارزش دیدن داره. بایدو اوسی‌آر بلندمدت باز با اینفرنس چندصفحه و پی‌دی‌اف و استک سرو مدرن منتشر کرده. اسم پروژه آنلیمیتد-اوسی‌آر.\n\nhttps://nimaaksoy.com/radar/unlimited-ocr"
         }
       },
       "source": "github"
@@ -60,7 +68,11 @@
       "name": "Voicebox",
       "url": "https://github.com/jamiepine/voicebox",
       "image": "https://opengraph.githubassets.com/1/jamiepine/voicebox",
-      "tags": ["voice", "tts", "local-first"],
+      "tags": [
+        "voice",
+        "tts",
+        "local-first"
+      ],
       "starsGained": 36,
       "take": {
         "en": "Local AI voice studio that clones, dictates, and lets agents speak.",
@@ -72,12 +84,12 @@
       },
       "share": {
         "x": {
-          "en": "Voicebox is the local voice studio agents needed. clone a voice, dictate anywhere, and let Claude Code or Cursor speak through MCP without shipping audio to a cloud TTS.\n\nhttps://nimaaksoy.com/radar/2026-07-21/voicebox",
-          "fa": "استودیو صوت لوکالی که ایجنت‌ها لازم داشتن. صدا رو کلون کن، هرجا دیکته بده، و بذار کلود کد یا کرسر از ام‌سی‌پی حرف بزنن بدون فرستادن صوت به تی‌تی‌اس ابری. اسمش ویس‌باکس.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-21/voicebox"
+          "en": "Voicebox is the local voice studio agents needed. clone a voice, dictate anywhere, and let Claude Code or Cursor speak through MCP without shipping audio to a cloud TTS.\n\nhttps://nimaaksoy.com/radar/voicebox",
+          "fa": "استودیو صوت لوکالی که ایجنت‌ها لازم داشتن. صدا رو کلون کن، هرجا دیکته بده، و بذار کلود کد یا کرسر از ام‌سی‌پی حرف بزنن بدون فرستادن صوت به تی‌تی‌اس ابری. اسمش ویس‌باکس.\n\nhttps://nimaaksoy.com/radar/voicebox"
         },
         "linkedin": {
-          "en": "Voicebox is worth a look if you want local voice I/O for people and agents. open studio with cloning, multi-engine TTS, system dictation, and MCP speak tools on your machine.\n\nhttps://nimaaksoy.com/radar/2026-07-21/voicebox",
-          "fa": "اگه ورودی و خروجی صوت لوکال برای آدم و ایجنت می‌خوای ارزش دیدن داره. استودیو باز با کلون صدا، تی‌تی‌اس چندموتوره، دیکته سیستم، و ابزار صحبت ام‌سی‌پی رو خود دستگاه. اسم پروژه ویس‌باکس.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-21/voicebox"
+          "en": "Voicebox is worth a look if you want local voice I/O for people and agents. open studio with cloning, multi-engine TTS, system dictation, and MCP speak tools on your machine.\n\nhttps://nimaaksoy.com/radar/voicebox",
+          "fa": "اگه ورودی و خروجی صوت لوکال برای آدم و ایجنت می‌خوای ارزش دیدن داره. استودیو باز با کلون صدا، تی‌تی‌اس چندموتوره، دیکته سیستم، و ابزار صحبت ام‌سی‌پی رو خود دستگاه. اسم پروژه ویس‌باکس.\n\nhttps://nimaaksoy.com/radar/voicebox"
         }
       },
       "source": "github"
@@ -87,7 +99,11 @@
       "name": "img2threejs",
       "url": "https://github.com/hoainho/img2threejs",
       "image": "https://opengraph.githubassets.com/1/hoainho/img2threejs",
-      "tags": ["3d", "agents", "threejs"],
+      "tags": [
+        "3d",
+        "agents",
+        "threejs"
+      ],
       "starsGained": 12,
       "take": {
         "en": "Turns a reference photo into animation-ready procedural Three.js code.",
@@ -99,12 +115,12 @@
       },
       "share": {
         "x": {
-          "en": "img2threejs is a better image-to-3D path for coding agents. one photo becomes quality-gated procedural Three.js with sockets and review loops, not an uneditable mesh dump.\n\nhttps://nimaaksoy.com/radar/2026-07-21/img2threejs",
-          "fa": "مسیر بهتر تصویر به سه‌بعدی برای ایجنت کدنویسی. یه عکس می‌شه سه‌جی‌اس پروسیجرال با گیت کیفیت و سوکت و حلقه ریویو، نه یه مش غیرقابل‌ویرایش. اسمش ایمیج‌تو‌تری‌جی‌اس.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-21/img2threejs"
+          "en": "img2threejs is a better image-to-3D path for coding agents. one photo becomes quality-gated procedural Three.js with sockets and review loops, not an uneditable mesh dump.\n\nhttps://nimaaksoy.com/radar/img2threejs",
+          "fa": "مسیر بهتر تصویر به سه‌بعدی برای ایجنت کدنویسی. یه عکس می‌شه سه‌جی‌اس پروسیجرال با گیت کیفیت و سوکت و حلقه ریویو، نه یه مش غیرقابل‌ویرایش. اسمش ایمیج‌تو‌تری‌جی‌اس.\n\nhttps://nimaaksoy.com/radar/img2threejs"
         },
         "linkedin": {
-          "en": "img2threejs is worth a look if agents need editable 3D from a single reference image. it is an open skill that sculpts animation-ready procedural Three.js under vision review gates.\n\nhttps://nimaaksoy.com/radar/2026-07-21/img2threejs",
-          "fa": "اگه ایجنت به سه‌بعدی قابل‌ویرایش از یه عکس مرجع نیاز داره ارزش دیدن داره. اسکیل بازی که سه‌جی‌اس پروسیجرال آماده‌انیمیشن رو زیر گیت ریویو بینایی مجسمه می‌کنه. اسم پروژه ایمیج‌تو‌تری‌جی‌اس.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-21/img2threejs"
+          "en": "img2threejs is worth a look if agents need editable 3D from a single reference image. it is an open skill that sculpts animation-ready procedural Three.js under vision review gates.\n\nhttps://nimaaksoy.com/radar/img2threejs",
+          "fa": "اگه ایجنت به سه‌بعدی قابل‌ویرایش از یه عکس مرجع نیاز داره ارزش دیدن داره. اسکیل بازی که سه‌جی‌اس پروسیجرال آماده‌انیمیشن رو زیر گیت ریویو بینایی مجسمه می‌کنه. اسم پروژه ایمیج‌تو‌تری‌جی‌اس.\n\nhttps://nimaaksoy.com/radar/img2threejs"
         }
       },
       "source": "github"
@@ -114,7 +130,11 @@
       "name": "Freerange",
       "url": "https://github.com/chenglou/freerange",
       "image": "https://opengraph.githubassets.com/1/chenglou/freerange",
-      "tags": ["typescript", "static-analysis", "ui"],
+      "tags": [
+        "typescript",
+        "static-analysis",
+        "ui"
+      ],
       "starsGained": 3,
       "take": {
         "en": "Static number-range checks so layout math fails at compile time.",
@@ -126,12 +146,12 @@
       },
       "share": {
         "x": {
-          "en": "Freerange is the static layout checker TypeScript needed. it tracks number ranges through ordinary code so agents can catch divide-by-zero and broken grid math before opening a browser.\n\nhttps://nimaaksoy.com/radar/2026-07-21/freerange",
-          "fa": "چک‌کننده ایستای چیدمان که تایپ‌اسکریپت لازم داشت. بازه عدد رو تو کد معمولی دنبال می‌کنه تا ایجنت تقسیم بر صفر و ریاضی خراب گرید رو قبل از باز کردن مرورگر بگیره. اسمش فری‌رنج.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-21/freerange"
+          "en": "Freerange is the static layout checker TypeScript needed. it tracks number ranges through ordinary code so agents can catch divide-by-zero and broken grid math before opening a browser.\n\nhttps://nimaaksoy.com/radar/freerange",
+          "fa": "چک‌کننده ایستای چیدمان که تایپ‌اسکریپت لازم داشت. بازه عدد رو تو کد معمولی دنبال می‌کنه تا ایجنت تقسیم بر صفر و ریاضی خراب گرید رو قبل از باز کردن مرورگر بگیره. اسمش فری‌رنج.\n\nhttps://nimaaksoy.com/radar/freerange"
         },
         "linkedin": {
-          "en": "Freerange is worth a look if agents write UI layout math in TypeScript. it adds compile-time range analysis and static console.assert contracts without a new language.\n\nhttps://nimaaksoy.com/radar/2026-07-21/freerange",
-          "fa": "اگه ایجنت ریاضی چیدمان رابط رو با تایپ‌اسکریپت می‌نویسه ارزش دیدن داره. تحلیل بازه موقع کامپایل و قرارداد ایستای ادعا رو بدون زبان جدید اضافه می‌کنه. اسم پروژه فری‌رنج.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-21/freerange"
+          "en": "Freerange is worth a look if agents write UI layout math in TypeScript. it adds compile-time range analysis and static console.assert contracts without a new language.\n\nhttps://nimaaksoy.com/radar/freerange",
+          "fa": "اگه ایجنت ریاضی چیدمان رابط رو با تایپ‌اسکریپت می‌نویسه ارزش دیدن داره. تحلیل بازه موقع کامپایل و قرارداد ایستای ادعا رو بدون زبان جدید اضافه می‌کنه. اسم پروژه فری‌رنج.\n\nhttps://nimaaksoy.com/radar/freerange"
         }
       },
       "source": "github"

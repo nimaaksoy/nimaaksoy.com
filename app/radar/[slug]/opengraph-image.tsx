@@ -1,19 +1,20 @@
 import { ImageResponse } from "next/og";
-import { getRadarItem } from "@/lib/radar";
+import { getRadarProject } from "@/lib/radar";
 
-export const alt = "مورد رادار";
+export const alt = "Radar item";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 type Props = {
-  params: Promise<{ date: string; slug: string }>;
+  params: Promise<{ slug: string }>;
 };
 
 export default async function Image({ params }: Props) {
-  const { date, slug } = await params;
-  const result = await getRadarItem(date, slug);
-  const name = result?.item.name ?? "رادار";
-  const take = result?.item.take.fa ?? "چی دارم نگاه می‌کنم";
+  const { slug } = await params;
+  const project = await getRadarProject(slug);
+  const name = project?.name ?? "Radar";
+  const take = project?.take.en ?? "What I’m watching";
+  const date = project?.date ?? "";
 
   return new ImageResponse(
     (
@@ -28,7 +29,6 @@ export default async function Image({ params }: Props) {
           color: "#EAEAEA",
           padding: "64px",
           fontFamily: "sans-serif",
-          direction: "rtl",
         }}
       >
         <div
@@ -39,9 +39,10 @@ export default async function Image({ params }: Props) {
             color: "#2CFF05",
             fontSize: 28,
             letterSpacing: "0.18em",
+            textTransform: "uppercase",
           }}
         >
-          رادار
+          RADAR
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
@@ -59,7 +60,7 @@ export default async function Image({ params }: Props) {
             style={{
               fontSize: 32,
               color: "#9A9A9A",
-              lineHeight: 1.45,
+              lineHeight: 1.35,
               maxWidth: 980,
             }}
           >

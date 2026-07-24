@@ -6,7 +6,11 @@
       "name": "Buzz",
       "url": "https://github.com/block/buzz",
       "image": "https://opengraph.githubassets.com/1/block/buzz",
-      "tags": ["agents", "collaboration", "self-hosted"],
+      "tags": [
+        "agents",
+        "collaboration",
+        "self-hosted"
+      ],
       "starsGained": 42,
       "take": {
         "en": "Self-hosted room where people and agents build with the same keys and audit trail.",
@@ -18,12 +22,12 @@
       },
       "share": {
         "x": {
-          "en": "Buzz is the agent collab room that actually feels like a teammate workspace. self-hosted, signed event log, humans and agents as real members who can patch, review, and run workflows in the same channel.\n\nhttps://nimaaksoy.com/radar/2026-07-22/buzz",
-          "fa": "اتاق همکاری ایجنت که واقعاً مثل فضای کار تیم حس می‌شه. خودمیزبان، لاگ رویداد امضاشده، آدم و ایجنت عضو واقعی که تو یه کانال پچ می‌فرستن و ورک‌فلو اجرا می‌کنن. اسم پروژه‌ش Buzz.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-22/buzz"
+          "en": "Buzz is the agent collab room that actually feels like a teammate workspace. self-hosted, signed event log, humans and agents as real members who can patch, review, and run workflows in the same channel.\n\nhttps://nimaaksoy.com/radar/buzz",
+          "fa": "اتاق همکاری ایجنت که واقعاً مثل فضای کار تیم حس می‌شه. خودمیزبان، لاگ رویداد امضاشده، آدم و ایجنت عضو واقعی که تو یه کانال پچ می‌فرستن و ورک‌فلو اجرا می‌کنن. اسم پروژه‌ش Buzz.\n\nhttps://nimaaksoy.com/radar/buzz"
         },
         "linkedin": {
-          "en": "Buzz is worth a look if your agents still live outside the team room. Block open-sourced a self-hostable workspace where people and agents share one signed event log, one identity model, and the same tools for patches, reviews, and workflows.\n\nhttps://nimaaksoy.com/radar/2026-07-22/buzz",
-          "fa": "اگه ایجنت‌هات هنوز بیرون از اتاق تیم زندگی می‌کنن ارزش دیدن داره. بلاک یه فضای کار خودمیزبان باز کرده که آدم و ایجنت یه لاگ رویداد امضاشده، یه مدل هویت، و ابزار مشترک برای پچ و ریویو و ورک‌فلو دارن. اسم پروژه‌ش Buzz.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-22/buzz"
+          "en": "Buzz is worth a look if your agents still live outside the team room. Block open-sourced a self-hostable workspace where people and agents share one signed event log, one identity model, and the same tools for patches, reviews, and workflows.\n\nhttps://nimaaksoy.com/radar/buzz",
+          "fa": "اگه ایجنت‌هات هنوز بیرون از اتاق تیم زندگی می‌کنن ارزش دیدن داره. بلاک یه فضای کار خودمیزبان باز کرده که آدم و ایجنت یه لاگ رویداد امضاشده، یه مدل هویت، و ابزار مشترک برای پچ و ریویو و ورک‌فلو دارن. اسم پروژه‌ش Buzz.\n\nhttps://nimaaksoy.com/radar/buzz"
         }
       },
       "source": "github"
@@ -33,7 +37,11 @@
       "name": "Gigatoken",
       "url": "https://github.com/marcelroed/gigatoken",
       "image": "https://opengraph.githubassets.com/1/marcelroed/gigatoken",
-      "tags": ["tokenization", "ml-infra", "rust"],
+      "tags": [
+        "tokenization",
+        "ml-infra",
+        "rust"
+      ],
       "starsGained": 7,
       "take": {
         "en": "Language model tokenization at GB/s, drop-in for Hugging Face and tiktoken.",
@@ -45,12 +53,12 @@
       },
       "share": {
         "x": {
-          "en": "Gigatoken is the tokenizer speedup people actually needed. GB/s throughput in Rust, drop-in paths for Hugging Face and tiktoken, and a native API when you are tokenizing files at corpus scale.\n\nhttps://nimaaksoy.com/radar/2026-07-22/gigatoken",
-          "fa": "شتاب توکن‌سازی که واقعاً لازم بود. توان گیگابایت بر ثانیه با راست، مسیر جایگزین برای هاگینگ‌فیس و تیک‌توکن، و ای‌پی‌آی بومی وقتی فایل‌ها رو تو مقیاس کرپوس توکن می‌کنی. اسمش گیگاتوکن.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-22/gigatoken"
+          "en": "Gigatoken is the tokenizer speedup people actually needed. GB/s throughput in Rust, drop-in paths for Hugging Face and tiktoken, and a native API when you are tokenizing files at corpus scale.\n\nhttps://nimaaksoy.com/radar/gigatoken",
+          "fa": "شتاب توکن‌سازی که واقعاً لازم بود. توان گیگابایت بر ثانیه با راست، مسیر جایگزین برای هاگینگ‌فیس و تیک‌توکن، و ای‌پی‌آی بومی وقتی فایل‌ها رو تو مقیاس کرپوس توکن می‌کنی. اسمش گیگاتوکن.\n\nhttps://nimaaksoy.com/radar/gigatoken"
         },
         "linkedin": {
-          "en": "Gigatoken is worth a look if tokenization is still the slow step in your data pipeline. open Rust tokenizer with compatibility modes for Hugging Face and tiktoken, plus a faster native path for large file batches.\n\nhttps://nimaaksoy.com/radar/2026-07-22/gigatoken",
-          "fa": "اگه توکن‌سازی هنوز مرحله کند پایپ‌لاین داده‌ته ارزش دیدن داره. توکن‌ساز باز راست با حالت سازگار هاگینگ‌فیس و تیک‌توکن، به‌علاوه مسیر بومی سریع‌تر برای بچ فایل بزرگ. اسم پروژه گیگاتوکن.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-22/gigatoken"
+          "en": "Gigatoken is worth a look if tokenization is still the slow step in your data pipeline. open Rust tokenizer with compatibility modes for Hugging Face and tiktoken, plus a faster native path for large file batches.\n\nhttps://nimaaksoy.com/radar/gigatoken",
+          "fa": "اگه توکن‌سازی هنوز مرحله کند پایپ‌لاین داده‌ته ارزش دیدن داره. توکن‌ساز باز راست با حالت سازگار هاگینگ‌فیس و تیک‌توکن، به‌علاوه مسیر بومی سریع‌تر برای بچ فایل بزرگ. اسم پروژه گیگاتوکن.\n\nhttps://nimaaksoy.com/radar/gigatoken"
         }
       },
       "source": "github"
@@ -60,7 +68,12 @@
       "name": "text-to-cad",
       "url": "https://github.com/earthtojake/text-to-cad",
       "image": "https://opengraph.githubassets.com/1/earthtojake/text-to-cad",
-      "tags": ["cad", "robotics", "agents", "skills"],
+      "tags": [
+        "cad",
+        "robotics",
+        "agents",
+        "skills"
+      ],
       "starsGained": 9,
       "take": {
         "en": "Agent skills that turn plain language into CAD parts, robots, and shop files.",
@@ -72,12 +85,12 @@
       },
       "share": {
         "x": {
-          "en": "text-to-cad is the agent skill pack hardware people needed. plain language to STEP parts, robot files, DXF shop drawings, and browser previews without treating CAD like a black-box mesh dump.\n\nhttps://nimaaksoy.com/radar/2026-07-22/text-to-cad",
-          "fa": "بسته اسکیل ایجنت که آدمای سخت‌افزار لازم داشتن. از حرف معمولی تا قطعه استپ، فایل ربات، نقشه کارگاه دی‌ایکس‌اف و پیش‌نمایش مرورگر بدون اینکه سه‌بعدی فقط یه مش جعبه سیاه باشه. اسم پروژه‌ش text-to-cad.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-22/text-to-cad"
+          "en": "text-to-cad is the agent skill pack hardware people needed. plain language to STEP parts, robot files, DXF shop drawings, and browser previews without treating CAD like a black-box mesh dump.\n\nhttps://nimaaksoy.com/radar/text-to-cad",
+          "fa": "بسته اسکیل ایجنت که آدمای سخت‌افزار لازم داشتن. از حرف معمولی تا قطعه استپ، فایل ربات، نقشه کارگاه دی‌ایکس‌اف و پیش‌نمایش مرورگر بدون اینکه سه‌بعدی فقط یه مش جعبه سیاه باشه. اسم پروژه‌ش text-to-cad.\n\nhttps://nimaaksoy.com/radar/text-to-cad"
         },
         "linkedin": {
-          "en": "text-to-cad is worth a look if your coding agents stop at software. open skills for CAD and robotics that target STEP, STL, 3MF, DXF, URDF, and sim files with browser preview in the loop.\n\nhttps://nimaaksoy.com/radar/2026-07-22/text-to-cad",
-          "fa": "اگه ایجنت کدنویسی‌ت فقط تا نرم‌افزار می‌ره ارزش دیدن داره. اسکیل باز برای سه‌بعدی و رباتیک با هدف استپ، اس‌تی‌ال، سه‌ام‌اف، دی‌ایکس‌اف، یوار‌دی‌اف و فایل شبیه‌ساز با پیش‌نمایش مرورگر تو حلقه. اسم پروژه‌ش text-to-cad.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-22/text-to-cad"
+          "en": "text-to-cad is worth a look if your coding agents stop at software. open skills for CAD and robotics that target STEP, STL, 3MF, DXF, URDF, and sim files with browser preview in the loop.\n\nhttps://nimaaksoy.com/radar/text-to-cad",
+          "fa": "اگه ایجنت کدنویسی‌ت فقط تا نرم‌افزار می‌ره ارزش دیدن داره. اسکیل باز برای سه‌بعدی و رباتیک با هدف استپ، اس‌تی‌ال، سه‌ام‌اف، دی‌ایکس‌اف، یوار‌دی‌اف و فایل شبیه‌ساز با پیش‌نمایش مرورگر تو حلقه. اسم پروژه‌ش text-to-cad.\n\nhttps://nimaaksoy.com/radar/text-to-cad"
         }
       },
       "source": "github"
@@ -87,7 +100,12 @@
       "name": "Pireel",
       "url": "https://github.com/pireel/pireel",
       "image": "https://opengraph.githubassets.com/1/pireel/pireel",
-      "tags": ["video", "agents", "mcp", "browser"],
+      "tags": [
+        "video",
+        "agents",
+        "mcp",
+        "browser"
+      ],
       "starsGained": 8,
       "take": {
         "en": "Backend-free talking-head video editor that coding agents can drive over MCP.",
@@ -99,12 +117,12 @@
       },
       "share": {
         "x": {
-          "en": "Pireel is the talking-head editor agents can actually drive. open browser studio, local drafts, kinetic captions and themes, WebCodecs export, and an MCP plugin for Claude Code or Codex.\n\nhttps://nimaaksoy.com/radar/2026-07-22/pireel",
-          "fa": "ادیتور تاکینگ‌هدی که ایجنت واقعاً می‌تونه راهش بده. استودیو باز مرورگری، پیش‌نویس لوکال، کپشن متحرک و تم، خروجی وب‌کدک، و پلاگین ام‌سی‌پی برای کلود کد یا کدکس. اسمش پایریل.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-22/pireel"
+          "en": "Pireel is the talking-head editor agents can actually drive. open browser studio, local drafts, kinetic captions and themes, WebCodecs export, and an MCP plugin for Claude Code or Codex.\n\nhttps://nimaaksoy.com/radar/pireel",
+          "fa": "ادیتور تاکینگ‌هدی که ایجنت واقعاً می‌تونه راهش بده. استودیو باز مرورگری، پیش‌نویس لوکال، کپشن متحرک و تم، خروجی وب‌کدک، و پلاگین ام‌سی‌پی برای کلود کد یا کدکس. اسمش پایریل.\n\nhttps://nimaaksoy.com/radar/pireel"
         },
         "linkedin": {
-          "en": "Pireel is worth a look if you want agent-driven talking-head video without a cloud editor lock-in. open browser studio with local drafts, design themes, client export, and MCP control from coding agents.\n\nhttps://nimaaksoy.com/radar/2026-07-22/pireel",
-          "fa": "اگه ویدیو تاکینگ‌هد با ایجنت می‌خوای بدون قفل ادیتور ابری ارزش دیدن داره. استودیو باز مرورگری با پیش‌نویس لوکال، تم طراحی، خروجی سمت کلاینت، و کنترل ام‌سی‌پی از ایجنت کدنویسی. اسم پروژه پایریل.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-22/pireel"
+          "en": "Pireel is worth a look if you want agent-driven talking-head video without a cloud editor lock-in. open browser studio with local drafts, design themes, client export, and MCP control from coding agents.\n\nhttps://nimaaksoy.com/radar/pireel",
+          "fa": "اگه ویدیو تاکینگ‌هد با ایجنت می‌خوای بدون قفل ادیتور ابری ارزش دیدن داره. استودیو باز مرورگری با پیش‌نویس لوکال، تم طراحی، خروجی سمت کلاینت، و کنترل ام‌سی‌پی از ایجنت کدنویسی. اسم پروژه پایریل.\n\nhttps://nimaaksoy.com/radar/pireel"
         }
       },
       "source": "github"
