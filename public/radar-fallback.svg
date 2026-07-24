@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" role="img" aria-label="Radar placeholder">
+  <rect width="640" height="400" fill="#111111"/>
+  <rect x="1" y="1" width="638" height="398" fill="none" stroke="#1F1F1F" stroke-width="2"/>
+  <circle cx="320" cy="200" r="88" fill="none" stroke="#2CFF05" stroke-opacity="0.22" stroke-width="1.5"/>
+  <circle cx="320" cy="200" r="56" fill="none" stroke="#2CFF05" stroke-opacity="0.35" stroke-width="1.5"/>
+  <circle cx="320" cy="200" r="24" fill="none" stroke="#2CFF05" stroke-opacity="0.5" stroke-width="1.5"/>
+  <circle cx="320" cy="200" r="4" fill="#2CFF05"/>
+  <path d="M320 200 L392 128" stroke="#2CFF05" stroke-opacity="0.55" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="320" y="310" text-anchor="middle" fill="#7F7F7F" font-family="ui-monospace, monospace" font-size="13" letter-spacing="0.2em">RADAR</text>
+</svg>

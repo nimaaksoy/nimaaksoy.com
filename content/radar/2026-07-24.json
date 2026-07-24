@@ -1,0 +1,68 @@
+{
+  "date": "2026-07-24",
+  "items": [
+    {
+      "slug": "firecrawl",
+      "name": "Firecrawl",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "image": "https://opengraph.githubassets.com/1/firecrawl/firecrawl",
+      "tags": ["web-scraping", "agents", "api", "mcp", "llm"],
+      "stars": 78000,
+      "starsGained": 420,
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": true,
+      "hasMcp": true,
+      "trending": [
+        "Agent + MCP install path",
+        "LLM-ready markdown/JSON output",
+        "Search + scrape + interact in one API"
+      ],
+      "similar": [
+        {
+          "name": "Page Agent",
+          "slug": "page-agent"
+        },
+        {
+          "name": "Browserbase",
+          "url": "https://www.browserbase.com"
+        },
+        {
+          "name": "Jina Reader",
+          "url": "https://jina.ai/reader"
+        }
+      ],
+      "take": {
+        "en": "A web context API that turns pages into clean markdown or structured data agents can actually use.",
+        "fa": "یه ای‌پی‌آی زمینه وب که صفحه رو به مارک‌داون تمیز یا داده ساختاری تبدیل می‌کنه تا ایجنت واقعاً بتونه استفاده کنه."
+      },
+      "why": {
+        "en": "Most agent stacks still stall on messy HTML, JS-heavy sites, and one-off scrapers. Firecrawl is becoming the default “get me usable web context” layer — search, scrape, crawl, and interact behind one contract. If you ship product agents that need live web data, this is the project to track.",
+        "fa": "بیشتر استک‌های ایجنت هنوز روی اچ‌تی‌ام‌ال شلوغ و سایت‌های سنگین جاوااسکریپت گیر می‌کنن. فایرکرال داره لایه پیش‌فرض «زمینه وب قابل استفاده» می‌شه — سرچ، اسکرپ، کرال و تعامل پشت یه قرارداد. اگه ایجنت محصول با داده زنده وب می‌سازی، این پروژه رو باید دنبال کنی."
+      },
+      "explanation": {
+        "en": "Firecrawl is an open-source and hosted API for search, scrape, crawl, map, and browser-style interact. You send a URL or query; it handles proxies, JS rendering, and extraction, then returns markdown, structured JSON, screenshots, or media-derived text. Teams use it so agents spend tokens on reasoning instead of cleaning HTML.",
+        "fa": "فایرکرال یه ای‌پی‌آی متن‌باز و هاست‌شده برای سرچ، اسکرپ، کرال، مپ و تعامل شبیه مرورگره. یوآرال یا کوئری می‌فرستی؛ پراکسی و رندر جاوااسکریپت و استخراج رو خودش انجام می‌ده و مارک‌داون، جیسون ساختاری، اسکرین‌شات یا متن از مدیا برمی‌گردونه. تیم‌ها باهاش ایجنت رو از تمیزکاری اچ‌تی‌ام‌ال خلاص می‌کنن."
+      },
+      "howItWorks": {
+        "en": "Call scrape or search via REST/SDK with an API key (or self-host). For multi-page jobs use crawl/map; for dynamic flows use interact after a scrape id. Agents can also attach via MCP (`firecrawl-mcp`) or a one-command skill install so tools appear inside the coding agent.",
+        "fa": "با کلید ای‌پی‌آی (یا سلف‌هاست) از رست یا اس‌دی‌کی اسکرپ یا سرچ می‌زنی. برای چند صفحه کرال/مپ؛ برای جریان پویا بعد از شناسه اسکرپ از interact. ایجنت‌ها با ام‌سی‌پی یا نصب اسکیل هم وصل می‌شن تا ابزار تو خود ایجنت ظاهر بشه."
+      },
+      "different": {
+        "en": "Not just another HTML downloader: reliability on JS sites, LLM-oriented output formats, and first-class agent/MCP paths in the same product. Hosted speed and coverage matter when a naive Playwright script does not scale.",
+        "fa": "فقط دانلودر اچ‌تی‌ام‌ال نیست: پایداری روی سایت‌های جاوااسکریپت، خروجی مناسب مدل، و مسیر ایجنت/ام‌سی‌پی تو همون محصول. سرعت و پوشش هاست‌شده وقتی مهمه که اسکریپت ساده پلی‌رایت مقیاس نمی‌ده."
+      },
+      "share": {
+        "x": {
+          "en": "Firecrawl is the web context layer agents keep landing on. search + scrape + interact, clean markdown/JSON, plus MCP in one stack.\n\nhttps://nimaaksoy.com/radar/firecrawl",
+          "fa": "لایه زمینه وب که ایجنت‌ها روش جمع می‌شن. سرچ و اسکرپ و تعامل، مارک‌داون/جیسون تمیز، به‌علاوه ام‌سی‌پی تو یه استک. اسمش فایرکرال.\n\nhttps://nimaaksoy.com/radar/firecrawl"
+        },
+        "linkedin": {
+          "en": "Firecrawl is worth a hard look if your agents still choke on raw HTML. open + hosted web data API with scrape, search, crawl, interact, and MCP for product agents.\n\nhttps://nimaaksoy.com/radar/firecrawl",
+          "fa": "اگه ایجنت‌هات هنوز با اچ‌تی‌ام‌ال خام گیر می‌کنن ارزش بررسی جدی داره. ای‌پی‌آی داده وب متن‌باز و هاست‌شده با اسکرپ، سرچ، کرال، تعامل و ام‌سی‌پی. اسمش فایرکرال.\n\nhttps://nimaaksoy.com/radar/firecrawl"
+        }
+      },
+      "source": "github"
+    }
+  ]
+}

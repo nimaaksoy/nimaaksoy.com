@@ -6,7 +6,11 @@
       "name": "deepsec",
       "url": "https://github.com/vercel-labs/deepsec",
       "image": "https://opengraph.githubassets.com/1/vercel-labs/deepsec",
-      "tags": ["security", "coding-agents", "code-review"],
+      "tags": [
+        "security",
+        "coding-agents",
+        "code-review"
+      ],
       "starsGained": 10,
       "take": {
         "en": "Agent-powered security scan that hunts long-lived bugs in big repos.",
@@ -18,12 +22,12 @@
       },
       "share": {
         "x": {
-          "en": "deepsec is the security harness coding agents needed. it hunts long-lived multi-file bugs in big repos, resumes if a run dies, and can revalidate findings so you are not drowning in false positives.\n\nhttps://nimaaksoy.com/radar/2026-07-19/deepsec",
-          "fa": "هارنس امنیتی که ایجنت کدنویسی لازم داشت. باگ‌های قدیمی چندفایلی تو ریپوی بزرگ رو شکار می‌کنه، اگه ران قطع بشه ادامه می‌ده، و یافته‌ها رو دوباره چک می‌کنه تا هشدار الکی غرق‌ت نکنه. اسمش دیپ‌سک.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-19/deepsec"
+          "en": "deepsec is the security harness coding agents needed. it hunts long-lived multi-file bugs in big repos, resumes if a run dies, and can revalidate findings so you are not drowning in false positives.\n\nhttps://nimaaksoy.com/radar/deepsec",
+          "fa": "هارنس امنیتی که ایجنت کدنویسی لازم داشت. باگ‌های قدیمی چندفایلی تو ریپوی بزرگ رو شکار می‌کنه، اگه ران قطع بشه ادامه می‌ده، و یافته‌ها رو دوباره چک می‌کنه تا هشدار الکی غرق‌ت نکنه. اسمش دیپ‌سک.\n\nhttps://nimaaksoy.com/radar/deepsec"
         },
         "linkedin": {
-          "en": "deepsec is worth a look if large-repo security review still feels shallow. Vercel Labs built an agent-powered harness that maps the codebase, fans out work, resumes failed runs, and revalidates findings on your own infra.\n\nhttps://nimaaksoy.com/radar/2026-07-19/deepsec",
-          "fa": "اگه ریویوی امنیتی ریپوی بزرگ هنوز سطحی حس می‌شه ارزش دیدن داره. ورسل لبز یه هارنس با ایجنت ساخته که کدبیس رو نقشه می‌کشه، کار رو پخش می‌کنه، ران قطع‌شده رو ادامه می‌ده و یافته‌ها رو رو زیرساخت خودت دوباره چک می‌کنه. اسم پروژه دیپ‌سک.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-19/deepsec"
+          "en": "deepsec is worth a look if large-repo security review still feels shallow. Vercel Labs built an agent-powered harness that maps the codebase, fans out work, resumes failed runs, and revalidates findings on your own infra.\n\nhttps://nimaaksoy.com/radar/deepsec",
+          "fa": "اگه ریویوی امنیتی ریپوی بزرگ هنوز سطحی حس می‌شه ارزش دیدن داره. ورسل لبز یه هارنس با ایجنت ساخته که کدبیس رو نقشه می‌کشه، کار رو پخش می‌کنه، ران قطع‌شده رو ادامه می‌ده و یافته‌ها رو رو زیرساخت خودت دوباره چک می‌کنه. اسم پروژه دیپ‌سک.\n\nhttps://nimaaksoy.com/radar/deepsec"
         }
       },
       "source": "github"
@@ -33,7 +37,11 @@
       "name": "Harness Engineering",
       "url": "https://github.com/lopopolo/harness-engineering",
       "image": "https://opengraph.githubassets.com/1/lopopolo/harness-engineering",
-      "tags": ["agents", "playbooks", "context-engineering"],
+      "tags": [
+        "agents",
+        "playbooks",
+        "context-engineering"
+      ],
       "starsGained": 11,
       "take": {
         "en": "Field guide that teaches agents how your org actually works.",
@@ -45,12 +53,12 @@
       },
       "share": {
         "x": {
-          "en": "Harness Engineering is the missing playbook for agent-first teams. keep the model fixed, shape context and tools, and make org judgment recoverable so the next run starts smarter.\n\nhttps://nimaaksoy.com/radar/2026-07-19/harness-engineering",
-          "fa": "پلی‌بوکی که تیم‌های ایجنت‌اول کم داشتن. مدل رو ثابت بذار، کانتکست و ابزار رو شکل بده، و قضاوت سازمان رو قابل‌بازیابی کن تا ران بعدی هوشمندتر شروع بشه. اسمش هارنس انجینیرینگ.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-19/harness-engineering"
+          "en": "Harness Engineering is the missing playbook for agent-first teams. keep the model fixed, shape context and tools, and make org judgment recoverable so the next run starts smarter.\n\nhttps://nimaaksoy.com/radar/harness-engineering",
+          "fa": "پلی‌بوکی که تیم‌های ایجنت‌اول کم داشتن. مدل رو ثابت بذار، کانتکست و ابزار رو شکل بده، و قضاوت سازمان رو قابل‌بازیابی کن تا ران بعدی هوشمندتر شروع بشه. اسمش هارنس انجینیرینگ.\n\nhttps://nimaaksoy.com/radar/harness-engineering"
         },
         "linkedin": {
-          "en": "Harness Engineering stood out if you care about agent systems beyond prompts. it is an open field guide and agent context bundle for making nonfunctional requirements, tools, and org judgment recoverable around a coding agent.\n\nhttps://nimaaksoy.com/radar/2026-07-19/harness-engineering",
-          "fa": "اگه سیستم ایجنت برات فراتر از پرامپت مهمه این یکی به چشم اومد. یه راهنمای باز و بسته کانتکست برای ایجنته تا نیازمندی‌های غیرعملیاتی، ابزار، و قضاوت سازمان دور ایجنت کدنویسی قابل‌بازیابی بشه. اسم پروژه هارنس انجینیرینگ.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-19/harness-engineering"
+          "en": "Harness Engineering stood out if you care about agent systems beyond prompts. it is an open field guide and agent context bundle for making nonfunctional requirements, tools, and org judgment recoverable around a coding agent.\n\nhttps://nimaaksoy.com/radar/harness-engineering",
+          "fa": "اگه سیستم ایجنت برات فراتر از پرامپت مهمه این یکی به چشم اومد. یه راهنمای باز و بسته کانتکست برای ایجنته تا نیازمندی‌های غیرعملیاتی، ابزار، و قضاوت سازمان دور ایجنت کدنویسی قابل‌بازیابی بشه. اسم پروژه هارنس انجینیرینگ.\n\nhttps://nimaaksoy.com/radar/harness-engineering"
         }
       },
       "source": "github"
@@ -60,7 +68,11 @@
       "name": "OpenConnector",
       "url": "https://github.com/oomol-lab/open-connector",
       "image": "https://opengraph.githubassets.com/1/oomol-lab/open-connector",
-      "tags": ["mcp", "integrations", "agents"],
+      "tags": [
+        "mcp",
+        "integrations",
+        "agents"
+      ],
       "take": {
         "en": "Open Composio-style gateway: connect SaaS once, hand agents 1000+ actions.",
         "fa": "گیت‌وی باز شبیه کامپوزیو: یه‌بار به سرویس وصل شو، هزار اکشن به ایجنت بده."
@@ -71,12 +83,12 @@
       },
       "share": {
         "x": {
-          "en": "OpenConnector is the open gateway agent products keep reinventing. connect SaaS once, expose a huge action catalog over MCP and SDK, and keep credentials in a runtime you can actually inspect.\n\nhttps://nimaaksoy.com/radar/2026-07-19/open-connector",
-          "fa": "گیت‌وی بازی که محصولات ایجنت هی از نو می‌سازن. یه‌بار به سرویس وصل شو، کاتالوگ بزرگ اکشن رو از ام‌سی‌پی و اس‌دی‌کی بده، و اعتبارنامه رو تو رانتایمی نگه دار که بشه دید. اسمش اوپن‌کانکتور.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-19/open-connector"
+          "en": "OpenConnector is the open gateway agent products keep reinventing. connect SaaS once, expose a huge action catalog over MCP and SDK, and keep credentials in a runtime you can actually inspect.\n\nhttps://nimaaksoy.com/radar/open-connector",
+          "fa": "گیت‌وی بازی که محصولات ایجنت هی از نو می‌سازن. یه‌بار به سرویس وصل شو، کاتالوگ بزرگ اکشن رو از ام‌سی‌پی و اس‌دی‌کی بده، و اعتبارنامه رو تو رانتایمی نگه دار که بشه دید. اسمش اوپن‌کانکتور.\n\nhttps://nimaaksoy.com/radar/open-connector"
         },
         "linkedin": {
-          "en": "OpenConnector is worth a look if your agents need durable SaaS access. it is an open Composio-style connector gateway with provider catalog, action contracts, MCP/SDK paths, and self-host options.\n\nhttps://nimaaksoy.com/radar/2026-07-19/open-connector",
-          "fa": "اگه ایجنت‌هات به دسترسی پایدار به سرویس‌های ابری نیاز دارن ارزش دیدن داره. گیت‌وی کانکتور باز با کاتالوگ ارائه‌دهنده، قرارداد اکشن، مسیر ام‌سی‌پی و اس‌دی‌کی، و گزینه خودمیزبانی. اسم پروژه اوپن‌کانکتور.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-19/open-connector"
+          "en": "OpenConnector is worth a look if your agents need durable SaaS access. it is an open Composio-style connector gateway with provider catalog, action contracts, MCP/SDK paths, and self-host options.\n\nhttps://nimaaksoy.com/radar/open-connector",
+          "fa": "اگه ایجنت‌هات به دسترسی پایدار به سرویس‌های ابری نیاز دارن ارزش دیدن داره. گیت‌وی کانکتور باز با کاتالوگ ارائه‌دهنده، قرارداد اکشن، مسیر ام‌سی‌پی و اس‌دی‌کی، و گزینه خودمیزبانی. اسم پروژه اوپن‌کانکتور.\n\nhttps://nimaaksoy.com/radar/open-connector"
         }
       },
       "source": "github"
@@ -86,7 +98,11 @@
       "name": "transcribe.cpp",
       "url": "https://github.com/handy-computer/transcribe.cpp",
       "image": "https://opengraph.githubassets.com/1/handy-computer/transcribe.cpp",
-      "tags": ["speech", "ggml", "local-inference"],
+      "tags": [
+        "speech",
+        "ggml",
+        "local-inference"
+      ],
       "take": {
         "en": "One ggml STT engine for sixteen-plus model families, not just Whisper.",
         "fa": "یه موتور تشخیص گفتار جی‌جی‌ام‌ال برای بیش از شانزده خانواده مدل، نه فقط ویسپر."
@@ -97,12 +113,12 @@
       },
       "share": {
         "x": {
-          "en": "transcribe.cpp is the local STT runtime people needed. one ggml engine for 16+ model families, GPU and CPU paths, and verified GGUF ports instead of another Whisper-only fork.\n\nhttps://nimaaksoy.com/radar/2026-07-19/transcribe-cpp",
-          "fa": "رانتایم تشخیص گفتار لوکالی که لازم بود. یه موتور جی‌جی‌ام‌ال برای بیش از شانزده خانواده مدل، مسیر جی‌پی‌یو و سی‌پی‌یو، و پورت‌های جی‌جی‌یو‌اف چک‌شده به‌جای یه فورک فقط‌ویسپر. اسمش ترنسکرایب‌سی‌سی.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-19/transcribe-cpp"
+          "en": "transcribe.cpp is the local STT runtime people needed. one ggml engine for 16+ model families, GPU and CPU paths, and verified GGUF ports instead of another Whisper-only fork.\n\nhttps://nimaaksoy.com/radar/transcribe-cpp",
+          "fa": "رانتایم تشخیص گفتار لوکالی که لازم بود. یه موتور جی‌جی‌ام‌ال برای بیش از شانزده خانواده مدل، مسیر جی‌پی‌یو و سی‌پی‌یو، و پورت‌های جی‌جی‌یو‌اف چک‌شده به‌جای یه فورک فقط‌ویسپر. اسمش ترنسکرایب‌سی‌سی.\n\nhttps://nimaaksoy.com/radar/transcribe-cpp"
         },
         "linkedin": {
-          "en": "transcribe.cpp is worth a look if local speech is still stuck on Whisper-only tooling. it runs many modern STT families through one ggml GGUF stack with Metal, Vulkan, CUDA, and CPU backends.\n\nhttps://nimaaksoy.com/radar/2026-07-19/transcribe-cpp",
-          "fa": "اگه صوت لوکالت هنوز رو ابزار فقط‌ویسپر گیر کرده ارزش دیدن داره. خیلی از خانواده‌های مدرن تشخیص گفتار رو از یه استک جی‌جی‌ام‌ال و جی‌جی‌یو‌اف با بک‌اند متال و ولکان و کودا و سی‌پی‌یو اجرا می‌کنه. اسم پروژه ترنسکرایب‌سی‌سی.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-19/transcribe-cpp"
+          "en": "transcribe.cpp is worth a look if local speech is still stuck on Whisper-only tooling. it runs many modern STT families through one ggml GGUF stack with Metal, Vulkan, CUDA, and CPU backends.\n\nhttps://nimaaksoy.com/radar/transcribe-cpp",
+          "fa": "اگه صوت لوکالت هنوز رو ابزار فقط‌ویسپر گیر کرده ارزش دیدن داره. خیلی از خانواده‌های مدرن تشخیص گفتار رو از یه استک جی‌جی‌ام‌ال و جی‌جی‌یو‌اف با بک‌اند متال و ولکان و کودا و سی‌پی‌یو اجرا می‌کنه. اسم پروژه ترنسکرایب‌سی‌سی.\n\nhttps://nimaaksoy.com/radar/transcribe-cpp"
         }
       },
       "source": "github"

@@ -6,7 +6,11 @@
       "name": "Graphify",
       "url": "https://github.com/Graphify-Labs/graphify",
       "image": "https://opengraph.githubassets.com/1/Graphify-Labs/graphify",
-      "tags": ["ai-skills", "knowledge-graph", "coding-agents"],
+      "tags": [
+        "ai-skills",
+        "knowledge-graph",
+        "coding-agents"
+      ],
       "starsGained": 28,
       "take": {
         "en": "Turns a messy folder into a graph your coding agent can actually query.",
@@ -18,12 +22,12 @@
       },
       "share": {
         "x": {
-          "en": "Graphify is the move if your coding agent keeps rereading the same mess. it turns a folder of code, notes, and papers into a graph the agent can query later.\n\nhttps://nimaaksoy.com/radar/2026-07-15/graphify",
-          "fa": "اگه ایجنت کدنویسی‌ت هی همون شلوغی رو دوباره می‌خونه این یکی به درد می‌خوره. پوشه کد و نوت و مقاله رو می‌کنه گراف که بعدا بشه روش سوال پرسید. اسمش گرافیفای.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-15/graphify"
+          "en": "Graphify is the move if your coding agent keeps rereading the same mess. it turns a folder of code, notes, and papers into a graph the agent can query later.\n\nhttps://nimaaksoy.com/radar/graphify",
+          "fa": "اگه ایجنت کدنویسی‌ت هی همون شلوغی رو دوباره می‌خونه این یکی به درد می‌خوره. پوشه کد و نوت و مقاله رو می‌کنه گراف که بعدا بشه روش سوال پرسید. اسمش گرافیفای.\n\nhttps://nimaaksoy.com/radar/graphify"
         },
         "linkedin": {
-          "en": "Graphify stood out if you care about agent context. instead of rereading raw files every session, it builds a persistent graph from code, docs, and screenshots that agents can query.\n\nhttps://nimaaksoy.com/radar/2026-07-15/graphify",
-          "fa": "اگه کانتکست ایجنت برات مهمه این یکی به چشم اومد. به‌جای خوندن دوباره فایل خام تو هر سشن، از کد و داک و اسکرین‌شات یه گراف پایدار می‌سازه که بشه روش سوال پرسید. اسم پروژه گرافیفای.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-15/graphify"
+          "en": "Graphify stood out if you care about agent context. instead of rereading raw files every session, it builds a persistent graph from code, docs, and screenshots that agents can query.\n\nhttps://nimaaksoy.com/radar/graphify",
+          "fa": "اگه کانتکست ایجنت برات مهمه این یکی به چشم اومد. به‌جای خوندن دوباره فایل خام تو هر سشن، از کد و داک و اسکرین‌شات یه گراف پایدار می‌سازه که بشه روش سوال پرسید. اسم پروژه گرافیفای.\n\nhttps://nimaaksoy.com/radar/graphify"
         }
       },
       "source": "github"
@@ -33,7 +37,11 @@
       "name": "Hallmark",
       "url": "https://github.com/Nutlope/hallmark",
       "image": "https://opengraph.githubassets.com/1/Nutlope/hallmark",
-      "tags": ["ai-skills", "design", "ui"],
+      "tags": [
+        "ai-skills",
+        "design",
+        "ui"
+      ],
       "starsGained": 10,
       "take": {
         "en": "Design skill that pushes agents away from the usual AI-looking UI.",
@@ -45,12 +53,12 @@
       },
       "share": {
         "x": {
-          "en": "Hallmark is useful if agent UI keeps looking the same. it picks real structure and themes, then blocks the usual AI-looking defaults before the page ships.\n\nhttps://nimaaksoy.com/radar/2026-07-15/hallmark",
-          "fa": "اگه رابط کاربری ایجنت‌هات همیشه یه شکل درمیاد این یکی به درد می‌خوره. ساختار و تم واقعی انتخاب می‌کنه و ظاهر تکراری مدل‌ها رو قبل از خروجی می‌بنده. اسمش هال‌مارک.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-15/hallmark"
+          "en": "Hallmark is useful if agent UI keeps looking the same. it picks real structure and themes, then blocks the usual AI-looking defaults before the page ships.\n\nhttps://nimaaksoy.com/radar/hallmark",
+          "fa": "اگه رابط کاربری ایجنت‌هات همیشه یه شکل درمیاد این یکی به درد می‌خوره. ساختار و تم واقعی انتخاب می‌کنه و ظاهر تکراری مدل‌ها رو قبل از خروجی می‌بنده. اسمش هال‌مارک.\n\nhttps://nimaaksoy.com/radar/hallmark"
         },
         "linkedin": {
-          "en": "Hallmark is worth a look if coding agents build your product UI. it is less about pretty components and more about blocking the default AI look with real structure and taste checks.\n\nhttps://nimaaksoy.com/radar/2026-07-15/hallmark",
-          "fa": "اگه ایجنت‌ها رابط کاربری محصولت رو می‌سازن این یکی ارزش دیدن داره. کمتر درباره کامپوننت قشنگه و بیشتر درباره بستن ظاهر پیش‌فرض مدل‌ها با ساختار واقعی و چک سلیقه. اسم پروژه هال‌مارک.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-15/hallmark"
+          "en": "Hallmark is worth a look if coding agents build your product UI. it is less about pretty components and more about blocking the default AI look with real structure and taste checks.\n\nhttps://nimaaksoy.com/radar/hallmark",
+          "fa": "اگه ایجنت‌ها رابط کاربری محصولت رو می‌سازن این یکی ارزش دیدن داره. کمتر درباره کامپوننت قشنگه و بیشتر درباره بستن ظاهر پیش‌فرض مدل‌ها با ساختار واقعی و چک سلیقه. اسم پروژه هال‌مارک.\n\nhttps://nimaaksoy.com/radar/hallmark"
         }
       },
       "source": "github"
@@ -60,7 +68,11 @@
       "name": "Destructive Command Guard",
       "url": "https://github.com/Dicklesworthstone/destructive_command_guard",
       "image": "https://opengraph.githubassets.com/1/Dicklesworthstone/destructive_command_guard",
-      "tags": ["agent-safety", "rust", "devtools"],
+      "tags": [
+        "agent-safety",
+        "rust",
+        "devtools"
+      ],
       "take": {
         "en": "Stops coding agents before they run the shell command that wipes your work.",
         "fa": "ایجنت کدنویسی رو قبل از اجرای دستوری که کارتو پاک کنه متوقف می‌کنه."
@@ -71,12 +83,12 @@
       },
       "share": {
         "x": {
-          "en": "Destructive Command Guard is the boring safety layer agent setups need. it blocks the shell and git moves that can wipe work before the agent runs them.\n\nhttps://nimaaksoy.com/radar/2026-07-15/destructive-command-guard",
-          "fa": "لایه ایمنی ساده ولی لازم برای ستاپ ایجنته. دستورهای خطرناک شل و گیت رو قبل از اجرا می‌بنده تا کار پاک نشه. اسمش دیستراکتیو کامند گارد.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-15/destructive-command-guard"
+          "en": "Destructive Command Guard is the boring safety layer agent setups need. it blocks the shell and git moves that can wipe work before the agent runs them.\n\nhttps://nimaaksoy.com/radar/destructive-command-guard",
+          "fa": "لایه ایمنی ساده ولی لازم برای ستاپ ایجنته. دستورهای خطرناک شل و گیت رو قبل از اجرا می‌بنده تا کار پاک نشه. اسمش دیستراکتیو کامند گارد.\n\nhttps://nimaaksoy.com/radar/destructive-command-guard"
         },
         "linkedin": {
-          "en": "Destructive Command Guard is worth installing if coding agents have shell access. it is a fast hook that blocks destructive git and shell commands before they hit your machine.\n\nhttps://nimaaksoy.com/radar/2026-07-15/destructive-command-guard",
-          "fa": "اگه ایجنت‌های کدنویسی دسترسی شل دارن ارزش نصب داره. هوک سریعی که دستورهای خطرناک گیت و شل رو قبل از رسیدن به سیستم می‌بنده. اسم پروژه دیستراکتیو کامند گارد.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-15/destructive-command-guard"
+          "en": "Destructive Command Guard is worth installing if coding agents have shell access. it is a fast hook that blocks destructive git and shell commands before they hit your machine.\n\nhttps://nimaaksoy.com/radar/destructive-command-guard",
+          "fa": "اگه ایجنت‌های کدنویسی دسترسی شل دارن ارزش نصب داره. هوک سریعی که دستورهای خطرناک گیت و شل رو قبل از رسیدن به سیستم می‌بنده. اسم پروژه دیستراکتیو کامند گارد.\n\nhttps://nimaaksoy.com/radar/destructive-command-guard"
         }
       },
       "source": "github"
@@ -86,7 +98,11 @@
       "name": "Bonsai",
       "url": "https://github.com/PrismML-Eng/Bonsai-demo",
       "image": "https://opengraph.githubassets.com/1/PrismML-Eng/Bonsai-demo",
-      "tags": ["local-llm", "1-bit", "edge"],
+      "tags": [
+        "local-llm",
+        "1-bit",
+        "edge"
+      ],
       "starsGained": 9,
       "take": {
         "en": "1-bit models small enough for phones, with vision and tools in the demo.",
@@ -98,12 +114,12 @@
       },
       "share": {
         "x": {
-          "en": "Bonsai is wild for local AI. true 1-bit models small enough for phones, and the newer line brings vision and tools with it.\n\nhttps://nimaaksoy.com/radar/2026-07-15/bonsai",
-          "fa": "برای هوش مصنوعی لوکال خفنه. مدل‌های واقعا یک‌بیتی به اندازه گوشی، و خط جدیدش بینایی و ابزار هم داره. اسمش بونسای.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-15/bonsai"
+          "en": "Bonsai is wild for local AI. true 1-bit models small enough for phones, and the newer line brings vision and tools with it.\n\nhttps://nimaaksoy.com/radar/bonsai",
+          "fa": "برای هوش مصنوعی لوکال خفنه. مدل‌های واقعا یک‌بیتی به اندازه گوشی، و خط جدیدش بینایی و ابزار هم داره. اسمش بونسای.\n\nhttps://nimaaksoy.com/radar/bonsai"
         },
         "linkedin": {
-          "en": "Bonsai is interesting if you care about edge inference. 1-bit and ternary models that fit tight memory budgets, with a demo path that includes vision and tool calling.\n\nhttps://nimaaksoy.com/radar/2026-07-15/bonsai",
-          "fa": "اگه اجرای مدل رو دستگاه لبه برات مهمه این یکی جالبه. مدل‌های یک‌بیتی و سه‌حالته با حافظه خیلی کم، به‌همراه دمویی که بینایی و فراخوانی ابزار هم داره. اسم پروژه بونسای.\n\nhttps://nimaaksoy.com/fa/radar/2026-07-15/bonsai"
+          "en": "Bonsai is interesting if you care about edge inference. 1-bit and ternary models that fit tight memory budgets, with a demo path that includes vision and tool calling.\n\nhttps://nimaaksoy.com/radar/bonsai",
+          "fa": "اگه اجرای مدل رو دستگاه لبه برات مهمه این یکی جالبه. مدل‌های یک‌بیتی و سه‌حالته با حافظه خیلی کم، به‌همراه دمویی که بینایی و فراخوانی ابزار هم داره. اسم پروژه بونسای.\n\nhttps://nimaaksoy.com/radar/bonsai"
         }
       },
       "source": "github"

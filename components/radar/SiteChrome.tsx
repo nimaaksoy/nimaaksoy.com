@@ -1,51 +1,20 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import type { Locale } from "@/lib/radar-shared";
 import { indexPath } from "@/lib/radar-shared";
 
 const socials = [
   { label: "X", href: "https://x.com/Nima1980" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/nima1980/" },
   { label: "Medium", href: "https://medium.com/@nima.aksoy" },
-  { label: "YouTube", href: "https://www.youtube.com/@nimaaksoy" },
+  { label: "YouTube", href: "https://youtube.com/@nimaaksoy" },
   { label: "Telegram", href: "https://t.me/nimaaksoychannel" },
 ] as const;
 
 type SiteChromeProps = {
-  locale?: Locale;
   children: ReactNode;
   /** Highlight current section in nav */
   active?: "home" | "radar" | "tools";
-  /** Show EN/FA switch (radar only by default) */
-  showLocaleSwitch?: boolean;
 };
-
-const copy = {
-  en: {
-    brand: "NIMA AKSOY",
-    home: "Home",
-    radar: "Radar",
-    tools: "Tools",
-    connect: "Connect",
-    nav: "NAVIGATION",
-    social: "SOCIAL",
-    tagline: "Projects, ideas, and a few things in motion.",
-    altLocale: "فارسی",
-    altHref: "/fa/radar",
-  },
-  fa: {
-    brand: "نیما آکسوی",
-    home: "خانه",
-    radar: "رادار",
-    tools: "ابزارها",
-    connect: "ارتباط",
-    nav: "ناوبری",
-    social: "شبکه‌ها",
-    tagline: "پروژه‌ها، ایده‌ها، و چند چیز در جریان.",
-    altLocale: "English",
-    altHref: "/radar",
-  },
-} as const;
 
 function navClass(isActive: boolean) {
   return isActive
@@ -53,14 +22,8 @@ function navClass(isActive: boolean) {
     : "text-[#EAEAEA] transition-colors hover:text-[#2CFF05]";
 }
 
-export function SiteChrome({
-  locale = "en",
-  children,
-  active,
-  showLocaleSwitch = false,
-}: SiteChromeProps) {
-  const t = copy[locale];
-  const radarHref = indexPath(locale);
+export function SiteChrome({ children, active }: SiteChromeProps) {
+  const radarHref = indexPath();
 
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-[#EAEAEA]">
@@ -70,29 +33,21 @@ export function SiteChrome({
             href="/"
             className="font-jetbrains text-[11px] font-medium uppercase tracking-[0.2em] text-[#EAEAEA] transition-colors hover:text-[#2CFF05] md:text-sm md:tracking-[0.24em]"
           >
-            {t.brand}
+            NIMA AKSOY
           </Link>
           <div className="flex items-center gap-5 font-jetbrains text-[11px] uppercase tracking-[0.14em] md:gap-8 md:text-[12px]">
             <Link href="/" className={navClass(active === "home")}>
-              {t.home}
+              Home
             </Link>
             <Link href={radarHref} className={navClass(active === "radar")}>
-              {t.radar}
+              Radar
             </Link>
             <Link
               href="/tools"
               className={`${navClass(active === "tools")} hidden sm:inline`}
             >
-              {t.tools}
+              Tools
             </Link>
-            {showLocaleSwitch ? (
-              <Link
-                href={t.altHref}
-                className="rounded-full border border-[#1F1F1F] px-3 py-1 text-[10px] tracking-[0.12em] text-[#9A9A9A] transition-colors hover:border-[#2CFF05] hover:text-[#2CFF05]"
-              >
-                {t.altLocale}
-              </Link>
-            ) : null}
           </div>
         </div>
       </nav>
@@ -107,30 +62,30 @@ export function SiteChrome({
                 Nima Aksoy
               </h3>
               <p className="mt-2 max-w-sm font-monroe text-[14px] text-[#7F7F7F]">
-                {t.tagline}
+                Projects, ideas, and a few things in motion.
               </p>
             </div>
 
             <div>
               <p className="font-jetbrains text-[10px] uppercase tracking-[0.16em] text-[#7F7F7F]">
-                {t.nav}
+                Navigation
               </p>
               <div className="mt-3 flex flex-col gap-2 font-jetbrains text-[12px] text-[#9A9A9A]">
                 <Link href={radarHref} className="transition hover:text-[#2CFF05]">
-                  {t.radar}
+                  Radar
                 </Link>
                 <Link href="/tools" className="transition hover:text-[#2CFF05]">
-                  {t.tools}
+                  Tools
                 </Link>
                 <Link href="/#connect" className="transition hover:text-[#2CFF05]">
-                  {t.connect}
+                  Connect
                 </Link>
               </div>
             </div>
 
             <div>
               <p className="font-jetbrains text-[10px] uppercase tracking-[0.16em] text-[#7F7F7F]">
-                {t.social}
+                Social
               </p>
               <div className="mt-3 flex flex-wrap items-center gap-4 font-jetbrains text-[12px] text-[#7F7F7F]">
                 {socials.map((social) => (

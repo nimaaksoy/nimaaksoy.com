@@ -96,11 +96,4 @@ body {
   box-shadow: 0 0 0 1px rgba(44, 255, 5, 0.15), 0 14px 32px rgba(0, 0, 0, 0.4);
 }
 
-/* Farsi radar routes — prefer Vazirmatn while keeping mono labels */
-[dir="rtl"] {
-  font-family: var(--font-vazirmatn), var(--font-monroe), sans-serif;
-}
 
-[dir="rtl"] .font-monroe {
-  font-family: var(--font-vazirmatn), var(--font-monroe), sans-serif;
-}

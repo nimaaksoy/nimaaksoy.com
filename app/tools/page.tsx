@@ -53,7 +53,7 @@ const toolCards: ToolCard[] = [
 
 export default function ToolsPage() {
   return (
-    <SiteChrome locale="en" active="tools">
+    <SiteChrome active="tools">
       <div className="px-6 py-16 md:px-10 md:py-20">
         <div className="mx-auto max-w-[1180px]">
           <p className="font-jetbrains text-[11px] uppercase tracking-[0.2em] text-[#7F7F7F]">
