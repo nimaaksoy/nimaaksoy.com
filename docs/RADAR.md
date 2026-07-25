@@ -60,6 +60,17 @@ Path: `content/radar/YYYY-MM-DD.json`
 The loader flattens all days into projects sorted by date (newest first).  
 **Slug must be unique across all days.**
 
+### Naming (day file vs slug)
+
+| Layer | Name | Example |
+|-------|------|---------|
+| Day file (editorial batch) | `content/radar/YYYY-MM-DD.json` | `2026-07-25.json` |
+| Product identity | `items[].slug` | `ego-lite` |
+| Live URL | `/radar/{slug}` | `/radar/ego-lite` |
+| Video job / output key | `{slug}` | `run_job.sh ego-lite` |
+
+There is no per-product JSON filename. Agents and humans refer to projects by **slug**; the day file is only the batch that contains them. Video workflow: [`RADAR-VIDEO-WORKFLOW.md`](./RADAR-VIDEO-WORKFLOW.md).
+
 ### Schema
 
 ```json

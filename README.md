@@ -15,7 +15,8 @@ This is a personal site focused on:
 
 The design direction is minimal, dark, and content-first, with subtle green accents.
 
-Radar docs: [`docs/RADAR.md`](./docs/RADAR.md)
+Radar docs: [`docs/RADAR.md`](./docs/RADAR.md)  
+Radar video workflow: [`docs/RADAR-VIDEO-WORKFLOW.md`](./docs/RADAR-VIDEO-WORKFLOW.md)
 
 ## Tech Stack
 
@@ -58,7 +59,8 @@ app/
 components/
   radar/
 content/radar/   # daily JSON (YYYY-MM-DD.json), flattened in UI
-docs/RADAR.md    # how Radar works
+docs/RADAR.md                 # how Radar works
+docs/RADAR-VIDEO-WORKFLOW.md  # how Radar social videos are made
 lib/
 public/
 ```
