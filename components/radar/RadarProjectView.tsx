@@ -8,6 +8,7 @@ import {
   indexPath,
   itemPath,
   projectImage,
+  youtubeEmbedUrl,
 } from "@/lib/radar-shared";
 import {
   CapabilityBadges,
@@ -49,6 +50,7 @@ export function RadarProjectView({ project }: RadarProjectViewProps) {
   const howItWorks = project.howItWorks ? copyEn(project.howItWorks) : null;
   const different = project.different ? copyEn(project.different) : null;
   const imageSrc = projectImage(project);
+  const embedUrl = youtubeEmbedUrl(project.youtube);
 
   // Avoid repeating the same paragraph under two headings
   const showWhy =
@@ -89,16 +91,32 @@ export function RadarProjectView({ project }: RadarProjectViewProps) {
           {take}
         </p>
 
-        <div className="mt-8 overflow-hidden rounded-2xl border border-[#1F1F1F] bg-[#0A0A0A]">
-          <div className="flex max-h-[420px] items-center justify-center p-4 md:p-6">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={imageSrc}
-              alt={project.name}
-              className="max-h-[380px] w-full object-contain object-center"
-            />
+        {embedUrl ? (
+          <div className="mt-8 overflow-hidden rounded-2xl border border-[#1F1F1F] bg-[#0A0A0A]">
+            <div className="relative aspect-video w-full">
+              <iframe
+                src={embedUrl}
+                title={`${project.name} video`}
+                className="absolute inset-0 h-full w-full"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="mt-8 overflow-hidden rounded-2xl border border-[#1F1F1F] bg-[#0A0A0A]">
+            <div className="flex max-h-[420px] items-center justify-center p-4 md:p-6">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={imageSrc}
+                alt={project.name}
+                className="max-h-[380px] w-full object-contain object-center"
+              />
+            </div>
+          </div>
+        )}
 
         <div className="mt-8 space-y-4">
           {explanation ? (

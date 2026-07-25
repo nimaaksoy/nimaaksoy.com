@@ -32,6 +32,11 @@ export type RadarItem = {
   url: string;
   /** Optional cover / product image URL */
   image?: string;
+  /**
+   * Optional YouTube watch/share/embed URL or 11-char id.
+   * When set, the project page embeds the video.
+   */
+  youtube?: string;
   tags?: string[];
   /** Total star count when known */
   stars?: number;
@@ -150,4 +155,38 @@ export const FALLBACK_IMAGE = "/radar-fallback.svg";
 
 export function projectImage(project: Pick<RadarItem, "image">): string {
   return project.image?.trim() ? project.image : FALLBACK_IMAGE;
+}
+
+/** Extract a YouTube video id from watch/share/embed URLs or a bare id. */
+export function youtubeVideoId(input?: string | null): string | null {
+  if (!input) return null;
+  const raw = input.trim();
+  if (!raw) return null;
+  if (/^[\w-]{11}$/.test(raw)) return raw;
+
+  try {
+    const url = new URL(raw);
+    const host = url.hostname.replace(/^www\./, "");
+    if (host === "youtu.be") {
+      const id = url.pathname.split("/").filter(Boolean)[0];
+      return id && /^[\w-]{11}$/.test(id) ? id : null;
+    }
+    if (host === "youtube.com" || host === "m.youtube.com" || host === "youtube-nocookie.com") {
+      const v = url.searchParams.get("v");
+      if (v && /^[\w-]{11}$/.test(v)) return v;
+      const parts = url.pathname.split("/").filter(Boolean);
+      const marker = parts.findIndex((p) => p === "embed" || p === "shorts" || p === "live");
+      if (marker >= 0 && parts[marker + 1] && /^[\w-]{11}$/.test(parts[marker + 1])) {
+        return parts[marker + 1];
+      }
+    }
+  } catch {
+    return null;
+  }
+  return null;
+}
+
+export function youtubeEmbedUrl(input?: string | null): string | null {
+  const id = youtubeVideoId(input);
+  return id ? `https://www.youtube-nocookie.com/embed/${id}` : null;
 }
