@@ -1,0 +1,68 @@
+{
+  "date": "2026-07-25",
+  "items": [
+    {
+      "slug": "ego-lite",
+      "name": "ego lite",
+      "url": "https://github.com/citrolabs/ego-lite",
+      "image": "https://opengraph.githubassets.com/1/citrolabs/ego-lite",
+      "tags": ["browser", "agents", "skills", "macos", "automation"],
+      "stars": 2836,
+      "starsGained": 225,
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": false,
+      "trending": [
+        "Shared Chrome logins without stealing your tabs",
+        "Agent Spaces for parallel browser work",
+        "JS tools beat click-by-click CLI loops"
+      ],
+      "similar": [
+        {
+          "name": "Page Agent",
+          "slug": "page-agent"
+        },
+        {
+          "name": "Browserbase",
+          "url": "https://www.browserbase.com"
+        },
+        {
+          "name": "Firecrawl",
+          "slug": "firecrawl"
+        }
+      ],
+      "take": {
+        "en": "A Chromium browser built so you and AI agents share logins, but work in separate Spaces.",
+        "fa": "مرورگر کرومیوم که تو و ایجنت‌های هوش مصنوعی لاگین رو شریک می‌شین، ولی تو فضای جدا کار می‌کنین."
+      },
+      "why": {
+        "en": "Most agent browsers either wipe your session or fight you for the same tabs. ego lite is a daily Chromium browser that imports Chrome state, gives each agent its own Space, and drives pages through in-page JavaScript instead of slow one-click tool loops. If you run Claude Code, Codex, Cursor, or Hermes on a Mac and want real logged-in automation without a second headless stack, this is the product shape to watch.",
+        "fa": "بیشتر مرورگرهای ایجنت یا سشن رو پاک می‌کنن یا سر همون تب‌ها باهات دعوا می‌کنن. این یکی مرورگر روزمره‌ست که وضعیت کروم رو می‌آره، به هر ایجنت فضای جدا می‌ده، و صفحه رو با جاوااسکریپت تو خود صفحه می‌بره جلو نه با حلقه کند کلیک‌به‌کلیک. اگه رو مک با ایجنت کد کار می‌کنی و اتوماسیون لاگین‌شده واقعی می‌خوای بدون استک هدلس دوم، شکل محصولی که باید دنبال کنی همینه. اسم پروژه‌ش ego lite."
+      },
+      "explanation": {
+        "en": "ego lite (open-source skill + free macOS app from Citrolabs) is a Chromium browser designed for humans and external coding agents to share one machine. You browse normally; agents open isolated Spaces, reuse your cookies and logins when you migrate Chrome data, and control pages through the ego-browser skill. The point is real-site automation without a blank headless browser and without hijacking the tabs you are using.",
+        "fa": "ایگو لایت (اسکیل متن‌باز به‌علاوه اپ رایگان مک از سیترولبز) مرورگر کرومیومه برای آدم و ایجنت‌های کد. تو عادی وب‌گردی؛ ایجنت‌ها فضای ایزوله باز می‌کنن، با مهاجرت داده کروم لاگین‌هات رو می‌گیرن، و صفحه رو با اسکیل ego-browser کنترل می‌کنن. هدف اتوماسیون سایت واقعی بدون مرورگر هدلس خالی و بدون دزدیدن تب‌های خودته."
+      },
+      "howItWorks": {
+        "en": "Install the macOS app (Apple Silicon or Intel) or add the skill with `npx skills add citrolabs/ego-lite`. On first launch, optionally migrate Chrome logins, cookies, and extensions. In Claude Code, Codex, Cursor, Hermes, or similar, run `/ego-browser` plus a plain-language task. The agent launches ego lite, works in its own Space with snapshot/click/fill/navigate JavaScript tools, and leaves your Space alone. Windows and Linux are still on the roadmap.",
+        "fa": "اپ مک (اپل سیلیکون یا اینتل) رو نصب کن یا با `npx skills add citrolabs/ego-lite` اسکیل رو اضافه کن. تو اولین اجرا می‌تونی لاگین و کوکی و اکستنشن کروم رو مهاجرت بدی. تو کلود کد، کودکس، کرسر، هرمس یا مشابه `/ego-browser` بزن و کار رو به زبان ساده بگو. ایجنت اپ رو باز می‌کنه، تو فضای خودش با ابزار جاوااسکریپت اسنپ‌شات/کلیک/پرکردن/ناوبری کار می‌کنه و فضای تو رو دست نمی‌زنه. ویندوز و لینوکس هنوز تو نقشه راهه."
+      },
+      "different": {
+        "en": "Not another headless library and not a closed AI browser with only its own agent. One free daily browser, Chrome state inheritance, parallel Spaces, and any external agent CLI can drive it through ego-browser with fewer tool hops than classic agent-browser style loops.",
+        "fa": "نه یه لایبرری هدلس دیگه و نه مرورگر هوش مصنوعی بسته که فقط ایجنت خودش رو داره. یه مرورگر روزمره رایگان، ارث‌بری وضعیت کروم، فضای موازی، و هر ایجنت بیرونی می‌تونه با ego-browser برونش باه، با پرش ابزار کمتر از حلقه‌های کلاسیک agent-browser."
+      },
+      "share": {
+        "x": {
+          "en": "ego lite is the browser shape agents actually need. share Chrome logins, keep your tabs, give each agent its own Space, drive the page with JS instead of click spam.\n\nhttps://nimaaksoy.com/radar/ego-lite",
+          "fa": "شکل مرورگری که ایجنت واقعاً لازم داره. لاگین کروم مشترک، تب‌های خودت سر جاش، برای هر ایجنت یه فضا، کنترل صفحه با جاوااسکریپت نه اسپم کلیک. اسم پروژه‌ش ego lite.\n\nhttps://nimaaksoy.com/radar/ego-lite"
+        },
+        "linkedin": {
+          "en": "ego lite is worth a look if your agents still need a second blank browser. free Chromium for Mac that imports Chrome state, isolates agent work in Spaces, and plugs into Claude Code, Codex, Cursor, and Hermes via ego-browser.\n\nhttps://nimaaksoy.com/radar/ego-lite",
+          "fa": "اگه ایجنت‌هات هنوز یه مرورگر خالی دوم می‌خوان ارزش دیدن داره. کرومیوم رایگان برای مک که وضعیت کروم رو می‌آره، کار ایجنت رو تو فضا جدا می‌کنه، و با ego-browser به کلود کد و کودکس و کرسر و هرمس وصل می‌شه. اسم پروژه‌ش ego lite.\n\nhttps://nimaaksoy.com/radar/ego-lite"
+        }
+      },
+      "source": "github"
+    }
+  ]
+}
