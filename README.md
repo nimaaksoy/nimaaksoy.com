@@ -1,113 +1,163 @@
 # nimaaksoy.com
 
-Official source code for [nimaaksoy.com](https://nimaaksoy.com).
+Source code for my personal website and a growing collection of experiments, tools, and ideas.
 
-## Overview
+**Website:** [https://nimaaksoy.com](https://nimaaksoy.com)
 
-This is a personal site focused on:
-- Intro / hero
-- Current projects
-- How I think
-- Writing and presence
-- Contact
-- Private tools page
-- Radar (`/radar`) — curated open source & AI finds
+This repository is where I build in public. Some projects become standalone products, some stay as experiments, and others are simply things I wanted to learn.
 
-The design direction is minimal, dark, and content-first, with subtle green accents.
+---
 
-Radar docs: [`docs/RADAR.md`](./docs/RADAR.md)  
-Radar video workflow: [`docs/RADAR-VIDEO-WORKFLOW.md`](./docs/RADAR-VIDEO-WORKFLOW.md)
+## Projects
 
-## Tech Stack
+- **Radar** — Curated AI & open-source discoveries → [nimaaksoy.com/radar](https://nimaaksoy.com/radar)
+- **Chrome extensions** — Small tools for everyday use → [`chrome-extension/`](./chrome-extension/)
+- **Life in Dots** — Life timeline as a web app + new-tab extension → [nimaaksoy.com/life-in-dots](https://nimaaksoy.com/life-in-dots)
+- **Experiments** — UI, UX, AI, and web ideas that may grow into products
+- **More tools** coming soon
 
-- Next.js 14 (App Router)
-- React 18
+---
+
+## What's inside
+
+### Radar
+
+A curated collection of AI products, open-source projects, and developer tools that are actually worth your time.
+
+Instead of reposting trends, Radar explains what a project does, why it matters, and when it's worth trying.
+
+**Live:** [https://nimaaksoy.com/radar](https://nimaaksoy.com/radar)
+
+**Documentation:**
+
+- [docs/RADAR.md](./docs/RADAR.md) — how Radar works and how content is stored
+- [docs/RADAR-VIDEO-WORKFLOW.md](./docs/RADAR-VIDEO-WORKFLOW.md) — how Radar social videos are made
+
+---
+
+### Chrome extensions
+
+Small browser extensions built to solve everyday problems.
+
+Current code lives under:
+
+```text
+chrome-extension/
+  life-in-dots/     # new-tab life timeline (store-ready package)
+```
+
+---
+
+### Life in Dots
+
+A quiet life-timeline experiment: years, months, days, and hours as dots — on the site and as a Chrome new-tab extension.
+
+**Live:** [https://nimaaksoy.com/life-in-dots](https://nimaaksoy.com/life-in-dots)
+
+---
+
+### Experiments
+
+You'll find small projects, UI ideas, prototypes, and features that may eventually become standalone products.
+
+Some experiments stay here.  
+Some become products.  
+Some fail — and that's okay.
+
+---
+
+## Tech stack
+
+- Next.js (App Router)
+- React
 - TypeScript
 - Tailwind CSS
 - Framer Motion
 - Tabler Icons
 
-## Getting Started
+---
+
+## Run locally
 
 ```bash
+git clone https://github.com/nimaaksoy/nimaaksoy.com.git
+cd nimaaksoy.com
 npm install
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Scripts
-
 ```bash
-npm run dev     # Start development server
-npm run build   # Production build
-npm run start   # Run production server
-npm run lint    # Lint project
+npm run build   # production build
+npm run start   # run production server
+npm run lint    # lint
 ```
 
-## Project Structure
+---
+
+## Project structure
 
 ```text
-app/
-  layout.tsx
-  page.tsx
-  not-found.tsx
-  robots.ts
-  sitemap.ts
-  tools/page.tsx
-  radar/         # /radar + /radar/[slug]
-components/
-  radar/
-content/radar/   # daily JSON (YYYY-MM-DD.json), flattened in UI
-docs/RADAR.md                 # how Radar works
-docs/RADAR-VIDEO-WORKFLOW.md  # how Radar social videos are made
-lib/
-public/
+app/                  Website pages (home, radar, tools, life-in-dots, …)
+components/           Shared UI components
+content/              Radar day JSON and other content
+docs/                 Documentation (Radar, video workflow)
+lib/                  Shared utilities and loaders
+public/               Images, icons, assets
+chrome-extension/     Browser extensions
+scripts/              Helper scripts
 ```
 
-## SEO
+---
 
-The app includes:
-- Open Graph metadata
-- Twitter metadata
-- `robots.txt` route
-- `sitemap.xml` route
-- Favicon and touch icons
-- Custom OG image in `public/og-image.png`
+## Philosophy
 
-## Deployment
+I like building small things.
 
-This project is ready to deploy on a Linux server (for example, DigitalOcean) using:
-- Node.js runtime
-- `npm run build`
-- `npm run start`
+Many of them start as weekend experiments.
 
-If you use a reverse proxy (Nginx/Caddy), point it to the app port and enable HTTPS.
+Some become products.
 
-## Notes
+Others simply teach me something new.
 
-- Media assets (images/videos) are stored in `public/`.
-- Update links/content in `app/page.tsx` and `app/tools/page.tsx`.
+This repository is my playground for trying ideas, learning, and sharing what works.
+
+---
+
+## Contributing
+
+Bug reports, suggestions, and pull requests are welcome.
+
+If you're planning a larger change, open an issue first so we can discuss the idea.
+
+---
 
 ## License
 
-This project is **source-available**, not traditional open source.
+This project is **source-available** under the [PolyForm Noncommercial License 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0) — not traditional open source.
 
-**You may:**
+You're welcome to:
 
-- View the source code
-- Clone and run it locally for personal or educational use
-- Learn from it and experiment privately
+- Learn from the code
+- Run it locally
+- Build on the ideas
+- Experiment with it personally or for education
 
-**You may not:**
+**Not allowed** without written permission:
 
-- Use it commercially (including selling, hosting for money, or putting any part of it into a commercial product or SaaS)
-- Use my name, logo, or branding without written permission
+- Commercial use
+- Selling, hosting for money, or putting any part of this into a commercial product or SaaS
+- Using my name, logo, or branding
 
-**Companies** that want commercial rights must contact me for a separate commercial license: [me@nimaaksoy.com](mailto:me@nimaaksoy.com).
+Companies that need commercial rights: [me@nimaaksoy.com](mailto:me@nimaaksoy.com).
 
-Full legal terms: [`LICENSE`](./LICENSE) — [PolyForm Noncommercial License 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0) (SPDX: `PolyForm-Noncommercial-1.0.0`).
+Website content, branding, writing, images, and logos remain my intellectual property unless stated otherwise.
 
-### GitHub license label
+Full terms: [`LICENSE`](./LICENSE) (SPDX: `PolyForm-Noncommercial-1.0.0`).
 
-GitHub’s license badge mainly highlights common OSI-approved open-source licenses. PolyForm Noncommercial is a standard **source-available** license (on the [SPDX list](https://spdx.org/licenses/PolyForm-Noncommercial-1.0.0.html)), but GitHub may show **no license badge**, **Other**, or only the SPDX name — not “Open Source.” That is expected: this repo is intentionally **not** OSI open source. The `LICENSE` file and this section are the source of truth.
+GitHub may not show a classic open-source license badge for this — that's expected for source-available licenses. The `LICENSE` file is the source of truth.
+
+---
+
+Made by [Nima Aksoy](https://nimaaksoy.com)
