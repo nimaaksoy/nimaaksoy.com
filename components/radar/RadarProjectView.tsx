@@ -102,12 +102,6 @@ export function RadarProjectView({ project }: RadarProjectViewProps) {
 
         <p className="mt-6 font-jetbrains text-[12px] uppercase tracking-[0.14em] text-[#7F7F7F]">
           {formatRadarDateLong(project.date)}
-          {starCount !== null ? (
-            <span className="text-[#5A5A5A]">
-              {" "}
-              · {starCount.toLocaleString("en-US")} stars
-            </span>
-          ) : null}
         </p>
 
         <div className="mt-3 flex flex-wrap items-start justify-between gap-3">
@@ -115,6 +109,14 @@ export function RadarProjectView({ project }: RadarProjectViewProps) {
             {project.name}
           </h1>
           <div className="flex flex-wrap items-center gap-1.5">
+            {starCount !== null ? (
+              <span className="inline-flex items-center rounded-full border border-[#2CFF05]/35 bg-[#0A0A0A] px-2.5 py-0.5 font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#EAEAEA]">
+                <span className="text-[#2CFF05]">★</span>
+                <span className="ml-1.5">
+                  {starCount.toLocaleString("en-US")}
+                </span>
+              </span>
+            ) : null}
             {project.verdict ? <VerdictBadge verdict={project.verdict} /> : null}
             <CapabilityBadges project={project} />
           </div>

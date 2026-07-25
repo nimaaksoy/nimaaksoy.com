@@ -60,12 +60,6 @@ export function RadarProjectCard({ project }: RadarProjectCardProps) {
             <div className="min-w-0">
               <p className="font-jetbrains text-[10px] uppercase tracking-[0.14em] text-[#7F7F7F]">
                 {formatRadarDate(project.date)}
-                {starCount !== null ? (
-                  <span className="text-[#5A5A5A]">
-                    {" "}
-                    · {starCount.toLocaleString("en-US")} ★
-                  </span>
-                ) : null}
               </p>
               <h2 className="mt-1 font-monroe text-[22px] font-light leading-tight text-[#EAEAEA] md:text-[24px]">
                 <Link href={href} className="transition hover:text-[#2CFF05]">
@@ -74,6 +68,14 @@ export function RadarProjectCard({ project }: RadarProjectCardProps) {
               </h2>
             </div>
             <div className="flex flex-wrap items-center gap-1.5">
+              {starCount !== null ? (
+                <span className="inline-flex items-center rounded-full border border-[#2CFF05]/35 bg-[#0A0A0A] px-2.5 py-0.5 font-jetbrains text-[10px] uppercase tracking-[0.12em] text-[#EAEAEA]">
+                  <span className="text-[#2CFF05]">★</span>
+                  <span className="ml-1.5">
+                    {starCount.toLocaleString("en-US")}
+                  </span>
+                </span>
+              ) : null}
               {project.verdict ? <VerdictBadge verdict={project.verdict} /> : null}
               <CapabilityBadges project={project} />
             </div>
