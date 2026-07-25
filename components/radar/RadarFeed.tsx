@@ -5,7 +5,7 @@ import type { RadarProject, RadarVerdict } from "@/lib/radar-shared";
 import { RADAR_PAGE_SIZE, VERDICT_LABELS } from "@/lib/radar-shared";
 import { RadarProjectCard } from "@/components/radar/RadarProjectCard";
 
-type SortMode = "latest" | "growing";
+type SortMode = "latest" | "stars";
 
 type FilterMode =
   | "all"
@@ -52,14 +52,16 @@ export function RadarFeed({ projects }: RadarFeedProps) {
   const [isPending, startTransition] = useTransition();
 
   const available = useMemo(() => {
-    const hasGrowing = projects.some(
-      (p) => typeof p.starsGained === "number" && p.starsGained > 0
+    const hasStars = projects.some(
+      (p) =>
+        typeof p.liveStars === "number" ||
+        typeof p.stars === "number"
     );
     const verdicts = new Set(
       projects.map((p) => p.verdict).filter(Boolean) as RadarVerdict[]
     );
     return {
-      hasGrowing,
+      hasStars,
       hasDemo: projects.some((p) => p.hasDemo),
       hasApi: projects.some((p) => p.hasApi),
       hasMcp: projects.some((p) => p.hasMcp),
@@ -71,12 +73,12 @@ export function RadarFeed({ projects }: RadarFeedProps) {
     const list: ToolbarChip[] = [
       { id: "latest", label: "Latest", kind: "sort", sort: "latest" },
     ];
-    if (available.hasGrowing) {
+    if (available.hasStars) {
       list.push({
-        id: "growing",
-        label: "Fastest growing",
+        id: "stars",
+        label: "Most stars",
         kind: "sort",
-        sort: "growing",
+        sort: "stars",
       });
     }
     for (const v of [
@@ -131,11 +133,21 @@ export function RadarFeed({ projects }: RadarFeedProps) {
       list = list.filter((p) => p.verdict === filter);
     }
 
-    if (sort === "growing") {
+    if (sort === "stars") {
       list = [...list].sort((a, b) => {
-        const ag = typeof a.starsGained === "number" ? a.starsGained : -1;
-        const bg = typeof b.starsGained === "number" ? b.starsGained : -1;
-        if (bg !== ag) return bg - ag;
+        const as =
+          typeof a.liveStars === "number"
+            ? a.liveStars
+            : typeof a.stars === "number"
+              ? a.stars
+              : -1;
+        const bs =
+          typeof b.liveStars === "number"
+            ? b.liveStars
+            : typeof b.stars === "number"
+              ? b.stars
+              : -1;
+        if (bs !== as) return bs - as;
         return a.date < b.date ? 1 : a.date > b.date ? -1 : 0;
       });
     } else {

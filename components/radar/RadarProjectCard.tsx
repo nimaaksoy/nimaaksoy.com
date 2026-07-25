@@ -21,22 +21,6 @@ type RadarProjectCardProps = {
   project: RadarProject;
 };
 
-function StarsLine({ project }: { project: RadarProject }) {
-  const parts: string[] = [];
-  if (typeof project.stars === "number") {
-    parts.push(`${project.stars.toLocaleString("en-US")} stars`);
-  }
-  if (typeof project.starsGained === "number" && project.starsGained > 0) {
-    parts.push(`+${project.starsGained.toLocaleString("en-US")} recent`);
-  }
-  if (!parts.length) return null;
-  return (
-    <p className="font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#7F7F7F]">
-      {parts.join(" · ")}
-    </p>
-  );
-}
-
 export function RadarProjectCard({ project }: RadarProjectCardProps) {
   const href = itemPath(project.slug);
   const shareUrl = absoluteItemUrl(project.slug);
@@ -44,6 +28,12 @@ export function RadarProjectCard({ project }: RadarProjectCardProps) {
   const why = copyEn(project.why);
   const imageSrc = projectImage(project);
   const hasWhy = why.trim().length > 0 && why.trim() !== explanation.trim();
+  const starCount =
+    typeof project.liveStars === "number"
+      ? project.liveStars
+      : typeof project.stars === "number"
+        ? project.stars
+        : null;
 
   return (
     <article className="card-surface overflow-hidden rounded-2xl">
@@ -70,6 +60,12 @@ export function RadarProjectCard({ project }: RadarProjectCardProps) {
             <div className="min-w-0">
               <p className="font-jetbrains text-[10px] uppercase tracking-[0.14em] text-[#7F7F7F]">
                 {formatRadarDate(project.date)}
+                {starCount !== null ? (
+                  <span className="text-[#5A5A5A]">
+                    {" "}
+                    · {starCount.toLocaleString("en-US")} ★
+                  </span>
+                ) : null}
               </p>
               <h2 className="mt-1 font-monroe text-[22px] font-light leading-tight text-[#EAEAEA] md:text-[24px]">
                 <Link href={href} className="transition hover:text-[#2CFF05]">
@@ -100,15 +96,6 @@ export function RadarProjectCard({ project }: RadarProjectCardProps) {
               </p>
             </details>
           ) : null}
-
-          {project.trending?.length ? (
-            <p className="font-jetbrains text-[11px] leading-relaxed text-[#9A9A9A]">
-              <span className="text-[#7F7F7F]">Signals · </span>
-              {project.trending.join(" · ")}
-            </p>
-          ) : null}
-
-          <StarsLine project={project} />
 
           <TagList tags={project.tags} />
 

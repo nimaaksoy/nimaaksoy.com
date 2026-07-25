@@ -38,9 +38,12 @@ export type RadarItem = {
    */
   youtube?: string;
   tags?: string[];
-  /** Total star count when known */
+  /**
+   * Optional legacy star count in day JSON (prefer github-stats.json on the site).
+   * Kept for content/video pipelines; UI prefers live stats when present.
+   */
   stars?: number;
-  /** Recent star growth when known */
+  /** @deprecated Not shown on site — no "recent growth" UI */
   starsGained?: number | null;
   /**
    * Short scannable explanation (list + detail lead).
@@ -49,24 +52,30 @@ export type RadarItem = {
   take: LocalizedText;
   /**
    * Why this pick matters — pure value, no fluff.
-   * Shown as its own section; not repeated as the main explanation.
+   * Detail page: folded into the "Why it matters" section with explanation.
    */
   why: LocalizedText;
   /**
-   * Optional longer explanation (what it is, problem, attention).
-   * Prefer this on the detail page when present.
+   * Optional longer explanation (what it is).
+   * Detail page: first paragraph under "Why it matters" when present.
    */
   explanation?: LocalizedText;
-  /** Optional: how the project works */
+  /**
+   * Optional: how the project works.
+   * Detail page: first paragraph under "How it works".
+   */
   howItWorks?: LocalizedText;
-  /** Optional: what makes it different */
+  /**
+   * Optional: what makes it different.
+   * Detail page: second paragraph under "How it works".
+   */
   different?: LocalizedText;
   verdict?: RadarVerdict;
   hasDemo?: boolean;
   hasApi?: boolean;
   hasMcp?: boolean;
   similar?: RadarSimilarTool[];
-  /** Short trending signal labels, e.g. "fast star growth" */
+  /** Optional short product labels (not star growth). */
   trending?: string[];
   /**
    * Social captions used only by share buttons (X/LinkedIn intent).
@@ -81,9 +90,20 @@ export type RadarDay = {
   items: RadarItem[];
 };
 
+/** Live GitHub star snapshot from scripts/update-radar-github-stats.mjs */
+export type RadarGithubStatsFile = {
+  updatedAt: string;
+  bySlug?: Record<
+    string,
+    { stars: number; repo?: string; fetchedAt?: string; stale?: boolean }
+  >;
+};
+
 /** Flattened project used by the feed and detail pages. */
 export type RadarProject = RadarItem & {
   date: string;
+  /** Stars from content/radar/github-stats.json when available */
+  liveStars?: number;
 };
 
 export const RADAR_PAGE_SIZE = 50;

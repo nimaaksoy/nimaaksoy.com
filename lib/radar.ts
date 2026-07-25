@@ -3,6 +3,7 @@ import path from "path";
 import type {
   LocalizedText,
   RadarDay,
+  RadarGithubStatsFile,
   RadarItem,
   RadarProject,
   RadarSimilarTool,
@@ -13,6 +14,7 @@ export type {
   Locale,
   LocalizedText,
   RadarDay,
+  RadarGithubStatsFile,
   RadarItem,
   RadarProject,
   RadarSimilarTool,
@@ -34,8 +36,21 @@ export {
 } from "@/lib/radar-shared";
 
 const RADAR_DIR = path.join(process.cwd(), "content", "radar");
+const GITHUB_STATS_PATH = path.join(RADAR_DIR, "github-stats.json");
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const VERDICT_SET = new Set<string>(VERDICT_ORDER);
+
+/** Load weekly GitHub star snapshot (no AI — plain JSON from the update script). */
+export async function getRadarGithubStats(): Promise<RadarGithubStatsFile | null> {
+  try {
+    const raw = await fs.readFile(GITHUB_STATS_PATH, "utf8");
+    const parsed: unknown = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object") return null;
+    return parsed as RadarGithubStatsFile;
+  } catch {
+    return null;
+  }
+}
 
 function isLocalized(value: unknown): value is LocalizedText {
   if (!value || typeof value !== "object") return false;
@@ -166,11 +181,25 @@ export async function getAllRadarDays(): Promise<RadarDay[]> {
 
 /** All projects, newest published date first (stable within a day by file order). */
 export async function getAllRadarProjects(): Promise<RadarProject[]> {
-  const days = await getAllRadarDays();
+  const [days, stats] = await Promise.all([
+    getAllRadarDays(),
+    getRadarGithubStats(),
+  ]);
   const projects: RadarProject[] = [];
   for (const day of days) {
     for (const item of day.items) {
-      projects.push({ ...item, date: day.date });
+      const live = stats?.bySlug?.[item.slug];
+      const liveStars =
+        live && typeof live.stars === "number" ? live.stars : undefined;
+      projects.push({
+        ...item,
+        date: day.date,
+        // Prefer weekly GitHub stats for display; fall back to day JSON
+        stars: liveStars ?? item.stars,
+        liveStars,
+        // Never surface "recent growth" on the site
+        starsGained: undefined,
+      });
     }
   }
   return projects;

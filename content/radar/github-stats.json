@@ -1,0 +1,543 @@
+{
+  "updatedAt": "2026-07-25T09:05:08.687Z",
+  "source": "github-api",
+  "repoCount": 41,
+  "itemCount": 41,
+  "bySlug": {
+    "opencut": {
+      "stars": 78525,
+      "repo": "OpenCut-app/OpenCut",
+      "fetchedAt": "2026-07-25T09:04:42.076Z"
+    },
+    "colibri": {
+      "stars": 18761,
+      "repo": "JustVugg/colibri",
+      "fetchedAt": "2026-07-25T09:04:42.716Z"
+    },
+    "ui-skills": {
+      "stars": 20648,
+      "repo": "emilkowalski/skills",
+      "fetchedAt": "2026-07-25T09:04:43.388Z"
+    },
+    "graphify": {
+      "stars": 95458,
+      "repo": "Graphify-Labs/graphify",
+      "fetchedAt": "2026-07-25T09:04:44.023Z"
+    },
+    "hallmark": {
+      "stars": 17297,
+      "repo": "Nutlope/hallmark",
+      "fetchedAt": "2026-07-25T09:04:44.637Z"
+    },
+    "destructive-command-guard": {
+      "stars": 5388,
+      "repo": "Dicklesworthstone/destructive_command_guard",
+      "fetchedAt": "2026-07-25T09:04:45.276Z"
+    },
+    "bonsai": {
+      "stars": 2038,
+      "repo": "PrismML-Eng/Bonsai-demo",
+      "fetchedAt": "2026-07-25T09:04:45.928Z"
+    },
+    "grok-build": {
+      "stars": 22417,
+      "repo": "xai-org/grok-build",
+      "fetchedAt": "2026-07-25T09:04:46.586Z"
+    },
+    "eve": {
+      "stars": 4022,
+      "repo": "vercel/eve",
+      "fetchedAt": "2026-07-25T09:04:47.238Z"
+    },
+    "archify": {
+      "stars": 7258,
+      "repo": "tt-a1i/archify",
+      "fetchedAt": "2026-07-25T09:04:47.853Z"
+    },
+    "wigolo": {
+      "stars": 3580,
+      "repo": "KnockOutEZ/wigolo",
+      "fetchedAt": "2026-07-25T09:04:48.466Z"
+    },
+    "lingbot-map": {
+      "stars": 15339,
+      "repo": "Robbyant/lingbot-map",
+      "fetchedAt": "2026-07-25T09:04:49.115Z"
+    },
+    "palmclaw": {
+      "stars": 1136,
+      "repo": "ModalityDance/PalmClaw",
+      "fetchedAt": "2026-07-25T09:04:49.766Z"
+    },
+    "code-review-graph": {
+      "stars": 26301,
+      "repo": "tirth8205/code-review-graph",
+      "fetchedAt": "2026-07-25T09:04:50.397Z"
+    },
+    "alaya-world": {
+      "stars": 730,
+      "repo": "AlayaLab/AlayaWorld",
+      "fetchedAt": "2026-07-25T09:04:51.037Z"
+    },
+    "moss-transcribe-diarize": {
+      "stars": 1229,
+      "repo": "OpenMOSS/MOSS-Transcribe-Diarize",
+      "fetchedAt": "2026-07-25T09:04:51.685Z"
+    },
+    "turbovec": {
+      "stars": 14135,
+      "repo": "RyanCodrai/turbovec",
+      "fetchedAt": "2026-07-25T09:04:52.317Z"
+    },
+    "deepsec": {
+      "stars": 6282,
+      "repo": "vercel-labs/deepsec",
+      "fetchedAt": "2026-07-25T09:04:52.954Z"
+    },
+    "harness-engineering": {
+      "stars": 2336,
+      "repo": "lopopolo/harness-engineering",
+      "fetchedAt": "2026-07-25T09:04:53.602Z"
+    },
+    "open-connector": {
+      "stars": 3244,
+      "repo": "oomol-lab/open-connector",
+      "fetchedAt": "2026-07-25T09:04:54.289Z"
+    },
+    "transcribe-cpp": {
+      "stars": 1567,
+      "repo": "handy-computer/transcribe.cpp",
+      "fetchedAt": "2026-07-25T09:04:54.925Z"
+    },
+    "orca": {
+      "stars": 28615,
+      "repo": "stablyai/orca",
+      "fetchedAt": "2026-07-25T09:04:55.570Z"
+    },
+    "jcode": {
+      "stars": 11291,
+      "repo": "1jehuang/jcode",
+      "fetchedAt": "2026-07-25T09:04:56.224Z"
+    },
+    "omniroute": {
+      "stars": 29346,
+      "repo": "diegosouzapw/OmniRoute",
+      "fetchedAt": "2026-07-25T09:04:56.868Z"
+    },
+    "agent-reach": {
+      "stars": 60702,
+      "repo": "Panniantong/Agent-Reach",
+      "fetchedAt": "2026-07-25T09:04:57.501Z"
+    },
+    "skillopt": {
+      "stars": 14949,
+      "repo": "microsoft/SkillOpt",
+      "fetchedAt": "2026-07-25T09:04:58.149Z"
+    },
+    "unlimited-ocr": {
+      "stars": 18814,
+      "repo": "baidu/Unlimited-OCR",
+      "fetchedAt": "2026-07-25T09:04:58.792Z"
+    },
+    "voicebox": {
+      "stars": 46565,
+      "repo": "jamiepine/voicebox",
+      "fetchedAt": "2026-07-25T09:04:59.445Z"
+    },
+    "img2threejs": {
+      "stars": 4276,
+      "repo": "img2threejs/img2threejs",
+      "fetchedAt": "2026-07-25T09:05:00.512Z"
+    },
+    "freerange": {
+      "stars": 499,
+      "repo": "chenglou/freerange",
+      "fetchedAt": "2026-07-25T09:05:01.181Z"
+    },
+    "buzz": {
+      "stars": 10646,
+      "repo": "block/buzz",
+      "fetchedAt": "2026-07-25T09:05:01.869Z"
+    },
+    "gigatoken": {
+      "stars": 3096,
+      "repo": "marcelroed/gigatoken",
+      "fetchedAt": "2026-07-25T09:05:02.512Z"
+    },
+    "text-to-cad": {
+      "stars": 10339,
+      "repo": "earthtojake/text-to-cad",
+      "fetchedAt": "2026-07-25T09:05:03.139Z"
+    },
+    "pireel": {
+      "stars": 720,
+      "repo": "pireel/pireel",
+      "fetchedAt": "2026-07-25T09:05:03.774Z"
+    },
+    "bento": {
+      "stars": 1514,
+      "repo": "nyblnet/bento",
+      "fetchedAt": "2026-07-25T09:05:04.391Z"
+    },
+    "page-agent": {
+      "stars": 27759,
+      "repo": "alibaba/page-agent",
+      "fetchedAt": "2026-07-25T09:05:05.081Z"
+    },
+    "officecli": {
+      "stars": 22005,
+      "repo": "iOfficeAI/OfficeCLI",
+      "fetchedAt": "2026-07-25T09:05:05.735Z"
+    },
+    "openwiki": {
+      "stars": 13194,
+      "repo": "langchain-ai/openwiki",
+      "fetchedAt": "2026-07-25T09:05:06.375Z"
+    },
+    "no-ai-slop": {
+      "stars": 2423,
+      "repo": "petergyang/no-ai-slop",
+      "fetchedAt": "2026-07-25T09:05:06.991Z"
+    },
+    "firecrawl": {
+      "stars": 155725,
+      "repo": "firecrawl/firecrawl",
+      "fetchedAt": "2026-07-25T09:05:07.639Z"
+    },
+    "ego-lite": {
+      "stars": 2989,
+      "repo": "citrolabs/ego-lite",
+      "fetchedAt": "2026-07-25T09:05:08.337Z"
+    }
+  },
+  "byRepo": {
+    "OpenCut-app/OpenCut": {
+      "stars": 78525,
+      "fullName": "OpenCut-app/OpenCut",
+      "slugs": [
+        "opencut"
+      ],
+      "fetchedAt": "2026-07-25T09:04:42.076Z"
+    },
+    "JustVugg/colibri": {
+      "stars": 18761,
+      "fullName": "JustVugg/colibri",
+      "slugs": [
+        "colibri"
+      ],
+      "fetchedAt": "2026-07-25T09:04:42.716Z"
+    },
+    "emilkowalski/skills": {
+      "stars": 20648,
+      "fullName": "emilkowalski/skills",
+      "slugs": [
+        "ui-skills"
+      ],
+      "fetchedAt": "2026-07-25T09:04:43.388Z"
+    },
+    "Graphify-Labs/graphify": {
+      "stars": 95458,
+      "fullName": "Graphify-Labs/graphify",
+      "slugs": [
+        "graphify"
+      ],
+      "fetchedAt": "2026-07-25T09:04:44.023Z"
+    },
+    "Nutlope/hallmark": {
+      "stars": 17297,
+      "fullName": "Nutlope/hallmark",
+      "slugs": [
+        "hallmark"
+      ],
+      "fetchedAt": "2026-07-25T09:04:44.637Z"
+    },
+    "Dicklesworthstone/destructive_command_guard": {
+      "stars": 5388,
+      "fullName": "Dicklesworthstone/destructive_command_guard",
+      "slugs": [
+        "destructive-command-guard"
+      ],
+      "fetchedAt": "2026-07-25T09:04:45.276Z"
+    },
+    "PrismML-Eng/Bonsai-demo": {
+      "stars": 2038,
+      "fullName": "PrismML-Eng/Bonsai-demo",
+      "slugs": [
+        "bonsai"
+      ],
+      "fetchedAt": "2026-07-25T09:04:45.928Z"
+    },
+    "xai-org/grok-build": {
+      "stars": 22417,
+      "fullName": "xai-org/grok-build",
+      "slugs": [
+        "grok-build"
+      ],
+      "fetchedAt": "2026-07-25T09:04:46.586Z"
+    },
+    "vercel/eve": {
+      "stars": 4022,
+      "fullName": "vercel/eve",
+      "slugs": [
+        "eve"
+      ],
+      "fetchedAt": "2026-07-25T09:04:47.238Z"
+    },
+    "tt-a1i/archify": {
+      "stars": 7258,
+      "fullName": "tt-a1i/archify",
+      "slugs": [
+        "archify"
+      ],
+      "fetchedAt": "2026-07-25T09:04:47.853Z"
+    },
+    "KnockOutEZ/wigolo": {
+      "stars": 3580,
+      "fullName": "KnockOutEZ/wigolo",
+      "slugs": [
+        "wigolo"
+      ],
+      "fetchedAt": "2026-07-25T09:04:48.466Z"
+    },
+    "Robbyant/lingbot-map": {
+      "stars": 15339,
+      "fullName": "Robbyant/lingbot-map",
+      "slugs": [
+        "lingbot-map"
+      ],
+      "fetchedAt": "2026-07-25T09:04:49.115Z"
+    },
+    "ModalityDance/PalmClaw": {
+      "stars": 1136,
+      "fullName": "ModalityDance/PalmClaw",
+      "slugs": [
+        "palmclaw"
+      ],
+      "fetchedAt": "2026-07-25T09:04:49.766Z"
+    },
+    "tirth8205/code-review-graph": {
+      "stars": 26301,
+      "fullName": "tirth8205/code-review-graph",
+      "slugs": [
+        "code-review-graph"
+      ],
+      "fetchedAt": "2026-07-25T09:04:50.397Z"
+    },
+    "AlayaLab/AlayaWorld": {
+      "stars": 730,
+      "fullName": "AlayaLab/AlayaWorld",
+      "slugs": [
+        "alaya-world"
+      ],
+      "fetchedAt": "2026-07-25T09:04:51.037Z"
+    },
+    "OpenMOSS/MOSS-Transcribe-Diarize": {
+      "stars": 1229,
+      "fullName": "OpenMOSS/MOSS-Transcribe-Diarize",
+      "slugs": [
+        "moss-transcribe-diarize"
+      ],
+      "fetchedAt": "2026-07-25T09:04:51.685Z"
+    },
+    "RyanCodrai/turbovec": {
+      "stars": 14135,
+      "fullName": "RyanCodrai/turbovec",
+      "slugs": [
+        "turbovec"
+      ],
+      "fetchedAt": "2026-07-25T09:04:52.317Z"
+    },
+    "vercel-labs/deepsec": {
+      "stars": 6282,
+      "fullName": "vercel-labs/deepsec",
+      "slugs": [
+        "deepsec"
+      ],
+      "fetchedAt": "2026-07-25T09:04:52.954Z"
+    },
+    "lopopolo/harness-engineering": {
+      "stars": 2336,
+      "fullName": "lopopolo/harness-engineering",
+      "slugs": [
+        "harness-engineering"
+      ],
+      "fetchedAt": "2026-07-25T09:04:53.602Z"
+    },
+    "oomol-lab/open-connector": {
+      "stars": 3244,
+      "fullName": "oomol-lab/open-connector",
+      "slugs": [
+        "open-connector"
+      ],
+      "fetchedAt": "2026-07-25T09:04:54.289Z"
+    },
+    "handy-computer/transcribe.cpp": {
+      "stars": 1567,
+      "fullName": "handy-computer/transcribe.cpp",
+      "slugs": [
+        "transcribe-cpp"
+      ],
+      "fetchedAt": "2026-07-25T09:04:54.925Z"
+    },
+    "stablyai/orca": {
+      "stars": 28615,
+      "fullName": "stablyai/orca",
+      "slugs": [
+        "orca"
+      ],
+      "fetchedAt": "2026-07-25T09:04:55.570Z"
+    },
+    "1jehuang/jcode": {
+      "stars": 11291,
+      "fullName": "1jehuang/jcode",
+      "slugs": [
+        "jcode"
+      ],
+      "fetchedAt": "2026-07-25T09:04:56.224Z"
+    },
+    "diegosouzapw/OmniRoute": {
+      "stars": 29346,
+      "fullName": "diegosouzapw/OmniRoute",
+      "slugs": [
+        "omniroute"
+      ],
+      "fetchedAt": "2026-07-25T09:04:56.868Z"
+    },
+    "Panniantong/Agent-Reach": {
+      "stars": 60702,
+      "fullName": "Panniantong/Agent-Reach",
+      "slugs": [
+        "agent-reach"
+      ],
+      "fetchedAt": "2026-07-25T09:04:57.501Z"
+    },
+    "microsoft/SkillOpt": {
+      "stars": 14949,
+      "fullName": "microsoft/SkillOpt",
+      "slugs": [
+        "skillopt"
+      ],
+      "fetchedAt": "2026-07-25T09:04:58.149Z"
+    },
+    "baidu/Unlimited-OCR": {
+      "stars": 18814,
+      "fullName": "baidu/Unlimited-OCR",
+      "slugs": [
+        "unlimited-ocr"
+      ],
+      "fetchedAt": "2026-07-25T09:04:58.792Z"
+    },
+    "jamiepine/voicebox": {
+      "stars": 46565,
+      "fullName": "jamiepine/voicebox",
+      "slugs": [
+        "voicebox"
+      ],
+      "fetchedAt": "2026-07-25T09:04:59.445Z"
+    },
+    "img2threejs/img2threejs": {
+      "stars": 4276,
+      "fullName": "img2threejs/img2threejs",
+      "slugs": [
+        "img2threejs"
+      ],
+      "fetchedAt": "2026-07-25T09:05:00.512Z"
+    },
+    "chenglou/freerange": {
+      "stars": 499,
+      "fullName": "chenglou/freerange",
+      "slugs": [
+        "freerange"
+      ],
+      "fetchedAt": "2026-07-25T09:05:01.181Z"
+    },
+    "block/buzz": {
+      "stars": 10646,
+      "fullName": "block/buzz",
+      "slugs": [
+        "buzz"
+      ],
+      "fetchedAt": "2026-07-25T09:05:01.869Z"
+    },
+    "marcelroed/gigatoken": {
+      "stars": 3096,
+      "fullName": "marcelroed/gigatoken",
+      "slugs": [
+        "gigatoken"
+      ],
+      "fetchedAt": "2026-07-25T09:05:02.512Z"
+    },
+    "earthtojake/text-to-cad": {
+      "stars": 10339,
+      "fullName": "earthtojake/text-to-cad",
+      "slugs": [
+        "text-to-cad"
+      ],
+      "fetchedAt": "2026-07-25T09:05:03.139Z"
+    },
+    "pireel/pireel": {
+      "stars": 720,
+      "fullName": "pireel/pireel",
+      "slugs": [
+        "pireel"
+      ],
+      "fetchedAt": "2026-07-25T09:05:03.774Z"
+    },
+    "nyblnet/bento": {
+      "stars": 1514,
+      "fullName": "nyblnet/bento",
+      "slugs": [
+        "bento"
+      ],
+      "fetchedAt": "2026-07-25T09:05:04.391Z"
+    },
+    "alibaba/page-agent": {
+      "stars": 27759,
+      "fullName": "alibaba/page-agent",
+      "slugs": [
+        "page-agent"
+      ],
+      "fetchedAt": "2026-07-25T09:05:05.081Z"
+    },
+    "iOfficeAI/OfficeCLI": {
+      "stars": 22005,
+      "fullName": "iOfficeAI/OfficeCLI",
+      "slugs": [
+        "officecli"
+      ],
+      "fetchedAt": "2026-07-25T09:05:05.735Z"
+    },
+    "langchain-ai/openwiki": {
+      "stars": 13194,
+      "fullName": "langchain-ai/openwiki",
+      "slugs": [
+        "openwiki"
+      ],
+      "fetchedAt": "2026-07-25T09:05:06.375Z"
+    },
+    "petergyang/no-ai-slop": {
+      "stars": 2423,
+      "fullName": "petergyang/no-ai-slop",
+      "slugs": [
+        "no-ai-slop"
+      ],
+      "fetchedAt": "2026-07-25T09:05:06.991Z"
+    },
+    "firecrawl/firecrawl": {
+      "stars": 155725,
+      "fullName": "firecrawl/firecrawl",
+      "slugs": [
+        "firecrawl"
+      ],
+      "fetchedAt": "2026-07-25T09:05:07.639Z"
+    },
+    "citrolabs/ego-lite": {
+      "stars": 2989,
+      "fullName": "citrolabs/ego-lite",
+      "slugs": [
+        "ego-lite"
+      ],
+      "fetchedAt": "2026-07-25T09:05:08.337Z"
+    }
+  }
+}

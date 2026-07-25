@@ -44,7 +44,12 @@ Internal cadence (never show this on the public UI): **1–5/day** is fine; skip
 
 ### Item page (`/radar/{slug}`)
 - Not an enlarged list card
-- Sections only when content exists: explanation, why it matters, how it works, what makes it different, trending, capabilities, similar tools
+- Lead: take + media
+- **Two body sections only** (when content exists):
+  1. **Why it matters** — `explanation` + `why` (deduped)
+  2. **How it works** — `howItWorks` + `different` (deduped)
+- Optional: capabilities, similar tools
+- Optional star count from weekly GitHub stats (no “recent growth”)
 - Verdict + Demo/API/MCP badges
 - Source + share intents
 
@@ -148,7 +153,8 @@ There is no per-product JSON filename. Agents and humans refer to projects by **
 | `items[].different` | no | What makes it different |
 | `items[].verdict` | no | `must-watch` \| `worth-testing` \| `worth-sharing` \| `interesting` \| `skip` |
 | `items[].hasDemo` / `hasApi` / `hasMcp` | no | boolean capability flags |
-| `items[].stars` / `starsGained` | no | Star metrics when known |
+| `items[].stars` / `starsGained` | no | Optional in day JSON for video/ops; **site stars** come from `content/radar/github-stats.json` |
+| `content/radar/github-stats.json` | generated | Weekly `npm run radar:stats` → GitHub API `stargazers_count` by slug |
 | `items[].trending` | no | Short signal labels |
 | `items[].similar` | no | `{ name, url?, slug? }[]` |
 | `items[].share.x` / `share.linkedin` | yes | Human captions EN+FA (hidden on page) |

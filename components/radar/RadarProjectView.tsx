@@ -33,11 +33,23 @@ function Section({
       <p className="font-jetbrains text-[11px] uppercase tracking-[0.2em] text-[#2CFF05]">
         {title}
       </p>
-      <div className="mt-3 font-monroe text-[17px] leading-[1.7] text-[#EAEAEA]">
+      <div className="mt-3 space-y-4 font-monroe text-[17px] leading-[1.7] text-[#EAEAEA]">
         {children}
       </div>
     </section>
   );
+}
+
+function uniqueParagraphs(...parts: (string | null | undefined)[]): string[] {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const part of parts) {
+    const t = (part ?? "").trim();
+    if (!t || seen.has(t)) continue;
+    seen.add(t);
+    out.push(t);
+  }
+  return out;
 }
 
 export function RadarProjectView({ project }: RadarProjectViewProps) {
@@ -52,11 +64,26 @@ export function RadarProjectView({ project }: RadarProjectViewProps) {
   const imageSrc = projectImage(project);
   const embedUrl = youtubeEmbedUrl(project.youtube);
 
-  // Avoid repeating the same paragraph under two headings
-  const showWhy =
-    why.trim().length > 0 &&
-    why.trim() !== take.trim() &&
-    why.trim() !== (explanation ?? "").trim();
+  // Two clean sections only — drop repeated take / dual headings
+  const whyParagraphs = uniqueParagraphs(
+    explanation && explanation !== take ? explanation : null,
+    why && why !== take && why !== explanation ? why : null,
+    // If nothing else, still show why when it is the only body
+    !explanation && why && why !== take ? why : null
+  );
+  // Guarantee at least why when no explanation (required field)
+  if (whyParagraphs.length === 0 && why.trim()) {
+    whyParagraphs.push(why.trim());
+  }
+
+  const howParagraphs = uniqueParagraphs(howItWorks, different);
+
+  const starCount =
+    typeof project.liveStars === "number"
+      ? project.liveStars
+      : typeof project.stars === "number"
+        ? project.stars
+        : null;
 
   return (
     <div className="px-4 py-12 sm:px-6 md:px-10 md:py-16">
@@ -75,6 +102,12 @@ export function RadarProjectView({ project }: RadarProjectViewProps) {
 
         <p className="mt-6 font-jetbrains text-[12px] uppercase tracking-[0.14em] text-[#7F7F7F]">
           {formatRadarDateLong(project.date)}
+          {starCount !== null ? (
+            <span className="text-[#5A5A5A]">
+              {" "}
+              · {starCount.toLocaleString("en-US")} stars
+            </span>
+          ) : null}
         </p>
 
         <div className="mt-3 flex flex-wrap items-start justify-between gap-3">
@@ -119,65 +152,28 @@ export function RadarProjectView({ project }: RadarProjectViewProps) {
         )}
 
         <div className="mt-8 space-y-4">
-          {explanation ? (
-            <Section title="Explanation">
-              <p>{explanation}</p>
+          {whyParagraphs.length > 0 ? (
+            <Section title="Why it matters">
+              {whyParagraphs.map((p) => (
+                <p key={p.slice(0, 48)}>{p}</p>
+              ))}
             </Section>
           ) : null}
 
-          {showWhy ? (
-            <Section title="Why it matters">
-              <p>{why}</p>
-            </Section>
-          ) : !explanation ? (
-            <Section title="Why it matters">
-              <p>{why}</p>
-            </Section>
-          ) : null}
-
-          {howItWorks ? (
+          {howParagraphs.length > 0 ? (
             <Section title="How it works">
-              <p>{howItWorks}</p>
+              {howParagraphs.map((p) => (
+                <p key={p.slice(0, 48)}>{p}</p>
+              ))}
             </Section>
           ) : null}
-
-          {different ? (
-            <Section title="What makes it different">
-              <p>{different}</p>
-            </Section>
-          ) : null}
-
-          {(typeof project.stars === "number" ||
-            typeof project.starsGained === "number" ||
-            (project.trending && project.trending.length > 0)) && (
-            <Section title="Trending">
-              <ul className="space-y-2 font-monroe text-[16px] text-[#EAEAEA]">
-                {typeof project.stars === "number" ? (
-                  <li>
-                    <span className="text-[#7F7F7F]">Stars · </span>
-                    {project.stars.toLocaleString("en-US")}
-                  </li>
-                ) : null}
-                {typeof project.starsGained === "number" &&
-                project.starsGained > 0 ? (
-                  <li>
-                    <span className="text-[#7F7F7F]">Recent growth · </span>+
-                    {project.starsGained.toLocaleString("en-US")}
-                  </li>
-                ) : null}
-                {project.trending?.map((signal) => (
-                  <li key={signal}>{signal}</li>
-                ))}
-              </ul>
-            </Section>
-          )}
 
           {(project.hasDemo || project.hasApi || project.hasMcp) && (
             <Section title="Capabilities">
               <div className="flex flex-wrap gap-2">
                 <CapabilityBadges project={project} />
               </div>
-              <ul className="mt-4 space-y-1 font-monroe text-[15px] text-[#9A9A9A]">
+              <ul className="mt-1 space-y-1 font-monroe text-[15px] text-[#9A9A9A]">
                 {project.hasDemo ? <li>Public demo available</li> : null}
                 {project.hasApi ? <li>API / SDK surface</li> : null}
                 {project.hasMcp ? <li>MCP server / client support</li> : null}
