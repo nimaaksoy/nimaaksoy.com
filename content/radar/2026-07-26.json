@@ -1,0 +1,68 @@
+{
+  "date": "2026-07-26",
+  "items": [
+    {
+      "slug": "codebase-memory-mcp",
+      "name": "codebase-memory-mcp",
+      "url": "https://github.com/DeusData/codebase-memory-mcp",
+      "image": "https://opengraph.githubassets.com/1/DeusData/codebase-memory-mcp",
+      "homepage": "https://deusdata.github.io/codebase-memory-mcp/",
+      "tags": ["mcp", "code-intelligence", "agents", "tree-sitter", "knowledge-graph"],
+      "stars": 35400,
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": true,
+      "trending": [
+        "Code knowledge graph for coding agents",
+        "Sub-ms structural queries via MCP",
+        "Single static binary, 158 languages"
+      ],
+      "similar": [
+        {
+          "name": "code-review-graph",
+          "slug": "code-review-graph"
+        },
+        {
+          "name": "Graphify",
+          "slug": "graphify"
+        },
+        {
+          "name": "OpenConnector",
+          "slug": "open-connector"
+        }
+      ],
+      "take": {
+        "en": "A local code-intelligence MCP that turns a repo into a knowledge graph agents can query in under a millisecond.",
+        "fa": "ام‌سی‌پی هوش کد لوکال که ریپو رو به گراف دانش تبدیل می‌کنه تا ایجنت زیر یک میلی‌ثانیه کوئری بزنه."
+      },
+      "why": {
+        "en": "Coding agents still burn tokens re-reading files and grepping. This project indexes the tree into a persistent graph, then answers structure questions through MCP with far fewer tool hops. If you run Claude Code, Codex, Cursor, or similar and want the agent to know the codebase instead of rediscovering it every session, this is the layer to try.",
+        "fa": "ایجنت‌های کد هنوز توکن می‌سوزونن با خوندن دوباره فایل و گِرپ. این پروژه درخت رو به گراف ماندگار ایندکس می‌کنه و سؤال ساختاری رو از ام‌سی‌پی جواب می‌ده با پرش ابزار خیلی کمتر. اگه با کلود کد، کودکس، کرسر یا مشابه کار می‌کنی و می‌خوای ایجنت ریپو رو بشناسه نه هر سشن از نو کشف کنه، این لایه ارزش امتحانه. اسم پروژه‌ش codebase-memory-mcp."
+      },
+      "explanation": {
+        "en": "codebase-memory-mcp is an open-source MCP server written in pure C. It tree-sitter indexes your codebase into a local knowledge graph of functions, classes, calls, routes, and cross-service links, then exposes search and analysis tools to coding agents. One static binary on macOS, Linux, and Windows; optional graph UI; no cloud dependency for the index itself.",
+        "fa": "کدبیس‌مموری‌ام‌سی‌پی یه سرور ام‌سی‌پی متن‌بازه با سی خالص. با تری‌سیتر ریپو رو به گراف دانش لوکال از تابع، کلاس، کال، روت و لینک بین‌سرویس ایندکس می‌کنه و ابزار سرچ و تحلیل رو به ایجنت کد می‌ده. یه باینری استاتیک رو مک و لینوکس و ویندوز؛ یوآی گراف اختیاری؛ خود ایندکس به ابر وابسته نیست."
+      },
+      "howItWorks": {
+        "en": "Install the binary (curl installer or release archive), run install so it wires detected agents, restart the agent, then say index this project. The server builds the graph locally and serves MCP tools for search, trace, impact, architecture, and optional Cypher. Agents query structure instead of opening hundreds of files.",
+        "fa": "باینری رو نصب کن (اینستالر کرل یا آرشیو ریلیز)، install بزن تا ایجنت‌های پیدا‌شده وصل بشن، ایجنت رو ریستارت کن، بگو این پروژه رو ایندکس کن. سرور گراف رو لوکال می‌سازه و ابزار ام‌سی‌پی برای سرچ، تریس، ایمپکت، معماری و سایفر اختیاری می‌ده. ایجنت ساختار رو می‌پرسه به‌جای باز کردن صدها فایل."
+      },
+      "different": {
+        "en": "Not a hosted RAG wrapper and not another slow language-server bolt-on. Local static binary, tree-sitter graph, sub-ms queries, MCP-native for dozens of agent surfaces, built to cut token burn on real repos.",
+        "fa": "نه رپر رگ هاست‌شده و نه فقط یه ال‌اس‌پی کند اضافه. باینری استاتیک لوکال، گراف تری‌سیتر، کوئری زیر میلی‌ثانیه، ام‌سی‌پی‌نیتیو برای ده‌ها سطح ایجنت، برای کم کردن سوخت توکن رو ریپوی واقعی."
+      },
+      "share": {
+        "x": {
+          "en": "codebase-memory-mcp is the code graph agents actually need. index once, query structure over MCP in under a ms, stop re-scanning the whole repo every turn.\n\nhttps://nimaaksoy.com/radar/codebase-memory-mcp",
+          "fa": "گراف کدی که ایجنت واقعاً لازم داره. یه بار ایندکس، کوئری ساختار از ام‌سی‌پی زیر میلی‌ثانیه، دیگه هر نوبت کل ریپو رو از نو اسکن نکن. اسم پروژه‌ش codebase-memory-mcp.\n\nhttps://nimaaksoy.com/radar/codebase-memory-mcp"
+        },
+        "linkedin": {
+          "en": "codebase-memory-mcp is worth a hard look if your coding agents still burn tokens grepping. local C binary, tree-sitter knowledge graph, MCP tools, optional graph UI.\n\nhttps://nimaaksoy.com/radar/codebase-memory-mcp",
+          "fa": "اگه ایجنت‌های کدت هنوز با گِرپ توکن می‌سوزونن ارزش بررسی جدی داره. باینری سی لوکال، گراف دانش تری‌سیتر، ابزار ام‌سی‌پی، یوآی گراف اختیاری. اسم پروژه‌ش codebase-memory-mcp.\n\nhttps://nimaaksoy.com/radar/codebase-memory-mcp"
+        }
+      },
+      "source": "github"
+    }
+  ]
+}
