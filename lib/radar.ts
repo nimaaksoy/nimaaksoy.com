@@ -55,11 +55,11 @@ export async function getRadarGithubStats(): Promise<RadarGithubStatsFile | null
 function isLocalized(value: unknown): value is LocalizedText {
   if (!value || typeof value !== "object") return false;
   const text = value as { en?: unknown; fa?: unknown };
+  // EN required. FA optional (Radar is EN-only; empty fa is allowed).
   return (
     typeof text.en === "string" &&
     text.en.trim().length > 0 &&
-    typeof text.fa === "string" &&
-    text.fa.trim().length > 0
+    (text.fa === undefined || typeof text.fa === "string")
   );
 }
 

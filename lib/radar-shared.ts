@@ -2,7 +2,8 @@ export type Locale = "en" | "fa";
 
 export type LocalizedText = {
   en: string;
-  fa: string;
+  /** Legacy / unused — Radar is EN-only. Empty string or omit. */
+  fa?: string;
 };
 
 export type RadarItemShare = {
