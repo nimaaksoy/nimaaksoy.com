@@ -1,0 +1,74 @@
+{
+  "date": "2026-07-26",
+  "items": [
+    {
+      "slug": "openworker",
+      "name": "OpenWorker",
+      "url": "https://github.com/andrewyng/openworker",
+      "image": "https://opengraph.githubassets.com/1/andrewyng/openworker",
+      "homepage": "https://openworker.com",
+      "tags": [
+        "agents",
+        "desktop",
+        "local-first",
+        "productivity",
+        "mcp"
+      ],
+      "stars": 5446,
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": true,
+      "trending": [
+        "Andrew Ng open beta desktop coworker",
+        "Finished deliverables, not chat dumps",
+        "Local-first with BYO model keys"
+      ],
+      "similar": [
+        {
+          "name": "ego lite",
+          "slug": "ego-lite"
+        },
+        {
+          "name": "OfficeCLI",
+          "slug": "officecli"
+        },
+        {
+          "name": "OpenConnector",
+          "slug": "open-connector"
+        }
+      ],
+      "take": {
+        "en": "An open-source desktop AI coworker that finishes real work — docs, Slack, calendar — not just chat.",
+        "fa": "همکار هوش مصنوعی متن‌باز دسکتاپ که کار واقعی تموم می‌کنه — سند، اسلک، تقویم — نه فقط چت."
+      },
+      "why": {
+        "en": "Most agent demos stop at a plan or a draft in the chat window. OpenWorker is aimed at outcomes on your machine: a real file, a Slack reply with numbers, a cleaned calendar, with approval before anything consequential. If you want a local coworker with your tools and your model keys, this is the Andrew Ng lane to watch in open beta.",
+        "fa": "بیشتر دموهای ایجنت تو چت به پلن یا پیش‌نویس تموم می‌شن. این یکی رو ماشین خودت خروجی می‌ده: فایل واقعی، جواب اسلک با عدد، تقویم مرتب، با تأیید قبل از کار مهم. اگه همکار لوکال با ابزار و کلید مدل خودت می‌خوای، لاین اندرو اینگ تو بتای باز همینه. اسم پروژه‌ش OpenWorker."
+      },
+      "explanation": {
+        "en": "OpenWorker is an open-source desktop app (macOS and Windows beta) plus a local Python agent server. It runs on your computer, uses the model provider you choose (cloud APIs or local Ollama), and connects to files, terminal, Slack, GitHub, Jira, Notion, calendar, and other tools — including MCP. The product pitch is finished work with human approval gates, not another chat box.",
+        "fa": "اپن‌ورکر یه اپ دسکتاپ متن‌باز (بتای مک و ویندوز) به‌علاوه سرور ایجنت پایتون لوکاله. رو کامپیوتر خودت اجرا می‌شه، مدل رو خودت انتخاب می‌کنی (کلید ابری یا اولاما)، و به فایل، ترمینال، اسلک، گیت‌هاب، جیرا، نوشن، تقویم و ابزارهای دیگه وصل می‌شه — از جمله ام‌سی‌پی. وعده‌ش کار تموم‌شده با تأیید آدمه، نه یه جعبه چت دیگه."
+      },
+      "howItWorks": {
+        "en": "Install the desktop app or run from source. Add a model key or point at Ollama. Ask for an outcome — brief, report, calendar cleanup, release status across tools. The local agent plans steps, uses connectors and files, pauses for approval on sends and shell writes, then leaves a deliverable and a transcript. Slack can open a session via @mention; scheduled automations repeat standing jobs.",
+        "fa": "اپ دسکتاپ رو نصب کن یا از سورس اجرا کن. کلید مدل بذار یا به اولاما وصل شو. خروجی بخواه — بریف، گزارش، مرتب‌سازی تقویم، وضعیت ریلیز بین ابزارها. ایجنت لوکال قدم‌ها رو می‌چینه، کانکتور و فایل رو به کار می‌گیره، برای ارسال و دستور شل تأیید می‌گیره، بعد تحویل و ترنسکریپت می‌ذاره. از اسلک با منشن سشن باز می‌شه؛ اتوماسیون زمان‌بندی‌شده کار تکراری رو می‌بره جلو."
+      },
+      "different": {
+        "en": "Not a browser-only agent and not a hosted chat wrapper. Local-first coworker with multi-app connectors, approval gates, and BYO models — including fully local — under an open repo from a trusted builder brand.",
+        "fa": "نه فقط ایجنت مرورگر و نه رپر چت هاست‌شده. همکار لوکال‌فرست با کانکتور چنداپ، گیت تأیید، و مدل خودت — حتی کاملاً لوکال — زیر ریپوی باز با برند سازنده معتبر."
+      },
+      "share": {
+        "x": {
+          "en": "OpenWorker is the desktop coworker pitch done open source. finished files and Slack replies on your machine, approval before it acts, bring your own model.\n\nhttps://nimaaksoy.com/radar/openworker",
+          "fa": "همکار دسکتاپ متن‌باز که فایل و جواب اسلک رو رو ماشین خودت تموم می‌کنه. قبل از عمل تأیید می‌گیره، مدل خودته. اسم پروژه‌ش OpenWorker.\n\nhttps://nimaaksoy.com/radar/openworker"
+        },
+        "linkedin": {
+          "en": "OpenWorker is worth a look if you want an AI coworker that leaves real deliverables, not chat. open beta desktop app, local agent, 25+ connectors, MCP, BYO keys or Ollama.\n\nhttps://nimaaksoy.com/radar/openworker",
+          "fa": "اگه همکار هوش مصنوعی می‌خوای که خروجی واقعی بذاره نه چت، ارزش دیدن داره. اپ دسکتاپ بتای باز، ایجنت لوکال، بیش از ۲۵ کانکتور، ام‌سی‌پی، کلید خودت یا اولاما. اسم پروژه‌ش OpenWorker.\n\nhttps://nimaaksoy.com/radar/openworker"
+        }
+      },
+      "source": "github"
+    }
+  ]
+}
