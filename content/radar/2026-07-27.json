@@ -1,0 +1,57 @@
+{
+  "date": "2026-07-27",
+  "items": [
+    {
+      "slug": "openmontage",
+      "name": "OpenMontage",
+      "url": "https://github.com/calesthio/OpenMontage",
+      "image": "https://opengraph.githubassets.com/1/calesthio/OpenMontage",
+      "homepage": "https://www.openmontage.video/",
+      "tags": ["video", "agents", "production", "remotion", "open-source"],
+      "stars": 42624,
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": false,
+      "trending": [
+        "Agentic video production studio",
+        "12 pipelines, 100+ tools",
+        "Coding agents ship finished videos"
+      ],
+      "similar": [
+        {
+          "name": "OpenCut",
+          "slug": "opencut"
+        },
+        {
+          "name": "Squoosh",
+          "slug": "squoosh"
+        }
+      ],
+      "take": {
+        "en": "An open-source agentic video studio that turns your coding assistant into a full production pipeline."
+      },
+      "why": {
+        "en": "Most AI video tools stop at a clip generator. OpenMontage is built so an agent can research, script, pull assets, edit, and compose a finished piece through production pipelines and skill files. If you already live in Cursor, Claude Code, or similar and want real video output without a separate studio stack, this is the repo to watch."
+      },
+      "explanation": {
+        "en": "OpenMontage is an open-source agentic video production system. It ships production pipelines, tools, and agent skill files so a coding assistant can run research through composition. It can use stock and generated motion, narration, music, captions, and Remotion-style composition — not only still-image slideshows."
+      },
+      "howItWorks": {
+        "en": "Install the project, point your coding agent at the agent guide, and describe the video you want. The agent picks a pipeline, gathers or generates assets, builds a timeline, and renders a finished cut. You can start from a brief or from a reference video you already like."
+      },
+      "different": {
+        "en": "Not a single model wrapper and not a manual NLE clone. It is an open production system for agents: pipelines, tools, and knowledge files aimed at finished videos with real motion workflows."
+      },
+      "share": {
+        "x": {
+          "en": "OpenMontage is the open agentic video studio pitch done for real. coding agents research, script, edit, and compose finished cuts — not just stills with Ken Burns.\n\nhttps://nimaaksoy.com/radar/openmontage"
+        },
+        "linkedin": {
+          "en": "OpenMontage is worth a hard look if you want agents to ship real video. open-source production pipelines, 100+ tools, Remotion composition, agent skills end to end.\n\nhttps://nimaaksoy.com/radar/openmontage"
+        }
+      },
+      "source": "github"
+    }
+  ]
+}
