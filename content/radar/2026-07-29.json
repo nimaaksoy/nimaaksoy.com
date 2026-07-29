@@ -1,0 +1,61 @@
+{
+  "date": "2026-07-29",
+  "items": [
+    {
+      "slug": "ecc",
+      "name": "ECC",
+      "url": "https://github.com/affaan-m/ECC",
+      "image": "https://opengraph.githubassets.com/1/affaan-m/ECC",
+      "homepage": "https://ecc.tools",
+      "tags": ["agents", "skills", "harness", "claude-code", "codex", "open-source"],
+      "stars": 235072,
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": false,
+      "trending": [
+        "Agent harness operating system",
+        "67 agents, 281 skills, memory",
+        "Claude Code, Codex, Cursor, Hermes"
+      ],
+      "similar": [
+        {
+          "name": "Harness Engineering",
+          "slug": "harness-engineering"
+        },
+        {
+          "name": "SkillOpt",
+          "slug": "skillopt"
+        },
+        {
+          "name": "UI Skills",
+          "slug": "ui-skills"
+        }
+      ],
+      "take": {
+        "en": "An open-source agent harness OS — plan, test, review, remember, and improve — that plugs into Claude Code, Codex, Cursor, and more."
+      },
+      "why": {
+        "en": "Most founders still rebuild the same agent loop in prompts: plan, implement, test, review, then forget what worked. ECC installs that engineering system once — specialized agents, hundreds of skills, hooks, memory, and AgentShield scanning — across the harnesses you already use. If coding agents are your daily stack and you want process without rewriting CLAUDE.md every week, this is the pack to know."
+      },
+      "explanation": {
+        "en": "ECC (Everything Claude Code lineage, now multi-harness) is an MIT open-source agent harness operating system. It ships dozens of specialized agents, hundreds of skills, command shims, hooks, selective rules, session memory, continuous learning, and AgentShield security scanning. The point is not one more prompt pack. It is a coordinated loop: plan, test, implement, review, verify, remember, improve — optimized so the agent keeps context lean and persists what matters."
+      },
+      "howItWorks": {
+        "en": "Pick one install path per harness. For Claude Code, add the marketplace and install the ecc@ecc plugin, then optionally copy the rule packs you need. For Codex, clone the repo and run the supported sync script into ~/.codex. Cursor, OpenCode, Gemini, Hermes, Kimi, and others have install targets via install.sh. After install, agents pick up planning, TDD, review, security, and domain skills instead of you restating the workflow each session."
+      },
+      "different": {
+        "en": "Not a single skill and not a methodology essay. ECC is an installable multi-harness system with agents, skills, hooks, memory, and security scanning that you drop into Claude Code, Codex, Cursor, Hermes, and more — one engineering OS instead of a pile of one-off prompts."
+      },
+      "share": {
+        "x": {
+          "en": "ECC is the agent harness OS founders keep reinventing in prompts. plan, test, review, memory, 281 skills — Claude Code, Codex, Cursor, Hermes, and more.\n\nhttps://nimaaksoy.com/radar/ecc"
+        },
+        "linkedin": {
+          "en": "ECC is worth a hard look if your coding agents still run on ad-hoc prompts. open-source multi-harness system with specialized agents, skills, hooks, memory, and AgentShield — install once, keep the engineering loop.\n\nhttps://nimaaksoy.com/radar/ecc"
+        }
+      },
+      "source": "github"
+    }
+  ]
+}
