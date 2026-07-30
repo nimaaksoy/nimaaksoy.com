@@ -1,0 +1,61 @@
+{
+  "date": "2026-07-30",
+  "items": [
+    {
+      "slug": "openworker",
+      "name": "OpenWorker",
+      "url": "https://github.com/andrewyng/openworker",
+      "image": "https://opengraph.githubassets.com/1/andrewyng/openworker",
+      "homepage": "https://openworker.com",
+      "tags": ["agents", "desktop", "coworker", "local-first", "open-source"],
+      "stars": 10749,
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": true,
+      "trending": [
+        "Andrew Ng open-source AI coworker",
+        "Finished work, not chat",
+        "Local-first, any model provider"
+      ],
+      "similar": [
+        {
+          "name": "Orca",
+          "slug": "orca"
+        },
+        {
+          "name": "ECC",
+          "slug": "ecc"
+        },
+        {
+          "name": "ego lite",
+          "slug": "ego-lite"
+        }
+      ],
+      "take": {
+        "en": "Andrew Ng's open-source desktop coworker that ships finished work — docs, replies, calendar moves — not another chat box."
+      },
+      "why": {
+        "en": "Most agent demos stop at a plan or a draft in the sidebar. OpenWorker is built to leave a real deliverable on your machine while you approve the consequential steps. If you want a local-first coworker with your keys, your files, and your tools instead of a locked cloud agent, this is the product shape to try."
+      },
+      "explanation": {
+        "en": "OpenWorker is an open-source AI coworker desktop app from Andrew Ng's team. It runs on your machine, talks to the model provider you choose, and is aimed at finished outcomes: a polished document, a Slack reply with the numbers, a cleaned calendar, a triaged inbox. The stack is a native shell plus a local Python agent server with connectors, terminal access, files, and MCP — not a thin chat wrapper around one vendor model."
+      },
+      "howItWorks": {
+        "en": "Download the macOS or Windows app from openworker.com, add an API key or point it at Ollama, and ask for an outcome. It breaks the work into steps across files and connected apps, then pauses for approval before sends, writes, calendar changes, or shell commands. You can also run the server and UI from source, mention it from Slack, schedule recurring automations, and plug in any MCP tool with per-tool control."
+      },
+      "different": {
+        "en": "Not a coding-agent harness and not a cloud-only assistant. It is a local-first coworker product: finished deliverables, approval gates, 25+ integrations, BYOK across major providers, and open source under MIT from a team that already ships aisuite."
+      },
+      "share": {
+        "x": {
+          "en": "OpenWorker is the open desktop coworker pitch done for real. finished docs and replies on your machine, your keys, approval before it acts — Andrew Ng's team, MIT.\\n\\nhttps://nimaaksoy.com/radar/openworker"
+        },
+        "linkedin": {
+          "en": "OpenWorker is worth a hard look if you still get chat instead of finished work. open-source local-first coworker, multi-provider, connectors and MCP, approval gates on real actions.\\n\\nhttps://nimaaksoy.com/radar/openworker"
+        }
+      },
+      "source": "github"
+    }
+  ]
+}
