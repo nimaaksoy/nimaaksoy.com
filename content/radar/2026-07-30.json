@@ -7,7 +7,13 @@
       "url": "https://github.com/andrewyng/openworker",
       "image": "https://opengraph.githubassets.com/1/andrewyng/openworker",
       "homepage": "https://openworker.com",
-      "tags": ["agents", "desktop", "coworker", "local-first", "open-source"],
+      "tags": [
+        "agents",
+        "desktop",
+        "coworker",
+        "local-first",
+        "open-source"
+      ],
       "stars": 10749,
       "verdict": "must-watch",
       "hasDemo": true,
@@ -55,7 +61,8 @@
           "en": "OpenWorker is worth a hard look if you still get chat instead of finished work. open-source local-first coworker, multi-provider, connectors and MCP, approval gates on real actions.\\n\\nhttps://nimaaksoy.com/radar/openworker"
         }
       },
-      "source": "github"
+      "source": "github",
+      "youtube": "https://www.youtube.com/watch?v=NDyaRKr5z-Q"
     }
   ]
 }
