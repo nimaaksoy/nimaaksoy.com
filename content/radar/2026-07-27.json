@@ -7,7 +7,13 @@
       "url": "https://github.com/calesthio/OpenMontage",
       "image": "https://opengraph.githubassets.com/1/calesthio/OpenMontage",
       "homepage": "https://www.openmontage.video/",
-      "tags": ["video", "agents", "production", "remotion", "open-source"],
+      "tags": [
+        "video",
+        "agents",
+        "production",
+        "remotion",
+        "open-source"
+      ],
       "stars": 42624,
       "verdict": "must-watch",
       "hasDemo": true,
@@ -51,7 +57,8 @@
           "en": "OpenMontage is worth a hard look if you want agents to ship real video. open-source production pipelines, 100+ tools, Remotion composition, agent skills end to end.\n\nhttps://nimaaksoy.com/radar/openmontage"
         }
       },
-      "source": "github"
+      "source": "github",
+      "youtube": "https://www.youtube.com/watch?v=ImBfz1w6Fyg"
     }
   ]
 }
