@@ -7,7 +7,14 @@
       "url": "https://github.com/affaan-m/ECC",
       "image": "https://opengraph.githubassets.com/1/affaan-m/ECC",
       "homepage": "https://ecc.tools",
-      "tags": ["agents", "skills", "harness", "claude-code", "codex", "open-source"],
+      "tags": [
+        "agents",
+        "skills",
+        "harness",
+        "claude-code",
+        "codex",
+        "open-source"
+      ],
       "stars": 235072,
       "verdict": "must-watch",
       "hasDemo": true,
@@ -55,7 +62,8 @@
           "en": "ECC is worth a hard look if your coding agents still run on ad-hoc prompts. open-source multi-harness system with specialized agents, skills, hooks, memory, and AgentShield — install once, keep the engineering loop.\n\nhttps://nimaaksoy.com/radar/ecc"
         }
       },
-      "source": "github"
+      "source": "github",
+      "youtube": "https://www.youtube.com/watch?v=zulYSF-KCqU"
     }
   ]
 }
