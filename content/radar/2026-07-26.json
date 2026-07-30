@@ -7,7 +7,13 @@
       "url": "https://github.com/DeusData/codebase-memory-mcp",
       "image": "https://opengraph.githubassets.com/1/DeusData/codebase-memory-mcp",
       "homepage": "https://deusdata.github.io/codebase-memory-mcp/",
-      "tags": ["mcp", "code-intelligence", "agents", "tree-sitter", "knowledge-graph"],
+      "tags": [
+        "mcp",
+        "code-intelligence",
+        "agents",
+        "tree-sitter",
+        "knowledge-graph"
+      ],
       "stars": 35400,
       "verdict": "must-watch",
       "hasDemo": true,
@@ -62,7 +68,8 @@
           "fa": ""
         }
       },
-      "source": "github"
+      "source": "github",
+      "youtube": "https://www.youtube.com/watch?v=sPxIReb0NDY"
     },
     {
       "slug": "squoosh",
@@ -70,7 +77,13 @@
       "url": "https://github.com/GoogleChromeLabs/squoosh",
       "image": "https://opengraph.githubassets.com/1/GoogleChromeLabs/squoosh",
       "homepage": "https://squoosh.app",
-      "tags": ["images", "compression", "wasm", "browser", "pwa"],
+      "tags": [
+        "images",
+        "compression",
+        "wasm",
+        "browser",
+        "pwa"
+      ],
       "stars": 25526,
       "verdict": "worth-sharing",
       "hasDemo": true,
@@ -121,7 +134,8 @@
           "fa": ""
         }
       },
-      "source": "github"
+      "source": "github",
+      "youtube": "https://www.youtube.com/watch?v=ihd1raXWtfc"
     }
   ]
 }
