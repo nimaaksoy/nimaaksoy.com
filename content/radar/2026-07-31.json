@@ -1,0 +1,68 @@
+{
+  "date": "2026-07-31",
+  "items": [
+    {
+      "slug": "chrome-devtools-mcp",
+      "name": "Chrome DevTools MCP",
+      "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "image": "https://opengraph.githubassets.com/1/ChromeDevTools/chrome-devtools-mcp",
+      "homepage": "https://www.npmjs.com/package/chrome-devtools-mcp",
+      "tags": [
+        "mcp",
+        "chrome",
+        "devtools",
+        "browser",
+        "agents",
+        "debugging"
+      ],
+      "stars": 48171,
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": true,
+      "trending": [
+        "Official Chrome DevTools for coding agents",
+        "MCP server + CLI",
+        "Performance traces, network, console, screenshots"
+      ],
+      "similar": [
+        {
+          "name": "Page Agent",
+          "slug": "page-agent"
+        },
+        {
+          "name": "Deepsec",
+          "slug": "deepsec"
+        },
+        {
+          "name": "codebase-memory-mcp",
+          "slug": "codebase-memory-mcp"
+        }
+      ],
+      "take": {
+        "en": "Official Chrome DevTools as an MCP server — let coding agents drive a live browser, debug it, and pull real performance traces."
+      },
+      "why": {
+        "en": "Most agent browser tools stop at screenshots and brittle click scripts. This is the Chrome team’s own DevTools surface for agents: network, console with source maps, Lighthouse, heap snapshots, and Puppeteer-backed automation that waits for real results. If your product or agent ships web UI, this is the debugging layer worth wiring once."
+      },
+      "explanation": {
+        "en": "chrome-devtools-mcp is an open-source Model Context Protocol server from the Chrome DevTools team. It connects coding agents such as Claude, Cursor, Copilot, and Antigravity to a live Chrome instance so the agent can navigate, click, type, inspect the DOM, read the console, capture screenshots, list network requests, run performance traces, and audit with Lighthouse. A CLI is included for the same capabilities without MCP."
+      },
+      "howItWorks": {
+        "en": "Install the npm package, point your agent’s MCP config at chrome-devtools-mcp, and start a supported Chrome or Chrome for Testing build. The agent gets tools for input and navigation automation, network and console inspection, performance start/stop/analyze, screenshots and accessibility snapshots, plus deeper memory tooling like heap snapshots. You can also run the CLI when you want the same control outside an MCP host."
+      },
+      "different": {
+        "en": "Not a generic headless wrapper and not an in-page script injected into your app. It is official Chrome DevTools power exposed to agents through MCP — the same debugging and performance stack humans use, including traces and source-mapped console output."
+      },
+      "share": {
+        "x": {
+          "en": "Chrome DevTools MCP is the real browser stack for coding agents. live Chrome, network, console, performance traces, screenshots — official from the DevTools team, not another brittle click bot.\n\nhttps://nimaaksoy.com/radar/chrome-devtools-mcp"
+        },
+        "linkedin": {
+          "en": "If your coding agents still guess at the browser, Chrome DevTools MCP is worth a hard look. official DevTools as MCP: automation, network, console, Lighthouse, performance traces on a live Chrome instance.\n\nhttps://nimaaksoy.com/radar/chrome-devtools-mcp"
+        }
+      },
+      "source": "github"
+    }
+  ]
+}
