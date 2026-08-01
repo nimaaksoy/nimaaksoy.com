@@ -1,0 +1,68 @@
+{
+  "date": "2026-08-01",
+  "items": [
+    {
+      "slug": "qm",
+      "name": "qm",
+      "url": "https://github.com/yc-software/qm",
+      "image": "https://opengraph.githubassets.com/1/yc-software/qm",
+      "homepage": "https://qm.ycombinator.com",
+      "tags": [
+        "agents",
+        "multiplayer",
+        "slack",
+        "harness",
+        "startups",
+        "open-source"
+      ],
+      "stars": 2867,
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": true,
+      "hasMcp": false,
+      "trending": [
+        "YC multiplayer agent harness",
+        "Slack + web for the whole startup",
+        "Pi, OpenCode, Codex, Claude Code"
+      ],
+      "similar": [
+        {
+          "name": "OpenWorker",
+          "slug": "openworker"
+        },
+        {
+          "name": "Orca",
+          "slug": "orca"
+        },
+        {
+          "name": "ECC",
+          "slug": "ecc"
+        }
+      ],
+      "take": {
+        "en": "YC’s open multiplayer agent harness for startups — personal workspaces plus shared Slack channels, not one more solo chat bot."
+      },
+      "why": {
+        "en": "Most agent products still feel like a private assistant bolted onto a company. qm is built so every person and every room gets scoped memory, files, keychain, crons, and a durable sandbox, while the same core runs in Slack and on the web. If you want agents that work across the team without melting into one shared chaos thread, this is the shape to study."
+      },
+      "explanation": {
+        "en": "qm is an open-source multiplayer agent harness from YC Software. It gives each employee an isolated workspace and also lets people collaborate with the agent in channels, group messages, and projects. A headless TypeScript core sits on Postgres with identity, policy, and scheduling, then drives agent loops through harnesses you choose — Pi, OpenCode, Codex, or Claude Code — so a deploy is not locked to one vendor."
+      },
+      "howItWorks": {
+        "en": "Spin up an org deployment with the qm CLI into your own cloud account, connect Slack if you want, and open the web UI. People work in personal scopes or shared rooms; each scope keeps its own memory, files, permissions, skills, and sandbox. Admins set security posture and which harnesses and models are allowed. Skills can be shared by grant or promoted org-wide, and crons keep background work running when nobody is watching."
+      },
+      "different": {
+        "en": "Not a single-user desktop coworker and not a pure coding ADE. qm is company-shaped multiplayer infrastructure: scoped isolation plus collaboration, Slack and web on one identity model, and a pluggable harness core you deploy yourself."
+      },
+      "share": {
+        "x": {
+          "en": "qm is the multiplayer agent harness startups actually need. personal sandboxes plus shared Slack rooms, your harness and model, open from YC Software.\n\nhttps://nimaaksoy.com/radar/qm"
+        },
+        "linkedin": {
+          "en": "Most agents still act like a private assistant. qm is built for the whole startup — scoped memory and sandboxes per person and room, Slack plus web, and a core that can run Pi, OpenCode, Codex, or Claude Code.\n\nhttps://nimaaksoy.com/radar/qm"
+        }
+      },
+      "source": "github"
+    }
+  ]
+}
