@@ -1,0 +1,48 @@
+{
+  "date": "2026-08-02",
+  "items": [
+    {
+      "slug": "crisperwhisper",
+      "name": "CrisperWhisper",
+      "url": "https://github.com/nyrahealth/CrisperWhisper",
+      "image": "https://opengraph.githubassets.com/1/nyrahealth/CrisperWhisper",
+      "homepage": "https://www.nyra-labs.com/crisperwhisper",
+      "tags": ["asr", "speech", "whisper", "transcription", "timestamps"],
+      "stars": 1060,
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": false,
+      "trending": [
+        "Verbatim vs intended speech modes",
+        "Word-level timestamps under ~30ms",
+        "Filler and disfluency detection"
+      ],
+      "similar": [],
+      "take": {
+        "en": "A Whisper-class ASR that chooses verbatim speech — fillers, cutoffs, and all — with precise word timestamps."
+      },
+      "why": {
+        "en": "Most speech APIs clean what you said into what you meant. That is fine for notes and bad for TTS data, clinical speech, captions that match the audio, and training sets that need real disfluencies. CrisperWhisper 2.0 makes verbatim vs intended an explicit mode, keeps strong word timing, and ranks high on disfluency F1 across languages. If you build on transcripts, this is the open stack to try when clean STT is not enough."
+      },
+      "explanation": {
+        "en": "CrisperWhisper is an open-source speech recognition system from Nyra focused on controllable verbatim transcription. It can emit exactly what was spoken, including fillers and vocal events, or a cleaned intended transcript with formatted numbers and dates. It adds word-level timings, longform continuation without chunk-seam glitches, multilingual support, and a production CTranslate2 runtime."
+      },
+      "howItWorks": {
+        "en": "Install from PyPI or the repo, point it at audio, and pick verbatim or intended mode. Use the demo and docs for options, models on Hugging Face, and the verbatimize path when you already have a clean transcript and want real disfluencies aligned back onto the audio."
+      },
+      "different": {
+        "en": "Not another generic Whisper wrapper. It treats verbatim vs clean as a first-class control, targets word timing and disfluency metrics hard, and ships production inference aimed at real datasets — not only chatty demos."
+      },
+      "share": {
+        "x": {
+          "en": "CrisperWhisper is the open ASR path when you need what was actually said — fillers, cutoffs, tight word timing — not only a cleaned paraphrase.\n\nhttps://nimaaksoy.com/radar/crisperwhisper"
+        },
+        "linkedin": {
+          "en": "CrisperWhisper is worth a look if your pipeline needs verbatim speech, not polished notes. open ASR with controllable verbatim/intended modes, strong word timestamps, multilingual disfluency scores.\n\nhttps://nimaaksoy.com/radar/crisperwhisper"
+        }
+      },
+      "source": "github"
+    }
+  ]
+}
