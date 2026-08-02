@@ -48,6 +48,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly",
       priority: 0.85,
     },
+    {
+      url: `${siteUrl}/stats`,
+      lastModified,
+      changeFrequency: "daily",
+      priority: 0.6,
+    },
     ...promptPages
       .filter((page) => page > 1)
       .map((page) => ({

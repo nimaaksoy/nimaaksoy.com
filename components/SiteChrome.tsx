@@ -7,7 +7,7 @@ import { indexPath } from "@/lib/radar-shared";
 
 type SiteChromeProps = {
   children: ReactNode;
-  active?: "home" | "radar" | "tools" | "prompts";
+  active?: "home" | "radar" | "tools" | "prompts" | "stats";
 };
 
 function navClass(isActive: boolean) {
@@ -44,6 +44,12 @@ export function SiteChrome({ children, active }: SiteChromeProps) {
               className={`${navClass(active === "tools")} hidden sm:inline`}
             >
               Tools
+            </Link>
+            <Link
+              href="/stats"
+              className={`${navClass(active === "stats")} hidden lg:inline`}
+            >
+              Stats
             </Link>
             <a
               href="https://github.com/nimaaksoy/nimaaksoy.com"

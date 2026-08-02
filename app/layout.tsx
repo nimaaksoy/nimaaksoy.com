@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Manrope } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const monroe = Manrope({
@@ -99,6 +100,7 @@ export default function RootLayout({
     >
       <body className="min-h-full bg-[#0A0A0A] text-[#EAEAEA] antialiased">
         {children}
+        <Script src="/analytics.js" strategy="afterInteractive" />
       </body>
     </html>
   );

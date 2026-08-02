@@ -2,6 +2,14 @@
 
 import { useRef, useState } from "react";
 
+declare global {
+  interface Window {
+    posthog?: {
+      capture: (event: string, properties?: Record<string, unknown>) => void;
+    };
+  }
+}
+
 type PromptCopyButtonProps = {
   slug: string;
   body: string;
@@ -35,6 +43,9 @@ export default function PromptCopyButton({
     try {
       await navigator.clipboard.writeText(body);
       setCopied(true);
+      window.posthog?.capture("copy_prompt", {
+        prompt_slug: slug,
+      });
 
       try {
         const response = await fetch(`/api/prompts/${slug}/copy`, {

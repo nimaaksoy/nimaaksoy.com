@@ -52,6 +52,25 @@ gracefully.
 
 ---
 
+### Stats
+
+Public site analytics live at [nimaaksoy.com/stats](https://nimaaksoy.com/stats).
+The page is powered by PostHog when these production environment variables are set:
+
+```bash
+POSTHOG_KEY=phc_...
+POSTHOG_PROJECT_ID=...
+POSTHOG_PERSONAL_KEY=phx_...
+POSTHOG_UI_HOST=https://us.posthog.com
+POSTHOG_SITE_HOST=nimaaksoy.com
+```
+
+`/analytics.js` loads PostHog from the site origin, `/ph/*` proxies PostHog
+ingest/assets, and `/stats` queries aggregate data server-side. Without
+credentials, the page renders a setup state instead of failing.
+
+---
+
 ### Chrome extensions
 
 Small browser extensions built to solve everyday problems.
