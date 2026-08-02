@@ -19,7 +19,12 @@
         "Word-level timestamps under ~30ms",
         "Filler and disfluency detection"
       ],
-      "similar": [],
+      "similar": [
+        {
+          "name": "KrillinAI",
+          "slug": "krillinai"
+        }
+      ],
       "take": {
         "en": "A Whisper-class ASR that chooses verbatim speech — fillers, cutoffs, and all — with precise word timestamps."
       },
@@ -41,6 +46,69 @@
         },
         "linkedin": {
           "en": "CrisperWhisper is worth a look if your pipeline needs verbatim speech, not polished notes. open ASR with controllable verbatim/intended modes, strong word timestamps, multilingual disfluency scores.\n\nhttps://nimaaksoy.com/radar/crisperwhisper"
+        }
+      },
+      "source": "github"
+    },
+    {
+      "slug": "krillinai",
+      "name": "KrillinAI",
+      "url": "https://github.com/krillinai/KrillinAI",
+      "image": "https://opengraph.githubassets.com/1/krillinai/KrillinAI",
+      "tags": [
+        "video",
+        "translation",
+        "dubbing",
+        "localization",
+        "tts",
+        "agents",
+        "cli"
+      ],
+      "stars": 10596,
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": false,
+      "trending": [
+        "Full video localize + dub pipeline",
+        "Staged CLI for agents",
+        "YouTube TikTok Bilibili Douyin"
+      ],
+      "similar": [
+        {
+          "name": "CrisperWhisper",
+          "slug": "crisperwhisper"
+        },
+        {
+          "name": "OpenMontage",
+          "slug": "openmontage"
+        },
+        {
+          "name": "MOSS Transcribe Diarize",
+          "slug": "moss-transcribe-diarize"
+        }
+      ],
+      "take": {
+        "en": "Open video translation and dubbing for humans and agents — download, transcribe, translate, TTS, reformat, cover."
+      },
+      "why": {
+        "en": "Most localization tools stop at subtitles or force a closed SaaS path. KrillinAI is a full open pipeline you can run yourself: pull a video, get accurate captions, LLM translation with context, TTS dubbing with voice options, landscape and portrait renders for the big short-video platforms, plus cover generation. The staged CLI and agent skills matter if you want to automate growth content instead of clicking through a desktop app every time."
+      },
+      "explanation": {
+        "en": "KrillinAI is an open-source audio and video localization stack written in Go. It covers acquisition via yt-dlp or local files, Whisper-family transcription, LLM subtitle segmentation and translation, TTS dubbing, horizontal and vertical composition, and cover images. It ships a desktop client, a local web UI, Docker, and a phased CLI with JSON outputs so scripts and coding agents can call one stage or chain a full pipeline."
+      },
+      "howItWorks": {
+        "en": "Download a release or build the CLI, add API keys for ASR, LLM, and TTS in config, then run desktop, the local web UI, or staged commands like subtitle, tts, render-horizontal, render-vertical, cover, and pipeline. Each CLI stage writes structured artifacts and a manifest so later stages reuse prior work. Agents can also load the per-stage skills under skills/ without scraping CLI docs."
+      },
+      "different": {
+        "en": "Not a caption-only tool and not a black-box cloud dubber. It is end-to-end localization you own, with platform-aware vertical and horizontal outputs, and a CLI or skill contract built for agent workflows as much as for humans."
+      },
+      "share": {
+        "x": {
+          "en": "KrillinAI is the open video localize + dub stack I’d actually wire into an agent. download, Whisper, LLM translate, TTS, vertical render, cover — staged CLI, not another locked SaaS.\n\nhttps://nimaaksoy.com/radar/krillinai"
+        },
+        "linkedin": {
+          "en": "If you ship content across languages, KrillinAI is worth a hard look. open full-pipeline video translation and dubbing with a staged CLI and agent skills — from download to platform-ready vertical renders.\n\nhttps://nimaaksoy.com/radar/krillinai"
         }
       },
       "source": "github"
