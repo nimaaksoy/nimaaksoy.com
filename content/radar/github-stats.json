@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T18:08:26.076Z",
+  "updatedAt": "2026-08-02T18:09:29Z",
   "source": "github-api",
   "repoCount": 25,
   "itemCount": 49,
@@ -274,9 +274,9 @@
       "stale": true
     },
     "krillinai": {
-      "stars": null,
+      "stars": 10597,
       "repo": "krillinai/KrillinAI",
-      "fetchedAt": "2026-08-02T18:08:45Z"
+      "fetchedAt": "2026-08-02T18:09:29Z"
     }
   },
   "byRepo": {
@@ -481,12 +481,12 @@
       "fetchedAt": "2026-08-02T18:07:32.591Z"
     },
     "krillinai/KrillinAI": {
-      "stars": null,
+      "stars": 10597,
       "fullName": "krillinai/KrillinAI",
       "slugs": [
         "krillinai"
       ],
-      "fetchedAt": "2026-08-02T18:08:45Z"
+      "fetchedAt": "2026-08-02T18:09:29Z"
     }
   },
   "errors": [
