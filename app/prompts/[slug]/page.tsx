@@ -144,25 +144,6 @@ export default async function PromptDetailPage({ params }: PromptDetailPageProps
             {prompt.description}
           </p>
 
-          <div className="mt-7 flex flex-wrap items-center gap-4">
-            <PromptCopyButton
-              slug={prompt.slug}
-              body={prompt.body}
-              count={counts[prompt.slug] ?? 0}
-              size="large"
-            />
-            {prompt.sourceUrl ? (
-              <a
-                href={prompt.sourceUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="font-jetbrains text-[12px] uppercase tracking-[0.12em] text-[#2CFF05] transition hover:text-[#EAEAEA]"
-              >
-                Open Original
-              </a>
-            ) : null}
-          </div>
-
           {prompt.authorName || prompt.date ? (
             <p className="mt-5 font-jetbrains text-[11px] leading-[1.8] text-[#7F7F7F]">
               {prompt.authorName ? (
@@ -198,6 +179,25 @@ export default async function PromptDetailPage({ params }: PromptDetailPageProps
             {prompt.body}
           </pre>
         </section>
+
+        <div className="mt-6 flex flex-wrap items-center gap-4">
+          <PromptCopyButton
+            slug={prompt.slug}
+            body={prompt.body}
+            count={counts[prompt.slug] ?? 0}
+            size="large"
+          />
+          {prompt.sourceUrl ? (
+            <a
+              href={prompt.sourceUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="font-jetbrains text-[12px] uppercase tracking-[0.12em] text-[#2CFF05] transition hover:text-[#EAEAEA]"
+            >
+              Open Original
+            </a>
+          ) : null}
+        </div>
 
         <nav className="mt-10 grid gap-4 border-t border-[#1F1F1F] pt-8 md:grid-cols-2">
           {previous ? (

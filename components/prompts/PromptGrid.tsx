@@ -72,7 +72,15 @@ export default function PromptGrid({ prompts, initialCounts, sort }: PromptGridP
           key={prompt.slug}
           className="mb-5 break-inside-avoid overflow-hidden rounded-[8px] border border-[#1F1F1F] bg-[#111111] transition hover:border-[#2CFF05]/40"
         >
-          <PromptMedia media={prompt.media} title={prompt.title} compact />
+          {prompt.media.length ? (
+            <Link
+              href={`/prompts/${prompt.slug}`}
+              className="block focus:outline-none focus:ring-2 focus:ring-[#2CFF05]"
+              aria-label={`Open ${prompt.title}`}
+            >
+              <PromptMedia media={prompt.media} title={prompt.title} compact />
+            </Link>
+          ) : null}
 
           <div className="p-5">
             <Link
