@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { RadarProjectView } from "@/components/radar/RadarProjectView";
-import { SiteChrome } from "@/components/radar/SiteChrome";
+import { SiteChrome } from "@/components/SiteChrome";
 import {
   absoluteItemUrl,
   getAllRadarSlugs,

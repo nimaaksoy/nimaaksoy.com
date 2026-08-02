@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SiteChrome } from "@/components/radar/SiteChrome";
+import { SiteChrome } from "@/components/SiteChrome";
 
 export const metadata: Metadata = {
   title: "Tools",
@@ -47,7 +47,8 @@ const toolCards: ToolCard[] = [
   {
     name: "Prompts",
     description: "Useful prompts I use myself. Clear, practical, no fluff.",
-    cta: "→",
+    cta: "→ nimaaksoy.com/prompts",
+    href: "/prompts",
   },
 ];
 

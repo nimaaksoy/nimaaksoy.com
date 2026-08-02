@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import PromptFilters from "@/components/prompts/PromptFilters";
 import PromptGrid from "@/components/prompts/PromptGrid";
+import { SiteChrome } from "@/components/SiteChrome";
 import {
   getAllPrompts,
   getAllTags,
@@ -47,27 +48,9 @@ export default async function PromptIndexPage({
       : await getCopyCounts(result.prompts.map((prompt) => prompt.slug));
 
   return (
-    <main className="min-h-screen bg-[#0A0A0A] px-6 py-20 md:px-10 md:py-24">
+    <SiteChrome active="prompts">
+      <div className="bg-[#0A0A0A] px-6 py-16 md:px-10 md:py-20">
       <div className="mx-auto max-w-[1180px]">
-        <nav className="mb-10 flex flex-wrap items-center justify-between gap-4 font-jetbrains text-[11px] uppercase tracking-[0.16em] text-[#7F7F7F]">
-          <Link href="/" className="transition hover:text-[#2CFF05]">
-            Nima Aksoy
-          </Link>
-          <div className="flex items-center gap-5">
-            <Link href="/tools" className="transition hover:text-[#2CFF05]">
-              Tools
-            </Link>
-            <a
-              href={PROMPTS_CONTRIBUTING_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="text-[#2CFF05] transition hover:text-[#EAEAEA]"
-            >
-              Contribute
-            </a>
-          </div>
-        </nav>
-
         <header className="grid gap-8 md:grid-cols-[1fr_360px] md:items-end">
           <div>
             <p className="font-jetbrains text-[11px] uppercase tracking-[0.2em] text-[#7F7F7F]">
@@ -81,6 +64,20 @@ export default async function PromptIndexPage({
             {description}
           </p>
         </header>
+
+        <div className="mt-6 flex flex-wrap gap-4 font-jetbrains text-[11px] uppercase tracking-[0.14em]">
+          <a
+            href={PROMPTS_CONTRIBUTING_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="text-[#2CFF05] transition hover:text-[#EAEAEA]"
+          >
+            Contribute
+          </a>
+          <Link href="/tools" className="text-[#7F7F7F] transition hover:text-[#2CFF05]">
+            Tools
+          </Link>
+        </div>
 
         <section className="mt-10">
           <PromptFilters q={result.q} tag={result.tag} sort={result.sort} tags={tags} />
@@ -134,6 +131,7 @@ export default async function PromptIndexPage({
           }),
         }}
       />
-    </main>
+      </div>
+    </SiteChrome>
   );
 }

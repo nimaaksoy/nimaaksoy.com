@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { RadarFeed } from "@/components/radar/RadarFeed";
-import { SiteChrome } from "@/components/radar/SiteChrome";
+import { SiteChrome } from "@/components/SiteChrome";
 import { getAllRadarProjects } from "@/lib/radar";
 
 export const metadata: Metadata = {
