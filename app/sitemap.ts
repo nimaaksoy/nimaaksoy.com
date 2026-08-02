@@ -1,10 +1,15 @@
 import type { MetadataRoute } from "next";
+
+import { getAllPrompts, getAllTags, getPaginationPages } from "@/lib/prompts";
 import { getAllRadarProjects } from "@/lib/radar";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = "https://nimaaksoy.com";
   const lastModified = new Date();
   const projects = await getAllRadarProjects();
+  const prompts = getAllPrompts();
+  const promptPages = getPaginationPages(prompts.length);
+  const tags = getAllTags();
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
@@ -37,6 +42,32 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "daily",
       priority: 0.9,
     },
+    {
+      url: `${siteUrl}/prompts`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    ...promptPages
+      .filter((page) => page > 1)
+      .map((page) => ({
+        url: `${siteUrl}/prompts/page/${page}`,
+        lastModified,
+        changeFrequency: "weekly" as const,
+        priority: 0.65,
+      })),
+    ...tags.map((tag) => ({
+      url: `${siteUrl}/prompts/tag/${tag.slug}`,
+      lastModified,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    })),
+    ...prompts.map((prompt) => ({
+      url: `${siteUrl}/prompts/${prompt.slug}`,
+      lastModified: prompt.date ? new Date(`${prompt.date}T00:00:00Z`) : lastModified,
+      changeFrequency: "monthly" as const,
+      priority: prompt.featured ? 0.8 : 0.7,
+    })),
   ];
 
   const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({

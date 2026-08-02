@@ -10,9 +10,10 @@ This repository is where I build in public. Some projects become standalone prod
 
 ## Projects
 
-- **Radar** — Curated AI & open-source discoveries → [nimaaksoy.com/radar](https://nimaaksoy.com/radar)
-- **Chrome extensions** — Small tools for everyday use → [`chrome-extension/`](./chrome-extension/)
-- **Life in Dots** — Life timeline as a web app + new-tab extension → [nimaaksoy.com/life-in-dots](https://nimaaksoy.com/life-in-dots)
+- **Radar** — Curated AI & open-source discoveries -> [nimaaksoy.com/radar](https://nimaaksoy.com/radar)
+- **Prompts** — Public prompt library -> [nimaaksoy.com/prompts](https://nimaaksoy.com/prompts)
+- **Chrome extensions** — Small tools for everyday use -> [`chrome-extension/`](./chrome-extension/)
+- **Life in Dots** — Life timeline as a web app + new-tab extension -> [nimaaksoy.com/life-in-dots](https://nimaaksoy.com/life-in-dots)
 - **Experiments** — UI, UX, AI, and web ideas that may grow into products
 - **More tools** coming soon
 
@@ -32,6 +33,22 @@ Instead of reposting trends, Radar explains what a project does, why it matters,
 
 - [docs/RADAR.md](./docs/RADAR.md) — how Radar works and how content is stored
 - [docs/RADAR-VIDEO-WORKFLOW.md](./docs/RADAR-VIDEO-WORKFLOW.md) — how Radar social videos are made
+
+---
+
+### Prompts
+
+A public collection of useful prompts discovered and contributed by people.
+
+Prompt files live in `content/prompts/`. Files beginning with `_` and
+`content/prompts/CONTRIBUTING.md` are ignored by the prompt loader. Use
+`content/prompts/_template.md` for new submissions.
+
+Copy counts use the simplest built-in adapter: a server-side JSON file. In
+development it writes to `/tmp/nimaaksoy-prompt-copy-counts.json`. For
+production, set `PROMPT_COPY_COUNTS_FILE` to a writable path on persistent
+storage. If that file is unavailable, copying still works and the UI falls back
+gracefully.
 
 ---
 
@@ -60,16 +77,16 @@ A quiet life-timeline experiment: years, months, days, and hours as dots — on 
 
 You'll find small projects, UI ideas, prototypes, and features that may eventually become standalone products.
 
-Some experiments stay here.  
-Some become products.  
+Some experiments stay here.
+Some become products.
 Some fail — and that's okay.
 
 ---
 
 ## Tech stack
 
-- Next.js (App Router)
-- React
+- Next.js 16 (App Router)
+- React 18
 - TypeScript
 - Tailwind CSS
 - Framer Motion
@@ -92,6 +109,7 @@ Open [http://localhost:3000](http://localhost:3000).
 npm run build   # production build
 npm run start   # run production server
 npm run lint    # lint
+npm run prompts:validate # validate prompt Markdown files
 ```
 
 ---
@@ -99,9 +117,9 @@ npm run lint    # lint
 ## Project structure
 
 ```text
-app/                  Website pages (home, radar, tools, life-in-dots, …)
+app/                  Website pages (home, radar, tools, life-in-dots, prompts, ...)
 components/           Shared UI components
-content/              Radar day JSON and other content
+content/              Radar day JSON, prompt Markdown, and other content
 docs/                 Documentation (Radar, video workflow)
 lib/                  Shared utilities and loaders
 public/               Images, icons, assets
@@ -131,11 +149,13 @@ Bug reports, suggestions, and pull requests are welcome.
 
 If you're planning a larger change, open an issue first so we can discuss the idea.
 
+For prompt submissions, start with [`content/prompts/CONTRIBUTING.md`](./content/prompts/CONTRIBUTING.md).
+
 ---
 
 ## License
 
-This project is **source-available** under the [PolyForm Noncommercial License 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0) — not traditional open source.
+This project is **source-available** under the [PolyForm Noncommercial License 1.0.0](https://polyformproject.org/licenses/noncommercial-1.0.0) — not traditional open source.
 
 You're welcome to:
 

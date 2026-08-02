@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import {
+  IconArrowUpRight,
   IconBrain,
+  IconBrandGithub,
   IconBrandLinkedin,
   IconBrandMedium,
   IconBrandTelegram,
@@ -54,6 +56,8 @@ type ThinkCard = {
   description: string;
 };
 
+const githubRepoUrl = "https://github.com/nimaaksoy/nimaaksoy.com";
+
 const media = {
   line3Video: "https://res.cloudinary.com/dzu2boxnl/video/upload/v1777052628/line3_p9zeuo.mp4",
   line2Video: "https://res.cloudinary.com/dzu2boxnl/video/upload/v1777052627/line2_sgnmej.mp4",
@@ -76,6 +80,11 @@ const media = {
 } as const;
 
 const socials: SocialLink[] = [
+  {
+    label: "GitHub",
+    href: githubRepoUrl,
+    icon: IconBrandGithub,
+  },
   { label: "X", href: "https://x.com/Nima1980", icon: IconBrandX },
   {
     label: "LinkedIn",
@@ -406,6 +415,23 @@ export default function Home() {
                     {link.label}
                   </button>
                 ))}
+                <Link
+                  href="/prompts"
+                  className="transition-colors duration-300 hover:text-[#2CFF05]"
+                >
+                  Prompts
+                </Link>
+                <a
+                  href={githubRepoUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 transition-colors duration-300 hover:text-[#2CFF05]"
+                  aria-label="Open nimaaksoy/nimaaksoy.com on GitHub"
+                >
+                  <IconBrandGithub size={16} stroke={1.8} />
+                  <span>GitHub</span>
+                  <IconArrowUpRight size={14} stroke={1.8} />
+                </a>
                 <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-[#2CFF05]" />
               </div>
               <button
@@ -429,6 +455,24 @@ export default function Home() {
                       {link.label}
                     </button>
                   ))}
+                  <Link
+                    href="/prompts"
+                    className="border-b border-[#1A1A1A] py-3 font-jetbrains text-[11px] uppercase tracking-[0.16em] text-[#EAEAEA]"
+                    onClick={() => setMobileNavOpen(false)}
+                  >
+                    Prompts
+                  </Link>
+                  <a
+                    href={githubRepoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-2 py-3 font-jetbrains text-[11px] uppercase tracking-[0.16em] text-[#EAEAEA]"
+                    aria-label="Open nimaaksoy/nimaaksoy.com on GitHub"
+                  >
+                    <IconBrandGithub size={16} stroke={1.8} />
+                    <span>GitHub</span>
+                    <IconArrowUpRight size={14} stroke={1.8} />
+                  </a>
                 </div>
               </div>
             ) : null}
@@ -1005,6 +1049,9 @@ export default function Home() {
                     </Link>
                     <Link href="/tools" className="transition hover:text-[#2CFF05]">
                       Tools
+                    </Link>
+                    <Link href="/prompts" className="transition hover:text-[#2CFF05]">
+                      Prompts
                     </Link>
                     <button
                       type="button"

@@ -5,10 +5,11 @@
   "license": "PolyForm-Noncommercial-1.0.0",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run prompts:validate && next build",
     "start": "next start",
     "lint": "eslint",
-    "radar:stats": "node scripts/update-radar-github-stats.mjs"
+    "radar:stats": "node scripts/update-radar-github-stats.mjs",
+    "prompts:validate": "node scripts/validate-prompts.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.4.0",
