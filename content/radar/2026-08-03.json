@@ -1,0 +1,66 @@
+{
+  "date": "2026-08-03",
+  "items": [
+    {
+      "slug": "skill-recorder",
+      "name": "Skill Recorder",
+      "url": "https://github.com/microsoft/skill-recorder",
+      "image": "https://opengraph.githubassets.com/1/microsoft/skill-recorder",
+      "tags": [
+        "agent-skills",
+        "automation",
+        "copilot",
+        "microsoft",
+        "screen-recording",
+        "electron"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": false,
+      "trending": [
+        "Record once, ship a reusable agent skill",
+        "Copilot reconstructs intent + steps",
+        "Native tools over brittle UI replay"
+      ],
+      "similar": [
+        {
+          "name": "SkillOpt",
+          "slug": "skillopt"
+        },
+        {
+          "name": "UI Skills",
+          "slug": "ui-skills"
+        },
+        {
+          "name": "ECC",
+          "slug": "ecc"
+        }
+      ],
+      "take": {
+        "en": "Microsoft’s open desktop app that records you doing a task once, then turns that run into a reusable agent skill."
+      },
+      "why": {
+        "en": "Writing SKILL.md by hand is slow and usually wrong on the first try. Skill Recorder captures a real session — windows, URLs, clicks, optional narration — and has Copilot rebuild the intent and ordered steps so you can export a Skill or a scheduled Automation. Founders who keep redoing the same browser or CLI workflow finally get a path from demo to agent without hand-authoring every procedure."
+      },
+      "explanation": {
+        "en": "Skill Recorder is an open-source Electron app from Microsoft. You record an on-screen work session locally, then Analyze sends the timeline and frames to GitHub Copilot CLI, which reconstructs one intent plus ordered steps. From an approved analysis you generate a Skill (on-demand SKILL.md) or an Automation (same procedure on a schedule or trigger) aimed at Microsoft Scout, Copilot Cowork, or Copilot Studio."
+      },
+      "howItWorks": {
+        "en": "Install from a pinned source release on macOS or Windows, grant screen recording, hit record, and do the task once. Optionally narrate while you work. Stop, review the reconstructed steps, edit anything that is off, then create a Skill or Automation. The builders prefer native agent tools like gh or web_fetch over replaying brittle UI clicks, and they generalize from your one example."
+      },
+      "different": {
+        "en": "Not another skill marketplace dump and not a pure macro recorder. It closes the loop from human demonstration to editable agent procedure, with local capture, Copilot analysis on demand, and exports that prefer real tools over click scripts."
+      },
+      "share": {
+        "x": {
+          "en": "Skill Recorder is the missing loop for agent skills. record yourself once, Copilot rebuilds intent + steps, export a Skill or Automation instead of hand-writing SKILL.md forever.\n\nhttps://nimaaksoy.com/radar/skill-recorder"
+        },
+        "linkedin": {
+          "en": "If your team keeps rewriting the same agent procedures by hand, Microsoft’s open Skill Recorder is worth a look. capture a real work session, reconstruct intent and steps with Copilot, ship a reusable Skill or scheduled Automation.\n\nhttps://nimaaksoy.com/radar/skill-recorder"
+        }
+      },
+      "source": "github"
+    }
+  ]
+}
