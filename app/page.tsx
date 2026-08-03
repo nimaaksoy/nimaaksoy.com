@@ -1,10 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import {
-  IconArrowUpRight,
   IconBrain,
-  IconBrandGithub,
   IconBrandMedium,
   IconBrandX,
   IconBrandYoutube,
@@ -20,7 +17,7 @@ import {
 } from "@tabler/icons-react";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { useEffect, useMemo, useRef, useState, type ComponentType } from "react";
-import SiteFooter from "@/components/SiteFooter";
+import { SiteChrome } from "@/components/SiteChrome";
 import SpotlightCard from "@/components/SpotlightCard";
 
 type IconType = ComponentType<{
@@ -48,8 +45,6 @@ type ThinkCard = {
   title: string;
   description: string;
 };
-
-const githubRepoUrl = "https://github.com/nimaaksoy/nimaaksoy.com";
 
 const media = {
   line3Video: "https://res.cloudinary.com/dzu2boxnl/video/upload/v1777052628/line3_p9zeuo.mp4",
@@ -306,8 +301,6 @@ function HeroSeamlessVideo() {
 }
 
 export default function Home() {
-  const [mobileNavOpen, setMobileNavOpen] = useState(false);
-
   const currentMonthYear = useMemo(
     () =>
       new Intl.DateTimeFormat("en-US", {
@@ -327,26 +320,15 @@ export default function Home() {
   const writingInView = useInView(writingRef, { amount: 0.2, once: true });
   const connectInView = useInView(connectRef, { amount: 0.35, once: true });
 
-  const navLinks = useMemo(
-    () => [
-      { label: "About", id: "about" },
-      { label: "Projects", id: "projects" },
-      { label: "Writing", id: "writing" },
-      { label: "Connect", id: "connect" },
-    ],
-    []
-  );
-
   const scrollToSection = (id: string) => {
     const target = document.getElementById(id);
-    setMobileNavOpen(false);
     target?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
-    <>
+    <SiteChrome active="home">
       <AnimatePresence mode="wait">
-        <motion.main
+        <motion.div
           key="home"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -354,89 +336,6 @@ export default function Home() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="relative z-10"
         >
-          <nav className="fixed left-0 top-0 z-50 w-full border-b border-[#1A1A1A] bg-black/80 backdrop-blur-sm">
-            <div className="mx-auto flex h-14 w-full max-w-[1280px] items-center justify-between px-5 md:h-16 md:px-10">
-              <button
-                className="font-jetbrains text-[11px] font-medium uppercase tracking-[0.2em] text-[#EAEAEA] transition-colors hover:text-[#2CFF05] md:text-sm md:tracking-[0.24em]"
-                onClick={() => scrollToSection("hero")}
-                type="button"
-              >
-                NIMA AKSOY
-              </button>
-              <div className="hidden items-center gap-8 font-jetbrains text-[12px] font-normal uppercase tracking-[0.14em] text-[#EAEAEA] md:flex">
-                {navLinks.map((link) => (
-                  <button
-                    key={link.id}
-                    className="transition-colors duration-300 hover:text-[#2CFF05]"
-                    onClick={() => scrollToSection(link.id)}
-                    type="button"
-                  >
-                    {link.label}
-                  </button>
-                ))}
-                <Link
-                  href="/prompts"
-                  className="transition-colors duration-300 hover:text-[#2CFF05]"
-                >
-                  Prompts
-                </Link>
-                <a
-                  href={githubRepoUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 transition-colors duration-300 hover:text-[#2CFF05]"
-                  aria-label="Open nimaaksoy/nimaaksoy.com on GitHub"
-                >
-                  <IconBrandGithub size={16} stroke={1.8} />
-                  <span>GitHub</span>
-                  <IconArrowUpRight size={14} stroke={1.8} />
-                </a>
-                <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-[#2CFF05]" />
-              </div>
-              <button
-                type="button"
-                onClick={() => setMobileNavOpen((prev) => !prev)}
-                className="font-jetbrains text-[11px] uppercase tracking-[0.18em] text-[#EAEAEA] transition-colors hover:text-[#2CFF05] md:hidden"
-              >
-                {mobileNavOpen ? "Close" : "Menu"}
-              </button>
-            </div>
-            {mobileNavOpen ? (
-              <div className="border-t border-[#1A1A1A] bg-black/95 md:hidden">
-                <div className="mx-auto flex w-full max-w-[1280px] flex-col px-5 py-3">
-                  {navLinks.map((link) => (
-                    <button
-                      key={`mobile-${link.id}`}
-                      className="border-b border-[#1A1A1A] py-3 text-left font-jetbrains text-[11px] uppercase tracking-[0.16em] text-[#EAEAEA] last:border-b-0"
-                      onClick={() => scrollToSection(link.id)}
-                      type="button"
-                    >
-                      {link.label}
-                    </button>
-                  ))}
-                  <Link
-                    href="/prompts"
-                    className="border-b border-[#1A1A1A] py-3 font-jetbrains text-[11px] uppercase tracking-[0.16em] text-[#EAEAEA]"
-                    onClick={() => setMobileNavOpen(false)}
-                  >
-                    Prompts
-                  </Link>
-                  <a
-                    href={githubRepoUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-2 py-3 font-jetbrains text-[11px] uppercase tracking-[0.16em] text-[#EAEAEA]"
-                    aria-label="Open nimaaksoy/nimaaksoy.com on GitHub"
-                  >
-                    <IconBrandGithub size={16} stroke={1.8} />
-                    <span>GitHub</span>
-                    <IconArrowUpRight size={14} stroke={1.8} />
-                  </a>
-                </div>
-              </div>
-            ) : null}
-          </nav>
-
           <section
             id="hero"
             className="relative isolate min-h-screen overflow-hidden"
@@ -985,10 +884,8 @@ export default function Home() {
               </motion.p>
             </div>
           </motion.section>
-
-          <SiteFooter />
-        </motion.main>
+        </motion.div>
       </AnimatePresence>
-    </>
+    </SiteChrome>
   );
 }

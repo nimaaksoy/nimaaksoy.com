@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { SiteChrome } from "@/components/SiteChrome";
 
 export const metadata: Metadata = {
   title: "Life in Dots Privacy Policy",
@@ -20,25 +20,8 @@ const headingClassName =
 
 export default function LifeInDotsPrivacyPage() {
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-[#EAEAEA]">
-      <header className="border-b border-[#1F1F1F]">
-        <div className="mx-auto flex h-16 max-w-3xl items-center justify-between px-6">
-          <Link
-            href="/life-in-dots"
-            className="font-jetbrains text-xs font-medium uppercase tracking-[0.2em] transition-colors hover:text-[#2CFF05]"
-          >
-            Life in Dots
-          </Link>
-          <Link
-            href="/life-in-dots"
-            className="font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#9A9A9A] transition-colors hover:text-[#EAEAEA]"
-          >
-            Back to product
-          </Link>
-        </div>
-      </header>
-
-      <main className="mx-auto max-w-3xl px-6 py-14 md:py-20">
+    <SiteChrome>
+      <div className="mx-auto max-w-3xl px-6 py-14 md:py-20">
         <article className="space-y-10 font-monroe text-[15px] leading-7 text-[#B8B8B8]">
           <div className="space-y-4 border-b border-[#1F1F1F] pb-10">
             <p className="font-jetbrains text-[11px] uppercase tracking-[0.16em] text-[#7F7F7F]">
@@ -165,7 +148,7 @@ export default function LifeInDotsPrivacyPage() {
             </p>
           </section>
         </article>
-      </main>
-    </div>
+      </div>
+    </SiteChrome>
   );
 }
