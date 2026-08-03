@@ -320,6 +320,22 @@ export function getPromptNeighbors(slug: string) {
   };
 }
 
+export function resolveMediaUrl(url?: string) {
+  if (!url) {
+    return undefined;
+  }
+
+  if (url.startsWith("http://") || url.startsWith("https://")) {
+    return url;
+  }
+
+  if (url.startsWith("/")) {
+    return `${SITE_URL}${url}`;
+  }
+
+  return url;
+}
+
 export function getPromptOgImage(prompt: Prompt) {
   const media = prompt.media[0];
   if (!media) {
@@ -327,10 +343,10 @@ export function getPromptOgImage(prompt: Prompt) {
   }
 
   if (media.type === "image") {
-    return media.url;
+    return resolveMediaUrl(media.url);
   }
 
-  return media.poster;
+  return resolveMediaUrl(media.poster);
 }
 
 export function getPaginationPages(totalPrompts = getAllPrompts().length) {

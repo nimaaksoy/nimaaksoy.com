@@ -9,8 +9,8 @@ tags:
   - character
 media:
   - type: "video"
-    url: "https://video.twimg.com/amplify_video/2057425779240423424/vid/avc1/1080x1080/1AG5wH-4r6S7UadX.mp4?tag=27"
-    poster: "https://pbs.twimg.com/amplify_video_thumb/2057425779240423424/img/mbJ_aZs-A3oQ3_tG.jpg"
+    url: "/prompts/media/billie-jean-impression/video.mp4"
+    poster: "/prompts/media/billie-jean-impression/poster.jpg"
     alt: "Painterly Billie Jean dance performance on a dark spotlight stage"
 sourceUrl: "https://x.com/0xbisc/status/2057425898966769881"
 authorName: "Latte"
