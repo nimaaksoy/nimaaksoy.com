@@ -59,9 +59,11 @@ Use controlled camera movement, studio lighting, macro details, and a clean fina
 
 ## Supported Media
 
-- `image`: Use a direct image URL in `url`.
-- `video`: Use a direct video URL in `url`; include `poster` when possible.
-- Do not use local file paths, private URLs, or media you do not have permission to share or embed.
+- `image`: Use a direct image URL in `url`, or a self-hosted path under `/prompts/media/`.
+- `video`: Use a direct video URL in `url`, or a self-hosted path under `/prompts/media/`; include `poster` when possible.
+- **Prefer self-hosting** X/Twitter media: `video.twimg.com` returns **403** when the browser sends `Referer: nimaaksoy.com`. Download mp4 + poster into `public/prompts/media/{slug}/` and point frontmatter at `/prompts/media/{slug}/video.mp4` and `/prompts/media/{slug}/poster.jpg`.
+- The player also sets `referrerPolicy="no-referrer"` as a fallback for external hosts that allow no-referrer fetches.
+- Do not use local filesystem paths outside `public/`, private URLs, or media you do not have permission to share or embed.
 
 ## Tag Rules
 

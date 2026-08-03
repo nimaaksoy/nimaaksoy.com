@@ -37,6 +37,8 @@ export default function PromptMedia({ media, title, compact = false }: PromptMed
           src={active.url}
           alt={active.alt || title}
           loading="lazy"
+          // X/CDN hotlinks often 403 when Referer is our domain.
+          referrerPolicy="no-referrer"
           className={`w-full object-cover ${compact ? "max-h-[360px]" : "max-h-[620px]"}`}
         />
       ) : (
@@ -46,6 +48,8 @@ export default function PromptMedia({ media, title, compact = false }: PromptMed
           controls
           preload="metadata"
           playsInline
+          // X video.twimg.com returns 403 when Referer is nimaaksoy.com.
+          referrerPolicy="no-referrer"
           className={`w-full bg-black object-contain ${compact ? "max-h-[360px]" : "max-h-[620px]"}`}
           aria-label={active.alt || `${title} video`}
         />

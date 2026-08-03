@@ -100,6 +100,27 @@ function parseFrontmatter(raw) {
   return { fields, body: match[2].trim() };
 }
 
+function isValidMediaUrl(value) {
+  if (!value || typeof value !== "string") {
+    return false;
+  }
+
+  // Prefer self-hosted media under /public (site-relative path).
+  if (value.startsWith("/prompts/media/")) {
+    return !value.includes("..");
+  }
+
+  if (!safeRemoteUrlPattern.test(value)) {
+    return false;
+  }
+  try {
+    const parsed = new URL(value);
+    return parsed.protocol === "https:" || parsed.protocol === "http:";
+  } catch {
+    return false;
+  }
+}
+
 function isValidUrl(value) {
   if (!value || !safeRemoteUrlPattern.test(value)) {
     return false;
@@ -183,10 +204,10 @@ function validatePrompt(file, slugs) {
         if (!allowedMediaTypes.has(item.type)) {
           errors.push(`${file}: media item ${index + 1} has invalid type`);
         }
-        if (!isValidUrl(item.url)) {
+        if (!isValidMediaUrl(item.url)) {
           errors.push(`${file}: media item ${index + 1} has invalid or unsafe url`);
         }
-        if (item.poster && !isValidUrl(item.poster)) {
+        if (item.poster && !isValidMediaUrl(item.poster)) {
           errors.push(`${file}: media item ${index + 1} has invalid poster url`);
         }
       });

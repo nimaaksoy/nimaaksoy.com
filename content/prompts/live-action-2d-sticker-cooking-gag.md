@@ -9,8 +9,8 @@ tags:
   - cooking
 media:
   - type: "video"
-    url: "https://video.twimg.com/amplify_video/2072546257512378368/vid/avc1/720x1280/lH7KtoRSXJHETvYI.mp4?tag=28"
-    poster: "https://pbs.twimg.com/amplify_video_thumb/2072546257512378368/img/6J34ovt0M9nTjjB-.jpg"
+    url: "/prompts/media/live-action-2d-sticker-cooking-gag/video.mp4"
+    poster: "/prompts/media/live-action-2d-sticker-cooking-gag/poster.jpg"
     alt: "Live-action cooking video with a flat 2D anime sticker character"
 sourceUrl: "https://x.com/johnAGI168/status/2072546434977534369"
 authorName: "John"
