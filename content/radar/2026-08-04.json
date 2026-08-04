@@ -1,0 +1,66 @@
+{
+  "date": "2026-08-04",
+  "items": [
+    {
+      "slug": "meat",
+      "name": "meat",
+      "url": "https://github.com/boldsoftware/meat",
+      "image": "https://opengraph.githubassets.com/1/boldsoftware/meat",
+      "homepage": "https://meat.dev",
+      "tags": [
+        "code-review",
+        "agent-workflows",
+        "diffs",
+        "go",
+        "devtools"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": false,
+      "trending": [
+        "Reading diffs for agent-written code",
+        "Concept and architecture first",
+        "Works on multi-MB commits"
+      ],
+      "similar": [
+        {
+          "name": "ECC",
+          "slug": "ecc"
+        },
+        {
+          "name": "Code Review Graph",
+          "slug": "code-review-graph"
+        },
+        {
+          "name": "Destructive Command Guard",
+          "slug": "destructive-command-guard"
+        }
+      ],
+      "take": {
+        "en": "A Go CLI that turns a raw git diff into a reading diff — the conceptual meat of agent-written code, without the noise."
+      },
+      "why": {
+        "en": "Agents now ship large commits full of correct-but-boring churn. Founders still have to review critical systems, but style, imports, and nil checks waste the pass. meat compresses the diff to algorithm and architecture choices so human review time goes where it actually matters."
+      },
+      "explanation": {
+        "en": "meat is an open-source Go tool from boldsoftware. You point it at a commit or git-style range and a model abridges the patch into a reading diff: the important conceptual changes kept, the filler dropped. Huge diffs are split at file and hunk boundaries, abridged chunk by chunk, then merged so one multi-megabyte agent commit still becomes a single reviewable document."
+      },
+      "howItWorks": {
+        "en": "Install with go install meat.dev/cmd/meat@latest, then run meat on the latest commit or pass git-looking selectors for the range you care about. It is slow on big patches, so the authors recommend wiring an agent to pre-process commits in your devtools. Output is a shorter diff meant for reading, not for applying."
+      },
+      "different": {
+        "en": "Not another coding agent and not a linter. It assumes models already write decent code and solves the human bottleneck: what is worth reading when the agent just changed half the tree."
+      },
+      "share": {
+        "x": {
+          "en": "meat is a sharp little tool for the agent era. it turns a noisy git diff into a reading diff so you review concepts and architecture instead of imports and style.\n\nhttps://nimaaksoy.com/radar/meat"
+        },
+        "linkedin": {
+          "en": "If your agents ship large commits and review still hurts, meat is worth a look. it abridges a git diff down to the conceptual changes so humans spend time on algorithms and architecture, not filler.\n\nhttps://nimaaksoy.com/radar/meat"
+        }
+      },
+      "source": "github"
+    }
+  ]
+}
