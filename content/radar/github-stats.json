@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-03T07:06:53Z",
+  "updatedAt": "2026-08-04T07:07:04.000Z",
   "source": "github-api",
   "repoCount": 25,
   "itemCount": 49,
@@ -282,6 +282,10 @@
       "stars": 1015,
       "repo": "microsoft/skill-recorder",
       "fetchedAt": "2026-08-03T07:06:53Z"
+    },
+    "meat": {
+      "stars": 1091,
+      "fetchedAt": "2026-08-04T07:07:04.000Z"
     }
   },
   "byRepo": {
@@ -497,6 +501,10 @@
       "stars": 1015,
       "slug": "skill-recorder",
       "fetchedAt": "2026-08-03T07:06:53Z"
+    },
+    "boldsoftware/meat": {
+      "stars": 1091,
+      "fetchedAt": "2026-08-04T07:07:04.000Z"
     }
   },
   "errors": [
