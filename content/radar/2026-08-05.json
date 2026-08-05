@@ -1,0 +1,67 @@
+{
+  "date": "2026-08-05",
+  "items": [
+    {
+      "slug": "trycrm",
+      "name": "CRM",
+      "url": "https://github.com/trycompai/crm",
+      "image": "https://opengraph.githubassets.com/1/trycompai/crm",
+      "homepage": "https://trycrm.ai",
+      "tags": [
+        "crm",
+        "agents",
+        "sales",
+        "eve",
+        "devtools",
+        "open-source"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": true,
+      "hasMcp": false,
+      "trending": [
+        "Agent is the product, CRM is the notes store",
+        "Durable research queue on eve",
+        "No guessed people facts"
+      ],
+      "similar": [
+        {
+          "name": "eve",
+          "slug": "eve"
+        },
+        {
+          "name": "OpenWorker",
+          "slug": "openworker"
+        },
+        {
+          "name": "qm",
+          "slug": "qm"
+        }
+      ],
+      "take": {
+        "en": "An open-source CRM where a durable research agent is the product — the database is just where it writes things down."
+      },
+      "why": {
+        "en": "Most AI CRMs still bolt a chat box onto a form and leave enrichment to the rep. This one flips it: a scheduled agent owns the research loop, spends a budget, and only commits facts it observed. Founders who hate empty contact fields and hallucinated titles finally get a CRM designed around agent work, not around another sidebar chatbot."
+      },
+      "explanation": {
+        "en": "CRM from trycompai is a single-tenant, MIT-licensed sales system built as a monorepo on Bun, NestJS, Next.js, and Postgres. The research agent runs as its own deployment on Vercel’s eve framework with tools, markdown skills, a work queue, and a network-denied sandbox. The API only records that something happened; the agent leases queue rows and decides what they mean. Evidence is priced in a ledger so strong observations write to the record and weak ones become human suggestions."
+      },
+      "howItWorks": {
+        "en": "Clone the repo, set a few env values, bring up Postgres with Docker, then run the app, API, and agent. Connect Google for sign-in and mailbox sync. The agent claims due tasks, researches contacts and companies with only the optional keys you enabled, schedules rechecks with a written reason, and surfaces steps on each record’s Agent tab. Close the browser and the queue keeps running on its own deployment."
+      },
+      "different": {
+        "en": "Not a chat panel glued to HubSpot clones. Intelligence never lives in the API, people facts are never guessed from model confidence, and the agent keeps working after you leave — the CRM is the notebook, not the product."
+      },
+      "share": {
+        "x": {
+          "en": "trycrm flips the AI CRM idea. the durable research agent is the product; the database is just where it writes notes. no guessed people facts, queue keeps running when you close the tab.\n\nhttps://nimaaksoy.com/radar/trycrm"
+        },
+        "linkedin": {
+          "en": "Most AI CRMs still bolt chat onto a form. trycrm is open source and agentic-first: a durable research agent owns enrichment, evidence, and follow-ups, and the CRM is just where it stores what it observed.\n\nhttps://nimaaksoy.com/radar/trycrm"
+        }
+      },
+      "source": "github"
+    }
+  ]
+}
