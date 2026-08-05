@@ -286,6 +286,10 @@
     "meat": {
       "stars": 1091,
       "fetchedAt": "2026-08-04T07:07:04.000Z"
+    },
+    "trycrm": {
+      "stars": 5135,
+      "fetchedAt": "2026-08-05T07:07:51.000Z"
     }
   },
   "byRepo": {
@@ -505,6 +509,10 @@
     "boldsoftware/meat": {
       "stars": 1091,
       "fetchedAt": "2026-08-04T07:07:04.000Z"
+    },
+    "trycompai/crm": {
+      "stars": 5135,
+      "fetchedAt": "2026-08-05T07:07:51.000Z"
     }
   },
   "errors": [
