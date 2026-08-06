@@ -1,0 +1,56 @@
+{
+  "date": "2026-08-06",
+  "items": [
+    {
+      "slug": "cloudflare-os",
+      "name": "Cloudflare OS",
+      "url": "https://github.com/cloudflare/cloudflare-os",
+      "image": "https://opengraph.githubassets.com/1/cloudflare/cloudflare-os",
+      "homepage": "https://os.cloudflare.app",
+      "tags": ["agents", "workspace", "security", "workers"],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "source": "github",
+      "take": {
+        "en": "Cloudflare’s internal AI productivity OS, open-sourced so you can fork it into Your Company OS — agent chat, sandboxed gadgets, and capability-based Gatekeepers.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Cloudflare OS is not a desktop kernel. It is the AI work environment Cloudflare built for its own teams: an agent chat surface preloaded with how the company operates, plus a model of software where every doc-like thing is a private sandboxed app (a “gadget”) the agent can create or edit for you. The Workers team built it on Durable Objects, Dynamic Workers, and Facets, and they open-sourced it so other companies can copy the pattern rather than bolt another chat box onto SaaS.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most “company AI” products stop at chat with connectors. Founders actually need safe autonomy: agents that can build small apps, touch real systems, and still leave security sleeping. Cloudflare OS is a concrete reference architecture for that — used inside Cloudflare daily — not another demo coding agent.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "You run it locally with pnpm run-local or deploy to a Cloudflare account. Agents work in a chat UI. When you ask for slides, a whiteboard, or a custom dashboard, the system spins up a private gadget instance just for you instead of calling a shared SaaS app. Gatekeepers wrap external services with narrow auth, action logs, and a clever async human-in-the-loop: the agent can keep planning while side effects are simulated until you approve them in bulk later.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Unlike chat suites or coding agents, the unit of work is the gadget — a per-user sandboxed app you can modify safely — backed by Gatekeepers that fix the “agent stuck waiting for approval” problem without jumping to auto-approve everything.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Cloudflare open-sourced the AI OS their own teams use. private sandboxed gadgets instead of shared SaaS apps, plus Gatekeepers that let agents keep moving while you approve side effects later. this is the company AI pattern worth studying.\n\nhttps://nimaaksoy.com/radar/cloudflare-os",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Cloudflare OS is worth a look if you are building internal AI for a real company, not another chat wrapper. Agents create private sandboxed gadgets, and Gatekeepers handle auth, logs, and async human approval so security does not have to choose between stuck agents and full auto-approve.\n\nhttps://nimaaksoy.com/radar/cloudflare-os",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "Cloudflare Computer",
+          "url": "https://github.com/cloudflare/computer"
+        },
+        {
+          "name": "OpenWorker",
+          "url": "https://github.com/andrewyng/openworker"
+        }
+      ]
+    }
+  ]
+}
