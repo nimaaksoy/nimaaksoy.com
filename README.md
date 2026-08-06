@@ -44,11 +44,20 @@ Prompt files live in `content/prompts/`. Files beginning with `_` and
 `content/prompts/CONTRIBUTING.md` are ignored by the prompt loader. Use
 `content/prompts/_template.md` for new submissions.
 
-Copy counts use the simplest built-in adapter: a server-side JSON file. In
-development it writes to `/tmp/nimaaksoy-prompt-copy-counts.json`. For
-production, set `PROMPT_COPY_COUNTS_FILE` to a writable path on persistent
-storage. If that file is unavailable, copying still works and the UI falls back
-gracefully.
+**Copy counts.** PostHog `copy_prompt` events are the source of truth — the same
+data the Stats page reports. Counts are read from PostHog (365-day window,
+cached in-process) so they survive deploys and ephemeral disks.
+
+A server-side JSON file acts as the fallback when PostHog is not configured (for
+example local development). It writes to
+`/tmp/nimaaksoy-prompt-copy-counts.json`, or to `PROMPT_COPY_COUNTS_FILE` if set.
+The two sources are merged with `max`, never summed, since both count the same
+click. If neither is available, copying still works and the button simply shows
+the count it already had.
+
+Because PostHog needs a moment to make a new event queryable, the button credits
+a copy immediately and only ever revises the number upward — a refetch cannot
+roll back a count the visitor just incremented.
 
 ---
 
@@ -68,6 +77,17 @@ POSTHOG_SITE_HOST=nimaaksoy.com
 `/analytics.js` loads PostHog from the site origin, `/ph/*` proxies PostHog
 ingest/assets, and `/stats` queries aggregate data server-side. Without
 credentials, the page renders a setup state instead of failing.
+
+The page is never allowed to wait on PostHog:
+
+- It is rendered with `revalidate = 120`, so visitors get a cached page that is
+  refreshed in the background rather than a live query per request.
+- The panels sit behind `<Suspense>`, so the page shell and headings paint
+  immediately and the numbers stream in when the query resolves.
+- `lib/site-analytics.ts` caches results in-process and serves stale data while
+  refreshing. Concurrent requests share one query instead of each firing their
+  own, queries time out at 6s, and a failed refresh keeps the last good numbers
+  and retries after 20s instead of blanking the page for a full cache window.
 
 ---
 
@@ -145,6 +165,17 @@ public/               Images, icons, assets
 chrome-extension/     Browser extensions
 scripts/              Helper scripts
 ```
+
+### Navigation
+
+`components/SiteChrome.tsx` owns the shared navbar and footer for every page and
+is the single place navigation items are defined. It renders the full inline nav
+from `md` up; below that, `components/MobileNav.tsx` shows a hamburger that opens
+the same items as a drop-down panel.
+
+The panel is rendered into `<body>` with a portal on purpose: the fixed navbar
+sets `backdrop-blur`, which makes it the containing block for fixed-position
+descendants and would otherwise collapse the full-screen overlay to zero height.
 
 ---
 

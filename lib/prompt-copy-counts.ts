@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 import { getPromptSlugs } from "@/lib/prompts";
+import { getPromptCopyTotals } from "@/lib/site-analytics";
 
 type CopyCountStore = Record<string, number>;
 
@@ -31,14 +32,30 @@ export function isKnownPromptSlug(slug: string) {
   return getPromptSlugs().includes(slug);
 }
 
+/**
+ * Copy counts for the given prompt slugs.
+ *
+ * PostHog `copy_prompt` events are the source of truth: the local JSON store
+ * lives on ephemeral disk in production, so on its own it reports zero for
+ * every prompt. Both sources count the same click, so the two are merged with
+ * `max` (never summed) — that keeps counts correct when only one is available
+ * and avoids double counting when both are.
+ */
 export async function getCopyCounts(slugs: string[]) {
   const allowed = new Set(getPromptSlugs());
-  const store = await readStore();
+  const wanted = slugs.filter((slug) => allowed.has(slug));
+
+  const [store, analyticsTotals] = await Promise.all([
+    readStore(),
+    getPromptCopyTotals().catch(() => null),
+  ]);
 
   return Object.fromEntries(
-    slugs
-      .filter((slug) => allowed.has(slug))
-      .map((slug) => [slug, Math.max(0, Number(store[slug]) || 0)])
+    wanted.map((slug) => {
+      const stored = Math.max(0, Number(store[slug]) || 0);
+      const tracked = Math.max(0, Number(analyticsTotals?.[slug]) || 0);
+      return [slug, Math.max(stored, tracked)];
+    })
   );
 }
 

@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { incrementCopyCount, isKnownPromptSlug } from "@/lib/prompt-copy-counts";
+import {
+  getCopyCounts,
+  incrementCopyCount,
+  isKnownPromptSlug,
+} from "@/lib/prompt-copy-counts";
 
 const rateLimitWindowMs = 60_000;
 const rateLimitMax = 20;
@@ -39,10 +43,20 @@ export async function POST(
     return NextResponse.json({ error: "Too many copy events" }, { status: 429 });
   }
 
+  // The local store is best-effort — production runs on an ephemeral disk where
+  // the write can fail. PostHog still records the copy from the client, so a
+  // failed write must not blank out the count.
+  let stored = true;
   try {
-    const count = await incrementCopyCount(slug);
-    return NextResponse.json({ count: count ?? 0 });
+    await incrementCopyCount(slug);
   } catch {
-    return NextResponse.json({ count: 0, unavailable: true }, { status: 200 });
+    stored = false;
+  }
+
+  try {
+    const counts = await getCopyCounts([slug]);
+    return NextResponse.json({ count: counts[slug] ?? 0, stored });
+  } catch {
+    return NextResponse.json({ stored, unavailable: true });
   }
 }

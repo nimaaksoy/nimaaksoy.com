@@ -2,8 +2,11 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { IconArrowUpRight, IconBrandGithub } from "@tabler/icons-react";
 
+import MobileNav from "@/components/MobileNav";
 import SiteFooter from "@/components/SiteFooter";
 import { indexPath } from "@/lib/radar-shared";
+
+const GITHUB_URL = "https://github.com/nimaaksoy/nimaaksoy.com";
 
 type SiteChromeProps = {
   children: ReactNode;
@@ -19,6 +22,14 @@ function navClass(isActive: boolean) {
 export function SiteChrome({ children, active }: SiteChromeProps) {
   const radarHref = indexPath();
 
+  const navItems = [
+    { label: "Home", href: "/", isActive: active === "home" },
+    { label: "Radar", href: radarHref, isActive: active === "radar" },
+    { label: "Prompts", href: "/prompts", isActive: active === "prompts" },
+    { label: "Tools", href: "/tools", isActive: active === "tools" },
+    { label: "Stats", href: "/stats", isActive: active === "stats" },
+  ];
+
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-[#EAEAEA]">
       <nav className="fixed left-0 top-0 z-50 w-full border-b border-[#1A1A1A] bg-black/80 backdrop-blur-sm">
@@ -29,40 +40,26 @@ export function SiteChrome({ children, active }: SiteChromeProps) {
           >
             NIMA AKSOY
           </Link>
-          <div className="flex items-center gap-3 font-jetbrains text-[10px] uppercase tracking-[0.12em] sm:gap-5 sm:text-[11px] md:gap-8 md:text-[12px] md:tracking-[0.14em]">
-            <Link href="/" className={navClass(active === "home")}>
-              Home
-            </Link>
-            <Link href={radarHref} className={navClass(active === "radar")}>
-              Radar
-            </Link>
-            <Link href="/prompts" className={navClass(active === "prompts")}>
-              Prompts
-            </Link>
-            <Link
-              href="/tools"
-              className={`${navClass(active === "tools")} hidden sm:inline`}
-            >
-              Tools
-            </Link>
-            <Link
-              href="/stats"
-              className={`${navClass(active === "stats")} hidden lg:inline`}
-            >
-              Stats
-            </Link>
+          <div className="hidden items-center gap-8 font-jetbrains text-[12px] uppercase tracking-[0.14em] md:flex">
+            {navItems.map((item) => (
+              <Link key={item.href} href={item.href} className={navClass(item.isActive)}>
+                {item.label}
+              </Link>
+            ))}
             <a
-              href="https://github.com/nimaaksoy/nimaaksoy.com"
+              href={GITHUB_URL}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-1.5 text-[#EAEAEA] transition-colors hover:text-[#2CFF05]"
               aria-label="Open nimaaksoy/nimaaksoy.com on GitHub"
             >
               <IconBrandGithub size={16} stroke={1.8} />
-              <span className="hidden md:inline">GitHub</span>
+              <span>GitHub</span>
               <IconArrowUpRight size={14} stroke={1.8} />
             </a>
           </div>
+
+          <MobileNav items={navItems} githubUrl={GITHUB_URL} />
         </div>
       </nav>
 

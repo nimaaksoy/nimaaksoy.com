@@ -186,6 +186,7 @@ export default async function PromptDetailPage({ params }: PromptDetailPageProps
             body={prompt.body}
             count={counts[prompt.slug] ?? 0}
             size="large"
+            autoRefresh
           />
           {prompt.sourceUrl ? (
             <a

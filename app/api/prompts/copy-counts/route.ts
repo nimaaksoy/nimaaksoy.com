@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 
 import { getCopyCounts } from "@/lib/prompt-copy-counts";
 
+export const dynamic = "force-dynamic";
+
 export async function GET(request: NextRequest) {
   const rawSlugs = request.nextUrl.searchParams.get("slugs") ?? "";
   const slugs = rawSlugs

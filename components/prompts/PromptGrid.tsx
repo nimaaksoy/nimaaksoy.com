@@ -31,9 +31,20 @@ export default function PromptGrid({ prompts, initialCounts, sort }: PromptGridP
     })
       .then((response) => (response.ok ? response.json() : null))
       .then((data: { counts?: Record<string, number> } | null) => {
-        if (data?.counts) {
-          setCounts((current) => ({ ...current, ...data.counts }));
+        const live = data?.counts;
+        if (!live) {
+          return;
         }
+
+        // Merge upwards only, so a refetch can never roll back a count the
+        // visitor just incremented by copying.
+        setCounts((current) => {
+          const next = { ...current };
+          for (const [slug, value] of Object.entries(live)) {
+            next[slug] = Math.max(current[slug] ?? 0, value);
+          }
+          return next;
+        });
       })
       .catch(() => {
         // Counts are secondary. Cards remain usable with the server-rendered values.
