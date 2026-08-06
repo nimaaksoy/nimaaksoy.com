@@ -290,6 +290,10 @@
     "trycrm": {
       "stars": 5135,
       "fetchedAt": "2026-08-05T07:07:51.000Z"
+    },
+    "cloudflare-os": {
+      "stars": 3533,
+      "fetchedAt": "2026-08-06T07:05:01Z"
     }
   },
   "byRepo": {
@@ -513,6 +517,10 @@
     "trycompai/crm": {
       "stars": 5135,
       "fetchedAt": "2026-08-05T07:07:51.000Z"
+    },
+    "cloudflare/cloudflare-os": {
+      "stars": 3533,
+      "fetchedAt": "2026-08-06T07:05:01Z"
     }
   },
   "errors": [
