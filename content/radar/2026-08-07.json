@@ -1,0 +1,60 @@
+{
+  "date": "2026-08-07",
+  "items": [
+    {
+      "slug": "loopx",
+      "name": "LoopX",
+      "url": "https://github.com/huangruiteng/loopx",
+      "image": "https://opengraph.githubassets.com/1/huangruiteng/loopx",
+      "homepage": "https://huangruiteng.github.io/loopx/",
+      "tags": ["agents", "control-plane", "loop-engineering", "ops"],
+      "verdict": "must-watch",
+      "hasDemo": false,
+      "source": "github",
+      "take": {
+        "en": "A local control plane for long-running agent work — durable goals, gates, todos, evidence, and handoffs that outlive any single chat session.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "LoopX is not another coding agent. It is a lightweight state kernel that sits beside Codex, Claude Code, Cursor, or a custom runner and keeps the hard parts of multi-day work stable: the objective, the open gates, the next todo, the evidence so far, the quota, and who owns the current slice. Agents still execute bounded turns. LoopX decides whether the loop should run, what the next turn should see, and when a human has to answer before money or scope keeps burning.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Founders already have agents that can finish a task in one session. The pain is the week-long issue, the ML experiment, or the peer-agent handoff where chat memory and a cron job fall apart. LoopX is a concrete answer to that ops problem — agent-agnostic, local-first, with public trajectories that span 200+ hours of elapsed loop lifetime — not another TUI that rewrites your repo.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install the CLI, run loopx connect in a project, and start a guided goal. Your host agent claims a todo, does one bounded slice, writes evidence, and spends a quota slot. Human gates pause the loop when judgment is required. Codex, Claude Code, OpenCode, Pi, Cursor, or a shell runner can all drive the same state. The board is a projection; LoopX state stays the source of truth across restarts and handoffs.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Most agent products sell a better executor. LoopX sells the control plane around the executor — who acts next, what is proven, when to stop spending, and how a peer agent or a human picks up cleanly. That is closer to agent-native Kanban than to another coding harness.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "LoopX is the missing layer for multi-day agent work. durable goals, gates, evidence, and handoffs that sit beside Codex or Claude Code instead of replacing them. that is real loop ops, not another chat agent.\n\nhttps://nimaaksoy.com/radar/loopx",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Long-running agent work fails on state, not on model IQ. LoopX is a local control plane for objectives, gates, todos, evidence, and quota across Codex, Claude Code, and other runners. Worth a look if your agents die at session boundaries.\n\nhttps://nimaaksoy.com/radar/loopx",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "Cloudflare OS",
+          "url": "https://nimaaksoy.com/radar/cloudflare-os"
+        },
+        {
+          "name": "qm",
+          "url": "https://nimaaksoy.com/radar/qm"
+        },
+        {
+          "name": "OpenWorker",
+          "url": "https://nimaaksoy.com/radar/openworker"
+        }
+      ]
+    }
+  ]
+}
