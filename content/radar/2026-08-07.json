@@ -7,7 +7,12 @@
       "url": "https://github.com/huangruiteng/loopx",
       "image": "https://opengraph.githubassets.com/1/huangruiteng/loopx",
       "homepage": "https://huangruiteng.github.io/loopx/",
-      "tags": ["agents", "control-plane", "loop-engineering", "ops"],
+      "tags": [
+        "agents",
+        "control-plane",
+        "loop-engineering",
+        "ops"
+      ],
       "verdict": "must-watch",
       "hasDemo": false,
       "source": "github",
@@ -54,7 +59,8 @@
           "name": "OpenWorker",
           "url": "https://nimaaksoy.com/radar/openworker"
         }
-      ]
+      ],
+      "youtube": "https://www.youtube.com/watch?v=8ybHBCXC9iw"
     }
   ]
 }
