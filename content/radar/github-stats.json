@@ -294,6 +294,10 @@
     "cloudflare-os": {
       "stars": 3533,
       "fetchedAt": "2026-08-06T07:05:01Z"
+    },
+    "loopx": {
+      "stars": 3086,
+      "fetchedAt": "2026-08-07T07:06:37Z"
     }
   },
   "byRepo": {
@@ -521,6 +525,10 @@
     "cloudflare/cloudflare-os": {
       "stars": 3533,
       "fetchedAt": "2026-08-06T07:05:01Z"
+    },
+    "huangruiteng/loopx": {
+      "stars": 3086,
+      "fetchedAt": "2026-08-07T07:06:37Z"
     }
   },
   "errors": [
