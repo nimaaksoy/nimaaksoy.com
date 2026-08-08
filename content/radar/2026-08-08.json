@@ -1,0 +1,52 @@
+{
+  "date": "2026-08-08",
+  "items": [
+    {
+      "slug": "paritok",
+      "name": "Paritok",
+      "url": "https://github.com/Paritok-official/paritok-4b-v1",
+      "image": "https://opengraph.githubassets.com/1/Paritok-official/paritok-4b-v1",
+      "homepage": "https://www.paritok.com/",
+      "tags": ["token-compression", "coding-agents", "llm-gateway"],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "source": "github",
+      "take": {
+        "en": "Drop-in compression proxy that cuts coding-agent input tokens without changing the agent.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Paritok sits between Claude Code, Cursor, Codex, OpenHands, or any BASE_URL agent and the upstream LLM. On every request it filters tool-schema bloat, compresses file reads and tool results with a code-trained 4B model, and summarizes stale history so you are billed on the smaller payload. Compressed chunks stay recoverable on demand, so the wire is lossy but the original bytes are not gone.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Long coding sessions die on input tokens, not model quality. Tool schemas alone can burn tens of thousands of tokens every turn, and every file read keeps getting re-sent. Paritok attacks that bill directly — about 25% off turn one and much more once sessions get deep — so founders get more turns in the same window without rewriting the agent stack.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install the proxy with pip, run paritok up (it pulls the open 4B model through Ollama), and point your agent at the local BASE_URL. Three levers stack: an embedding tool-schema filter that keeps only relevant tools, content compression that shrinks tool output and file reads to roughly a quarter size with REF tags, and history summarization when the window fills. Core exec tools stay unstubbed, and the agent can call back for any original chunk.",
+        "fa": ""
+      },
+      "different": {
+        "en": "This is not another coding agent or a multi-provider router. It is a non-destructive compression gateway powered by the first open 4B model trained on real coding-agent trajectories, so it protects paths, signatures, and errors while dropping noise.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Paritok is the missing layer under coding agents. drop-in proxy, open 4B compressor, tool schemas and file reads shrink so long Claude Code and Codex sessions stop burning the whole context on junk.\n\nhttps://nimaaksoy.com/radar/paritok",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Paritok is worth a look if coding agents are eating your token budget. open compression gateway between the agent and the LLM, trained on real trajectories, drop-in for Claude Code, Cursor, and Codex.\n\nhttps://nimaaksoy.com/radar/paritok",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "OmniRoute",
+          "url": "https://nimaaksoy.com/radar/omniroute"
+        }
+      ]
+    }
+  ]
+}
