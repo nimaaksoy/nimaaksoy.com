@@ -7,7 +7,11 @@
       "url": "https://github.com/Paritok-official/paritok-4b-v1",
       "image": "https://opengraph.githubassets.com/1/Paritok-official/paritok-4b-v1",
       "homepage": "https://www.paritok.com/",
-      "tags": ["token-compression", "coding-agents", "llm-gateway"],
+      "tags": [
+        "token-compression",
+        "coding-agents",
+        "llm-gateway"
+      ],
       "verdict": "must-watch",
       "hasDemo": true,
       "source": "github",
@@ -46,7 +50,8 @@
           "name": "OmniRoute",
           "url": "https://nimaaksoy.com/radar/omniroute"
         }
-      ]
+      ],
+      "youtube": "https://www.youtube.com/watch?v=YFuezy1LB6s"
     }
   ]
 }
