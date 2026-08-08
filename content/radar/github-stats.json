@@ -298,6 +298,11 @@
     "loopx": {
       "stars": 3086,
       "fetchedAt": "2026-08-07T07:06:37Z"
+    },
+    "paritok": {
+      "stars": 784,
+      "repo": "Paritok-official/paritok-4b-v1",
+      "fetchedAt": "2026-08-08T07:08:02Z"
     }
   },
   "byRepo": {
@@ -529,6 +534,16 @@
     "huangruiteng/loopx": {
       "stars": 3086,
       "fetchedAt": "2026-08-07T07:06:37Z"
+    },
+    "paritok-official/paritok-4b-v1": {
+      "stars": 784,
+      "slug": "paritok",
+      "fetchedAt": "2026-08-08T07:08:02Z"
+    },
+    "Paritok-official/paritok-4b-v1": {
+      "stars": 784,
+      "slug": "paritok",
+      "fetchedAt": "2026-08-08T07:08:02Z"
     }
   },
   "errors": [
