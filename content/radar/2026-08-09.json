@@ -16,7 +16,7 @@
       "hasDemo": true,
       "source": "github",
       "take": {
-        "en": "Git-like reversible runtime for agent runs — fork, replay, and supervise work instead of trusting a flat log.",
+        "en": "Git-like reversible runtime for agent runs \u2014 fork, replay, and supervise work instead of trusting a flat log.",
         "fa": ""
       },
       "explanation": {
@@ -32,7 +32,7 @@
         "fa": ""
       },
       "different": {
-        "en": "This is not another coding agent UI or skill pack. It is infrastructure under the agent — Git-style traces, fast CoW forks, retained outputs, and a meta-agent surface for train, compress, and supervise loops — with a paper and early product CLI already shipping.",
+        "en": "This is not another coding agent UI or skill pack. It is infrastructure under the agent \u2014 Git-style traces, fast CoW forks, retained outputs, and a meta-agent surface for train, compress, and supervise loops \u2014 with a paper and early product CLI already shipping.",
         "fa": ""
       },
       "share": {
@@ -54,7 +54,8 @@
           "name": "OpenWorker",
           "url": "https://nimaaksoy.com/radar/openworker"
         }
-      ]
+      ],
+      "youtube": "https://www.youtube.com/watch?v=wnou_HMHbEg"
     }
   ]
 }
