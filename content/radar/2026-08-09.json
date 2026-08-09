@@ -16,7 +16,7 @@
       "hasDemo": true,
       "source": "github",
       "take": {
-        "en": "Git-like reversible runtime for agent runs \u2014 fork, replay, and supervise work instead of trusting a flat log.",
+        "en": "Git-like reversible runtime for agent runs — fork, replay, and supervise work instead of trusting a flat log.",
         "fa": ""
       },
       "explanation": {
@@ -32,16 +32,16 @@
         "fa": ""
       },
       "different": {
-        "en": "This is not another coding agent UI or skill pack. It is infrastructure under the agent \u2014 Git-style traces, fast CoW forks, retained outputs, and a meta-agent surface for train, compress, and supervise loops \u2014 with a paper and early product CLI already shipping.",
+        "en": "This is not another coding agent UI or skill pack. It is infrastructure under the agent — Git-style traces, fast CoW forks, retained outputs, and a meta-agent surface for train, compress, and supervise loops — with a paper and early product CLI already shipping.",
         "fa": ""
       },
       "share": {
         "x": {
-          "en": "Shepherd is wild. agent runs become Git-like traces you can fork, replay, and discard. retained proposals instead of blind writes. that is the runtime layer multi-agent work has been missing.\\n\\nhttps://nimaaksoy.com/radar/shepherd",
+          "en": "Shepherd is wild. agent runs become Git-like traces you can fork, replay, and discard. retained proposals instead of blind writes. that is the runtime layer multi-agent work has been missing.\n\nhttps://nimaaksoy.com/radar/shepherd",
           "fa": ""
         },
         "linkedin": {
-          "en": "Shepherd is worth a look if you run long agent jobs and want real supervision. reversible execution traces, copy-on-write forks, and reviewable outputs before anything hits your tree.\\n\\nhttps://nimaaksoy.com/radar/shepherd",
+          "en": "Shepherd is worth a look if you run long agent jobs and want real supervision. reversible execution traces, copy-on-write forks, and reviewable outputs before anything hits your tree.\n\nhttps://nimaaksoy.com/radar/shepherd",
           "fa": ""
         }
       },
@@ -56,6 +56,61 @@
         }
       ],
       "youtube": "https://www.youtube.com/watch?v=wnou_HMHbEg"
+    },
+    {
+      "slug": "t3code",
+      "name": "T3 Code",
+      "url": "https://github.com/pingdotgg/t3code",
+      "image": "https://opengraph.githubassets.com/1/pingdotgg/t3code",
+      "homepage": "https://t3.codes",
+      "tags": [
+        "agent-control-surface",
+        "remote-dev",
+        "multi-provider"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "source": "github",
+      "take": {
+        "en": "Open control surface for the coding agents already on your machine — phone, web, and desktop.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "T3 Code is an agent harness control surface from the ping.gg / T3 team. It does not replace Claude Code, Codex, Cursor, Grok Build, or OpenCode. It sits on top of the CLIs you already authenticated and gives you a fast Electron desktop app, a web app, and iOS/Android clients so you can drive those agents from your desk or remotely.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most founders already pay for two or three coding agents and still context-switch between terminals and vendor UIs. T3 Code is the missing remote-ready cockpit — one place to steer the tools you already trust, open source enough to fork if the product drifts.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install and log in to at least one provider CLI (Codex, Claude Code, Cursor agent, Grok Build, or OpenCode). Run npx t3@latest for a no-install trial, or install the desktop app from releases / brew / winget. The local server talks to those CLIs while the desktop, web, or mobile app is the control surface — including remote access from another machine or your phone.",
+        "fa": ""
+      },
+      "different": {
+        "en": "This is not another coding agent model or a closed desktop chat. It is an open multi-client control plane for the agents already installed on your box — built for performance and remote use, not lock-in.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "T3 Code is the control surface coding agents needed. Claude Code, Codex, Cursor, Grok Build, OpenCode on your machine — steered from desktop, web, or phone. open, remote-ready, nothing locked in.\n\nhttps://nimaaksoy.com/radar/t3code",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "T3 Code is worth a look if you already run multiple coding agents. open control surface for Claude Code, Codex, Cursor, and more — desktop, web, and mobile without replacing the tools you already pay for.\n\nhttps://nimaaksoy.com/radar/t3code",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "OpenWorker",
+          "url": "https://nimaaksoy.com/radar/openworker"
+        },
+        {
+          "name": "LoopX",
+          "url": "https://nimaaksoy.com/radar/loopx"
+        }
+      ]
     }
   ]
 }
