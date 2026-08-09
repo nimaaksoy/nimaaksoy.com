@@ -1,0 +1,60 @@
+{
+  "date": "2026-08-09",
+  "items": [
+    {
+      "slug": "shepherd",
+      "name": "Shepherd",
+      "url": "https://github.com/shepherd-agents/shepherd",
+      "image": "https://opengraph.githubassets.com/1/shepherd-agents/shepherd",
+      "homepage": "https://shepherd-agents.ai/",
+      "tags": [
+        "agent-runtime",
+        "meta-agents",
+        "execution-traces"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "source": "github",
+      "take": {
+        "en": "Git-like reversible runtime for agent runs — fork, replay, and supervise work instead of trusting a flat log.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Shepherd is a runtime substrate that records every agent run as a durable, inspectable execution trace. Model calls, tool use, and filesystem changes become commits in a copy-on-write world shared by the agent and its environment. Meta-agents can observe that stream, fork from any past state, replay with high KV-cache reuse, and revert without rebuilding the whole sandbox from scratch.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Long agent jobs fail halfway and leave you guessing what happened. Founders shipping unattended coding or ops agents need a real undo button and a place for a second model to supervise the first. Shepherd turns messy runs into reviewable proposals you can select, apply, or discard before they touch production files.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install with pip install shepherd-ai, run shepherd init in a workspace, and define tasks as typed Python functions whose signatures are the permission surface. A Claude or offline agent fulfills the task inside a sandbox; outputs land as retained proposals, not live writes. Use shepherd run select, apply, or discard on the run id, and grant ReadOnly or ReadWrite per bound repo so the OS jail (Seatbelt or Landlock) enforces it at syscall time.",
+        "fa": ""
+      },
+      "different": {
+        "en": "This is not another coding agent UI or skill pack. It is infrastructure under the agent — Git-style traces, fast CoW forks, retained outputs, and a meta-agent surface for train, compress, and supervise loops — with a paper and early product CLI already shipping.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Shepherd is wild. agent runs become Git-like traces you can fork, replay, and discard. retained proposals instead of blind writes. that is the runtime layer multi-agent work has been missing.\\n\\nhttps://nimaaksoy.com/radar/shepherd",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Shepherd is worth a look if you run long agent jobs and want real supervision. reversible execution traces, copy-on-write forks, and reviewable outputs before anything hits your tree.\\n\\nhttps://nimaaksoy.com/radar/shepherd",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "LoopX",
+          "url": "https://nimaaksoy.com/radar/loopx"
+        },
+        {
+          "name": "OpenWorker",
+          "url": "https://nimaaksoy.com/radar/openworker"
+        }
+      ]
+    }
+  ]
+}
