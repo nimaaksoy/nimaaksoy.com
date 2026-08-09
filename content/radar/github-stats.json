@@ -308,6 +308,10 @@
       "stars": 1914,
       "fetchedAt": "2026-08-09T07:06:38Z",
       "repo": "shepherd-agents/shepherd"
+    },
+    "t3code": {
+      "stars": 17461,
+      "fetchedAt": "2026-08-09T10:15:59Z"
     }
   },
   "byRepo": {
@@ -554,6 +558,10 @@
       "stars": 1914,
       "fetchedAt": "2026-08-09T07:06:38Z",
       "slug": "shepherd"
+    },
+    "pingdotgg/t3code": {
+      "stars": 17461,
+      "fetchedAt": "2026-08-09T10:15:59Z"
     }
   },
   "errors": [
