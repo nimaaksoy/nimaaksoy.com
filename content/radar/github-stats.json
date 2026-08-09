@@ -303,6 +303,11 @@
       "stars": 784,
       "repo": "Paritok-official/paritok-4b-v1",
       "fetchedAt": "2026-08-08T07:08:02Z"
+    },
+    "shepherd": {
+      "stars": 1914,
+      "fetchedAt": "2026-08-09T07:06:38Z",
+      "repo": "shepherd-agents/shepherd"
     }
   },
   "byRepo": {
@@ -544,6 +549,11 @@
       "stars": 784,
       "slug": "paritok",
       "fetchedAt": "2026-08-08T07:08:02Z"
+    },
+    "shepherd-agents/shepherd": {
+      "stars": 1914,
+      "fetchedAt": "2026-08-09T07:06:38Z",
+      "slug": "shepherd"
     }
   },
   "errors": [
