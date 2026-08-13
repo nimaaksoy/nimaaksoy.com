@@ -1,0 +1,56 @@
+{
+  "date": "2026-08-13",
+  "items": [
+    {
+      "slug": "ppt-master",
+      "name": "PPT Master",
+      "url": "https://github.com/hugohe3/ppt-master",
+      "image": "https://opengraph.githubassets.com/1/hugohe3/ppt-master",
+      "homepage": "https://hugohe3.github.io/ppt-master/",
+      "tags": ["presentations", "agents", "office", "pptx"],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "source": "github",
+      "take": {
+        "en": "Agent workflow that turns docs or a topic into a real editable PowerPoint — native shapes, charts, masters, not a flat PDF fake.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "PPT Master is an open-source skill-style pipeline you run with Claude Code, Codex, Cursor, or any agent that can read files and run commands. You drop in a PDF, DOCX, URL, or a plain brief; it structures the argument, designs slides, and exports a true .pptx. Elements stay native PowerPoint objects with adjustment handles, data-backed charts and tables when you want them, slide masters and layouts on the structured path, plus optional transitions, animations, speaker notes, and narration audio.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Founders still live in decks for investors, customers, and internal alignment. Most AI slide tools give you locked layouts or image-filled shells that die the moment you need to edit in PowerPoint. This one keeps data on your machine, works with the model you already pay for, and hands you a file your team can keep refining without a second SaaS bill.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install Python 3.10+, clone the repo, pip install requirements, open the folder in your agent tool, and ask it to build a deck from your material. The agent drives the project workflows on disk: research and outline, visual design, export. You can also distill brand templates from reference decks, fill an existing .pptx while keeping design, or layer narration onto a finished deck. Preview examples live on the project site before you run anything local.",
+        "fa": ""
+      },
+      "different": {
+        "en": "The bet is depth in PowerPoint’s object model, not prettier screenshots. Editable is table stakes; PPT Master aims at real shapes, charts, masters, and motions so the AI output keeps converging with what you would build by hand in PowerPoint.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "PPT Master is the rare AI deck tool that ships a real PowerPoint file. native shapes, charts, masters — not a locked PDF shell. runs as an agent workflow on your machine.\n\nhttps://nimaaksoy.com/radar/ppt-master",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Most AI presentation tools still fail the edit test. PPT Master is open source and agent-driven: drop in a doc or topic, get a native .pptx with real PowerPoint objects, optional narration, and no extra slide SaaS lock-in.\n\nhttps://nimaaksoy.com/radar/ppt-master",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "OfficeCLI",
+          "url": "https://nimaaksoy.com/radar/officecli"
+        },
+        {
+          "name": "OpenMontage",
+          "url": "https://nimaaksoy.com/radar/openmontage"
+        }
+      ]
+    }
+  ]
+}
