@@ -7,7 +7,12 @@
       "url": "https://github.com/hugohe3/ppt-master",
       "image": "https://opengraph.githubassets.com/1/hugohe3/ppt-master",
       "homepage": "https://hugohe3.github.io/ppt-master/",
-      "tags": ["presentations", "agents", "office", "pptx"],
+      "tags": [
+        "presentations",
+        "agents",
+        "office",
+        "pptx"
+      ],
       "verdict": "must-watch",
       "hasDemo": true,
       "source": "github",
@@ -50,7 +55,8 @@
           "name": "OpenMontage",
           "url": "https://nimaaksoy.com/radar/openmontage"
         }
-      ]
+      ],
+      "youtube": "https://www.youtube.com/watch?v=BXUcDmcNFNs"
     }
   ]
 }
