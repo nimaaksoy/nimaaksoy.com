@@ -312,6 +312,10 @@
     "t3code": {
       "stars": 17461,
       "fetchedAt": "2026-08-09T10:15:59Z"
+    },
+    "ppt-master": {
+      "stars": 46040,
+      "fetchedAt": "2026-08-13T07:06:49.000Z"
     }
   },
   "byRepo": {
@@ -562,6 +566,10 @@
     "pingdotgg/t3code": {
       "stars": 17461,
       "fetchedAt": "2026-08-09T10:15:59Z"
+    },
+    "hugohe3/ppt-master": {
+      "stars": 46040,
+      "fetchedAt": "2026-08-13T07:06:49.000Z"
     }
   },
   "errors": [
