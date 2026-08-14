@@ -316,6 +316,11 @@
     "ppt-master": {
       "stars": 46040,
       "fetchedAt": "2026-08-13T07:06:49.000Z"
+    },
+    "anthropic-skills": {
+      "stars": 169165,
+      "fetchedAt": "2026-08-14T05:25:01Z",
+      "repo": "anthropics/skills"
     }
   },
   "byRepo": {
@@ -570,6 +575,10 @@
     "hugohe3/ppt-master": {
       "stars": 46040,
       "fetchedAt": "2026-08-13T07:06:49.000Z"
+    },
+    "anthropics/skills": {
+      "stars": 169165,
+      "fetchedAt": "2026-08-14T05:25:01Z"
     }
   },
   "errors": [
