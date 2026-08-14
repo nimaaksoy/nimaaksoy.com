@@ -1,0 +1,60 @@
+{
+  "date": "2026-08-14",
+  "items": [
+    {
+      "slug": "anthropic-skills",
+      "name": "Anthropic Skills",
+      "url": "https://github.com/anthropics/skills",
+      "image": "https://opengraph.githubassets.com/1/anthropics/skills",
+      "homepage": "https://agentskills.io",
+      "tags": [
+        "agent-skills",
+        "claude",
+        "skill-packs"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "source": "github",
+      "take": {
+        "en": "Anthropic’s public Agent Skills repo — loadable instruction packs that make Claude better at real specialized work.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "This is Anthropic’s implementation of Agent Skills for Claude: folders of instructions, scripts, and resources Claude loads only when a task needs them. The repo spans creative and design skills, development and technical workflows, enterprise communications, and the document creation skills behind Claude’s docx/pdf/pptx/xlsx work. It also ships the Agent Skills spec and a starter template so other agents can speak the same format.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Founders keep reinventing prompt packs that rot in chat history. Skills are portable, versionable procedures with a clear trigger description — the same idea powering production Claude document tools, now open enough to study, fork, and install into Claude Code, Claude.ai, and the API.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Each skill is a folder with a SKILL.md frontmatter block (name + description) and the instructions Claude follows when that skill is active. In Claude Code, add the marketplace with /plugin marketplace add anthropics/skills, then install document-skills or example-skills. Paid Claude.ai plans already expose the examples; the API can load Anthropic’s skills or your own custom ones. Browse skills/ for patterns, or copy template/ to author a new skill.",
+        "fa": ""
+      },
+      "different": {
+        "en": "This is not another random community skill dump. It is the vendor reference implementation of the Agent Skills standard, including production document skills and the public spec other harnesses are aligning to.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Anthropic just made the Agent Skills model concrete. official skill packs, the document skills behind Claude’s file tools, and the public spec. this is how agents should load specialized procedures.\n\nhttps://nimaaksoy.com/radar/anthropic-skills",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Anthropic Skills is worth a look if you build agents that need repeatable specialized work. public skill packs, document creation skills, and the Agent Skills standard in one repo.\n\nhttps://nimaaksoy.com/radar/anthropic-skills",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "Skill Recorder",
+          "url": "https://nimaaksoy.com/radar/skill-recorder"
+        },
+        {
+          "name": "UI Skills",
+          "url": "https://nimaaksoy.com/radar/ui-skills"
+        }
+      ]
+    }
+  ]
+}
