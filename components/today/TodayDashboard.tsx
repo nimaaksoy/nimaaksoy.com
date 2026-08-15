@@ -53,6 +53,7 @@ type CalendarEvent = {
   summary: string;
   start: string;
 };
+type CalendarEventsByDate = Record<string, CalendarEvent[]>;
 type CurrencyPair = {
   id: string;
   from: CurrencyCode;
@@ -268,6 +269,33 @@ function formatNewsDate(value: string, language: Language) {
     hour: "numeric",
     minute: "2-digit",
   }).format(new Date(value));
+}
+
+function formatCalendarTooltipDate(date: Date, language: Language) {
+  return new Intl.DateTimeFormat(language === "fa" ? "fa-IR-u-ca-persian" : "en-US", {
+    weekday: "long",
+    month: "short",
+    day: "numeric",
+  }).format(date);
+}
+
+function formatCalendarEventTime(value: string, language: Language) {
+  const date = new Date(value);
+  if (date.getHours() === 0 && date.getMinutes() === 0 && value.includes("T00:00:00")) {
+    return language === "fa" ? "تمام روز" : "All day";
+  }
+  return new Intl.DateTimeFormat(language === "fa" ? "fa-IR" : "en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+  }).format(date);
+}
+
+function groupEventsByDate(events: CalendarEvent[]) {
+  return events.reduce<CalendarEventsByDate>((acc, event) => {
+    const key = dateKey(new Date(event.start));
+    acc[key] = [...(acc[key] ?? []), event];
+    return acc;
+  }, {});
 }
 
 function gregorianLocale(language: Language) {
@@ -521,7 +549,7 @@ export default function TodayDashboard({ latestRadar, latestPrompts }: TodayDash
     () => (viewDate ? getMonthDays(viewDate, weekStartsOn(language)) : []),
     [viewDate, language]
   );
-  const eventDates = useMemo(() => new Set(events.map((event) => dateKey(new Date(event.start)))), [events]);
+  const eventsByDate = useMemo(() => groupEventsByDate(events), [events]);
 
   const connectGoogleCalendar = async () => {
     if (!GOOGLE_CLIENT_ID || !viewDate) {
@@ -616,7 +644,7 @@ export default function TodayDashboard({ latestRadar, latestPrompts }: TodayDash
             viewDate={viewDate}
             setViewDate={setViewDate}
             monthDays={monthDays}
-            eventDates={eventDates}
+            eventsByDate={eventsByDate}
             todayKey={todayKey}
             language={language}
             t={t}
@@ -661,6 +689,14 @@ export default function TodayDashboard({ latestRadar, latestPrompts }: TodayDash
             <IconLanguage size={16} stroke={1.7} />
             {t.language}
           </button>
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 font-jetbrains text-[10px] uppercase tracking-[0.12em] text-[#7F7F7F]">
+            <a href="/today/privacy" className="transition hover:text-[#2CFF05]">
+              Privacy
+            </a>
+            <a href="/today/terms" className="transition hover:text-[#2CFF05]">
+              Terms
+            </a>
+          </div>
         </aside>
       </div>
     </div>
@@ -674,7 +710,7 @@ function CalendarPanel({
   viewDate,
   setViewDate,
   monthDays,
-  eventDates,
+  eventsByDate,
   todayKey,
   language,
   t,
@@ -690,7 +726,7 @@ function CalendarPanel({
   viewDate: Date;
   setViewDate: (date: Date) => void;
   monthDays: Date[];
-  eventDates: Set<string>;
+  eventsByDate: CalendarEventsByDate;
   todayKey: string;
   language: Language;
   t: typeof copy.en | typeof copy.fa;
@@ -750,7 +786,7 @@ function CalendarPanel({
       </div>
 
       {mode === "month" ? (
-        <MonthGrid monthDays={monthDays} viewDate={viewDate} eventDates={eventDates} todayKey={todayKey} language={language} />
+        <MonthGrid monthDays={monthDays} viewDate={viewDate} eventsByDate={eventsByDate} todayKey={todayKey} language={language} />
       ) : (
         <YearGrid now={viewDate} language={language} todayKey={todayKey} weekLabel={t.weeks} />
       )}
@@ -787,13 +823,13 @@ function CalendarPanel({
 function MonthGrid({
   monthDays,
   viewDate,
-  eventDates,
+  eventsByDate,
   todayKey,
   language,
 }: {
   monthDays: Date[];
   viewDate: Date;
-  eventDates: Set<string>;
+  eventsByDate: CalendarEventsByDate;
   todayKey: string;
   language: Language;
 }) {
@@ -815,12 +851,14 @@ function MonthGrid({
           const key = dateKey(day);
           const isCurrentMonth = day.getMonth() === viewDate.getMonth();
           const isToday = key === todayKey;
-          const hasEvent = eventDates.has(key);
+          const dayEvents = eventsByDate[key] ?? [];
+          const hasEvent = dayEvents.length > 0;
           return (
             <div
               key={key}
+              tabIndex={hasEvent ? 0 : undefined}
               className={[
-                "relative flex min-h-[70px] flex-col items-center justify-center rounded-md border text-[16px] transition md:min-h-[82px]",
+                "group relative flex min-h-[70px] flex-col items-center justify-center rounded-md border text-[16px] transition md:min-h-[82px]",
                 isToday ? "border-[#2CFF05] bg-[#173312] text-[#2CFF05]" : "border-[#1F1F1F] bg-[#0D0D0D] text-[#DADADA]",
                 isCurrentMonth ? "" : "opacity-35",
               ].join(" ")}
@@ -831,7 +869,31 @@ function MonthGrid({
                   day: "numeric",
                 }).format(day)}
               </span>
-              {hasEvent && <span className="absolute bottom-2 size-1.5 rounded-full bg-[#2CFF05]" />}
+              {hasEvent && (
+                <>
+                  <span className="absolute bottom-2 size-1.5 rounded-full bg-[#2CFF05]" />
+                  <div className="pointer-events-none absolute bottom-8 left-1/2 z-20 w-[220px] -translate-x-1/2 translate-y-1 rounded-md bg-[#171717] p-3 text-left opacity-0 shadow-[0_16px_40px_rgba(0,0,0,0.45)] ring-1 ring-[#2A2A2A] transition group-hover:translate-y-0 group-hover:opacity-100 group-focus:translate-y-0 group-focus:opacity-100">
+                    <p className="mb-2 font-jetbrains text-[10px] uppercase tracking-[0.12em] text-[#7F7F7F]">
+                      {formatCalendarTooltipDate(day, language)}
+                    </p>
+                    <div className="space-y-2">
+                      {dayEvents.slice(0, 4).map((event) => (
+                        <div key={event.id} className="border-l border-[#2CFF05] pl-2">
+                          <p className="line-clamp-2 text-[12px] leading-snug text-[#EAEAEA]">{event.summary}</p>
+                          <p className="mt-1 font-jetbrains text-[9px] text-[#7F7F7F]">
+                            {formatCalendarEventTime(event.start, language)}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                    {dayEvents.length > 4 && (
+                      <p className="mt-2 font-jetbrains text-[9px] uppercase tracking-[0.1em] text-[#7F7F7F]">
+                        +{formatNumber(dayEvents.length - 4, language)} more
+                      </p>
+                    )}
+                  </div>
+                </>
+              )}
             </div>
           );
         })}
