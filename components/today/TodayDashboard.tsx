@@ -154,6 +154,9 @@ const persianMonthNamesFa = [
 
 const copy = {
   en: {
+    appName: "Nima Aksoy Today",
+    appPurpose:
+      "A local-first dashboard for calendar, Persian dates, currency, notes, and new-tab use.",
     language: "فارسی",
     calendar: "Calendar",
     month: "Month",
@@ -186,6 +189,9 @@ const copy = {
     newsError: "Could not load news.",
   },
   fa: {
+    appName: "Nima Aksoy Today",
+    appPurpose:
+      "داشبورد روزانه و محلی برای تقویم، تاریخ شمسی و میلادی، تبدیل ارز، یادداشت، و استفاده در تب جدید.",
     language: "English",
     calendar: "تقویم",
     month: "ماه",
@@ -631,7 +637,17 @@ export default function TodayDashboard({ latestRadar, latestPrompts }: TodayDash
       lang={language}
       className="today-vazirmatn font-[var(--font-vazirmatn)]"
     >
-      <div className="mx-auto grid max-w-[1280px] gap-5 px-4 py-5 md:px-8 md:py-6 lg:grid-cols-[minmax(0,1.35fr)_minmax(340px,0.65fr)]">
+      <div className="mx-auto max-w-[1280px] px-4 pt-5 md:px-8 md:pt-6">
+        <section className="mb-5 rounded-lg bg-[#0D0D0D] px-5 py-4 md:px-6">
+          <p className="font-jetbrains text-[10px] uppercase tracking-[0.16em] text-[#7F7F7F]">
+            {t.appName}
+          </p>
+          <h1 className="mt-1 font-monroe text-[24px] font-light leading-tight text-[#EAEAEA] md:text-[30px]">
+            {t.appPurpose}
+          </h1>
+        </section>
+      </div>
+      <div className="mx-auto grid max-w-[1280px] gap-5 px-4 pb-5 md:px-8 md:pb-6 lg:grid-cols-[minmax(0,1.35fr)_minmax(340px,0.65fr)]">
         <div className="space-y-5">
           <CalendarPanel
             mode={calendarMode}
