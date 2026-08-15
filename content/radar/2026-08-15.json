@@ -1,0 +1,57 @@
+{
+  "date": "2026-08-15",
+  "items": [
+    {
+      "slug": "open-design",
+      "name": "Open Design",
+      "url": "https://github.com/nexu-io/open-design",
+      "image": "https://opengraph.githubassets.com/1/nexu-io/open-design",
+      "homepage": "https://open-design.ai",
+      "tags": ["design", "agents", "desktop", "prototyping", "byok"],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasMcp": true,
+      "source": "github",
+      "take": {
+        "en": "Open-source Claude Design alternative — your local coding agent becomes a full design studio.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Claude Design made artifact-first design feel inevitable, then locked it to one cloud and one model. Founders still need brand-true prototypes, decks, and dashboards without another SaaS tax or closed skill store.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Open Design is a local-first desktop app (plus MCP/skills install) that turns the coding agents already on your machine into a design engine. You pick a skill and a DESIGN.md brand contract, type a brief, and get real HTML/CSS artifacts — prototypes, live dashboards, decks, images, and motion — with export to HTML, PDF, PPTX, and MP4. It ships large catalogs of design systems, templates, and plugins under Apache-2.0, with BYOK across many CLIs instead of a single vendor loop.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install the macOS or Windows app from open-design.ai, or wire it into Claude Code, Codex, Cursor, Hermes, and peers with od mcp install. The app detects local agent CLIs, loads skills and design systems, then runs brief → direction → DESIGN.md → artifact. Filesystem-backed runs write real project files you can hand to engineering; plain API/BYOK runs can return a complete artifact block. Docker and self-host paths exist when you want a team server instead of a laptop.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Unlike Claude Design it is open and model-agnostic. Unlike Figma it ships finished code-shaped artifacts, not only a canvas. Unlike prompt-to-UI clouds it keeps brand rules in portable DESIGN.md packages and runs on the agents you already pay for.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Open Design is the open Claude Design alternative that actually ships. your local coding agent becomes the studio — prototypes, decks, dashboards, real files, BYOK.\n\nhttps://nimaaksoy.com/radar/open-design",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Open Design turns the coding agents already on your laptop into a brand-aware design studio. Local-first, DESIGN.md systems, real HTML/PDF/PPTX/MP4 export — without locking design to one cloud model.\n\nhttps://nimaaksoy.com/radar/open-design",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "PPT Master",
+          "url": "https://nimaaksoy.com/radar/ppt-master"
+        },
+        {
+          "name": "UI Skills",
+          "url": "https://nimaaksoy.com/radar/ui-skills"
+        }
+      ]
+    }
+  ]
+}
