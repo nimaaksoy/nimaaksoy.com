@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-04T07:07:04.000Z",
+  "updatedAt": "2026-08-15T07:12:01Z",
   "source": "github-api",
   "repoCount": 25,
   "itemCount": 49,
@@ -321,6 +321,11 @@
       "stars": 169165,
       "fetchedAt": "2026-08-14T05:25:01Z",
       "repo": "anthropics/skills"
+    },
+    "open-design": {
+      "stars": 86527,
+      "fetchedAt": "2026-08-15T07:12:01Z",
+      "repo": "nexu-io/open-design"
     }
   },
   "byRepo": {
@@ -579,6 +584,10 @@
     "anthropics/skills": {
       "stars": 169165,
       "fetchedAt": "2026-08-14T05:25:01Z"
+    },
+    "nexu-io/open-design": {
+      "stars": 86527,
+      "fetchedAt": "2026-08-15T07:12:01Z"
     }
   },
   "errors": [
