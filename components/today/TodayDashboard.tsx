@@ -3,8 +3,10 @@
 import {
   IconArrowsExchange,
   IconCalendar,
+  IconChevronDown,
   IconChevronLeft,
   IconChevronRight,
+  IconChevronUp,
   IconCurrencyDirham,
   IconCurrencyDollar,
   IconCurrencyEuro,
@@ -13,6 +15,7 @@ import {
   IconLanguage,
   IconLock,
   IconNote,
+  IconNews,
   IconRestore,
   IconStar,
 } from "@tabler/icons-react";
@@ -26,6 +29,14 @@ type LatestItem = {
   date?: string;
   image?: string;
   stars?: number;
+};
+
+type NewsItem = {
+  id: string;
+  title: string;
+  description: string;
+  href: string;
+  date?: string;
 };
 
 type TodayDashboardProps = {
@@ -83,6 +94,7 @@ declare global {
 const GOOGLE_CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
 const NOTE_STORAGE_KEY = "nima-today-note";
 const LANGUAGE_STORAGE_KEY = "nima-today-language";
+const NEWS_REFRESH_INTERVAL = 60 * 60 * 1000;
 const CURRENCIES: CurrencyCode[] = ["USD", "EUR", "TRY", "GBP", "AED", "CAD", "IRR"];
 const DEFAULT_CURRENCY_PAIR: CurrencyPair = {
   id: "primary",
@@ -162,10 +174,15 @@ const copy = {
     noteTitle: "Today note",
     notePlaceholder: "Write one thing worth remembering today...",
     privacy: "Saved only in local browser storage.",
+    showNote: "Open note",
+    hideNote: "Close note",
     radar: "Radar Updates",
     radarSubtitle: "Trending open source projects",
     prompts: "Prompts collection",
     promptsSubtitle: "Prompts make your life easier",
+    news: "Latest news",
+    newsSubtitle: "Vahid Online public Telegram posts",
+    newsError: "Could not load news.",
   },
   fa: {
     language: "English",
@@ -189,10 +206,15 @@ const copy = {
     noteTitle: "یادداشت امروز",
     notePlaceholder: "یک چیز مهم برای امروز بنویس...",
     privacy: "فقط در حافظه محلی مرورگر ذخیره می‌شود.",
+    showNote: "باز کردن یادداشت",
+    hideNote: "بستن یادداشت",
     radar: "به‌روزرسانی‌های رادار",
     radarSubtitle: "پروژه‌های متن‌باز ترند",
     prompts: "مجموعه پرامپت‌ها",
     promptsSubtitle: "پرامپت‌هایی که کارها را ساده‌تر می‌کنند",
+    news: "آخرین خبرها",
+    newsSubtitle: "سه پست آخر تلگرام عمومی وحید آنلاین",
+    newsError: "خبرها بارگذاری نشد.",
   },
 } as const;
 
@@ -239,15 +261,24 @@ function formatAmountValue(value: number, currency: CurrencyCode) {
   }).format(value);
 }
 
-function formatMonthTitle(date: Date, language: Language) {
+function formatNewsDate(value: string, language: Language) {
   return new Intl.DateTimeFormat(language === "fa" ? "fa-IR" : "en-US", {
-    month: "long",
-    year: "numeric",
-  }).format(date);
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+  }).format(new Date(value));
+}
+
+function gregorianLocale(language: Language) {
+  return language === "fa" ? "fa-IR-u-ca-gregory" : "en-US";
 }
 
 function formatDualMonthTitle(date: Date, language: Language) {
-  return `${formatMonthTitle(date, language)} / ${new Intl.DateTimeFormat(
+  return `${new Intl.DateTimeFormat(gregorianLocale(language), {
+    month: "long",
+    year: "numeric",
+  }).format(date)} / ${new Intl.DateTimeFormat(
     language === "fa" ? "fa-IR-u-ca-persian" : "en-US-u-ca-persian",
     {
       month: "long",
@@ -257,7 +288,7 @@ function formatDualMonthTitle(date: Date, language: Language) {
 }
 
 function formatDualYearTitle(date: Date, language: Language) {
-  const gregorianYear = new Intl.DateTimeFormat(language === "fa" ? "fa-IR" : "en-US", {
+  const gregorianYear = new Intl.DateTimeFormat(gregorianLocale(language), {
     year: "numeric",
   }).format(date);
   const persianYear = new Intl.DateTimeFormat(
@@ -294,10 +325,15 @@ function partsToDate(parts: DateParts) {
   return new Date(parts.year, parts.month - 1, parts.day);
 }
 
-function getMonthDays(viewDate: Date) {
+function weekStartsOn(language: Language) {
+  return language === "fa" ? 6 : 0;
+}
+
+function getMonthDays(viewDate: Date, weekStart = 0) {
   const first = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1);
   const start = new Date(first);
-  start.setDate(first.getDate() - first.getDay());
+  const offset = (first.getDay() - weekStart + 7) % 7;
+  start.setDate(first.getDate() - offset);
   return Array.from({ length: 42 }, (_, index) => {
     const day = new Date(start);
     day.setDate(start.getDate() + index);
@@ -305,10 +341,11 @@ function getMonthDays(viewDate: Date) {
   });
 }
 
-function getWeekCount(date: Date) {
+function getWeekCount(date: Date, weekStart = 0) {
   const first = new Date(date.getFullYear(), date.getMonth(), 1);
   const last = new Date(date.getFullYear(), date.getMonth() + 1, 0);
-  return Math.ceil((first.getDay() + last.getDate()) / 7);
+  const offset = (first.getDay() - weekStart + 7) % 7;
+  return Math.ceil((offset + last.getDate()) / 7);
 }
 
 function getDaysInMonth(system: "gregorian" | "persian", parts: DateParts) {
@@ -349,7 +386,7 @@ function persianPartsToGregorian(parts: DateParts) {
 }
 
 function formatGregorianDateLong(date: Date, language: Language) {
-  return new Intl.DateTimeFormat(language === "fa" ? "fa-IR" : "en-US", {
+  return new Intl.DateTimeFormat(gregorianLocale(language), {
     weekday: "long",
     year: "numeric",
     month: "long",
@@ -385,6 +422,9 @@ export default function TodayDashboard({ latestRadar, latestPrompts }: TodayDash
   const [persianParts, setPersianParts] = useState<DateParts>({ year: 1405, month: 5, day: 24 });
   const [currency, setCurrency] = useState<CurrencyState>(getInitialCurrency);
   const [events, setEvents] = useState<CalendarEvent[]>([]);
+  const [news, setNews] = useState<NewsItem[]>([]);
+  const [newsStatus, setNewsStatus] = useState<"idle" | "loading" | "ready" | "error">("idle");
+  const [noteOpen, setNoteOpen] = useState(false);
   const [calendarStatus, setCalendarStatus] = useState<"idle" | "loading" | "ready" | "error">("idle");
 
   const t = copy[language];
@@ -413,11 +453,14 @@ export default function TodayDashboard({ latestRadar, latestPrompts }: TodayDash
 
   useEffect(() => {
     if (mounted) window.localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
-    document.body.classList.toggle("today-farsi-page", language === "fa");
-    return () => {
-      document.body.classList.remove("today-farsi-page");
-    };
   }, [mounted, language]);
+
+  useEffect(() => {
+    document.body.classList.add("today-vazirmatn-page");
+    return () => {
+      document.body.classList.remove("today-vazirmatn-page");
+    };
+  }, []);
 
   const loadCurrency = async () => {
     setCurrency((current) => ({ ...current, status: "loading" }));
@@ -448,7 +491,36 @@ export default function TodayDashboard({ latestRadar, latestPrompts }: TodayDash
     if (mounted) void loadCurrency();
   }, [mounted]);
 
-  const monthDays = useMemo(() => (viewDate ? getMonthDays(viewDate) : []), [viewDate]);
+  const loadNews = async () => {
+    setNewsStatus("loading");
+    try {
+      const response = await fetch("/api/today/news", {
+        cache: "no-store",
+      });
+      if (!response.ok) throw new Error("News request failed");
+      const data = (await response.json()) as {
+        ok?: boolean;
+        items?: NewsItem[];
+      };
+      if (!data.ok || !Array.isArray(data.items)) throw new Error("News response missing items");
+      setNews(data.items);
+      setNewsStatus("ready");
+    } catch {
+      setNewsStatus("error");
+    }
+  };
+
+  useEffect(() => {
+    if (!mounted) return;
+    void loadNews();
+    const timer = window.setInterval(() => void loadNews(), NEWS_REFRESH_INTERVAL);
+    return () => window.clearInterval(timer);
+  }, [mounted]);
+
+  const monthDays = useMemo(
+    () => (viewDate ? getMonthDays(viewDate, weekStartsOn(language)) : []),
+    [viewDate, language]
+  );
   const eventDates = useMemo(() => new Set(events.map((event) => dateKey(new Date(event.start)))), [events]);
 
   const connectGoogleCalendar = async () => {
@@ -529,7 +601,7 @@ export default function TodayDashboard({ latestRadar, latestPrompts }: TodayDash
     <div
       dir={isRtl ? "rtl" : "ltr"}
       lang={language}
-      className={isRtl ? "today-farsi font-[var(--font-vazirmatn)]" : undefined}
+      className="today-vazirmatn font-[var(--font-vazirmatn)]"
     >
       <div className="mx-auto grid max-w-[1280px] gap-5 px-4 py-5 md:px-8 md:py-6 lg:grid-cols-[minmax(0,1.35fr)_minmax(340px,0.65fr)]">
         <div className="space-y-5">
@@ -551,6 +623,7 @@ export default function TodayDashboard({ latestRadar, latestPrompts }: TodayDash
             events={events}
             googleMessage={googleMessage}
             calendarStatus={calendarStatus}
+            googleConfigured={Boolean(GOOGLE_CLIENT_ID)}
             connectGoogleCalendar={connectGoogleCalendar}
           />
 
@@ -573,13 +646,13 @@ export default function TodayDashboard({ latestRadar, latestPrompts }: TodayDash
             onUpdatePair={updateCurrencyPair}
             onReset={() => setCurrency((current) => ({ ...current, pairs: [DEFAULT_CURRENCY_PAIR] }))}
           />
-
-          <NotePanel t={t} note={note} setNote={setNote} />
         </div>
 
         <aside className="space-y-5">
+          <NotePanel t={t} note={note} setNote={setNote} open={noteOpen} setOpen={setNoteOpen} />
           <LatestPanel title={t.radar} subtitle={t.radarSubtitle} items={latestRadar} showStars />
           <LatestPanel title={t.prompts} subtitle={t.promptsSubtitle} items={latestPrompts} media />
+          <NewsPanel title={t.news} subtitle={t.newsSubtitle} errorLabel={t.newsError} items={news} status={newsStatus} language={language} />
           <button
             type="button"
             onClick={() => setLanguage((current) => (current === "en" ? "fa" : "en"))}
@@ -608,6 +681,7 @@ function CalendarPanel({
   events,
   googleMessage,
   calendarStatus,
+  googleConfigured,
   connectGoogleCalendar,
 }: {
   mode: CalendarMode;
@@ -623,6 +697,7 @@ function CalendarPanel({
   events: CalendarEvent[];
   googleMessage: string | null;
   calendarStatus: "idle" | "loading" | "ready" | "error";
+  googleConfigured: boolean;
   connectGoogleCalendar: () => void;
 }) {
   return (
@@ -683,8 +758,9 @@ function CalendarPanel({
       <div className="mt-5 flex flex-wrap items-center gap-3">
         <button
           type="button"
+          disabled={!googleConfigured || calendarStatus === "loading"}
           onClick={connectGoogleCalendar}
-          className="inline-flex h-10 items-center gap-2 rounded-md bg-[#1A1A1A] px-3 font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#A0A0A0] transition hover:bg-[#242424] hover:text-[#EAEAEA] focus:outline-none"
+          className="inline-flex h-10 items-center gap-2 rounded-md bg-[#1A1A1A] px-3 font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#A0A0A0] transition hover:bg-[#242424] hover:text-[#EAEAEA] focus:outline-none disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:bg-[#1A1A1A] disabled:hover:text-[#A0A0A0]"
         >
           <IconCalendar size={16} stroke={1.7} />
           {calendarStatus === "ready" ? t.reconnectGoogle : t.connectGoogle}
@@ -724,8 +800,12 @@ function MonthGrid({
   return (
     <>
       <div className="grid grid-cols-7 gap-1 font-jetbrains text-[10px] uppercase tracking-[0.08em] text-[#7F7F7F]">
-        {["S", "M", "T", "W", "T", "F", "S"].map((day, index) => (
-          <div key={`${day}-${index}`} className="flex h-8 items-center justify-center">
+        {Array.from({ length: 7 }, (_, index) =>
+          new Intl.DateTimeFormat(language === "fa" ? "fa-IR" : "en-US", {
+            weekday: "long",
+          }).format(new Date(2026, 7, 16 + weekStartsOn(language) + index))
+        ).map((day) => (
+          <div key={day} className="flex h-8 items-center justify-center text-center">
             {day}
           </div>
         ))}
@@ -775,13 +855,14 @@ function YearGrid({
   return (
     <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
       {months.map((month) => {
-        const days = getMonthDays(month);
+        const weekStart = weekStartsOn(language);
+        const days = getMonthDays(month, weekStart);
         const active = month.getMonth() === new Date().getMonth() && month.getFullYear() === new Date().getFullYear();
         return (
           <div key={month.getMonth()} className={`rounded-md border bg-[#0D0D0D] p-3 ${active ? "border-[#2CFF05]" : "border-[#1F1F1F]"}`}>
             <div className="mb-2 flex items-center justify-between gap-2">
               <p className="font-jetbrains text-[11px] uppercase tracking-[0.1em] text-[#EAEAEA]">
-                {new Intl.DateTimeFormat(language === "fa" ? "fa-IR" : "en-US", { month: "short" }).format(month)}
+                {new Intl.DateTimeFormat(gregorianLocale(language), { month: "short" }).format(month)}
               </p>
               <p className="truncate text-[10px] text-[#7F7F7F]">
                 {new Intl.DateTimeFormat(language === "fa" ? "fa-IR-u-ca-persian" : "en-US-u-ca-persian", {
@@ -789,7 +870,7 @@ function YearGrid({
                 }).format(month)}
               </p>
               <p className="font-jetbrains text-[9px] uppercase tracking-[0.08em] text-[#7F7F7F]">
-                {formatNumber(getWeekCount(month), language)} {weekLabel}
+                {formatNumber(getWeekCount(month, weekStart), language)} {weekLabel}
               </p>
             </div>
             <div className="grid grid-cols-7 gap-1">
@@ -868,7 +949,10 @@ function DateConverterPanel({
   return (
     <Panel>
       <div className="flex items-center justify-between gap-3">
-        <h2 className="font-monroe text-[24px] font-light text-[#EAEAEA]">{t.dateConverter}</h2>
+        <div className="flex items-center gap-2">
+          <IconCalendar size={18} stroke={1.7} className="text-[#2CFF05]" />
+          <h2 className="font-monroe text-[24px] font-light text-[#EAEAEA]">{t.dateConverter}</h2>
+        </div>
         {hasDateChanged && (
           <button
             type="button"
@@ -893,7 +977,7 @@ function DateConverterPanel({
               onChange={(value) => updateGregorian({ ...gregorianParts, month: value })}
             >
               {new Array(12).fill(null).map((_, index) => {
-                const month = new Intl.DateTimeFormat(language === "fa" ? "fa-IR" : "en-US", {
+                const month = new Intl.DateTimeFormat(gregorianLocale(language), {
                   month: "long",
                 }).format(new Date(2026, index, 1));
                 return (
@@ -1190,27 +1274,46 @@ function NotePanel({
   t,
   note,
   setNote,
+  open,
+  setOpen,
 }: {
   t: typeof copy.en | typeof copy.fa;
   note: string;
   setNote: (value: string) => void;
+  open: boolean;
+  setOpen: (value: boolean) => void;
 }) {
   return (
     <Panel>
-      <div className="mb-4 flex items-center gap-2">
-        <IconNote size={18} stroke={1.7} className="text-[#2CFF05]" />
-        <h2 className="font-monroe text-[24px] font-light text-[#EAEAEA]">{t.noteTitle}</h2>
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex items-center gap-2">
+          <IconNote size={18} stroke={1.7} className="text-[#2CFF05]" />
+          <h2 className="font-monroe text-[24px] font-light text-[#EAEAEA]">{t.noteTitle}</h2>
+        </div>
+        <button
+          type="button"
+          onClick={() => setOpen(!open)}
+          className="inline-flex size-9 items-center justify-center rounded-md text-[#A0A0A0] transition hover:text-[#2CFF05] focus:outline-none"
+          aria-expanded={open}
+          aria-label={open ? t.hideNote : t.showNote}
+        >
+          {open ? <IconChevronUp size={18} stroke={1.8} /> : <IconChevronDown size={18} stroke={1.8} />}
+        </button>
       </div>
-      <textarea
-        value={note}
-        onChange={(event) => setNote(event.target.value)}
-        placeholder={t.notePlaceholder}
-        className="min-h-[130px] w-full resize-none rounded-md border border-[#252525] bg-[#0D0D0D] p-4 text-[15px] leading-relaxed text-[#EAEAEA] outline-none transition placeholder:text-[#555] focus:border-[#2CFF05]"
-      />
-      <p className="mt-3 inline-flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.12em] text-[#7F7F7F]">
-        <IconLock size={14} stroke={1.8} />
-        {t.privacy}
-      </p>
+      {open && (
+        <div className="mt-4">
+          <textarea
+            value={note}
+            onChange={(event) => setNote(event.target.value)}
+            placeholder={t.notePlaceholder}
+            className="min-h-[130px] w-full resize-none rounded-md bg-[#0A0A0A] p-4 text-[15px] leading-relaxed text-[#EAEAEA] outline-none transition placeholder:text-[#555] focus:ring-1 focus:ring-[#2CFF05]"
+          />
+          <p className="mt-3 inline-flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.12em] text-[#7F7F7F]">
+            <IconLock size={14} stroke={1.8} />
+            {t.privacy}
+          </p>
+        </div>
+      )}
     </Panel>
   );
 }
@@ -1309,6 +1412,59 @@ function LatestPanel({
                 <p className="mt-1 line-clamp-2 text-[13px] leading-relaxed text-[#9A9A9A]">{item.description}</p>
               </div>
             </div>
+          </a>
+        ))}
+      </div>
+    </Panel>
+  );
+}
+
+function NewsPanel({
+  title,
+  subtitle,
+  errorLabel,
+  items,
+  status,
+  language,
+}: {
+  title: string;
+  subtitle: string;
+  errorLabel: string;
+  items: NewsItem[];
+  status: "idle" | "loading" | "ready" | "error";
+  language: Language;
+}) {
+  return (
+    <Panel>
+      <div className="flex items-start gap-2">
+        <IconNews size={18} stroke={1.7} className="mt-1 text-[#2CFF05]" />
+        <div>
+          <h2 className="font-monroe text-[24px] font-light text-[#EAEAEA]">{title}</h2>
+          <p className="mt-1 text-[13px] leading-relaxed text-[#7F7F7F]">{subtitle}</p>
+        </div>
+      </div>
+      <div className="mt-4 space-y-3" dir="rtl">
+        {status === "error" && !items.length ? (
+          <p className="text-[13px] text-[#7F7F7F]">{errorLabel}</p>
+        ) : null}
+        {status === "loading" && !items.length ? (
+          <p className="font-jetbrains text-[10px] uppercase tracking-[0.12em] text-[#7F7F7F]">Loading...</p>
+        ) : null}
+        {items.slice(0, 3).map((item) => (
+          <a
+            key={item.id}
+            href={item.href}
+            target="_blank"
+            rel="noreferrer"
+            className="block border-b border-[#1F1F1F] pb-3 transition hover:border-[#2CFF05] last:border-b-0 last:pb-0"
+          >
+            <h3 className="line-clamp-2 text-[15px] leading-relaxed text-[#EAEAEA]">{item.title}</h3>
+            <p className="mt-1 line-clamp-3 text-[13px] leading-relaxed text-[#9A9A9A]">{item.description}</p>
+            {item.date && (
+              <p className="mt-2 font-jetbrains text-[10px] uppercase tracking-[0.08em] text-[#7F7F7F]" dir="ltr">
+                {formatNewsDate(item.date, language)}
+              </p>
+            )}
           </a>
         ))}
       </div>
