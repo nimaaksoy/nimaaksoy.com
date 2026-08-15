@@ -2,10 +2,10 @@ import { NextResponse } from "next/server";
 
 export const revalidate = 21600;
 
-type CurrencyCode = "USD" | "EUR" | "TRY" | "IRR" | "GBP" | "AED" | "CAD";
+type CurrencyCode = "USD" | "EUR" | "TRY" | "TOMAN" | "GBP" | "AED" | "CAD";
 type Rates = Partial<Record<CurrencyCode, Partial<Record<CurrencyCode, number>>>>;
 
-const CURRENCIES: CurrencyCode[] = ["USD", "EUR", "TRY", "GBP", "AED", "CAD", "IRR"];
+const CURRENCIES: CurrencyCode[] = ["USD", "EUR", "TRY", "GBP", "AED", "CAD", "TOMAN"];
 const OANOR_URL = "https://api.oanor.com/irr-api/v1/currencies";
 
 function readNumber(value: unknown): number | null {
@@ -57,8 +57,8 @@ function findCurrencyRecord(data: unknown, code: CurrencyCode): unknown {
 }
 
 function extractIrrRate(data: unknown, code: CurrencyCode): number | null {
-  if (code === "IRR") {
-    return 1;
+  if (code === "TOMAN") {
+    return 10;
   }
 
   const record = findCurrencyRecord(data, code);

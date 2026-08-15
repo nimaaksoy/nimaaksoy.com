@@ -46,7 +46,7 @@ type TodayDashboardProps = {
 
 type Language = "en" | "fa";
 type CalendarMode = "month" | "year";
-type CurrencyCode = "USD" | "EUR" | "TRY" | "IRR" | "GBP" | "AED" | "CAD";
+type CurrencyCode = "USD" | "EUR" | "TRY" | "TOMAN" | "GBP" | "AED" | "CAD";
 type CurrencyRates = Partial<Record<CurrencyCode, Partial<Record<CurrencyCode, number>>>>;
 type CalendarEvent = {
   id: string;
@@ -96,11 +96,11 @@ const GOOGLE_CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
 const NOTE_STORAGE_KEY = "nima-today-note";
 const LANGUAGE_STORAGE_KEY = "nima-today-language";
 const NEWS_REFRESH_INTERVAL = 60 * 60 * 1000;
-const CURRENCIES: CurrencyCode[] = ["USD", "EUR", "TRY", "GBP", "AED", "CAD", "IRR"];
+const CURRENCIES: CurrencyCode[] = ["USD", "EUR", "TRY", "GBP", "AED", "CAD", "TOMAN"];
 const DEFAULT_CURRENCY_PAIR: CurrencyPair = {
   id: "primary",
   from: "USD",
-  to: "IRR",
+  to: "TOMAN",
   amount: "1",
   convertedAmount: "",
   activeSide: "from",
@@ -116,10 +116,20 @@ const currencyIcons: Record<CurrencyCode, CurrencyIcon> = {
   USD: IconCurrencyDollar,
   EUR: IconCurrencyEuro,
   TRY: IconCurrencyLira,
-  IRR: IconCurrencyDollar,
+  TOMAN: IconCurrencyDollar,
   GBP: IconCurrencyPound,
   AED: IconCurrencyDirham,
   CAD: IconCurrencyDollar,
+};
+
+const currencyLabels: Record<CurrencyCode, string> = {
+  USD: "USD",
+  EUR: "EUR",
+  TRY: "TRY",
+  TOMAN: "Toman",
+  GBP: "GBP",
+  AED: "AED",
+  CAD: "CAD",
 };
 
 const persianMonthNamesEn = [
@@ -154,9 +164,6 @@ const persianMonthNamesFa = [
 
 const copy = {
   en: {
-    appName: "Nima Aksoy Today",
-    appPurpose:
-      "A local-first dashboard for calendar, Persian dates, currency, notes, and new-tab use.",
     language: "فارسی",
     calendar: "Calendar",
     month: "Month",
@@ -189,9 +196,6 @@ const copy = {
     newsError: "Could not load news.",
   },
   fa: {
-    appName: "Nima Aksoy Today",
-    appPurpose:
-      "داشبورد روزانه و محلی برای تقویم، تاریخ شمسی و میلادی، تبدیل ارز، یادداشت، و استفاده در تب جدید.",
     language: "English",
     calendar: "تقویم",
     month: "ماه",
@@ -264,7 +268,7 @@ function formatAmountInput(value: string) {
 
 function formatAmountValue(value: number, currency: CurrencyCode) {
   return new Intl.NumberFormat("en-US", {
-    maximumFractionDigits: currency === "IRR" ? 0 : 8,
+    maximumFractionDigits: currency === "TOMAN" ? 0 : 8,
   }).format(value);
 }
 
@@ -637,17 +641,7 @@ export default function TodayDashboard({ latestRadar, latestPrompts }: TodayDash
       lang={language}
       className="today-vazirmatn font-[var(--font-vazirmatn)]"
     >
-      <div className="mx-auto max-w-[1280px] px-4 pt-5 md:px-8 md:pt-6">
-        <section className="mb-5 rounded-lg bg-[#0D0D0D] px-5 py-4 md:px-6">
-          <p className="font-jetbrains text-[10px] uppercase tracking-[0.16em] text-[#7F7F7F]">
-            {t.appName}
-          </p>
-          <h1 className="mt-1 font-monroe text-[24px] font-light leading-tight text-[#EAEAEA] md:text-[30px]">
-            {t.appPurpose}
-          </h1>
-        </section>
-      </div>
-      <div className="mx-auto grid max-w-[1280px] gap-5 px-4 pb-5 md:px-8 md:pb-6 lg:grid-cols-[minmax(0,1.35fr)_minmax(340px,0.65fr)]">
+      <div className="mx-auto grid max-w-[1280px] gap-5 px-4 py-5 md:px-8 md:py-6 lg:grid-cols-[minmax(0,1.35fr)_minmax(340px,0.65fr)]">
         <div className="space-y-5">
           <CalendarPanel
             mode={calendarMode}
@@ -686,7 +680,6 @@ export default function TodayDashboard({ latestRadar, latestPrompts }: TodayDash
             errorLabel={t.currencyError}
             rates={currency.rates}
             pairs={currency.pairs}
-            language={language}
             onUpdatePair={updateCurrencyPair}
             onReset={() => setCurrency((current) => ({ ...current, pairs: [DEFAULT_CURRENCY_PAIR] }))}
           />
@@ -1139,7 +1132,6 @@ function CurrencyPanel({
   errorLabel,
   rates,
   pairs,
-  language,
   onUpdatePair,
   onReset,
 }: {
@@ -1148,7 +1140,6 @@ function CurrencyPanel({
   errorLabel: string;
   rates: CurrencyRates;
   pairs: CurrencyPair[];
-  language: Language;
   onUpdatePair: (id: string, update: Partial<CurrencyPair>) => void;
   onReset: () => void;
 }) {
@@ -1171,7 +1162,7 @@ function CurrencyPanel({
             type="button"
             onClick={onReset}
             className="inline-flex size-9 items-center justify-center rounded-md text-[#EAEAEA] transition hover:text-[#2CFF05] focus:outline-none"
-            aria-label="Reset currency converter to 1 USD to IRR"
+            aria-label="Reset currency converter to 1 USD to Toman"
           >
             <IconRestore size={16} stroke={1.8} />
           </button>
@@ -1193,7 +1184,6 @@ function CurrencyPanel({
               <CurrencyAmountInput
                 amount={fromAmount}
                 currency={pair.from}
-                language={language}
                 onAmountChange={(amountValue) => {
                   const nextAmount = formatAmountInput(amountValue);
                   const nextConverted =
@@ -1227,7 +1217,6 @@ function CurrencyPanel({
               <CurrencyAmountInput
                 amount={toAmount}
                 currency={pair.to}
-                language={language}
                 onAmountChange={(amountValue) => {
                   const nextConverted = formatAmountInput(amountValue);
                   const nextAmount =
@@ -1260,13 +1249,11 @@ function CurrencyPanel({
 function CurrencyAmountInput({
   amount,
   currency,
-  language,
   onAmountChange,
   onCurrencyChange,
 }: {
   amount: string;
   currency: CurrencyCode;
-  language: Language;
   onAmountChange: (value: string) => void;
   onCurrencyChange: (value: CurrencyCode) => void;
 }) {
@@ -1278,18 +1265,16 @@ function CurrencyAmountInput({
         onChange={(event) => onAmountChange(event.target.value)}
         className="h-11 min-w-0 rounded-md bg-[#0A0A0A] px-3 font-jetbrains text-[15px] text-[#EAEAEA] outline-none transition focus:ring-1 focus:ring-[#2CFF05]"
       />
-      <CurrencySelect value={currency} language={language} onChange={onCurrencyChange} />
+      <CurrencySelect value={currency} onChange={onCurrencyChange} />
     </div>
   );
 }
 
 function CurrencySelect({
   value,
-  language,
   onChange,
 }: {
   value: CurrencyCode;
-  language: Language;
   onChange: (value: CurrencyCode) => void;
 }) {
   const Icon = currencyIcons[value];
@@ -1307,7 +1292,7 @@ function CurrencySelect({
       >
         {CURRENCIES.map((currency) => (
           <option key={currency} value={currency}>
-            {language === "fa" ? currency : currency}
+            {currencyLabels[currency]}
           </option>
         ))}
       </select>
