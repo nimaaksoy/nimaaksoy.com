@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Manrope } from "next/font/google";
+import { JetBrains_Mono, Manrope, Vazirmatn } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
@@ -14,6 +14,12 @@ const jetbrains = JetBrains_Mono({
   variable: "--font-jetbrains",
   subsets: ["latin"],
   weight: ["400", "500"],
+  display: "swap",
+});
+
+const vazirmatn = Vazirmatn({
+  variable: "--font-vazirmatn",
+  subsets: ["arabic", "latin"],
   display: "swap",
 });
 
@@ -96,7 +102,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${monroe.variable} ${jetbrains.variable} dark h-full scroll-smooth`}
+      className={`${monroe.variable} ${jetbrains.variable} ${vazirmatn.variable} dark h-full scroll-smooth`}
     >
       <body className="min-h-full bg-[#0A0A0A] text-[#EAEAEA] antialiased">
         {children}

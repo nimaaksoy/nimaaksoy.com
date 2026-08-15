@@ -96,4 +96,9 @@ body {
   box-shadow: 0 0 0 1px rgba(44, 255, 5, 0.15), 0 14px 32px rgba(0, 0, 0, 0.4);
 }
 
-
+.today-farsi,
+.today-farsi *,
+.today-farsi-page,
+.today-farsi-page * {
+  font-family: var(--font-vazirmatn), var(--font-monroe), sans-serif !important;
+}

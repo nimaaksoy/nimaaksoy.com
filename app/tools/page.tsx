@@ -19,6 +19,13 @@ type ToolCard = {
 
 const toolCards: ToolCard[] = [
   {
+    name: "Today",
+    description:
+      "A local-first daily dashboard for calendar, currency, Persian dates, and one private note.",
+    cta: "→ nimaaksoy.com/today",
+    href: "/today",
+  },
+  {
     name: "Life in Dots",
     description:
       "A thoughtful life calendar and Chrome new-tab ritual for seeing today in context.",
