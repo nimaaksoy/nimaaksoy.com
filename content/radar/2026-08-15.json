@@ -7,7 +7,13 @@
       "url": "https://github.com/nexu-io/open-design",
       "image": "https://opengraph.githubassets.com/1/nexu-io/open-design",
       "homepage": "https://open-design.ai",
-      "tags": ["design", "agents", "desktop", "prototyping", "byok"],
+      "tags": [
+        "design",
+        "agents",
+        "desktop",
+        "prototyping",
+        "byok"
+      ],
       "verdict": "must-watch",
       "hasDemo": true,
       "hasMcp": true,
@@ -51,7 +57,8 @@
           "name": "UI Skills",
           "url": "https://nimaaksoy.com/radar/ui-skills"
         }
-      ]
+      ],
+      "youtube": "https://www.youtube.com/watch?v=GDsK6c_lXq4"
     }
   ]
 }
