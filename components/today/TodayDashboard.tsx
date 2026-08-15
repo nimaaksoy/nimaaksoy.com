@@ -689,14 +689,6 @@ export default function TodayDashboard({ latestRadar, latestPrompts }: TodayDash
             <IconLanguage size={16} stroke={1.7} />
             {t.language}
           </button>
-          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 font-jetbrains text-[10px] uppercase tracking-[0.12em] text-[#7F7F7F]">
-            <a href="/today/privacy" className="transition hover:text-[#2CFF05]">
-              Privacy
-            </a>
-            <a href="/today/terms" className="transition hover:text-[#2CFF05]">
-              Terms
-            </a>
-          </div>
         </aside>
       </div>
     </div>
