@@ -1,0 +1,66 @@
+{
+  "date": "2026-08-16",
+  "items": [
+    {
+      "slug": "cli-anything",
+      "name": "CLI-Anything",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "image": "https://opengraph.githubassets.com/1/HKUDS/CLI-Anything",
+      "homepage": "https://clianything.cc/",
+      "tags": [
+        "agents",
+        "cli",
+        "tooling",
+        "harness",
+        "registry"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "source": "github",
+      "take": {
+        "en": "Make any desktop app agent-native — generate structured CLIs so coding agents can drive real software, not just code.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Founders already run agents that write files and call APIs. The missing layer is the rest of the stack — Blender, GIMP, Obsidian, QGIS, n8n, game engines — which still expect a human in a GUI. CLI-Anything turns that gap into installable, JSON-speaking harnesses.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "CLI-Anything is an open project from HKUDS that bridges AI agents and real-world software. It ships a 7-phase generator that reverse-engineers an app into a Click-style CLI with structured JSON output, tests, demos, and a SKILL.md agents can load. CLI-Hub sits on top so you can browse and install community harnesses with one pip package instead of hand-wiring every tool.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Two paths. To use what exists: pip install cli-anything-hub, then cli-hub search / install / launch for ready CLIs like gimp, blender, or obsidian. To cover new software: install the CLI-Anything skill or plugin for Claude Code, Codex, Cursor, Pi, and peers, point the harness generator at the app, and let it walk phases 1–7 until you get a tested agent-facing CLI plus registry metadata.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Browser agents click pixels. Coding harnesses edit repos. CLI-Anything treats the CLI as the universal agent interface and industrializes wrapping whole applications — with a public hub, SKILL.md generation, and JSON-first commands so agents compose real creative and ops tools without a human babysitting the GUI.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "CLI-Anything is the missing layer under coding agents. it turns real apps into structured CLIs so agents can drive Blender, GIMP, Obsidian, QGIS and more — not just your repo.\n\nhttps://nimaaksoy.com/radar/cli-anything",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Most agent stacks still stop at code and the browser. CLI-Anything makes whole desktop apps agent-native with generated CLIs, JSON output, skills, and a hub to install them. That is how founders get agents into real creative and ops workflows.\n\nhttps://nimaaksoy.com/radar/cli-anything",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "ego lite",
+          "url": "https://nimaaksoy.com/radar/ego-lite"
+        },
+        {
+          "name": "OpenWorker",
+          "url": "https://nimaaksoy.com/radar/openworker"
+        },
+        {
+          "name": "Chrome DevTools MCP",
+          "url": "https://nimaaksoy.com/radar/chrome-devtools-mcp"
+        }
+      ]
+    }
+  ]
+}
