@@ -326,6 +326,10 @@
       "stars": 86527,
       "fetchedAt": "2026-08-15T07:12:01Z",
       "repo": "nexu-io/open-design"
+    },
+    "cli-anything": {
+      "stars": 47489,
+      "fetchedAt": "2026-08-16T07:06:14Z"
     }
   },
   "byRepo": {
@@ -588,6 +592,11 @@
     "nexu-io/open-design": {
       "stars": 86527,
       "fetchedAt": "2026-08-15T07:12:01Z"
+    },
+    "HKUDS/CLI-Anything": {
+      "stars": 47489,
+      "fetchedAt": "2026-08-16T07:06:14Z",
+      "slug": "cli-anything"
     }
   },
   "errors": [
