@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nima Aksoy Today</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell" aria-label="Nima Aksoy Today new tab dashboard">
+      <section class="main-column">
+        <section class="panel calendar-panel" aria-labelledby="calendar-title">
+          <div class="panel-row">
+            <div>
+              <p class="eyebrow" data-i18n="calendar">Calendar</p>
+              <h1 id="calendar-title" class="calendar-title"></h1>
+            </div>
+            <div class="calendar-actions">
+              <div class="segmented" role="group" aria-label="Calendar view">
+                <button class="segment active" type="button" data-calendar-mode="month" data-i18n="month">Month</button>
+                <button class="segment" type="button" data-calendar-mode="year" data-i18n="year">Year</button>
+              </div>
+              <button class="icon-button" type="button" data-calendar-prev aria-label="Previous">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+              </button>
+              <button class="icon-button" type="button" data-calendar-next aria-label="Next">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="calendar-grid" data-calendar-grid></div>
+          <a class="muted-button" href="https://nimaaksoy.com/today" target="_blank" rel="noopener" data-i18n="openSiteCalendar">
+            Open site for Google Calendar
+          </a>
+        </section>
+
+        <section class="panel collapsible-panel" aria-labelledby="date-title">
+          <button class="collapse-trigger" type="button" data-toggle="date" aria-expanded="false">
+            <span class="title-with-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v3M17 3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></svg>
+              <span id="date-title" data-i18n="dateConverter">Date converter</span>
+            </span>
+            <span class="trigger-actions">
+              <span class="summary-date" data-date-summary></span>
+              <span class="reset-button hidden" role="button" tabindex="-1" data-reset-date title="Reset to today">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8.1 8.1 0 0 0-15.5-2M4 5v4h4M4 13a8.1 8.1 0 0 0 15.5 2M20 19v-4h-4"/></svg>
+              </span>
+              <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </button>
+          <div class="collapse-body" data-panel="date">
+            <div class="converter-grid">
+              <div class="converter-block">
+                <p class="eyebrow" data-i18n="gregorianDate">Gregorian date</p>
+                <p class="readable-date" data-gregorian-readable></p>
+                <div class="select-grid">
+                  <label><span data-i18n="monthLabel">Month</span><select data-gregorian-month></select></label>
+                  <label><span data-i18n="dayLabel">Day</span><select data-gregorian-day></select></label>
+                  <label><span data-i18n="yearLabel">Year</span><select data-gregorian-year></select></label>
+                </div>
+              </div>
+              <div class="converter-block">
+                <p class="eyebrow" data-i18n="persianDate">Persian date</p>
+                <p class="readable-date" data-persian-readable></p>
+                <div class="select-grid">
+                  <label><span data-i18n="monthLabel">Month</span><select data-persian-month></select></label>
+                  <label><span data-i18n="dayLabel">Day</span><select data-persian-day></select></label>
+                  <label><span data-i18n="yearLabel">Year</span><select data-persian-year></select></label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel currency-panel" aria-labelledby="currency-title">
+          <div class="panel-row">
+            <h2 id="currency-title" class="section-title">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M17 7.5c0-1.7-2.1-3-5-3s-5 1.3-5 3 2.1 3 5 3 5 1.3 5 3-2.1 3-5 3-5-1.3-5-3"/></svg>
+              <span data-i18n="currency">Currency converter</span>
+            </h2>
+            <button class="reset-link hidden" type="button" data-reset-currency>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8.1 8.1 0 0 0-15.5-2M4 5v4h4M4 13a8.1 8.1 0 0 0 15.5 2M20 19v-4h-4"/></svg>
+              <span data-i18n="reset">Reset</span>
+            </button>
+          </div>
+          <div class="currency-grid">
+            <input data-currency-left value="1" inputmode="decimal" aria-label="Left amount">
+            <select data-currency-left-code aria-label="Left currency"></select>
+            <button class="swap-button" type="button" data-swap-currency aria-label="Swap currencies">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h11l-3-3M17 17H6l3 3"/></svg>
+            </button>
+            <select data-currency-right-code aria-label="Right currency"></select>
+            <input data-currency-right inputmode="decimal" aria-label="Right amount">
+          </div>
+          <div class="meta-line">
+            <span data-rate-line></span>
+            <span data-updated-at></span>
+          </div>
+        </section>
+      </section>
+
+      <aside class="side-column">
+        <section class="panel collapsible-panel note-panel" aria-labelledby="note-title">
+          <button class="collapse-trigger" type="button" data-toggle="note" aria-expanded="false">
+            <span class="title-with-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>
+              <span id="note-title" data-i18n="personalNote">Personal Note</span>
+            </span>
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="collapse-body" data-panel="note">
+            <textarea data-note rows="5" data-i18n-placeholder="notePlaceholder" aria-label="Personal note"></textarea>
+            <p class="privacy-line" data-i18n="localOnly">Saved only in this browser.</p>
+          </div>
+        </section>
+
+        <section class="panel list-panel" aria-labelledby="radar-title">
+          <div class="section-head">
+            <div>
+              <h2 id="radar-title" data-i18n="radar">Radar Updates</h2>
+              <p data-i18n="radarSubtitle">Trending open source projects</p>
+            </div>
+            <span class="tag">★</span>
+          </div>
+          <div class="cards" data-radar-list></div>
+        </section>
+
+        <section class="panel list-panel" aria-labelledby="prompts-title">
+          <div class="section-head">
+            <div>
+              <h2 id="prompts-title" data-i18n="prompts">Prompts collection</h2>
+              <p data-i18n="promptsSubtitle">Prompts make your life easier</p>
+            </div>
+            <span class="tag">⌘</span>
+          </div>
+          <div class="cards" data-prompt-list></div>
+        </section>
+
+        <section class="panel list-panel news-panel" aria-labelledby="news-title">
+          <div class="section-head">
+            <div>
+              <h2 id="news-title" data-i18n="news">Latest news</h2>
+              <p data-i18n="newsSubtitle">Three latest public Vahid Online posts</p>
+            </div>
+            <span class="tag">▣</span>
+          </div>
+          <div class="cards" data-news-list></div>
+        </section>
+
+        <button class="language-button" type="button" data-language>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h8M8 3v2M10 5c-.8 3.3-2.8 5.8-6 7M5 9c1.4 1.6 3 2.7 5 3M14 19l3-8 3 8M15 17h4"/></svg>
+          <span data-language-label>فارسی</span>
+        </button>
+      </aside>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+screenshot-desktop-newtab.png 1280x800
+screenshot-compact-newtab.png 640x400
+promo-small-440x280.png 440x280
+promo-marquee-1400x560.png 1400x560
