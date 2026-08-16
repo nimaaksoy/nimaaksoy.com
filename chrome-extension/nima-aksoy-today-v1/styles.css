@@ -18,11 +18,13 @@
   color-scheme: dark;
   --bg: #080808;
   --panel: #181818;
-  --field: #0f0f0f;
-  --line: #272727;
-  --muted: #858585;
-  --text: #eeeeee;
-  --soft: #b8b8b8;
+  --field: #0d0d0d;
+  --input: #101010;
+  --line: #1f1f1f;
+  --line-strong: #2a2a2a;
+  --muted: #7f7f7f;
+  --text: #eaeaea;
+  --soft: #9a9a9a;
   --green: #2cff05;
   --green-soft: #173312;
 }
@@ -70,9 +72,9 @@ svg {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(340px, 0.65fr);
   gap: 20px;
-  max-width: 1320px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 22px 24px;
+  padding: 20px 16px;
 }
 
 .main-column,
@@ -83,9 +85,15 @@ svg {
 }
 
 .panel {
-  border-radius: 10px;
+  border-radius: 8px;
   background: var(--panel);
-  padding: 24px;
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .panel {
+    padding: 24px;
+  }
 }
 
 .panel-row,
@@ -100,16 +108,16 @@ svg {
 .eyebrow {
   margin: 0;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
 .calendar-title {
   margin: 6px 0 0;
-  font-size: clamp(32px, 4vw, 56px);
+  font-size: 30px;
   font-weight: 400;
-  line-height: 1.1;
+  line-height: 1;
 }
 
 .calendar-actions {
@@ -121,7 +129,8 @@ svg {
 .segmented {
   display: flex;
   gap: 4px;
-  border-radius: 8px;
+  border: 1px solid #262626;
+  border-radius: 6px;
   background: var(--field);
   padding: 4px;
 }
@@ -131,19 +140,22 @@ svg {
 .muted-button,
 .language-button,
 .reset-link,
-.swap-button {
+.swap-button,
+.collapse-trigger {
   cursor: pointer;
   border: 0;
-  border-radius: 8px;
+  border-radius: 6px;
   background: transparent;
   transition: color 150ms ease, background 150ms ease, outline-color 150ms ease;
 }
 
 .segment {
-  min-width: 70px;
-  height: 38px;
+  min-width: 58px;
+  height: 32px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .segment.active {
@@ -153,12 +165,12 @@ svg {
 
 .icon-button {
   display: inline-grid;
-  width: 46px;
-  height: 46px;
+  width: 36px;
+  height: 36px;
   place-items: center;
   background: var(--field);
   color: var(--text);
-  outline: 1px solid var(--line);
+  outline: 1px solid var(--line-strong);
 }
 
 .icon-button:hover,
@@ -172,14 +184,14 @@ svg {
 }
 
 .calendar-grid {
-  margin-top: 24px;
+  margin-top: 20px;
 }
 
 .week-row,
 .month-grid {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 8px;
+  gap: 4px;
 }
 
 .week-row {
@@ -191,17 +203,20 @@ svg {
   min-height: 32px;
   place-items: center;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .day-cell {
   position: relative;
   display: flex;
-  min-height: 84px;
+  min-height: 70px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
   background: var(--field);
   color: #dadada;
 }
@@ -211,19 +226,26 @@ svg {
 }
 
 .day-cell.today {
-  outline: 1px solid var(--green);
+  border-color: var(--green);
+  outline: 0;
   background: var(--green-soft);
   color: var(--green);
 }
 
 .day-main {
-  font-size: 24px;
+  font-size: 16px;
 }
 
 .day-alt {
   margin-top: 3px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 10px;
+}
+
+@media (min-width: 768px) {
+  .day-cell {
+    min-height: 82px;
+  }
 }
 
 .year-grid {
@@ -233,7 +255,8 @@ svg {
 }
 
 .mini-month {
-  border-radius: 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
   background: var(--field);
   padding: 12px;
 }
@@ -284,8 +307,9 @@ svg {
   min-height: 38px;
   margin-top: 18px;
   padding: 0 14px;
-  background: #242424;
-  color: #a8a8a8;
+  border-radius: 6px;
+  background: #1a1a1a;
+  color: #a0a0a0;
   text-decoration: none;
   font-size: 12px;
 }
@@ -313,7 +337,7 @@ svg {
 
 .title-with-icon,
 .section-title {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 400;
 }
 
@@ -330,6 +354,15 @@ svg {
   font-size: 13px;
 }
 
+.updated-under-title {
+  min-height: 14px;
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 .chevron {
   transition: transform 150ms ease;
 }
@@ -340,7 +373,7 @@ svg {
 
 .collapse-body {
   display: none;
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
 .collapse-body.open {
@@ -354,16 +387,17 @@ svg {
 }
 
 .converter-block {
-  border-radius: 8px;
-  background: var(--field);
-  padding: 18px;
+  border-radius: 6px;
+  background: var(--panel);
+  padding: 12px;
 }
 
 .readable-date {
   min-height: 36px;
   margin: 12px 0 18px;
   color: var(--text);
-  font-size: 24px;
+  font-size: 18px;
+  line-height: 1.25;
 }
 
 .select-grid {
@@ -386,24 +420,24 @@ input,
 textarea {
   width: 100%;
   border: 0;
-  border-radius: 8px;
-  background: var(--field);
+  border-radius: 6px;
+  background: var(--input);
   color: var(--text);
   outline: 0;
 }
 
 select {
-  min-height: 54px;
+  min-height: 44px;
   padding: 0 14px;
   appearance: none;
   background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
-  background-position: calc(100% - 18px) 24px, calc(100% - 12px) 24px;
+  background-position: calc(100% - 18px) 19px, calc(100% - 12px) 19px;
   background-repeat: no-repeat;
   background-size: 6px 6px, 6px 6px;
 }
 
 [dir="rtl"] select {
-  background-position: 18px 24px, 12px 24px;
+  background-position: 18px 19px, 12px 19px;
 }
 
 select:focus-visible,
@@ -414,21 +448,24 @@ textarea:focus-visible {
 
 .currency-grid {
   display: grid;
-  grid-template-columns: minmax(160px, 1fr) minmax(190px, 0.7fr) 48px minmax(190px, 0.7fr) minmax(160px, 1fr);
-  gap: 14px;
-  margin-top: 22px;
+  grid-template-columns: minmax(0, 1fr) 132px 40px minmax(0, 1fr) 132px;
+  gap: 12px;
+  margin-top: 16px;
   align-items: center;
+  border-radius: 6px;
+  background: var(--panel);
+  padding: 12px;
 }
 
 .currency-grid input {
-  min-height: 82px;
-  padding: 0 24px;
-  font-size: 40px;
+  min-height: 64px;
+  padding: 0 12px;
+  font-size: 30px;
 }
 
 .currency-grid select {
-  min-height: 82px;
-  font-size: 20px;
+  min-height: 64px;
+  font-size: 13px;
 }
 
 .swap-button {
@@ -451,7 +488,9 @@ textarea:focus-visible {
   gap: 16px;
   margin-top: 14px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .reset-link {
@@ -484,7 +523,7 @@ textarea:focus-visible {
 
 .section-head h2 {
   margin: 0;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 400;
 }
 
@@ -495,40 +534,75 @@ textarea:focus-visible {
 }
 
 .tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: var(--green);
-  font-size: 18px;
+}
+
+.tag svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 1.7;
+}
+
+.section-title-copy {
+  position: relative;
+  min-width: 0;
+}
+
+.section-title-copy .panel-icon {
+  display: none;
+  color: var(--green);
 }
 
 .cards {
   display: grid;
-  gap: 12px;
-  margin-top: 20px;
+  gap: 0;
+  margin-top: 16px;
 }
 
 .content-card {
   display: grid;
   gap: 8px;
-  border-radius: 8px;
-  background: var(--field);
-  padding: 14px;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  padding: 0 0 12px;
   color: inherit;
   text-decoration: none;
 }
 
+.content-card + .content-card {
+  padding-top: 12px;
+}
+
+.content-card:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
 .content-card:hover,
 .content-card:focus-visible {
-  outline: 1px solid var(--green);
+  border-color: var(--green);
+  outline: 0;
 }
 
 .content-card.media {
-  grid-template-columns: 62px minmax(0, 1fr);
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 12px;
 }
 
 .thumb {
-  width: 62px;
-  min-height: 62px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #2cff05, #151515 55%, #2f2f2f);
+  display: grid;
+  place-items: center;
+  width: 72px;
+  min-height: 72px;
+  border: 1px solid #252525;
+  border-radius: 6px;
+  background: var(--field);
+  color: var(--green);
+  font-size: 18px;
 }
 
 .content-card h3 {
@@ -544,6 +618,10 @@ textarea:focus-visible {
   color: var(--soft);
   font-size: 13px;
   line-height: 1.55;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .content-card time,

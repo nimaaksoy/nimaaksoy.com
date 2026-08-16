@@ -8,6 +8,15 @@
   };
 
   const CURRENCIES = ["USD", "EUR", "TRY", "GBP", "AED", "CAD", "TOMAN"];
+  const CURRENCY_LABELS = {
+    USD: "USD",
+    EUR: "EUR",
+    TRY: "TRY",
+    GBP: "GBP",
+    AED: "AED",
+    CAD: "CAD",
+    TOMAN: "Toman",
+  };
   const FALLBACK_RADAR = [
     {
       title: "CLI-Anything",
@@ -553,7 +562,7 @@
   function renderCurrency(activeSide = "left") {
     const leftSelect = $("[data-currency-left-code]");
     const rightSelect = $("[data-currency-right-code]");
-    const options = CURRENCIES.map((code) => ({ value: code, label: code === "TOMAN" ? "Toman" : code }));
+    const options = CURRENCIES.map((code) => ({ value: code, label: CURRENCY_LABELS[code] || code }));
     populateSelect(leftSelect, options, state.leftCode);
     populateSelect(rightSelect, options, state.rightCode);
 
@@ -569,7 +578,11 @@
     $("[data-currency-left]").value = state.leftAmount;
     $("[data-currency-right]").value = state.rightAmount;
     const t = COPY[state.language];
-    $("[data-rate-line]").textContent = rate ? `1 ${state.leftCode} = ${formatAmountValue(rate, state.rightCode)} ${state.rightCode}` : t.couldNotLoadRates;
+    $("[data-rate-line]").textContent = rate
+      ? `1 ${CURRENCY_LABELS[state.leftCode] || state.leftCode} = ${formatAmountValue(rate, state.rightCode)} ${
+          CURRENCY_LABELS[state.rightCode] || state.rightCode
+        }`
+      : t.couldNotLoadRates;
     $("[data-updated-at]").textContent = formatUpdated(state.updatedAt);
     $("[data-reset-currency]").classList.toggle(
       "hidden",
@@ -603,7 +616,7 @@
         link.target = "_blank";
         link.rel = "noopener";
         const meta = item.stars ? `★ ${formatNumber(item.stars)} · ${item.date || ""}` : item.date || "";
-        const media = options.media ? '<span class="thumb" aria-hidden="true"></span>' : "";
+        const media = options.media ? `<span class="thumb" aria-hidden="true">${String(index + 1).padStart(2, "0")}</span>` : "";
         link.innerHTML = `${media}<span><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(
           item.description || ""
         )}</p><span class="card-meta">${escapeHtml(meta)}</span></span>`;
