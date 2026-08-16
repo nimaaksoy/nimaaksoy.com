@@ -182,7 +182,7 @@ const copy = {
     currencyError: "Could not load rates.",
     updated: "Updated",
     refresh: "Refresh",
-    noteTitle: "Today note",
+    noteTitle: "Personal Note",
     notePlaceholder: "Write one thing worth remembering today...",
     privacy: "Saved only in local browser storage.",
     showNote: "Open note",
@@ -214,7 +214,7 @@ const copy = {
     currencyError: "نرخ‌ها بارگذاری نشد.",
     updated: "به‌روز شد",
     refresh: "به‌روزرسانی",
-    noteTitle: "یادداشت امروز",
+    noteTitle: "یادداشت شخصی",
     notePlaceholder: "یک چیز مهم برای امروز بنویس...",
     privacy: "فقط در حافظه محلی مرورگر ذخیره می‌شود.",
     showNote: "باز کردن یادداشت",
@@ -272,8 +272,37 @@ function formatAmountValue(value: number, currency: CurrencyCode) {
   }).format(value);
 }
 
+function formatPersianDayMonthTime(value: string) {
+  const date = new Date(value);
+  const parts = getPersianParts(date);
+  const time = new Intl.DateTimeFormat("fa-IR", {
+    hour: "numeric",
+    minute: "2-digit",
+  }).format(date);
+  return `${formatNumber(parts.day, "fa")} ${persianMonthNamesFa[parts.month - 1]}، ${time}`;
+}
+
 function formatNewsDate(value: string, language: Language) {
-  return new Intl.DateTimeFormat(language === "fa" ? "fa-IR" : "en-US", {
+  if (language === "fa") {
+    return formatPersianDayMonthTime(value);
+  }
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+  }).format(new Date(value));
+}
+
+function formatUpdatedAt(value: string | undefined, language: Language) {
+  if (!value) {
+    return "";
+  }
+  if (language === "fa") {
+    return formatPersianDayMonthTime(value);
+  }
+  return new Intl.DateTimeFormat("en-US", {
+    weekday: "short",
     month: "short",
     day: "numeric",
     hour: "numeric",
@@ -462,6 +491,7 @@ export default function TodayDashboard({ latestRadar, latestPrompts }: TodayDash
   const [events, setEvents] = useState<CalendarEvent[]>([]);
   const [news, setNews] = useState<NewsItem[]>([]);
   const [newsStatus, setNewsStatus] = useState<"idle" | "loading" | "ready" | "error">("idle");
+  const [dateConverterOpen, setDateConverterOpen] = useState(false);
   const [noteOpen, setNoteOpen] = useState(false);
   const [calendarStatus, setCalendarStatus] = useState<"idle" | "loading" | "ready" | "error">("idle");
 
@@ -514,11 +544,13 @@ export default function TodayDashboard({ latestRadar, latestPrompts }: TodayDash
       };
       if (!data.ok || !data.rates) throw new Error("Currency response missing rates");
 
+      const updatedAt = data.updatedAt ?? new Date().toISOString();
+      const rates = data.rates ?? {};
       setCurrency((current) => ({
         ...current,
         status: "ready",
-        updatedAt: data.updatedAt ?? new Date().toISOString(),
-        rates: data.rates ?? {},
+        updatedAt,
+        rates,
       }));
     } catch {
       setCurrency((current) => ({ ...current, status: "error" }));
@@ -672,14 +704,18 @@ export default function TodayDashboard({ latestRadar, latestPrompts }: TodayDash
             setGregorianParts={setGregorianParts}
             persianParts={persianParts}
             setPersianParts={setPersianParts}
+            open={dateConverterOpen}
+            setOpen={setDateConverterOpen}
           />
 
           <CurrencyPanel
             title={t.currency}
             status={currency.status}
+            updatedAt={currency.updatedAt}
             errorLabel={t.currencyError}
             rates={currency.rates}
             pairs={currency.pairs}
+            language={language}
             onUpdatePair={updateCurrencyPair}
             onReset={() => setCurrency((current) => ({ ...current, pairs: [DEFAULT_CURRENCY_PAIR] }))}
           />
@@ -769,7 +805,11 @@ function CalendarPanel({
               )
             }
           >
-            <IconChevronLeft size={16} stroke={1.8} />
+            {language === "fa" ? (
+              <IconChevronRight size={16} stroke={1.8} />
+            ) : (
+              <IconChevronLeft size={16} stroke={1.8} />
+            )}
           </IconButton>
           <IconButton
             label="Next"
@@ -781,7 +821,11 @@ function CalendarPanel({
               )
             }
           >
-            <IconChevronRight size={16} stroke={1.8} />
+            {language === "fa" ? (
+              <IconChevronLeft size={16} stroke={1.8} />
+            ) : (
+              <IconChevronRight size={16} stroke={1.8} />
+            )}
           </IconButton>
         </div>
       </div>
@@ -971,6 +1015,8 @@ function DateConverterPanel({
   setGregorianParts,
   persianParts,
   setPersianParts,
+  open,
+  setOpen,
 }: {
   t: typeof copy.en | typeof copy.fa;
   language: Language;
@@ -978,6 +1024,8 @@ function DateConverterPanel({
   setGregorianParts: (parts: DateParts) => void;
   persianParts: DateParts;
   setPersianParts: (parts: DateParts) => void;
+  open: boolean;
+  setOpen: (value: boolean) => void;
 }) {
   const gregorianDate = partsToDate(gregorianParts);
   const persianDate = persianPartsToGregorian(persianParts);
@@ -1012,11 +1060,19 @@ function DateConverterPanel({
   return (
     <Panel>
       <div className="flex items-center justify-between gap-3">
-        <div className="flex items-center gap-2">
+        <button
+          type="button"
+          onClick={() => setOpen(!open)}
+          className="flex min-w-0 flex-1 items-center gap-2 text-left focus:outline-none"
+          aria-expanded={open}
+        >
           <IconCalendar size={18} stroke={1.7} className="text-[#2CFF05]" />
           <h2 className="font-monroe text-[24px] font-light text-[#EAEAEA]">{t.dateConverter}</h2>
-        </div>
-        {hasDateChanged && (
+          <span className="ml-auto text-[#A0A0A0]">
+            {open ? <IconChevronUp size={18} stroke={1.8} /> : <IconChevronDown size={18} stroke={1.8} />}
+          </span>
+        </button>
+        {open && hasDateChanged && (
           <button
             type="button"
             onClick={resetToToday}
@@ -1028,10 +1084,11 @@ function DateConverterPanel({
         )}
       </div>
 
+      {open && (
       <div className="mt-4 grid gap-3 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-        <div className="rounded-md bg-[#0D0D0D] p-3">
-          <p className="font-jetbrains text-[10px] uppercase tracking-[0.14em] text-[#7F7F7F]">
-            {t.gregorianDate}
+        <div className="rounded-md bg-[#181818] p-3">
+          <p className="text-[18px] leading-snug text-[#EAEAEA]">
+            {formatGregorianDateLong(gregorianDate, language)}
           </p>
           <div className="mt-3 grid grid-cols-3 gap-2">
             <SelectField
@@ -1073,14 +1130,11 @@ function DateConverterPanel({
               ))}
             </SelectField>
           </div>
-          <p className="mt-3 text-[18px] leading-snug text-[#EAEAEA]">
-            {formatGregorianDateLong(gregorianDate, language)}
-          </p>
         </div>
 
-        <div className="rounded-md bg-[#0D0D0D] p-3">
-          <p className="font-jetbrains text-[10px] uppercase tracking-[0.14em] text-[#7F7F7F]">
-            {t.persianDate}
+        <div className="rounded-md bg-[#181818] p-3">
+          <p className="text-[18px] leading-snug text-[#EAEAEA]">
+            {formatPersianDateLong(persianDate, language)}
           </p>
           <div className="mt-3 grid grid-cols-3 gap-2">
             <SelectField
@@ -1117,11 +1171,9 @@ function DateConverterPanel({
               ))}
             </SelectField>
           </div>
-          <p className="mt-3 text-[18px] leading-snug text-[#EAEAEA]">
-            {formatPersianDateLong(persianDate, language)}
-          </p>
         </div>
       </div>
+      )}
     </Panel>
   );
 }
@@ -1129,17 +1181,21 @@ function DateConverterPanel({
 function CurrencyPanel({
   title,
   status,
+  updatedAt,
   errorLabel,
   rates,
   pairs,
+  language,
   onUpdatePair,
   onReset,
 }: {
   title: string;
   status: CurrencyState["status"];
+  updatedAt?: string;
   errorLabel: string;
   rates: CurrencyRates;
   pairs: CurrencyPair[];
+  language: Language;
   onUpdatePair: (id: string, update: Partial<CurrencyPair>) => void;
   onReset: () => void;
 }) {
@@ -1153,9 +1209,16 @@ function CurrencyPanel({
   return (
     <Panel>
       <div className="mb-4 flex items-center justify-between gap-3">
-        <div className="flex items-center gap-2">
-          <IconCurrencyDollar size={18} stroke={1.7} className="text-[#2CFF05]" />
-          <h2 className="font-monroe text-[24px] font-light text-[#EAEAEA]">{title}</h2>
+        <div>
+          <div className="flex items-center gap-2">
+            <IconCurrencyDollar size={18} stroke={1.7} className="text-[#2CFF05]" />
+            <h2 className="font-monroe text-[24px] font-light text-[#EAEAEA]">{title}</h2>
+          </div>
+          {updatedAt && (
+            <p className="mt-1 font-jetbrains text-[10px] uppercase tracking-[0.1em] text-[#7F7F7F]">
+              {copy[language].updated}: {formatUpdatedAt(updatedAt, language)}
+            </p>
+          )}
         </div>
         {hasCurrencyChanged && (
           <button
@@ -1180,7 +1243,7 @@ function CurrencyPanel({
               ? formatAmountValue(parseAmount(pair.amount) * rate, pair.to)
               : pair.convertedAmount;
           return (
-            <div key={pair.id} className="grid gap-3 rounded-md bg-[#0D0D0D] md:grid-cols-[1fr_auto_1fr] md:items-end">
+            <div key={pair.id} className="grid gap-3 rounded-md bg-[#181818] p-3 md:grid-cols-[1fr_auto_1fr] md:items-center">
               <CurrencyAmountInput
                 amount={fromAmount}
                 currency={pair.from}
@@ -1258,12 +1321,12 @@ function CurrencyAmountInput({
   onCurrencyChange: (value: CurrencyCode) => void;
 }) {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_92px] gap-2">
+    <div className="grid grid-cols-[minmax(0,1fr)_132px] gap-2">
       <input
         inputMode="decimal"
         value={amount}
         onChange={(event) => onAmountChange(event.target.value)}
-        className="h-11 min-w-0 rounded-md bg-[#0A0A0A] px-3 font-jetbrains text-[15px] text-[#EAEAEA] outline-none transition focus:ring-1 focus:ring-[#2CFF05]"
+        className="h-16 min-w-0 rounded-md bg-[#101010] px-3 font-jetbrains text-[30px] text-[#EAEAEA] outline-none transition focus:ring-1 focus:ring-[#2CFF05]"
       />
       <CurrencySelect value={currency} onChange={onCurrencyChange} />
     </div>
@@ -1288,7 +1351,7 @@ function CurrencySelect({
       <select
         value={value}
         onChange={(event) => onChange(event.target.value as CurrencyCode)}
-        className="h-11 w-full appearance-none rounded-md bg-[#0A0A0A] bg-[linear-gradient(45deg,transparent_50%,#EAEAEA_50%),linear-gradient(135deg,#EAEAEA_50%,transparent_50%)] bg-[length:5px_5px,5px_5px] bg-[position:calc(100%-18px)_18px,calc(100%-13px)_18px] bg-no-repeat pl-8 pr-8 font-jetbrains text-[12px] text-[#EAEAEA] outline-none transition focus:ring-1 focus:ring-[#2CFF05]"
+        className="h-16 w-full appearance-none rounded-md bg-[#101010] bg-[linear-gradient(45deg,transparent_50%,#EAEAEA_50%),linear-gradient(135deg,#EAEAEA_50%,transparent_50%)] bg-[length:5px_5px,5px_5px] bg-[position:calc(100%-18px)_26px,calc(100%-13px)_26px] bg-no-repeat pl-8 pr-8 font-jetbrains text-[13px] text-[#EAEAEA] outline-none transition focus:ring-1 focus:ring-[#2CFF05]"
       >
         {CURRENCIES.map((currency) => (
           <option key={currency} value={currency}>
@@ -1340,21 +1403,20 @@ function NotePanel({
 }) {
   return (
     <Panel>
-      <div className="flex items-center justify-between gap-3">
+      <button
+        type="button"
+        onClick={() => setOpen(!open)}
+        className="flex w-full items-center justify-between gap-3 text-left focus:outline-none"
+        aria-expanded={open}
+      >
         <div className="flex items-center gap-2">
           <IconNote size={18} stroke={1.7} className="text-[#2CFF05]" />
           <h2 className="font-monroe text-[24px] font-light text-[#EAEAEA]">{t.noteTitle}</h2>
         </div>
-        <button
-          type="button"
-          onClick={() => setOpen(!open)}
-          className="inline-flex size-9 items-center justify-center rounded-md text-[#A0A0A0] transition hover:text-[#2CFF05] focus:outline-none"
-          aria-expanded={open}
-          aria-label={open ? t.hideNote : t.showNote}
-        >
+        <span className="inline-flex size-9 items-center justify-center rounded-md text-[#A0A0A0] transition hover:text-[#2CFF05]">
           {open ? <IconChevronUp size={18} stroke={1.8} /> : <IconChevronDown size={18} stroke={1.8} />}
-        </button>
-      </div>
+        </span>
+      </button>
       {open && (
         <div className="mt-4">
           <textarea
@@ -1398,7 +1460,7 @@ function loadGoogleIdentityScript() {
 
 function Panel({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <section className={`rounded-lg bg-[#0D0D0D] p-5 md:p-6 ${className}`}>
+    <section className={`rounded-lg bg-[#181818] p-5 md:p-6 ${className}`}>
       {children}
     </section>
   );
@@ -1516,7 +1578,7 @@ function NewsPanel({
             <h3 className="line-clamp-2 text-[15px] leading-relaxed text-[#EAEAEA]">{item.title}</h3>
             <p className="mt-1 line-clamp-3 text-[13px] leading-relaxed text-[#9A9A9A]">{item.description}</p>
             {item.date && (
-              <p className="mt-2 font-jetbrains text-[10px] uppercase tracking-[0.08em] text-[#7F7F7F]" dir="ltr">
+              <p className="mt-2 font-jetbrains text-[10px] uppercase tracking-[0.08em] text-[#7F7F7F]" dir={language === "fa" ? "rtl" : "ltr"}>
                 {formatNewsDate(item.date, language)}
               </p>
             )}
