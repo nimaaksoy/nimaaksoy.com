@@ -429,15 +429,7 @@ textarea {
 select {
   min-height: 44px;
   padding: 0 14px;
-  appearance: none;
-  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
-  background-position: calc(100% - 18px) 19px, calc(100% - 12px) 19px;
-  background-repeat: no-repeat;
-  background-size: 6px 6px, 6px 6px;
-}
-
-[dir="rtl"] select {
-  background-position: 18px 19px, 12px 19px;
+  appearance: auto;
 }
 
 select:focus-visible,
@@ -534,7 +526,7 @@ textarea:focus-visible {
 }
 
 .tag {
-  display: inline-flex;
+  display: none;
   align-items: center;
   justify-content: center;
   color: var(--green);
@@ -547,13 +539,29 @@ textarea:focus-visible {
 }
 
 .section-title-copy {
-  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 8px;
+  align-items: start;
   min-width: 0;
 }
 
 .section-title-copy .panel-icon {
-  display: none;
+  display: inline-flex;
+  grid-row: span 2;
+  margin-top: 4px;
   color: var(--green);
+}
+
+.section-title-copy .panel-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 1.7;
+}
+
+.section-title-copy h2,
+.section-title-copy p {
+  grid-column: 2;
 }
 
 .cards {
@@ -603,6 +611,12 @@ textarea:focus-visible {
   background: var(--field);
   color: var(--green);
   font-size: 18px;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .content-card h3 {

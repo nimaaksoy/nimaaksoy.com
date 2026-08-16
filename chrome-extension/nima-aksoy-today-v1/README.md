@@ -1,4 +1,4 @@
-# Nima Aksoy Today — Chrome New Tab Extension v1
+# Nima Aksoy Today — Chrome New Tab Extension v1.0.1
 
 Nima Aksoy Today replaces Chrome's New Tab page with a local-first daily dashboard based on `https://nimaaksoy.com/today`.
 
@@ -53,5 +53,5 @@ Store listing assets live in `store-listing/` and are not required inside the ex
 From this folder:
 
 ```bash
-zip -r nima-aksoy-today-v1.zip manifest.json newtab.html styles.css app.js assets README.md
+zip -r nima-aksoy-today-v1.0.1.zip manifest.json newtab.html styles.css app.js assets README.md
 ```

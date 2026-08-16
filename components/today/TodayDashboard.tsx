@@ -16,6 +16,7 @@ import {
   IconLock,
   IconNote,
   IconNews,
+  IconRadar,
   IconRestore,
   IconStar,
 } from "@tabler/icons-react";
@@ -240,6 +241,12 @@ function dateKey(date: Date) {
 function formatNumber(value: number, language: Language, maximumFractionDigits = 0) {
   return new Intl.NumberFormat(language === "fa" ? "fa-IR" : "en-US", {
     maximumFractionDigits,
+  }).format(value);
+}
+
+function formatPlainYear(value: number, language: Language) {
+  return new Intl.NumberFormat(language === "fa" ? "fa-IR" : "en-US", {
+    useGrouping: false,
   }).format(value);
 }
 
@@ -723,8 +730,8 @@ export default function TodayDashboard({ latestRadar, latestPrompts }: TodayDash
 
         <aside className="space-y-5">
           <NotePanel t={t} note={note} setNote={setNote} open={noteOpen} setOpen={setNoteOpen} />
-          <LatestPanel title={t.radar} subtitle={t.radarSubtitle} items={latestRadar} showStars />
-          <LatestPanel title={t.prompts} subtitle={t.promptsSubtitle} items={latestPrompts} media />
+          <LatestPanel title={t.radar} subtitle={t.radarSubtitle} items={latestRadar} showStars icon="radar" />
+          <LatestPanel title={t.prompts} subtitle={t.promptsSubtitle} items={latestPrompts} media icon="prompts" />
           <NewsPanel title={t.news} subtitle={t.newsSubtitle} errorLabel={t.newsError} items={news} status={newsStatus} language={language} />
           <button
             type="button"
@@ -1125,7 +1132,7 @@ function DateConverterPanel({
             >
               {Array.from({ length: 141 }, (_, index) => 1970 + index).map((year) => (
                 <option key={year} value={year}>
-                  {formatNumber(year, language)}
+                  {formatPlainYear(year, language)}
                 </option>
               ))}
             </SelectField>
@@ -1166,7 +1173,7 @@ function DateConverterPanel({
             >
               {Array.from({ length: 141 }, (_, index) => 1350 + index).map((year) => (
                 <option key={year} value={year}>
-                  {formatNumber(year, language)}
+                  {formatPlainYear(year, language)}
                 </option>
               ))}
             </SelectField>
@@ -1485,17 +1492,25 @@ function LatestPanel({
   items,
   media = false,
   showStars = false,
+  icon,
 }: {
   title: string;
   subtitle: string;
   items: LatestItem[];
   media?: boolean;
   showStars?: boolean;
+  icon?: "radar" | "prompts";
 }) {
+  const Icon = icon === "radar" ? IconRadar : icon === "prompts" ? IconTextScanAi : null;
   return (
     <Panel>
-      <h2 className="font-monroe text-[24px] font-light text-[#EAEAEA]">{title}</h2>
-      <p className="mt-1 text-[13px] leading-relaxed text-[#7F7F7F]">{subtitle}</p>
+      <div className="flex items-start gap-2">
+        {Icon && <Icon size={18} stroke={1.7} className="mt-1 text-[#2CFF05]" />}
+        <div>
+          <h2 className="font-monroe text-[24px] font-light text-[#EAEAEA]">{title}</h2>
+          <p className="mt-1 text-[13px] leading-relaxed text-[#7F7F7F]">{subtitle}</p>
+        </div>
+      </div>
       <div className="mt-4 space-y-3">
         {items.slice(0, 3).map((item, index) => (
           <a
@@ -1533,6 +1548,33 @@ function LatestPanel({
         ))}
       </div>
     </Panel>
+  );
+}
+
+function IconTextScanAi({
+  size = 18,
+  stroke = 1.7,
+  className = "",
+}: {
+  size?: number;
+  stroke?: number;
+  className?: string;
+}) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={stroke}
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M8 12h4.5M8 8h6m-6 8h2M3 7V5a2 2 0 0 1 2-2h2M3 17v2a2 2 0 0 0 2 2h2M17 3h2a2 2 0 0 1 2 2v2m-7 14v-4a2 2 0 1 1 4 0v4m-4-2h4m3-4v6" />
+    </svg>
   );
 }
 

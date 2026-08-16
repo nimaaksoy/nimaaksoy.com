@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Nima Aksoy Today",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A local-first daily new tab dashboard with calendar, Persian dates, Toman currency, private note, Radar, Prompts, and latest news.",
   "permissions": ["storage"],
   "host_permissions": ["https://nimaaksoy.com/*"],

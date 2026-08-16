@@ -23,21 +23,21 @@
       description: "Make any desktop app agent-native with structured CLIs for real software.",
       href: "https://nimaaksoy.com/radar/cli-anything",
       date: "2026-08-16",
-      stars: 0,
+      stars: 47489,
     },
     {
       title: "Open Design",
       description: "Open-source Claude Design alternative for local coding-agent design work.",
       href: "https://nimaaksoy.com/radar/open-design",
       date: "2026-08-15",
-      stars: 0,
+      stars: 86527,
     },
     {
       title: "Anthropic Skills",
       description: "Public Agent Skills repo with loadable instruction packs for specialized work.",
       href: "https://nimaaksoy.com/radar/anthropic-skills",
       date: "2026-08-14",
-      stars: 0,
+      stars: 169165,
     },
   ];
 
@@ -194,6 +194,10 @@
 
   function formatNumber(value, max = 0) {
     return new Intl.NumberFormat(locale(), { maximumFractionDigits: max }).format(value);
+  }
+
+  function formatPlainYear(value) {
+    return new Intl.NumberFormat(locale(), { useGrouping: false }).format(value);
   }
 
   function normalizeDigits(value) {
@@ -375,6 +379,22 @@
     }).format(date)}`;
   }
 
+  function formatNewsDate(value) {
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return "";
+    if (state.language === "fa") {
+      const parts = getPersianParts(date);
+      const time = new Intl.DateTimeFormat("fa-IR", { hour: "numeric", minute: "2-digit" }).format(date);
+      return `${formatNumber(parts.day)} ${PERSIAN_MONTHS_FA[parts.month - 1]}، ${time}`;
+    }
+    return new Intl.DateTimeFormat("en-US", {
+      month: "short",
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+    }).format(date);
+  }
+
   function populateSelect(select, values, currentValue) {
     select.replaceChildren(
       ...values.map((item) => {
@@ -496,7 +516,7 @@
     );
     populateSelect(
       $("[data-gregorian-year]"),
-      Array.from({ length: 181 }, (_, index) => ({ value: 1940 + index, label: formatNumber(1940 + index) })),
+      Array.from({ length: 181 }, (_, index) => ({ value: 1940 + index, label: formatPlainYear(1940 + index) })),
       state.gregorianParts.year
     );
     populateSelect(
@@ -517,7 +537,7 @@
     );
     populateSelect(
       $("[data-persian-year]"),
-      Array.from({ length: 181 }, (_, index) => ({ value: 1320 + index, label: formatNumber(1320 + index) })),
+      Array.from({ length: 181 }, (_, index) => ({ value: 1320 + index, label: formatPlainYear(1320 + index) })),
       state.persianParts.year
     );
 
@@ -611,15 +631,19 @@
     root.replaceChildren(
       ...items.slice(0, 3).map((item, index) => {
         const link = document.createElement("a");
-        link.className = options.media ? "content-card media" : "content-card";
+        const hasMedia = Boolean(options.media && item.image);
+        link.className = hasMedia ? "content-card media" : "content-card";
         link.href = item.href;
         link.target = "_blank";
         link.rel = "noopener";
-        const meta = item.stars ? `★ ${formatNumber(item.stars)} · ${item.date || ""}` : item.date || "";
-        const media = options.media ? `<span class="thumb" aria-hidden="true">${String(index + 1).padStart(2, "0")}</span>` : "";
+        const metaParts = [];
+        if (options.showStars && typeof item.stars === "number") metaParts.push(`☆ ${formatNumber(item.stars)}`);
+        if (options.showDate && item.date) metaParts.push(options.news ? formatNewsDate(item.date) : item.date);
+        const meta = metaParts.join(" · ");
+        const media = hasMedia ? `<span class="thumb" aria-hidden="true"><img src="${escapeHtml(item.image)}" alt=""></span>` : "";
         link.innerHTML = `${media}<span><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(
           item.description || ""
-        )}</p><span class="card-meta">${escapeHtml(meta)}</span></span>`;
+        )}</p>${meta ? `<span class="card-meta">${escapeHtml(meta)}</span>` : ""}</span>`;
         link.style.setProperty("--thumb-index", index);
         return link;
       })
@@ -634,7 +658,10 @@
       if (!response.ok) throw new Error("news");
       const data = await response.json();
       if (!data.ok || !Array.isArray(data.items)) throw new Error("news");
-      renderCards("[data-news-list]", data.items.map((item) => ({ ...item, href: item.href || "https://t.me/VahidOnline" })));
+      renderCards("[data-news-list]", data.items.map((item) => ({ ...item, href: item.href || "https://t.me/VahidOnline" })), {
+        showDate: true,
+        news: true,
+      });
     } catch {
       root.innerHTML = `<div class="content-card"><p>${COPY[state.language].couldNotLoadNews}</p></div>`;
     }
@@ -738,8 +765,8 @@
     renderCalendar();
     renderDateConverter();
     renderCurrency("left");
-    renderCards("[data-radar-list]", FALLBACK_RADAR);
-    renderCards("[data-prompt-list]", FALLBACK_PROMPTS, { media: true });
+    renderCards("[data-radar-list]", FALLBACK_RADAR, { showStars: true });
+    renderCards("[data-prompt-list]", FALLBACK_PROMPTS);
   }
 
   async function init() {
