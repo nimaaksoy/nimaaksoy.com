@@ -58,6 +58,63 @@
         }
       ],
       "youtube": "https://www.youtube.com/watch?v=zUAATNoA7wU"
+    },
+    {
+      "slug": "rakazo",
+      "name": "Rakazo",
+      "url": "https://github.com/elie222/rakazo",
+      "image": "https://opengraph.githubassets.com/1/elie222/rakazo",
+      "homepage": "https://rakazo.com",
+      "tags": [
+        "ai-agents",
+        "self-hosted",
+        "desktop",
+        "grok",
+        "sandbox"
+      ],
+      "verdict": "worth-testing",
+      "hasDemo": true,
+      "source": "github",
+      "take": {
+        "en": "Open-source Grok Bot. Each teammate gets its own computer, memory, and thread, and you pick the model.",
+        "fa": ""
+      },
+      "why": {
+        "en": "The Grok Bot idea is sticky: a persistent agent with a real desktop. The official one is closed. Rakazo is the same product shape you can self-host, swap models on, and run without a vendor control plane.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Rakazo is a beta web, desktop, and mobile app from Elie. Each bot has one thread, one computer, memory, routines, and history. A bot can spawn more bots as peers, or run short-lived subagents inside the current turn. The repo is the full core product. It runs locally with no Rakazo-operated backend.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Docker for Postgres, pnpm install, then pick a model through OpenRouter or sign in with ChatGPT, Copilot, or SuperGrok. The computer pane is a live Linux desktop. The model can see the screen, drive apps, run a terminal, and work on files. You can take the same desktop while it runs. Sandbox defaults to Docker; E2B is there for multi-user deploys.",
+        "fa": ""
+      },
+      "different": {
+        "en": "This is not another coding TUI or harness. It is the Grok Bot product: persistent teammates with a graphical computer you own, plus web, Electron, and Expo clients on the same API.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Rakazo is the open-source Grok Bot. each teammate gets a real computer, memory, and its own thread, and you bring the model.\n\nhttps://nimaaksoy.com/radar/rakazo",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Rakazo is worth testing if you liked Grok Bot but want to own the stack. self-hosted teammates with a live desktop, your model, no vendor control plane.\n\nhttps://nimaaksoy.com/radar/rakazo",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "LoopX",
+          "url": "https://nimaaksoy.com/radar/loopx"
+        },
+        {
+          "name": "OpenWorker",
+          "url": "https://nimaaksoy.com/radar/openworker"
+        }
+      ]
     }
   ]
 }
