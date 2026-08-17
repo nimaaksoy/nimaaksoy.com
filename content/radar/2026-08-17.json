@@ -1,0 +1,62 @@
+{
+  "date": "2026-08-17",
+  "items": [
+    {
+      "slug": "needle",
+      "name": "Needle",
+      "url": "https://github.com/cactus-compute/needle",
+      "image": "https://opengraph.githubassets.com/1/cactus-compute/needle",
+      "homepage": "https://cactuscompute.com",
+      "tags": [
+        "on-device-ai",
+        "tool-calling",
+        "edge",
+        "local-llm",
+        "structured-output"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "source": "github",
+      "take": {
+        "en": "A 14MB foundation model that does tool calling and structured extraction on phones, wearables, and robots.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most on-device models still chat. Founders shipping voice, home, and robot products need tiny models that call tools with JSON they can trust, stay offline, and fit in tens of megabytes of RAM. Needle turns that into a single pip package and a single binary engine.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Needle 2 is an open 45M-parameter Simple Attention Network from Cactus Compute, compressed to about 14MB with Cactus Quants and baked into its own engine. A full session runs near 28MB of RAM. It is built for tool calling, device control, and structured extraction, with a learned confidence head and a sliding window that keeps memory bounded no matter how long the conversation runs.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "pip install cactus-needle, decorate Python functions as tools or pass schemas, then run Needle so it picks calls, executes them, and returns structured results. For extraction, declare a Pydantic model or JSON schema and call extract(). Optional LoRA fine-tune plus export still lands as one .cact binary. A local playground UI is one command away for trying tools and prompts.",
+        "fa": ""
+      },
+      "different": {
+        "en": "This is not another giant local chat model or streaming MoE trick. It is a purpose-built edge foundation model for tools and structured IO, grammar-constrained decode from your schemas, confidence gating, and tool retrieval over large catalogues while staying under a phone-class memory budget.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Needle is wild. a 14MB open model that does real tool calling and structured extraction on-device, with grammar-constrained JSON and a confidence score, not another tiny chatbot.\n\nhttps://nimaaksoy.com/radar/needle",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Needle is worth a look if you are shipping on-device agents. open 45M model, ~14MB engine, tool calling and structured extraction with bounded memory for phones, wearables, and robots.\n\nhttps://nimaaksoy.com/radar/needle",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "Bonsai",
+          "url": "https://nimaaksoy.com/radar/bonsai"
+        },
+        {
+          "name": "Colibri",
+          "url": "https://nimaaksoy.com/radar/colibri"
+        }
+      ]
+    }
+  ]
+}
