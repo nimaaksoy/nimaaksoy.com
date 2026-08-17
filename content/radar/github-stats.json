@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-15T07:12:01Z",
+  "updatedAt": "2026-08-17T11:48:00.603Z",
   "source": "github-api",
   "repoCount": 25,
   "itemCount": 49,
@@ -334,6 +334,11 @@
     "needle": {
       "stars": 6815,
       "fetchedAt": "2026-08-17T07:12:33Z"
+    },
+    "rakazo": {
+      "stars": 649,
+      "repo": "elie222/rakazo",
+      "fetchedAt": "2026-08-17T11:48:00.603Z"
     }
   },
   "byRepo": {
@@ -605,6 +610,14 @@
     "cactus-compute/needle": {
       "stars": 6815,
       "fetchedAt": "2026-08-17T07:12:33Z"
+    },
+    "elie222/rakazo": {
+      "stars": 649,
+      "fullName": "elie222/rakazo",
+      "slugs": [
+        "rakazo"
+      ],
+      "fetchedAt": "2026-08-17T11:48:00.603Z"
     }
   },
   "errors": [
