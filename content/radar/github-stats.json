@@ -330,6 +330,10 @@
     "cli-anything": {
       "stars": 47489,
       "fetchedAt": "2026-08-16T07:06:14Z"
+    },
+    "needle": {
+      "stars": 6815,
+      "fetchedAt": "2026-08-17T07:12:33Z"
     }
   },
   "byRepo": {
@@ -597,6 +601,10 @@
       "stars": 47489,
       "fetchedAt": "2026-08-16T07:06:14Z",
       "slug": "cli-anything"
+    },
+    "cactus-compute/needle": {
+      "stars": 6815,
+      "fetchedAt": "2026-08-17T07:12:33Z"
     }
   },
   "errors": [
