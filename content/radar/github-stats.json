@@ -339,6 +339,10 @@
       "stars": 649,
       "repo": "elie222/rakazo",
       "fetchedAt": "2026-08-17T11:48:00.603Z"
+    },
+    "career-ops": {
+      "stars": 65021,
+      "fetchedAt": "2026-08-18T07:06:41Z"
     }
   },
   "byRepo": {
@@ -618,6 +622,11 @@
         "rakazo"
       ],
       "fetchedAt": "2026-08-17T11:48:00.603Z"
+    },
+    "santifer/career-ops": {
+      "stars": 65021,
+      "fetchedAt": "2026-08-18T07:06:41Z",
+      "slug": "career-ops"
     }
   },
   "errors": [
