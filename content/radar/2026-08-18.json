@@ -1,0 +1,62 @@
+{
+  "date": "2026-08-18",
+  "items": [
+    {
+      "slug": "career-ops",
+      "name": "career-ops",
+      "url": "https://github.com/santifer/career-ops",
+      "image": "https://opengraph.githubassets.com/1/santifer/career-ops",
+      "homepage": "https://career-ops.org",
+      "tags": [
+        "ai-agents",
+        "job-search",
+        "cli",
+        "career",
+        "automation"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "source": "github",
+      "take": {
+        "en": "Open-source AI job search that runs inside your coding CLI: score listings, tailor CVs, track applications locally.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Companies already filter candidates with AI. Founders and builders still chase roles with spreadsheets and spray-and-pray apps. career-ops turns Claude Code, Codex, OpenCode, and peers into a local filter that ranks fit, kills ghost jobs, and only spends energy on offers that clear a real bar.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "career-ops is an agent-skill system for job search. Paste a URL or JD and it classifies the role, runs a structured A–G evaluation against your CV (match, gaps, level, comp, personalization, interview prep, plus a separate legitimacy check), writes a report, can emit an ATS-ready PDF, and logs the row in one tracker. Portal scan covers 100+ preconfigured companies and major ATS feeds; batch mode fans work across sub-agents.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Run npx @santifer/career-ops init, open your AI coding CLI in that folder, and onboard with chat (CV, targets, preferences). Paste a job URL to trigger the pipeline, or use /career-ops modes for scan, evaluate, PDF, cover letter drafts, tracker, and negotiation scripts. Customize archetypes and weights by asking the same CLI to edit the repo files it already reads. Nothing submits applications for you; review stays human.",
+        "fa": ""
+      },
+      "different": {
+        "en": "This is not another coding harness and not a LinkedIn bot. It is a full job-ops product that borrows coding CLIs as the runtime: structured scoring instead of keyword spam, legitimacy and work-auth blockers, multi-CLI support, and a local source of truth built by someone who used it to land a Head of Applied AI role.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "career-ops is wild. it turns your coding CLI into a real job search ops stack — score offers A–F, kill ghost postings, tailor ATS CVs, track everything locally. not another spray-and-pray bot.\n\nhttps://nimaaksoy.com/radar/career-ops",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "career-ops is worth a look if you hire with AI or you are searching with one. open source job ops inside Claude Code, Codex, and peers: structured fit scores, legitimacy checks, tailored PDFs, portal scan, local tracker.\n\nhttps://nimaaksoy.com/radar/career-ops",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "CLI-Anything",
+          "url": "https://nimaaksoy.com/radar/cli-anything"
+        },
+        {
+          "name": "OpenWorker",
+          "url": "https://nimaaksoy.com/radar/openworker"
+        }
+      ]
+    }
+  ]
+}
