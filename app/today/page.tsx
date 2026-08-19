@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import { IconBrandChrome, IconExternalLink } from "@tabler/icons-react";
 import TodayDashboard from "@/components/today/TodayDashboard";
 import { SiteChrome } from "@/components/SiteChrome";
 import { getAllPrompts } from "@/lib/prompts";
 import { getAllRadarProjects } from "@/lib/radar";
+
+const CHROME_EXTENSION_URL =
+  "https://chromewebstore.google.com/detail/nima-aksoy-today/opbhlhnfhgidddaoombbhkafcmefbjip?authuser=0&hl=en";
 
 export const metadata: Metadata = {
   title: "Nima Aksoy Today — Daily Dashboard",
@@ -70,6 +74,36 @@ export default async function TodayPage() {
   return (
     <SiteChrome active="today">
       <TodayDashboard latestRadar={latestRadar} latestPrompts={latestPrompts} />
+      <section className="mx-auto max-w-[1280px] px-4 pb-5 md:px-8 md:pb-6">
+        <div className="flex flex-col gap-5 rounded-lg border border-[#1F1F1F] bg-[#101010] p-5 md:flex-row md:items-center md:justify-between md:p-6">
+          <div className="flex min-w-0 gap-4">
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-md bg-[#181818] text-[#2CFF05] ring-1 ring-[#2A2A2A]">
+              <IconBrandChrome size={22} stroke={1.7} />
+            </span>
+            <div className="min-w-0">
+              <p className="font-jetbrains text-[10px] uppercase tracking-[0.16em] text-[#7F7F7F]">
+                Chrome extension
+              </p>
+              <h2 className="mt-1 font-monroe text-[24px] font-light leading-tight text-[#EAEAEA]">
+                Make Today your new tab.
+              </h2>
+              <p className="mt-2 max-w-2xl text-[14px] leading-6 text-[#9A9A9A]">
+                Open the same calendar, note, rates, Radar, and prompts every time
+                Chrome starts a fresh page.
+              </p>
+            </div>
+          </div>
+          <a
+            href={CHROME_EXTENSION_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-md bg-[#2CFF05] px-4 font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#0A0A0A] transition hover:bg-[#EAEAEA] focus:outline-none focus:ring-2 focus:ring-[#2CFF05] focus:ring-offset-2 focus:ring-offset-[#101010]"
+          >
+            Add to Chrome
+            <IconExternalLink size={15} stroke={1.9} />
+          </a>
+        </div>
+      </section>
       <section className="mx-auto max-w-[1280px] px-4 pb-12 pt-2 md:px-8 md:pb-16">
         <div className="rounded-lg bg-[#0D0D0D] p-5 md:p-6">
           <p className="font-jetbrains text-[10px] uppercase tracking-[0.16em] text-[#7F7F7F]">
