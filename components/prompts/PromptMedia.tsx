@@ -21,6 +21,9 @@ export default function PromptMedia({ media, title, compact = false }: PromptMed
 
   const active = media[activeIndex] ?? media[0];
   const hasMultiple = media.length > 1;
+  const mediaClassName = compact
+    ? "block h-auto w-full object-contain"
+    : "block max-h-[620px] w-full object-contain";
 
   const previous = () => {
     setActiveIndex((index) => (index === 0 ? media.length - 1 : index - 1));
@@ -39,7 +42,7 @@ export default function PromptMedia({ media, title, compact = false }: PromptMed
           loading="lazy"
           // X/CDN hotlinks often 403 when Referer is our domain.
           referrerPolicy="no-referrer"
-          className={`w-full object-cover ${compact ? "max-h-[360px]" : "max-h-[620px]"}`}
+          className={mediaClassName}
         />
       ) : (
         <video
@@ -48,7 +51,7 @@ export default function PromptMedia({ media, title, compact = false }: PromptMed
           controls
           preload="metadata"
           playsInline
-          className={`w-full bg-black object-contain ${compact ? "max-h-[360px]" : "max-h-[620px]"}`}
+          className={`${mediaClassName} bg-black`}
           aria-label={active.alt || `${title} video`}
         />
       )}

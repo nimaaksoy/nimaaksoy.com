@@ -68,7 +68,7 @@ export default async function TodayPage() {
   }));
 
   return (
-    <SiteChrome active="tools">
+    <SiteChrome active="today">
       <TodayDashboard latestRadar={latestRadar} latestPrompts={latestPrompts} />
       <section className="mx-auto max-w-[1280px] px-4 pb-12 pt-2 md:px-8 md:pb-16">
         <div className="rounded-lg bg-[#0D0D0D] p-5 md:p-6">

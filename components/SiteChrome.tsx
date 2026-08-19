@@ -10,7 +10,7 @@ const GITHUB_URL = "https://github.com/nimaaksoy/nimaaksoy.com";
 
 type SiteChromeProps = {
   children: ReactNode;
-  active?: "home" | "radar" | "tools" | "prompts" | "stats";
+  active?: "home" | "radar" | "today" | "tools" | "prompts" | "stats";
 };
 
 function navClass(isActive: boolean) {
@@ -25,6 +25,7 @@ export function SiteChrome({ children, active }: SiteChromeProps) {
   const navItems = [
     { label: "Home", href: "/", isActive: active === "home" },
     { label: "Radar", href: radarHref, isActive: active === "radar" },
+    { label: "Today", href: "/today", isActive: active === "today" },
     { label: "Prompts", href: "/prompts", isActive: active === "prompts" },
     { label: "Tools", href: "/tools", isActive: active === "tools" },
     { label: "Stats", href: "/stats", isActive: active === "stats" },

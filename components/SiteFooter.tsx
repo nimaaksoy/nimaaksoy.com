@@ -65,6 +65,9 @@ export default function SiteFooter() {
               <Link href="/radar" className="transition hover:text-[#2CFF05]">
                 Radar
               </Link>
+              <Link href="/today" className="transition hover:text-[#2CFF05]">
+                Today
+              </Link>
               <Link href="/tools" className="transition hover:text-[#2CFF05]">
                 Tools
               </Link>

@@ -22,7 +22,7 @@ const codeClassName = "mx-1 rounded bg-[#151515] px-1.5 py-0.5 font-jetbrains te
 
 export default function TodayPrivacyPage() {
   return (
-    <SiteChrome active="tools">
+    <SiteChrome active="today">
       <div className="mx-auto max-w-3xl px-6 py-14 md:py-20">
         <article className="space-y-10 font-monroe text-[15px] leading-7 text-[#B8B8B8]">
           <div className="space-y-4 border-b border-[#1F1F1F] pb-10">

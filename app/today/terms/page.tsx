@@ -21,7 +21,7 @@ const headingClassName =
 
 export default function TodayTermsPage() {
   return (
-    <SiteChrome active="tools">
+    <SiteChrome active="today">
       <div className="mx-auto max-w-3xl px-6 py-14 md:py-20">
         <article className="space-y-10 font-monroe text-[15px] leading-7 text-[#B8B8B8]">
           <div className="space-y-4 border-b border-[#1F1F1F] pb-10">
