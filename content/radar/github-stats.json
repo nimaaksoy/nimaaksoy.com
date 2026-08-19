@@ -343,6 +343,10 @@
     "career-ops": {
       "stars": 65021,
       "fetchedAt": "2026-08-18T07:06:41Z"
+    },
+    "openviking": {
+      "stars": 29654,
+      "fetchedAt": "2026-08-19T07:06:04Z"
     }
   },
   "byRepo": {
@@ -627,6 +631,14 @@
       "stars": 65021,
       "fetchedAt": "2026-08-18T07:06:41Z",
       "slug": "career-ops"
+    },
+    "volcengine/OpenViking": {
+      "stars": 29654,
+      "fetchedAt": "2026-08-19T07:06:04Z"
+    },
+    "volcengine/openviking": {
+      "stars": 29654,
+      "fetchedAt": "2026-08-19T07:06:04Z"
     }
   },
   "errors": [
