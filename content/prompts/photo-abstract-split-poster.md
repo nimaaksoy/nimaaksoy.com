@@ -27,12 +27,12 @@ authorUrl: "https://x.com/didicvj7"
 date: "2026-08-19"
 featured: false
 ---
-请将我上传的每一张照片分别做成一张独立的高级极简设计海报，不多图拼接，每张照片都要单独输出。
+For each photo I upload, create a separate high-end minimalist design poster individually—no multi-image collages; output each photo as a standalone piece.
 
-整体采用 3:4 竖版构图，上下两个区域高度严格 1:1，各占画面 50%。
+Overall, adopt a 3:4 vertical composition, with the upper and lower sections strictly at a 1:1 height ratio, each occupying 50% of the frame.
 
-上半部分保留原始照片，保持主体结构、真实质感、自然光影和原有色彩氛围，仅进行轻微高级摄影调色，使其具有杂志摄影和艺术展览质感。为适配画幅，可以自然扩展天空、地面或环境背景，但不得拉伸、扭曲或改变主体。
+The upper half preserves the original photo, maintaining the main structure, authentic texture, natural light and shadow, and original color atmosphere, with only subtle professional photography color grading to give it a sense of professional photography and art exhibition quality. To fit the aspect ratio, naturally extend the sky, ground, or environmental background, but do not stretch, distort, or alter the main subject.
 
-下半部分提取照片中主体最具识别性的轮廓与结构，使用简洁几何形状、扁平色块、细线条和留白进行极简抽象化表达。不要写实插画，不要复杂细节，但要保留主体特征，让人能够一眼识别原物。配色从上方照片中提取，可加入少量水平线、纵向结构线或抽象环境元素。
+The lower half extracts the most recognizable outline and structure of the main subject from the photo, using simple geometric shapes, flat colors, fine lines, and white space for a stylized abstract expression. Avoid realistic illustrations or complex details, but preserve the subject's key features so that the original item is instantly recognizable. Color palette extracted from the upper photo, with minimal horizontal lines, vertical lines, or abstract border elements added.
 
-整体使用米白色或浅色背景，大面积留白，主体居中，构图平衡克制。可加入少量简洁英文标题、编号或年份。风格参考国际设计工作室、建筑海报、艺术展览海报和高级品牌视觉系统。高级、现代、安静、艺术化，避免普通滤镜、廉价矢量感、卡通、电商感和模板感。
+Overall, use a beige or light-colored background, ample white space, main subject centered, and a balanced, restrained composition. May include a small amount of concise English titles, symbols, years, or style references from international design studios, architectural posters, art exhibition posters, and high-end brand visual systems—elegant, modern, refined, artistic, avoiding vulgar clichés, cheap low-quality feel, cartoonish, electronic, or templated sensations.
