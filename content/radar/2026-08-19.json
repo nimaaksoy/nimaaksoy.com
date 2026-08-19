@@ -27,7 +27,7 @@
         "fa": ""
       },
       "explanation": {
-        "en": "OpenViking is an open-source context database from Volcengine. It unifies agent memory, knowledge/RAG resources, and skills as one virtual filesystem under the viking:// protocol. Each entry is written into three tiers — L0 abstract, L1 overview, L2 full detail — so agents load only as deep as the task needs. Sessions can commit into long-term preferences and experience memory. There is a hosted Studio playground, server + CLI install, and published LoCoMo / tau2-bench numbers on memory accuracy and token savings.",
+        "en": "OpenViking is an open-source context database from Volcengine. It unifies agent memory, knowledge/RAG resources, and skills as one virtual filesystem under the viking:// protocol. Each entry is written into three tiers \u2014 L0 abstract, L1 overview, L2 full detail \u2014 so agents load only as deep as the task needs. Sessions can commit into long-term preferences and experience memory. There is a hosted Studio playground, server + CLI install, and published LoCoMo / tau2-bench numbers on memory accuracy and token savings.",
         "fa": ""
       },
       "howItWorks": {
@@ -40,7 +40,7 @@
       },
       "share": {
         "x": {
-          "en": "OpenViking is wild. agents get a real context database under viking:// — memory, docs, and skills as files with L0/L1/L2 tiers, so they load only what they need and you can debug the path they took.\n\nhttps://nimaaksoy.com/radar/openviking",
+          "en": "OpenViking is wild. agents get a real context database under viking:// \u2014 memory, docs, and skills as files with L0/L1/L2 tiers, so they load only what they need and you can debug the path they took.\n\nhttps://nimaaksoy.com/radar/openviking",
           "fa": ""
         },
         "linkedin": {
@@ -57,7 +57,8 @@
           "name": "Paritok",
           "url": "https://nimaaksoy.com/radar/paritok"
         }
-      ]
+      ],
+      "youtube": "https://www.youtube.com/watch?v=U-pNdmiwFt0"
     }
   ]
 }
