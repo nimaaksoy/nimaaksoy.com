@@ -1,0 +1,63 @@
+{
+  "date": "2026-08-19",
+  "items": [
+    {
+      "slug": "openviking",
+      "name": "OpenViking",
+      "url": "https://github.com/volcengine/OpenViking",
+      "image": "https://opengraph.githubassets.com/1/volcengine/OpenViking",
+      "homepage": "https://openviking.ai/",
+      "tags": [
+        "ai-agents",
+        "context",
+        "memory",
+        "rag",
+        "skills"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": true,
+      "source": "github",
+      "take": {
+        "en": "A context database for agents: memories, docs, and skills live under viking:// so the model browses context like files, not a black-box vector dump.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Agent memory is usually a vague retrieval bag that burns tokens and is hard to debug. Founders shipping multi-session agents need a real store they can inspect, tier, and evolve. OpenViking turns context into something you can ls, tree, and audit with a path history.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "OpenViking is an open-source context database from Volcengine. It unifies agent memory, knowledge/RAG resources, and skills as one virtual filesystem under the viking:// protocol. Each entry is written into three tiers — L0 abstract, L1 overview, L2 full detail — so agents load only as deep as the task needs. Sessions can commit into long-term preferences and experience memory. There is a hosted Studio playground, server + CLI install, and published LoCoMo / tau2-bench numbers on memory accuracy and token savings.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "pip install openviking, run openviking-server init and doctor, then start the server. Point agents at the ov client or APIs and address context with viking:// URIs for resources, memories, and skills. Retrieval first finds a high-scoring directory, then drills down layer by layer while keeping the browse trajectory for debugging. After a session ends, async extraction can fold user preferences and agent experience back into durable memory.",
+        "fa": ""
+      },
+      "different": {
+        "en": "This is not another coding harness and not a single-repo memory MCP. It is a context database product with a filesystem metaphor, tiered loading to cut tokens, observable directory trajectories, and a live Studio demo. You get one place for memory, RAG resources, and skills instead of three disconnected stores.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "OpenViking is wild. agents get a real context database under viking:// — memory, docs, and skills as files with L0/L1/L2 tiers, so they load only what they need and you can debug the path they took.\n\nhttps://nimaaksoy.com/radar/openviking",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "OpenViking is worth a look if your agents keep drowning in context. open-source context DB: viking:// filesystem for memory + RAG + skills, tiered loading, observable retrieval, session experience that becomes long-term memory.\n\nhttps://nimaaksoy.com/radar/openviking",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "codebase-memory-mcp",
+          "url": "https://nimaaksoy.com/radar/codebase-memory-mcp"
+        },
+        {
+          "name": "Paritok",
+          "url": "https://nimaaksoy.com/radar/paritok"
+        }
+      ]
+    }
+  ]
+}
