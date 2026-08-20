@@ -1,0 +1,63 @@
+{
+  "date": "2026-08-20",
+  "items": [
+    {
+      "slug": "portless",
+      "name": "Portless",
+      "url": "https://github.com/vercel-labs/portless",
+      "image": "https://opengraph.githubassets.com/1/vercel-labs/portless",
+      "homepage": "https://portless.sh",
+      "tags": [
+        "developer-tools",
+        "local-dev",
+        "agents",
+        "dx",
+        "proxy"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": false,
+      "source": "github",
+      "take": {
+        "en": "Swap localhost:3000 chaos for stable named URLs like https://myapp.localhost — built for humans and agents.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Every multi-app founder still juggles random ports, broken deep links, and agents that forget which service is on which number. Portless makes local URLs durable so demos, worktrees, and agent tools keep the same hostnames after restarts.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Portless is an open-source local proxy from Vercel Labs. You run your dev server through it and get HTTPS named hosts under .localhost instead of remembering port numbers. It auto-starts a proxy, assigns a backend port, trusts a local CA, and works with Next, Vite, Expo, monorepos, Turborepo, and git worktrees. Agents and humans share the same stable URLs.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install with npm i -g portless, then run portless myapp next dev or bare portless to pick up the package.json dev script. First run sets up TLS and binds 443. Subdomains cover api.myapp.localhost style splits. Linked worktrees get a branch prefix automatically so feature branches do not collide. Optional portless.json or a package.json portless key locks names for teams.",
+        "fa": ""
+      },
+      "different": {
+        "en": "This is not another coding agent and not a tunnel to the public internet. It is local DX infrastructure: named, HTTPS, worktree-aware routes that stay put so agent tools and human bookmarks stop chasing ports.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Portless is the local URL fix agents needed. drop localhost:3847 forever — run through portless and get stable https://myapp.localhost links that survive restarts, monorepos, and worktrees.\n\nhttps://nimaaksoy.com/radar/portless",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Portless from Vercel Labs is worth a look if your stack still lives on random localhost ports. named .localhost HTTPS URLs for humans and agents, monorepo + worktree aware, no public tunnel required.\n\nhttps://nimaaksoy.com/radar/portless",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "CLI-Anything",
+          "url": "https://nimaaksoy.com/radar/cli-anything"
+        },
+        {
+          "name": "OmniRoute",
+          "url": "https://nimaaksoy.com/radar/omniroute"
+        }
+      ]
+    }
+  ]
+}
