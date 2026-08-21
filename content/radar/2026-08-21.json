@@ -1,0 +1,64 @@
+{
+  "date": "2026-08-21",
+  "items": [
+    {
+      "slug": "watermarks-remover",
+      "name": "watermarks-remover",
+      "url": "https://github.com/guillaumemeyer/watermarks-remover",
+      "image": "https://opengraph.githubassets.com/1/guillaumemeyer/watermarks-remover",
+      "homepage": "https://github.com/guillaumemeyer/watermarks-remover",
+      "tags": [
+        "ai",
+        "provenance",
+        "c2pa",
+        "agent-skill",
+        "privacy",
+        "content"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": false,
+      "hasApi": true,
+      "source": "github",
+      "take": {
+        "en": "Agent skill + local HTTP service that strips multi-vendor AI provenance marks from text and files you own.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Founders ship drafts, assets, and decks that accumulate invisible Unicode, C2PA bags, and model metadata they never asked for. You need a hygiene layer that agents can call, not a one-off hex edit. This turns provenance cleanup into inspect and clean endpoints with a real skill path.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "watermarks-remover is an open-source MIT toolkit for authorized content hygiene. Layer A removes invisible Unicode, bidi tricks, and exotic spaces. Layer B is best-effort rewrite against sampling-style text watermarks. File cleaners strip C2PA, EXIF, XMP, and document props across images, PDF, Office, HTML, Markdown, and common media. Coverage is class-level for Claude, Gemini SynthID-Text, OpenAI provenance surfaces, and open-LLM green-list style marks. The agent skill is markdown-only and drives a stdlib Python HTTP service, so the host does not need to vendor the scrubbers.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Start the local service with make serve or python3 service/scripts/server.py on loopback. Link skills/remove-ai-marks into your agent skills folder and call /remove-ai-marks or ask to strip AI marks. CLI path is inspect_file.py then clean_file.py on a draft or image. HTTP exposes /health, /inspect, /detect, /clean, and batch variants with base64 payloads and OpenAPI. Optional Docker adds heavier backends. Prefer a non-origin model if you run Layer B rewrite so you do not re-stamp the text.",
+        "fa": ""
+      },
+      "different": {
+        "en": "This is not another coding harness and not anti-slop lint for TypeScript. It is a multi-format provenance stripper with a skill plus HTTP API, honest best-effort wording on statistical marks, and format-safe routing so you do not corrupt Office or binary files by treating them as UTF-8.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "watermarks-remover is the AI content hygiene tool founders actually needed. strip invisible Unicode, C2PA, and multi-vendor provenance from text and files via a local skill + HTTP service — for content you own.\n\nhttps://nimaaksoy.com/radar/watermarks-remover",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "watermarks-remover is worth a look if your AI pipeline leaves invisible marks on drafts and assets. open-source agent skill + local HTTP service: Unicode hygiene, C2PA/metadata cleaners across images and docs, best-effort text watermark rewrite, OpenAPI endpoints.\n\nhttps://nimaaksoy.com/radar/watermarks-remover",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "no-ai-slop",
+          "url": "https://nimaaksoy.com/radar/no-ai-slop"
+        },
+        {
+          "name": "Hallmark",
+          "url": "https://nimaaksoy.com/radar/hallmark"
+        }
+      ]
+    }
+  ]
+}
