@@ -351,6 +351,11 @@
     "portless": {
       "stars": 10662,
       "fetchedAt": "2026-08-20T07:05:51Z"
+    },
+    "watermarks-remover": {
+      "stars": 16207,
+      "repo": "guillaumemeyer/watermarks-remover",
+      "fetchedAt": "2026-08-21T07:06:38Z"
     }
   },
   "byRepo": {
@@ -647,6 +652,10 @@
     "vercel-labs/portless": {
       "stars": 10662,
       "fetchedAt": "2026-08-20T07:05:51Z"
+    },
+    "guillaumemeyer/watermarks-remover": {
+      "stars": 16207,
+      "fetchedAt": "2026-08-21T07:06:38Z"
     }
   },
   "errors": [
