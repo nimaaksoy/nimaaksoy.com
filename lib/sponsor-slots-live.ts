@@ -1,5 +1,6 @@
 import type Stripe from "stripe";
 
+import { hogql } from "@/lib/site-analytics";
 import { sponsorSlots, type SponsorSlot } from "@/lib/sponsor-slots";
 import { getStripe } from "@/lib/stripe";
 
@@ -56,6 +57,36 @@ function sponsorFromSession(session: Stripe.Checkout.Session): SponsorSlot | nul
   };
 }
 
+function toNumber(value: unknown) {
+  const number = Number(value);
+  return Number.isFinite(number) ? number : 0;
+}
+
+async function getSponsorMetricTotals() {
+  const rows = await hogql(`
+    SELECT
+      coalesce(properties.slot_id, '') AS slot_id,
+      countIf(event = 'sponsor_impression') AS impressions,
+      countIf(event = 'sponsor_click') AS clicks
+    FROM events
+    WHERE event IN ('sponsor_impression', 'sponsor_click')
+      AND timestamp > now() - INTERVAL 30 DAY
+    GROUP BY slot_id
+    LIMIT 100
+  `);
+
+  const totals = new Map<string, { impressions: number; clicks: number }>();
+
+  for (const [slotId, impressions, clicks] of rows) {
+    totals.set(String(slotId).toUpperCase(), {
+      impressions: toNumber(impressions),
+      clicks: toNumber(clicks),
+    });
+  }
+
+  return totals;
+}
+
 export async function getSponsorSlots(): Promise<SponsorSlot[]> {
   try {
     const stripe = getStripe();
@@ -66,12 +97,18 @@ export async function getSponsorSlots(): Promise<SponsorSlot[]> {
       status: "complete",
     });
     const activeBySlot = new Map<string, SponsorSlot>();
+    const metricTotals = await getSponsorMetricTotals();
 
     for (const session of sessions.data) {
       const sponsor = sponsorFromSession(session);
 
       if (sponsor && !activeBySlot.has(sponsor.id)) {
-        activeBySlot.set(sponsor.id, sponsor);
+        const metrics = metricTotals.get(sponsor.id);
+        activeBySlot.set(sponsor.id, {
+          ...sponsor,
+          impressions: metrics?.impressions || 0,
+          clicks: metrics?.clicks || 0,
+        });
       }
     }
 

@@ -4,12 +4,16 @@ import Image from "next/image";
 import { useState } from "react";
 import {
   IconArrowRight,
+  IconEye,
   IconLink,
   IconLoader2,
   IconPhoto,
+  IconPointer,
   IconUpload,
   IconX,
 } from "@tabler/icons-react";
+
+import { formatSponsorMetric } from "@/lib/sponsor-metrics";
 
 export type SponsorSlotForBoard = {
   id: string;
@@ -19,6 +23,8 @@ export type SponsorSlotForBoard = {
   href: string;
   logo: string;
   status: "taken" | "open";
+  impressions?: number;
+  clicks?: number;
   reservedUntil?: string;
 };
 
@@ -99,7 +105,15 @@ function SlotAd({ slot }: { slot: SponsorSlotForBoard }) {
   return (
     <a
       href={slot.href}
-      className="group grid h-[86px] grid-cols-[48px_1fr] gap-3 overflow-hidden rounded-[8px] border border-[#202020] bg-[#111111] p-3 transition hover:border-[#2CFF05]/60 hover:bg-[#151515]"
+      target="_blank"
+      rel="noreferrer sponsored"
+      onClick={() => {
+        window.posthog?.capture("sponsor_click", {
+          slot_id: slot.id,
+          sponsor_name: slot.name,
+        });
+      }}
+      className="group relative grid h-[86px] grid-cols-[48px_1fr] gap-3 overflow-hidden rounded-[8px] border border-[#202020] bg-[#111111] p-3 transition hover:border-[#2CFF05]/60 hover:bg-[#151515]"
     >
       <Image
         src={slot.logo}
@@ -108,7 +122,7 @@ function SlotAd({ slot }: { slot: SponsorSlotForBoard }) {
         height={48}
         className="aspect-square rounded-[8px] border border-[#242424] object-cover"
       />
-      <div className="min-w-0">
+      <div className="min-w-0 pr-16">
         <h3 className="truncate font-monroe text-[16px] font-light leading-[1.2] text-[#EAEAEA]">
           {slot.name}
         </h3>
@@ -116,6 +130,16 @@ function SlotAd({ slot }: { slot: SponsorSlotForBoard }) {
           {slot.line}
         </p>
       </div>
+      <span className="pointer-events-none absolute bottom-2 right-2 flex items-center gap-2 font-jetbrains text-[9px] text-[#6F6F6F]">
+        <span className="inline-flex items-center gap-1">
+          <IconEye size={11} stroke={1.8} />
+          {formatSponsorMetric(slot.impressions)}
+        </span>
+        <span className="inline-flex items-center gap-1">
+          <IconPointer size={11} stroke={1.8} />
+          {formatSponsorMetric(slot.clicks)}
+        </span>
+      </span>
     </a>
   );
 }

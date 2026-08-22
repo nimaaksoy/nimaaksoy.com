@@ -4,11 +4,14 @@ import {
   IconArrowRight,
   IconCheck,
   IconClock,
+  IconEye,
   IconLock,
+  IconPointer,
 } from "@tabler/icons-react";
 
 import { SiteChrome } from "@/components/SiteChrome";
 import { getSiteAnalytics } from "@/lib/site-analytics";
+import { formatSponsorMetric } from "@/lib/sponsor-metrics";
 import { type SponsorSlot } from "@/lib/sponsor-slots";
 import { getSponsorSlots } from "@/lib/sponsor-slots-live";
 import SponsorSlotBoard from "./SponsorSlotBoard";
@@ -91,7 +94,9 @@ function SponsorBanner({ slot }: { slot: SponsorSlot }) {
   return (
     <a
       href={slot.href}
-      className="group grid h-[86px] grid-cols-[48px_1fr] gap-3 overflow-hidden rounded-[8px] border border-[#202020] bg-[#111111] p-3 transition hover:border-[#2CFF05]/60 hover:bg-[#151515]"
+      target="_blank"
+      rel="noreferrer sponsored"
+      className="group relative grid h-[86px] grid-cols-[48px_1fr] gap-3 overflow-hidden rounded-[8px] border border-[#202020] bg-[#111111] p-3 transition hover:border-[#2CFF05]/60 hover:bg-[#151515]"
     >
       <Image
         src={slot.logo}
@@ -100,7 +105,7 @@ function SponsorBanner({ slot }: { slot: SponsorSlot }) {
         height={48}
         className="aspect-square rounded-[8px] border border-[#242424] object-cover"
       />
-      <div className="min-w-0">
+      <div className="min-w-0 pr-16">
         <h3 className="truncate font-monroe text-[16px] font-light text-[#EAEAEA]">
           {slot.name}
         </h3>
@@ -108,6 +113,16 @@ function SponsorBanner({ slot }: { slot: SponsorSlot }) {
           {slot.line}
         </p>
       </div>
+      <span className="pointer-events-none absolute bottom-2 right-2 flex items-center gap-2 font-jetbrains text-[9px] text-[#6F6F6F]">
+        <span className="inline-flex items-center gap-1">
+          <IconEye size={11} stroke={1.8} />
+          {formatSponsorMetric(slot.impressions)}
+        </span>
+        <span className="inline-flex items-center gap-1">
+          <IconPointer size={11} stroke={1.8} />
+          {formatSponsorMetric(slot.clicks)}
+        </span>
+      </span>
     </a>
   );
 }
@@ -132,6 +147,8 @@ function MobileBannerCard({ slot }: { slot: SponsorSlot }) {
   return (
     <a
       href={slot.href}
+      target="_blank"
+      rel="noreferrer sponsored"
       className="grid h-9 w-[132px] shrink-0 grid-cols-[24px_1fr] items-center gap-2 overflow-hidden rounded-[6px] border border-[#202020] bg-[#111111] px-2"
     >
       <Image

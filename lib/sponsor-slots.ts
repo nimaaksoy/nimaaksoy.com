@@ -6,6 +6,8 @@ export type SponsorSlot = {
   href: string;
   logo: string;
   status: "taken" | "open";
+  impressions?: number;
+  clicks?: number;
   reservedUntil?: string;
 };
 

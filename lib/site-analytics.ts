@@ -108,7 +108,7 @@ function toNumber(value: unknown) {
   return Number.isFinite(number) ? number : 0;
 }
 
-async function hogql(query: string): Promise<HogqlRow[]> {
+export async function hogql(query: string): Promise<HogqlRow[]> {
   if (!projectId || !personalKey) {
     return [];
   }
