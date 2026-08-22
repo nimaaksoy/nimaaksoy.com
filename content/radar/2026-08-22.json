@@ -1,0 +1,65 @@
+{
+  "date": "2026-08-22",
+  "items": [
+    {
+      "slug": "tracely",
+      "name": "Tracely",
+      "url": "https://github.com/Jwuthri/Tracely",
+      "image": "https://opengraph.githubassets.com/1/Jwuthri/Tracely",
+      "homepage": "https://tracely-studio.xyz",
+      "tags": [
+        "ai-agents",
+        "observability",
+        "ci-cd",
+        "evals",
+        "llmops",
+        "mcp"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": true,
+      "hasMcp": true,
+      "source": "github",
+      "take": {
+        "en": "Trace-native CI for agents: production failures freeze into hermetic cases that block the PR for $0 replay.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most agent eval stacks make you invent datasets. Real breakage already shows up in production traces with the exact tools and model turns. Founders shipping agents need those failures to become gates, not another dashboard tab you check after the customer complains.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Tracely is an open-source, self-hostable stack for agent observability that closes the loop into CI. Traces land over OTLP with agent, conversation, and turn columns. Online evaluators grade runs as they arrive. Failures cluster into issues. One click freezes a bad run into a hermetic regression case with recorded tool and LLM fixtures, then tracely gate replays the suite offline on every PR with no live model spend. Docker Compose and a Railway one-click deploy bring up API, worker, UI, Postgres, ClickHouse, Redis, and MinIO. There is an MCP endpoint so coding agents can drive the workspace, plus alerts that can hit Slack, email, or webhooks.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Clone and run docker compose --profile demo up to open a seeded UI on localhost:3001. Point your agent with pip install tracely-ai and tracely.init against your endpoint and ingest key, then wrap runs in tracely.trace. Wire structural checks and LLM judges as columns on the trace table. Promote a failing cluster into a case, attach fail-to-pass contracts, and run tracely gate or the GitHub Action so a regression fails the PR with a commit status and comment.",
+        "fa": ""
+      },
+      "different": {
+        "en": "This is not another coding harness and not a hand-written eval spreadsheet. The recorded production run is the test. Replay is deterministic and free of API keys in CI, while live judges still watch prod. You get observe, cluster, freeze, gate, and alert in one product instead of stitching three SaaS tools.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Tracely is the agent CI loop founders needed. production traces grade themselves, failures cluster, and you freeze the exact bad run into a hermetic case that blocks the PR — $0 replay, no hand-built eval set.\n\nhttps://nimaaksoy.com/radar/tracely",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Tracely is worth a look if your agents break in prod and your eval suite is still a guess. open-source trace-native CI: OTLP ingest, failure clusters, hermetic regression cases, offline PR gates, MCP + self-host stack.\n\nhttps://nimaaksoy.com/radar/tracely",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "Deepsec",
+          "url": "https://nimaaksoy.com/radar/deepsec"
+        },
+        {
+          "name": "meat",
+          "url": "https://nimaaksoy.com/radar/meat"
+        }
+      ]
+    }
+  ]
+}
