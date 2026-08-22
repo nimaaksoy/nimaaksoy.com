@@ -1,0 +1,269 @@
+"use client";
+
+import Image from "next/image";
+import { useState } from "react";
+import { IconArrowRight, IconLoader2, IconX } from "@tabler/icons-react";
+
+export type SponsorSlotForBoard = {
+  id: string;
+  rail: "left" | "right";
+  name: string;
+  line: string;
+  href: string;
+  logo: string;
+  status: "taken" | "open";
+  reservedUntil?: string;
+};
+
+type CheckoutResponse = {
+  checkoutUrl?: string;
+  error?: string;
+};
+
+function SlotAd({ slot }: { slot: SponsorSlotForBoard }) {
+  return (
+    <a
+      href={slot.href}
+      className="group grid h-[86px] grid-cols-[48px_1fr] gap-3 overflow-hidden rounded-[8px] border border-[#202020] bg-[#111111] p-3 transition hover:border-[#2CFF05]/60 hover:bg-[#151515]"
+    >
+      <Image
+        src={slot.logo}
+        alt={`${slot.name} logo`}
+        width={48}
+        height={48}
+        className="aspect-square rounded-[8px] border border-[#242424] object-cover"
+      />
+      <div className="min-w-0">
+        <h3 className="truncate font-monroe text-[16px] font-light leading-[1.2] text-[#EAEAEA]">
+          {slot.name}
+        </h3>
+        <p className="mt-1 line-clamp-2 font-jetbrains text-[10px] leading-[1.45] text-[#9A9A9A]">
+          {slot.line}
+        </p>
+      </div>
+    </a>
+  );
+}
+
+function OpenSlotAd({ onClick }: { onClick: () => void }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="grid h-[86px] grid-cols-[48px_1fr] gap-3 overflow-hidden rounded-[8px] border border-[#2CFF05]/70 bg-[#111111] p-3 text-left transition hover:border-[#2CFF05] hover:bg-[#151515]"
+    >
+      <span className="flex aspect-square h-12 w-12 items-center justify-center rounded-[8px] border border-[#242424]">
+        <span className="font-monroe text-[26px] font-light text-[#2CFF05]">+</span>
+      </span>
+      <span className="min-w-0">
+        <span className="block truncate font-monroe text-[16px] font-light leading-[1.2] text-[#EAEAEA]">
+          Become sponsor
+        </span>
+        <span className="mt-1 block font-jetbrains text-[10px] leading-[1.45] text-[#9A9A9A]">
+          Add your ad details and continue to payment.
+        </span>
+      </span>
+    </button>
+  );
+}
+
+export default function SponsorSlotBoard({ slots }: { slots: SponsorSlotForBoard[] }) {
+  const [selectedSlot, setSelectedSlot] = useState<SponsorSlotForBoard | null>(null);
+  const [months, setMonths] = useState<1 | 3>(1);
+  const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
+  const [error, setError] = useState("");
+
+  function closeModal() {
+    setSelectedSlot(null);
+    setMonths(1);
+    setStatus("idle");
+    setError("");
+  }
+
+  async function handleSubmit(formData: FormData) {
+    if (!selectedSlot) {
+      return;
+    }
+
+    setStatus("loading");
+    setError("");
+
+    const response = await fetch("/api/sponsor-checkout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        slotId: selectedSlot.id,
+        months,
+        company: formData.get("company"),
+        text: formData.get("text"),
+        logoUrl: formData.get("logoUrl"),
+        url: formData.get("url"),
+        email: formData.get("email"),
+      }),
+    });
+    const payload = (await response.json()) as CheckoutResponse;
+
+    if (!response.ok || !payload.checkoutUrl) {
+      setStatus("error");
+      setError(payload.error || "Checkout could not be started.");
+      return;
+    }
+
+    window.location.href = payload.checkoutUrl;
+  }
+
+  return (
+    <>
+      <div className="mt-5 grid gap-4 sm:grid-cols-[repeat(auto-fill,220px)]">
+        {slots.map((slot) => (
+          <article key={slot.id} className="w-full sm:w-[220px]">
+            {slot.status === "taken" ? (
+              <SlotAd slot={slot} />
+            ) : (
+              <OpenSlotAd onClick={() => setSelectedSlot(slot)} />
+            )}
+            <div className="mt-2 flex min-h-5 items-center justify-between gap-3 font-jetbrains text-[10px] uppercase text-[#7F7F7F]">
+              <span>
+                Slot {slot.id} · {slot.rail === "left" ? "Left rail" : "Right rail"}
+              </span>
+              {slot.status === "taken" && slot.reservedUntil ? (
+                <span>Available {slot.reservedUntil}</span>
+              ) : (
+                <span className="text-[#2CFF05]">Open</span>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+
+      {selectedSlot ? (
+        <div className="fixed inset-0 z-[80] flex items-center justify-center bg-black/70 px-4 py-6 backdrop-blur-sm">
+          <div className="max-h-[90vh] w-full max-w-[620px] overflow-auto rounded-[8px] border border-[#242424] bg-[#111111] p-5 shadow-2xl">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="font-jetbrains text-[10px] uppercase text-[#7F7F7F]">
+                  Slot {selectedSlot.id}
+                </p>
+                <h3 className="mt-2 font-monroe text-[30px] font-light text-[#EAEAEA]">
+                  Become sponsor
+                </h3>
+              </div>
+              <button
+                type="button"
+                onClick={closeModal}
+                className="inline-flex h-9 w-9 items-center justify-center rounded-[8px] border border-[#262626] text-[#9A9A9A] transition hover:border-[#2CFF05]/60 hover:text-[#EAEAEA]"
+                aria-label="Close"
+              >
+                <IconX size={16} />
+              </button>
+            </div>
+
+            <form action={handleSubmit} className="mt-5 space-y-4">
+              <div className="grid grid-cols-2 gap-2 rounded-[8px] border border-[#1F1F1F] bg-[#0A0A0A] p-1">
+                {([1, 3] as const).map((option) => (
+                  <button
+                    key={option}
+                    type="button"
+                    onClick={() => setMonths(option)}
+                    className={`min-h-10 rounded-[6px] px-3 font-jetbrains text-[11px] uppercase transition ${
+                      months === option
+                        ? "bg-[#2CFF05] text-[#0A0A0A]"
+                        : "text-[#9A9A9A] hover:text-[#EAEAEA]"
+                    }`}
+                  >
+                    {option} {option === 1 ? "month" : "months"} · ${option * 300}
+                  </button>
+                ))}
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-2">
+                <label className="space-y-2">
+                  <span className="font-jetbrains text-[10px] uppercase text-[#7F7F7F]">
+                    Name · 28 max
+                  </span>
+                  <input
+                    name="company"
+                    required
+                    maxLength={28}
+                    placeholder="Company"
+                    className="h-11 w-full rounded-[8px] border border-[#262626] bg-[#0A0A0A] px-3 font-jetbrains text-[12px] text-[#EAEAEA] outline-none transition focus:border-[#2CFF05]"
+                  />
+                </label>
+                <label className="space-y-2">
+                  <span className="font-jetbrains text-[10px] uppercase text-[#7F7F7F]">
+                    Email · 80 max
+                  </span>
+                  <input
+                    name="email"
+                    required
+                    type="email"
+                    maxLength={80}
+                    placeholder="you@company.com"
+                    className="h-11 w-full rounded-[8px] border border-[#262626] bg-[#0A0A0A] px-3 font-jetbrains text-[12px] text-[#EAEAEA] outline-none transition focus:border-[#2CFF05]"
+                  />
+                </label>
+              </div>
+
+              <label className="block space-y-2">
+                <span className="font-jetbrains text-[10px] uppercase text-[#7F7F7F]">
+                  Text · 72 max
+                </span>
+                <input
+                  name="text"
+                  required
+                  maxLength={72}
+                  placeholder="One clear sentence."
+                  className="h-11 w-full rounded-[8px] border border-[#262626] bg-[#0A0A0A] px-3 font-jetbrains text-[12px] text-[#EAEAEA] outline-none transition focus:border-[#2CFF05]"
+                />
+              </label>
+
+              <label className="block space-y-2">
+                <span className="font-jetbrains text-[10px] uppercase text-[#7F7F7F]">
+                  1:1 image URL
+                </span>
+                <input
+                  name="logoUrl"
+                  required
+                  type="url"
+                  placeholder="https://example.com/logo.png"
+                  className="h-11 w-full rounded-[8px] border border-[#262626] bg-[#0A0A0A] px-3 font-jetbrains text-[12px] text-[#EAEAEA] outline-none transition focus:border-[#2CFF05]"
+                />
+              </label>
+
+              <label className="block space-y-2">
+                <span className="font-jetbrains text-[10px] uppercase text-[#7F7F7F]">
+                  Destination URL
+                </span>
+                <input
+                  name="url"
+                  required
+                  type="url"
+                  placeholder="https://example.com"
+                  className="h-11 w-full rounded-[8px] border border-[#262626] bg-[#0A0A0A] px-3 font-jetbrains text-[12px] text-[#EAEAEA] outline-none transition focus:border-[#2CFF05]"
+                />
+              </label>
+
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-[8px] border border-[#2CFF05] px-4 font-jetbrains text-[11px] uppercase text-[#2CFF05] transition hover:bg-[#2CFF05] hover:text-[#0A0A0A] disabled:cursor-wait disabled:opacity-70"
+              >
+                {status === "loading" ? (
+                  <IconLoader2 size={16} className="animate-spin" />
+                ) : (
+                  <IconArrowRight size={16} />
+                )}
+                Continue to payment
+              </button>
+              {error ? (
+                <p className="font-jetbrains text-[11px] leading-[1.6] text-[#ff6b6b]">
+                  {error}
+                </p>
+              ) : null}
+            </form>
+          </div>
+        </div>
+      ) : null}
+    </>
+  );
+}

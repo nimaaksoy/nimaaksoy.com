@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import PromptCopyButton from "@/components/prompts/PromptCopyButton";
 import PromptMedia from "@/components/prompts/PromptMedia";
 import { SiteChrome } from "@/components/SiteChrome";
+import { SponsorAdFrame } from "@/components/SponsorAdFrame";
 import {
   formatTag,
   getAllPrompts,
@@ -118,6 +119,7 @@ export default async function PromptDetailPage({ params }: PromptDetailPageProps
   return (
     <SiteChrome active="prompts">
       <div className="bg-[#0A0A0A] px-6 py-16 md:px-10 md:py-20">
+      <SponsorAdFrame>
       <article className="mx-auto max-w-[980px]">
         <nav className="mb-10 flex flex-wrap items-center justify-between gap-4 font-jetbrains text-[11px] uppercase tracking-[0.16em] text-[#7F7F7F]">
           <Link href="/prompts" className="transition hover:text-[#2CFF05]">
@@ -234,6 +236,7 @@ export default async function PromptDetailPage({ params }: PromptDetailPageProps
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      </SponsorAdFrame>
       </div>
     </SiteChrome>
   );

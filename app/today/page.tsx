@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { IconBrandChrome, IconExternalLink } from "@tabler/icons-react";
 import TodayDashboard from "@/components/today/TodayDashboard";
 import { SiteChrome } from "@/components/SiteChrome";
+import { SponsorAdFrame } from "@/components/SponsorAdFrame";
 import { getAllPrompts } from "@/lib/prompts";
 import { getAllRadarProjects } from "@/lib/radar";
 
@@ -73,6 +74,8 @@ export default async function TodayPage() {
 
   return (
     <SiteChrome active="today">
+      <div className="px-4 py-6 md:px-8 md:py-8">
+        <SponsorAdFrame>
       <TodayDashboard latestRadar={latestRadar} latestPrompts={latestPrompts} />
       <section className="mx-auto max-w-[1280px] px-4 pb-5 md:px-8 md:pb-6">
         <div className="flex flex-col gap-5 rounded-lg border border-[#1F1F1F] bg-[#101010] p-5 md:flex-row md:items-center md:justify-between md:p-6">
@@ -140,6 +143,8 @@ export default async function TodayPage() {
           </div>
         </div>
       </section>
+        </SponsorAdFrame>
+      </div>
     </SiteChrome>
   );
 }

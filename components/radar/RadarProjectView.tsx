@@ -16,6 +16,7 @@ import {
   VerdictBadge,
 } from "@/components/radar/RadarBadges";
 import { ItemShare } from "@/components/radar/ItemShare";
+import { SponsorAdFrame } from "@/components/SponsorAdFrame";
 
 type RadarProjectViewProps = {
   project: RadarProject;
@@ -87,6 +88,7 @@ export function RadarProjectView({ project }: RadarProjectViewProps) {
 
   return (
     <div className="px-4 py-12 sm:px-6 md:px-10 md:py-16">
+      <SponsorAdFrame>
       <div className="mx-auto max-w-[880px]">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <p className="font-jetbrains text-[11px] uppercase tracking-[0.2em] text-[#2CFF05]">
@@ -244,6 +246,7 @@ export function RadarProjectView({ project }: RadarProjectViewProps) {
           />
         </div>
       </div>
+      </SponsorAdFrame>
     </div>
   );
 }

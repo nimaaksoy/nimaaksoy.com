@@ -77,6 +77,9 @@ export default function SiteFooter() {
               <Link href="/stats" className="transition hover:text-[#2CFF05]">
                 Stats
               </Link>
+              <Link href="/sponsor" className="transition hover:text-[#2CFF05]">
+                Sponsor
+              </Link>
               <Link href="/#connect" className="transition hover:text-[#2CFF05]">
                 Connect
               </Link>

@@ -4,6 +4,7 @@ import { useMemo, useState, useTransition } from "react";
 import type { RadarProject, RadarVerdict } from "@/lib/radar-shared";
 import { RADAR_PAGE_SIZE, VERDICT_LABELS } from "@/lib/radar-shared";
 import { RadarProjectCard } from "@/components/radar/RadarProjectCard";
+import { SponsorAdFrame } from "@/components/SponsorAdFrame";
 
 type SortMode = "latest" | "stars";
 
@@ -198,6 +199,7 @@ export function RadarFeed({ projects }: RadarFeedProps) {
 
   return (
     <div className="px-4 py-12 sm:px-6 md:px-10 md:py-16">
+      <SponsorAdFrame>
       <div className="mx-auto max-w-[1100px]">
         <header className="mb-8">
           <p className="font-jetbrains text-[11px] uppercase tracking-[0.2em] text-[#2CFF05]">
@@ -327,6 +329,7 @@ export function RadarFeed({ projects }: RadarFeedProps) {
           </nav>
         ) : null}
       </div>
+      </SponsorAdFrame>
     </div>
   );
 }

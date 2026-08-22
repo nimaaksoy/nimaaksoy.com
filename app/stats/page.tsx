@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 
 import { SiteChrome } from "@/components/SiteChrome";
+import { SponsorAdFrame } from "@/components/SponsorAdFrame";
 import {
   getSiteAnalytics,
   hasAnalyticsCredentials,
@@ -247,6 +248,7 @@ export default function StatsPage() {
   return (
     <SiteChrome active="stats">
       <section className="bg-[#0A0A0A] px-6 py-16 md:px-10 md:py-20">
+        <SponsorAdFrame>
         <div className="mx-auto max-w-[1180px]">
           <header className="border-b border-[#1F1F1F] pb-8">
             <p className="font-jetbrains text-[11px] uppercase tracking-[0.18em] text-[#2CFF05]">
@@ -286,6 +288,7 @@ export default function StatsPage() {
             aggregate numbers. Refreshed every two minutes.
           </p>
         </div>
+        </SponsorAdFrame>
       </section>
     </SiteChrome>
   );

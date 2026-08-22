@@ -3,6 +3,7 @@ import Link from "next/link";
 import PromptFilters from "@/components/prompts/PromptFilters";
 import PromptGrid from "@/components/prompts/PromptGrid";
 import { SiteChrome } from "@/components/SiteChrome";
+import { SponsorAdFrame } from "@/components/SponsorAdFrame";
 import {
   getAllPrompts,
   getAllTags,
@@ -50,6 +51,7 @@ export default async function PromptIndexPage({
   return (
     <SiteChrome active="prompts">
       <div className="bg-[#0A0A0A] px-6 py-16 md:px-10 md:py-20">
+      <SponsorAdFrame>
       <div className="mx-auto max-w-[1180px]">
         <header className="grid gap-8 md:grid-cols-[1fr_360px] md:items-end">
           <div>
@@ -131,6 +133,7 @@ export default async function PromptIndexPage({
           }),
         }}
       />
+      </SponsorAdFrame>
       </div>
     </SiteChrome>
   );

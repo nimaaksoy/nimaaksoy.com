@@ -10,7 +10,7 @@ const GITHUB_URL = "https://github.com/nimaaksoy/nimaaksoy.com";
 
 type SiteChromeProps = {
   children: ReactNode;
-  active?: "home" | "radar" | "today" | "tools" | "prompts" | "stats";
+  active?: "home" | "radar" | "today" | "tools" | "prompts" | "stats" | "sponsor";
 };
 
 function navClass(isActive: boolean) {
@@ -21,6 +21,7 @@ function navClass(isActive: boolean) {
 
 export function SiteChrome({ children, active }: SiteChromeProps) {
   const radarHref = indexPath();
+  const hasSponsorMobileBanner = active === "sponsor";
 
   const navItems = [
     { label: "Home", href: "/", isActive: active === "home" },
@@ -29,11 +30,16 @@ export function SiteChrome({ children, active }: SiteChromeProps) {
     { label: "Prompts", href: "/prompts", isActive: active === "prompts" },
     { label: "Tools", href: "/tools", isActive: active === "tools" },
     { label: "Stats", href: "/stats", isActive: active === "stats" },
+    { label: "Sponsor", href: "/sponsor", isActive: active === "sponsor" },
   ];
 
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-[#EAEAEA]">
-      <nav className="fixed left-0 top-0 z-50 w-full border-b border-[#1A1A1A] bg-black/80 backdrop-blur-sm">
+      <nav
+        className={`fixed left-0 z-50 w-full border-b border-[#1A1A1A] bg-black/80 backdrop-blur-sm ${
+          hasSponsorMobileBanner ? "top-11 lg:top-0" : "top-0"
+        }`}
+      >
         <div className="mx-auto flex h-14 w-full max-w-[1280px] items-center justify-between px-5 md:h-16 md:px-10">
           <Link
             href="/"
@@ -64,7 +70,13 @@ export function SiteChrome({ children, active }: SiteChromeProps) {
         </div>
       </nav>
 
-      <main className="pt-14 md:pt-16">{children}</main>
+      <main
+        className={
+          hasSponsorMobileBanner ? "pt-[100px] md:pt-[108px] lg:pt-16" : "pt-14 md:pt-16"
+        }
+      >
+        {children}
+      </main>
 
       <SiteFooter />
     </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteChrome } from "@/components/SiteChrome";
+import { SponsorAdFrame } from "@/components/SponsorAdFrame";
 
 export const metadata: Metadata = {
   title: "Tools",
@@ -63,6 +64,7 @@ export default function ToolsPage() {
   return (
     <SiteChrome active="tools">
       <div className="px-6 py-16 md:px-10 md:py-20">
+        <SponsorAdFrame>
         <div className="mx-auto max-w-[1180px]">
           <p className="font-jetbrains text-[11px] uppercase tracking-[0.2em] text-[#7F7F7F]">
             TOOLS
@@ -111,6 +113,7 @@ export default function ToolsPage() {
             ))}
           </section>
         </div>
+        </SponsorAdFrame>
       </div>
     </SiteChrome>
   );

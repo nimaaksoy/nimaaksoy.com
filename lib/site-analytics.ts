@@ -3,8 +3,12 @@ type HogqlRow = unknown[];
 type StatsTileData = {
   viewsToday: number;
   views7d: number;
+  views30d: number;
   visitors7d: number;
+  visitors30d: number;
   promptCopies7d: number;
+  promptCopies30d: number;
+  countries30d: number;
   bestDay: number;
 };
 
@@ -148,12 +152,16 @@ async function loadSiteAnalytics(): Promise<SiteAnalyticsData> {
     hogql(`
       SELECT
         countIf(event = '$pageview' AND timestamp >= toStartOfDay(now())) AS views_today,
-        countIf(event = '$pageview') AS views_7d,
-        countDistinctIf(person_id, event = '$pageview') AS visitors_7d,
-        countIf(event = 'copy_prompt') AS prompt_copies_7d
+        countIf(event = '$pageview' AND timestamp > now() - INTERVAL 7 DAY) AS views_7d,
+        countIf(event = '$pageview') AS views_30d,
+        countDistinctIf(person_id, event = '$pageview' AND timestamp > now() - INTERVAL 7 DAY) AS visitors_7d,
+        countDistinctIf(person_id, event = '$pageview') AS visitors_30d,
+        countIf(event = 'copy_prompt' AND timestamp > now() - INTERVAL 7 DAY) AS prompt_copies_7d,
+        countIf(event = 'copy_prompt') AS prompt_copies_30d,
+        countDistinctIf(properties.$geoip_country_name, event = '$pageview' AND properties.$geoip_country_name IS NOT NULL) AS countries_30d
       FROM events
       WHERE ${siteFilter}
-        AND timestamp > now() - INTERVAL 7 DAY
+        AND timestamp > now() - INTERVAL 30 DAY
     `),
     hogql(`
       SELECT
@@ -203,8 +211,12 @@ async function loadSiteAnalytics(): Promise<SiteAnalyticsData> {
     tiles: {
       viewsToday: toNumber(tileRow[0]),
       views7d: toNumber(tileRow[1]),
-      visitors7d: toNumber(tileRow[2]),
-      promptCopies7d: toNumber(tileRow[3]),
+      views30d: toNumber(tileRow[2]),
+      visitors7d: toNumber(tileRow[3]),
+      visitors30d: toNumber(tileRow[4]),
+      promptCopies7d: toNumber(tileRow[5]),
+      promptCopies30d: toNumber(tileRow[6]),
+      countries30d: toNumber(tileRow[7]),
       // Derived from the 14-day series the chart already loads, so the tiles
       // query stays a single bounded scan instead of an unbounded subquery.
       bestDay: Math.max(0, ...days.map((day) => day.views)),

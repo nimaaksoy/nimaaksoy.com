@@ -41,6 +41,37 @@ body {
   }
 }
 
+@keyframes sponsor-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.3333%);
+  }
+}
+
+.sponsor-mobile-marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.sponsor-mobile-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 0.5rem;
+  padding: 0 0.5rem;
+  animation: sponsor-marquee 26.4s linear infinite;
+  will-change: transform;
+}
+
+.sponsor-mobile-marquee-reverse {
+  animation-direction: reverse;
+}
+
+.sponsor-mobile-marquee:hover .sponsor-mobile-marquee-track {
+  animation-play-state: paused;
+}
+
 .about-track {
   animation: about-scroll 95s linear infinite;
   will-change: transform;
