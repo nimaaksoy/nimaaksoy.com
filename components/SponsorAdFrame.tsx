@@ -22,13 +22,13 @@ declare global {
 
 function SponsorMetrics({ slot }: { slot: SponsorSlot }) {
   return (
-    <span className="pointer-events-none absolute bottom-2 right-2 flex items-center gap-2 font-jetbrains text-[9px] text-[#6F6F6F]">
-      <span className="inline-flex items-center gap-1">
-        <IconEye size={11} stroke={1.8} />
+    <span className="pointer-events-none absolute bottom-1.5 left-2 flex items-center gap-1.5 font-jetbrains text-[8px] text-[#555555]">
+      <span className="inline-flex items-center gap-0.5">
+        <IconEye size={9} stroke={1.6} />
         {formatSponsorMetric(slot.impressions)}
       </span>
-      <span className="inline-flex items-center gap-1">
-        <IconPointer size={11} stroke={1.8} />
+      <span className="inline-flex items-center gap-0.5">
+        <IconPointer size={9} stroke={1.6} />
         {formatSponsorMetric(slot.clicks)}
       </span>
     </span>
@@ -56,7 +56,7 @@ function SponsorBanner({ slot }: { slot: SponsorSlot }) {
         height={48}
         className="aspect-square rounded-[8px] border border-[#242424] object-cover"
       />
-      <div className="min-w-0 pr-16">
+      <div className="min-w-0">
         <h3 className="truncate font-monroe text-[16px] font-light text-[#EAEAEA]">
           {slot.name}
         </h3>
