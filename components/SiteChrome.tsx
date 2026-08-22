@@ -10,7 +10,7 @@ const GITHUB_URL = "https://github.com/nimaaksoy/nimaaksoy.com";
 
 type SiteChromeProps = {
   children: ReactNode;
-  active?: "home" | "radar" | "today" | "tools" | "prompts" | "stats" | "sponsor";
+  active?: "home" | "radar" | "today" | "tools" | "prompts" | "skills" | "stats" | "sponsor";
 };
 
 function navClass(isActive: boolean) {
@@ -24,6 +24,7 @@ export function SiteChrome({ children, active }: SiteChromeProps) {
   const hasSponsorMobileBanner =
     active === "sponsor" ||
     active === "prompts" ||
+    active === "skills" ||
     active === "radar" ||
     active === "today" ||
     active === "tools" ||
@@ -34,6 +35,7 @@ export function SiteChrome({ children, active }: SiteChromeProps) {
     { label: "Radar", href: radarHref, isActive: active === "radar" },
     { label: "Today", href: "/today", isActive: active === "today" },
     { label: "Prompts", href: "/prompts", isActive: active === "prompts" },
+    { label: "Skills", href: "/skills", isActive: active === "skills" },
     { label: "Tools", href: "/tools", isActive: active === "tools" },
     { label: "Stats", href: "/stats", isActive: active === "stats" },
     { label: "Sponsor", href: "/sponsor", isActive: active === "sponsor" },

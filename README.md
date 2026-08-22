@@ -12,6 +12,7 @@ This repository is where I build in public. Some projects become standalone prod
 
 - **Radar** — Curated AI & open-source discoveries -> [nimaaksoy.com/radar](https://nimaaksoy.com/radar)
 - **Prompts** — Public prompt library -> [nimaaksoy.com/prompts](https://nimaaksoy.com/prompts)
+- **Skills** — Reusable AI skills -> [nimaaksoy.com/skills](https://nimaaksoy.com/skills)
 - **Chrome extensions** — Small tools for everyday use -> [`chrome-extension/`](./chrome-extension/)
 - **Life in Dots** — Life timeline as a web app + new-tab extension -> [nimaaksoy.com/life-in-dots](https://nimaaksoy.com/life-in-dots)
 - **Experiments** — UI, UX, AI, and web ideas that may grow into products
@@ -58,6 +59,23 @@ the count it already had.
 Because PostHog needs a moment to make a new event queryable, the button credits
 a copy immediately and only ever revises the number upward — a refetch cannot
 roll back a count the visitor just incremented.
+
+---
+
+### Skills
+
+Reusable AI skills live in `skills/` and are published at
+[nimaaksoy.com/skills](https://nimaaksoy.com/skills). Generated indexes and ZIP
+downloads are written to `public/skills-data/`.
+
+```bash
+npm run skills:validate
+npm run skills:build-index
+npm run skills:new
+```
+
+Hermes maintenance instructions live in
+[`docs/SKILLS-HERMES.md`](./docs/SKILLS-HERMES.md).
 
 ---
 

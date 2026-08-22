@@ -74,6 +74,9 @@ export default function SiteFooter() {
               <Link href="/prompts" className="transition hover:text-[#2CFF05]">
                 Prompts
               </Link>
+              <Link href="/skills" className="transition hover:text-[#2CFF05]">
+                Skills
+              </Link>
               <Link href="/stats" className="transition hover:text-[#2CFF05]">
                 Stats
               </Link>

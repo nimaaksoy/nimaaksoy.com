@@ -127,6 +127,80 @@ body {
   box-shadow: 0 0 0 1px rgba(44, 255, 5, 0.15), 0 14px 32px rgba(0, 0, 0, 0.4);
 }
 
+.skill-markdown {
+  color: var(--text-secondary);
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.skill-markdown h2 {
+  margin-top: 2.25rem;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 1.25rem;
+  font-family: var(--font-monroe), serif;
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--text-primary);
+}
+
+.skill-markdown h2:first-child {
+  margin-top: 0;
+  border-top: 0;
+  padding-top: 0;
+}
+
+.skill-markdown h3 {
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.skill-markdown p,
+.skill-markdown ul,
+.skill-markdown ol,
+.skill-markdown pre,
+.skill-markdown blockquote {
+  margin-top: 1rem;
+}
+
+.skill-markdown ul,
+.skill-markdown ol {
+  padding-left: 1.1rem;
+}
+
+.skill-markdown li + li {
+  margin-top: 0.45rem;
+}
+
+.skill-markdown a {
+  color: var(--accent);
+}
+
+.skill-markdown code {
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  background: #0a0a0a;
+  padding: 0.12rem 0.3rem;
+  color: var(--text-primary);
+}
+
+.skill-markdown pre {
+  overflow-x: auto;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: #0a0a0a;
+  padding: 1rem;
+}
+
+.skill-markdown pre code {
+  border: 0;
+  padding: 0;
+}
+
 .today-vazirmatn,
 .today-vazirmatn *,
 .today-vazirmatn-page,

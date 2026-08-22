@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 
 import { getAllPrompts, getAllTags, getPaginationPages } from "@/lib/prompts";
 import { getAllRadarProjects } from "@/lib/radar";
+import { skillHref, skills } from "@/lib/skills";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = "https://nimaaksoy.com";
@@ -67,6 +68,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.85,
     },
     {
+      url: `${siteUrl}/skills`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
       url: `${siteUrl}/stats`,
       lastModified,
       changeFrequency: "daily",
@@ -91,6 +98,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: prompt.date ? new Date(`${prompt.date}T00:00:00Z`) : lastModified,
       changeFrequency: "monthly" as const,
       priority: prompt.featured ? 0.8 : 0.7,
+    })),
+    ...skills.map((skill) => ({
+      url: `${siteUrl}${skillHref(skill)}`,
+      lastModified: skill.updated ? new Date(`${skill.updated}T00:00:00Z`) : lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
     })),
   ];
 

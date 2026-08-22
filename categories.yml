@@ -1,0 +1,136 @@
+# Source of truth for the category tree.
+# Two levels: category -> subcategory.
+# A skill belongs to exactly one of each. Add a new category via PR.
+
+categories:
+  - id: business
+    name: Business & Operations
+    icon: briefcase
+    description: Run, grow, and manage a business.
+    subcategories:
+      - { id: sales,            name: Sales }
+      - { id: marketing,        name: Marketing }
+      - { id: customer-success, name: Customer Success }
+      - { id: operations,       name: Operations & Process }
+      - { id: finance,          name: Finance & Accounting }
+      - { id: hr-recruiting,    name: HR & Recruiting }
+      - { id: legal,            name: Legal & Compliance }
+      - { id: strategy,         name: Strategy & Planning }
+
+  - id: content-creation
+    name: Content & Creative
+    icon: pen-tool
+    description: Write, design, and produce creative work.
+    subcategories:
+      - { id: copywriting,       name: Copywriting }
+      - { id: long-form-writing, name: Long-Form Writing }
+      - { id: social-media,      name: Social Media }
+      - { id: video-scripts,     name: Video & Scripts }
+      - { id: graphic-design,    name: Graphic Design }
+      - { id: branding,          name: Branding & Identity }
+      - { id: photography,       name: Photography }
+      - { id: storytelling,      name: Storytelling }
+
+  - id: music
+    name: Music & Audio
+    icon: music
+    description: Lyrics, composition, production across genres.
+    subcategories:
+      - { id: pop,               name: Pop }
+      - { id: hip-hop-rap,       name: Hip-Hop & Rap }
+      - { id: rock-metal,        name: Rock & Metal }
+      - { id: electronic,        name: Electronic & Dance }
+      - { id: rnb-soul,          name: R&B & Soul }
+      - { id: country-folk,      name: Country & Folk }
+      - { id: latin,             name: Latin }
+      - { id: world-traditional, name: World & Traditional }
+      - { id: classical,         name: Classical & Orchestral }
+      - { id: jazz-blues,        name: Jazz & Blues }
+      - { id: production,        name: Production & Mixing }
+      - { id: songwriting,       name: Songwriting & Lyrics }
+
+  - id: software
+    name: Software & Engineering
+    icon: code
+    description: Build, ship, and maintain software.
+    subcategories:
+      - { id: frontend,         name: Frontend }
+      - { id: backend,          name: Backend & APIs }
+      - { id: mobile,           name: Mobile }
+      - { id: devops,           name: DevOps & Infrastructure }
+      - { id: data-engineering, name: Data Engineering }
+      - { id: ai-ml,            name: AI & ML }
+      - { id: security,         name: Security }
+      - { id: qa-testing,       name: QA & Testing }
+      - { id: code-review,      name: Code Review & Refactor }
+
+  - id: data-analytics
+    name: Data & Analytics
+    icon: bar-chart
+    description: Analyze, visualize, and reason with data.
+    subcategories:
+      - { id: spreadsheets,      name: Spreadsheets }
+      - { id: sql-databases,     name: SQL & Databases }
+      - { id: bi-dashboards,     name: BI & Dashboards }
+      - { id: research-analysis, name: Research & Analysis }
+      - { id: statistics,        name: Statistics }
+      - { id: forecasting,       name: Forecasting }
+
+  - id: productivity
+    name: Productivity & Workflows
+    icon: zap
+    description: Get more done with less friction.
+    subcategories:
+      - { id: writing-assist, name: Writing Assist }
+      - { id: email,          name: Email }
+      - { id: meetings,       name: Meetings & Notes }
+      - { id: planning,       name: Planning & PM }
+      - { id: research,       name: Research }
+      - { id: automation,     name: Automation }
+
+  - id: education
+    name: Education & Learning
+    icon: graduation-cap
+    description: Teach, tutor, and learn.
+    subcategories:
+      - { id: tutoring,     name: Tutoring }
+      - { id: lesson-plans, name: Lesson Plans }
+      - { id: study-skills, name: Study Skills }
+      - { id: languages,    name: Language Learning }
+      - { id: stem,         name: STEM }
+      - { id: humanities,   name: Humanities }
+
+  - id: lifestyle
+    name: Lifestyle & Personal
+    icon: heart
+    description: Personal goals, hobbies, daily life.
+    subcategories:
+      - { id: health-fitness,   name: Health & Fitness }
+      - { id: cooking,          name: Cooking & Recipes }
+      - { id: travel,           name: Travel }
+      - { id: relationships,    name: Relationships & Communication }
+      - { id: finance-personal, name: Personal Finance }
+      - { id: home,             name: Home & DIY }
+
+  - id: industry
+    name: Industry-Specific
+    icon: building
+    description: Skills tuned to a specific industry.
+    subcategories:
+      - { id: real-estate,    name: Real Estate }
+      - { id: ecommerce,      name: E-commerce & Retail }
+      - { id: healthcare,     name: Healthcare }
+      - { id: legal-industry, name: Legal Practice }
+      - { id: hospitality,    name: Hospitality & F&B }
+      - { id: construction,   name: Construction & Trades }
+      - { id: nonprofit,      name: Nonprofit & Public Sector }
+
+  - id: meta
+    name: Meta & Skill Authoring
+    icon: layers
+    description: Skills about building skills, prompting, and AI workflows.
+    subcategories:
+      - { id: prompt-engineering, name: Prompt Engineering }
+      - { id: skill-authoring,    name: Skill Authoring }
+      - { id: agent-workflows,    name: Agent Workflows }
+      - { id: evaluation,         name: Evaluation & Testing }

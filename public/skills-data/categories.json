@@ -1,0 +1,454 @@
+{
+  "categories": [
+    {
+      "id": "business",
+      "name": "Business & Operations",
+      "icon": "briefcase",
+      "description": "Run, grow, and manage a business.",
+      "count": 1,
+      "subcategories": [
+        {
+          "id": "sales",
+          "name": "Sales",
+          "count": 1
+        },
+        {
+          "id": "marketing",
+          "name": "Marketing",
+          "count": 0
+        },
+        {
+          "id": "customer-success",
+          "name": "Customer Success",
+          "count": 0
+        },
+        {
+          "id": "operations",
+          "name": "Operations & Process",
+          "count": 0
+        },
+        {
+          "id": "finance",
+          "name": "Finance & Accounting",
+          "count": 0
+        },
+        {
+          "id": "hr-recruiting",
+          "name": "HR & Recruiting",
+          "count": 0
+        },
+        {
+          "id": "legal",
+          "name": "Legal & Compliance",
+          "count": 0
+        },
+        {
+          "id": "strategy",
+          "name": "Strategy & Planning",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "id": "content-creation",
+      "name": "Content & Creative",
+      "icon": "pen-tool",
+      "description": "Write, design, and produce creative work.",
+      "count": 2,
+      "subcategories": [
+        {
+          "id": "copywriting",
+          "name": "Copywriting",
+          "count": 0
+        },
+        {
+          "id": "long-form-writing",
+          "name": "Long-Form Writing",
+          "count": 1
+        },
+        {
+          "id": "social-media",
+          "name": "Social Media",
+          "count": 0
+        },
+        {
+          "id": "video-scripts",
+          "name": "Video & Scripts",
+          "count": 1
+        },
+        {
+          "id": "graphic-design",
+          "name": "Graphic Design",
+          "count": 0
+        },
+        {
+          "id": "branding",
+          "name": "Branding & Identity",
+          "count": 0
+        },
+        {
+          "id": "photography",
+          "name": "Photography",
+          "count": 0
+        },
+        {
+          "id": "storytelling",
+          "name": "Storytelling",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "id": "music",
+      "name": "Music & Audio",
+      "icon": "music",
+      "description": "Lyrics, composition, production across genres.",
+      "count": 4,
+      "subcategories": [
+        {
+          "id": "pop",
+          "name": "Pop",
+          "count": 0
+        },
+        {
+          "id": "hip-hop-rap",
+          "name": "Hip-Hop & Rap",
+          "count": 0
+        },
+        {
+          "id": "rock-metal",
+          "name": "Rock & Metal",
+          "count": 0
+        },
+        {
+          "id": "electronic",
+          "name": "Electronic & Dance",
+          "count": 0
+        },
+        {
+          "id": "rnb-soul",
+          "name": "R&B & Soul",
+          "count": 0
+        },
+        {
+          "id": "country-folk",
+          "name": "Country & Folk",
+          "count": 0
+        },
+        {
+          "id": "latin",
+          "name": "Latin",
+          "count": 0
+        },
+        {
+          "id": "world-traditional",
+          "name": "World & Traditional",
+          "count": 0
+        },
+        {
+          "id": "classical",
+          "name": "Classical & Orchestral",
+          "count": 0
+        },
+        {
+          "id": "jazz-blues",
+          "name": "Jazz & Blues",
+          "count": 0
+        },
+        {
+          "id": "production",
+          "name": "Production & Mixing",
+          "count": 0
+        },
+        {
+          "id": "songwriting",
+          "name": "Songwriting & Lyrics",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "software",
+      "name": "Software & Engineering",
+      "icon": "code",
+      "description": "Build, ship, and maintain software.",
+      "count": 0,
+      "subcategories": [
+        {
+          "id": "frontend",
+          "name": "Frontend",
+          "count": 0
+        },
+        {
+          "id": "backend",
+          "name": "Backend & APIs",
+          "count": 0
+        },
+        {
+          "id": "mobile",
+          "name": "Mobile",
+          "count": 0
+        },
+        {
+          "id": "devops",
+          "name": "DevOps & Infrastructure",
+          "count": 0
+        },
+        {
+          "id": "data-engineering",
+          "name": "Data Engineering",
+          "count": 0
+        },
+        {
+          "id": "ai-ml",
+          "name": "AI & ML",
+          "count": 0
+        },
+        {
+          "id": "security",
+          "name": "Security",
+          "count": 0
+        },
+        {
+          "id": "qa-testing",
+          "name": "QA & Testing",
+          "count": 0
+        },
+        {
+          "id": "code-review",
+          "name": "Code Review & Refactor",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "id": "data-analytics",
+      "name": "Data & Analytics",
+      "icon": "bar-chart",
+      "description": "Analyze, visualize, and reason with data.",
+      "count": 0,
+      "subcategories": [
+        {
+          "id": "spreadsheets",
+          "name": "Spreadsheets",
+          "count": 0
+        },
+        {
+          "id": "sql-databases",
+          "name": "SQL & Databases",
+          "count": 0
+        },
+        {
+          "id": "bi-dashboards",
+          "name": "BI & Dashboards",
+          "count": 0
+        },
+        {
+          "id": "research-analysis",
+          "name": "Research & Analysis",
+          "count": 0
+        },
+        {
+          "id": "statistics",
+          "name": "Statistics",
+          "count": 0
+        },
+        {
+          "id": "forecasting",
+          "name": "Forecasting",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "id": "productivity",
+      "name": "Productivity & Workflows",
+      "icon": "zap",
+      "description": "Get more done with less friction.",
+      "count": 1,
+      "subcategories": [
+        {
+          "id": "writing-assist",
+          "name": "Writing Assist",
+          "count": 1
+        },
+        {
+          "id": "email",
+          "name": "Email",
+          "count": 0
+        },
+        {
+          "id": "meetings",
+          "name": "Meetings & Notes",
+          "count": 0
+        },
+        {
+          "id": "planning",
+          "name": "Planning & PM",
+          "count": 0
+        },
+        {
+          "id": "research",
+          "name": "Research",
+          "count": 0
+        },
+        {
+          "id": "automation",
+          "name": "Automation",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "id": "education",
+      "name": "Education & Learning",
+      "icon": "graduation-cap",
+      "description": "Teach, tutor, and learn.",
+      "count": 0,
+      "subcategories": [
+        {
+          "id": "tutoring",
+          "name": "Tutoring",
+          "count": 0
+        },
+        {
+          "id": "lesson-plans",
+          "name": "Lesson Plans",
+          "count": 0
+        },
+        {
+          "id": "study-skills",
+          "name": "Study Skills",
+          "count": 0
+        },
+        {
+          "id": "languages",
+          "name": "Language Learning",
+          "count": 0
+        },
+        {
+          "id": "stem",
+          "name": "STEM",
+          "count": 0
+        },
+        {
+          "id": "humanities",
+          "name": "Humanities",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "id": "lifestyle",
+      "name": "Lifestyle & Personal",
+      "icon": "heart",
+      "description": "Personal goals, hobbies, daily life.",
+      "count": 0,
+      "subcategories": [
+        {
+          "id": "health-fitness",
+          "name": "Health & Fitness",
+          "count": 0
+        },
+        {
+          "id": "cooking",
+          "name": "Cooking & Recipes",
+          "count": 0
+        },
+        {
+          "id": "travel",
+          "name": "Travel",
+          "count": 0
+        },
+        {
+          "id": "relationships",
+          "name": "Relationships & Communication",
+          "count": 0
+        },
+        {
+          "id": "finance-personal",
+          "name": "Personal Finance",
+          "count": 0
+        },
+        {
+          "id": "home",
+          "name": "Home & DIY",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "id": "industry",
+      "name": "Industry-Specific",
+      "icon": "building",
+      "description": "Skills tuned to a specific industry.",
+      "count": 1,
+      "subcategories": [
+        {
+          "id": "real-estate",
+          "name": "Real Estate",
+          "count": 0
+        },
+        {
+          "id": "ecommerce",
+          "name": "E-commerce & Retail",
+          "count": 1
+        },
+        {
+          "id": "healthcare",
+          "name": "Healthcare",
+          "count": 0
+        },
+        {
+          "id": "legal-industry",
+          "name": "Legal Practice",
+          "count": 0
+        },
+        {
+          "id": "hospitality",
+          "name": "Hospitality & F&B",
+          "count": 0
+        },
+        {
+          "id": "construction",
+          "name": "Construction & Trades",
+          "count": 0
+        },
+        {
+          "id": "nonprofit",
+          "name": "Nonprofit & Public Sector",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "id": "meta",
+      "name": "Meta & Skill Authoring",
+      "icon": "layers",
+      "description": "Skills about building skills, prompting, and AI workflows.",
+      "count": 3,
+      "subcategories": [
+        {
+          "id": "prompt-engineering",
+          "name": "Prompt Engineering",
+          "count": 1
+        },
+        {
+          "id": "skill-authoring",
+          "name": "Skill Authoring",
+          "count": 1
+        },
+        {
+          "id": "agent-workflows",
+          "name": "Agent Workflows",
+          "count": 1
+        },
+        {
+          "id": "evaluation",
+          "name": "Evaluation & Testing",
+          "count": 0
+        }
+      ]
+    }
+  ]
+}
