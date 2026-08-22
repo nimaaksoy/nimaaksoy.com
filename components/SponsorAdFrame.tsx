@@ -2,8 +2,13 @@
 
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { useEffect, useState } from "react";
 
-import { openSponsorSlots, sponsorSlots, type SponsorSlot } from "@/lib/sponsor-slots";
+import { sponsorSlots as defaultSponsorSlots, type SponsorSlot } from "@/lib/sponsor-slots";
+
+type SponsorSlotsResponse = {
+  slots?: SponsorSlot[];
+};
 
 function SponsorBanner({ slot }: { slot: SponsorSlot }) {
   return (
@@ -30,7 +35,7 @@ function SponsorBanner({ slot }: { slot: SponsorSlot }) {
   );
 }
 
-function SponsorAvailabilityBanner() {
+function SponsorAvailabilityBanner({ openCount }: { openCount: number }) {
   return (
     <a
       href="/sponsor"
@@ -40,7 +45,7 @@ function SponsorAvailabilityBanner() {
         Sponsor
       </span>
       <span className="mt-1 font-monroe text-[16px] font-light text-[#EAEAEA]">
-        {openSponsorSlots.length}/8 left
+        {openCount}/8 left
       </span>
     </a>
   );
@@ -66,7 +71,7 @@ function MobileBannerCard({ slot }: { slot: SponsorSlot }) {
   );
 }
 
-function MobileSponsorBanner() {
+function MobileSponsorBanner({ openCount }: { openCount: number }) {
   return (
     <a
       href="/sponsor"
@@ -76,7 +81,7 @@ function MobileSponsorBanner() {
         Sponsor
       </span>
       <span className="font-monroe text-[13px] font-light text-[#EAEAEA]">
-        {openSponsorSlots.length}/8 left
+        {openCount}/8 left
       </span>
     </a>
   );
@@ -84,14 +89,18 @@ function MobileSponsorBanner() {
 
 function MobileSponsorMarquee({
   rail,
+  slots,
+  openCount,
   reverse = false,
   className = "",
 }: {
   rail: SponsorSlot["rail"];
+  slots: SponsorSlot[];
+  openCount: number;
   reverse?: boolean;
   className?: string;
 }) {
-  const mobileSlots = sponsorSlots.filter(
+  const mobileSlots = slots.filter(
     (slot) => slot.rail === rail && slot.status === "taken",
   );
   const showAvailability = rail === "right";
@@ -111,15 +120,23 @@ function MobileSponsorMarquee({
           ...mobileSlots.map((slot) => (
             <MobileBannerCard key={`${set}-${slot.id}`} slot={slot} />
           )),
-          ...(showAvailability ? [<MobileSponsorBanner key={`${set}-sponsor`} />] : []),
+          ...(showAvailability ? [<MobileSponsorBanner key={`${set}-sponsor`} openCount={openCount} />] : []),
         ])}
       </div>
     </div>
   );
 }
 
-function SponsorRail({ side }: { side: SponsorSlot["rail"] }) {
-  const railSlots = sponsorSlots.filter(
+function SponsorRail({
+  side,
+  slots,
+  openCount,
+}: {
+  side: SponsorSlot["rail"];
+  slots: SponsorSlot[];
+  openCount: number;
+}) {
+  const railSlots = slots.filter(
     (slot) => slot.rail === side && slot.status === "taken",
   );
   const showAvailability = side === "right";
@@ -136,34 +153,63 @@ function SponsorRail({ side }: { side: SponsorSlot["rail"] }) {
       {railSlots.map((slot) => (
         <SponsorBanner key={slot.id} slot={slot} />
       ))}
-      {showAvailability ? <SponsorAvailabilityBanner /> : null}
+      {showAvailability ? <SponsorAvailabilityBanner openCount={openCount} /> : null}
     </aside>
   );
 }
 
 export function SponsorAdFrame({ children }: { children: ReactNode }) {
-  const hasLeftRail = sponsorSlots.some(
+  const [slots, setSlots] = useState(defaultSponsorSlots);
+  const openCount = slots.filter((slot) => slot.status === "open").length;
+  const hasLeftRail = slots.some(
     (slot) => slot.rail === "left" && slot.status === "taken",
   );
   const gridTemplate = hasLeftRail
     ? "lg:grid-cols-[220px_minmax(0,1fr)_220px]"
     : "lg:grid-cols-[minmax(0,1fr)_220px]";
 
+  useEffect(() => {
+    let ignore = false;
+
+    async function loadSponsorSlots() {
+      try {
+        const response = await fetch("/api/sponsor-slots", { cache: "no-store" });
+        const payload = (await response.json()) as SponsorSlotsResponse;
+
+        if (!ignore && response.ok && payload.slots?.length) {
+          setSlots(payload.slots);
+        }
+      } catch {
+        // Keep the default open slots if the live sponsor feed is unavailable.
+      }
+    }
+
+    loadSponsorSlots();
+
+    return () => {
+      ignore = true;
+    };
+  }, []);
+
   return (
     <>
       <MobileSponsorMarquee
         rail="right"
+        slots={slots}
+        openCount={openCount}
         className="fixed left-0 top-14 z-[45] bg-[#0A0A0A]/95 py-1 backdrop-blur-sm md:top-16"
       />
       <div
         className={`mx-auto grid max-w-[1580px] gap-8 pb-12 ${gridTemplate} lg:items-start lg:pb-0 xl:gap-10`}
       >
-        {hasLeftRail ? <SponsorRail side="left" /> : null}
+        {hasLeftRail ? <SponsorRail side="left" slots={slots} openCount={openCount} /> : null}
         <div className="min-w-0">{children}</div>
-        <SponsorRail side="right" />
+        <SponsorRail side="right" slots={slots} openCount={openCount} />
       </div>
       <MobileSponsorMarquee
         rail="left"
+        slots={slots}
+        openCount={openCount}
         reverse
         className="fixed bottom-0 left-0 z-[45] bg-[#0A0A0A]/95 py-1 backdrop-blur-sm"
       />

@@ -9,7 +9,8 @@ import {
 
 import { SiteChrome } from "@/components/SiteChrome";
 import { getSiteAnalytics } from "@/lib/site-analytics";
-import { sponsorSlots as slots, type SponsorSlot } from "@/lib/sponsor-slots";
+import { type SponsorSlot } from "@/lib/sponsor-slots";
+import { getSponsorSlots } from "@/lib/sponsor-slots-live";
 import SponsorSlotBoard from "./SponsorSlotBoard";
 
 export const metadata: Metadata = {
@@ -111,7 +112,7 @@ function SponsorBanner({ slot }: { slot: SponsorSlot }) {
   );
 }
 
-function SponsorAvailabilityBanner() {
+function SponsorAvailabilityBanner({ openCount }: { openCount: number }) {
   return (
     <a
       href="/sponsor"
@@ -121,7 +122,7 @@ function SponsorAvailabilityBanner() {
         Sponsor
       </span>
       <span className="mt-1 font-monroe text-[16px] font-light text-[#EAEAEA]">
-        {slots.filter((slot) => slot.status === "open").length}/8 left
+        {openCount}/8 left
       </span>
     </a>
   );
@@ -147,7 +148,7 @@ function MobileBannerCard({ slot }: { slot: SponsorSlot }) {
   );
 }
 
-function MobileSponsorBanner() {
+function MobileSponsorBanner({ openCount }: { openCount: number }) {
   return (
     <a
       href="/sponsor"
@@ -157,7 +158,7 @@ function MobileSponsorBanner() {
         Sponsor
       </span>
       <span className="font-monroe text-[13px] font-light text-[#EAEAEA]">
-        {slots.filter((slot) => slot.status === "open").length}/8 left
+        {openCount}/8 left
       </span>
     </a>
   );
@@ -165,10 +166,14 @@ function MobileSponsorBanner() {
 
 function MobileSponsorMarquee({
   rail,
+  slots,
+  openCount,
   reverse = false,
   className = "",
 }: {
   rail: SponsorSlot["rail"];
+  slots: SponsorSlot[];
+  openCount: number;
   reverse?: boolean;
   className?: string;
 }) {
@@ -190,14 +195,22 @@ function MobileSponsorMarquee({
           ...mobileSlots.map((slot) => (
             <MobileBannerCard key={`${set}-${slot.id}`} slot={slot} />
           )),
-          ...(showAvailability ? [<MobileSponsorBanner key={`${set}-sponsor`} />] : []),
+          ...(showAvailability ? [<MobileSponsorBanner key={`${set}-sponsor`} openCount={openCount} />] : []),
         ])}
       </div>
     </div>
   );
 }
 
-function SponsorRail({ side }: { side: SponsorSlot["rail"] }) {
+function SponsorRail({
+  side,
+  slots,
+  openCount,
+}: {
+  side: SponsorSlot["rail"];
+  slots: SponsorSlot[];
+  openCount: number;
+}) {
   const railSlots = slots.filter((slot) => slot.rail === side && slot.status === "taken");
   const showAvailability = side === "right";
 
@@ -215,13 +228,15 @@ function SponsorRail({ side }: { side: SponsorSlot["rail"] }) {
           <SponsorBanner slot={slot} />
         </div>
       ))}
-      {showAvailability ? <SponsorAvailabilityBanner /> : null}
+      {showAvailability ? <SponsorAvailabilityBanner openCount={openCount} /> : null}
     </aside>
   );
 }
 
 export default async function SponsorPage({ searchParams }: SponsorPageProps) {
   const params = await searchParams;
+  const slots = await getSponsorSlots();
+  const openCount = slots.filter((slot) => slot.status === "open").length;
   const checkoutComplete = params.checkout === "success";
   const hasLeftRail = slots.some((slot) => slot.rail === "left" && slot.status === "taken");
   const gridTemplate = hasLeftRail
@@ -251,10 +266,10 @@ export default async function SponsorPage({ searchParams }: SponsorPageProps) {
 
   return (
     <SiteChrome active="sponsor">
-      <MobileSponsorMarquee rail="right" className="fixed left-0 top-14 z-[45] bg-[#0A0A0A]/95 py-1 backdrop-blur-sm md:top-16" />
+      <MobileSponsorMarquee rail="right" slots={slots} openCount={openCount} className="fixed left-0 top-14 z-[45] bg-[#0A0A0A]/95 py-1 backdrop-blur-sm md:top-16" />
       <div className="px-6 pb-24 pt-8 md:px-10 md:pt-12 lg:py-16">
         <div className={`mx-auto grid max-w-[1580px] gap-8 ${gridTemplate} lg:items-start xl:gap-10`}>
-          {hasLeftRail ? <SponsorRail side="left" /> : null}
+          {hasLeftRail ? <SponsorRail side="left" slots={slots} openCount={openCount} /> : null}
 
           <div className="min-w-0">
             {checkoutComplete ? (
@@ -479,11 +494,13 @@ export default async function SponsorPage({ searchParams }: SponsorPageProps) {
 
           </div>
 
-          <SponsorRail side="right" />
+          <SponsorRail side="right" slots={slots} openCount={openCount} />
         </div>
       </div>
       <MobileSponsorMarquee
         rail="left"
+        slots={slots}
+        openCount={openCount}
         reverse
         className="fixed bottom-0 left-0 z-[60] bg-[#0A0A0A]/95 py-1 backdrop-blur-sm"
       />

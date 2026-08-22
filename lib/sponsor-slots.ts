@@ -86,3 +86,9 @@ export const sponsorSlots: SponsorSlot[] = [
 
 export const openSponsorSlots = sponsorSlots.filter((slot) => slot.status === "open");
 export const openSponsorSlotIds = new Set(openSponsorSlots.map((slot) => slot.id));
+
+export function getOpenSponsorSlotIds(slots: SponsorSlot[]) {
+  return new Set(
+    slots.filter((slot) => slot.status === "open").map((slot) => slot.id),
+  );
+}

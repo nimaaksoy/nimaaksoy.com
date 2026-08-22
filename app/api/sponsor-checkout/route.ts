@@ -1,6 +1,7 @@
 import { headers } from "next/headers";
 
-import { openSponsorSlotIds } from "@/lib/sponsor-slots";
+import { getOpenSponsorSlotIds } from "@/lib/sponsor-slots";
+import { getSponsorSlots } from "@/lib/sponsor-slots-live";
 import { getSponsorPriceId, getStripe } from "@/lib/stripe";
 
 type SponsorCheckoutBody = {
@@ -29,6 +30,9 @@ export async function POST(request: Request) {
   const logoUrl = body.logoUrl?.trim();
   const text = body.text?.trim();
   const email = body.email?.trim();
+
+  const sponsorSlots = await getSponsorSlots();
+  const openSponsorSlotIds = getOpenSponsorSlotIds(sponsorSlots);
 
   if (!slotId || !openSponsorSlotIds.has(slotId)) {
     return Response.json({ error: "That sponsor slot is not open." }, { status: 400 });
