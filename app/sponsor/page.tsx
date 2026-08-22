@@ -251,7 +251,7 @@ export default async function SponsorPage({ searchParams }: SponsorPageProps) {
 
   return (
     <SiteChrome active="sponsor">
-      <MobileSponsorMarquee rail="right" className="fixed left-0 top-0 z-[60] bg-[#0A0A0A]/95 py-1 backdrop-blur-sm" />
+      <MobileSponsorMarquee rail="right" className="fixed left-0 top-14 z-[45] bg-[#0A0A0A]/95 py-1 backdrop-blur-sm md:top-16" />
       <div className="px-6 pb-24 pt-8 md:px-10 md:pt-12 lg:py-16">
         <div className={`mx-auto grid max-w-[1580px] gap-8 ${gridTemplate} lg:items-start xl:gap-10`}>
           {hasLeftRail ? <SponsorRail side="left" /> : null}

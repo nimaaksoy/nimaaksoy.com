@@ -21,7 +21,13 @@ function navClass(isActive: boolean) {
 
 export function SiteChrome({ children, active }: SiteChromeProps) {
   const radarHref = indexPath();
-  const hasSponsorMobileBanner = active === "sponsor";
+  const hasSponsorMobileBanner =
+    active === "sponsor" ||
+    active === "prompts" ||
+    active === "radar" ||
+    active === "today" ||
+    active === "tools" ||
+    active === "stats";
 
   const navItems = [
     { label: "Home", href: "/", isActive: active === "home" },
@@ -36,9 +42,7 @@ export function SiteChrome({ children, active }: SiteChromeProps) {
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-[#EAEAEA]">
       <nav
-        className={`fixed left-0 z-50 w-full border-b border-[#1A1A1A] bg-black/80 backdrop-blur-sm ${
-          hasSponsorMobileBanner ? "top-11 lg:top-0" : "top-0"
-        }`}
+        className="fixed left-0 top-0 z-50 w-full border-b border-[#1A1A1A] bg-black/80 backdrop-blur-sm"
       >
         <div className="mx-auto flex h-14 w-full max-w-[1280px] items-center justify-between px-5 md:h-16 md:px-10">
           <Link

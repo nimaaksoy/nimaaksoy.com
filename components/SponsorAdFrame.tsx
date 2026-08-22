@@ -85,9 +85,11 @@ function MobileSponsorBanner() {
 function MobileSponsorMarquee({
   rail,
   reverse = false,
+  className = "",
 }: {
   rail: SponsorSlot["rail"];
   reverse?: boolean;
+  className?: string;
 }) {
   const mobileSlots = sponsorSlots.filter(
     (slot) => slot.rail === rail && slot.status === "taken",
@@ -99,7 +101,7 @@ function MobileSponsorMarquee({
   }
 
   return (
-    <div className="sponsor-mobile-marquee lg:hidden">
+    <div className={`sponsor-mobile-marquee lg:hidden ${className}`}>
       <div
         className={`sponsor-mobile-marquee-track ${
           reverse ? "sponsor-mobile-marquee-reverse" : ""
@@ -149,15 +151,22 @@ export function SponsorAdFrame({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <MobileSponsorMarquee rail="right" />
+      <MobileSponsorMarquee
+        rail="right"
+        className="fixed left-0 top-14 z-[45] bg-[#0A0A0A]/95 py-1 backdrop-blur-sm md:top-16"
+      />
       <div
-        className={`mx-auto grid max-w-[1580px] gap-8 ${gridTemplate} lg:items-start xl:gap-10`}
+        className={`mx-auto grid max-w-[1580px] gap-8 pb-12 ${gridTemplate} lg:items-start lg:pb-0 xl:gap-10`}
       >
         {hasLeftRail ? <SponsorRail side="left" /> : null}
         <div className="min-w-0">{children}</div>
         <SponsorRail side="right" />
       </div>
-      <MobileSponsorMarquee rail="left" reverse />
+      <MobileSponsorMarquee
+        rail="left"
+        reverse
+        className="fixed bottom-0 left-0 z-[45] bg-[#0A0A0A]/95 py-1 backdrop-blur-sm"
+      />
     </>
   );
 }

@@ -91,6 +91,33 @@ The page is never allowed to wait on PostHog:
 
 ---
 
+### Sponsor Checkout
+
+Sponsor checkout uses Stripe Checkout and signed Cloudinary uploads for sponsor
+logos. Set these environment variables locally and in Vercel:
+
+```bash
+NEXT_PUBLIC_APP_URL=https://nimaaksoy.com
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_live_...
+STRIPE_SECRET_KEY=sk_live_...
+STRIPE_WEBHOOK_SECRET=whsec_...
+STRIPE_SPONSOR_PRICE_1_MONTH=price_...
+STRIPE_SPONSOR_PRICE_3_MONTHS=price_...
+CLOUDINARY_CLOUD_NAME=...
+CLOUDINARY_API_KEY=...
+CLOUDINARY_API_SECRET=...
+CLOUDINARY_SPONSOR_FOLDER=nimaaksoy/sponsors
+```
+
+Cloudinary's single URL format also works instead of the three separate
+Cloudinary credentials:
+
+```bash
+CLOUDINARY_URL=cloudinary://api_key:api_secret@cloud_name
+```
+
+---
+
 ### Chrome extensions
 
 Small browser extensions built to solve everyday problems.

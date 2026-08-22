@@ -84,14 +84,14 @@ function HorizontalBars({
   }
 
   return (
-    <div className="space-y-4">
+    <div className="min-w-0 space-y-4 overflow-hidden">
       {rows.map((row) => (
-        <div key={row.label}>
-          <div className="flex items-center justify-between gap-4 font-jetbrains text-[11px] text-[#9A9A9A]">
+        <div key={row.label} className="min-w-0">
+          <div className="flex min-w-0 items-center justify-between gap-4 font-jetbrains text-[11px] text-[#9A9A9A]">
             <span className="min-w-0 truncate">{row.label}</span>
-            <span>{formatNumber(row.value)}</span>
+            <span className="shrink-0">{formatNumber(row.value)}</span>
           </div>
-          <div className="mt-2 h-2 overflow-hidden rounded-full bg-[#1A1A1A]">
+          <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-[#1A1A1A]">
             <div
               className="h-full rounded-full bg-[#2CFF05]"
               style={{ width: `${Math.max(4, (row.value / max) * 100)}%` }}
@@ -114,7 +114,7 @@ function SkeletonPanel({ className = "" }: { className?: string }) {
 function StatsSkeleton() {
   return (
     <div aria-hidden>
-      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-10 grid min-w-0 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {[0, 1, 2, 3].map((tile) => (
           <SkeletonPanel key={tile} className="h-[148px]" />
         ))}
@@ -161,8 +161,8 @@ async function StatsPanels() {
         />
       </div>
 
-      <div className="mt-5 grid gap-5 lg:grid-cols-[1.35fr_1fr]">
-        <section className="rounded-[8px] border border-[#1F1F1F] bg-[#111111] p-5 md:p-6">
+      <div className="mt-5 grid min-w-0 gap-5 lg:grid-cols-[1.35fr_1fr]">
+        <section className="min-w-0 overflow-hidden rounded-[8px] border border-[#1F1F1F] bg-[#111111] p-5 md:p-6">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <h2 className="font-jetbrains text-[11px] uppercase tracking-[0.16em] text-[#7F7F7F]">
               Page Views / 14D
@@ -172,11 +172,11 @@ async function StatsPanels() {
             </span>
           </div>
           {data?.byDay.length ? (
-            <div className="mt-8 flex h-64 items-end gap-2">
+            <div className="mt-8 flex h-64 min-w-0 items-end gap-1.5 overflow-hidden sm:gap-2">
               {data.byDay.map((day) => (
                 <div
                   key={day.date}
-                  className="flex min-w-0 flex-1 flex-col items-center gap-3"
+                  className="flex min-w-0 flex-[1_1_0] flex-col items-center gap-3"
                 >
                   <div className="flex h-52 w-full items-end">
                     <div
@@ -187,7 +187,7 @@ async function StatsPanels() {
                       title={`${formatNumber(day.views)} views, ${formatNumber(day.visitors)} visitors`}
                     />
                   </div>
-                  <span className="font-jetbrains text-[10px] text-[#7F7F7F]">
+                  <span className="max-w-full truncate text-center font-jetbrains text-[9px] text-[#7F7F7F] sm:text-[10px]">
                     {shortDate(day.date)}
                   </span>
                 </div>
@@ -200,7 +200,7 @@ async function StatsPanels() {
           )}
         </section>
 
-        <section className="rounded-[8px] border border-[#1F1F1F] bg-[#111111] p-5 md:p-6">
+        <section className="min-w-0 overflow-hidden rounded-[8px] border border-[#1F1F1F] bg-[#111111] p-5 md:p-6">
           <h2 className="font-jetbrains text-[11px] uppercase tracking-[0.16em] text-[#7F7F7F]">
             Top Pages / 7D
           </h2>
@@ -216,7 +216,7 @@ async function StatsPanels() {
         </section>
       </div>
 
-      <section className="mt-5 rounded-[8px] border border-[#1F1F1F] bg-[#111111] p-5 md:p-6">
+      <section className="mt-5 min-w-0 overflow-hidden rounded-[8px] border border-[#1F1F1F] bg-[#111111] p-5 md:p-6">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <h2 className="font-jetbrains text-[11px] uppercase tracking-[0.16em] text-[#7F7F7F]">
             Most Copied Prompts / 7D
@@ -247,9 +247,9 @@ export default function StatsPage() {
 
   return (
     <SiteChrome active="stats">
-      <section className="bg-[#0A0A0A] px-6 py-16 md:px-10 md:py-20">
+      <section className="overflow-hidden bg-[#0A0A0A] px-6 py-16 md:px-10 md:py-20">
         <SponsorAdFrame>
-        <div className="mx-auto max-w-[1180px]">
+        <div className="mx-auto max-w-[1180px] min-w-0">
           <header className="border-b border-[#1F1F1F] pb-8">
             <p className="font-jetbrains text-[11px] uppercase tracking-[0.18em] text-[#2CFF05]">
               Public Stats

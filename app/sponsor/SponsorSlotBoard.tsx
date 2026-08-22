@@ -2,7 +2,14 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { IconArrowRight, IconLoader2, IconX } from "@tabler/icons-react";
+import {
+  IconArrowRight,
+  IconLink,
+  IconLoader2,
+  IconPhoto,
+  IconUpload,
+  IconX,
+} from "@tabler/icons-react";
 
 export type SponsorSlotForBoard = {
   id: string;
@@ -19,6 +26,74 @@ type CheckoutResponse = {
   checkoutUrl?: string;
   error?: string;
 };
+
+type LogoUploadResponse = {
+  url?: string;
+  error?: string;
+};
+
+type LogoMode = "upload" | "url";
+
+const logoDisplaySize = 48;
+const resizedLogoSize = logoDisplaySize * 2;
+const maxLogoBytes = 5 * 1024 * 1024;
+
+async function loadLogoImage(file: File) {
+  const objectUrl = URL.createObjectURL(file);
+
+  try {
+    const image = await new Promise<HTMLImageElement>((resolve, reject) => {
+      const img = new window.Image();
+      img.onload = () => resolve(img);
+      img.onerror = () => reject(new Error("Logo image could not be read."));
+      img.src = objectUrl;
+    });
+
+    return image;
+  } finally {
+    URL.revokeObjectURL(objectUrl);
+  }
+}
+
+async function resizeLogo(file: File) {
+  const image = await loadLogoImage(file);
+  const sourceSize = Math.min(image.naturalWidth, image.naturalHeight);
+  const sourceX = (image.naturalWidth - sourceSize) / 2;
+  const sourceY = (image.naturalHeight - sourceSize) / 2;
+  const canvas = document.createElement("canvas");
+  canvas.width = resizedLogoSize;
+  canvas.height = resizedLogoSize;
+  const context = canvas.getContext("2d");
+
+  if (!context) {
+    throw new Error("Logo image could not be resized.");
+  }
+
+  context.drawImage(
+    image,
+    sourceX,
+    sourceY,
+    sourceSize,
+    sourceSize,
+    0,
+    0,
+    resizedLogoSize,
+    resizedLogoSize,
+  );
+
+  const blob = await new Promise<Blob | null>((resolve) =>
+    canvas.toBlob(resolve, "image/png", 0.92),
+  );
+
+  if (!blob) {
+    throw new Error("Logo image could not be resized.");
+  }
+
+  return {
+    blob,
+    previewUrl: canvas.toDataURL("image/png"),
+  };
+}
 
 function SlotAd({ slot }: { slot: SponsorSlotForBoard }) {
   return (
@@ -71,13 +146,74 @@ export default function SponsorSlotBoard({ slots }: { slots: SponsorSlotForBoard
   const [selectedSlot, setSelectedSlot] = useState<SponsorSlotForBoard | null>(null);
   const [months, setMonths] = useState<1 | 3>(1);
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
+  const [logoMode, setLogoMode] = useState<LogoMode>("upload");
+  const [uploadedLogoUrl, setUploadedLogoUrl] = useState("");
+  const [uploadedPreviewUrl, setUploadedPreviewUrl] = useState("");
+  const [uploadStatus, setUploadStatus] =
+    useState<"idle" | "loading" | "ready" | "error">("idle");
+  const [uploadError, setUploadError] = useState("");
   const [error, setError] = useState("");
 
   function closeModal() {
     setSelectedSlot(null);
     setMonths(1);
     setStatus("idle");
+    setLogoMode("upload");
+    setUploadedLogoUrl("");
+    setUploadedPreviewUrl("");
+    setUploadStatus("idle");
+    setUploadError("");
     setError("");
+  }
+
+  async function handleLogoUpload(file: File | undefined) {
+    setUploadedLogoUrl("");
+    setUploadedPreviewUrl("");
+    setUploadError("");
+    setUploadStatus("idle");
+
+    if (!file) {
+      return;
+    }
+
+    if (!file.type.startsWith("image/")) {
+      setUploadStatus("error");
+      setUploadError("Upload an image file.");
+      return;
+    }
+
+    if (file.size > maxLogoBytes) {
+      setUploadStatus("error");
+      setUploadError("Logo must be 5MB or smaller.");
+      return;
+    }
+
+    setUploadStatus("loading");
+
+    try {
+      const resizedLogo = await resizeLogo(file);
+      const uploadData = new FormData();
+      uploadData.set("logo", resizedLogo.blob, "sponsor-logo.png");
+
+      const response = await fetch("/api/sponsor-logo-upload", {
+        method: "POST",
+        body: uploadData,
+      });
+      const payload = (await response.json()) as LogoUploadResponse;
+
+      if (!response.ok || !payload.url) {
+        throw new Error(payload.error || "Logo upload failed.");
+      }
+
+      setUploadedPreviewUrl(resizedLogo.previewUrl);
+      setUploadedLogoUrl(payload.url);
+      setUploadStatus("ready");
+    } catch (uploadError) {
+      const message =
+        uploadError instanceof Error ? uploadError.message : "Logo upload failed.";
+      setUploadStatus("error");
+      setUploadError(message);
+    }
   }
 
   async function handleSubmit(formData: FormData) {
@@ -88,6 +224,17 @@ export default function SponsorSlotBoard({ slots }: { slots: SponsorSlotForBoard
     setStatus("loading");
     setError("");
 
+    const logoUrl =
+      logoMode === "upload"
+        ? uploadedLogoUrl
+        : String(formData.get("logoUrl") || "").trim();
+
+    if (!logoUrl) {
+      setStatus("error");
+      setError("Add a logo URL or upload a logo image.");
+      return;
+    }
+
     const response = await fetch("/api/sponsor-checkout", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -96,7 +243,7 @@ export default function SponsorSlotBoard({ slots }: { slots: SponsorSlotForBoard
         months,
         company: formData.get("company"),
         text: formData.get("text"),
-        logoUrl: formData.get("logoUrl"),
+        logoUrl,
         url: formData.get("url"),
         email: formData.get("email"),
       }),
@@ -217,18 +364,91 @@ export default function SponsorSlotBoard({ slots }: { slots: SponsorSlotForBoard
                 />
               </label>
 
-              <label className="block space-y-2">
-                <span className="font-jetbrains text-[10px] uppercase text-[#7F7F7F]">
-                  1:1 image URL
-                </span>
-                <input
-                  name="logoUrl"
-                  required
-                  type="url"
-                  placeholder="https://example.com/logo.png"
-                  className="h-11 w-full rounded-[8px] border border-[#262626] bg-[#0A0A0A] px-3 font-jetbrains text-[12px] text-[#EAEAEA] outline-none transition focus:border-[#2CFF05]"
-                />
-              </label>
+              <div className="space-y-3 rounded-[8px] border border-[#1F1F1F] bg-[#0A0A0A] p-3">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <span className="font-jetbrains text-[10px] uppercase text-[#7F7F7F]">
+                    Logo · 1:1
+                  </span>
+                  <div className="grid grid-cols-2 rounded-[8px] border border-[#262626] p-1">
+                    {(["upload", "url"] as const).map((mode) => (
+                      <button
+                        key={mode}
+                        type="button"
+                        onClick={() => {
+                          setLogoMode(mode);
+                          setError("");
+                        }}
+                        className={`inline-flex h-8 items-center justify-center gap-1.5 rounded-[6px] px-3 font-jetbrains text-[10px] uppercase transition ${
+                          logoMode === mode
+                            ? "bg-[#2CFF05] text-[#0A0A0A]"
+                            : "text-[#9A9A9A] hover:text-[#EAEAEA]"
+                        }`}
+                      >
+                        {mode === "upload" ? <IconUpload size={13} /> : <IconLink size={13} />}
+                        {mode === "upload" ? "Upload" : "Link"}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {logoMode === "upload" ? (
+                  <div className="grid gap-3 sm:grid-cols-[64px_1fr]">
+                    <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-[8px] border border-[#262626] bg-[#111111]">
+                      {uploadedPreviewUrl ? (
+                        <Image
+                          src={uploadedPreviewUrl}
+                          alt="Logo preview"
+                          width={64}
+                          height={64}
+                          unoptimized
+                          className="h-full w-full object-cover"
+                        />
+                      ) : (
+                        <IconPhoto size={20} className="text-[#7F7F7F]" />
+                      )}
+                    </div>
+                    <label className="flex min-h-16 cursor-pointer flex-col justify-center rounded-[8px] border border-dashed border-[#2CFF05]/50 bg-[#111111] px-3 transition hover:border-[#2CFF05]">
+                      <span className="font-jetbrains text-[11px] uppercase text-[#EAEAEA]">
+                        Choose image
+                      </span>
+                      <span className="mt-1 font-jetbrains text-[10px] leading-[1.5] text-[#7F7F7F]">
+                        Cropped square and resized to {resizedLogoSize}px automatically.
+                      </span>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        className="sr-only"
+                        onChange={(event) => handleLogoUpload(event.currentTarget.files?.[0])}
+                      />
+                    </label>
+                  </div>
+                ) : (
+                  <input
+                    name="logoUrl"
+                    required={logoMode === "url"}
+                    type="url"
+                    placeholder="https://example.com/logo.png"
+                    className="h-11 w-full rounded-[8px] border border-[#262626] bg-[#111111] px-3 font-jetbrains text-[12px] text-[#EAEAEA] outline-none transition focus:border-[#2CFF05]"
+                  />
+                )}
+
+                {uploadStatus === "loading" ? (
+                  <p className="inline-flex items-center gap-2 font-jetbrains text-[10px] uppercase text-[#9A9A9A]">
+                    <IconLoader2 size={13} className="animate-spin" />
+                    Uploading logo
+                  </p>
+                ) : null}
+                {uploadStatus === "ready" ? (
+                  <p className="font-jetbrains text-[10px] uppercase text-[#2CFF05]">
+                    Logo ready
+                  </p>
+                ) : null}
+                {uploadError ? (
+                  <p className="font-jetbrains text-[11px] leading-[1.6] text-[#ff6b6b]">
+                    {uploadError}
+                  </p>
+                ) : null}
+              </div>
 
               <label className="block space-y-2">
                 <span className="font-jetbrains text-[10px] uppercase text-[#7F7F7F]">
@@ -245,7 +465,7 @@ export default function SponsorSlotBoard({ slots }: { slots: SponsorSlotForBoard
 
               <button
                 type="submit"
-                disabled={status === "loading"}
+                disabled={status === "loading" || uploadStatus === "loading"}
                 className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-[8px] border border-[#2CFF05] px-4 font-jetbrains text-[11px] uppercase text-[#2CFF05] transition hover:bg-[#2CFF05] hover:text-[#0A0A0A] disabled:cursor-wait disabled:opacity-70"
               >
                 {status === "loading" ? (
