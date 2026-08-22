@@ -356,6 +356,10 @@
       "stars": 16207,
       "repo": "guillaumemeyer/watermarks-remover",
       "fetchedAt": "2026-08-21T07:06:38Z"
+    },
+    "tracely": {
+      "stars": 924,
+      "fetchedAt": "2026-08-22T07:05:12Z"
     }
   },
   "byRepo": {
@@ -656,6 +660,14 @@
     "guillaumemeyer/watermarks-remover": {
       "stars": 16207,
       "fetchedAt": "2026-08-21T07:06:38Z"
+    },
+    "Jwuthri/Tracely": {
+      "stars": 924,
+      "fetchedAt": "2026-08-22T07:05:12Z"
+    },
+    "jwuthri/tracely": {
+      "stars": 924,
+      "fetchedAt": "2026-08-22T07:05:12Z"
     }
   },
   "errors": [
