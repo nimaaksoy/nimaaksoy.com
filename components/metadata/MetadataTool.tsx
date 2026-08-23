@@ -214,8 +214,9 @@ export function MetadataTool() {
     if (!nextFile) return;
     setFile(nextFile);
     setResult(null);
-    setStatus("");
+    setStatus("Reading full metadata...");
     setFilter("");
+    void inspectFile(nextFile);
   }
 
   function resetTool() {
@@ -226,14 +227,14 @@ export function MetadataTool() {
     if (inputRef.current) inputRef.current.value = "";
   }
 
-  async function inspectFile() {
-    if (!file) return;
+  async function inspectFile(targetFile = file) {
+    if (!targetFile) return;
     setIsInspecting(true);
     setStatus("Reading full metadata...");
 
     try {
       const form = new FormData();
-      form.append("file", file);
+      form.append("file", targetFile);
       const response = await fetch("/api/metadata", {
         method: "POST",
         body: form,
@@ -352,7 +353,7 @@ export function MetadataTool() {
             <button
               type="button"
               disabled={!file || isInspecting}
-              onClick={inspectFile}
+              onClick={() => inspectFile()}
               className="inline-flex h-11 items-center gap-2 rounded-[8px] border border-[#2A2A2A] px-4 font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#EAEAEA] transition hover:border-[#2CFF05] disabled:cursor-not-allowed disabled:opacity-40"
             >
               <IconInfoCircle size={16} stroke={1.8} />
@@ -423,6 +424,19 @@ export function MetadataTool() {
         <p className="font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#7F7F7F]">
           {status}
         </p>
+      ) : null}
+
+      {file && !sections.length ? (
+        <section className="rounded-[8px] border border-[#1F1F1F] bg-[#111111] p-6">
+          <h2 className="font-monroe text-[32px] font-light leading-none text-[#EAEAEA]">
+            Metadata
+          </h2>
+          <p className="mt-4 font-jetbrains text-[12px] leading-[1.7] text-[#8A8A8A]">
+            {isInspecting
+              ? "Reading full ffprobe and exiftool metadata..."
+              : status || "Choose Inspect to read this file again."}
+          </p>
+        </section>
       ) : null}
 
       {sections.length ? (
