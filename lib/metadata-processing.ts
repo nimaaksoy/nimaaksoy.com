@@ -176,12 +176,13 @@ function runFfmpeg(args: string[]) {
   return runCommand(FFMPEG_BIN, ["-hide_banner", "-loglevel", "error", "-y", ...args]);
 }
 
-async function runExiftoolStrip(filePath: string) {
+async function runExiftoolStrip(filePath: string, preserveImageProfile = false) {
   const data = await readFile(filePath);
+  const args = preserveImageProfile ? ["-tagsFromFile", "@", "-ICC_Profile", "-Orientation"] : [];
   const result = await writeMetadata(
     { name: path.basename(filePath), data },
     { all: "" },
-    { args: ["-m", "-q", "-q"] },
+    { args: [...args, "-m", "-q", "-q"] },
   );
 
   if (!result.success) {
@@ -355,7 +356,7 @@ export async function sanitizeMetadata(upload: MetadataUpload, mode: "strip" | "
       outPath = path.join(upload.tempDir, `out${ext}`);
       outName = `${base}-clean${ext}`;
       await copyFile(upload.filePath, outPath);
-      await runExiftoolStrip(outPath);
+      await runExiftoolStrip(outPath, true);
     }
   } else if (kind === "video") {
     const isMp4ish = [".mp4", ".mov", ".m4v"].includes(ext);
