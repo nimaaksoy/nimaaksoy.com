@@ -1,0 +1,64 @@
+{
+  "date": "2026-08-23",
+  "items": [
+    {
+      "slug": "hister",
+      "name": "Hister",
+      "url": "https://github.com/asciimoo/hister",
+      "image": "https://opengraph.githubassets.com/1/asciimoo/hister",
+      "homepage": "https://hister.org/",
+      "tags": [
+        "search",
+        "privacy",
+        "mcp",
+        "personal-knowledge",
+        "self-hosted",
+        "ai-agents"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasMcp": true,
+      "source": "github",
+      "take": {
+        "en": "Your own search engine for pages you visit and files you keep — full text, optional semantics, and MCP for agents.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Founders lose hours re-finding half-remembered docs, tabs, and PDFs. Cloud bookmark tools are shallow and leaky. Hister keeps the index on machines you control and lets coding agents query it the same way you do, so personal research becomes something the agent can actually use.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Hister is a private search engine from the creator of Searx. It indexes the full contents of visited pages and local files, not just titles and URLs. A browser extension feeds new pages automatically. You search from a web UI, a terminal TUI, the CLI, or an MCP server so an AI assistant can pull from your history. Optional semantic search plugs into an embeddings endpoint you choose. There is no mandatory cloud and no telemetry by default. Multi-user mode keeps indexes separate on a shared host.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Download a release binary, run hister listen, open localhost:4433, and install the Firefox or Chrome extension. Import existing browser history if you want a backfill. Point semantic search at your own embeddings endpoint when you need meaning-based recall. Connect Claude Code, Cursor, or any MCP client to the Hister MCP server so the agent can search the same corpus during a task.",
+        "fa": ""
+      },
+      "different": {
+        "en": "This is not another web scraper pack for public social feeds and not a hosted second brain. The corpus is your browsing and files. The product is search with agent access, not chat wrapping. Privacy defaults stay local unless you deliberately wire remote embeddings.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Hister is wild. private full-text search over the pages you visit and the files you keep, plus MCP so your coding agent can query the same index. no mandatory cloud.\n\nhttps://nimaaksoy.com/radar/hister",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Hister is worth a look if you keep losing half-remembered research. open-source personal search engine: full-text index of your browsing and files, web + terminal + MCP for agents, local by default.\n\nhttps://nimaaksoy.com/radar/hister",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "Agent Reach",
+          "url": "https://nimaaksoy.com/radar/agent-reach"
+        },
+        {
+          "name": "OpenViking",
+          "url": "https://nimaaksoy.com/radar/openviking"
+        }
+      ]
+    }
+  ]
+}
