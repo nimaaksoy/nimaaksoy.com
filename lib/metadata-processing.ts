@@ -178,7 +178,11 @@ function runFfmpeg(args: string[]) {
 
 async function runExiftoolStrip(filePath: string) {
   const data = await readFile(filePath);
-  const result = await writeMetadata({ name: path.basename(filePath), data }, { all: "" });
+  const result = await writeMetadata(
+    { name: path.basename(filePath), data },
+    { all: "" },
+    { args: ["-m", "-q"] },
+  );
 
   if (!result.success) {
     throw new Error(result.error || "ExifTool failed to strip metadata.");

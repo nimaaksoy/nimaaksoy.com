@@ -5,6 +5,7 @@ import {
   IconDownload,
   IconFileAnalytics,
   IconInfoCircle,
+  IconLoader2,
   IconRefresh,
   IconSearch,
   IconUpload,
@@ -352,6 +353,8 @@ export function MetadataTool() {
   const normalizedFilter = filter.trim().toLowerCase();
   const canSanitize = isSanitizableMedia(result, file);
   const sanitizeDisabled = !canSanitize || Boolean(downloadMode) || isInspecting;
+  const isSanitizing = downloadMode === "strip";
+  const isCompressing = downloadMode === "compress";
 
   return (
     <div className="space-y-8">
@@ -388,8 +391,7 @@ export function MetadataTool() {
               {file ? file.name : "Drop a file here"}
             </h2>
             <p className="mt-3 max-w-2xl font-monroe text-[16px] italic leading-[1.55] text-[#9A9A9A]">
-              Inspect full ffprobe and exiftool metadata, then download a clean copy. Free to use,
-              no credits required.
+              Inspect full ffprobe and ExifTool metadata, then download a clean copy.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 md:justify-end">
@@ -432,9 +434,13 @@ export function MetadataTool() {
             disabled={sanitizeDisabled}
             className="rounded-[8px] border border-[#1F1F1F] bg-[#111111] p-5 text-left transition hover:border-[#2CFF05]/60 hover:bg-[#151515] disabled:cursor-not-allowed disabled:opacity-50"
           >
-            <IconDownload className="text-[#2CFF05]" size={20} stroke={1.6} />
+            {isSanitizing ? (
+              <IconLoader2 className="animate-spin text-[#2CFF05]" size={20} stroke={1.6} />
+            ) : (
+              <IconDownload className="text-[#2CFF05]" size={20} stroke={1.6} />
+            )}
             <p className="mt-4 font-monroe text-[30px] font-light leading-none text-[#EAEAEA]">
-              Sanitize
+              {isSanitizing ? "Sanitizing" : "Sanitize"}
             </p>
             <p className="mt-3 font-jetbrains text-[11px] leading-[1.6] text-[#8A8A8A]">
               {canSanitize
@@ -448,9 +454,13 @@ export function MetadataTool() {
             disabled={sanitizeDisabled}
             className="rounded-[8px] border border-[#1F1F1F] bg-[#111111] p-5 text-left transition hover:border-[#2CFF05]/60 hover:bg-[#151515] disabled:cursor-not-allowed disabled:opacity-50"
           >
-            <IconDownload className="text-[#2CFF05]" size={20} stroke={1.6} />
+            {isCompressing ? (
+              <IconLoader2 className="animate-spin text-[#2CFF05]" size={20} stroke={1.6} />
+            ) : (
+              <IconDownload className="text-[#2CFF05]" size={20} stroke={1.6} />
+            )}
             <p className="mt-4 font-monroe text-[30px] font-light leading-none text-[#EAEAEA]">
-              Sanitize + compress
+              {isCompressing ? "Compressing" : "Sanitize + compress"}
             </p>
             <p className="mt-3 font-jetbrains text-[11px] leading-[1.6] text-[#8A8A8A]">
               {canSanitize
