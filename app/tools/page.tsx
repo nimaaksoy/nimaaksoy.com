@@ -34,11 +34,25 @@ const toolCards: ToolCard[] = [
     href: "/life-in-dots",
   },
   {
-    name: "Verinio",
+    name: "Metadata",
     description:
-      "Content tools for AI agents. Pull media, clean it up, and feed your workflows.",
-    cta: "→ verinio.com",
-    href: "https://verinio.com",
+      "Inspect image, video, audio, EXIF, GPS, and file fingerprints. Free, no credits required.",
+    cta: "→ nimaaksoy.com/metadata",
+    href: "/metadata",
+  },
+  {
+    name: "Radar",
+    description:
+      "Curated tools, open-source projects, and AI products worth watching.",
+    cta: "→ nimaaksoy.com/radar",
+    href: "/radar",
+  },
+  {
+    name: "Skills",
+    description:
+      "Reusable AI skills for focused agent workflows, writing, research, and creator operations.",
+    cta: "→ nimaaksoy.com/skills",
+    href: "/skills",
   },
   {
     name: "PDF",
