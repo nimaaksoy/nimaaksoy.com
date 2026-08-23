@@ -181,7 +181,7 @@ async function runExiftoolStrip(filePath: string) {
   const result = await writeMetadata(
     { name: path.basename(filePath), data },
     { all: "" },
-    { args: ["-m", "-q"] },
+    { args: ["-m", "-q", "-q"] },
   );
 
   if (!result.success) {

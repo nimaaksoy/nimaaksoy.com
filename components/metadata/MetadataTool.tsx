@@ -120,6 +120,29 @@ function fileNameFromDisposition(header: string | null, fallback: string) {
   return match?.[1] || fallback;
 }
 
+function friendlyResponseError(status: number, text: string) {
+  const message = text.trim();
+  if (status === 413 || /request entity too large/i.test(message)) {
+    return "File is too large for this request. Try a smaller file.";
+  }
+  return message || "Request failed.";
+}
+
+async function readJsonResponse<T>(response: Response): Promise<T> {
+  const contentType = response.headers.get("Content-Type") || "";
+
+  if (contentType.includes("application/json")) {
+    const payload = (await response.json()) as T & { error?: string };
+    if (!response.ok) {
+      throw new Error(payload.error || "Request failed.");
+    }
+    return payload;
+  }
+
+  const text = await response.text().catch(() => "");
+  throw new Error(friendlyResponseError(response.status, text));
+}
+
 function isSanitizableMedia(result: MetadataResult | null, file: File | null) {
   if (!result || !file) return false;
   if (/^(image|video|audio)\//.test(file.type)) return true;
@@ -280,9 +303,7 @@ export function MetadataTool() {
         method: "POST",
         body: form,
       });
-      const payload = (await response.json()) as MetadataResult & { error?: string };
-
-      if (!response.ok) throw new Error(payload.error || "Metadata processing failed.");
+      const payload = await readJsonResponse<MetadataResult>(response);
 
       setResult(payload);
       setStatus("Metadata ready.");
@@ -312,8 +333,7 @@ export function MetadataTool() {
       });
 
       if (!response.ok) {
-        const payload = (await response.json().catch(() => null)) as { error?: string } | null;
-        throw new Error(payload?.error || "Metadata sanitization failed.");
+        await readJsonResponse<{ error?: string }>(response);
       }
 
       const blob = await response.blob();
