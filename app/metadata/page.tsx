@@ -35,8 +35,9 @@ export default function MetadataPage() {
                 </h1>
               </div>
               <p className="font-monroe text-[18px] italic leading-[1.65] text-[#9A9A9A]">
-                A free local tool for checking what a file reveals before you share it:
+                A free tool for checking what a file reveals before you share it:
                 dimensions, duration, EXIF, GPS fields, timestamps, and a SHA-256 fingerprint.
+                Uploaded files are deleted after processing.
               </p>
             </header>
 
@@ -51,10 +52,10 @@ export default function MetadataPage() {
               </div>
               <div>
                 <p className="font-monroe text-[38px] font-light leading-none text-[#EAEAEA]">
-                  Local
+                  Clean
                 </p>
                 <p className="mt-2 font-jetbrains text-[10px] uppercase text-[#7F7F7F]">
-                  Browser inspection
+                  Strip metadata
                 </p>
               </div>
               <div>

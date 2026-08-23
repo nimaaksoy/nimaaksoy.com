@@ -2,11 +2,11 @@
 
 import {
   IconClipboard,
+  IconDownload,
   IconFileAnalytics,
-  IconHash,
   IconInfoCircle,
-  IconPhoto,
   IconRefresh,
+  IconSearch,
   IconUpload,
 } from "@tabler/icons-react";
 import { useMemo, useRef, useState } from "react";
@@ -14,7 +14,6 @@ import { useMemo, useRef, useState } from "react";
 type MetadataRow = {
   label: string;
   value: string;
-  note?: string;
 };
 
 type MetadataSection = {
@@ -24,78 +23,29 @@ type MetadataSection = {
 };
 
 type MetadataResult = {
-  file: {
-    name: string;
-    type: string;
-    size: number;
-    lastModified: string;
-    sha256?: string;
+  file?: {
+    name?: string;
+    sizeBytes?: number;
+    hashes?: {
+      sha256?: string;
+      md5?: string;
+    } | null;
   };
-  media: MetadataRow[];
-  exif: MetadataRow[];
-  gps: MetadataRow[];
+  ffprobe?: {
+    format?: Record<string, unknown>;
+    streams?: Array<Record<string, unknown>>;
+    chapters?: Array<Record<string, unknown>>;
+    programs?: Array<Record<string, unknown>>;
+  } | null;
+  exif?: Record<string, unknown> | null;
+  exifAvailable?: boolean;
 };
 
-const IMAGE_TYPES = new Set(["image/jpeg", "image/png", "image/webp", "image/gif", "image/avif"]);
-
-const TIFF_TYPES: Record<number, { bytes: number; read: (view: DataView, offset: number, little: boolean) => number | string }> = {
-  1: { bytes: 1, read: (view, offset) => view.getUint8(offset) },
-  2: { bytes: 1, read: (view, offset) => view.getUint8(offset) },
-  3: { bytes: 2, read: (view, offset, little) => view.getUint16(offset, little) },
-  4: { bytes: 4, read: (view, offset, little) => view.getUint32(offset, little) },
-  5: {
-    bytes: 8,
-    read: (view, offset, little) => {
-      const top = view.getUint32(offset, little);
-      const bottom = view.getUint32(offset + 4, little);
-      return bottom ? top / bottom : top;
-    },
-  },
-  9: { bytes: 4, read: (view, offset, little) => view.getInt32(offset, little) },
-  10: {
-    bytes: 8,
-    read: (view, offset, little) => {
-      const top = view.getInt32(offset, little);
-      const bottom = view.getInt32(offset + 4, little);
-      return bottom ? top / bottom : top;
-    },
-  },
-};
-
-const EXIF_LABELS: Record<number, string> = {
-  0x010f: "Camera make",
-  0x0110: "Camera model",
-  0x0112: "Orientation",
-  0x0131: "Software",
-  0x0132: "Modified",
-  0x829a: "Exposure time",
-  0x829d: "F number",
-  0x8827: "ISO",
-  0x9003: "Date taken",
-  0x9209: "Flash",
-  0x920a: "Focal length",
-  0xa002: "Image width",
-  0xa003: "Image height",
-  0xa405: "35mm focal length",
-  0xa434: "Lens model",
-};
-
-const GPS_LABELS: Record<number, string> = {
-  0x0001: "GPS latitude ref",
-  0x0002: "GPS latitude",
-  0x0003: "GPS longitude ref",
-  0x0004: "GPS longitude",
-  0x0005: "GPS altitude ref",
-  0x0006: "GPS altitude",
-  0x0010: "GPS image direction ref",
-  0x0011: "GPS image direction",
-  0x001d: "GPS date stamp",
-};
-
-function formatBytes(bytes: number) {
-  if (!Number.isFinite(bytes) || bytes <= 0) return "0 B";
+function formatBytes(bytes?: number) {
+  const size = Number(bytes);
+  if (!Number.isFinite(size) || size <= 0) return "0 B";
   const units = ["B", "KB", "MB", "GB"];
-  let value = bytes;
+  let value = size;
   let unit = 0;
   while (value >= 1024 && unit < units.length - 1) {
     value /= 1024;
@@ -104,198 +54,61 @@ function formatBytes(bytes: number) {
   return `${unit === 0 ? value : value.toFixed(value >= 100 ? 0 : 1)} ${units[unit]}`;
 }
 
-function formatDuration(seconds: number) {
-  if (!Number.isFinite(seconds) || seconds <= 0) return "";
-  const mins = Math.floor(seconds / 60);
-  const secs = Math.round(seconds % 60)
-    .toString()
-    .padStart(2, "0");
-  return `${mins}:${secs}`;
-}
-
-function formatExifValue(label: string, value: string | number) {
-  if (typeof value === "string") return value.trim();
-  if (label === "Exposure time" && value > 0 && value < 1) return `1/${Math.round(1 / value)} sec`;
-  if (label === "F number") return `f/${Number(value).toFixed(1)}`;
-  if (label === "Focal length") return `${Number(value).toFixed(1)} mm`;
-  if (label === "GPS altitude") return `${Number(value).toFixed(1)} m`;
-  return Number.isInteger(value) ? String(value) : Number(value).toFixed(4).replace(/\.?0+$/, "");
-}
-
-function readAscii(view: DataView, offset: number, length: number) {
-  let value = "";
-  for (let index = 0; index < length; index += 1) {
-    const code = view.getUint8(offset + index);
-    if (code === 0) break;
-    value += String.fromCharCode(code);
+function valueToText(value: unknown): string {
+  if (value == null || value === "") return "";
+  if (typeof value === "string" || typeof value === "number" || typeof value === "boolean") {
+    return String(value);
   }
-  return value;
+  return JSON.stringify(value);
 }
 
-function readTiffValue(view: DataView, tiffStart: number, entryOffset: number, little: boolean) {
-  const type = view.getUint16(entryOffset + 2, little);
-  const count = view.getUint32(entryOffset + 4, little);
-  const spec = TIFF_TYPES[type];
-  if (!spec || !count) return null;
-
-  const byteLength = spec.bytes * count;
-  const valueOffset = byteLength <= 4 ? entryOffset + 8 : tiffStart + view.getUint32(entryOffset + 8, little);
-  if (valueOffset < 0 || valueOffset + byteLength > view.byteLength) return null;
-
-  if (type === 2) return readAscii(view, valueOffset, count);
-
-  const values: Array<number | string> = [];
-  for (let index = 0; index < count; index += 1) {
-    values.push(spec.read(view, valueOffset + index * spec.bytes, little));
-  }
-
-  return values.length === 1 ? values[0] : values;
+function prettyLabel(value: string) {
+  return value
+    .replace(/([a-z0-9])([A-Z])/g, "$1 $2")
+    .replace(/[._-]/g, " ")
+    .replace(/\b\w/g, (letter) => letter.toUpperCase())
+    .trim();
 }
 
-function parseIfd(
-  view: DataView,
-  tiffStart: number,
-  ifdOffset: number,
-  little: boolean,
-  labels: Record<number, string>,
-) {
+function flattenRows(source: unknown, prefix = ""): MetadataRow[] {
+  if (!source || typeof source !== "object") return [];
   const rows: MetadataRow[] = [];
-  const pointers: Record<number, number> = {};
-  const start = tiffStart + ifdOffset;
-  if (start < 0 || start + 2 > view.byteLength) return { rows, pointers };
 
-  const count = view.getUint16(start, little);
-  for (let index = 0; index < count; index += 1) {
-    const entry = start + 2 + index * 12;
-    if (entry + 12 > view.byteLength) break;
-    const tag = view.getUint16(entry, little);
-    const value = readTiffValue(view, tiffStart, entry, little);
+  for (const [key, value] of Object.entries(source as Record<string, unknown>)) {
+    if (value == null || value === "") continue;
+    const label = prefix ? `${prefix}.${key}` : key;
 
-    if ((tag === 0x8769 || tag === 0x8825) && typeof value === "number") {
-      pointers[tag] = value;
+    if (Array.isArray(value)) {
+      if (value.every((item) => item == null || typeof item !== "object")) {
+        rows.push({ label: prettyLabel(label), value: value.map(valueToText).filter(Boolean).join(", ") });
+      } else {
+        value.forEach((item, index) => {
+          rows.push(...flattenRows(item, `${label}.${index + 1}`));
+        });
+      }
       continue;
     }
 
-    const label = labels[tag];
-    if (!label || value == null) continue;
-    const text = Array.isArray(value)
-      ? value.map((item) => formatExifValue(label, item)).join(", ")
-      : formatExifValue(label, value);
-    if (text) rows.push({ label, value: text });
-  }
-
-  return { rows, pointers };
-}
-
-function gpsToDecimal(values?: MetadataRow, ref?: MetadataRow) {
-  if (!values || !ref) return null;
-  const parts = values.value.split(",").map((part) => Number(part.trim()));
-  if (parts.length < 3 || parts.some((part) => !Number.isFinite(part))) return null;
-  const sign = /[SW]/i.test(ref.value) ? -1 : 1;
-  return sign * (parts[0] + parts[1] / 60 + parts[2] / 3600);
-}
-
-function parseJpegExif(buffer: ArrayBuffer) {
-  const view = new DataView(buffer);
-  if (view.byteLength < 4 || view.getUint16(0) !== 0xffd8) {
-    return { exif: [], gps: [] };
-  }
-
-  let offset = 2;
-  while (offset + 4 < view.byteLength) {
-    const marker = view.getUint16(offset);
-    const size = view.getUint16(offset + 2);
-    if (marker === 0xffe1 && readAscii(view, offset + 4, 6) === "Exif") {
-      const tiffStart = offset + 10;
-      const little = readAscii(view, tiffStart, 2) === "II";
-      const firstIfd = view.getUint32(tiffStart + 4, little);
-      const root = parseIfd(view, tiffStart, firstIfd, little, EXIF_LABELS);
-      const exifIfd = root.pointers[0x8769]
-        ? parseIfd(view, tiffStart, root.pointers[0x8769], little, EXIF_LABELS)
-        : { rows: [] };
-      const gpsIfd = root.pointers[0x8825]
-        ? parseIfd(view, tiffStart, root.pointers[0x8825], little, GPS_LABELS)
-        : { rows: [] };
-      const gpsRows = [...gpsIfd.rows];
-      const lat = gpsToDecimal(
-        gpsRows.find((row) => row.label === "GPS latitude"),
-        gpsRows.find((row) => row.label === "GPS latitude ref"),
-      );
-      const lon = gpsToDecimal(
-        gpsRows.find((row) => row.label === "GPS longitude"),
-        gpsRows.find((row) => row.label === "GPS longitude ref"),
-      );
-      if (lat != null && lon != null) {
-        gpsRows.unshift({
-          label: "Coordinates",
-          value: `${lat.toFixed(6)}, ${lon.toFixed(6)}`,
-          note: "Location embedded in the file.",
-        });
-      }
-      return {
-        exif: [...root.rows, ...exifIfd.rows],
-        gps: gpsRows,
-      };
+    if (typeof value === "object") {
+      rows.push(...flattenRows(value, label));
+      continue;
     }
-    offset += 2 + size;
+
+    const text = valueToText(value);
+    if (text) rows.push({ label: prettyLabel(label), value: text });
   }
 
-  return { exif: [], gps: [] };
+  return rows;
 }
 
-async function sha256(buffer: ArrayBuffer) {
-  if (!crypto.subtle) return undefined;
-  const digest = await crypto.subtle.digest("SHA-256", buffer);
-  return Array.from(new Uint8Array(digest))
-    .map((byte) => byte.toString(16).padStart(2, "0"))
-    .join("");
+function fileNameFromDisposition(header: string | null, fallback: string) {
+  const match = header?.match(/filename="?([^"]+)"?/i);
+  return match?.[1] || fallback;
 }
 
-function readImage(file: File) {
-  return new Promise<MetadataRow[]>((resolve) => {
-    const url = URL.createObjectURL(file);
-    const image = new Image();
-    image.onload = () => {
-      resolve([
-        { label: "Dimensions", value: `${image.naturalWidth} x ${image.naturalHeight}` },
-        { label: "Pixels", value: `${(image.naturalWidth * image.naturalHeight).toLocaleString()} px` },
-      ]);
-      URL.revokeObjectURL(url);
-    };
-    image.onerror = () => {
-      resolve([]);
-      URL.revokeObjectURL(url);
-    };
-    image.src = url;
-  });
-}
-
-function readMedia(file: File) {
-  return new Promise<MetadataRow[]>((resolve) => {
-    const url = URL.createObjectURL(file);
-    const element = document.createElement(file.type.startsWith("audio/") ? "audio" : "video");
-    element.preload = "metadata";
-    element.onloadedmetadata = () => {
-      const rows: MetadataRow[] = [];
-      if ("videoWidth" in element && element.videoWidth) {
-        rows.push({ label: "Dimensions", value: `${element.videoWidth} x ${element.videoHeight}` });
-      }
-      const duration = formatDuration(element.duration);
-      if (duration) rows.push({ label: "Duration", value: duration });
-      resolve(rows);
-      URL.revokeObjectURL(url);
-    };
-    element.onerror = () => {
-      resolve([]);
-      URL.revokeObjectURL(url);
-    };
-    element.src = url;
-  });
-}
-
-function ResultSection({ section, filter }: { section: MetadataSection; filter: string }) {
+function MetadataSectionView({ section, filter }: { section: MetadataSection; filter: string }) {
   const rows = section.rows.filter((row) => {
-    const haystack = `${section.title} ${row.label} ${row.value} ${row.note || ""}`.toLowerCase();
+    const haystack = `${section.title} ${row.label} ${row.value}`.toLowerCase();
     return haystack.includes(filter);
   });
 
@@ -315,18 +128,11 @@ function ResultSection({ section, filter }: { section: MetadataSection; filter: 
         {rows.map((row) => (
           <div
             key={`${section.title}-${row.label}-${row.value}`}
-            className="grid gap-2 px-5 py-4 md:grid-cols-[220px_1fr]"
+            className="grid gap-2 px-5 py-4 md:grid-cols-[240px_1fr]"
           >
-            <div>
-              <p className="font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#7F7F7F]">
-                {row.label}
-              </p>
-              {row.note ? (
-                <p className="mt-1 font-monroe text-[13px] italic leading-[1.4] text-[#777777]">
-                  {row.note}
-                </p>
-              ) : null}
-            </div>
+            <p className="font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#7F7F7F]">
+              {row.label}
+            </p>
             <p className="min-w-0 break-words font-jetbrains text-[12px] leading-[1.7] text-[#DADADA]">
               {row.value}
             </p>
@@ -345,79 +151,71 @@ export function MetadataTool() {
   const [status, setStatus] = useState("");
   const [isDragging, setIsDragging] = useState(false);
   const [isInspecting, setIsInspecting] = useState(false);
+  const [downloadMode, setDownloadMode] = useState<"strip" | "compress" | null>(null);
 
   const sections = useMemo<MetadataSection[]>(() => {
     if (!result) return [];
-    return [
-      {
-        title: "File",
-        eyebrow: "local",
-        rows: [
-          { label: "Name", value: result.file.name },
-          { label: "Type", value: result.file.type || "Unknown" },
-          { label: "Size", value: `${formatBytes(result.file.size)} (${result.file.size.toLocaleString()} bytes)` },
-          { label: "Last modified", value: result.file.lastModified },
-        ],
-      },
-      { title: "Media", eyebrow: "preview", rows: result.media },
-      { title: "Embedded EXIF", eyebrow: "image", rows: result.exif },
-      { title: "Location", eyebrow: "gps", rows: result.gps },
-      {
-        title: "Fingerprint",
-        eyebrow: "hash",
-        rows: result.file.sha256
-          ? [
-              {
-                label: "SHA-256",
-                value: result.file.sha256,
-                note: "Useful when you need to confirm two files are identical.",
-              },
-            ]
-          : [],
-      },
-    ].filter((section) => section.rows.length);
-  }, [result]);
 
-  async function inspectFile(targetFile: File) {
-    setIsInspecting(true);
-    setStatus("Reading metadata locally...");
+    const fileRows: MetadataRow[] = [
+      { label: "Name", value: valueToText(result.file?.name) },
+      { label: "Size", value: `${formatBytes(result.file?.sizeBytes)} (${Number(result.file?.sizeBytes || 0).toLocaleString()} bytes)` },
+      { label: "SHA 256", value: valueToText(result.file?.hashes?.sha256) },
+      { label: "MD5", value: valueToText(result.file?.hashes?.md5) },
+    ].filter((row) => row.value);
 
-    try {
-      const buffer = await targetFile.arrayBuffer();
-      const mediaRows = targetFile.type.startsWith("image/")
-        ? await readImage(targetFile)
-        : targetFile.type.startsWith("video/") || targetFile.type.startsWith("audio/")
-          ? await readMedia(targetFile)
-          : [];
-      const parsed = targetFile.type === "image/jpeg" ? parseJpegExif(buffer) : { exif: [], gps: [] };
-      const hash = await sha256(buffer);
+    const nextSections: MetadataSection[] = [
+      { title: "File", eyebrow: "hash", rows: fileRows },
+    ];
 
-      setResult({
-        file: {
-          name: targetFile.name,
-          type: targetFile.type,
-          size: targetFile.size,
-          lastModified: new Date(targetFile.lastModified).toLocaleString(),
-          sha256: hash,
-        },
-        media: mediaRows,
-        exif: parsed.exif,
-        gps: parsed.gps,
-      });
-      setStatus("Metadata ready. File stayed in your browser.");
-    } catch {
-      setStatus("Could not read this file. Try another image, video, or audio file.");
-      setResult(null);
-    } finally {
-      setIsInspecting(false);
+    const formatRows = flattenRows(result.ffprobe?.format);
+    if (formatRows.length) {
+      nextSections.push({ title: "Container", eyebrow: "ffprobe", rows: formatRows });
     }
-  }
+
+    result.ffprobe?.streams?.forEach((stream, index) => {
+      const rows = flattenRows(stream);
+      if (rows.length) {
+        nextSections.push({
+          title: `Stream ${index + 1}`,
+          eyebrow: valueToText(stream.codec_type || stream.codec_name || "ffprobe"),
+          rows,
+        });
+      }
+    });
+
+    result.ffprobe?.chapters?.forEach((chapter, index) => {
+      const rows = flattenRows(chapter);
+      if (rows.length) {
+        nextSections.push({ title: `Chapter ${index + 1}`, eyebrow: "ffprobe", rows });
+      }
+    });
+
+    result.ffprobe?.programs?.forEach((program, index) => {
+      const rows = flattenRows(program);
+      if (rows.length) {
+        nextSections.push({ title: `Program ${index + 1}`, eyebrow: "ffprobe", rows });
+      }
+    });
+
+    if (result.exif && typeof result.exif === "object") {
+      for (const [group, value] of Object.entries(result.exif)) {
+        if (group === "SourceFile") continue;
+        const rows = flattenRows(value);
+        if (rows.length) {
+          nextSections.push({ title: prettyLabel(group), eyebrow: "exiftool", rows });
+        }
+      }
+    }
+
+    return nextSections.filter((section) => section.rows.length);
+  }, [result]);
 
   function selectFile(nextFile?: File) {
     if (!nextFile) return;
     setFile(nextFile);
     setResult(null);
     setStatus("");
+    setFilter("");
   }
 
   function resetTool() {
@@ -426,6 +224,72 @@ export function MetadataTool() {
     setFilter("");
     setStatus("");
     if (inputRef.current) inputRef.current.value = "";
+  }
+
+  async function inspectFile() {
+    if (!file) return;
+    setIsInspecting(true);
+    setStatus("Reading full metadata...");
+
+    try {
+      const form = new FormData();
+      form.append("file", file);
+      const response = await fetch("/api/metadata", {
+        method: "POST",
+        body: form,
+      });
+      const payload = (await response.json()) as MetadataResult & { error?: string };
+
+      if (!response.ok) throw new Error(payload.error || "Metadata processing failed.");
+
+      setResult(payload);
+      setStatus("Metadata ready.");
+    } catch (error) {
+      setResult(null);
+      setStatus(error instanceof Error ? error.message : "Metadata processing failed.");
+    } finally {
+      setIsInspecting(false);
+    }
+  }
+
+  async function downloadSanitized(mode: "strip" | "compress") {
+    if (!file) return;
+    setDownloadMode(mode);
+    setStatus(mode === "compress" ? "Sanitizing and compressing..." : "Sanitizing metadata...");
+
+    try {
+      const form = new FormData();
+      form.append("file", file);
+      const response = await fetch(`/api/metadata/sanitize?mode=${mode}`, {
+        method: "POST",
+        body: form,
+      });
+
+      if (!response.ok) {
+        const payload = (await response.json().catch(() => null)) as { error?: string } | null;
+        throw new Error(payload?.error || "Metadata sanitization failed.");
+      }
+
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement("a");
+      anchor.href = url;
+      anchor.download = fileNameFromDisposition(
+        response.headers.get("Content-Disposition"),
+        mode === "compress" ? "clean-compressed-file" : "clean-file",
+      );
+      document.body.appendChild(anchor);
+      anchor.click();
+      anchor.remove();
+      URL.revokeObjectURL(url);
+
+      const cleanSize = Number(response.headers.get("X-Clean-Size"));
+      setStatus(`Download ready. Clean file size: ${formatBytes(cleanSize)}.`);
+    } catch (error) {
+      setStatus(error instanceof Error ? error.message : "Metadata sanitization failed.");
+    } finally {
+      setDownloadMode(null);
+    }
   }
 
   async function copyJson() {
@@ -468,12 +332,12 @@ export function MetadataTool() {
             <p className="font-jetbrains text-[11px] uppercase tracking-[0.16em] text-[#7F7F7F]">
               File metadata
             </p>
-            <h2 className="mt-2 font-monroe text-[32px] font-light leading-none text-[#EAEAEA]">
+            <h2 className="mt-2 break-words font-monroe text-[32px] font-light leading-none text-[#EAEAEA]">
               {file ? file.name : "Drop a file here"}
             </h2>
             <p className="mt-3 max-w-2xl font-monroe text-[16px] italic leading-[1.55] text-[#9A9A9A]">
-              Inspect common image, video, audio, EXIF, GPS, and fingerprint metadata. Free to use,
-              no credits required, and the file is not uploaded.
+              Inspect full ffprobe and exiftool metadata, then download a clean copy. Free to use,
+              no credits required.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 md:justify-end">
@@ -488,7 +352,7 @@ export function MetadataTool() {
             <button
               type="button"
               disabled={!file || isInspecting}
-              onClick={() => file && inspectFile(file)}
+              onClick={inspectFile}
               className="inline-flex h-11 items-center gap-2 rounded-[8px] border border-[#2A2A2A] px-4 font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#EAEAEA] transition hover:border-[#2CFF05] disabled:cursor-not-allowed disabled:opacity-40"
             >
               <IconInfoCircle size={16} stroke={1.8} />
@@ -508,46 +372,57 @@ export function MetadataTool() {
         </div>
       </section>
 
+      {file ? (
+        <section className="grid gap-4 md:grid-cols-3">
+          <button
+            type="button"
+            onClick={() => downloadSanitized("strip")}
+            disabled={Boolean(downloadMode)}
+            className="rounded-[8px] border border-[#1F1F1F] bg-[#111111] p-5 text-left transition hover:border-[#2CFF05]/60 hover:bg-[#151515] disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            <IconDownload className="text-[#2CFF05]" size={20} stroke={1.6} />
+            <p className="mt-4 font-monroe text-[30px] font-light leading-none text-[#EAEAEA]">
+              Sanitize
+            </p>
+            <p className="mt-3 font-jetbrains text-[11px] leading-[1.6] text-[#8A8A8A]">
+              Remove embedded metadata while keeping the same quality where the format supports it.
+            </p>
+          </button>
+          <button
+            type="button"
+            onClick={() => downloadSanitized("compress")}
+            disabled={Boolean(downloadMode)}
+            className="rounded-[8px] border border-[#1F1F1F] bg-[#111111] p-5 text-left transition hover:border-[#2CFF05]/60 hover:bg-[#151515] disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            <IconDownload className="text-[#2CFF05]" size={20} stroke={1.6} />
+            <p className="mt-4 font-monroe text-[30px] font-light leading-none text-[#EAEAEA]">
+              Sanitize + compress
+            </p>
+            <p className="mt-3 font-jetbrains text-[11px] leading-[1.6] text-[#8A8A8A]">
+              Strip metadata and re-encode to reduce file size.
+            </p>
+          </button>
+          <button
+            type="button"
+            onClick={copyJson}
+            disabled={!result}
+            className="rounded-[8px] border border-[#1F1F1F] bg-[#111111] p-5 text-left transition hover:border-[#2CFF05]/60 hover:bg-[#151515] disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            <IconClipboard className="text-[#2CFF05]" size={20} stroke={1.6} />
+            <p className="mt-4 font-monroe text-[30px] font-light leading-none text-[#EAEAEA]">
+              Copy JSON
+            </p>
+            <p className="mt-3 font-jetbrains text-[11px] leading-[1.6] text-[#8A8A8A]">
+              Copy the full metadata report for debugging or archiving.
+            </p>
+          </button>
+        </section>
+      ) : null}
+
       {status ? (
         <p className="font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#7F7F7F]">
           {status}
         </p>
-      ) : null}
-
-      {result ? (
-        <section className="grid gap-5 md:grid-cols-3">
-          <div className="rounded-[8px] border border-[#1F1F1F] bg-[#111111] p-5">
-            <IconPhoto className="text-[#2CFF05]" size={20} stroke={1.6} />
-            <p className="mt-4 font-monroe text-[32px] font-light leading-none text-[#EAEAEA]">
-              {IMAGE_TYPES.has(result.file.type) ? "Image" : result.file.type.split("/")[0] || "File"}
-            </p>
-            <p className="mt-2 font-jetbrains text-[10px] uppercase tracking-[0.14em] text-[#7F7F7F]">
-              Media type
-            </p>
-          </div>
-          <div className="rounded-[8px] border border-[#1F1F1F] bg-[#111111] p-5">
-            <IconHash className="text-[#2CFF05]" size={20} stroke={1.6} />
-            <p className="mt-4 font-monroe text-[32px] font-light leading-none text-[#EAEAEA]">
-              {formatBytes(result.file.size)}
-            </p>
-            <p className="mt-2 font-jetbrains text-[10px] uppercase tracking-[0.14em] text-[#7F7F7F]">
-              File size
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={copyJson}
-            className="rounded-[8px] border border-[#2CFF05] bg-[#111111] p-5 text-left transition hover:bg-[#151515]"
-          >
-            <IconClipboard className="text-[#2CFF05]" size={20} stroke={1.6} />
-            <p className="mt-4 font-monroe text-[32px] font-light leading-none text-[#EAEAEA]">
-              JSON
-            </p>
-            <p className="mt-2 font-jetbrains text-[10px] uppercase tracking-[0.14em] text-[#7F7F7F]">
-              Copy report
-            </p>
-          </button>
-        </section>
       ) : null}
 
       {sections.length ? (
@@ -556,16 +431,23 @@ export function MetadataTool() {
             <h2 className="font-monroe text-[40px] font-light leading-none text-[#EAEAEA]">
               Metadata
             </h2>
-            <input
-              type="search"
-              value={filter}
-              onChange={(event) => setFilter(event.target.value)}
-              placeholder="Search fields"
-              className="h-11 rounded-[8px] border border-[#2A2A2A] bg-[#0A0A0A] px-4 font-jetbrains text-[12px] text-[#EAEAEA] outline-none transition placeholder:text-[#555555] focus:border-[#2CFF05] md:w-[320px]"
-            />
+            <label className="relative block md:w-[320px]">
+              <IconSearch
+                size={15}
+                stroke={1.8}
+                className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[#555555]"
+              />
+              <input
+                type="search"
+                value={filter}
+                onChange={(event) => setFilter(event.target.value)}
+                placeholder="Search fields"
+                className="h-11 w-full rounded-[8px] border border-[#2A2A2A] bg-[#0A0A0A] pl-10 pr-4 font-jetbrains text-[12px] text-[#EAEAEA] outline-none transition placeholder:text-[#555555] focus:border-[#2CFF05]"
+              />
+            </label>
           </div>
           {sections.map((section) => (
-            <ResultSection key={section.title} section={section} filter={normalizedFilter} />
+            <MetadataSectionView key={section.title} section={section} filter={normalizedFilter} />
           ))}
         </section>
       ) : null}
