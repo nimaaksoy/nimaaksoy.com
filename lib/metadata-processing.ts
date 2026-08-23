@@ -1,8 +1,9 @@
 import "server-only";
 
+import { parseMetadata, writeMetadata } from "@colorhythm/exiftool-wasm";
 import { createHash } from "node:crypto";
 import { createReadStream, createWriteStream } from "node:fs";
-import { copyFile, mkdir, mkdtemp, rm, stat } from "node:fs/promises";
+import { copyFile, mkdir, mkdtemp, readFile, rm, stat, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { spawn } from "node:child_process";
@@ -18,7 +19,6 @@ const FFPROBE_BIN = path.join(
   process.arch,
   process.platform === "win32" ? "ffprobe.exe" : "ffprobe",
 );
-const EXIFTOOL_BIN = path.join(PROJECT_ROOT, "node_modules", "exiftool-vendored.pl", "bin", "exiftool");
 
 const MDATA_TMP_PREFIX = "nima-metadata-";
 const MDATA_MAX_BYTES = 250 * 1024 * 1024;
@@ -117,20 +117,55 @@ function runFfprobe(filePath: string) {
   ).then((output) => JSON.parse(output) as FfprobeResult);
 }
 
+function stripZeroDispositionFields(value: unknown): unknown {
+  if (Array.isArray(value)) {
+    return value.map(stripZeroDispositionFields);
+  }
+
+  if (!value || typeof value !== "object") {
+    return value;
+  }
+
+  const source = value as Record<string, unknown>;
+  const next: Record<string, unknown> = {};
+
+  for (const [key, item] of Object.entries(source)) {
+    if (key === "disposition" && item && typeof item === "object" && !Array.isArray(item)) {
+      const activeDisposition = Object.fromEntries(
+        Object.entries(item as Record<string, unknown>).filter(([, dispositionValue]) => {
+          return Number(dispositionValue) !== 0;
+        }),
+      );
+      if (Object.keys(activeDisposition).length) {
+        next[key] = activeDisposition;
+      }
+      continue;
+    }
+
+    next[key] = stripZeroDispositionFields(item);
+  }
+
+  return next;
+}
+
+function cleanFfprobeResult(ffprobe: FfprobeResult | null) {
+  return stripZeroDispositionFields(ffprobe) as FfprobeResult | null;
+}
+
 async function runExiftool(filePath: string) {
   try {
-    const output = await runCommand(EXIFTOOL_BIN, [
-      "-json",
-      "-g1",
-      "-a",
-      "-ee",
-      "-api",
-      "largefilesupport=1",
-      "-c",
-      "%+.6f",
-      filePath,
-    ]);
-    const parsed = JSON.parse(output) as Array<Record<string, unknown>> | Record<string, unknown>;
+    const data = await readFile(filePath);
+    const result = await parseMetadata<Array<Record<string, unknown>> | Record<string, unknown>>(
+      { name: path.basename(filePath), data },
+      {
+        args: ["-json", "-g1", "-a", "-ee", "-api", "largefilesupport=1", "-c", "%+.6f"],
+        transform: JSON.parse,
+      },
+    );
+
+    if (!result.success) return null;
+
+    const parsed = result.data;
     return Array.isArray(parsed) ? parsed[0] || null : parsed || null;
   } catch {
     return null;
@@ -141,16 +176,15 @@ function runFfmpeg(args: string[]) {
   return runCommand(FFMPEG_BIN, ["-hide_banner", "-loglevel", "error", "-y", ...args]);
 }
 
-function runExiftoolStrip(filePath: string) {
-  return runCommand(EXIFTOOL_BIN, [
-    "-all=",
-    "-tagsFromFile",
-    "@",
-    "-ICC_Profile",
-    "-Orientation",
-    "-overwrite_original",
-    filePath,
-  ]);
+async function runExiftoolStrip(filePath: string) {
+  const data = await readFile(filePath);
+  const result = await writeMetadata({ name: path.basename(filePath), data }, { all: "" });
+
+  if (!result.success) {
+    throw new Error(result.error || "ExifTool failed to strip metadata.");
+  }
+
+  await writeFile(filePath, Buffer.from(result.data));
 }
 
 function hashFile(filePath: string) {
@@ -275,7 +309,7 @@ export async function receiveFormUpload(request: Request): Promise<MetadataUploa
 
 export async function inspectMetadata(upload: MetadataUpload) {
   const [ffprobe, exif, hashes] = await Promise.all([
-    runFfprobe(upload.filePath).catch(() => null),
+    runFfprobe(upload.filePath).then(cleanFfprobeResult).catch(() => null),
     runExiftool(upload.filePath),
     hashFile(upload.filePath),
   ]);

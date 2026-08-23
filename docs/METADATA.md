@@ -1,6 +1,6 @@
 # Metadata Tool
 
-`/metadata` is a free file metadata inspector and sanitizer for images, video, and audio on nimaaksoy.com. It is based on the same practical model as Verinio: use `ffprobe` for container/stream metadata, `exiftool` for embedded tags and provenance, and `ffmpeg`/`exiftool` for clean downloads.
+`/metadata` is a free file metadata inspector and sanitizer for images, video, and audio on nimaaksoy.com. It is based on the same practical model as Verinio: use `ffprobe` for container/stream metadata, WebAssembly ExifTool for embedded tags and provenance, and `ffmpeg` plus WebAssembly ExifTool for clean downloads.
 
 ## What Metadata Means
 
@@ -23,7 +23,7 @@ When a user selects a file:
 1. The browser sends the file to `POST /api/metadata`.
 2. The server writes the upload to a temporary file.
 3. `ffprobe` reads format, stream, chapter, program, and private stream data.
-4. `exiftool -json -g1 -a -ee` reads grouped embedded metadata, including duplicate tags and embedded stream metadata.
+4. WebAssembly ExifTool runs `-json -g1 -a -ee` to read grouped embedded metadata, including duplicate tags and embedded stream metadata.
 5. The server computes SHA-256 and MD5.
 6. The temporary file is deleted after processing.
 7. The UI renders every returned group recursively.
@@ -55,8 +55,8 @@ Nested objects and arrays must be rendered as visible table rows using their ful
 
 `POST /api/metadata/sanitize?mode=strip`
 
-- Images: copy the file and use `exiftool -all=` while preserving ICC profile and orientation where possible.
-- Video: remux with `ffmpeg`, remove metadata and chapters, copy streams when possible.
+- Images: copy or re-encode the file and use WebAssembly ExifTool to remove embedded metadata.
+- Video: remux with `ffmpeg`, remove metadata and chapters, copy streams when possible, then use WebAssembly ExifTool for a final metadata strip.
 - Audio: remux with `ffmpeg`, remove metadata, then re-add only safe descriptive music tags.
 
 `POST /api/metadata/sanitize?mode=compress`
@@ -127,5 +127,5 @@ Before pushing metadata changes:
 
 - Keep the renderer source-agnostic. Do not add OpenAI-only, Grok-only, Suno-only, or YouTube-only logic unless it is a small label on top of raw metadata.
 - Prefer displaying raw groups completely, then optionally add friendly summaries above them.
-- If adding client-side processing later, do not reduce metadata coverage. Browser APIs cannot match `exiftool`/`ffprobe` coverage for many media formats.
+- If adding more client-side processing later, do not reduce metadata coverage. Browser APIs alone cannot match ExifTool/ffprobe coverage for many media formats.
 - If Vercel function limits become an issue, move processing to a dedicated worker, but keep the same API response contract.
