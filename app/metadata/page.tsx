@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { MetadataTool } from "@/components/metadata/MetadataTool";
 import { SiteChrome } from "@/components/SiteChrome";
 import { SponsorAdFrame } from "@/components/SponsorAdFrame";
+import { getMetadataAnalytics } from "@/lib/site-analytics";
 
 export const metadata: Metadata = {
   title: "Metadata",
@@ -19,7 +20,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function MetadataPage() {
+function formatMetric(value: number | null | undefined) {
+  if (value == null) return "—";
+  return value.toLocaleString("en-US");
+}
+
+export default async function MetadataPage() {
+  const analytics = await getMetadataAnalytics();
+
   return (
     <SiteChrome active="tools">
       <div className="bg-[#0A0A0A] px-6 py-16 md:px-10 md:py-20">
@@ -44,26 +52,26 @@ export default function MetadataPage() {
             <section className="mt-10 grid gap-x-8 gap-y-6 border-y border-[#1F1F1F] py-6 sm:grid-cols-3">
               <div>
                 <p className="font-monroe text-[38px] font-light leading-none text-[#2CFF05]">
-                  Free
+                  {formatMetric(analytics?.visits)}
                 </p>
                 <p className="mt-2 font-jetbrains text-[10px] uppercase text-[#7F7F7F]">
-                  No credits required
+                  Total page visits
                 </p>
               </div>
               <div>
                 <p className="font-monroe text-[38px] font-light leading-none text-[#EAEAEA]">
-                  Clean
+                  {formatMetric(analytics?.uploads)}
                 </p>
                 <p className="mt-2 font-jetbrains text-[10px] uppercase text-[#7F7F7F]">
-                  Strip metadata
+                  Files inspected
                 </p>
               </div>
               <div>
                 <p className="font-monroe text-[38px] font-light leading-none text-[#EAEAEA]">
-                  EXIF
+                  {formatMetric(analytics?.sanitized)}
                 </p>
                 <p className="mt-2 font-jetbrains text-[10px] uppercase text-[#7F7F7F]">
-                  Image metadata
+                  Files sanitized
                 </p>
               </div>
             </section>

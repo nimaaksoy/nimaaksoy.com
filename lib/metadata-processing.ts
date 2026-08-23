@@ -312,6 +312,7 @@ export async function sanitizeMetadata(upload: MetadataUpload, mode: "strip" | "
       outPath = path.join(upload.tempDir, "out.jpg");
       outName = `${base}-clean.jpg`;
       await runFfmpeg(["-i", upload.filePath, "-map_metadata", "-1", "-c:v", "mjpeg", "-q:v", "3", "-pix_fmt", "yuvj420p", outPath]);
+      await runExiftoolStrip(outPath);
     } else {
       outPath = path.join(upload.tempDir, `out${ext}`);
       outName = `${base}-clean${ext}`;
@@ -348,12 +349,14 @@ export async function sanitizeMetadata(upload: MetadataUpload, mode: "strip" | "
         "+faststart",
         outPath,
       ]);
+      await runExiftoolStrip(outPath);
     } else {
       outPath = path.join(upload.tempDir, `out${isMp4ish ? ext : ".mp4"}`);
       outName = `${base}-clean${isMp4ish ? ext : ".mp4"}`;
       const args = ["-i", upload.filePath, "-map", "0", "-map_metadata", "-1", "-map_chapters", "-1", "-c", "copy"];
       if ([".mp4", ".mov", ".m4v"].includes(path.extname(outPath))) args.push("-movflags", "+faststart");
       await runFfmpeg([...args, outPath]);
+      await runExiftoolStrip(outPath);
     }
   } else if (kind === "audio") {
     const keep = audioKeepArgs(ffprobe);

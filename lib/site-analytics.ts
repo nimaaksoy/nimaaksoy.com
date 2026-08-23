@@ -31,6 +31,12 @@ export type SiteAnalyticsData = {
 
 export type PromptCopyTotals = Record<string, number>;
 
+export type MetadataAnalyticsData = {
+  visits: number;
+  uploads: number;
+  sanitized: number;
+};
+
 const host = process.env.POSTHOG_UI_HOST || "https://us.posthog.com";
 const projectId = process.env.POSTHOG_PROJECT_ID;
 const personalKey = process.env.POSTHOG_PERSONAL_KEY;
@@ -102,6 +108,7 @@ async function readThrough<T>(entry: CacheEntry<T>, loader: () => Promise<T>) {
 
 const analyticsCache = createEntry<SiteAnalyticsData>();
 const promptCopyCache = createEntry<PromptCopyTotals>();
+const metadataAnalyticsCache = createEntry<MetadataAnalyticsData>();
 
 function toNumber(value: unknown) {
   const number = Number(value);
@@ -279,4 +286,36 @@ export async function getPromptCopyTotals(): Promise<PromptCopyTotals | null> {
   }
 
   return readThrough(promptCopyCache, loadPromptCopyTotals);
+}
+
+async function loadMetadataAnalytics(): Promise<MetadataAnalyticsData> {
+  const siteFilter = getSiteFilter();
+  const rows = await hogql(`
+    SELECT
+      countIf(event = '$pageview' AND properties.$pathname = '/metadata') AS metadata_visits,
+      countIf(event = 'metadata_upload') AS metadata_uploads,
+      countIf(event = 'metadata_sanitize') AS metadata_sanitized
+    FROM events
+    WHERE ${siteFilter}
+      AND (
+        (event = '$pageview' AND properties.$pathname = '/metadata')
+        OR event IN ('metadata_upload', 'metadata_sanitize')
+      )
+  `);
+
+  const row = rows[0] || [];
+
+  return {
+    visits: toNumber(row[0]),
+    uploads: toNumber(row[1]),
+    sanitized: toNumber(row[2]),
+  };
+}
+
+export async function getMetadataAnalytics(): Promise<MetadataAnalyticsData | null> {
+  if (!hasAnalyticsCredentials()) {
+    return null;
+  }
+
+  return readThrough(metadataAnalyticsCache, loadMetadataAnalytics);
 }

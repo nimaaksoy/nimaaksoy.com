@@ -19,7 +19,8 @@ type MetadataRow = {
 type MetadataSection = {
   title: string;
   eyebrow: string;
-  rows: MetadataRow[];
+  value?: unknown;
+  rows?: MetadataRow[];
 };
 
 type MetadataResult = {
@@ -40,6 +41,14 @@ type MetadataResult = {
   exif?: Record<string, unknown> | null;
   exifAvailable?: boolean;
 };
+
+declare global {
+  interface Window {
+    posthog?: {
+      capture: (event: string, properties?: Record<string, unknown>) => void;
+    };
+  }
+}
 
 function formatBytes(bytes?: number) {
   const size = Number(bytes);
@@ -70,35 +79,18 @@ function prettyLabel(value: string) {
     .trim();
 }
 
-function flattenRows(source: unknown, prefix = ""): MetadataRow[] {
-  if (!source || typeof source !== "object") return [];
-  const rows: MetadataRow[] = [];
-
-  for (const [key, value] of Object.entries(source as Record<string, unknown>)) {
-    if (value == null || value === "") continue;
-    const label = prefix ? `${prefix}.${key}` : key;
-
-    if (Array.isArray(value)) {
-      if (value.every((item) => item == null || typeof item !== "object")) {
-        rows.push({ label: prettyLabel(label), value: value.map(valueToText).filter(Boolean).join(", ") });
-      } else {
-        value.forEach((item, index) => {
-          rows.push(...flattenRows(item, `${label}.${index + 1}`));
-        });
-      }
-      continue;
-    }
-
-    if (typeof value === "object") {
-      rows.push(...flattenRows(value, label));
-      continue;
-    }
-
-    const text = valueToText(value);
-    if (text) rows.push({ label: prettyLabel(label), value: text });
+function countLeafValues(value: unknown): number {
+  if (value == null || value === "") return 0;
+  if (Array.isArray(value)) {
+    return value.reduce((total, item) => total + countLeafValues(item), 0);
   }
-
-  return rows;
+  if (typeof value === "object") {
+    return Object.values(value as Record<string, unknown>).reduce<number>(
+      (total, item) => total + countLeafValues(item),
+      0,
+    );
+  }
+  return 1;
 }
 
 function fileNameFromDisposition(header: string | null, fallback: string) {
@@ -106,13 +98,121 @@ function fileNameFromDisposition(header: string | null, fallback: string) {
   return match?.[1] || fallback;
 }
 
+function isSanitizableMedia(result: MetadataResult | null, file: File | null) {
+  if (!result || !file) return false;
+  if (/^(image|video|audio)\//.test(file.type)) return true;
+
+  const mimeType = valueToText(
+    (result.exif?.File as Record<string, unknown> | undefined)?.MIMEType,
+  );
+  if (/^(image|video|audio)\//.test(mimeType)) return true;
+
+  return Boolean(
+    result.ffprobe?.streams?.some((stream) =>
+      ["video", "audio"].includes(valueToText(stream.codec_type)),
+    ),
+  );
+}
+
+function MetadataValue({
+  value,
+  path = "",
+  depth = 0,
+}: {
+  value: unknown;
+  path?: string;
+  depth?: number;
+}) {
+  if (value == null || value === "") {
+    return null;
+  }
+
+  if (Array.isArray(value)) {
+    return (
+      <div className="divide-y divide-[#1F1F1F]">
+        {value.map((item, index) => (
+          <div key={`${path}-${index}`} className="py-2">
+            {item && typeof item === "object" ? (
+              <details open={depth < 1} className="group">
+                <summary className="cursor-pointer font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#7F7F7F] transition hover:text-[#2CFF05]">
+                  {path ? `${prettyLabel(path)} ` : ""}Item {index + 1}
+                </summary>
+                <div className="mt-2 border-l border-[#1F1F1F] pl-4">
+                  <MetadataValue value={item} path={`${path}.${index + 1}`} depth={depth + 1} />
+                </div>
+              </details>
+            ) : (
+              <div className="grid gap-2 px-5 py-2 md:grid-cols-[260px_1fr]">
+                <p className="font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#7F7F7F]">
+                  {index + 1}
+                </p>
+                <p className="min-w-0 break-words font-jetbrains text-[12px] leading-[1.7] text-[#DADADA]">
+                  {valueToText(item)}
+                </p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  if (typeof value === "object") {
+    return (
+      <div className="divide-y divide-[#1F1F1F]">
+        {Object.entries(value as Record<string, unknown>).map(([key, item]) => {
+          if (item == null || item === "") return null;
+          const label = prettyLabel(key);
+          const itemPath = path ? `${path}.${key}` : key;
+
+          if (typeof item === "object") {
+            return (
+              <div key={itemPath} className="px-5 py-3">
+                <details open={depth < 1} className="group">
+                  <summary className="cursor-pointer font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#7F7F7F] transition hover:text-[#2CFF05]">
+                    {label}
+                  </summary>
+                  <div className="mt-3 border-l border-[#1F1F1F] pl-4">
+                    <MetadataValue value={item} path={itemPath} depth={depth + 1} />
+                  </div>
+                </details>
+              </div>
+            );
+          }
+
+          return (
+            <div key={itemPath} className="grid gap-2 px-5 py-4 md:grid-cols-[260px_1fr]">
+              <p className="font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#7F7F7F]">
+                {label}
+              </p>
+              <p className="min-w-0 break-words font-jetbrains text-[12px] leading-[1.7] text-[#DADADA]">
+                {valueToText(item)}
+              </p>
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+
+  return (
+    <p className="px-5 py-4 font-jetbrains text-[12px] leading-[1.7] text-[#DADADA]">
+      {valueToText(value)}
+    </p>
+  );
+}
+
 function MetadataSectionView({ section, filter }: { section: MetadataSection; filter: string }) {
-  const rows = section.rows.filter((row) => {
+  const rows = section.rows?.filter((row) => {
     const haystack = `${section.title} ${row.label} ${row.value}`.toLowerCase();
     return haystack.includes(filter);
   });
+  const hasRawMatch = section.value
+    ? `${section.title} ${JSON.stringify(section.value)}`.toLowerCase().includes(filter)
+    : false;
 
-  if (!rows.length) return null;
+  if (filter && !rows?.length && !hasRawMatch) return null;
+  if (!section.value && !rows?.length) return null;
 
   return (
     <section className="rounded-[8px] border border-[#1F1F1F] bg-[#111111]">
@@ -124,21 +224,25 @@ function MetadataSectionView({ section, filter }: { section: MetadataSection; fi
           {section.eyebrow}
         </span>
       </div>
-      <div className="divide-y divide-[#1F1F1F]">
-        {rows.map((row) => (
-          <div
-            key={`${section.title}-${row.label}-${row.value}`}
-            className="grid gap-2 px-5 py-4 md:grid-cols-[240px_1fr]"
-          >
-            <p className="font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#7F7F7F]">
-              {row.label}
-            </p>
-            <p className="min-w-0 break-words font-jetbrains text-[12px] leading-[1.7] text-[#DADADA]">
-              {row.value}
-            </p>
-          </div>
-        ))}
-      </div>
+      {section.value ? (
+        <MetadataValue value={section.value} path={section.title} />
+      ) : (
+        <div className="divide-y divide-[#1F1F1F]">
+          {(rows || []).map((row) => (
+            <div
+              key={`${section.title}-${row.label}-${row.value}`}
+              className="grid gap-2 px-5 py-4 md:grid-cols-[260px_1fr]"
+            >
+              <p className="font-jetbrains text-[11px] uppercase tracking-[0.12em] text-[#7F7F7F]">
+                {row.label}
+              </p>
+              <p className="min-w-0 break-words font-jetbrains text-[12px] leading-[1.7] text-[#DADADA]">
+                {row.value}
+              </p>
+            </div>
+          ))}
+        </div>
+      )}
     </section>
   );
 }
@@ -163,51 +267,48 @@ export function MetadataTool() {
       { label: "MD5", value: valueToText(result.file?.hashes?.md5) },
     ].filter((row) => row.value);
 
-    const nextSections: MetadataSection[] = [
-      { title: "File", eyebrow: "hash", rows: fileRows },
-    ];
+    const nextSections: MetadataSection[] = [{ title: "File", eyebrow: "hash", rows: fileRows }];
 
-    const formatRows = flattenRows(result.ffprobe?.format);
-    if (formatRows.length) {
-      nextSections.push({ title: "Container", eyebrow: "ffprobe", rows: formatRows });
+    if (result.ffprobe?.format) {
+      nextSections.push({
+        title: "Container",
+        eyebrow: "ffprobe",
+        value: result.ffprobe.format,
+      });
     }
 
     result.ffprobe?.streams?.forEach((stream, index) => {
-      const rows = flattenRows(stream);
-      if (rows.length) {
+      if (countLeafValues(stream)) {
         nextSections.push({
           title: `Stream ${index + 1}`,
           eyebrow: valueToText(stream.codec_type || stream.codec_name || "ffprobe"),
-          rows,
+          value: stream,
         });
       }
     });
 
     result.ffprobe?.chapters?.forEach((chapter, index) => {
-      const rows = flattenRows(chapter);
-      if (rows.length) {
-        nextSections.push({ title: `Chapter ${index + 1}`, eyebrow: "ffprobe", rows });
+      if (countLeafValues(chapter)) {
+        nextSections.push({ title: `Chapter ${index + 1}`, eyebrow: "ffprobe", value: chapter });
       }
     });
 
     result.ffprobe?.programs?.forEach((program, index) => {
-      const rows = flattenRows(program);
-      if (rows.length) {
-        nextSections.push({ title: `Program ${index + 1}`, eyebrow: "ffprobe", rows });
+      if (countLeafValues(program)) {
+        nextSections.push({ title: `Program ${index + 1}`, eyebrow: "ffprobe", value: program });
       }
     });
 
     if (result.exif && typeof result.exif === "object") {
       for (const [group, value] of Object.entries(result.exif)) {
         if (group === "SourceFile") continue;
-        const rows = flattenRows(value);
-        if (rows.length) {
-          nextSections.push({ title: prettyLabel(group), eyebrow: "exiftool", rows });
+        if (countLeafValues(value)) {
+          nextSections.push({ title: prettyLabel(group), eyebrow: "exiftool", value });
         }
       }
     }
 
-    return nextSections.filter((section) => section.rows.length);
+    return nextSections.filter((section) => section.value || section.rows?.length);
   }, [result]);
 
   function selectFile(nextFile?: File) {
@@ -245,6 +346,10 @@ export function MetadataTool() {
 
       setResult(payload);
       setStatus("Metadata ready.");
+      window.posthog?.capture("metadata_upload", {
+        file_type: targetFile.type || "unknown",
+        file_size: targetFile.size,
+      });
     } catch (error) {
       setResult(null);
       setStatus(error instanceof Error ? error.message : "Metadata processing failed.");
@@ -286,6 +391,12 @@ export function MetadataTool() {
 
       const cleanSize = Number(response.headers.get("X-Clean-Size"));
       setStatus(`Download ready. Clean file size: ${formatBytes(cleanSize)}.`);
+      window.posthog?.capture("metadata_sanitize", {
+        mode,
+        file_type: file.type || "unknown",
+        original_size: file.size,
+        clean_size: cleanSize,
+      });
     } catch (error) {
       setStatus(error instanceof Error ? error.message : "Metadata sanitization failed.");
     } finally {
@@ -300,6 +411,8 @@ export function MetadataTool() {
   }
 
   const normalizedFilter = filter.trim().toLowerCase();
+  const canSanitize = isSanitizableMedia(result, file);
+  const sanitizeDisabled = !canSanitize || Boolean(downloadMode) || isInspecting;
 
   return (
     <div className="space-y-8">
@@ -321,7 +434,6 @@ export function MetadataTool() {
         <input
           ref={inputRef}
           type="file"
-          accept="image/*,video/*,audio/*"
           className="hidden"
           onChange={(event) => selectFile(event.target.files?.[0])}
         />
@@ -378,7 +490,7 @@ export function MetadataTool() {
           <button
             type="button"
             onClick={() => downloadSanitized("strip")}
-            disabled={Boolean(downloadMode)}
+            disabled={sanitizeDisabled}
             className="rounded-[8px] border border-[#1F1F1F] bg-[#111111] p-5 text-left transition hover:border-[#2CFF05]/60 hover:bg-[#151515] disabled:cursor-not-allowed disabled:opacity-50"
           >
             <IconDownload className="text-[#2CFF05]" size={20} stroke={1.6} />
@@ -386,13 +498,15 @@ export function MetadataTool() {
               Sanitize
             </p>
             <p className="mt-3 font-jetbrains text-[11px] leading-[1.6] text-[#8A8A8A]">
-              Remove embedded metadata while keeping the same quality where the format supports it.
+              {canSanitize
+                ? "Remove embedded metadata while keeping the same quality where the format supports it."
+                : "Available for supported image, video, and audio files after inspection."}
             </p>
           </button>
           <button
             type="button"
             onClick={() => downloadSanitized("compress")}
-            disabled={Boolean(downloadMode)}
+            disabled={sanitizeDisabled}
             className="rounded-[8px] border border-[#1F1F1F] bg-[#111111] p-5 text-left transition hover:border-[#2CFF05]/60 hover:bg-[#151515] disabled:cursor-not-allowed disabled:opacity-50"
           >
             <IconDownload className="text-[#2CFF05]" size={20} stroke={1.6} />
@@ -400,7 +514,9 @@ export function MetadataTool() {
               Sanitize + compress
             </p>
             <p className="mt-3 font-jetbrains text-[11px] leading-[1.6] text-[#8A8A8A]">
-              Strip metadata and re-encode to reduce file size.
+              {canSanitize
+                ? "Strip metadata and re-encode to reduce file size."
+                : "Compression is shown only for supported image, video, and audio files."}
             </p>
           </button>
           <button
