@@ -49,7 +49,7 @@ Required display sections:
   - `JUMBF`, `Jpeg2000`, `CBOR`, and C2PA/provenance groups.
   - Any future or unknown group.
 
-Nested objects and arrays must be rendered recursively. Do not flatten in a way that drops nested values. Do not maintain a hard-coded allowlist of metadata groups.
+Nested objects and arrays must be rendered as visible table rows using their full field path. For example, a C2PA/CBOR field such as `ClaimGeneratorInfo.Name` should become a visible row, not a collapsed object that users can miss. Do not flatten in a way that drops nested values. Do not maintain a hard-coded allowlist of metadata groups.
 
 ## Sanitization Flow
 
