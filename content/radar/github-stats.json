@@ -360,6 +360,10 @@
     "tracely": {
       "stars": 924,
       "fetchedAt": "2026-08-22T07:05:12Z"
+    },
+    "hister": {
+      "stars": 2213,
+      "fetchedAt": "2026-08-23T07:07:43Z"
     }
   },
   "byRepo": {
@@ -668,6 +672,10 @@
     "jwuthri/tracely": {
       "stars": 924,
       "fetchedAt": "2026-08-22T07:05:12Z"
+    },
+    "asciimoo/hister": {
+      "stars": 2213,
+      "fetchedAt": "2026-08-23T07:07:43Z"
     }
   },
   "errors": [
