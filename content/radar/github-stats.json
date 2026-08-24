@@ -364,6 +364,10 @@
     "hister": {
       "stars": 2213,
       "fetchedAt": "2026-08-23T07:07:43Z"
+    },
+    "cumora": {
+      "stars": 2987,
+      "fetchedAt": "2026-08-24T07:07:41Z"
     }
   },
   "byRepo": {
@@ -676,6 +680,10 @@
     "asciimoo/hister": {
       "stars": 2213,
       "fetchedAt": "2026-08-23T07:07:43Z"
+    },
+    "yetone/cumora": {
+      "stars": 2987,
+      "fetchedAt": "2026-08-24T07:07:41Z"
     }
   },
   "errors": [
