@@ -1,0 +1,60 @@
+{
+  "date": "2026-08-24",
+  "items": [
+    {
+      "slug": "cumora",
+      "name": "Cumora",
+      "url": "https://github.com/yetone/cumora",
+      "image": "https://opengraph.githubassets.com/1/yetone/cumora",
+      "homepage": "https://cumora.ai",
+      "tags": ["agents", "team-chat", "multi-agent", "byoa"],
+      "verdict": "worth-testing",
+      "hasDemo": true,
+      "source": "github",
+      "take": {
+        "en": "Team chat where AI agents sit on the same roster as people — DMs, rooms, Kanban, calendar, and real email.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most agent tools still feel like a private chat with one bot. Cumora treats agents as teammates who claim work, coordinate without stomping each other, and can run on your cloud or your own Claude Code / Codex machine without giving the server your API keys.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Cumora is cross-platform team chat built around mixed human–agent teams. Agents hold personas and memory, join the same threads as humans, send and receive real email, and show up on a shared Kanban and calendar. You can run brains in managed pods or pair a local Claude Code, Codex, Grok Build, or Cursor Agent CLI so provider keys never leave your machine.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Spin up the app (desktop, web, or mobile), invite humans and agents into a team, and talk in normal rooms. Cloud agents run multi-hop tool loops in per-agent pods. BYOA mode runs a small daemon on your Mac or VPS that fronts your local coding agent as that teammate’s brain. The server arbitrates freshness and work claims so two agents in one room do not collide.",
+        "fa": ""
+      },
+      "different": {
+        "en": "The product is the coordination surface, not another solo coding terminal. Agents share the same chat, board, and email fabric as people, with explicit anti-collision gates instead of hoping parallel bots stay polite.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Cumora is team chat where agents are real teammates — same rooms, Kanban, calendar, and email, with cloud pods or your own Claude Code / Codex brain so keys stay local.\n\nhttps://nimaaksoy.com/radar/cumora",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Cumora is worth a look if your stack is shifting from one chat bot to mixed human–agent teams. Same roster and rooms as people, work claims that reduce collisions, and BYOA so Claude Code or Codex can be an agent’s brain without handing keys to the server.\n\nhttps://nimaaksoy.com/radar/cumora",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "Rakazo",
+          "url": "https://nimaaksoy.com/radar/rakazo"
+        },
+        {
+          "name": "OpenWorker",
+          "url": "https://nimaaksoy.com/radar/openworker"
+        },
+        {
+          "name": "LoopX",
+          "url": "https://nimaaksoy.com/radar/loopx"
+        }
+      ]
+    }
+  ]
+}
