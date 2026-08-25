@@ -35,7 +35,7 @@ export {
   withShareUrl,
 } from "@/lib/radar-shared";
 
-const RADAR_DIR = path.join(process.cwd(), "content", "radar");
+const RADAR_DIR = path.join(/* turbopackIgnore: true */ process.cwd(), "content", "radar");
 const GITHUB_STATS_PATH = path.join(RADAR_DIR, "github-stats.json");
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const VERDICT_SET = new Set<string>(VERDICT_ORDER);

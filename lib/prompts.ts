@@ -25,7 +25,7 @@ export type PromptQuery = {
   copyCounts?: Record<string, number>;
 };
 
-const promptsDirectory = path.join(process.cwd(), "content", "prompts");
+const promptsDirectory = path.join(/* turbopackIgnore: true */ process.cwd(), "content", "prompts");
 
 function stripQuotes(value: string) {
   const trimmed = value.trim();
