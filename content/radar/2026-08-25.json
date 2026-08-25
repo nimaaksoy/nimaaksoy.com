@@ -1,0 +1,61 @@
+{
+  "date": "2026-08-25",
+  "items": [
+    {
+      "slug": "freetoken",
+      "name": "FreeToken",
+      "url": "https://github.com/FlashML-org/FreeToken",
+      "image": "https://opengraph.githubassets.com/1/FlashML-org/FreeToken",
+      "homepage": "https://www.flashml.ai/",
+      "tags": ["local-llm", "moe", "inference", "edge", "agents"],
+      "verdict": "worth-testing",
+      "hasDemo": true,
+      "hasApi": true,
+      "source": "github",
+      "take": {
+        "en": "Run frontier-scale MoE models on a gaming PC — edge-native serving with agent-aware cache so tool edits do not recompute the whole context.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Coding agents burn tokens rewriting long contexts after every tool call. FreeToken is built for that loop: it serves huge open MoE weights on consumer GPUs and keeps semantic checkpoints so agentic edits can reuse work instead of restarting the prefill tax.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "FreeToken is an open edge MoE engine from FlashML aimed at 290B+ class models on laptops and gaming desktops. It treats GPU, CPU, and host memory as one elastic pool, streams experts with bandwidth-adaptive co-execution, and exposes Anthropic/OpenAI-compatible APIs so tools like Claude Code, Codex, and OpenCode can point at your machine. There is a desktop app plus a CLI, and a 2026 paper on the runtime design.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install the desktop build from flashml.ai or `uv pip install \"freetoken[accel]\"`, load a supported MoE checkpoint (DeepSeek, Qwen, GLM and friends across MXFP4/NVFP4/FP8/BF16), and hit the local OpenAI- or Anthropic-shaped endpoint from your agent. Expert caches and KV memory can rebalance at runtime without a full reload; semantic anchor checkpoints cut redundant recomputation when the agent mutates tool or thinking blocks mid-run.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Most local stacks stop at “fit the model.” FreeToken is a full MoE serving layer with elastic VRAM policy and caches tuned for agent turns, not just chat demos — so the win is interactive frontier weights on hardware you already own, wired to real coding agents.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "FreeToken is wild. it runs frontier MoE models on a normal gaming PC and keeps semantic caches so agent tool edits do not recompute the whole context. real local serving for coding agents, not another chat wrapper.\n\nhttps://nimaaksoy.com/radar/freetoken",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "FreeToken is worth a look if you want frontier open MoE weights on consumer GPUs for real coding agents. Edge-native serving, elastic expert/KV memory, and caches that survive tool-call context edits — plus OpenAI/Anthropic-compatible endpoints.\n\nhttps://nimaaksoy.com/radar/freetoken",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "Colibri",
+          "url": "https://nimaaksoy.com/radar/colibri"
+        },
+        {
+          "name": "Needle",
+          "url": "https://nimaaksoy.com/radar/needle"
+        },
+        {
+          "name": "Paritok",
+          "url": "https://nimaaksoy.com/radar/paritok"
+        }
+      ]
+    }
+  ]
+}
