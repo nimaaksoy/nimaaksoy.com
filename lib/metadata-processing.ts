@@ -4,21 +4,38 @@ import { parseMetadata, writeMetadata } from "@colorhythm/exiftool-wasm";
 import { createHash } from "node:crypto";
 import { createReadStream, createWriteStream } from "node:fs";
 import { copyFile, mkdir, mkdtemp, readFile, rm, stat, writeFile } from "node:fs/promises";
+import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { spawn } from "node:child_process";
 
-const PROJECT_ROOT = process.cwd();
-const FFMPEG_BIN = path.join(PROJECT_ROOT, "node_modules", "ffmpeg-static", "ffmpeg");
-const FFPROBE_BIN = path.join(
-  PROJECT_ROOT,
-  "node_modules",
-  "ffprobe-static",
-  "bin",
-  process.platform,
-  process.arch,
-  process.platform === "win32" ? "ffprobe.exe" : "ffprobe",
-);
+const require = createRequire(import.meta.url);
+
+// Resolve package binaries without path.join(process.cwd(), "node_modules", …)
+// which can make Turbopack NFT trace the whole project into every function.
+function resolveFfmpegBin() {
+  try {
+    const mod = require("ffmpeg-static");
+    if (typeof mod === "string" && mod) return mod;
+    if (mod && typeof mod.path === "string") return mod.path;
+  } catch {
+    /* fall through */
+  }
+  return "ffmpeg";
+}
+
+function resolveFfprobeBin() {
+  try {
+    const mod = require("ffprobe-static");
+    if (mod && typeof mod.path === "string" && mod.path) return mod.path;
+  } catch {
+    /* fall through */
+  }
+  return "ffprobe";
+}
+
+const FFMPEG_BIN = resolveFfmpegBin();
+const FFPROBE_BIN = resolveFfprobeBin();
 
 const MDATA_TMP_PREFIX = "nima-metadata-";
 const MDATA_MAX_BYTES = 250 * 1024 * 1024;
