@@ -368,6 +368,10 @@
     "cumora": {
       "stars": 2987,
       "fetchedAt": "2026-08-24T07:07:41Z"
+    },
+    "freetoken": {
+      "stars": 6139,
+      "fetchedAt": "2026-08-25T07:06:28Z"
     }
   },
   "byRepo": {
@@ -684,6 +688,14 @@
     "yetone/cumora": {
       "stars": 2987,
       "fetchedAt": "2026-08-24T07:07:41Z"
+    },
+    "flashml-org/freetoken": {
+      "stars": 6139,
+      "fetchedAt": "2026-08-25T07:06:28Z"
+    },
+    "FlashML-org/FreeToken": {
+      "stars": 6139,
+      "fetchedAt": "2026-08-25T07:06:28Z"
     }
   },
   "errors": [
