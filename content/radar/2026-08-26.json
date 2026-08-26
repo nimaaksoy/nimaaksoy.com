@@ -1,0 +1,53 @@
+{
+  "date": "2026-08-26",
+  "items": [
+    {
+      "slug": "threeui",
+      "name": "ThreeUI",
+      "url": "https://github.com/MengTo/threeui",
+      "image": "https://opengraph.githubassets.com/1/MengTo/threeui",
+      "homepage": "https://threeui.com",
+      "tags": [
+        "threejs",
+        "react",
+        "webgl",
+        "ui-components",
+        "shaders"
+      ],
+      "verdict": "worth-testing",
+      "hasDemo": true,
+      "hasApi": false,
+      "source": "github",
+      "take": {
+        "en": "Open Three.js + React UI catalog you can browse live, copy Community source, and drop into a product without a login wall.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most WebGL component kits hide the good stuff behind accounts. ThreeUI Community ships the same shell, live previews, variants, and full free source — so founders can evaluate motion/UI building blocks before paying for Pro.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "ThreeUI is Meng To’s Three.js component catalog. The public Community repo mirrors the real product app (browse grid, search, themes, responsive layout, component pages, live renderers, controls, code tabs) with Pro and Beta stripped out. You get 50 parent components, 111 routes, and 141+ free variants plus npm package @designcodeio/threeui under MIT.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Clone and `npm run dev` for the full catalog, or `npm install @designcodeio/threeui` and import components with the shared stylesheet (or a component subpath for a smaller graph). Copy runtime assets from the package into public when a component needs root-relative files. Pro components stay out of npm; entitled members pull them with the separate CLI.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not another static shader demo dump — it is a production-shaped catalog with interactive controls, source tabs, and a clean Community/Pro split so free variants stay complete and installable without auth.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "ThreeUI Community is the rare WebGL kit that actually opens the catalog. live Three.js + React components, free variants, full source, no login to browse.\n\nhttps://nimaaksoy.com/radar/threeui",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "ThreeUI Community opens a real Three.js + React component catalog — live previews, free variants, and installable source without an account wall.\n\nhttps://nimaaksoy.com/radar/threeui",
+          "fa": ""
+        }
+      }
+    }
+  ]
+}
