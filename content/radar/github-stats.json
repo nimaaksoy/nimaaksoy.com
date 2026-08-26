@@ -372,6 +372,10 @@
     "freetoken": {
       "stars": 6139,
       "fetchedAt": "2026-08-25T07:06:28Z"
+    },
+    "threeui": {
+      "stars": 4019,
+      "fetchedAt": "2026-08-26T06:44:07Z"
     }
   },
   "byRepo": {
@@ -696,6 +700,10 @@
     "FlashML-org/FreeToken": {
       "stars": 6139,
       "fetchedAt": "2026-08-25T07:06:28Z"
+    },
+    "MengTo/threeui": {
+      "stars": 4019,
+      "fetchedAt": "2026-08-26T06:44:07Z"
     }
   },
   "errors": [
