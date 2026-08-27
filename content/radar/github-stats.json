@@ -376,6 +376,10 @@
     "threeui": {
       "stars": 4019,
       "fetchedAt": "2026-08-26T06:44:07Z"
+    },
+    "taste-skill": {
+      "stars": 81157,
+      "fetchedAt": "2026-08-27T06:20:01Z"
     }
   },
   "byRepo": {
@@ -704,6 +708,10 @@
     "MengTo/threeui": {
       "stars": 4019,
       "fetchedAt": "2026-08-26T06:44:07Z"
+    },
+    "Leonxlnx/taste-skill": {
+      "stars": 81157,
+      "fetchedAt": "2026-08-27T06:20:01Z"
     }
   },
   "errors": [
