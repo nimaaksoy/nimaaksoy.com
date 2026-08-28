@@ -1,0 +1,67 @@
+{
+  "date": "2026-08-28",
+  "items": [
+    {
+      "slug": "praxist",
+      "name": "Praxist",
+      "url": "https://github.com/sapientinc/PRAXIST",
+      "image": "https://opengraph.githubassets.com/1/sapientinc/PRAXIST",
+      "homepage": "https://praxist.sapient.inc/en/docs",
+      "tags": [
+        "autonomous-research",
+        "r-and-d",
+        "agents",
+        "evals",
+        "codex"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": false,
+      "source": "github",
+      "take": {
+        "en": "Autonomous R&D loop for projects that already run and score: parallel research peers, durable evidence, and generation-to-generation synthesis until the budget ends.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most agent demos chat once and forget. Praxist treats research as a multi-generation process with evaluators, evidence lanes, and a planning panel — so long campaigns stop re-learning the same dead ends and you can inspect why a claim stuck.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Praxist is Sapient Intelligence’s open (Fair Source) autonomous research system for measurable, computer-executable problems. You keep the runnable project, metrics, and evaluator; Praxist owns orchestration: parallel research peers, multi-metric ranking, quality-diversity allocation, optional Deep Innovation Gate, resume/replay, and resource scheduling. On the 75-task MLE-bench suite their paper reports 49 golds at about $3k model spend versus 34 golds for a Claude Code baseline near $38k. Codex-native mode can run off a saved Codex login; Claude Code skills and CLI control are also supported.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install with `pip install \"praxist[agents,codex]\"` then `praxist setup --interactive --install-skills codex` (or the Claude Code install path). Point Codex at an already runnable research repo and run `$praxist-takeover` with a tight brief: objective, metrics, constraints, peer/generation budget. Monitor with `praxist --monitor --latest`; stop/resume by run id. Ship example tasks via `praxist examples install rocket_booster_recovery` before wiring your own harness.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not another coding TUI or one-shot AutoML sweep. It is a lineage-centered research graph: later generations inherit validated mechanisms and failed claims, evidence stays typed and inspectable, and the product is built for multi-day R&D budgets rather than single agent sessions. Note Fair Source commercial terms once org revenue crosses $1M.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Praxist just dropped from Sapient. parallel research peers, durable evidence, multi-generation synthesis on projects that already run and score. MLE-bench golds at a fraction of a Claude Code baseline spend. real autoresearch, not another chat loop.\n\nhttps://nimaaksoy.com/radar/praxist",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Praxist is an autonomous R&D system for measurable, computer-executable research. You own the runnable project and evaluator; it runs parallel peers, evidence lanes, and generation agendas until budget. Strong MLE-bench numbers in their paper — worth a serious look if your team burns weeks on manual experiment loops.\n\nhttps://nimaaksoy.com/radar/praxist",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "LoopX",
+          "url": "https://nimaaksoy.com/radar/loopx"
+        },
+        {
+          "name": "OpenWorker",
+          "url": "https://nimaaksoy.com/radar/openworker"
+        },
+        {
+          "name": "qm",
+          "url": "https://nimaaksoy.com/radar/qm"
+        }
+      ]
+    }
+  ]
+}
