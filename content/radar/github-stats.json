@@ -380,6 +380,10 @@
     "taste-skill": {
       "stars": 81157,
       "fetchedAt": "2026-08-27T06:20:01Z"
+    },
+    "praxist": {
+      "stars": 906,
+      "fetchedAt": "2026-08-28T07:07:05Z"
     }
   },
   "byRepo": {
@@ -712,6 +716,10 @@
     "Leonxlnx/taste-skill": {
       "stars": 81157,
       "fetchedAt": "2026-08-27T06:20:01Z"
+    },
+    "sapientinc/PRAXIST": {
+      "stars": 906,
+      "fetchedAt": "2026-08-28T07:07:05Z"
     }
   },
   "errors": [
