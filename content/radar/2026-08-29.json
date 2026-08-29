@@ -1,0 +1,68 @@
+{
+  "date": "2026-08-29",
+  "items": [
+    {
+      "slug": "open-seo",
+      "name": "OpenSEO",
+      "url": "https://github.com/every-app/open-seo",
+      "image": "https://opengraph.githubassets.com/1/every-app/open-seo",
+      "homepage": "https://openseo.so",
+      "tags": [
+        "seo",
+        "mcp",
+        "agent-skills",
+        "self-hosted",
+        "marketing"
+      ],
+      "verdict": "worth-testing",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": true,
+      "source": "github",
+      "take": {
+        "en": "Open-source Semrush/Ahrefs-style SEO suite you control — keyword research, ranks, backlinks, audits, AI visibility — with MCP and agent skills baked in.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Founders still rent bloated SEO suites or bounce between half-finished scripts. OpenSEO puts the core workflows in one app you can self-host or pay-as-you-go, then hands the same data to Claude Code, Hermes, and friends over MCP so research stops living only in a browser tab.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "OpenSEO is an MIT-licensed SEO product from every-app aimed at people who find Semrush and Ahrefs too expensive or heavy. You get keyword research, rank tracking, competitor insights, backlinks, site audits, and AI visibility in a focused UI. Data comes from your own DataForSEO key when self-hosting (pay only for what you pull); hosted is free to try with a cheap monthly option. The agent angle is first-class: an MCP server plus reusable SEO skills so coding agents can run workflows against live SEO data instead of pasting CSVs.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Try the hosted app at openseo.so, or self-host with Docker for local use or Cloudflare for a team-facing deploy. Add a DataForSEO API key for real SERP and link data. Wire MCP from the docs so your agent can call SEO tools; install the packaged agent skills for guided keyword, audit, and visibility jobs. Fork the repo if you want a custom internal SEO console.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not another keyword spreadsheet or one-off MCP dump. It is a full SEO product with a modern UI plus agent-native MCP and skills, BYO data API, and a path to fork or self-host so the stack stays yours.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "OpenSEO is the OSS Semrush/Ahrefs play that actually ships MCP + agent skills. keyword research, ranks, backlinks, audits, AI visibility — self-host or pay-as-you-go with your own DataForSEO key. SEO data your coding agents can use, not another locked suite.\n\nhttps://nimaaksoy.com/radar/open-seo",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "OpenSEO is an open-source alternative to Semrush and Ahrefs with MCP and agent skills built in. Core SEO workflows in one app, BYO DataForSEO when self-hosting, and a path for Claude Code / Hermes-style agents to run research against live data. Strong pick if SEO tooling still feels rented and bloated.\n\nhttps://nimaaksoy.com/radar/open-seo",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "Firecrawl",
+          "url": "https://nimaaksoy.com/radar/firecrawl"
+        },
+        {
+          "name": "Career Ops",
+          "url": "https://nimaaksoy.com/radar/career-ops"
+        },
+        {
+          "name": "Agent Reach",
+          "url": "https://nimaaksoy.com/radar/agent-reach"
+        }
+      ]
+    }
+  ]
+}
