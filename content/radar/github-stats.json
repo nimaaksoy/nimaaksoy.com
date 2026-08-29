@@ -384,6 +384,11 @@
     "praxist": {
       "stars": 906,
       "fetchedAt": "2026-08-28T07:07:05Z"
+    },
+    "open-seo": {
+      "stars": 14303,
+      "fetchedAt": "2026-08-29T07:07:07Z",
+      "repo": "every-app/open-seo"
     }
   },
   "byRepo": {
@@ -720,6 +725,11 @@
     "sapientinc/PRAXIST": {
       "stars": 906,
       "fetchedAt": "2026-08-28T07:07:05Z"
+    },
+    "every-app/open-seo": {
+      "stars": 14303,
+      "fetchedAt": "2026-08-29T07:07:07Z",
+      "slug": "open-seo"
     }
   },
   "errors": [
