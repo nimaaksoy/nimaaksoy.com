@@ -1,0 +1,68 @@
+{
+  "date": "2026-08-30",
+  "items": [
+    {
+      "slug": "weave-router",
+      "name": "Weave Router",
+      "url": "https://github.com/workweave/router",
+      "image": "https://opengraph.githubassets.com/1/workweave/router",
+      "homepage": "https://weaveos.com/products/router",
+      "tags": [
+        "model-router",
+        "ai-gateway",
+        "agents",
+        "claude-code",
+        "cost"
+      ],
+      "verdict": "worth-testing",
+      "hasDemo": true,
+      "hasApi": true,
+      "hasMcp": false,
+      "source": "github",
+      "take": {
+        "en": "Drop-in model router for agent stacks — scores each action and sends it to the right model in under 50ms so you cut spend without rewriting tools.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most coding agents burn one expensive default model on every tool call. Weave Router sits in front of Claude Code, Codex, Cursor, and friends, picks the model per action with a local embedder, and keeps provider keys on your box. Founders get continuity plus a real cost lever, not another key-rotation dashboard.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Weave Router is an open Go proxy from WorkWeave built for agentic traffic. You point Anthropic, OpenAI, or Gemini-shaped clients at one endpoint. A cluster scorer (Avengers-Pro style, ONNX embedder in-process) chooses among the models you enabled for that action — not a vibes prompt and not only fallback when a key dies. It speaks Messages, Chat Completions, and Gemini native, including tools, vision, and streaming, and can reach OSS models through OpenRouter or any OpenAI-compatible backend. BYOK keys stay local and encrypted; OTLP traces drop into Weave’s dashboard or your own collector.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Fastest path: npx @workweave/router wires Claude Code, Codex, opencode, or pi to the hosted router. For full control, make full-setup boots Postgres plus the router on localhost:8080 with a local rk_ key and optional dashboard. Point your agent’s base URL at the proxy, leave keys in env or BYOK storage, and inspect /v1/route when you want the decision without proxying. Optional HMM sidecar for a frozen policy if the default cluster scorer is not enough.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not a multi-key fallback gateway and not a token compressor. The job is semantic routing per action so cheap models handle routine steps and strong models handle hard ones, with one endpoint change across the agent tools you already use.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Weave Router is the missing cost layer for agent stacks. one endpoint, local scorer picks the right model per action in under 50ms, BYOK stays on your box. point Claude Code / Codex / Cursor at it and stop paying frontier rates for every tool call.\\n\\nhttps://nimaaksoy.com/radar/weave-router",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Weave Router is a drop-in model router for agentic systems. It scores each action and routes to the right model in under 50ms, speaks Anthropic/OpenAI/Gemini APIs, and keeps provider keys local. Practical if Claude Code, Codex, or Cursor still default everything to one expensive model.\\n\\nhttps://nimaaksoy.com/radar/weave-router",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "OmniRoute",
+          "url": "https://nimaaksoy.com/radar/omniroute"
+        },
+        {
+          "name": "Paritok",
+          "url": "https://nimaaksoy.com/radar/paritok"
+        },
+        {
+          "name": "OpenWorker",
+          "url": "https://nimaaksoy.com/radar/openworker"
+        }
+      ]
+    }
+  ]
+}
