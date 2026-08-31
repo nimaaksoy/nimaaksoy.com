@@ -54,7 +54,7 @@
       "name": "Content & Creative",
       "icon": "pen-tool",
       "description": "Write, design, and produce creative work.",
-      "count": 2,
+      "count": 3,
       "subcategories": [
         {
           "id": "copywriting",
@@ -79,7 +79,7 @@
         {
           "id": "graphic-design",
           "name": "Graphic Design",
-          "count": 0
+          "count": 1
         },
         {
           "id": "branding",
