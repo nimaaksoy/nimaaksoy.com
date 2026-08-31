@@ -1,0 +1,69 @@
+{
+  "date": "2026-08-31",
+  "items": [
+    {
+      "slug": "arcbox",
+      "name": "ArcBox",
+      "url": "https://github.com/arcboxlabs/arcbox",
+      "image": "https://opengraph.githubassets.com/1/arcboxlabs/arcbox",
+      "homepage": "https://arcbox.dev",
+      "tags": [
+        "sandbox",
+        "microvm",
+        "agents",
+        "docker",
+        "macos",
+        "rust"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": false,
+      "hasApi": true,
+      "hasMcp": false,
+      "source": "github",
+      "take": {
+        "en": "Open-source OrbStack-class runtime for Mac — drop-in Docker plus Firecracker microVMs so coding agents run with a real kernel boundary, not hope and allowlists.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Founders still hand Claude Code and friends the whole laptop, or they rent brittle cloud sandboxes. ArcBox makes isolation the default on the machine you already use: disposable microVMs with their own kernel, filesystem, and network, while still speaking Docker for everyday containers.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "ArcBox is a pure-Rust container and VM runtime aimed at macOS as an open alternative to Docker Desktop and OrbStack. One daemon covers four workload tiers: Docker-compatible containers (and local k3s), agent sandboxes, full Linux machines, and throwaway macOS guests. Sandboxes boot nested Firecracker microVMs inside the guest — each agent gets a real isolation boundary instead of a process jail. Public beta under MIT/Apache-2.0, with a CLI (`abctl`), desktop app, gRPC sandbox API, and a path to pool your own hardware as fleet capacity.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install via Homebrew cask or the get.arcbox.dev script, start the daemon, then `abctl docker enable` so existing Docker CLI and Compose keep working. For agents: set your API key and run `abctl claude` — it builds a sandbox template, attaches your terminal inside Claude Code, and can skip host permission prompts because the microVM is the wall. Or create sandboxes from images/Dockerfiles, exec, copy files, expose ports, checkpoint and restore. Nested virt needs Apple Silicon M3+ and macOS 15+ on the default VZ backend; other hosts fail fast with a clear error.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not another agent harness and not a closed Mac Docker app. The product story is open local infrastructure: OrbStack-level container UX plus first-class agent microVMs and the same sandbox primitive you can scale later — isolation by kernel, not by vibes.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "ArcBox is the open OrbStack play with a real agent story. drop-in Docker on Mac, plus Firecracker microVMs so Claude Code runs behind a kernel boundary — abctl claude and the host stays clean. isolation as infrastructure, not another allowlist.\n\nhttps://nimaaksoy.com/radar/arcbox",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "ArcBox is an open-source Mac runtime for containers and AI agent sandboxes. Pure Rust, Docker-compatible, and disposable Firecracker microVMs so coding agents get their own kernel, filesystem, and network. Strong pick if your team still runs agents on bare metal or pays cloud rates for isolation you could own.\n\nhttps://nimaaksoy.com/radar/arcbox",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "OpenWorker",
+          "url": "https://nimaaksoy.com/radar/openworker"
+        },
+        {
+          "name": "Cloudflare OS",
+          "url": "https://nimaaksoy.com/radar/cloudflare-os"
+        },
+        {
+          "name": "Destructive Command Guard",
+          "url": "https://nimaaksoy.com/radar/destructive-command-guard"
+        }
+      ]
+    }
+  ]
+}
