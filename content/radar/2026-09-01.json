@@ -1,0 +1,69 @@
+{
+  "date": "2026-09-01",
+  "items": [
+    {
+      "slug": "utopia",
+      "name": "Utopia",
+      "url": "https://github.com/deeplethe/utopia",
+      "image": "https://opengraph.githubassets.com/1/deeplethe/utopia",
+      "homepage": "https://utopia.bi",
+      "tags": [
+        "world-model",
+        "knowledge-graph",
+        "ontology",
+        "agents",
+        "self-hosted",
+        "rust"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": true,
+      "hasMcp": false,
+      "source": "github",
+      "take": {
+        "en": "Open-source enterprise world model — bitemporal knowledge graph plus ontology so agents reason on governed facts, not a flat vector dump.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most agent stacks still treat company knowledge as chunks in a vector store. Utopia puts time and ontology in the base layer: facts carry validity windows, conflicts surface for review, and decisions leave an audit trail on hardware you control.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Utopia is DeepLethe's Apache-2.0 Rust + Postgres product for offline enterprise knowledge. You get a full app (console, graph browser, ontology workbench), hybrid search, agentic RAG with tools, and a bitemporal graph where every entity and fact keeps when it held in the world and when the system changed its mind. Cold-start ontology packs (schema.org, PROV-O, FOAF, and more) grow with the corpus; temporal Datalog derives new facts with full provenance. Any OpenAI-compatible chat and embedding endpoint works, including fully air-gapped setups.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Clone the repo and run docker compose --profile app up -d, then open localhost:1516 and register — first account is admin. Point system settings at your chat and embedding models, create or open a knowledge base, and ingest PDFs, office files, web, RSS, GitHub, or Jira. The built-in agent searches documents, entities, fact history, and mounted databases over multi-turn tool use. Review queues catch low-confidence merges and axiom conflicts instead of silently writing bad edges.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not another RAG UI and not a video world simulator. The product story is knowledge governance as infrastructure: bitemporal facts, growing ontology, conflict detection, decision ledger, and Ontology2SQL over mounted Postgres so agents query docs and structured data against one shared model.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Utopia is the open enterprise world model play. bitemporal knowledge graph + ontology in the base layer so agents reason on governed facts with audit trails, not another vector dump. self-host Rust + Postgres, air-gap friendly.\n\nhttps://nimaaksoy.com/radar/utopia",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Utopia is an open-source enterprise world model: bitemporal knowledge graph, ontology workbench, agentic RAG, and a decision ledger on hardware you control. Strong pick if your agent stack still treats company knowledge as a flat vector store with no time or conflict story.\n\nhttps://nimaaksoy.com/radar/utopia",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "OpenViking",
+          "url": "https://nimaaksoy.com/radar/openviking"
+        },
+        {
+          "name": "codebase-memory-mcp",
+          "url": "https://nimaaksoy.com/radar/codebase-memory-mcp"
+        },
+        {
+          "name": "Graphify",
+          "url": "https://nimaaksoy.com/radar/graphify"
+        }
+      ]
+    }
+  ]
+}
