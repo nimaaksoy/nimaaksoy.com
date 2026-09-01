@@ -398,6 +398,10 @@
     "arcbox": {
       "stars": 1489,
       "fetchedAt": "2026-08-31T07:05:57Z"
+    },
+    "utopia": {
+      "stars": 1280,
+      "fetchedAt": "2026-09-01T07:06:31.000Z"
     }
   },
   "byRepo": {
@@ -751,6 +755,10 @@
     "arcboxlabs/arcbox": {
       "stars": 1489,
       "fetchedAt": "2026-08-31T07:05:57Z"
+    },
+    "deeplethe/utopia": {
+      "stars": 1280,
+      "fetchedAt": "2026-09-01T07:06:31.000Z"
     }
   },
   "errors": [
