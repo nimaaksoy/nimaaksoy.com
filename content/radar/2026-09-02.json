@@ -1,0 +1,69 @@
+{
+  "date": "2026-09-02",
+  "items": [
+    {
+      "slug": "codeburn",
+      "name": "CodeBurn",
+      "url": "https://github.com/getagentseal/codeburn",
+      "image": "https://opengraph.githubassets.com/1/getagentseal/codeburn",
+      "homepage": "https://codeburn.app/",
+      "tags": [
+        "cost-tracking",
+        "observability",
+        "cli",
+        "coding-agents",
+        "local-first",
+        "mcp"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": true,
+      "source": "github",
+      "take": {
+        "en": "Local-first ledger for AI coding spend — tokens and dollars across Claude Code, Cursor, Codex, Gemini, and 40+ tools, by model, project, and task.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Provider bills only show a total. Founders running three coding agents never see which model burned the budget on chat instead of code, or which project is eating the month. CodeBurn turns session files already on disk into that breakdown so you can cut waste before the next invoice.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "CodeBurn is a free open-source Node tool that reads local session logs from dozens of AI coding surfaces and prices them with daily LiteLLM rates. You get a TUI dashboard, browser UI, desktop and menubar apps, plus optimize scans that grade setup health and point at unused MCP servers, bloated CLAUDE.md, bad read/edit habits, and retry tax. Guard hooks soft and hard dollar caps into Claude Code. An MCP server lets the agent ask where spend went mid-session. Nothing leaves the machine — no proxy and no API keys required for tracking.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Run npx codeburn for the interactive dashboard, or npm install -g codeburn for the CLI. overview dumps a paste-ready monthly summary. optimize lists ranked waste findings with copy-paste fixes; --apply journals config changes you can undo with act undo. guard install wires optional session cost caps. yield correlates sessions to git commits so you see productive vs abandoned spend. codeburn mcp exposes get_usage and get_savings over stdio for Claude Code or Cursor.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not another coding harness and not a cloud observability SaaS. It is the spend and waste layer under the tools you already use: local disk only, multi-tool coverage, fix-and-measure loops, budget guards, and agent-readable MCP — complementary to Tracely-style trace evals and to token-compression gateways.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "CodeBurn is the missing spend layer for AI coding. local-first, reads session files on disk across 40+ tools, breaks cost down by model/project/task, finds waste, guards budgets. no proxy, no keys leaving your machine.\n\nhttps://nimaaksoy.com/radar/codeburn",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "If you run Claude Code, Cursor, Codex, and friends, the bill never says which project or model ate the month. CodeBurn is open-source and local-first: multi-tool token and dollar breakdown, waste scans with undoable fixes, budget guards, and MCP so the agent can answer spend questions mid-session.\n\nhttps://nimaaksoy.com/radar/codeburn",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "Tracely",
+          "url": "https://nimaaksoy.com/radar/tracely"
+        },
+        {
+          "name": "Paritok",
+          "url": "https://nimaaksoy.com/radar/paritok"
+        },
+        {
+          "name": "FreeToken",
+          "url": "https://nimaaksoy.com/radar/freetoken"
+        }
+      ]
+    }
+  ]
+}
