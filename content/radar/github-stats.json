@@ -402,6 +402,10 @@
     "utopia": {
       "stars": 1280,
       "fetchedAt": "2026-09-01T07:06:31.000Z"
+    },
+    "codeburn": {
+      "stars": 10522,
+      "fetchedAt": "2026-09-02T07:07:08.000Z"
     }
   },
   "byRepo": {
@@ -759,6 +763,10 @@
     "deeplethe/utopia": {
       "stars": 1280,
       "fetchedAt": "2026-09-01T07:06:31.000Z"
+    },
+    "getagentseal/codeburn": {
+      "stars": 10522,
+      "fetchedAt": "2026-09-02T07:07:08.000Z"
     }
   },
   "errors": [
