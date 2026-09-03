@@ -406,6 +406,10 @@
     "codeburn": {
       "stars": 10522,
       "fetchedAt": "2026-09-02T07:07:08.000Z"
+    },
+    "commerce-agents": {
+      "stars": 793,
+      "fetchedAt": "2026-09-03T07:07:03Z"
     }
   },
   "byRepo": {
@@ -767,6 +771,10 @@
     "getagentseal/codeburn": {
       "stars": 10522,
       "fetchedAt": "2026-09-02T07:07:08.000Z"
+    },
+    "anthropics/commerce-agents": {
+      "stars": 793,
+      "fetchedAt": "2026-09-03T07:07:03Z"
     }
   },
   "errors": [
