@@ -1,0 +1,70 @@
+{
+  "date": "2026-09-03",
+  "items": [
+    {
+      "slug": "commerce-agents",
+      "name": "Commerce Agents",
+      "url": "https://github.com/anthropics/commerce-agents",
+      "image": "https://opengraph.githubassets.com/1/anthropics/commerce-agents",
+      "homepage": "https://claude.com/solutions/commerce",
+      "tags": [
+        "shopping-agent",
+        "merchant-agent",
+        "anthropic",
+        "claude",
+        "ecommerce",
+        "agent-sdk",
+        "mcp"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": true,
+      "hasMcp": true,
+      "source": "github",
+      "take": {
+        "en": "Anthropic’s open reference for two commerce roles on Claude: a shopping agent customers use in your app, and a merchant agent staff use in the back office.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most agent demos stop at chat over a product catalog. Real commerce needs search, cart, policy answers, inventory alerts, pricing drafts, and hard gates so writes never hit production without a human. This repo is the blueprint founders can fork instead of inventing safety and skill contracts from scratch.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Commerce Agents is Anthropic’s open-source package set for shopping and merchant agents. Both roles share fencing, memory, skills, and tool contracts, then run on the Messages API, the Claude Agent SDK, or Managed Agents. Four fictional verticals (retail, travel, telecom, entertainment) ship runnable storefronts and staff portals. Checkout only renders the cart for the host to finish; every merchant write is staged until a person approves it. A Claude Code plugin scaffolds agents against your own systems and can review ones you already built.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Clone the repo, install Python and Node deps, add an Anthropic key, then run python scripts/run_demo.py retail (or travel, telecom, entertainment). Implement StorefrontBackend or MerchantBackend over your catalog, cart, orders, inventory, and campaigns. Or install the commerce-builder plugin and run /scaffold-commerce-agent against your stack. Deploy the same skills as Managed Agents with the included MCP servers and deploy scripts.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not another generic coding harness or thin shop chatbot sample. It is a full dual-role commerce agent stack with enforced safety gates, staged merchant writes, three runtimes, vertical demos, and a scaffold/review plugin — the reference architecture for product and ops agents that touch money and inventory.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Anthropic open-sourced Commerce Agents: a real shopping agent + merchant back-office agent on Claude, with safety gates, staged writes, four vertical demos, and a scaffold plugin. this is the commerce agent blueprint, not another chat wrapper.\n\nhttps://nimaaksoy.com/radar/commerce-agents",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "If you are building shopping or merchant agents, Anthropic just published the reference stack. Commerce Agents covers both customer-facing and staff roles, runs on Messages API / Agent SDK / Managed Agents, keeps merchant writes staged until a human approves, and includes a Claude Code scaffold plugin plus four runnable verticals.\n\nhttps://nimaaksoy.com/radar/commerce-agents",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "trycrm",
+          "url": "https://nimaaksoy.com/radar/trycrm"
+        },
+        {
+          "name": "Open Connector",
+          "url": "https://nimaaksoy.com/radar/open-connector"
+        },
+        {
+          "name": "eve",
+          "url": "https://nimaaksoy.com/radar/eve"
+        }
+      ]
+    }
+  ]
+}
