@@ -410,6 +410,11 @@
     "commerce-agents": {
       "stars": 793,
       "fetchedAt": "2026-09-03T07:07:03Z"
+    },
+    "atlas": {
+      "stars": 3144,
+      "fetchedAt": "2026-09-04T07:09:34Z",
+      "repo": "pacifio/atlas"
     }
   },
   "byRepo": {
@@ -775,6 +780,11 @@
     "anthropics/commerce-agents": {
       "stars": 793,
       "fetchedAt": "2026-09-03T07:07:03Z"
+    },
+    "pacifio/atlas": {
+      "stars": 3144,
+      "fetchedAt": "2026-09-04T07:09:34Z",
+      "slug": "atlas"
     }
   },
   "errors": [
