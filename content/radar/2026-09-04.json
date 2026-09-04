@@ -1,0 +1,71 @@
+{
+  "date": "2026-09-04",
+  "items": [
+    {
+      "slug": "atlas",
+      "name": "Atlas",
+      "url": "https://github.com/pacifio/atlas",
+      "image": "https://opengraph.githubassets.com/1/pacifio/atlas",
+      "homepage": "https://www.tryatlas.cc/",
+      "tags": [
+        "source-control",
+        "coding-agents",
+        "checkpoints",
+        "multi-agent",
+        "claude-code",
+        "codex",
+        "local-first",
+        "macos"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": true,
+      "source": "github",
+      "take": {
+        "en": "Source control for coding agents — every commit linked back to the session, prompts, tool calls, and reasoning that made it.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Agents write a huge share of your code and leave almost none of the why. When you run Claude Code next to Codex, review becomes archaeology. Atlas keeps the session next to the commit graph so you can ask what changed, who did it, and why — months later.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Atlas is a local-first macOS app that treats agent runs like first-class source history. It runs Claude Code, Codex, Atlas’s own agent, and other ACP agents side by side on one codebase, with shared on-device memory so switching tools mid-task does not wipe the thread. Each session is stored locally with secrets scrubbed; commits are observed and linked as checkpoints that survive amend and rebase. Notes in .atlas/knowledge, plus CLAUDE.md and AGENTS.md, feed every agent from one index.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Download the .dmg from tryatlas.cc, open a project, and run your existing Claude Code or Codex subscription through Atlas. Work in parallel tabs; @ files, folders, symbols, past sessions, or papers into a prompt. When you commit from Atlas, a terminal, or another editor, the commit is linked back to the producing session. Select a checkpoint later and chat with it offline to recover the real decision trail.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not another coding TUI or multiplayer harness. Atlas is the missing layer between git and agent sessions — checkpoints, shared memory, and multi-agent continuity on top of the agents you already pay for, local by default.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Atlas is source control for coding agents. every commit links back to the session, prompts, and tool calls that made it — and Claude Code + Codex share one on-device memory so switching mid-task doesn’t wipe the thread.\n\nhttps://nimaaksoy.com/radar/atlas",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "If you run more than one coding agent on the same repo, Atlas is worth a look. It is local-first source control for agents: checkpoints tie each commit to the session that produced it, shared on-device memory keeps Claude Code and Codex on the same thread, and review stops being archaeology.\n\nhttps://nimaaksoy.com/radar/atlas",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "meat",
+          "url": "https://nimaaksoy.com/radar/meat"
+        },
+        {
+          "name": "loopx",
+          "url": "https://nimaaksoy.com/radar/loopx"
+        },
+        {
+          "name": "qm",
+          "url": "https://nimaaksoy.com/radar/qm"
+        }
+      ]
+    }
+  ]
+}
