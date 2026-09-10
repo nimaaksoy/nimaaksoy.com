@@ -1,0 +1,55 @@
+{
+  "date": "2026-09-10",
+  "items": [
+    {
+      "slug": "artemis",
+      "name": "ARTEMIS",
+      "url": "https://github.com/google/artemis",
+      "image": "https://opengraph.githubassets.com/1/google/artemis",
+      "homepage": "https://github.com/google/artemis",
+      "tags": [
+        "android",
+        "mobile",
+        "mcp",
+        "test-automation",
+        "ai-agents",
+        "google"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": true,
+      "hasMcp": true,
+      "source": "github",
+      "take": {
+        "en": "Google’s open stack so coding agents drive a real Android phone — natural language in, taps and Logcat out, MCP into your IDE.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Web agents already click browsers. Mobile still breaks most agent loops. If you ship Android, ARTEMIS lets Claude Code, Codex, or Antigravity install a build, walk the UI, grab screenshots and logs, and report failures without a hand-written Appium suite.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "ARTEMIS is Google Pixel Test Engineering’s open-source Android automation layer for AI assistants and test suites. You describe a workflow in plain language; it runs observe-and-act steps on a USB device or emulator, using UI element indices when it can and vision or coordinates when the UI is custom. It ships a local web UI with screen mirroring, a Python SDK for pytest-style runs, and a native MCP server so IDEs can call mobile tools directly. On Google Research’s AndroidWorld benchmark it reports 99%+ task success across 100+ multi-step flows.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Clone the repo, connect a phone with USB debugging or an emulator, and run ./start.sh. It installs ADB, scrcpy, and deps, then can wire MCP plus a mobile-testing rules file into Claude Code, Codex, Cursor, Antigravity, and similar tools. From chat you ask it to build an APK, install it, walk login, and return screenshots. Or call uv run artemis run \"…\" from the CLI. Flash mode aims for a few seconds per step; Pro mode explores blocked paths longer before giving up.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not another coding harness and not a browser agent. ARTEMIS is the phone side of the agent stack — real device control, MCP, and diagnostics — so mobile QA sits next to the same IDE agents you already use for code.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Google open-sourced ARTEMIS so coding agents can drive a real Android phone. natural language in, taps + Logcat out, MCP into Claude Code / Codex / Antigravity. 99%+ on AndroidWorld.\n\nhttps://nimaaksoy.com/radar/artemis",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Mobile is still the weak spot for most coding agents. Google’s ARTEMIS gives them a real Android device over MCP — install builds, walk the UI, pull screenshots and logs — with 99%+ on AndroidWorld.\n\nhttps://nimaaksoy.com/radar/artemis",
+          "fa": ""
+        }
+      }
+    }
+  ]
+}
