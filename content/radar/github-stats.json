@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-17T11:48:00.603Z",
+  "updatedAt": "2026-09-10T07:07:29Z",
   "source": "github-api",
   "repoCount": 25,
   "itemCount": 49,
@@ -415,6 +415,10 @@
       "stars": 3144,
       "fetchedAt": "2026-09-04T07:09:34Z",
       "repo": "pacifio/atlas"
+    },
+    "artemis": {
+      "stars": 1040,
+      "fetchedAt": "2026-09-10T07:07:29Z"
     }
   },
   "byRepo": {
@@ -785,6 +789,10 @@
       "stars": 3144,
       "fetchedAt": "2026-09-04T07:09:34Z",
       "slug": "atlas"
+    },
+    "google/artemis": {
+      "stars": 1040,
+      "fetchedAt": "2026-09-10T07:07:29Z"
     }
   },
   "errors": [
