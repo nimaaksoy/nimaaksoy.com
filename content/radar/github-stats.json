@@ -419,6 +419,11 @@
     "artemis": {
       "stars": 1040,
       "fetchedAt": "2026-09-10T07:07:29Z"
+    },
+    "spec-kit": {
+      "stars": 135358,
+      "fetchedAt": "2026-09-11T07:08:26Z",
+      "repo": "github/spec-kit"
     }
   },
   "byRepo": {
@@ -793,6 +798,11 @@
     "google/artemis": {
       "stars": 1040,
       "fetchedAt": "2026-09-10T07:07:29Z"
+    },
+    "github/spec-kit": {
+      "stars": 135358,
+      "fetchedAt": "2026-09-11T07:08:26Z",
+      "slug": "spec-kit"
     }
   },
   "errors": [
