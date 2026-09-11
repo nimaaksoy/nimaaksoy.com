@@ -1,0 +1,69 @@
+{
+  "date": "2026-09-11",
+  "items": [
+    {
+      "slug": "spec-kit",
+      "name": "Spec Kit",
+      "url": "https://github.com/github/spec-kit",
+      "image": "https://opengraph.githubassets.com/1/github/spec-kit",
+      "homepage": "https://github.github.com/spec-kit/",
+      "tags": [
+        "spec-driven-development",
+        "ai-coding",
+        "github",
+        "cli",
+        "agent-workflow",
+        "planning"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": false,
+      "source": "github",
+      "take": {
+        "en": "GitHub’s open toolkit so you write the spec first, then any coding agent implements against it — specify, plan, tasks, implement, converge.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most agent runs still start from a vague chat and hope the code lands. Spec Kit flips that: the spec becomes the source of truth, agents fill the gaps, and converge checks the build against what you actually asked for. If you ship with Copilot, Claude Code, Codex, or Cursor, this is the missing process layer — not another chat wrapper.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Spec Kit is GitHub’s open-source Spec-Driven Development toolkit. It just hit 1.0 after a year of community use. You install the specify CLI, init a project with your preferred agent integration, and work through constitution → specify → plan → tasks → implement → converge. Optional extensions cover bug assess/fix/test and idea go/kill research. Specs stay in the repo; agents generate implementations from them instead of inventing scope mid-run.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install with uv tool install specify-cli from the release tag, then specify init my-project --integration copilot (or another supported agent). Open the agent in that folder and run the /speckit-* commands in order. Repeat implement and converge until the checker reports Converged. Add specify extension add bug or assess when you need scoped fixes or idea triage.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not a coding agent and not a skill dump. Spec Kit is the shared SDD process that sits above whatever agent you already use — GitHub-maintained, agent-agnostic, and built so specs drive the code instead of the other way around.",
+        "fa": ""
+      },
+      "similar": [
+        {
+          "slug": "ecc",
+          "name": "ECC"
+        },
+        {
+          "slug": "openworker",
+          "name": "OpenWorker"
+        },
+        {
+          "slug": "harness-engineering",
+          "name": "Harness Engineering"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "GitHub Spec Kit hit 1.0. Spec-driven development for any coding agent — write the spec, plan, tasks, implement, then converge until it matches what you asked for. process layer, not another chat box.\n\nhttps://nimaaksoy.com/radar/spec-kit",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Most agent coding still starts from a vague prompt. GitHub’s Spec Kit (now 1.0) makes the spec the source of truth — specify, plan, tasks, implement, converge — with any coding agent you already use.\n\nhttps://nimaaksoy.com/radar/spec-kit",
+          "fa": ""
+        }
+      }
+    }
+  ]
+}
