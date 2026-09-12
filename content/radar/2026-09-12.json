@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-12",
+  "items": [
+    {
+      "slug": "hyperresearch",
+      "name": "Hyperresearch",
+      "url": "https://github.com/jordan-gibbs/hyperresearch",
+      "image": "https://opengraph.githubassets.com/1/jordan-gibbs/hyperresearch",
+      "homepage": "https://pypi.org/project/hyperresearch/",
+      "tags": [
+        "deep-research",
+        "claude-code",
+        "agents",
+        "knowledge-base",
+        "citations",
+        "research"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": false,
+      "hasApi": false,
+      "hasMcp": false,
+      "source": "github",
+      "take": {
+        "en": "Turns Claude Code into a deep research agent: a 16-step pipeline, cite-checked report, and a vault that keeps every source for the next run."
+      },
+      "why": {
+        "en": "Founders still paste a vague ask into chat and get a pretty report with soft citations. Hyperresearch treats research like a product: width sweep, contradiction graphs, adversarial critics, and a hard cite-check before anything ships. Sources land in a searchable vault so the next session starts smarter instead of re-fetching the same web."
+      },
+      "explanation": {
+        "en": "Hyperresearch is an open-source deep research harness for Claude Code. One prompt routes through a tier-adaptive pipeline — light path for bounded questions, full path with parallel drafts and four critics, optional dissertation scale for chapter-length work. It pulls from eight scholarly surfaces in one client, prefers full open-access text over abstract-only paywalls when legal copies exist, and blocks hallucinated quotes at the gate. Crashed runs resume from a manifest."
+      },
+      "howItWorks": {
+        "en": "In a project folder run pip install hyperresearch && hyperresearch install, then use /hyperresearch with your question inside Claude Code. The router classifies the tier, loads one step skill at a time, writes notes and reports into the vault, and lets you resume if a long run dies mid-pipeline. Power users can install globally so the skill is available in every session."
+      },
+      "different": {
+        "en": "Not another coding TUI and not a one-shot web-search skill. The product is the audited research loop plus a durable source vault — independence audits so syndicated reprints do not fake consensus, tool-locked patchers that cannot rewrite the whole draft, and a pipeline built to survive long runs without dropping steps as context rots."
+      },
+      "similar": [
+        {
+          "slug": "agent-reach",
+          "name": "Agent Reach"
+        },
+        {
+          "slug": "openwiki",
+          "name": "OpenWiki"
+        },
+        {
+          "slug": "spec-kit",
+          "name": "Spec Kit"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "Hyperresearch turns Claude Code into a real deep research loop. 16 steps, cite-check that blocks fake quotes, adversarial critics, and a vault so the next run starts with the sources you already paid for.\\n\\nhttps://nimaaksoy.com/radar/hyperresearch"
+        },
+        "linkedin": {
+          "en": "Most “deep research” chat still ships soft citations. Hyperresearch is an open Claude Code harness with a tiered multi-step pipeline, independence audits, hard cite-check, and a persistent source vault you can resume from.\\n\\nhttps://nimaaksoy.com/radar/hyperresearch"
+        }
+      }
+    }
+  ]
+}
