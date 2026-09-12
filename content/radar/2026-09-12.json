@@ -51,10 +51,10 @@
       ],
       "share": {
         "x": {
-          "en": "Hyperresearch turns Claude Code into a real deep research loop. 16 steps, cite-check that blocks fake quotes, adversarial critics, and a vault so the next run starts with the sources you already paid for.\\n\\nhttps://nimaaksoy.com/radar/hyperresearch"
+          "en": "Hyperresearch turns Claude Code into a real deep research loop. 16 steps, cite-check that blocks fake quotes, adversarial critics, and a vault so the next run starts with the sources you already paid for.\n\nhttps://nimaaksoy.com/radar/hyperresearch"
         },
         "linkedin": {
-          "en": "Most “deep research” chat still ships soft citations. Hyperresearch is an open Claude Code harness with a tiered multi-step pipeline, independence audits, hard cite-check, and a persistent source vault you can resume from.\\n\\nhttps://nimaaksoy.com/radar/hyperresearch"
+          "en": "Most deep research chat still ships soft citations. Hyperresearch is an open Claude Code harness with a tiered multi-step pipeline, independence audits, hard cite-check, and a persistent source vault you can resume from.\n\nhttps://nimaaksoy.com/radar/hyperresearch"
         }
       }
     }
