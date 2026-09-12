@@ -424,6 +424,11 @@
       "stars": 135358,
       "fetchedAt": "2026-09-11T07:08:26Z",
       "repo": "github/spec-kit"
+    },
+    "hyperresearch": {
+      "stars": 2788,
+      "fetchedAt": "2026-09-12T07:09:44Z",
+      "repo": "jordan-gibbs/hyperresearch"
     }
   },
   "byRepo": {
@@ -803,6 +808,11 @@
       "stars": 135358,
       "fetchedAt": "2026-09-11T07:08:26Z",
       "slug": "spec-kit"
+    },
+    "jordan-gibbs/hyperresearch": {
+      "stars": 2788,
+      "fetchedAt": "2026-09-12T07:09:44Z",
+      "slug": "hyperresearch"
     }
   },
   "errors": [
@@ -956,5 +966,6 @@
       "error": "rate_limited_or_forbidden (403)",
       "reset": "1785697432"
     }
-  ]
+  ],
+  "generatedAt": "2026-09-12T07:09:44Z"
 }
