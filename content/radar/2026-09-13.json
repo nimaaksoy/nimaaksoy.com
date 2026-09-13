@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-13",
+  "items": [
+    {
+      "slug": "worktrunk",
+      "name": "Worktrunk",
+      "url": "https://github.com/max-sixty/worktrunk",
+      "image": "https://opengraph.githubassets.com/1/max-sixty/worktrunk",
+      "homepage": "https://worktrunk.dev",
+      "tags": [
+        "git",
+        "worktrees",
+        "agents",
+        "cli",
+        "parallel",
+        "developer-tools"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": false,
+      "source": "github",
+      "take": {
+        "en": "Git worktrees made as easy as branches — built for running five or ten coding agents in parallel without them stomping the same checkout."
+      },
+      "why": {
+        "en": "Once agents can hold a long task, the bottleneck is the repo: one dirty tree, path fights, and half your day spent on git worktree add. Worktrunk turns that into short branch-named commands so founders can fan out Claude Code, Codex, or any CLI agent and still merge clean."
+      },
+      "explanation": {
+        "en": "Worktrunk is a Rust CLI for git worktree management aimed at parallel AI agent workflows. Worktrees are addressed by branch name, paths come from a template, and the same commands cover create, switch, list with status, merge, and remove. Hooks automate setup, LLM commit messages draft from diffs, and list can surface CI status plus short AI summaries per branch."
+      },
+      "howItWorks": {
+        "en": "Install with brew install worktrunk && wt config shell install (or cargo / winget). Create and jump with wt switch -c feature-auth, or fan out agents with wt switch -x claude -c feature-a -- 'Add auth'. wt list shows dirty state and distance from main; wt merge main squash-rebases and cleans up; hooks can install deps or start a per-worktree dev server on a hashed port."
+      },
+      "different": {
+        "en": "Not another coding agent harness and not a raw git wrapper demo. The product is the worktree UX layer agents actually need: branch-first addressing, parallel launch, shared build caches on APFS/btrfs/XFS, and merge/cleanup that matches how multi-agent teams ship."
+      },
+      "similar": [
+        {
+          "slug": "orca",
+          "name": "Orca"
+        },
+        {
+          "slug": "qm",
+          "name": "qm"
+        },
+        {
+          "slug": "openworker",
+          "name": "OpenWorker"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "Worktrunk is the missing layer when you run agents in parallel. Git worktrees addressed like branches, one-liners to spin Claude/Codex per feature, hooks, merge, and cleanup without path hell.\n\nhttps://nimaaksoy.com/radar/worktrunk"
+        },
+        "linkedin": {
+          "en": "Parallel coding agents fail on the repo long before the model. Worktrunk makes git worktrees as easy as branches — create, list, merge, and clean up with branch-first commands built for multi-agent workflows.\n\nhttps://nimaaksoy.com/radar/worktrunk"
+        }
+      }
+    }
+  ]
+}
