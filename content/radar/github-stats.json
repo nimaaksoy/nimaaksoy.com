@@ -429,6 +429,11 @@
       "stars": 2788,
       "fetchedAt": "2026-09-12T07:09:44Z",
       "repo": "jordan-gibbs/hyperresearch"
+    },
+    "worktrunk": {
+      "stars": 7335,
+      "fetchedAt": "2026-09-13T07:07:33Z",
+      "repo": "max-sixty/worktrunk"
     }
   },
   "byRepo": {
@@ -813,6 +818,11 @@
       "stars": 2788,
       "fetchedAt": "2026-09-12T07:09:44Z",
       "slug": "hyperresearch"
+    },
+    "max-sixty/worktrunk": {
+      "stars": 7335,
+      "fetchedAt": "2026-09-13T07:07:33Z",
+      "slug": "worktrunk"
     }
   },
   "errors": [
