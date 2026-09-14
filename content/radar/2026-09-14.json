@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-14",
+  "items": [
+    {
+      "slug": "open-code-review",
+      "name": "Open Code Review",
+      "url": "https://github.com/alibaba/open-code-review",
+      "image": "https://opengraph.githubassets.com/1/alibaba/open-code-review",
+      "homepage": "https://open-codereview.ai",
+      "tags": [
+        "code-review",
+        "agents",
+        "cli",
+        "ci",
+        "developer-tools",
+        "alibaba"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": true,
+      "source": "github",
+      "take": {
+        "en": "Alibaba’s open code-review CLI: deterministic pipelines plus an LLM agent, line-level findings, multi-language rules — built for real PR volume, not a generic “review this” skill."
+      },
+      "why": {
+        "en": "Coding agents ship more diffs than humans can review. Pure agent skills miss files, drift line numbers, and burn tokens. Open Code Review hard-codes selection, bundling, and positioning so the model only does judgment — higher precision at roughly one-ninth the tokens versus a general agent on their bench."
+      },
+      "explanation": {
+        "en": "Open Code Review (ocr) is Alibaba Group’s internal AI review assistant, open-sourced after years on tens of thousands of developers. It reads git diffs (or full trees via ocr scan), runs a hybrid stack of fixed engineering steps and a tool-using agent, and emits structured line-level comments. Built-in rules cover NPE, thread-safety, XSS, SQL injection and more across many languages; providers are OpenAI- and Anthropic-compatible."
+      },
+      "howItWorks": {
+        "en": "Install with npm i -g @alibaba-group/open-code-review, then ocr config provider and ocr config model. In a repo run ocr review for workspace changes, ocr review --from main --to feature for a branch range, or ocr scan for whole-file audits. Use --format json for CI and host agents; ocr delegate lets Claude Code, Codex, or Cursor run the review with OCR still owning file pick and rules. Plugins and MCP extend the agent; GitHub Actions and other CI docs ship on the site."
+      },
+      "different": {
+        "en": "Not another free-form review prompt and not a diff-reading UI for humans. The product is the hybrid harness: engineering guarantees coverage and comment placement; the agent does deep context. That is a different job from code-review graphs or “make the PR readable” tools."
+      },
+      "similar": [
+        {
+          "slug": "meat",
+          "name": "meat"
+        },
+        {
+          "slug": "code-review-graph",
+          "name": "Code Review Graph"
+        },
+        {
+          "slug": "deepsec",
+          "name": "Deepsec"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "Open Code Review is Alibaba’s real PR review stack, now open source. Deterministic file pick + bundling + line placement, then an LLM agent for judgment. Higher precision, ~1/9 the tokens vs a generic coding agent on their bench.\n\nhttps://nimaaksoy.com/radar/open-code-review"
+        },
+        "linkedin": {
+          "en": "Agent-written code needs review that does not miss files or invent line numbers. Open Code Review is Alibaba’s hybrid CLI — fixed pipelines for coverage and placement, LLM agent for depth — with CI, plugins, and MCP.\n\nhttps://nimaaksoy.com/radar/open-code-review"
+        }
+      }
+    }
+  ]
+}
