@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-10T07:07:29Z",
+  "updatedAt": "2026-09-14T07:07:49Z",
   "source": "github-api",
   "repoCount": 25,
   "itemCount": 49,
@@ -434,6 +434,11 @@
       "stars": 7335,
       "fetchedAt": "2026-09-13T07:07:33Z",
       "repo": "max-sixty/worktrunk"
+    },
+    "open-code-review": {
+      "stars": 23888,
+      "repo": "alibaba/open-code-review",
+      "fetchedAt": "2026-09-14T07:07:49Z"
     }
   },
   "byRepo": {
@@ -823,6 +828,11 @@
       "stars": 7335,
       "fetchedAt": "2026-09-13T07:07:33Z",
       "slug": "worktrunk"
+    },
+    "alibaba/open-code-review": {
+      "stars": 23888,
+      "fetchedAt": "2026-09-14T07:07:49Z",
+      "slug": "open-code-review"
     }
   },
   "errors": [
