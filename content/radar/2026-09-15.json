@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-15",
+  "items": [
+    {
+      "slug": "shadcn-lint",
+      "name": "shadcn/lint",
+      "url": "https://github.com/shadcn-ui/lint",
+      "image": "https://opengraph.githubassets.com/1/shadcn-ui/lint",
+      "homepage": "https://github.com/shadcn-ui/lint",
+      "tags": [
+        "design-system",
+        "tailwind",
+        "agents",
+        "lint",
+        "shadcn",
+        "frontend"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": false,
+      "hasApi": false,
+      "hasMcp": false,
+      "source": "github",
+      "take": {
+        "en": "Agent-first linter for Tailwind design systems: you define what components may change, agents get errors that name the fix from your variants and theme."
+      },
+      "why": {
+        "en": "Coding agents still restyle buttons with random padding and off-theme colors. Soft “taste” skills help, but they do not fail CI. shadcn/lint turns design contracts into Oxlint or ESLint rules so the same loop that fixes TypeScript also pulls UI back onto your system — cheaper correction rounds in their agent evals."
+      },
+      "explanation": {
+        "en": "@shadcn/lint is an open MIT package from the shadcn team for Tailwind v4 projects (shadcn/ui not required). You encode policies like “Button owns spacing; pages may only use sizes and margin” without rewriting component APIs. When an agent breaks a rule, the diagnostic explains what failed and points at real sizes, variants, and theme files in the repo."
+      },
+      "howItWorks": {
+        "en": "Install with npm install -D @shadcn/lint oxlint (or the ESLint path). Add rules such as shadcn/no-restyle and shadcn/no-arbitrary-values in .oxlintrc.json or eslint.config.mjs, set contracts per component pattern, and wire npm run lint. Point coding agents at the SETUP.md prompt or tell them to run lint after UI edits and fix until clean."
+      },
+      "different": {
+        "en": "Not another anti-slop skill pack and not TypeScript prop gymnastics alone. It is a programmable linter built so agents can verify design systems: shared configs, third-party components without forks, and messages filled from your own tokens. Soft guidance becomes a hard check."
+      },
+      "similar": [
+        {
+          "slug": "taste-skill",
+          "name": "Taste Skill"
+        },
+        {
+          "slug": "hallmark",
+          "name": "Hallmark"
+        },
+        {
+          "slug": "ui-skills",
+          "name": "UI Skills"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "shadcn/lint is the missing hard check for agent UI. Tailwind design-system rules that Oxlint/ESLint can fail, with errors that tell the model which size or theme token to use instead of random p-4.\n\nhttps://nimaaksoy.com/radar/shadcn-lint"
+        },
+        "linkedin": {
+          "en": "Agent frontends still drift off the design system. shadcn/lint turns component contracts into Oxlint or ESLint rules so coding agents get fixable diagnostics from your variants and theme — not another soft taste prompt.\n\nhttps://nimaaksoy.com/radar/shadcn-lint"
+        }
+      }
+    }
+  ]
+}
