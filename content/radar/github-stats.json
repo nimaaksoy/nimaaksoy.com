@@ -439,6 +439,11 @@
       "stars": 23888,
       "repo": "alibaba/open-code-review",
       "fetchedAt": "2026-09-14T07:07:49Z"
+    },
+    "shadcn-lint": {
+      "stars": 1210,
+      "fetchedAt": "2026-09-15T07:07:05Z",
+      "repo": "shadcn-ui/lint"
     }
   },
   "byRepo": {
@@ -833,6 +838,11 @@
       "stars": 23888,
       "fetchedAt": "2026-09-14T07:07:49Z",
       "slug": "open-code-review"
+    },
+    "shadcn-ui/lint": {
+      "stars": 1210,
+      "fetchedAt": "2026-09-15T07:07:05Z",
+      "slug": "shadcn-lint"
     }
   },
   "errors": [
