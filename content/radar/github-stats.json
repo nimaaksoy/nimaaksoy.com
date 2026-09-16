@@ -444,6 +444,10 @@
       "stars": 1210,
       "fetchedAt": "2026-09-15T07:07:05Z",
       "repo": "shadcn-ui/lint"
+    },
+    "rtk": {
+      "stars": 80635,
+      "fetchedAt": "2026-09-16T07:09:52Z"
     }
   },
   "byRepo": {
@@ -843,6 +847,10 @@
       "stars": 1210,
       "fetchedAt": "2026-09-15T07:07:05Z",
       "slug": "shadcn-lint"
+    },
+    "rtk-ai/rtk": {
+      "stars": 80635,
+      "fetchedAt": "2026-09-16T07:09:52Z"
     }
   },
   "errors": [
