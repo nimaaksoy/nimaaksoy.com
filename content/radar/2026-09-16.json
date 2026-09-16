@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-16",
+  "items": [
+    {
+      "slug": "rtk",
+      "name": "RTK",
+      "url": "https://github.com/rtk-ai/rtk",
+      "image": "https://opengraph.githubassets.com/1/rtk-ai/rtk",
+      "homepage": "https://www.rtk-ai.app",
+      "tags": [
+        "agents",
+        "cli",
+        "tokens",
+        "coding",
+        "rust",
+        "devtools"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": false,
+      "hasApi": false,
+      "hasMcp": false,
+      "source": "github",
+      "take": {
+        "en": "Rust CLI that sits in front of bash for coding agents and shrinks noisy command output before it hits the model context."
+      },
+      "why": {
+        "en": "Most agent token burn is not the prompt — it is fat git diffs, full test logs, and long ls dumps the model barely needs. RTK cuts that shell noise at the source so Claude Code, Codex, Cursor, and friends stay sharper and cheaper without a new model or a compression gateway."
+      },
+      "explanation": {
+        "en": "RTK (Rust Token Killer) is a single zero-dep Rust binary that rewrites or proxies common dev commands and returns compact output. It understands 100+ tools — git, test runners, linters, docker, package managers — and applies filtering, grouping, truncation, and dedupe per command type. Install once, hook your agent, and plain git status becomes a tight summary instead of a wall of text."
+      },
+      "howItWorks": {
+        "en": "Install via brew install rtk or the install script, then run rtk init for your tool (Claude Code, Codex, Cursor, Gemini, Hermes, and more). Hooks rewrite Bash tool calls to rtk equivalents before they run; the agent only sees the filtered result. You can also call rtk git status, rtk test cargo test, or rtk read explicitly when built-in Read/Grep paths skip the shell hook."
+      },
+      "different": {
+        "en": "Not another LLM compression model or routing proxy. RTK is a deterministic command-output layer under your existing agent — milliseconds of overhead, no extra API, honest about savings being bash tokens not the whole bill. Complementary to semantic gateways like Paritok that compress tool payloads higher up the stack."
+      },
+      "similar": [
+        {
+          "slug": "paritok",
+          "name": "Paritok"
+        },
+        {
+          "slug": "gigatoken",
+          "name": "Gigatoken"
+        },
+        {
+          "slug": "freetoken",
+          "name": "FreeToken"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "RTK is a small Rust binary that filters bash output before your coding agent reads it. git, tests, ls, docker — less noise in context, lower token burn, no new model.\n\nhttps://nimaaksoy.com/radar/rtk"
+        },
+        "linkedin": {
+          "en": "Coding agents waste a lot of context on raw shell dumps. RTK sits in front of common dev commands and returns compact output to Claude Code, Codex, Cursor, and similar tools — a practical token cut without changing your model stack.\n\nhttps://nimaaksoy.com/radar/rtk"
+        }
+      }
+    }
+  ]
+}
