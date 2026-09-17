@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-14T07:07:49Z",
+  "updatedAt": "2026-09-17T07:09:17Z",
   "source": "github-api",
   "repoCount": 25,
   "itemCount": 49,
@@ -448,6 +448,12 @@
     "rtk": {
       "stars": 80635,
       "fetchedAt": "2026-09-16T07:09:52Z"
+    },
+    "openresearch": {
+      "stars": 4648,
+      "repo": "alphaXiv/OpenResearch",
+      "fetchedAt": "2026-09-17T07:09:17Z",
+      "slug": "openresearch"
     }
   },
   "byRepo": {
@@ -851,6 +857,11 @@
     "rtk-ai/rtk": {
       "stars": 80635,
       "fetchedAt": "2026-09-16T07:09:52Z"
+    },
+    "alphaXiv/OpenResearch": {
+      "stars": 4648,
+      "slug": "openresearch",
+      "fetchedAt": "2026-09-17T07:09:17Z"
     }
   },
   "errors": [
