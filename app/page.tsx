@@ -7,7 +7,6 @@ import {
   IconBrandYoutube,
   IconCalendarEvent,
   IconGlassFull,
-  IconLock,
   IconMail,
   IconMapPin,
   IconMountain,
@@ -47,24 +46,16 @@ type ThinkCard = {
 };
 
 const media = {
-  line3Video: "https://res.cloudinary.com/dzu2boxnl/video/upload/v1777052628/line3_p9zeuo.mp4",
-  line2Video: "https://res.cloudinary.com/dzu2boxnl/video/upload/v1777052627/line2_sgnmej.mp4",
-  heroVideo:
-    "https://res.cloudinary.com/dzu2boxnl/video/upload/v1777052581/nimaaksoy-hero-video_hyktho.mp4",
-  travelImage:
-    "https://res.cloudinary.com/dzu2boxnl/image/upload/v1777052497/travel_oedjvl.png",
-  wineImage:
-    "https://res.cloudinary.com/dzu2boxnl/image/upload/v1777052496/wine_tvxd97.png",
-  turkeyImage:
-    "https://res.cloudinary.com/dzu2boxnl/image/upload/v1777052495/turkey_s03sz7.png",
-  techImage:
-    "https://res.cloudinary.com/dzu2boxnl/image/upload/v1777052492/tech_wjmugu.png",
-  sportImage:
-    "https://res.cloudinary.com/dzu2boxnl/image/upload/v1777052497/sport_jtqg4y.png",
-  musicImage:
-    "https://res.cloudinary.com/dzu2boxnl/image/upload/v1777052499/music_uiafey.png",
-  profileImage:
-    "https://res.cloudinary.com/dzu2boxnl/image/upload/v1777052495/nima_kppch5.png",
+  line3Video: "/home/line3.mp4",
+  line2Video: "/home/line2.mp4",
+  heroVideo: "/home/nimaaksoy-hero-video_hyktho.mp4",
+  travelImage: "/home/travel.png",
+  wineImage: "/home/wine.png",
+  turkeyImage: "/home/turkey.png",
+  techImage: "/home/tech.png",
+  sportImage: "/home/sport.png",
+  musicImage: "/home/music.png",
+  profileImage: "/home/nima.png",
 } as const;
 
 const interests: InterestCard[] = [
@@ -491,138 +482,42 @@ export default function Home() {
                 </motion.div>
 
                 <motion.div variants={itemVariants} className="border-b border-[#1F1F1F]">
-                  {/* Bowora */}
+                  {/* Vocaler.ai */}
                   <article className="border-t border-[#1F1F1F] py-9">
                     <div className="grid gap-8 md:grid-cols-2">
                       <div>
                         <p className="font-jetbrains text-[11px] tracking-[0.14em] text-[#7F7F7F]">
-                          01 / 03
+                          01 / 01
                         </p>
                         <h3 className="mt-3 font-monroe text-[32px] font-light leading-[1.1] text-[#EAEAEA]">
-                          Bowora
+                          Vocaler.ai
                         </h3>
                         <p className="mt-2 max-w-xs font-monroe text-[16px] italic text-[#9A9A9A]">
-                          A platform built around startups, visibility, traction, and the right connections.
+                          Create, release, and grow music in one place.
                         </p>
-                        <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#1F1F1F] px-3 py-1 font-jetbrains text-[10px] tracking-[0.14em] text-[#9A9A9A]">
-                          <span className="h-1.5 w-1.5 rounded-full bg-[#2CFF05]" /> LIVE
+                        <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#1F1F1F] px-3 py-1 font-jetbrains text-[10px] tracking-[0.14em] text-[#FF3B30]">
+                          <span className="h-1.5 w-1.5 rounded-full bg-[#FF3B30]" /> RAISING PRE-SEED
                         </span>
                       </div>
 
                       <div className="border-l border-[#1F1F1F] pl-6 md:pl-8">
                         <div className="flex items-center gap-2">
-                          <IconUsersGroup size={18} stroke={1.8} className="text-[#2CFF05]" />
-                          <p className="font-jetbrains text-[10px] uppercase tracking-[0.14em] text-[#2CFF05]">
-                            OPEN TO PARTNERSHIPS
+                          <IconUsersGroup size={18} stroke={1.8} className="text-[#FF3B30]" />
+                          <p className="font-jetbrains text-[10px] uppercase tracking-[0.14em] text-[#FF3B30]">
+                            BUILDING OUR OWN MUSIC MODEL
                           </p>
                         </div>
                         <p className="mt-3 font-monroe text-[16px] italic text-[#9A9A9A]">
-                          Open to partnerships, distribution, and growth collaborations.
+                          We&apos;re looking for the right investor to help us take Vocaler from platform to proprietary AI.
                         </p>
                         <div className="mt-6 flex flex-wrap gap-3">
                           <a
-                            href="http://bowora.com/"
+                            href="https://vocaler.ai/"
                             target="_blank"
                             rel="noopener follow"
-                            className="signal-button rounded-full px-5 py-2.5 font-jetbrains text-[12px] uppercase tracking-[0.12em]"
+                            className="inline-flex items-center rounded-full border border-[#FF3B30] px-5 py-2.5 font-jetbrains text-[12px] uppercase tracking-[0.12em] text-[#FF3B30] transition hover:bg-[#FF3B30]/10"
                           >
                             VIEW PROJECT →
-                          </a>
-                          <a
-                            href={`mailto:me@nimaaksoy.com?subject=Investment%20opportunity%20in%20Bowora&body=Hi%20Nima%0AI%20came%20across%20Bowora%20and%20found%20it%20interesting%0A%0AI%27d%20like%20to%20learn%20more%20about%20the%20investment%20opportunity%20and%20where%20you%27re%20heading%20with%20it%0A%0AWould%20be%20great%20to%20connect%20and%20have%20a%20quick%20chat%0A%0ABest%0A%5BName%5D`}
-                            className="rounded-full border border-[#3A3A3A] px-5 py-2.5 font-jetbrains text-[12px] uppercase tracking-[0.12em] text-[#9A9A9A] transition hover:border-[#5A5A5A] hover:text-[#EAEAEA]"
-                          >
-                            PARTNER WITH US
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-
-                  {/* Vestoin */}
-                  <article className="border-t border-[#1F1F1F] py-9">
-                    <div className="grid gap-8 md:grid-cols-2">
-                      <div>
-                        <p className="font-jetbrains text-[11px] tracking-[0.14em] text-[#7F7F7F]">
-                          02 / 03
-                        </p>
-                        <h3 className="mt-3 font-monroe text-[32px] font-light leading-[1.1] text-[#EAEAEA]">
-                          Vestoin
-                        </h3>
-                        <p className="mt-2 max-w-xs font-monroe text-[16px] italic text-[#9A9A9A]">
-                          Private presentation rooms with voice narration, AI Q&amp;A, and secure sharing.
-                        </p>
-                        <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#1F1F1F] px-3 py-1 font-jetbrains text-[10px] tracking-[0.14em] text-[#2F91EA]">
-                          <span className="h-1.5 w-1.5 rounded-full bg-[#2F91EA]" /> LIVE
-                        </span>
-                      </div>
-
-                      <div className="border-l border-[#1F1F1F] pl-6 md:pl-8">
-                        <div className="flex items-center gap-2">
-                          <IconBrain size={18} stroke={1.8} className="text-[#2F91EA]" />
-                          <p className="font-jetbrains text-[10px] uppercase tracking-[0.14em] text-[#2F91EA]">
-                            AI PRESENTATION ROOMS
-                          </p>
-                        </div>
-                        <p className="mt-3 font-monroe text-[16px] italic text-[#9A9A9A]">
-                          Upload your slides, share securely, and let visitors get answers instantly.
-                        </p>
-                        <div className="mt-6 flex flex-wrap gap-3">
-                          <a
-                            href="https://vestoin.com/"
-                            target="_blank"
-                            rel="noopener follow"
-                            className="inline-flex items-center rounded-full border border-[#2F91EA] px-5 py-2.5 font-jetbrains text-[12px] uppercase tracking-[0.12em] text-[#2F91EA] transition hover:bg-[#2F91EA]/10"
-                          >
-                            VIEW PROJECT →
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-
-                  {/* Eldivio */}
-                  <article className="border-t border-[#1F1F1F] py-9">
-                    <div className="grid gap-8 md:grid-cols-2">
-                      <div>
-                        <p className="font-jetbrains text-[11px] tracking-[0.14em] text-[#7F7F7F]">
-                          03 / 03
-                        </p>
-                        <h3 className="mt-3 font-monroe text-[32px] font-light leading-[1.1] text-[#EAEAEA]">
-                          Eldivio
-                        </h3>
-                        <p className="mt-2 max-w-xs font-monroe text-[16px] italic text-[#9A9A9A]">
-                          A premium travel concept focused on better decisions and better journeys.
-                        </p>
-                        <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#1F1F1F] px-3 py-1 font-jetbrains text-[10px] tracking-[0.14em] text-[#C8A44A]">
-                          <span className="h-1.5 w-1.5 rounded-full bg-[#C8A44A]" /> PRIVATE ACCESS
-                        </span>
-                      </div>
-
-                      <div className="border-l border-[#1F1F1F] pl-6 md:pl-8">
-                        <div className="flex items-center gap-2">
-                          <IconLock size={18} stroke={1.8} className="text-[#C8A44A]" />
-                          <p className="font-jetbrains text-[10px] uppercase tracking-[0.14em] text-[#C8A44A]">
-                            BY INVITATION ONLY
-                          </p>
-                        </div>
-                        <p className="mt-3 font-monroe text-[16px] italic text-[#9A9A9A]">
-                          Private beta access for early members and investors.
-                        </p>
-                        <div className="mt-6 flex flex-wrap gap-3">
-                          <a
-                            href="https://eldivio.com/"
-                            target="_blank"
-                            rel="noopener follow"
-                            className="inline-flex items-center rounded-full border border-[#C8A44A] px-5 py-2.5 font-jetbrains text-[12px] uppercase tracking-[0.12em] text-[#C8A44A] transition hover:bg-[#C8A44A]/10"
-                          >
-                            VIEW PROJECT →
-                          </a>
-                          <a
-                            href={`mailto:me@nimaaksoy.com?subject=Interest%20in%20Eldivio&body=Hi%20Nima%0AI%20saw%20Eldivio%20and%20the%20concept%20stood%20out%20to%20me%0A%0AI%27m%20interested%20in%20learning%20more%2C%20especially%20around%20early%20access%20or%20potential%20investment%0A%0AHappy%20to%20jump%20on%20a%20quick%20call%20if%20that%20works%0A%0ABest%0A%5BName%5D`}
-                            className="rounded-full border border-[#3A3A3A] px-5 py-2.5 font-jetbrains text-[12px] uppercase tracking-[0.12em] text-[#9A9A9A] transition hover:border-[#5A5A5A] hover:text-[#EAEAEA]"
-                          >
-                            INVESTOR ACCESS
                           </a>
                         </div>
                       </div>

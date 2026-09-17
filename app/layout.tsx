@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://res.cloudinary.com/dzu2boxnl/image/upload/v1777052489/og-image_hnypog.png",
+        url: "/home/og-image.png",
         width: 1200,
         height: 630,
         alt: "Nima Aksoy site preview",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     title: "Nima Aksoy",
     description:
       "Building quietly. Connecting selectively. Working on things that matter.",
-    images: ["https://res.cloudinary.com/dzu2boxnl/image/upload/v1777052489/og-image_hnypog.png"],
+    images: ["/home/og-image.png"],
     creator: "@Nima1980",
   },
   robots: {
