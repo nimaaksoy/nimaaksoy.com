@@ -51,10 +51,10 @@
       ],
       "share": {
         "x": {
-          "en": "OpenResearch is a local workspace that turns Claude Code, Codex, OpenCode, or Cursor into real research agents. Parallel directions, isolated worktrees, experiment archives — research that behaves like a repo, not one endless chat.\\n\\nhttps://nimaaksoy.com/radar/openresearch"
+          "en": "OpenResearch is a local workspace that turns Claude Code, Codex, OpenCode, or Cursor into real research agents. Parallel directions, isolated worktrees, experiment archives — research that behaves like a repo, not one endless chat.\n\nhttps://nimaaksoy.com/radar/openresearch"
         },
         "linkedin": {
-          "en": "Deep research still dies in a single chat window. OpenResearch is a local-first workspace for research agents: parallel sessions, git-native experiments, and evidence tied to each run — with Claude Code, Codex, OpenCode, or Cursor underneath.\\n\\nhttps://nimaaksoy.com/radar/openresearch"
+          "en": "Deep research still dies in a single chat window. OpenResearch is a local-first workspace for research agents: parallel sessions, git-native experiments, and evidence tied to each run — with Claude Code, Codex, OpenCode, or Cursor underneath.\n\nhttps://nimaaksoy.com/radar/openresearch"
         }
       }
     }
