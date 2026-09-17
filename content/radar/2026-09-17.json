@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-17",
+  "items": [
+    {
+      "slug": "openresearch",
+      "name": "OpenResearch",
+      "url": "https://github.com/alphaXiv/OpenResearch",
+      "image": "https://opengraph.githubassets.com/1/alphaXiv/OpenResearch",
+      "homepage": "https://openresearch.sh/",
+      "tags": [
+        "research",
+        "agents",
+        "local-first",
+        "claude-code",
+        "experiments",
+        "devtools"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": false,
+      "source": "github",
+      "take": {
+        "en": "Local-first workspace that turns Claude Code, Codex, OpenCode, or Cursor into research agents with parallel runs and git-native experiments."
+      },
+      "why": {
+        "en": "Most “research agent” tools are one long chat that forgets the last failed idea. OpenResearch treats research like software: each direction gets its own agent session and worktree, every run is archived to a commit, and logs, diffs, and papers stay tied to the work that produced them — so founders and builders can actually iterate on hypotheses instead of pasting another vague prompt."
+      },
+      "explanation": {
+        "en": "OpenResearch is an open-source research agent workspace from alphaXiv. The Rust CLI (`orx`) plus a local dashboard runs on your machine with SQLite — no code leaves by default. It wires supported coding agents into literature review, hypothesis work, experiments, and artifact output, and can install skills so those agents speak the OpenResearch workflow. Optional openresearch.sh accounts unlock managed compute and orgs; local models via LM Studio, Ollama, and friends are supported with OpenCode."
+      },
+      "howItWorks": {
+        "en": "Install with curl -LsSf https://openresearch.sh/install.sh | sh, then run orx up for the dashboard at http://127.0.0.1:4791. Create a project, fan out research directions as parallel agent sessions with isolated git worktrees, and track variants in the experiment tree. Use orx install-skills for agent hooks, orx discover / orx paper for literature, and orx runs / orx logs / orx exp run to inspect and replay work. Telemetry is opt-out on official builds."
+      },
+      "different": {
+        "en": "Not another one-shot deep-research chat skill and not a coding TUI. The product is a local control plane for multi-direction research: parallel agents, reproducible experiment archives, and evidence kept next to the run. Complementary to pipeline skills like Hyperresearch — those own the method steps; OpenResearch owns the multiplayer workspace and experiment history around them."
+      },
+      "similar": [
+        {
+          "slug": "hyperresearch",
+          "name": "Hyperresearch"
+        },
+        {
+          "slug": "agent-reach",
+          "name": "Agent Reach"
+        },
+        {
+          "slug": "praxist",
+          "name": "PRAXIST"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "OpenResearch is a local workspace that turns Claude Code, Codex, OpenCode, or Cursor into real research agents. Parallel directions, isolated worktrees, experiment archives — research that behaves like a repo, not one endless chat.\\n\\nhttps://nimaaksoy.com/radar/openresearch"
+        },
+        "linkedin": {
+          "en": "Deep research still dies in a single chat window. OpenResearch is a local-first workspace for research agents: parallel sessions, git-native experiments, and evidence tied to each run — with Claude Code, Codex, OpenCode, or Cursor underneath.\\n\\nhttps://nimaaksoy.com/radar/openresearch"
+        }
+      }
+    }
+  ]
+}
