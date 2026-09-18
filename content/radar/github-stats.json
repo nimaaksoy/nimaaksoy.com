@@ -454,6 +454,11 @@
       "repo": "alphaXiv/OpenResearch",
       "fetchedAt": "2026-09-17T07:09:17Z",
       "slug": "openresearch"
+    },
+    "claude-mem": {
+      "stars": 94150,
+      "fetchedAt": "2026-09-18T07:08:15Z",
+      "repo": "thedotmack/claude-mem"
     }
   },
   "byRepo": {
@@ -862,6 +867,11 @@
       "stars": 4648,
       "slug": "openresearch",
       "fetchedAt": "2026-09-17T07:09:17Z"
+    },
+    "thedotmack/claude-mem": {
+      "stars": 94150,
+      "fetchedAt": "2026-09-18T07:08:15Z",
+      "slug": "claude-mem"
     }
   },
   "errors": [
