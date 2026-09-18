@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-18",
+  "items": [
+    {
+      "slug": "claude-mem",
+      "name": "Claude-Mem",
+      "url": "https://github.com/thedotmack/claude-mem",
+      "image": "https://opengraph.githubassets.com/1/thedotmack/claude-mem",
+      "homepage": "https://claude-mem.ai",
+      "tags": [
+        "memory",
+        "agents",
+        "claude-code",
+        "mcp",
+        "devtools",
+        "context"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": true,
+      "hasMcp": true,
+      "source": "github",
+      "take": {
+        "en": "Persistent session memory for coding agents — it captures what the agent did, compresses it, and feeds the right bits into the next session."
+      },
+      "why": {
+        "en": "Most agent setups still wake up blank every time you open a new chat. Claude-Mem closes that gap for Claude Code, Codex, OpenCode, Hermes, Copilot, and more: tool use and decisions stick around as searchable memory, so the agent stops relearning your repo politics and unfinished threads from scratch."
+      },
+      "explanation": {
+        "en": "Claude-Mem is an open-source memory layer built around agent lifecycle hooks and a local worker. It records observations during a session, builds semantic summaries, stores them in SQLite with hybrid search (including Chroma), and injects relevant context when a new session starts. A web viewer streams live memory, and MCP search tools let the agent query project history without dumping the whole archive into the prompt."
+      },
+      "howItWorks": {
+        "en": "Install with npx claude-mem install (or the Claude Code plugin marketplace), restart the host, and leave it running. Hooks fire on session start, tool use, and stop so capture is automatic. When you need something specific, the agent uses MCP search → timeline → get_observations to pull full details only for the IDs that matter. Optional cloud sync and provider choices (hosted observer, your own keys, or plan-backed) sit on top of the local worker."
+      },
+      "different": {
+        "en": "Not a codebase knowledge graph and not another skill pack. Claude-Mem is episode memory across sessions — what the agent tried, fixed, and decided — with progressive disclosure so you pay tokens for hits, not the full log. Complementary to tools like codebase-memory-mcp that map code structure; this one remembers the work story around that code."
+      },
+      "similar": [
+        {
+          "slug": "codebase-memory-mcp",
+          "name": "codebase-memory-mcp"
+        },
+        {
+          "slug": "openwiki",
+          "name": "OpenWiki"
+        },
+        {
+          "slug": "rtk",
+          "name": "RTK"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "Claude-Mem is the missing memory layer for coding agents. it captures what the agent did, compresses it, and puts the right context back into the next session on Claude Code, Codex, Hermes, and more.\n\nhttps://nimaaksoy.com/radar/claude-mem"
+        },
+        "linkedin": {
+          "en": "Coding agents still forget the last session by default. Claude-Mem is open-source persistent memory: automatic capture, compressed summaries, MCP search, and multi-host support so the next chat starts with real project history instead of a blank slate.\n\nhttps://nimaaksoy.com/radar/claude-mem"
+        }
+      }
+    }
+  ]
+}
