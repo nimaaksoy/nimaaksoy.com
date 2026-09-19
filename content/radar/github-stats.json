@@ -459,6 +459,10 @@
       "stars": 94150,
       "fetchedAt": "2026-09-18T07:08:15Z",
       "repo": "thedotmack/claude-mem"
+    },
+    "skillspector": {
+      "stars": 17791,
+      "fetchedAt": "2026-09-19T07:09:58Z"
     }
   },
   "byRepo": {
@@ -872,6 +876,14 @@
       "stars": 94150,
       "fetchedAt": "2026-09-18T07:08:15Z",
       "slug": "claude-mem"
+    },
+    "NVIDIA/SkillSpector": {
+      "stars": 17791,
+      "fetchedAt": "2026-09-19T07:09:58Z"
+    },
+    "nvidia/skillspector": {
+      "stars": 17791,
+      "fetchedAt": "2026-09-19T07:09:58Z"
     }
   },
   "errors": [
