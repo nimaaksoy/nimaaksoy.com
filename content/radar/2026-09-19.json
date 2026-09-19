@@ -1,0 +1,46 @@
+{
+  "date": "2026-09-19",
+  "items": [
+    {
+      "slug": "skillspector",
+      "name": "SkillSpector",
+      "url": "https://github.com/NVIDIA/SkillSpector",
+      "image": "https://opengraph.githubassets.com/1/NVIDIA/SkillSpector",
+      "homepage": "https://docs.nvidia.com/skills/scanning-agent-skills",
+      "tags": ["security", "agent-skills", "mcp", "supply-chain"],
+      "verdict": "must-watch",
+      "hasMcp": true,
+      "source": "github",
+      "take": {
+        "en": "NVIDIA’s scanner that checks AI agent skills and MCP packs for prompt injection, exfil, and supply-chain risk before you install them.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Agent skills run with a lot of trust and almost no review. SkillSpector is NVIDIA’s open scanner for that surface: point it at a git repo, zip, URL, or folder and it scores whether the skill is safe to install. Their research slice found over a quarter of skills with vulnerabilities and a few percent with likely malicious intent. It sits in the NVIDIA Verified Skills pipeline that scans, evaluates, and signs packs before catalog publish.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Founders are installing skill dumps and MCP servers into Claude Code, Codex, and Cursor every week. One bad skill can leak keys or widen agency. Deepsec-style repo audits catch bugs in your app; this catches the plugins you bolt onto the agent before they touch production.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install the CLI (or Docker), then run skillspector scan on a path or URL. Fast static analysis covers 71 patterns across 17 classes, with optional LLM semantic review and live OSV lookups. You get a 0–100 risk score plus terminal, JSON, Markdown, or SARIF output. With the MCP extra it exposes scan_skill so an agent can gate installs at runtime. Baselines suppress known noise so re-scans only show new findings.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Most agent security tools hunt bugs in your product code. SkillSpector is built for the skill and MCP supply chain itself—prompt injection, tool poisoning, exfil patterns, and least-privilege checks—plus an install-time MCP gate, not a one-off report.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Skill packs are the new soft underbelly. NVIDIA’s SkillSpector scans agent skills and MCP installs for prompt injection, exfil, and supply-chain junk before they land in Claude Code or Codex.\n\nhttps://nimaaksoy.com/radar/skillspector",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "If your team is shipping agent skills without a pre-install check, this is the missing gate. SkillSpector (NVIDIA, open source) scores skill and MCP packs for injection, exfiltration, and supply-chain risk—CLI, Docker, or MCP tool so the agent can refuse a bad install.\n\nhttps://nimaaksoy.com/radar/skillspector",
+          "fa": ""
+        }
+      }
+    }
+  ]
+}
