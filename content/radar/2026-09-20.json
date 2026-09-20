@@ -1,0 +1,53 @@
+{
+  "date": "2026-09-20",
+  "items": [
+    {
+      "slug": "openshell",
+      "name": "OpenShell",
+      "url": "https://github.com/NVIDIA/OpenShell",
+      "image": "https://opengraph.githubassets.com/1/NVIDIA/OpenShell",
+      "homepage": "https://docs.nvidia.com/openshell/latest/",
+      "tags": ["security", "sandbox", "agents", "runtime", "policy"],
+      "verdict": "must-watch",
+      "hasApi": true,
+      "source": "github",
+      "take": {
+        "en": "NVIDIA’s sandboxed runtime for autonomous agents — YAML policies gate files, network, and credentials so a coding agent can’t exfiltrate your machine."
+      },
+      "explanation": {
+        "en": "OpenShell is an open-source control plane and sandbox runtime for agents like Claude Code, Codex, OpenCode, and Copilot. Each sandbox runs in Docker, Podman, MicroVM, or Kubernetes with a gateway that owns lifecycle and auth. Outbound traffic starts locked down; you open access with declarative YAML that the proxy enforces at method and path level, including hot-reload for network rules while the agent is running."
+      },
+      "why": {
+        "en": "Teams are handing coding agents shell access and API keys with almost no boundary. SkillSpector checks the skills you install; OpenShell is where those agents actually run — filesystem locks, process limits, provider credentials injected only to allowed endpoints, and denials logged instead of silent leaks. That is the missing production gate for founder stacks that already live on Claude Code or Codex."
+      },
+      "howItWorks": {
+        "en": "Install with the curl installer, then openshell sandbox create -- claude (or codex / opencode / copilot). Default sandboxes ship Python, Node, gh, and git. Attach providers so model keys stay off disk and bind only to profile-approved endpoints. Tighten egress with openshell policy set and a short YAML file; reconnect and watch GET pass while POST gets policy_denied. SDKs cover Python, TypeScript, Go, and Rust for app-driven sandboxes."
+      },
+      "different": {
+        "en": "Not another agent harness and not a skill scanner. OpenShell is the isolation layer under the agent: policy-enforced sandboxes plus endpoint-bound credentials, not a bigger prompt or a longer tool list. Complementary to SkillSpector (pre-install skill risk) and Arcbox (full machine isolation) — this one is the day-to-day sandbox you drop Claude Code or Codex into."
+      },
+      "similar": [
+        {
+          "slug": "skillspector",
+          "name": "SkillSpector"
+        },
+        {
+          "slug": "arcbox",
+          "name": "Arcbox"
+        },
+        {
+          "slug": "deepsec",
+          "name": "Deepsec"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "OpenShell is the sandbox layer coding agents have been missing. NVIDIA’s open runtime puts Claude Code, Codex, and friends behind YAML policies for files, network, and keys — so the agent works without owning your machine.\n\nhttps://nimaaksoy.com/radar/openshell"
+        },
+        "linkedin": {
+          "en": "Most agent stacks still run with full shell and raw API keys. OpenShell (NVIDIA, open source) is a policy-governed sandbox runtime for Claude Code, Codex, OpenCode, and Copilot — locked egress, filesystem rules, and credentials bound only to allowed endpoints.\n\nhttps://nimaaksoy.com/radar/openshell"
+        }
+      }
+    }
+  ]
+}
