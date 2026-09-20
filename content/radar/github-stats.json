@@ -463,6 +463,11 @@
     "skillspector": {
       "stars": 17791,
       "fetchedAt": "2026-09-19T07:09:58Z"
+    },
+    "openshell": {
+      "stars": 8709,
+      "fetchedAt": "2026-09-20T07:10:33Z",
+      "repo": "NVIDIA/OpenShell"
     }
   },
   "byRepo": {
@@ -884,6 +889,16 @@
     "nvidia/skillspector": {
       "stars": 17791,
       "fetchedAt": "2026-09-19T07:09:58Z"
+    },
+    "NVIDIA/OpenShell": {
+      "stars": 8709,
+      "fetchedAt": "2026-09-20T07:10:33Z",
+      "slug": "openshell"
+    },
+    "nvidia/openshell": {
+      "stars": 8709,
+      "fetchedAt": "2026-09-20T07:10:33Z",
+      "slug": "openshell"
     }
   },
   "errors": [
