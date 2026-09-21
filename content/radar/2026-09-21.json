@@ -1,0 +1,45 @@
+{
+  "date": "2026-09-21",
+  "items": [
+    {
+      "slug": "json-render",
+      "name": "json-render",
+      "url": "https://github.com/vercel-labs/json-render",
+      "image": "https://opengraph.githubassets.com/1/vercel-labs/json-render",
+      "homepage": "https://json-render.dev",
+      "tags": ["generative-ui", "react", "agents", "ui", "vercel"],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "source": "github",
+      "take": {
+        "en": "Vercel’s Generative UI framework — the model only emits JSON against your component catalog, so AI-built screens stay schema-safe and streamable."
+      },
+      "explanation": {
+        "en": "json-render is an open Generative UI stack from Vercel Labs. You define a catalog of components and actions with Zod schemas, map each type to real React (or Vue, Svelte, Solid, React Native) code, and let the model stream a JSON UI tree. The renderer only mounts types you registered, so free-form HTML and random props never hit the page. The monorepo also covers Next.js full apps, shadcn packs, Remotion video, React PDF, email, terminal Ink UIs, and MCP app surfaces from the same catalog idea."
+      },
+      "why": {
+        "en": "Most AI UI demos still dump raw JSX or markdown and hope nothing breaks. Founders shipping agent dashboards, copilots, and personalized product surfaces need the opposite: dynamic screens that stay on-brand and type-checked. json-render is the practical middle path — AI fills the tree, you own the design system — and it is already packaged for the stacks product teams actually ship."
+      },
+      "howItWorks": {
+        "en": "Install @json-render/core plus a renderer package. defineCatalog with your components and actions, defineRegistry to bind real UI, then pass the model’s JSON spec into Renderer. Specs stream as they arrive. Use @json-render/shadcn for a ready catalog, or @json-render/next when the JSON should become routes and layouts. Actions stay first-class so buttons and agent tools share one schema."
+      },
+      "different": {
+        "en": "Not another chat UI kit and not free-form codegen into your repo. Guardrails are the product: catalogs, schemas, progressive stream render. Complementary to shadcn/lint (keep agents inside your design system) — this one is how the agent draws the screen inside those rails."
+      },
+      "similar": [
+        {
+          "slug": "shadcn-lint",
+          "name": "shadcn/lint"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "json-render is the Generative UI framework that finally feels production-safe. AI only emits JSON against your component catalog — streamable screens, no freestyle JSX mess. Vercel Labs, open source.\n\nhttps://nimaaksoy.com/radar/json-render"
+        },
+        "linkedin": {
+          "en": "If your product lets an agent build UI, free-form HTML is a liability. json-render (Vercel Labs) constrains Generative UI to a typed component catalog, streams the JSON tree, and ships renderers for React, Vue, Svelte, Native, Next, PDF, email, and more.\n\nhttps://nimaaksoy.com/radar/json-render"
+        }
+      }
+    }
+  ]
+}
