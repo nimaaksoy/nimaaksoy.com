@@ -468,6 +468,10 @@
       "stars": 8709,
       "fetchedAt": "2026-09-20T07:10:33Z",
       "repo": "NVIDIA/OpenShell"
+    },
+    "json-render": {
+      "stars": 17581,
+      "fetchedAt": "2026-09-21T07:07:54Z"
     }
   },
   "byRepo": {
@@ -899,6 +903,10 @@
       "stars": 8709,
       "fetchedAt": "2026-09-20T07:10:33Z",
       "slug": "openshell"
+    },
+    "vercel-labs/json-render": {
+      "stars": 17581,
+      "fetchedAt": "2026-09-21T07:07:54Z"
     }
   },
   "errors": [
