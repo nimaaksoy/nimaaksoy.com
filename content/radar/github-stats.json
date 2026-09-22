@@ -472,6 +472,11 @@
     "json-render": {
       "stars": 17581,
       "fetchedAt": "2026-09-21T07:07:54Z"
+    },
+    "laya": {
+      "stars": 12353,
+      "fetchedAt": "2026-09-22T07:08:46Z",
+      "repo": "NandhaKishorM/laya"
     }
   },
   "byRepo": {
@@ -907,6 +912,16 @@
     "vercel-labs/json-render": {
       "stars": 17581,
       "fetchedAt": "2026-09-21T07:07:54Z"
+    },
+    "NandhaKishorM/laya": {
+      "stars": 12353,
+      "fetchedAt": "2026-09-22T07:08:46Z",
+      "slug": "laya"
+    },
+    "nandhakishorm/laya": {
+      "stars": 12353,
+      "fetchedAt": "2026-09-22T07:08:46Z",
+      "slug": "laya"
     }
   },
   "errors": [
