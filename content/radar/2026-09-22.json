@@ -1,0 +1,50 @@
+{
+  "date": "2026-09-22",
+  "items": [
+    {
+      "slug": "laya",
+      "name": "Laya",
+      "url": "https://github.com/NandhaKishorM/laya",
+      "image": "https://opengraph.githubassets.com/1/NandhaKishorM/laya",
+      "homepage": "https://huggingface.co/spaces/convaiinnovations/laya-demo",
+      "tags": ["decision-models", "system-1", "agents", "multilingual", "inference"],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": true,
+      "source": "github",
+      "take": {
+        "en": "Non-autoregressive System 1 engine — typed choice/score/yes-no answers over tickets and JSON in ~33 ms, no free-form text to parse."
+      },
+      "explanation": {
+        "en": "Laya is an open decision model stack for production routing and scoring. You pass any state (email, ticket, JSON doc) plus typed questions — choice, score, or noul — and get structured answers with confidences in one forward pass. Three checkpoints cover English, 100+ languages, and typed-decision workflows; a Router picks the right one per request after a sub-millisecond language/script check. Trained with RL against proper scoring rules (RLCD). Install with pip install laya."
+      },
+      "why": {
+        "en": "Most agent stacks still burn a full LLM call to classify a ticket, then hope the JSON comes back clean. Founders shipping support, ops, and risk pipelines need fast, calibrated labels without hallucinated free text. Laya is that layer: milliseconds, typed outputs, multilingual out of the box — the cheap System 1 beside your slower planner."
+      },
+      "howItWorks": {
+        "en": "pip install laya, then Router(preload=True). Define questions with type, instructions, and criteria. Call router.predict(state, questions). English traffic hits the ModernBERT English checkpoint; non-Latin scripts route to the multilingual model automatically. Batching drops cost further (~7 ms per question on a T4 in their numbers). Override model when you want a fixed checkpoint."
+      },
+      "different": {
+        "en": "Not another chat model and not a coding agent harness. No token generation means no parse step and no invented labels. Complementary to memory hubs and browser agents — this is the decision kernel you put under them when the job is classify, score, and gate."
+      },
+      "similar": [
+        {
+          "slug": "rtk",
+          "name": "RTK"
+        },
+        {
+          "slug": "paritok",
+          "name": "Paritok"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "Laya is a real System 1 layer for agents. Typed choice/score/yes-no over any ticket or JSON in ~33 ms — no free-form text, nothing to parse, multilingual router included.\n\nhttps://nimaaksoy.com/radar/laya"
+        },
+        "linkedin": {
+          "en": "If your product still uses a full LLM call just to route a support ticket, look at Laya. Open non-autoregressive decision models: structured answers with confidence in one forward pass, ~33 ms, 100+ languages via a built-in router.\n\nhttps://nimaaksoy.com/radar/laya"
+        }
+      }
+    }
+  ]
+}
