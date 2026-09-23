@@ -477,6 +477,10 @@
       "stars": 12353,
       "fetchedAt": "2026-09-22T07:08:46Z",
       "repo": "NandhaKishorM/laya"
+    },
+    "univer": {
+      "stars": 15810,
+      "fetchedAt": "2026-09-23T07:06:48Z"
     }
   },
   "byRepo": {
@@ -922,6 +926,10 @@
       "stars": 12353,
       "fetchedAt": "2026-09-22T07:08:46Z",
       "slug": "laya"
+    },
+    "dream-num/univer": {
+      "stars": 15810,
+      "fetchedAt": "2026-09-23T07:06:48Z"
     }
   },
   "errors": [
