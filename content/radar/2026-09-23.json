@@ -39,10 +39,10 @@
       ],
       "share": {
         "x": {
-          "en": "Univer is the office harness agents actually needed. Sheets, docs, slides in one SDK — same Facade API in the browser and headless on Node, with CLI/harness plugins so people review agent drafts in the same files.\\n\\nhttps://nimaaksoy.com/radar/univer"
+          "en": "Univer is the office harness agents actually needed. Sheets, docs, slides in one SDK — same Facade API in the browser and headless on Node, with CLI/harness plugins so people review agent drafts in the same files.\n\nhttps://nimaaksoy.com/radar/univer"
         },
         "linkedin": {
-          "en": "If your product still pipes agent output through brittle Excel parsers, look at Univer. Open Office SDK for embeddable sheets/docs/slides, headless Node for agents, shared files with human review. Product surface, not another chat wrapper.\\n\\nhttps://nimaaksoy.com/radar/univer"
+          "en": "If your product still pipes agent output through brittle Excel parsers, look at Univer. Open Office SDK for embeddable sheets/docs/slides, headless Node for agents, shared files with human review. Product surface, not another chat wrapper.\n\nhttps://nimaaksoy.com/radar/univer"
         }
       }
     }
