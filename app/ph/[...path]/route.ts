@@ -1,3 +1,18 @@
+const disabledResponse = () =>
+  new Response(null, {
+    status: 404,
+  });
+
+// Temporarily disabled to reduce Vercel CPU usage. Re-enable after optimization/caching.
+export const GET = disabledResponse;
+export const POST = disabledResponse;
+export const OPTIONS = disabledResponse;
+export const HEAD = disabledResponse;
+
+/*
+ * Previous PostHog proxy implementation retained for future re-enable.
+ * Restore the imports and exports above once optimization/caching is in place.
+ *
 import type { NextRequest } from "next/server";
 
 export const dynamic = "force-dynamic";
@@ -63,3 +78,4 @@ export const GET = proxyPostHog;
 export const POST = proxyPostHog;
 export const OPTIONS = proxyPostHog;
 export const HEAD = proxyPostHog;
+*/

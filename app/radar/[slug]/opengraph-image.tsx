@@ -1,3 +1,12 @@
+export default function Image() {
+  // Temporarily disabled to reduce Vercel CPU usage. Re-enable after optimization/caching.
+  return new Response(null, { status: 404 });
+}
+
+/*
+ * Previous dynamic OpenGraph image implementation retained for future re-enable.
+ * Restore its imports and exports once optimization/caching is in place.
+ *
 import { ImageResponse } from "next/og";
 import { getRadarProject } from "@/lib/radar";
 
@@ -85,3 +94,4 @@ export default async function Image({ params }: Props) {
     { ...size }
   );
 }
+*/

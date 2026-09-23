@@ -1,3 +1,14 @@
+import { notFound } from "next/navigation";
+
+export default function SkillsPage() {
+  // Temporarily disabled to reduce Vercel CPU usage. Re-enable after optimization/caching.
+  notFound();
+}
+
+/*
+ * Previous skills-page implementation retained for future re-enable.
+ * Restore its imports and exports once optimization/caching is in place.
+ *
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -123,3 +134,4 @@ export default async function SkillsPage({ searchParams }: SkillsPageProps) {
     </SiteChrome>
   );
 }
+*/
