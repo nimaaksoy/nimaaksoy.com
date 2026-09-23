@@ -1,5 +1,15 @@
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+
+export default function PromptTagPage() {
+  // Temporarily disabled to reduce server CPU usage. Re-enable after adding caching.
+  notFound();
+}
+
+/*
+ * Previous tag-page implementation retained for future re-enable.
+ * Restore its imports and exports once caching is in place.
+ *
+import type { Metadata } from "next";
 
 import PromptIndexPage from "@/components/prompts/PromptIndexPage";
 import {
@@ -75,3 +85,4 @@ export default async function PromptTagPage({ params, searchParams }: PromptTagP
     />
   );
 }
+*/
