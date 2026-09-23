@@ -1,0 +1,50 @@
+{
+  "date": "2026-09-23",
+  "items": [
+    {
+      "slug": "univer",
+      "name": "Univer",
+      "url": "https://github.com/dream-num/univer",
+      "image": "https://opengraph.githubassets.com/1/dream-num/univer",
+      "homepage": "https://univer.ai/",
+      "tags": ["office-sdk", "spreadsheets", "agents", "headless", "documents"],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": true,
+      "source": "github",
+      "take": {
+        "en": "Open office runtime for people and agents — sheets, docs, slides, and tables with one Facade API in the browser and on Node."
+      },
+      "explanation": {
+        "en": "Univer is an open-source Office SDK you embed in your own product. Canvas rendering, a formula engine, and a plugin architecture cover spreadsheets, documents, presentations, bases, and boards. The same stack runs headless on Node so agents can create, inspect, and edit workbooks without a UI. Companion projects add agent CLI, DeepSeek Harness plugins, and OpenClaw tools so humans and agents share the same files with reviewable drafts."
+      },
+      "why": {
+        "en": "Founders building finance, ops, and BI products still glue Excel parsers to chat agents and hope the grid stays coherent. Univer is the missing surface: embed real editable office UIs, let agents hit the same APIs server-side, then let people review worktree drafts before merge. That is product infrastructure, not another coding TUI."
+      },
+      "howItWorks": {
+        "en": "Install the core packages (or a preset), register plugins for sheets/docs/UI, and drive workbooks through the Facade API. For agents, use headless Node processing or the Univer CLI / harness plugins to create and edit content, then verify with inspection or screenshots. Live collab and worktrees sit on the Web SDK when you need shared review."
+      },
+      "different": {
+        "en": "Not a hosted Google Sheets clone and not a file converter. You own the runtime inside your app, isomorphic browser+Node, plugin-shaped so you ship only what you need. Complementary to scrape/PDF tools and coding agents — this is the office harness they write into."
+      },
+      "similar": [
+        {
+          "slug": "json-render",
+          "name": "json-render"
+        },
+        {
+          "slug": "firecrawl",
+          "name": "Firecrawl"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "Univer is the office harness agents actually needed. Sheets, docs, slides in one SDK — same Facade API in the browser and headless on Node, with CLI/harness plugins so people review agent drafts in the same files.\\n\\nhttps://nimaaksoy.com/radar/univer"
+        },
+        "linkedin": {
+          "en": "If your product still pipes agent output through brittle Excel parsers, look at Univer. Open Office SDK for embeddable sheets/docs/slides, headless Node for agents, shared files with human review. Product surface, not another chat wrapper.\\n\\nhttps://nimaaksoy.com/radar/univer"
+        }
+      }
+    }
+  ]
+}
