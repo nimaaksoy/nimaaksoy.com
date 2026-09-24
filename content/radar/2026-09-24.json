@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-24",
+  "items": [
+    {
+      "slug": "ax",
+      "name": "AX",
+      "url": "https://github.com/google/ax",
+      "image": "https://opengraph.githubassets.com/1/google/ax",
+      "homepage": "https://agentexecutor.io",
+      "tags": ["agents", "orchestration", "kubernetes", "sandbox", "google"],
+      "verdict": "must-watch",
+      "hasApi": true,
+      "source": "github",
+      "take": {
+        "en": "Google's kubectl-shaped runtime for agent workloads — declare tasks, sandboxes, workspaces, and network fences like cluster jobs."
+      },
+      "explanation": {
+        "en": "AX is an open agentic orchestration runtime from Google. You write YAML for Task, Workspace, Gateway, and Model primitives, then apply them with an ax CLI that feels like kubectl. It runs on top of Agent Substrate so each agent gets an isolated sandbox with CPU and memory limits, pre-wired git repos and MCP servers, and an explicit egress allowlist. Suspend and resume checkpoint idle agents; ax ssh lets you watch a live run. The project is still pre-stable and expects breaking changes, but the shape is clear: agents as first-class cluster workloads, not chat sessions."
+      },
+      "why": {
+        "en": "Founders shipping multi-agent products hit the same wall: untrusted loops that burn money, leak network access, and cannot pause cleanly. Coding harnesses and in-process SDKs do not solve fleet isolation at scale. AX treats agents like Kubernetes treated containers — declarative specs, sandboxes, gateways, and ops verbs you already know. That is infrastructure, not another terminal coding agent."
+      },
+      "howItWorks": {
+        "en": "Install the ax CLI, deploy the control plane to a Kubernetes cluster with a reachable Agent Substrate API, then ax apply a multi-doc YAML that defines workspace git/MCP wiring, gateway egress hosts, model credentials, and the task goal. Watch phase changes with ax watch, shell in with ax ssh when debug is on, and suspend or resume when a run should sleep. Switch kube contexts and ax follows the cluster."
+      },
+      "different": {
+        "en": "Not an in-process agent loop and not a desktop coding IDE. AX is a cluster control plane for sandboxed agent jobs with workspace bootstrap and network fencing, aimed at high-throughput fleets rather than a single laptop session."
+      },
+      "share": {
+        "x": {
+          "en": "Google open-sourced AX — kubectl for agent workloads. YAML tasks, sandboxed runs, workspace + MCP wiring, and egress fences so multi-agent fleets stop looking like ungoverned chat loops.\n\nhttps://nimaaksoy.com/radar/ax"
+        },
+        "linkedin": {
+          "en": "AX from Google is worth a look if you run agents as real workloads. Declarative tasks, sandboxes, workspaces, and network allowlists on Kubernetes — closer to cluster ops than another coding TUI.\n\nhttps://nimaaksoy.com/radar/ax"
+        }
+      }
+    }
+  ]
+}
