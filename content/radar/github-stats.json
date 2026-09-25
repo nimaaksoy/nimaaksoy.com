@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-17T07:09:17Z",
+  "updatedAt": "2026-09-25T07:06:36.000Z",
   "source": "github-api",
   "repoCount": 25,
   "itemCount": 49,
@@ -485,6 +485,10 @@
     "ax": {
       "stars": 9423,
       "fetchedAt": "2026-09-24T07:05:59Z"
+    },
+    "treg": {
+      "stars": 3243,
+      "fetchedAt": "2026-09-25T07:06:36.000Z"
     }
   },
   "byRepo": {
@@ -938,6 +942,10 @@
     "google/ax": {
       "stars": 9423,
       "fetchedAt": "2026-09-24T07:05:59Z"
+    },
+    "superdesigndev/treg": {
+      "stars": 3243,
+      "fetchedAt": "2026-09-25T07:06:36.000Z"
     }
   },
   "errors": [
