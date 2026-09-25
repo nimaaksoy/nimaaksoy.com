@@ -1,0 +1,40 @@
+{
+  "date": "2026-09-25",
+  "items": [
+    {
+      "slug": "treg",
+      "name": "Treg",
+      "url": "https://github.com/superdesigndev/treg",
+      "image": "https://opengraph.githubassets.com/1/superdesigndev/treg",
+      "homepage": "https://treg.to",
+      "tags": ["agents", "tools", "mcp", "registry", "credentials"],
+      "verdict": "must-watch",
+      "hasApi": true,
+      "hasMcp": true,
+      "source": "github",
+      "take": {
+        "en": "OpenRouter for agent tools — one token, 3,000+ endpoints across 60+ providers, priced per call, no vendor signup."
+      },
+      "explanation": {
+        "en": "Treg is an open tool registry and proxy built by the Superdesign team. Agents hit one base URL with one team token and can search a catalog of SEO, enrichment, social, ads, scrape, and media APIs by the job they need, not the vendor name. Hosted calls bill from a prepaid balance in fractions of a cent; your own keys, OAuth connections, CLIs, and SKILL.md bundles register once and inject server-side so teammates never paste secrets into agent configs. There is a CLI, MCP install path, Claude plugin, and a self-host option beside the live treg.to service."
+      },
+      "why": {
+        "en": "Real agent work dies on tool access. Semrush, Apollo, Crunchbase and friends cost monthly seats nobody buys for a single run, and sharing keys across Claude Code, Codex, and CI is a mess. Model routers fix which LLM you call. Treg fixes which capability the agent can touch without ten signups or leaking credentials into every session."
+      },
+      "howItWorks": {
+        "en": "Install the CLI or MCP skill, sign in, then search the catalog by task (backlinks, work email, TTS) and call an endpoint. One X-Treg-Token covers everything. Own tools win over treg's keys and stay unmetered; otherwise treg's account serves the call against team balance and returns 402 with top-up details when credit runs out. treg scan and upload pull shareable secrets and skills from a project so the whole team can use them through the proxy."
+      },
+      "different": {
+        "en": "Not a model router and not a single-SaaS OAuth connector pack. The product is a pay-per-call tool marketplace plus a credential-injecting relay for your own APIs, CLIs, and skills — OpenRouter's shape, applied to tools instead of models."
+      },
+      "share": {
+        "x": {
+          "en": "Treg is OpenRouter for agent tools. One token, thousands of endpoints, pay per call, and your own keys stay on the server while every teammate agent can use them.\n\nhttps://nimaaksoy.com/radar/treg"
+        },
+        "linkedin": {
+          "en": "Treg is worth a look if your agents keep stalling on SaaS seats and shared API keys. It is a tool registry with pay-per-call catalog access plus server-side credential injection for your own endpoints and skills.\n\nhttps://nimaaksoy.com/radar/treg"
+        }
+      }
+    }
+  ]
+}
