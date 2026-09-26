@@ -489,6 +489,11 @@
     "treg": {
       "stars": 3243,
       "fetchedAt": "2026-09-25T07:06:36.000Z"
+    },
+    "cost-xray": {
+      "stars": 2163,
+      "fetchedAt": "2026-09-26T07:05:33Z",
+      "repo": "tigerless-labs/cost-xray"
     }
   },
   "byRepo": {
@@ -946,6 +951,10 @@
     "superdesigndev/treg": {
       "stars": 3243,
       "fetchedAt": "2026-09-25T07:06:36.000Z"
+    },
+    "tigerless-labs/cost-xray": {
+      "stars": 2163,
+      "fetchedAt": "2026-09-26T07:05:33Z"
     }
   },
   "errors": [
