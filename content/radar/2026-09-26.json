@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-26",
+  "items": [
+    {
+      "slug": "cost-xray",
+      "name": "cost-xray",
+      "url": "https://github.com/tigerless-labs/cost-xray",
+      "image": "https://opengraph.githubassets.com/1/tigerless-labs/cost-xray",
+      "tags": ["agents", "observability", "cost", "claude-code", "codex"],
+      "verdict": "must-watch",
+      "source": "github",
+      "take": {
+        "en": "Wire-level X-ray for Claude Code and Codex — see the real API request and what each part costs, not just a session total."
+      },
+      "explanation": {
+        "en": "cost-xray sits as a local capture hop in front of Claude Code and Codex. It records the actual request bytes the model receives — system prompt, tool schemas, MCP blocks, tool results, cache reads and writes, thinking — then attributes tokens and dollars back to those sources down to individual tool calls. A TUI lets you drill agent → project → session → category → MCP server → tool → turn. Capture is local-only, no account, and wrappers self-heal so a dead proxy never breaks the agent."
+      },
+      "why": {
+        "en": "Log-based spend tools answer how much you spent. They miss the request-time prefix that never lands in the transcript: injected schemas, MCP catalogs, reminders. That invisible half of the context is often what bloats the bill and crowds the window. Founders running heavy agent days need to know which MCP is dead weight and which tool call owns the dollars."
+      },
+      "howItWorks": {
+        "en": "Install with the one-line script, pick Claude Code, Codex, or both, open a new terminal, and work as usual. Run cx for the live dashboard, cx stop to pause capture, cx status to check services. Drill from session totals into context-window occupancy and per-source cost with cache split on every cell."
+      },
+      "different": {
+        "en": "Unlike CodeBurn and other transcript ledgers, cost-xray reads the wire, not the log. That is how it prices schemas and unused MCP overhead that never appear in local history — session spend tools still matter for multi-app totals; this is the microscope under a single coding-agent request."
+      },
+      "share": {
+        "x": {
+          "en": "cost-xray is the missing layer under Claude Code and Codex bills. It captures the real API request and shows which schema, MCP, or tool call owns the tokens — not just a session total from logs.\n\nhttps://nimaaksoy.com/radar/cost-xray"
+        },
+        "linkedin": {
+          "en": "If your coding agents burn tokens and you only see a session total, cost-xray is worth installing. It captures Claude Code and Codex wire traffic locally and attributes cost down to schemas, MCP servers, and individual tool calls.\n\nhttps://nimaaksoy.com/radar/cost-xray"
+        }
+      }
+    }
+  ]
+}
