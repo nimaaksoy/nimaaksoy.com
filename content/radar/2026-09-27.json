@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-27",
+  "items": [
+    {
+      "slug": "paperclip",
+      "name": "Paperclip",
+      "url": "https://github.com/paperclipai/paperclip",
+      "image": "https://opengraph.githubassets.com/1/paperclipai/paperclip",
+      "homepage": "https://paperclip.ing",
+      "tags": ["agents", "orchestration", "ops", "org-chart", "budgets"],
+      "verdict": "must-watch",
+      "source": "github",
+      "hasDemo": true,
+      "take": {
+        "en": "Open-source control plane for agent companies — org charts, goals, budgets, and heartbeats so you manage the business, not twenty terminals."
+      },
+      "explanation": {
+        "en": "Paperclip is a Node server and React UI that runs a team of AI agents like a company. You define a mission, hire agents on any runtime that can take a heartbeat — Claude Code, Codex, Cursor, bash, HTTP bots, OpenClaw — then assign work through tickets that carry full goal ancestry. Under the hood it is org charts, governance, skill studio, sandboxes, and cost controls, not another chat wrapper."
+      },
+      "why": {
+        "en": "Founders already run fleets of coding agents and lose the thread: which tab owns which task, who spent the budget, what survives a reboot. Paperclip turns that mess into a task manager with company structure — review gates, monthly budgets that stop runaway loops, and portable org templates you can export without leaking secrets."
+      },
+      "howItWorks": {
+        "en": "Stand up the server, create a company, draw the org chart, and attach adapters for the agents you already pay for. Drop goals and tickets; agents wake on heartbeats, check out work atomically, and leave auditable traces. Approve strategy from the dashboard or phone, throttle spend per agent, and pause or terminate anyone who drifts."
+      },
+      "different": {
+        "en": "Coding harnesses and multiplayer ADEs optimize how one developer drives agents on a repo. Paperclip optimizes the company layer on top: roles, delegation, budgets, and multi-org isolation so many agent businesses share one control plane without sharing data."
+      },
+      "share": {
+        "x": {
+          "en": "Paperclip is the missing company layer for agent fleets. Org charts, tickets with goal ancestry, heartbeats, and hard budgets — so you run the business instead of babysitting twenty Claude Code tabs.\n\nhttps://nimaaksoy.com/radar/paperclip"
+        },
+        "linkedin": {
+          "en": "If your team already runs Claude Code, Codex, Cursor, and HTTP bots side by side, Paperclip is worth a look. It is open-source orchestration for agent companies: org charts, governance, cost caps, and goal-aware tickets in one control plane.\n\nhttps://nimaaksoy.com/radar/paperclip"
+        }
+      }
+    }
+  ]
+}
