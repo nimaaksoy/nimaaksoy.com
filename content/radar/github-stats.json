@@ -494,6 +494,12 @@
       "stars": 2163,
       "fetchedAt": "2026-09-26T07:05:33Z",
       "repo": "tigerless-labs/cost-xray"
+    },
+    "paperclip": {
+      "stars": 87926,
+      "fetchedAt": "2026-09-27T07:05:55Z",
+      "repo": "paperclipai/paperclip",
+      "slug": "paperclip"
     }
   },
   "byRepo": {
@@ -955,6 +961,11 @@
     "tigerless-labs/cost-xray": {
       "stars": 2163,
       "fetchedAt": "2026-09-26T07:05:33Z"
+    },
+    "paperclipai/paperclip": {
+      "stars": 87926,
+      "fetchedAt": "2026-09-27T07:05:55Z",
+      "slug": "paperclip"
     }
   },
   "errors": [
