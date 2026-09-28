@@ -500,6 +500,11 @@
       "fetchedAt": "2026-09-27T07:05:55Z",
       "repo": "paperclipai/paperclip",
       "slug": "paperclip"
+    },
+    "hyperframes": {
+      "stars": 53723,
+      "fetchedAt": "2026-09-28T07:05:34Z",
+      "repo": "heygen-com/hyperframes"
     }
   },
   "byRepo": {
@@ -966,6 +971,11 @@
       "stars": 87926,
       "fetchedAt": "2026-09-27T07:05:55Z",
       "slug": "paperclip"
+    },
+    "heygen-com/hyperframes": {
+      "stars": 53723,
+      "fetchedAt": "2026-09-28T07:05:34Z",
+      "slug": "hyperframes"
     }
   },
   "errors": [
