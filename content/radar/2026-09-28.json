@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-28",
+  "items": [
+    {
+      "slug": "hyperframes",
+      "name": "HyperFrames",
+      "url": "https://github.com/heygen-com/hyperframes",
+      "image": "https://opengraph.githubassets.com/1/heygen-com/hyperframes",
+      "homepage": "https://hyperframes.heygen.com/",
+      "tags": [
+        "video",
+        "agents",
+        "html",
+        "rendering",
+        "skills",
+        "devtools"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": true,
+      "hasMcp": false,
+      "source": "github",
+      "take": {
+        "en": "Write HTML and CSS, get a deterministic MP4 — a video framework built so coding agents can ship real motion, not slide dumps."
+      },
+      "why": {
+        "en": "Founders still hand video work to editors or fight Remotion timelines while agents write the rest of the product. HyperFrames closes that gap: agents author seekable HTML compositions, lint them, preview, and render stable MP4s with the same tools they already use for code."
+      },
+      "explanation": {
+        "en": "HyperFrames is HeyGen’s open-source framework for turning HTML, CSS, media, and seekable animations into deterministic video. You run it from a CLI, wire it into coding agents via skills and plugins, or use it as the render core behind authoring flows. The contract is composition-first: timed clips, tracks, variables, and animation adapters (GSAP, Lottie, Three.js, and more) that stay seek-safe so every frame is reproducible."
+      },
+      "howItWorks": {
+        "en": "Install the agent skills or CLI, describe the piece, and let the router pick a workflow (product launch, PR-to-video, motion graphic, slideshow, and others). The agent writes valid HyperFrames HTML, attaches media, runs lint and preview, then renders to MP4. You can also author by hand and treat the CLI as a normal build step in CI."
+      },
+      "different": {
+        "en": "Not another CapCut clone and not a multi-pipeline agent studio like OpenMontage. HyperFrames is the HTML composition layer: agents already speak the web, so video becomes code they can diff, reuse, and re-render instead of a black-box timeline."
+      },
+      "similar": [
+        {
+          "slug": "openmontage",
+          "name": "OpenMontage"
+        },
+        {
+          "slug": "opencut",
+          "name": "OpenCut"
+        },
+        {
+          "slug": "json-render",
+          "name": "json-render"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "HyperFrames is wild. agents write HTML and CSS, then render deterministic MP4s — product intros, PR explainers, motion graphics — without a separate video toolchain.\n\nhttps://nimaaksoy.com/radar/hyperframes"
+        },
+        "linkedin": {
+          "en": "If your coding agents already ship product and docs, HyperFrames is the missing video layer. Open-source HTML-to-MP4 with agent skills, seekable animations, and deterministic renders so motion work lives in the same loop as code.\n\nhttps://nimaaksoy.com/radar/hyperframes"
+        }
+      }
+    }
+  ]
+}
