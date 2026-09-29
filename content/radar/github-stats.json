@@ -505,6 +505,10 @@
       "stars": 53723,
       "fetchedAt": "2026-09-28T07:05:34Z",
       "repo": "heygen-com/hyperframes"
+    },
+    "pageindex": {
+      "stars": 36544,
+      "fetchedAt": "2026-09-29T07:05:41Z"
     }
   },
   "byRepo": {
@@ -976,6 +980,10 @@
       "stars": 53723,
       "fetchedAt": "2026-09-28T07:05:34Z",
       "slug": "hyperframes"
+    },
+    "VectifyAI/PageIndex": {
+      "stars": 36544,
+      "fetchedAt": "2026-09-29T07:05:41Z"
     }
   },
   "errors": [
