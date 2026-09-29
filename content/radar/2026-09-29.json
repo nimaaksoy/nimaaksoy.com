@@ -1,0 +1,47 @@
+{
+  "date": "2026-09-29",
+  "items": [
+    {
+      "slug": "pageindex",
+      "name": "PageIndex",
+      "url": "https://github.com/VectifyAI/PageIndex",
+      "image": "https://opengraph.githubassets.com/1/VectifyAI/PageIndex",
+      "homepage": "https://pageindex.ai",
+      "tags": ["rag", "retrieval", "documents", "agents"],
+      "verdict": "must-watch",
+      "hasApi": true,
+      "hasMcp": true,
+      "source": "github",
+      "take": {
+        "en": "Vectorless RAG that builds a tree over long PDFs and lets the model reason to the right section — no chunking, no vector DB.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "PageIndex indexes a document as a hierarchical tree instead of embedding chunks into a vector store. At query time an LLM walks that tree the way a person flips through a report — section by section — so retrieval is driven by relevance and context, not cosine similarity. Local SDK mode runs on your machine with your own model keys; Cloud handles OCR-heavy and scanned docs. It is aimed at finance filings, legal packs, manuals, and other long professional PDFs where naive RAG usually fails.",
+        "fa": ""
+      },
+      "why": {
+        "en": "If your product answers questions over long PDFs, vector RAG still misses the section that matters and returns lookalike paragraphs. PageIndex is a different retrieval job: structure first, then reason. That is the unlock founders need for reliable doc agents without babysitting chunk sizes.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install with pip install pageindex, point PageIndexClient at index and chat models, submit a PDF, then chat against the doc id. Indexing is cheap and one-time; later questions reuse the tree. Same client can talk to PageIndex Cloud with an API key, and you can drop the tools into OpenAI or Claude agent SDKs.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Most RAG stacks still mean embeddings plus a vector database. PageIndex skips both and retrieves by LLM reasoning over a document tree, with citations you can actually audit.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "PageIndex drops the vector DB for long docs. it builds a tree over the PDF and lets the model reason to the right section — closer to how a human reads a filing than another embedding search.\n\nhttps://nimaaksoy.com/radar/pageindex",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Vector RAG still struggles on long professional PDFs. PageIndex indexes the document as a tree and retrieves by reasoning, not similarity — no chunking stack required.\n\nhttps://nimaaksoy.com/radar/pageindex",
+          "fa": ""
+        }
+      }
+    }
+  ]
+}
