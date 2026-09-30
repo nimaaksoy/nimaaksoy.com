@@ -1,0 +1,46 @@
+{
+  "date": "2026-09-30",
+  "items": [
+    {
+      "slug": "magpie",
+      "name": "magpie",
+      "url": "https://github.com/yetone/magpie",
+      "image": "https://opengraph.githubassets.com/1/yetone/magpie",
+      "homepage": "https://usemagpie.ai",
+      "tags": ["agents", "coding-agents", "models", "gateway", "devtools"],
+      "verdict": "must-watch",
+      "hasApi": true,
+      "source": "github",
+      "take": {
+        "en": "Menu-bar control plane for every coding agent on your machine — one place to set Claude Code, Codex, OpenCode, and friends on any model.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "magpie is a small desktop app (plus TUI and CLI) that lists the AI coding agents installed on your box and the model each one is using. Click a row, pick a model, done. Under the hood it edits each agent's config surgically — comments and formatting stay intact — and runs a local gateway on localhost that speaks OpenAI chat, Responses, and Anthropic Messages so every agent can point at one catalog. You can paste provider keys, pull live model lists, share a Claude or Codex login as a provider for the other tools, save profiles, and build routing groups across keys.",
+        "fa": ""
+      },
+      "why": {
+        "en": "If you run more than one coding agent, model config is a tax. magpie kills the dance of editing settings.json, config.toml, and opencode files by hand, and it lets one subscription feed the rest of your stack. That is daily leverage for anyone shipping with agents, not another harness.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install the binary, open the menu bar panel or run magpie tui. Add providers with a preset and a key, or import logins from Claude Code and Codex. Point agents at the local gateway (or let magpie write their model fields). Switch everything with profiles, or pin a routing group when you want fallback across vendors.",
+        "fa": ""
+      },
+      "different": {
+        "en": "OmniRoute-style gateways sit in front of APIs. magpie sits on your laptop next to the agents themselves — config editor, shared catalog, and local protocol bridge in one thin binary under 15 MB.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "magpie is the missing control plane for coding agents. one menu bar panel to put Codex on DeepSeek, Claude Code on Kimi, OpenCode on whatever — shared catalog, local gateway, profiles. not another agent, just the switchboard.\\n\\nhttps://nimaaksoy.com/radar/magpie",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Running Claude Code, Codex, and OpenCode side by side usually means juggling configs. magpie is a menu-bar app that sets every agent's model from one place, with a local gateway so subscriptions and keys can be shared cleanly.\\n\\nhttps://nimaaksoy.com/radar/magpie",
+          "fa": ""
+        }
+      }
+    }
+  ]
+}
