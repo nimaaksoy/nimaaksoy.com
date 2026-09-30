@@ -509,6 +509,10 @@
     "pageindex": {
       "stars": 36544,
       "fetchedAt": "2026-09-29T07:05:41Z"
+    },
+    "magpie": {
+      "stars": 3191,
+      "fetchedAt": "2026-09-30T07:06:26Z"
     }
   },
   "byRepo": {
@@ -984,6 +988,10 @@
     "VectifyAI/PageIndex": {
       "stars": 36544,
       "fetchedAt": "2026-09-29T07:05:41Z"
+    },
+    "yetone/magpie": {
+      "stars": 3191,
+      "fetchedAt": "2026-09-30T07:06:26Z"
     }
   },
   "errors": [
