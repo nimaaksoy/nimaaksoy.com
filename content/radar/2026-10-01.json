@@ -41,7 +41,11 @@
           "fa": ""
         }
       },
-      "similar": ["skillspector", "openshell", "deepsec"]
+      "similar": [
+        {"slug": "skillspector", "name": "SkillSpector"},
+        {"slug": "openshell", "name": "OpenShell"},
+        {"slug": "deepsec", "name": "Deepsec"}
+      ]
     }
   ]
 }
