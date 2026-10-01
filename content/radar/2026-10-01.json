@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-01",
+  "items": [
+    {
+      "slug": "openappa",
+      "name": "OpenAPPA",
+      "url": "https://github.com/archestra-ai/OpenAPPA",
+      "image": "https://opengraph.githubassets.com/1/archestra-ai/OpenAPPA",
+      "homepage": "https://openappa.com",
+      "tags": ["agents", "security", "guardrails", "permissions", "devtools"],
+      "verdict": "must-watch",
+      "hasApi": true,
+      "source": "github",
+      "take": {
+        "en": "Deterministic guardrails between an agent and its tools — every tool call is checked against where sensitive data is allowed to go.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "OpenAPPA sits in front of tool calls and answers one question before each one runs: is this data allowed to reach this destination? It tracks the sensitivity and trust of everything the agent has read, then applies a declarative TOML policy (APPA — Agentic Permissions Policy Algebra). The engine decides from the event log alone, with no network or file side effects, so the same log always gets the same decision. You can run it in-process or as a sidecar, and there is a Claude Code plugin path plus a broader Archestra proxy path for other agents.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most agent safety today is soft: classifiers, PII detectors, or hope the model behaves. Founders shipping agents that touch customer data need a hard gate that does not flake. OpenAPPA is that gate — policy you can replay in CI, not a vibe check at runtime.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Write a TOML policy that labels sources and allowed sinks. Install the runtime (curl install or embed). On each tool call the agent proposes, OpenAPPA checks the data lineage against the policy and allows or blocks before the call runs. Use `appa describe --check` and `appa replay` to validate policies offline, then wire the same checks into CI so a bad policy never merges. For a quick demo, install the Claude Code plugin and run a protected session with `/appa-guide`.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Unlike probabilistic classifiers or sandbox-only runtimes, OpenAPPA is a deterministic data-flow permission layer: same event log, same decision, every time. It complements skill scanners and OS sandboxes by answering a different question — not “is this code safe” or “can the process touch the disk,” but “may this payload leave through this tool.”",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "OpenAPPA is the missing hard gate for agent tools. It tracks what sensitive data the agent touched and blocks tool calls that would send it somewhere the policy does not allow — deterministic, replayable, not another classifier.\n\nhttps://nimaaksoy.com/radar/openappa",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "If you ship agents that touch customer data, soft safety is not enough. OpenAPPA sits between the agent and its tools and checks every call against a declarative data-flow policy — same log, same decision, CI-replayable.\n\nhttps://nimaaksoy.com/radar/openappa",
+          "fa": ""
+        }
+      },
+      "similar": ["skillspector", "openshell", "deepsec"]
+    }
+  ]
+}
