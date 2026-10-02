@@ -518,6 +518,10 @@
       "stars": 925,
       "fetchedAt": "2026-10-01T07:04:52Z",
       "repo": "archestra-ai/OpenAPPA"
+    },
+    "context-mode": {
+      "stars": 24856,
+      "fetchedAt": "2026-10-02T07:06:37Z"
     }
   },
   "byRepo": {
@@ -1001,6 +1005,10 @@
     "archestra-ai/OpenAPPA": {
       "stars": 925,
       "fetchedAt": "2026-10-01T07:04:52Z"
+    },
+    "mksglu/context-mode": {
+      "stars": 24856,
+      "fetchedAt": "2026-10-02T07:06:37Z"
     }
   },
   "errors": [
