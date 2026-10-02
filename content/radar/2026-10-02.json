@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-02",
+  "items": [
+    {
+      "slug": "context-mode",
+      "name": "Context Mode",
+      "url": "https://github.com/mksglu/context-mode",
+      "image": "https://opengraph.githubassets.com/1/mksglu/context-mode",
+      "homepage": "https://context-mode.com",
+      "tags": ["agents", "mcp", "context", "coding-agents", "devtools"],
+      "verdict": "must-watch",
+      "hasMcp": true,
+      "source": "github",
+      "take": {
+        "en": "MCP layer that keeps fat tool dumps out of the coding-agent context window — sandbox the work, return only the answer.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Context Mode is a local MCP server plus hooks for Claude Code, Codex, Cursor, Copilot, OpenCode, and a long list of other clients. Tool calls that would dump Playwright snapshots, issue lists, logs, or docs into the chat instead run inside an isolated subprocess. Only stdout comes back. Over a full session that can turn hundreds of kilobytes of raw output into a few kilobytes. It also tracks file edits, git ops, tasks, and decisions in a per-project SQLite store so after compaction the agent can rehydrate working state instead of starting blank, and it can index content into FTS5 for intent-matched retrieval.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Context rot is the daily tax of shipping with coding agents. Most stacks either compress tokens after the damage or beg you to start a new chat. Context Mode fixes it at the source: keep bulk data off the wire into the model, keep session memory local, and stretch a useful session from tens of minutes into hours without a cloud middleman.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "On Claude Code, add the marketplace plugin and install context-mode, then restart. Hooks inject routing so the agent prefers sandbox tools like ctx_execute and ctx_batch_execute. The agent writes a short script, the sandbox runs it with credential passthrough for things like gh or aws, and only the printed result enters context. Large outputs with an intent get indexed and filtered. Run ctx-doctor and ctx-stats to verify hooks and see savings. Other clients install the same MCP server with a one-time routing setup where hooks are weaker.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Paritok-style gateways compress payloads on the model path. Context Mode sits under the tools themselves: subprocess sandbox, local SQLite continuity after compact, and MCP routing across many harnesses — privacy-first, no account, nothing phones home.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Context Mode is the missing half of the coding-agent context problem. tool dumps stay in a local sandbox, only the answer hits the window, and session state survives compact. real multi-hour agent work without another cloud proxy.\n\nhttps://nimaaksoy.com/radar/context-mode",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "If your coding agent dies after 30 minutes of tool spam, look at Context Mode. It is a local MCP layer that sandboxes fat tool output, keeps only the result in context, and rehydrates session state after compaction across Claude Code, Codex, Cursor, and more.\n\nhttps://nimaaksoy.com/radar/context-mode",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {"slug": "paritok", "name": "Paritok"},
+        {"slug": "codebase-memory-mcp", "name": "codebase-memory-mcp"},
+        {"slug": "cost-xray", "name": "cost-xray"}
+      ]
+    }
+  ]
+}
