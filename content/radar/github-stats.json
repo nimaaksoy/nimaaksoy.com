@@ -522,6 +522,11 @@
     "context-mode": {
       "stars": 24856,
       "fetchedAt": "2026-10-02T07:06:37Z"
+    },
+    "monid": {
+      "stars": 1386,
+      "repo": "monid-ai/monid",
+      "fetchedAt": "2026-10-03T07:05:53Z"
     }
   },
   "byRepo": {
@@ -1009,6 +1014,11 @@
     "mksglu/context-mode": {
       "stars": 24856,
       "fetchedAt": "2026-10-02T07:06:37Z"
+    },
+    "monid-ai/monid": {
+      "stars": 1386,
+      "fetchedAt": "2026-10-03T07:05:53Z",
+      "slug": "monid"
     }
   },
   "errors": [
