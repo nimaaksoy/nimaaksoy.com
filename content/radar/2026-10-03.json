@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-03",
+  "items": [
+    {
+      "slug": "monid",
+      "name": "Monid",
+      "url": "https://github.com/monid-ai/monid",
+      "image": "https://opengraph.githubassets.com/1/monid-ai/monid",
+      "homepage": "https://monid.ai",
+      "tags": ["agents", "tools", "api-gateway", "mcp", "devtools"],
+      "verdict": "must-watch",
+      "hasApi": true,
+      "source": "github",
+      "take": {
+        "en": "OpenRouter for agent tools — one key, discover across 2,000+ endpoints, pay only when a call actually runs.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Monid is an open connector layer and engine that sits in front of tool vendors the way OpenRouter sits in front of model vendors. Agents get one base URL and one key, then three verbs: discover and inspect are free, run is billed. The catalog spans web search and scrape, people and company enrichment, social, reviews, market data, and media generation across dozens of providers. Each connector is a declarative TypeScript definition — provider auth, endpoint schemas, usage model — so a coding agent can open a PR that adds your API instead of hand-writing another SDK client.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Agent stacks already glue five SDKs and five keys just to search, enrich, and scrape. Monid collapses that surface: discover ranks endpoints by job fit with live health and latency, then run settles usage on the raw response so empty or failed vendor results do not get billed like success. Founders shipping agents care about that more than another model router.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Point the agent at monid.ai (or run the Deno engine locally with your own vendor keys). Call discover to rank the catalog for a job, inspect for the full contract, then run the chosen provider#endpoint. On the OSS side, clone monid-ai/monid, follow connectors/exa as the template, write provider.ts plus endpoint schemas and fixtures, and land a PR — CI typechecks and replays fixtures with zero network. Hosted platform injects credentials in the transport so keys never enter the engine process.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Model routers pick which LLM answers. Monid picks which tool API runs, with per-call metering and a connector format agents can author. It is the missing OpenRouter-shaped layer under tools, not another chat gateway.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Monid is OpenRouter but for agent tools. one key, free discover across 2k+ endpoints, pay only when run actually hits a vendor. the connector format is declarative so a coding agent can PR your API in.\n\nhttps://nimaaksoy.com/radar/monid",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Monid treats tool APIs the way OpenRouter treats models: one key, a ranked catalog, and metered runs. discover and inspect stay free; billing settles on the raw vendor envelope so empty results do not look like success. The open repo is a declarative connector layer agents can extend.\n\nhttps://nimaaksoy.com/radar/monid",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "OmniRoute",
+          "url": "https://nimaaksoy.com/radar/omniroute"
+        },
+        {
+          "name": "Weave Router",
+          "url": "https://nimaaksoy.com/radar/weave-router"
+        }
+      ]
+    }
+  ]
+}
