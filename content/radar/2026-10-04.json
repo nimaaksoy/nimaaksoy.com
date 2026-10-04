@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-04",
+  "items": [
+    {
+      "slug": "impeccable",
+      "name": "Impeccable",
+      "url": "https://github.com/pbakaus/impeccable",
+      "image": "https://opengraph.githubassets.com/1/pbakaus/impeccable",
+      "homepage": "https://impeccable.style",
+      "tags": ["agents", "design", "frontend", "skills", "devtools"],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "source": "github",
+      "take": {
+        "en": "Design language for AI coding agents — one skill, 24 commands, live browser iteration, and 61 deterministic anti-slop detectors.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Impeccable is an open design system built for agent harnesses, not a mood board. Install once with npx impeccable install, run /impeccable init so PRODUCT.md holds durable product truth, then use a shared command set — craft, critique, audit, polish, bolder, quieter, animate, typeset, and more — across Claude Code, Cursor, Codex, Grok Build, Hermes, and others. A self-contained engine plus browser hooks lets the agent iterate on real UI, not only chat about it.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Every model defaults to the same SaaS look: Inter, purple gradients, nested cards, gray on color. Thin “frontend skill” packs tell the agent what to avoid; Impeccable turns that into a repeatable workflow with product context, named commands, and rules that run without an API key. Founders shipping agent-built UI get fewer generic screens and a way to keep taste consistent across the team’s tools.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "From the project root run npx impeccable install (or update). Reload the harness, then /impeccable init to write PRODUCT.md and optional DESIGN.md. Point commands at a surface — /impeccable audit landing, /impeccable polish settings, /impeccable live for in-browser variants. The CLI and browser extension run 61 deterministic detector rules with no LLM; critique and craft still use the model when you want judgment on hierarchy and emotion.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Most design skills are prompt packs. Impeccable is a full loop: install across harnesses, durable product docs, twenty-four shared verbs, live browser iteration, and offline detectors that catch AI frontend tells before you ship. It is the design operating layer next to your coding agent, not another one-file style guide.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Impeccable is the design OS coding agents were missing. one skill, 24 commands, live browser passes, and 61 detectors that catch AI UI tells without burning tokens.\n\nhttps://nimaaksoy.com/radar/impeccable",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Agent-built frontends still look the same because the model trained on the same templates. Impeccable gives the harness a real design language — init for product truth, shared commands for craft/audit/polish, and deterministic detectors that run without an API key.\n\nhttps://nimaaksoy.com/radar/impeccable",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {"name": "shadcn/lint", "url": "https://nimaaksoy.com/radar/shadcn-lint"},
+        {"name": "Taste Skill", "url": "https://nimaaksoy.com/radar/taste-skill"},
+        {"name": "Hallmark", "url": "https://nimaaksoy.com/radar/hallmark"}
+      ]
+    }
+  ]
+}
