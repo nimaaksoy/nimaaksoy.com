@@ -527,6 +527,11 @@
       "stars": 1386,
       "repo": "monid-ai/monid",
       "fetchedAt": "2026-10-03T07:05:53Z"
+    },
+    "impeccable": {
+      "stars": 75559,
+      "fetchedAt": "2026-10-04T07:04:40Z",
+      "repo": "pbakaus/impeccable"
     }
   },
   "byRepo": {
@@ -1019,6 +1024,11 @@
       "stars": 1386,
       "fetchedAt": "2026-10-03T07:05:53Z",
       "slug": "monid"
+    },
+    "pbakaus/impeccable": {
+      "stars": 75559,
+      "fetchedAt": "2026-10-04T07:04:40Z",
+      "slug": "impeccable"
     }
   },
   "errors": [
