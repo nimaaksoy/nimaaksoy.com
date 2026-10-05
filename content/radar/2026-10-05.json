@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-05",
+  "items": [
+    {
+      "slug": "rea",
+      "name": "REA",
+      "url": "https://github.com/morluto/rea",
+      "image": "https://opengraph.githubassets.com/1/morluto/rea",
+      "homepage": "https://www.npmjs.com/package/rea-agents",
+      "tags": ["agents", "mcp", "reverse-engineering", "devtools", "cli"],
+      "verdict": "must-watch",
+      "hasMcp": true,
+      "source": "github",
+      "take": {
+        "en": "Reverse engineer any app with your coding agent — one CLI and MCP server from binary behavior down to native code.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "REA (Reverse Engineer Anything) is a local CLI and MCP server that hands reverse-engineering tools to coding agents. Setup wires Claude Code, Codex, Cursor, Gemini CLI, Windsurf, and more with an aligned skill. The agent opens binaries or apps, recovers pseudocode and strings through Hopper or bring-your-own Ghidra, follows call graphs, and keeps reproducible Evidence records. It also covers managed PE triage, passive website and Electron observation, and JavaScript or source-map reconstruction — without uploading the app to a hosted service.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Founders copy product ideas by guessing from the UI. REA lets the agent inspect a real app — even without source — explain how a feature works with evidence, then rebuild a version for your stack in the same session. That is a capability gap no generic coding harness fills: investigation tools under the agent, not another chat wrapper.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Run npx --yes rea-agents@latest setup, approve the plan, and restart the configured agent. Ask it to investigate an app or path, or use the CLI: rea doctor, rea analyze /path/to/app, rea decompile. Deep native work uses Hopper (demo or license) or a local Ghidra install you point at. MCP exposes open_binary, search, xrefs, decompile, call graphs, and function dossiers so the agent can walk a feature end to end, then write adapted code with its normal tools.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Hopper and Ghidra stay expert desktop tools. REA is the agent layer on top: one install, MCP plus skill, structured evidence, and a decompile → understand → recreate loop aimed at builders who want a feature explained and ported — not reverse engineers living in a disassembler UI.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "REA is wild. your coding agent reverse engineers real apps — binaries, Electron, JS — through one CLI and MCP, with evidence, then rebuilds the feature for your stack. local analysis, not a hosted black box.\n\nhttps://nimaaksoy.com/radar/rea",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Most teams reverse-engineer competitor features by guessing from screenshots. REA gives coding agents a real investigation stack — Hopper or Ghidra under MCP, structured evidence, and a path from binary behavior to adapted code in the same session.\n\nhttps://nimaaksoy.com/radar/rea",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {"name": "chrome-devtools-mcp", "url": "https://nimaaksoy.com/radar/chrome-devtools-mcp"},
+        {"name": "meat", "url": "https://nimaaksoy.com/radar/meat"},
+        {"name": "CLI-Anything", "url": "https://nimaaksoy.com/radar/cli-anything"}
+      ]
+    }
+  ]
+}
