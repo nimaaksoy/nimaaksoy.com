@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-06",
+  "items": [
+    {
+      "slug": "tester-e2e",
+      "name": "e2e",
+      "url": "https://github.com/tester-army/e2e",
+      "image": "https://opengraph.githubassets.com/1/tester-army/e2e",
+      "homepage": "https://tester.army/e2e",
+      "tags": ["testing", "e2e", "agents", "web", "mobile", "playwright"],
+      "verdict": "worth-testing",
+      "source": "github",
+      "take": {
+        "en": "Natural-language e2e for web and mobile: the agent drives the app, then later runs replay the same path with no model calls until the UI changes.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "e2e by TesterArmy is an open-source end-to-end framework where tests mix classic locators with agent steps. You write goals in plain English (upgrade to Pro, complete checkout). An agent acts in a real browser or mobile simulator, records what it did, and assertions lock the outcome. On the next green run those agent steps replay without spending tokens until the app drifts and needs a fresh author pass. Engines cover Playwright browsers plus iOS/Android via agent-device; init scaffolds Vite, Next, Expo, and SwiftUI examples.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most teams still choose between brittle selectors and expensive always-on agent runs. e2e gives founders both: agents write the hard paths once, CI stays cheap on replay, and failures stay readable when the product actually changed. That is the missing layer between Playwright scripts and chat-driven browser demos.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Run npx e2e init, pick web or mobile and a model provider, then write tests with agent.act and agent.assert beside expect(). First run authors and caches the agent path; later runs replay until the UI breaks the recording. Optional packages add PR comments, hosted kernel browsers, and EAS simulators. Docs ship inside node_modules so coding agents can read them offline.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Pure Playwright stays manual. Pure agent browsers re-pay the model every CI minute. e2e is the hybrid: natural-language authoring with deterministic replay, web and mobile in one SDK, open source under Apache-2.0 — not a closed grid product wrapped as a demo.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "e2e is the testing shape agent teams actually need. plain-English steps drive web and mobile, then CI replays them with zero model calls until the UI changes. open source, not another brittle selector dump.\\n\\nhttps://nimaaksoy.com/radar/tester-e2e",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Founders keep bouncing between brittle e2e scripts and always-on agent browsers that burn tokens in CI. TesterArmy's e2e framework authors paths in natural language, then replays them deterministically until the product actually changes — web and mobile, open source.\\n\\nhttps://nimaaksoy.com/radar/tester-e2e",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {"name": "chrome-devtools-mcp", "url": "https://nimaaksoy.com/radar/chrome-devtools-mcp"},
+        {"name": "page-agent", "url": "https://nimaaksoy.com/radar/page-agent"},
+        {"name": "Firecrawl", "url": "https://nimaaksoy.com/radar/firecrawl"}
+      ]
+    }
+  ]
+}
