@@ -537,6 +537,11 @@
       "stars": 3072,
       "fetchedAt": "2026-10-05T07:05:21Z",
       "repo": "morluto/rea"
+    },
+    "tester-e2e": {
+      "stars": 5184,
+      "fetchedAt": "2026-10-06T07:06:18Z",
+      "repo": "tester-army/e2e"
     }
   },
   "byRepo": {
@@ -1039,6 +1044,10 @@
       "stars": 3072,
       "fetchedAt": "2026-10-05T07:05:21Z",
       "slug": "rea"
+    },
+    "tester-army/e2e": {
+      "stars": 5184,
+      "fetchedAt": "2026-10-06T07:06:18Z"
     }
   },
   "errors": [
