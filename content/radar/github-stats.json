@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-05T07:05:21Z",
+  "updatedAt": "2026-10-07T07:07:40Z",
   "source": "github-api",
   "repoCount": 25,
   "itemCount": 49,
@@ -542,6 +542,11 @@
       "stars": 5184,
       "fetchedAt": "2026-10-06T07:06:18Z",
       "repo": "tester-army/e2e"
+    },
+    "autoharness": {
+      "stars": 9164,
+      "fetchedAt": "2026-10-07T07:07:40Z",
+      "repo": "tigerless-labs/autoharness"
     }
   },
   "byRepo": {
@@ -1048,6 +1053,10 @@
     "tester-army/e2e": {
       "stars": 5184,
       "fetchedAt": "2026-10-06T07:06:18Z"
+    },
+    "tigerless-labs/autoharness": {
+      "stars": 9164,
+      "fetchedAt": "2026-10-07T07:07:40Z"
     }
   },
   "errors": [
@@ -1202,5 +1211,5 @@
       "reset": "1785697432"
     }
   ],
-  "generatedAt": "2026-09-12T07:09:44Z"
+  "generatedAt": "2026-10-07T07:07:40Z"
 }
