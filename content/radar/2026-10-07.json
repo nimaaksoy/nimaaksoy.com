@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-07",
+  "items": [
+    {
+      "slug": "autoharness",
+      "name": "AutoHarness",
+      "url": "https://github.com/tigerless-labs/autoharness",
+      "image": "https://opengraph.githubassets.com/1/tigerless-labs/autoharness",
+      "homepage": "https://github.com/tigerless-labs/autoharness",
+      "tags": ["agents", "skills", "claude-code", "harness", "mcp"],
+      "verdict": "must-watch",
+      "hasMcp": true,
+      "source": "github",
+      "take": {
+        "en": "Self-learning skill layer for Claude Code — distills real sessions into skills, merges duplicates, and prunes what stops getting used.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "AutoHarness is a Claude Code plugin that treats the skill library as a living system. While you work, hooks capture tool-heavy episodes, a reflector proposes add/merge/patch/delete intents, and a promoter is the only writer that lands validated skills into .claude/skills. It only touches skills it authored, keeps a per-skill ledger of why each change happened, and opens every session with an index of its own library so recall does not depend on the host guessing.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Static skill packs rot the week after you install them. Founders running Claude Code all day need the harness to keep its own playbooks current from real work — not another dump of SKILL.md files and not a separate labeling job. AutoHarness is that missing lifecycle: learn, fold, graduate, archive.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "In Claude Code run marketplace add tigerless-labs/autoharness, install autoharness@autoharness, then reload plugins. Zero config after that: tool-call cadence triggers background reflection, /learn forces a distill of the current session, and env knobs tune reflect/consolidate rates and capacity. State lives under .claude/autoharness/ and ~/.claude/autoharness/; skills land as normal native files the host already knows how to load.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Skill packs and one-shot recorders freeze a lesson once. AutoHarness keeps running beside the host: merge same-scenario skills instead of stacking twins, prune by usage rate after probation, and never rewrite hand-written skills. Same model, different harness — the bet is the skill layer can maintain itself.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "AutoHarness is the skill layer Claude Code was missing. it learns from real sessions, merges duplicates, prunes dead playbooks, and only touches skills it wrote. not another static skill dump.\n\nhttps://nimaaksoy.com/radar/autoharness",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Most agent skill packs go stale the week you install them. AutoHarness turns Claude Code into a self-learning skill system — distill real work, fold near-duplicates, graduate what gets used, archive what does not — without rewriting the skills you wrote by hand.\n\nhttps://nimaaksoy.com/radar/autoharness",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {"name": "Skill Recorder", "url": "https://nimaaksoy.com/radar/skill-recorder"},
+        {"name": "SkillOpt", "url": "https://nimaaksoy.com/radar/skillopt"},
+        {"name": "Impeccable", "url": "https://nimaaksoy.com/radar/impeccable"}
+      ]
+    }
+  ]
+}
