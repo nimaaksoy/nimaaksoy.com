@@ -547,6 +547,10 @@
       "stars": 9164,
       "fetchedAt": "2026-10-07T07:07:40Z",
       "repo": "tigerless-labs/autoharness"
+    },
+    "photocraft": {
+      "stars": 19817,
+      "fetchedAt": "2026-10-08T07:13:59Z"
     }
   },
   "byRepo": {
@@ -1057,6 +1061,10 @@
     "tigerless-labs/autoharness": {
       "stars": 9164,
       "fetchedAt": "2026-10-07T07:07:40Z"
+    },
+    "storytold/photocraft": {
+      "stars": 19817,
+      "fetchedAt": "2026-10-08T07:13:59Z"
     }
   },
   "errors": [
