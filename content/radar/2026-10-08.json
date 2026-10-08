@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-08",
+  "items": [
+    {
+      "slug": "photocraft",
+      "name": "PhotoCraft",
+      "url": "https://github.com/storytold/photocraft",
+      "image": "https://opengraph.githubassets.com/1/storytold/photocraft",
+      "homepage": "https://getartcraft.com/apps/photocraft",
+      "tags": ["image-editing", "rust", "agents", "mcp", "psd"],
+      "verdict": "must-watch",
+      "hasMcp": true,
+      "source": "github",
+      "take": {
+        "en": "Open-source Photoshop in pure Rust — real PSD, GPU compositor, and every edit is a command agents can run.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Founders still rent Adobe or glue brittle scripts onto web editors. PhotoCraft is a native offline engine with layered PSD fidelity plus CLI, JSON control, and MCP — so a coding agent can open, grade, and batch real design files without a SaaS middleman.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "PhotoCraft is a clean-room reimplementation of Photoshop built entirely in Rust. It ships a familiar desktop app (layers, masks, adjustment layers, type, vectors, brushes) across macOS, Windows, Linux, FreeBSD, and web, with real open/edit/save for layered PSD files. Status is early alpha, but the core pitch is already concrete: same engine for humans and machines.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Use the native UI like Photoshop, or drive 500+ registered commands headless via photocraft-cli (single file or batch action lists). Agents can attach over MCP with photocraft-cli mcp, or talk to a running app on a loopback control channel for UI state, tools, and offscreen screenshots. Under the hood: pure-data document model, wgpu GPU compositor, copy-on-write tiles, multithreaded filters.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Most “AI design” tools are chat wrappers or Figma plugins. PhotoCraft is the editor itself — offline, MIT/Apache, PSD-native — with agent control as a first-class path, not a brittle screenshot bot on top of Adobe.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "PhotoCraft is wild. open-source Photoshop in pure Rust with real PSD support, and every action is a command so agents can drive it over CLI or MCP. that is a real local design engine, not another chat wrapper on Figma.\n\nhttps://nimaaksoy.com/radar/photocraft",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "PhotoCraft is an open-source Photoshop reimplementation in Rust: real layered PSD, GPU compositor, and a full command registry agents can hit via CLI or MCP. Early alpha, but the offline + agent-native angle matters if you are tired of renting Adobe for every asset pipeline.\n\nhttps://nimaaksoy.com/radar/photocraft",
+          "fa": ""
+        }
+      },
+      "similar": ["open-design", "impeccable", "hyperframes"]
+    }
+  ]
+}
