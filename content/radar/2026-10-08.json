@@ -41,7 +41,11 @@
           "fa": ""
         }
       },
-      "similar": ["open-design", "impeccable", "hyperframes"]
+      "similar": [
+        {"name": "Open Design", "url": "https://nimaaksoy.com/radar/open-design"},
+        {"name": "Impeccable", "url": "https://nimaaksoy.com/radar/impeccable"},
+        {"name": "HyperFrames", "url": "https://nimaaksoy.com/radar/hyperframes"}
+      ]
     }
   ]
 }
