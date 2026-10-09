@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-09",
+  "items": [
+    {
+      "slug": "niubigeo",
+      "name": "NiubiGEO",
+      "url": "https://github.com/Albert-Weasker/niubigeo",
+      "image": "https://opengraph.githubassets.com/1/Albert-Weasker/niubigeo",
+      "homepage": "https://niubigeo.ai/",
+      "tags": ["geo", "ai-visibility", "brand", "self-hosted", "open-source"],
+      "verdict": "worth-testing",
+      "hasDemo": true,
+      "source": "github",
+      "take": {
+        "en": "Self-hosted GEO lab: ask models about your product, keep the raw answers, and watch who else shows up in AI search.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Founders still buy black-box “AI visibility” scores or guess whether ChatGPT recommends them. NiubiGEO puts the evidence on your machine — domain + keyword runs across models, competitors named in the answers, citations you can open, and history you can re-run when positioning changes.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "NiubiGEO is an open-source Generative Engine Optimization research tool. You self-host it, bring your own model keys (OpenRouter and friends), and run reproducible tests against one or more models with optional web search. The point is not a single mystery score: every finding ties back to the original model answer, mentions, competitors, and sources. Public case packs (Notion, Figma, PostHog, and more) show the workflow before you spend API budget on your own brand.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Create a project from a domain, pick models and whether each run uses search, then start a test. Read side-by-side descriptions, competitor lists, and keyword hits, and open any cell to the raw response. Confirm keywords for unprompted discovery tests, repeat or schedule runs, and use diff-style history to see rank and source changes between measurements. Docker and a local Node server are both supported.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Classic SEO suites track crawlers and SERPs. NiubiGEO is built for the AI-answer layer: multi-model evidence, brand-free keyword probes, and auditable citations instead of a paid dashboard number you cannot inspect. Complementary to OpenSEO-style research, not another rank tracker with an AI badge.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "NiubiGEO is the open-source GEO tool I wanted. self-host it, hit models with your domain and keywords, and keep the raw answers plus competitors and citations — not another black-box AI visibility score.\n\nhttps://nimaaksoy.com/radar/niubigeo",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "NiubiGEO is a self-hosted GEO research app: multi-model brand and keyword tests with full answer evidence, competitor mentions, and runnable history. Useful if you care whether AI assistants describe or recommend your product — and you refuse to trust a single opaque score.\n\nhttps://nimaaksoy.com/radar/niubigeo",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {"name": "OpenSEO", "url": "https://nimaaksoy.com/radar/open-seo"},
+        {"name": "Agent Reach", "url": "https://nimaaksoy.com/radar/agent-reach"},
+        {"name": "HyperResearch", "url": "https://nimaaksoy.com/radar/hyperresearch"}
+      ]
+    }
+  ]
+}
