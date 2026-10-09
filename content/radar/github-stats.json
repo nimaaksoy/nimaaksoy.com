@@ -551,6 +551,10 @@
     "photocraft": {
       "stars": 19817,
       "fetchedAt": "2026-10-08T07:13:59Z"
+    },
+    "niubigeo": {
+      "stars": 5471,
+      "fetchedAt": "2026-10-09T07:04:29Z"
     }
   },
   "byRepo": {
@@ -1065,6 +1069,10 @@
     "storytold/photocraft": {
       "stars": 19817,
       "fetchedAt": "2026-10-08T07:13:59Z"
+    },
+    "Albert-Weasker/niubigeo": {
+      "stars": 5471,
+      "fetchedAt": "2026-10-09T07:04:29Z"
     }
   },
   "errors": [
