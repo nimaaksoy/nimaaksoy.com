@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-10",
+  "items": [
+    {
+      "slug": "diagram-design",
+      "name": "Diagram Design",
+      "url": "https://github.com/cathrynlavery/diagram-design",
+      "image": "https://opengraph.githubassets.com/1/cathrynlavery/diagram-design",
+      "homepage": "https://diagramdesign.dev",
+      "tags": ["agent-skills", "diagrams", "svg", "architecture", "design"],
+      "verdict": "worth-testing",
+      "hasDemo": true,
+      "source": "github",
+      "take": {
+        "en": "Agent skill that draws branded editorial diagrams as one self-contained HTML+SVG file — 44 types, no Mermaid slop.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Founders still paste Mermaid into docs or burn an hour in Figma for a deck slide. Diagram Design gives your coding agent taste rules, type-specific layouts, and brand colors so the diagram you publish looks intentional on the first pass.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Diagram Design is an open agent skill for Claude Code, Codex, Copilot, Cursor, Factory Droid, Pi, and other Agent Skills hosts. You describe the picture in plain language; the agent picks among 44 types (architecture, sequence, flowchart, Wardley, Sankey, schema, exploded 3D, and more), follows an opinionated editorial style guide, and writes one double-clickable HTML file with inline SVG. It can pull your site palette for onboarding, and it can redraw existing Mermaid, draw.io, and Excalidraw sources instead of starting from a blank canvas.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install with npx skills add cathrynlavery/diagram-design, or use the marketplace plugin path for Claude Code / Codex / Copilot. Ask for a diagram in natural language, or import a Mermaid or draw.io file. The agent loads the matching type reference, lays nodes on a 4px grid with CI-style overlap checks, and saves a self-contained HTML (optional SVG or PNG export). Brand profiles live under ~/.diagram-design so later diagrams stay on-palette without re-explaining fonts and colors.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Mermaid optimizes for git-diffable text that GitHub renders. Figma and draw.io optimize for hand-dragged canvas work. Diagram Design optimizes for publishable editorial output from an agent — fixed taste, brand match, and static HTML+SVG with no shadow soup. Complementary to Archify-style architecture one-shots: this is a full diagram system, not a single chart template.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Diagram Design is the agent skill that finally kills Mermaid slop. 44 diagram types, brand colors from your site, one self-contained HTML+SVG file you can open and ship. install once, ask in plain English.\\n\\nhttps://nimaaksoy.com/radar/diagram-design",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Diagram Design is an open agent skill that turns a plain-language brief into branded editorial diagrams — architecture, sequence, flow, Wardley, schema, and dozens more — as self-contained HTML with inline SVG. Useful when you want publish-ready visuals from Claude Code, Codex, or Copilot without a Figma detour.\\n\\nhttps://nimaaksoy.com/radar/diagram-design",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {"name": "Archify", "url": "https://nimaaksoy.com/radar/archify"},
+        {"name": "json-render", "url": "https://nimaaksoy.com/radar/json-render"},
+        {"name": "Taste Skill", "url": "https://nimaaksoy.com/radar/taste-skill"}
+      ]
+    }
+  ]
+}
