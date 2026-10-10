@@ -555,6 +555,11 @@
     "niubigeo": {
       "stars": 5471,
       "fetchedAt": "2026-10-09T07:04:29Z"
+    },
+    "diagram-design": {
+      "stars": 48219,
+      "fetchedAt": "2026-10-10T07:07:47Z",
+      "repo": "cathrynlavery/diagram-design"
     }
   },
   "byRepo": {
@@ -1073,6 +1078,11 @@
     "Albert-Weasker/niubigeo": {
       "stars": 5471,
       "fetchedAt": "2026-10-09T07:04:29Z"
+    },
+    "cathrynlavery/diagram-design": {
+      "stars": 48219,
+      "fetchedAt": "2026-10-10T07:07:47Z",
+      "slug": "diagram-design"
     }
   },
   "errors": [
