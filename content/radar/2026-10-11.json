@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-11",
+  "items": [
+    {
+      "slug": "chrome-relay",
+      "name": "Chrome Relay",
+      "url": "https://github.com/aindeev/agent-chrome-relay",
+      "image": "https://opengraph.githubassets.com/1/aindeev/agent-chrome-relay",
+      "homepage": "https://agent-chrome-relay.aindeev.com",
+      "tags": ["agents", "browser", "chrome", "cdp", "claude-code", "macos"],
+      "verdict": "must-watch",
+      "source": "github",
+      "take": {
+        "en": "Your coding agent drives your real Chrome — signed in as you — in background tabs, with no remote-debug popup.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most agent browsers spin up a clean profile and die on SSO, 2FA, and the accounts you already use. Chrome Relay keeps the agent inside everyday Chrome so it can open the same dashboards, admin panels, and internal tools you already trust — without stealing focus or asking you to re-login every run.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Chrome Relay is an open-source macOS stack that connects agent-browser CLIs to Google Chrome through a local relay and a small MV3 extension. Agents (Claude Code, Codex, Cursor, Paseo) open inactive tabs in a collapsed Agents group, run DevTools commands there, and never take window focus. Setup is opt-in per machine and per Chrome profile. A machine secret plus process checks keep random local tools and web pages from attaching.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Clone the repo, run bin/chrome-relay setup, then load the unpacked extension in each Chrome profile agents should use. Agents get a CDP URL from chrome-relay url and talk through agent-browser. Google account hops that are already signed in can auto-continue; password, passkey, or signed-out states stop and ask you. Every action lands in a daily JSONL audit under ~/.chrome-relay/audit. chrome-relay doctor and update cover health and upgrades.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Chrome DevTools MCP and headless agent browsers give a separate browser the agent owns. Chrome Relay is the opposite bet: keep your cookies, extensions, and logins, hide the agent in background tabs, skip the remote-debugging permission banner, and log what the agent did. Complementary to scrape/devtools stacks when the hard part is authenticated product UI, not raw HTML.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Chrome Relay is the missing browser path for coding agents. it drives YOUR Chrome, already signed in, in background tabs — no remote-debug popup, no clean-profile SSO hell.\n\nhttps://nimaaksoy.com/radar/chrome-relay",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Agent browsers keep failing on the accounts founders actually use. Chrome Relay lets Claude Code, Codex, and Cursor drive everyday Chrome in background tabs — real logins, audit trail, no focus steal — instead of a disposable headless profile.\n\nhttps://nimaaksoy.com/radar/chrome-relay",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {"name": "chrome-devtools-mcp", "url": "https://nimaaksoy.com/radar/chrome-devtools-mcp"},
+        {"name": "page-agent", "url": "https://nimaaksoy.com/radar/page-agent"},
+        {"name": "Firecrawl", "url": "https://nimaaksoy.com/radar/firecrawl"}
+      ]
+    }
+  ]
+}
