@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T07:07:40Z",
+  "updatedAt": "2026-10-11T07:05:24Z",
   "source": "github-api",
   "repoCount": 25,
   "itemCount": 49,
@@ -560,6 +560,10 @@
       "stars": 48219,
       "fetchedAt": "2026-10-10T07:07:47Z",
       "repo": "cathrynlavery/diagram-design"
+    },
+    "chrome-relay": {
+      "stars": 249,
+      "fetchedAt": "2026-10-11T07:05:24Z"
     }
   },
   "byRepo": {
@@ -1083,6 +1087,10 @@
       "stars": 48219,
       "fetchedAt": "2026-10-10T07:07:47Z",
       "slug": "diagram-design"
+    },
+    "aindeev/agent-chrome-relay": {
+      "stars": 249,
+      "fetchedAt": "2026-10-11T07:05:24Z"
     }
   },
   "errors": [
