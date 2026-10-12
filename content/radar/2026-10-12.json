@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-12",
+  "items": [
+    {
+      "slug": "digup",
+      "name": "DigUp",
+      "url": "https://github.com/ARahim3/DigUp",
+      "image": "https://opengraph.githubassets.com/1/ARahim3/DigUp",
+      "tags": [
+        "search",
+        "embeddings",
+        "local-first",
+        "macos",
+        "multimodal",
+        "privacy"
+      ],
+      "verdict": "must-watch",
+      "source": "github",
+      "hasDemo": true,
+      "take": {
+        "en": "Search your Mac by what's inside photos, PDFs, audio, video, and code — on-device with EmbeddingGemma 2.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Spotlight still wants filenames and keywords. Founders live in messy Downloads folders, screen recordings, leases, and half-remembered podcast moments. DigUp lets you describe the thing and jump straight to the page, frame, or line — without uploading your files to a cloud index.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "DigUp is an open-source macOS menu-bar app (Apple Silicon, macOS 14+) that indexes folders you choose with Google DeepMind's EmbeddingGemma 2. One shared embedding space covers images, document pages, audio windows, video frames, and optional code. Queries are plain language in 100+ languages, plus exact-string boosts for invoice numbers and error codes. Nothing you index leaves the machine after the one-time model download.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install the DMG or brew cask, pick folders while the ~865 MB model downloads once, then hit ⇧⌘Space from any app and type what you mean. Results open at the right moment: QuickTime for video/audio, Preview search for PDFs, your editor for code lines. Indexing runs locally through llama.cpp on Metal into SQLite vectors plus a keyword index; new files become searchable seconds after they land. Code search is opt-in with a separate index and a code: prefix.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Most semantic desktop tools are text-only, cloud-backed, or stuck on filenames. DigUp is multimodal end-to-end on your Mac — photo meaning, spoken minutes, scanned PDFs, and code intent in one panel — built on a fresh open embedding model instead of another chat wrapper over someone else's index.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "DigUp is the Mac search I wanted. describe a zebra in a video, a clause in a lease, or code that retries with backoff — it finds it on-device with EmbeddingGemma 2. no cloud index of your files.\n\nhttps://nimaaksoy.com/radar/digup",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "DigUp turns messy local folders into multimodal search. Photos, PDFs, recordings, video moments, and optional code — all on-device with EmbeddingGemma 2. Useful when Spotlight can't guess what you meant.\n\nhttps://nimaaksoy.com/radar/digup",
+          "fa": ""
+        }
+      }
+    }
+  ]
+}
