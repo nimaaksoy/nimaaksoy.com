@@ -564,6 +564,10 @@
     "chrome-relay": {
       "stars": 249,
       "fetchedAt": "2026-10-11T07:05:24Z"
+    },
+    "digup": {
+      "stars": 1353,
+      "fetchedAt": "2026-10-12T07:07:19Z"
     }
   },
   "byRepo": {
@@ -1091,6 +1095,14 @@
     "aindeev/agent-chrome-relay": {
       "stars": 249,
       "fetchedAt": "2026-10-11T07:05:24Z"
+    },
+    "ARahim3/DigUp": {
+      "stars": 1353,
+      "fetchedAt": "2026-10-12T07:07:19Z"
+    },
+    "arahim3/digup": {
+      "stars": 1353,
+      "fetchedAt": "2026-10-12T07:07:19Z"
     }
   },
   "errors": [
