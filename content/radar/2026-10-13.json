@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-13",
+  "items": [
+    {
+      "slug": "esp32-iphone-agent",
+      "name": "ESP32 iPhone Agent",
+      "url": "https://github.com/onehumanbeing/esp32-iphone-agent",
+      "image": "https://opengraph.githubassets.com/1/onehumanbeing/esp32-iphone-agent",
+      "tags": [
+        "agents",
+        "iphone",
+        "computer-use",
+        "esp32",
+        "mobile",
+        "hardware"
+      ],
+      "verdict": "must-watch",
+      "source": "github",
+      "hasDemo": true,
+      "take": {
+        "en": "Let any vision model drive a real iPhone with a $7 ESP32 — AirPlay for eyes, USB HID for hands, no Mac, Xcode, or jailbreak.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Mobile agent demos still die on Apple's test stack: developer accounts, signed runners, and Mac-only toolchains. Founders who want agents to tap real apps, games, and Clock settings need the same path a person uses — the screen and a pointer — without installing anything on the phone.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "ESP32 iPhone Agent is an open-source loop that pairs AirPlay screen mirroring with a tiny ESP32-S3 board plugged into the phone as a USB mouse and keyboard. A planner and actor model (any OpenAI-compatible vision API, cloud or local) watch JPEG frames from UxPlay, then send move/click/type commands over Wi-Fi to the board. AssistiveTouch turns the HID pointer into taps and swipes. Nothing is installed on the iPhone; Linux or macOS can host the server.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Flash the ESP32-S3 with the HID bridge firmware, install UxPlay plus the Python server, and put your model base URL and key in server/.env. On the phone turn on AssistiveTouch, plug in the board, mirror to iPhone Agent, and run calibrate so the server finds the pointer on the live screen. Open the web UI on port 8890, give a goal like set a repeating alarm or draw on Whiteboard, and the agent plans steps, acts, checks that the screen changed, and re-plans on misses.",
+        "fa": ""
+      },
+      "different": {
+        "en": "XCTest and WebDriverAgent need a Mac, Xcode, and a signed helper that expires on free accounts. This stack skips the accessibility tree and drives pixels plus HID like a person — any app including games, any OpenAI-compatible vision model, and hardware that costs about seven dollars. Complementary to desktop Chrome relays: those own authenticated web; this owns the physical phone.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "ESP32 iPhone Agent is wild. a $7 board + AirPlay lets any vision model tap a real iPhone — no Mac, no Xcode, no jailbreak, nothing installed on the phone.\n\nhttps://nimaaksoy.com/radar/esp32-iphone-agent",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Most iPhone automation still needs Apple developer tooling. ESP32 iPhone Agent takes the human path instead: AirPlay for eyes, a cheap ESP32-S3 as USB HID hands, any OpenAI-compatible vision model as the brain. Useful when your agent has to drive real mobile UI.\n\nhttps://nimaaksoy.com/radar/esp32-iphone-agent",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "Chrome Relay",
+          "url": "https://nimaaksoy.com/radar/chrome-relay"
+        },
+        {
+          "name": "chrome-devtools-mcp",
+          "url": "https://nimaaksoy.com/radar/chrome-devtools-mcp"
+        }
+      ]
+    }
+  ]
+}
