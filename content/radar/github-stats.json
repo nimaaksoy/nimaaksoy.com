@@ -568,6 +568,10 @@
     "digup": {
       "stars": 1353,
       "fetchedAt": "2026-10-12T07:07:19Z"
+    },
+    "esp32-iphone-agent": {
+      "stars": 965,
+      "fetchedAt": "2026-10-13T07:07:19Z"
     }
   },
   "byRepo": {
@@ -1103,6 +1107,10 @@
     "arahim3/digup": {
       "stars": 1353,
       "fetchedAt": "2026-10-12T07:07:19Z"
+    },
+    "onehumanbeing/esp32-iphone-agent": {
+      "stars": 965,
+      "fetchedAt": "2026-10-13T07:07:19Z"
     }
   },
   "errors": [
