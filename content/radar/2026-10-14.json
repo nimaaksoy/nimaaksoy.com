@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-14",
+  "items": [
+    {
+      "slug": "voicestudio",
+      "name": "VoiceStudio",
+      "url": "https://github.com/debpalash/VoiceStudio",
+      "image": "https://opengraph.githubassets.com/1/debpalash/VoiceStudio",
+      "homepage": "https://voicestudio.sh",
+      "tags": [
+        "tts",
+        "voice-cloning",
+        "local-first",
+        "mcp",
+        "dubbing",
+        "speech"
+      ],
+      "verdict": "must-watch",
+      "source": "github",
+      "hasDemo": true,
+      "hasApi": true,
+      "hasMcp": true,
+      "take": {
+        "en": "Open-source, fully local ElevenLabs alternative — clone, design, dub, dictate, and transcribe in hundreds of languages, with a local API and MCP for agents.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Voice product work still defaults to cloud TTS bills, usage caps, and sending every script off-box. Founders shipping agents, courses, or localized video need a studio that runs on their own GPU, keeps reference voices private, and plugs into the same agent stack they already use.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "VoiceStudio is a desktop Electron app plus speech platform that treats voice like a local workflow, not a SaaS tab. Default engine is OmniVoice; you can swap other local engines from the catalog. Workspaces cover cloning from a short reference clip, text-to-voice design, timed video dubbing, floating dictation, transcription, and batch audiobook-style jobs across a huge language set. Optional remote backends exist, but the core path is on your machine with CUDA or Apple Silicon acceleration.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install with the one-line script or a release build for macOS, Windows, or Linux, open Voice cloning, drop a clean reference take, type text, and generate after the model download. Point coding agents at the install guide or add the VoiceStudio skill. Wire product code to the local speech API, or attach MCP so agents can speak, clone, and queue jobs without leaving the harness. Docker covers headless server setups.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Most open TTS repos stop at a model demo. VoiceStudio is the full studio layer — multi-engine manager, dubbing timeline, dictation widget, recipes, watch folders, and agent MCP — positioned as a real ElevenLabs replacement you can self-host. Complementary to CrisperWhisper (verbatim ASR) and KrillinAI (end-to-end video localization): this owns the local voice production surface agents and creators actually open every day.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "VoiceStudio is the open ElevenLabs stack that stuck. local clone, design, dub, dictate, and transcribe — plus API and MCP so agents can talk without shipping every script to the cloud.\n\nhttps://nimaaksoy.com/radar/voicestudio",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Cloud TTS is still the default for product voice, and the bill plus privacy tradeoff shows up fast. VoiceStudio is a fully local studio — clone, design, dub, dictate, transcribe — with a local API and MCP for agents. Useful when voice needs to stay on your hardware.\n\nhttps://nimaaksoy.com/radar/voicestudio",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "Voicebox",
+          "url": "https://nimaaksoy.com/radar/voicebox"
+        },
+        {
+          "name": "CrisperWhisper",
+          "url": "https://nimaaksoy.com/radar/crisperwhisper"
+        },
+        {
+          "name": "KrillinAI",
+          "url": "https://nimaaksoy.com/radar/krillinai"
+        }
+      ]
+    }
+  ]
+}
