@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-11T07:05:24Z",
+  "updatedAt": "2026-10-14T07:07:26Z",
   "source": "github-api",
   "repoCount": 25,
   "itemCount": 49,
@@ -572,6 +572,10 @@
     "esp32-iphone-agent": {
       "stars": 965,
       "fetchedAt": "2026-10-13T07:07:19Z"
+    },
+    "voicestudio": {
+      "stars": 64234,
+      "fetchedAt": "2026-10-14T07:07:26Z"
     }
   },
   "byRepo": {
@@ -1111,6 +1115,14 @@
     "onehumanbeing/esp32-iphone-agent": {
       "stars": 965,
       "fetchedAt": "2026-10-13T07:07:19Z"
+    },
+    "debpalash/VoiceStudio": {
+      "stars": 64234,
+      "fetchedAt": "2026-10-14T07:07:26Z"
+    },
+    "debpalash/voicestudio": {
+      "stars": 64234,
+      "fetchedAt": "2026-10-14T07:07:26Z"
     }
   },
   "errors": [
