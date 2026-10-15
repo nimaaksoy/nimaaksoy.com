@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-15",
+  "items": [
+    {
+      "slug": "anatomy",
+      "name": "Anatomy",
+      "url": "https://github.com/wheresryan22/anatomy",
+      "image": "https://opengraph.githubassets.com/1/wheresryan22/anatomy",
+      "homepage": "https://skills.wheresryan.sh/anatomy",
+      "tags": [
+        "agent-skill",
+        "svg",
+        "visualization",
+        "docs",
+        "claude-code",
+        "interactive"
+      ],
+      "verdict": "must-watch",
+      "source": "github",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": false,
+      "take": {
+        "en": "Agent skill that turns a technical idea into a crafted interactive isometric machine — SVG parts, optional WebGL effects, and live readouts in one shareable figure.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Founders still explain systems with slides, Mermaid, or generic AI diagrams that look the same as everyone else's. Anatomy gives coding agents a craft kit so docs, blogs, and landing pages get figures people actually want to open and poke — not another flowchart dump.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Anatomy is a standard Agent Skill for Claude Code, Codex, OpenCode, and Antigravity. You ask it to explain a concept; it invents a physical object whose working is the idea, then builds that object from dozens of solid isometric parts inside a framed card with title, hint, and live numbers. Core output is SVG. Hard-to-draw effects like fire, water, or caustics sit in WebGL layers that share the same camera. A beta 3D mode re-projects moving parts each frame. Zero npm deps — Node builtins only — and the kit self-checks joints with headless capture scripts.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install with npx skills add wheresryan22/anatomy -g (pick Claude Code, Codex, OpenCode, or Antigravity), or clone the repo into your skills folder. In chat run /anatomy (or $anatomy in Codex) and describe what to explain — rate limiters, connection pools, CDN cache hits, lab gear. It ships standalone HTML, embedded SVG, or React/Next components, light or dark. Open the committed examples/ pages to see the bar before you generate your own.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Most diagram skills draw boxes and arrows. Anatomy forces a physical metaphor first, then crafts interactive machine figures with shaded parts, motion, and optional shaders — closer to a science-museum card than Mermaid. Complementary to Diagram Design on Radar: that pack covers branded editorial diagram types; this one owns the isometric explainer lane for systems you want people to feel, not just scan.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Anatomy is wild. ask your coding agent to explain a system and it builds an interactive isometric machine — solid SVG parts, optional WebGL fire/water, live readouts. real craft for docs and landing pages, not another Mermaid clone.\n\nhttps://nimaaksoy.com/radar/anatomy",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Most agent diagram tools still spit out the same flowchart slop. Anatomy is a skill that invents a physical machine for the idea, then draws it as an interactive isometric figure — SVG, optional WebGL, live numbers — for docs, blogs, and product pages.\n\nhttps://nimaaksoy.com/radar/anatomy",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "Diagram Design",
+          "url": "https://nimaaksoy.com/radar/diagram-design"
+        },
+        {
+          "name": "Taste Skill",
+          "url": "https://nimaaksoy.com/radar/taste-skill"
+        },
+        {
+          "name": "Hallmark",
+          "url": "https://nimaaksoy.com/radar/hallmark"
+        }
+      ]
+    }
+  ]
+}
