@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-16",
+  "items": [
+    {
+      "slug": "open-scion",
+      "name": "open_scion",
+      "url": "https://github.com/feder-cr/open_scion",
+      "image": "https://opengraph.githubassets.com/1/feder-cr/open_scion",
+      "homepage": "https://www.anthropic.com/engineering/redesigning-source-control",
+      "tags": [
+        "version-control",
+        "coding-agents",
+        "git",
+        "golang",
+        "multi-agent",
+        "infrastructure"
+      ],
+      "verdict": "must-watch",
+      "source": "github",
+      "hasDemo": false,
+      "hasApi": true,
+      "hasMcp": false,
+      "take": {
+        "en": "Open-source Scion: version control rebuilt for fleets of coding agents — sparse fetch, server-side land, and CAS landings on top of normal Git.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Git hosting still assumes one human clones, works for hours, and pushes once. Agent fleets thrash branches with thousands of short edits, so full clones and merge queues become the bottleneck. open_scion is a public take on Anthropic's internal Scion design so teams can run agent-native source control without waiting for a closed product.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "open_scion is an independent MIT implementation of the ideas in Anthropic's Redesigning source control post. The server stays online, serves sparse trees and single objects, answers blame and path history as memoized derived data, and lands changes with compare-and-swap instead of a long merge queue. State lives in SQLite or Postgres plus object storage; local Git repos are rebuildable caches. The server never calls a model — LLM conflict resolvers and reviews are optional and vendor-neutral.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Clone the repo, make build, and run examples/graft/quickstart.sh for a temp server, cache daemon, two agents, and a land. Point graft CLI or the Go SDK at your config, use sparse clone for the paths each agent needs, and land through UserLand batching concurrent tip updates. Optional graft-verify bisects a broken tip and reverts the culprit; superfans watch the changeset stream; per-agent tokens and RPC allowlists gate what each agent may touch.",
+        "fa": ""
+      },
+      "different": {
+        "en": "This is not another coding agent or Git UI. It is source control as an API for agent scale — sparse workspaces, CAS land, server-side history, and agent-first auth — while still speaking Git under the hood. Complementary to sandboxes like OpenShell or ax: those isolate runtime; open_scion redesigns how many agents share and land code on the same branches.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "open_scion is wild. Anthropic described Scion for coding-agent fleets — this is the open MIT version: sparse fetch, server-side land, CAS landings on normal Git. source control finally built for agents, not one human clone.\n\nhttps://nimaaksoy.com/radar/open-scion",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Git was built for humans who push once a day. open_scion is an open-source take on Anthropic's Scion design: sparse agent workspaces, server-side history, and compare-and-swap landings so fleets can share branches without merge-queue pain.\n\nhttps://nimaaksoy.com/radar/open-scion",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "OpenShell",
+          "url": "https://nimaaksoy.com/radar/openshell"
+        },
+        {
+          "name": "ax",
+          "url": "https://nimaaksoy.com/radar/ax"
+        },
+        {
+          "name": "AutoHarness",
+          "url": "https://nimaaksoy.com/radar/autoharness"
+        }
+      ]
+    }
+  ]
+}
