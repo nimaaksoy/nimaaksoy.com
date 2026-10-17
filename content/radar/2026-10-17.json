@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-17",
+  "items": [
+    {
+      "slug": "xerj",
+      "name": "XERJ",
+      "url": "https://github.com/xerj-org/xerj",
+      "image": "https://opengraph.githubassets.com/1/xerj-org/xerj",
+      "homepage": "https://xerj.org",
+      "tags": [
+        "ai-search",
+        "coding-agents",
+        "mcp",
+        "rust",
+        "local-first",
+        "rag",
+        "elasticsearch"
+      ],
+      "verdict": "must-watch",
+      "source": "github",
+      "hasDemo": true,
+      "hasApi": true,
+      "hasMcp": true,
+      "take": {
+        "en": "Local AI search that autoindexes any folder so coding agents pull the right passage instead of grepping whole files into context.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Agents still burn tokens on grep and full-file reads. XERJ turns a project — code, docs, logs, PDFs — into ranked passages and go-to-definition hits, so the model works from the right slice. Measured reference-coding runs cut output tokens ~2.7× vs grep at the same solve rate, which is real money and fewer fix loops on private or post-cutoff code.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "XERJ is a single static Rust binary that runs a local search server. Point autoindex at a folder and it builds typed indices with no schema work. Search is BM25, kNN, and hybrid; the default embedder is lexical and offline, with an optional neural embedder. It speaks Elasticsearch-compatible APIs so existing clients keep working, exposes MCP plus an install that wires Claude Code or Cursor, and includes agent-memory namespaces for durable notes.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install with the one-liner from xerj.org, start the server on loopback, run xerj init to attach MCP and the skill, then xerj autoindex on your repo or a folder of reference projects. Agents search by natural language or symbol, get file:line passages, and can run reference coding — clone close open-source repos, index them, and reuse how they solved a problem before writing new code. xerj gain reports what it actually saved.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not another vector RAG toy or Mac desktop search. XERJ is agent-native local search built for coding workflows: autoindex, ES-compatible API, MCP, and measured token wins on reference coding. Complementary to PageIndex (tree RAG over long PDFs), DigUp (on-device multimodal Mac search), and codebase-memory-mcp (code knowledge graph) — those solve different retrieval shapes; this one kills wasteful grep in the agent loop.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "XERJ is the search layer coding agents needed. autoindex any folder, pull ranked passages instead of grepping whole files, MCP + ES-compatible API. measured ~2.7x fewer output tokens vs grep on reference coding.\n\nhttps://nimaaksoy.com/radar/xerj",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Coding agents still burn tokens on grep. XERJ is a local Rust search server that autoindexes code, docs, logs, and PDFs, serves ranked passages over MCP, and cut ~2.7× output tokens vs grep in measured reference-coding runs.\n\nhttps://nimaaksoy.com/radar/xerj",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "PageIndex",
+          "url": "https://nimaaksoy.com/radar/pageindex"
+        },
+        {
+          "name": "DigUp",
+          "url": "https://nimaaksoy.com/radar/digup"
+        },
+        {
+          "name": "codebase-memory-mcp",
+          "url": "https://nimaaksoy.com/radar/codebase-memory-mcp"
+        }
+      ]
+    }
+  ]
+}
