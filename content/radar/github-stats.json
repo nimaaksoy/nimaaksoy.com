@@ -585,6 +585,11 @@
     "open-scion": {
       "stars": 1020,
       "fetchedAt": "2026-10-16T07:06:25.000Z"
+    },
+    "xerj": {
+      "stars": 7170,
+      "fetchedAt": "2026-10-17T07:06:47Z",
+      "repo": "xerj-org/xerj"
     }
   },
   "byRepo": {
@@ -1141,6 +1146,11 @@
     "feder-cr/open_scion": {
       "stars": 1020,
       "fetchedAt": "2026-10-16T07:06:25.000Z"
+    },
+    "xerj-org/xerj": {
+      "stars": 7170,
+      "fetchedAt": "2026-10-17T07:06:47Z",
+      "slug": "xerj"
     }
   },
   "errors": [
