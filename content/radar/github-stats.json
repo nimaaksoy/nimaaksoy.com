@@ -590,6 +590,11 @@
       "stars": 7170,
       "fetchedAt": "2026-10-17T07:06:47Z",
       "repo": "xerj-org/xerj"
+    },
+    "harness2": {
+      "stars": 2066,
+      "fetchedAt": "2026-10-18T07:13:08Z",
+      "repo": "google-research/harness2"
     }
   },
   "byRepo": {
@@ -1151,6 +1156,11 @@
       "stars": 7170,
       "fetchedAt": "2026-10-17T07:06:47Z",
       "slug": "xerj"
+    },
+    "google-research/harness2": {
+      "stars": 2066,
+      "fetchedAt": "2026-10-18T07:13:08Z",
+      "slug": "harness2"
     }
   },
   "errors": [
