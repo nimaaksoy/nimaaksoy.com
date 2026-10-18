@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-18",
+  "items": [
+    {
+      "slug": "harness2",
+      "name": "Harness²",
+      "url": "https://github.com/google-research/harness2",
+      "image": "https://opengraph.githubassets.com/1/google-research/harness2",
+      "homepage": "https://harness2.github.io",
+      "tags": [
+        "agent-harness",
+        "recursive-improvement",
+        "google-research",
+        "opencode",
+        "codex",
+        "evaluation"
+      ],
+      "verdict": "must-watch",
+      "source": "github",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": false,
+      "take": {
+        "en": "Google Research open-sources recursive agent harnessing — improve prompts, tools, memory, and skills on the job without touching model weights.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most teams still ship a fixed agent scaffold and hope the model is smart enough. Real work fails on open tasks with no grader, so you need a way to rewrite the harness from behavior, not labels. Harness² is the research-grade loop for that: better agents by editing the system around the model, with measured gains on professional benchmarks.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Harness² treats the harness as eight editable pieces — system prompt, guardrails, memory, tool guidance, subagents, skills, scripts, and plugins — while the model stays frozen. Task-level recursion runs Propose–Probe–Compose: propose harness edits, probe them on the same task, and compose a refined harness from behavioral contrasts, without ground-truth feedback. Harnessing-level recursion then keeps adopted harnesses and evidence-backed lessons so the next task starts smarter. Executors include OpenCode and Codex; benchmarks cover JobBench, LAB, and WorkBuddy-Bench.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "On Linux with Python 3.12 and uv, install with uv pip install -e '.[render]', then harness2-demo for a no-credentials dry run. For real runs, set Vertex or other models in .env, run harness2-setup for a bench, pick --k and --mode parallel or sequential, then harness2, harness2-judge, and harness2-report. Scale k for wider parallel probes or deeper sequential refinement. Results land under runs/ and resume if you repeat the same command.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not another coding agent TUI and not a skill pack dump. Harness² is recursive optimization of the scaffold itself — contrastive edits without a grader, then a persistent improvement harness across tasks. Complementary to AutoHarness (distill sessions into skills), ECC (agent harness OS), and harness-engineering (org field guides): those equip or run agents; this one systematically rewrites the harness and proves it on open-world professional work.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Harness² from Google Research is the missing loop for agent builders. it rewrites prompts, tools, memory, and skills on the job — Propose–Probe–Compose without ground truth — and keeps lessons for the next task. model weights stay frozen.\\n\\nhttps://nimaaksoy.com/radar/harness2",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Google Research open-sourced Harness²: recursive agent harnessing that improves the system around a frozen model. Propose–Probe–Compose edits prompts, tools, memory, skills, and more without ground-truth labels, then carries lessons into the next task. Real gains on JobBench, LAB, and WorkBuddy.\\n\\nhttps://nimaaksoy.com/radar/harness2",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "AutoHarness",
+          "url": "https://nimaaksoy.com/radar/autoharness"
+        },
+        {
+          "name": "ECC",
+          "url": "https://nimaaksoy.com/radar/ecc"
+        },
+        {
+          "name": "Harness Engineering",
+          "url": "https://nimaaksoy.com/radar/harness-engineering"
+        }
+      ]
+    }
+  ]
+}
