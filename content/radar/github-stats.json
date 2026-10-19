@@ -595,6 +595,11 @@
       "stars": 2066,
       "fetchedAt": "2026-10-18T07:13:08Z",
       "repo": "google-research/harness2"
+    },
+    "ai-job-search": {
+      "stars": 54332,
+      "fetchedAt": "2026-10-19T07:05:11Z",
+      "repo": "MadsLorentzen/ai-job-search"
     }
   },
   "byRepo": {
@@ -1161,6 +1166,11 @@
       "stars": 2066,
       "fetchedAt": "2026-10-18T07:13:08Z",
       "slug": "harness2"
+    },
+    "MadsLorentzen/ai-job-search": {
+      "stars": 54332,
+      "fetchedAt": "2026-10-19T07:05:11Z",
+      "slug": "ai-job-search"
     }
   },
   "errors": [
