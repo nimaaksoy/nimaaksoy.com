@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-19",
+  "items": [
+    {
+      "slug": "ai-job-search",
+      "name": "AI Job Search",
+      "url": "https://github.com/MadsLorentzen/ai-job-search",
+      "image": "https://opengraph.githubassets.com/1/MadsLorentzen/ai-job-search",
+      "tags": [
+        "job-search",
+        "claude-code",
+        "career",
+        "agent-skills",
+        "resume"
+      ],
+      "verdict": "worth-testing",
+      "source": "github",
+      "hasDemo": false,
+      "hasApi": false,
+      "hasMcp": false,
+      "take": {
+        "en": "Fork-and-run job search on your machine — Claude Code scrapes portals, scores fit, and drafts tailored CVs and cover letters.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most AI job tools upload your history to a SaaS black box. This one stays on your disk as a forkable Claude Code workflow the author used to land a real AI engineer role — 69 applications, 20 interviews, one signed contract. Founders and operators who hire (or hire themselves) get a transparent, editable playbook instead of another résumé chatbot.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "AI Job Search is an open-source application framework built around Claude Code skills. You load a profile from documents, a pasted CV, or a setup interview, then run portal search, fit ranking, and a drafter-reviewer pipeline that outputs LaTeX CVs and cover letters. Core fit and drafting logic is country-agnostic; the bundled portal CLIs start on the Danish market and are meant to be swapped or extended for local boards. Community forks adapt the same pattern for other agent CLIs.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Clone into a private repo (public forks expose personal data), install portal CLIs with the Python helper, and run /setup inside Claude Code. /scrape searches matching portals and dedupes results; /rank batch-scores when the list is long; /apply on a URL evaluates fit, drafts tailored materials, and runs a reviewer pass before final LaTeX output. Optional ATS parse checks use pypdf or pdftotext when available.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not a hosted job board or a generic coding agent. It is a full local career workflow encoded as agent skills — profile, scrape, score, draft, critique — that you own and fork, with a proven personal funnel behind the README.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "AI Job Search is the rare agent workflow with a real outcome story. fork it, keep the profile on your machine, and let Claude Code scrape, score fit, and draft the CV and cover letter.\n\nhttps://nimaaksoy.com/radar/ai-job-search",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Most AI job tools want your résumé in their cloud. AI Job Search keeps the workflow on your machine as a Claude Code skill pack — scrape portals, score fit, draft and review applications. The author used the same loop to get hired.\n\nhttps://nimaaksoy.com/radar/ai-job-search",
+          "fa": ""
+        }
+      }
+    }
+  ]
+}
