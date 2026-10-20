@@ -600,6 +600,11 @@
       "stars": 54332,
       "fetchedAt": "2026-10-19T07:05:11Z",
       "repo": "MadsLorentzen/ai-job-search"
+    },
+    "lcu": {
+      "stars": 1656,
+      "fetchedAt": "2026-10-20T07:05:37Z",
+      "repo": "amontlabs/lcu"
     }
   },
   "byRepo": {
@@ -1171,6 +1176,11 @@
       "stars": 54332,
       "fetchedAt": "2026-10-19T07:05:11Z",
       "slug": "ai-job-search"
+    },
+    "amontlabs/lcu": {
+      "stars": 1656,
+      "fetchedAt": "2026-10-20T07:05:37Z",
+      "slug": "lcu"
     }
   },
   "errors": [
