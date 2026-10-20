@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-20",
+  "items": [
+    {
+      "slug": "lcu",
+      "name": "LCU",
+      "url": "https://github.com/amontlabs/lcu",
+      "image": "https://opengraph.githubassets.com/1/amontlabs/lcu",
+      "homepage": "https://lcu.amontlabs.com",
+      "tags": [
+        "computer-use",
+        "codex",
+        "claude-code",
+        "desktop-automation",
+        "agent-harness"
+      ],
+      "verdict": "worth-testing",
+      "source": "github",
+      "hasDemo": false,
+      "hasApi": false,
+      "hasMcp": false,
+      "take": {
+        "en": "Codex computer use, pulled out of the ChatGPT app so Claude Code, Pi, or your own harness can drive the desktop.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Coding agents still type in a terminal while the real work lives in windows, browsers, and native apps. LCU gives those agents OpenAI's original computer-use runtime — click, type, screenshot, optional Chrome — without a Codex login, so the harness you already pay for can operate the machine, not only the repo.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "LCU is an open-source integration layer from Amont Labs. Keep the official ChatGPT desktop app installed for its computer-use runtime and instructions; LCU handles setup, harness adapters, and turn lifecycle. It does not reimplement desktop automation. Adapters ship for Claude Code, Codex CLI, and Pi, with experimental hooks for Oh My Pi and Hermes. MIT licensed, macOS Apple Silicon and Linux X11 first.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install the ChatGPT desktop app and your harness, then run LCU setup for that agent (or the Claude Code plugin path). LCU checks app compatibility and registers tools so the agent can read windows, click, type, and capture screens. On first touch of an app you approve or deny natively; macOS can lock always-allow behind Touch ID. Chrome tab control and computer audio are opt-in. Optional cross-turn mode keeps computer use alive across Claude Code turns instead of dying with the first turn.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not another coding TUI and not a from-scratch browser bot. It reuses OpenAI's shipped computer-use stack inside the harness you already run, so desktop control is a capability layer rather than a new agent product.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "LCU is a quiet unlock. it takes Codex computer use out of the ChatGPT app and plugs it into Claude Code, Pi, or your own harness — real desktop click/type without a Codex login.\n\nhttps://nimaaksoy.com/radar/lcu",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Most coding agents still stop at the terminal. LCU exposes OpenAI's original computer-use runtime to Claude Code, Codex CLI, and Pi so the agent can drive windows and the browser on your machine — no Codex auth, ChatGPT app stays local for the runtime.\n\nhttps://nimaaksoy.com/radar/lcu",
+          "fa": ""
+        }
+      }
+    }
+  ]
+}
