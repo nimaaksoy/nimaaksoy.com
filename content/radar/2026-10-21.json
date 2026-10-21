@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-21",
+  "items": [
+    {
+      "slug": "deepinfer",
+      "name": "DeepInfer",
+      "url": "https://github.com/deepseek-ai/DeepInfer",
+      "image": "https://opengraph.githubassets.com/1/deepseek-ai/DeepInfer",
+      "tags": [
+        "llm-inference",
+        "deepseek",
+        "moe",
+        "serving",
+        "production"
+      ],
+      "verdict": "must-watch",
+      "source": "github",
+      "hasDemo": false,
+      "hasApi": false,
+      "hasMcp": false,
+      "take": {
+        "en": "DeepSeek open-sourced the inference stack that actually runs their production models — not another toy runner.",
+        "fa": ""
+      },
+      "why": {
+        "en": "If you ship DeepSeek at scale, the hard part is not downloading weights. It is prefill and decode throughput, MoE expert placement, draft verification, and batch-invariant results you can trust. DeepInfer is the framework DeepSeek says powers their own large-scale services, now usable offline with the same kernel and scheduling ideas.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "DeepInfer is DeepSeek-AI's high-performance inference framework for DeepSeek models, starting with DeepSeek-V4.1-Flash. It packages optimized kernels (FlashMLA, DeepGEMM, DeepEP and friends), attention data-parallel and balanced context-parallel paths, MoE expert parallel with load balancing, DSpark draft verification, asynchronous zero-overhead batch scheduling, structured outputs, and optional batch-invariant plus deterministic sampling. Hardware targets are NVIDIA SM100 GPUs and Huawei Ascend 950 NPUs. The open release focuses on offline inference; full online serving still needs your own KV cache, prefill/decode disaggregation, and replica load balancing.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "On Linux with Python 3.12 and CUDA 13 (or CANN 9.2 on Ascend), set DEEPINFER_ACCELERATOR, run the build script, then offline_inference.py. The default V4.1-Flash checkpoint pulls from Hugging Face on first run, or point DEEPINFER_HF_MODEL_DIR at a local path. Feature flags turn on MTP draft length, SWA bounded replay, batch-invariant mode, and grammar or JSON constrained generation. Sweep scripts in the repo reproduce the published prefill and decode Pareto charts.",
+        "fa": ""
+      },
+      "different": {
+        "en": "This is not a laptop MoE streamer and not a generic multi-model server first. It is DeepSeek's own production-shaped runtime for their models, with the kernels and schedulers they already run at scale, released so builders can match that path instead of reverse-engineering it on top of vLLM alone.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "DeepSeek just open-sourced DeepInfer — the inference stack behind their production services. optimized kernels, MoE EP, draft verify, batch-invariant runs. if you actually serve DeepSeek, this is the real runtime story, not another wrapper.\n\nhttps://nimaaksoy.com/radar/deepinfer",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "DeepInfer is DeepSeek's production inference framework, now open source for offline runs on SM100 and Ascend. Same class of kernels and scheduling they use at scale — MoE expert parallel, draft verification, structured outputs, batch-invariant mode. Useful if you care about serving DeepSeek models for real, not only chatting with a checkpoint.\n\nhttps://nimaaksoy.com/radar/deepinfer",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "Colibri",
+          "url": "https://nimaaksoy.com/radar/colibri"
+        },
+        {
+          "name": "Paritok",
+          "url": "https://nimaaksoy.com/radar/paritok"
+        }
+      ]
+    }
+  ]
+}
