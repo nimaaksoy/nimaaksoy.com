@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-15T07:04:56.945Z",
+  "updatedAt": "2026-10-22T07:05:52Z",
   "source": "github-api",
-  "repoCount": 103,
-  "itemCount": 118,
+  "repoCount": 109,
+  "itemCount": 124,
   "bySlug": {
     "opencut": {
       "stars": 80500,
@@ -605,6 +605,11 @@
       "stars": 1656,
       "fetchedAt": "2026-10-20T07:05:37Z",
       "repo": "amontlabs/lcu"
+    },
+    "andee": {
+      "stars": 2412,
+      "fetchedAt": "2026-10-22T07:05:52Z",
+      "repo": "kuafuai/andee"
     }
   },
   "byRepo": {
@@ -1181,6 +1186,11 @@
       "stars": 1656,
       "fetchedAt": "2026-10-20T07:05:37Z",
       "slug": "lcu"
+    },
+    "kuafuai/andee": {
+      "stars": 2412,
+      "fetchedAt": "2026-10-22T07:05:52Z",
+      "repo": "kuafuai/andee"
     }
   },
   "errors": [
