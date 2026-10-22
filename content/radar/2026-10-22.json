@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-22",
+  "items": [
+    {
+      "slug": "andee",
+      "name": "Andee",
+      "url": "https://github.com/kuafuai/andee",
+      "image": "https://opengraph.githubassets.com/1/kuafuai/andee",
+      "homepage": "https://heyandee.com",
+      "tags": [
+        "mobile-agent",
+        "android",
+        "computer-use",
+        "on-device",
+        "accessibility"
+      ],
+      "verdict": "worth-testing",
+      "source": "github",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": false,
+      "take": {
+        "en": "One APK that lives on your Android phone and operates any app — no root, no SDK, model of your choice.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Desktop computer-use is finally real, but the phone is still a wall of siloed assistants and brittle Appium scripts. Andee is a resident agent on the device itself: it sees the screen, taps and types through Accessibility, keeps a private notebook, and runs against any OpenAI-compatible brain you configure — so founders can automate real mobile workflows without waiting on every app to ship an API.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Andee is an open Android agent from Kuafu AI. Install one APK, grant overlay and Accessibility, point it at your own model keys, and it becomes a floating ball that can drive chat apps, subscriptions, bookings, and other UI the way a thumb would. It reads the accessibility tree and falls back to a labelled screenshot grid so general models tap by cell instead of guessing coordinates. Memory and promises stay localOnly on device; payment passwords and final purchase confirms are blocked in the dispatcher, not only in the prompt. Apache-style license with project conditions; Android 11+.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install a release debug APK or build with JDK 17–20 and Android SDK 34, then on the phone enable Overlay and Accessibility so the ball appears. Under settings put your own model and voice keys (OpenAI-compatible endpoint). Talk or type a goal; Andee outlines the screen, taps by labelled grid or element id, and types into the focused field while your keyboard stays active. Adopt a ready-made scene for longer jobs like watching messages or canceling subscriptions, or let it propose scenes after repeated work. Refuse permissions you do not want — tools fail closed with denied(…) instead of working around you.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not a cloud phone-assistant wrapper and not another desktop harness adapter. Andee is an on-device mobile resident that operates any app through Accessibility with no partner SDK, complementary to LCU on the desktop and to hardware hacks like the ESP32 iPhone agent.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Andee is the phone-side computer-use story. one APK, no root, any app via Accessibility, your own model keys, memory stays on device. desktop agents got LCU — mobile finally has a real resident.\n\nhttps://nimaaksoy.com/radar/andee",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Most mobile AI still means a chat bubble that cannot touch other apps. Andee installs as one Android APK, drives any UI through Accessibility without root or partner SDKs, and keeps its notebook on-device while you bring your own OpenAI-compatible model. Worth testing if your product workflows live on the phone.\n\nhttps://nimaaksoy.com/radar/andee",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "LCU",
+          "url": "https://nimaaksoy.com/radar/lcu"
+        },
+        {
+          "name": "ESP32 iPhone Agent",
+          "url": "https://nimaaksoy.com/radar/esp32-iphone-agent"
+        }
+      ]
+    }
+  ]
+}
