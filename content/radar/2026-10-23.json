@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-23",
+  "items": [
+    {
+      "slug": "openfilm",
+      "name": "OpenFilm",
+      "url": "https://github.com/openfilm/openfilm",
+      "image": "https://opengraph.githubassets.com/1/openfilm/openfilm",
+      "homepage": "https://openfilm.dev",
+      "tags": [
+        "video-agent",
+        "coding-agents",
+        "html",
+        "editor",
+        "skills"
+      ],
+      "verdict": "worth-testing",
+      "source": "github",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": false,
+      "take": {
+        "en": "Turns Codex, Claude Code, or any coding agent into a video agent — films as web pages, plus a real local Studio editor.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Founders already live in coding agents. Launch clips and product demos still force a separate video stack or a closed generator. OpenFilm keeps the work in the agent you use: it writes the film as HTML and CSS you can read, then Studio lets you fix timing, text, and layout by hand while the agent keeps going on the same files.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "OpenFilm is an open-source AI video agent and local editor. Add the skill with npx skills add openfilm/openfilm, ask for a short film, and the agent follows a printed manual to build a folder of pages plus film.html. Each shot is a web page with a frame(t) draw contract — canvas, CSS, three.js, footage, audio. Studio runs on your machine in the browser so you can move clips, restyle elements, and save versions the agent will respect. Render is npx openfilm render to MP4 (optional 4K). Media generation uses your own keys for ElevenLabs, fal, OpenAI, Google, and similar. MIT. Node 22.2+ and ffmpeg.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install the skill or run npx -y openfilm@latest so the agent gets the manual. Ask for a 20-second launch video with music, or open Studio yourself with openfilm open. Edit in the browser; overrides write back into the film files. When it looks right, openfilm render exports the MP4 beside film.html. Connect provider keys in Studio only for generated voice, music, images, or stock. Desktop builds for Mac and Windows bundle Studio with chat beside your installed agents.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not another CapCut clone and not a heavy composition framework first. OpenFilm’s job is agent-native film making: one HTML timeline, one frame function per shot, and a real editor that shares the same files with Codex or Claude Code. Complementary to HyperFrames and OpenMontage when you want the coding agent to author the piece instead of only assembling clips.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "OpenFilm is the missing bridge from coding agents to real launch video. agent writes the film as HTML pages, Studio lets you edit it like a normal cut, same files both ways. no closed video SaaS in the middle.\n\nhttps://nimaaksoy.com/radar/openfilm",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "If your team already ships with Codex or Claude Code, OpenFilm turns that same agent into a video worker. Films are folders of web pages plus film.html, Studio is a local browser editor on the same files, and render is a local MP4. Worth testing for product and launch clips without a separate video pipeline.\n\nhttps://nimaaksoy.com/radar/openfilm",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "HyperFrames",
+          "url": "https://nimaaksoy.com/radar/hyperframes"
+        },
+        {
+          "name": "OpenMontage",
+          "url": "https://nimaaksoy.com/radar/openmontage"
+        },
+        {
+          "name": "OpenCut",
+          "url": "https://nimaaksoy.com/radar/opencut"
+        }
+      ]
+    }
+  ]
+}
