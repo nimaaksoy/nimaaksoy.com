@@ -610,6 +610,11 @@
       "stars": 2412,
       "fetchedAt": "2026-10-22T07:05:52Z",
       "repo": "kuafuai/andee"
+    },
+    "openfilm": {
+      "stars": 2200,
+      "fetchedAt": "2026-10-23T07:07:52Z",
+      "repo": "openfilm/openfilm"
     }
   },
   "byRepo": {
@@ -1191,6 +1196,11 @@
       "stars": 2412,
       "fetchedAt": "2026-10-22T07:05:52Z",
       "repo": "kuafuai/andee"
+    },
+    "openfilm/openfilm": {
+      "stars": 2200,
+      "fetchedAt": "2026-10-23T07:07:52Z",
+      "slug": "openfilm"
     }
   },
   "errors": [
