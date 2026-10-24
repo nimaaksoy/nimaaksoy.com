@@ -615,6 +615,11 @@
       "stars": 2200,
       "fetchedAt": "2026-10-23T07:07:52Z",
       "repo": "openfilm/openfilm"
+    },
+    "franco": {
+      "stars": 552,
+      "repo": "GortexAI/franco",
+      "fetchedAt": "2026-10-24T15:15:56Z"
     }
   },
   "byRepo": {
@@ -1201,6 +1206,16 @@
       "stars": 2200,
       "fetchedAt": "2026-10-23T07:07:52Z",
       "slug": "openfilm"
+    },
+    "GortexAI/franco": {
+      "stars": 552,
+      "slug": "franco",
+      "fetchedAt": "2026-10-24T15:15:56Z"
+    },
+    "gortexai/franco": {
+      "stars": 552,
+      "slug": "franco",
+      "fetchedAt": "2026-10-24T15:15:56Z"
     }
   },
   "errors": [
