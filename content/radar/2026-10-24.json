@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-24",
+  "items": [
+    {
+      "slug": "franco",
+      "name": "Franco",
+      "url": "https://github.com/GortexAI/franco",
+      "image": "https://opengraph.githubassets.com/1/GortexAI/franco",
+      "homepage": "https://gortex.ai",
+      "tags": [
+        "sales-agent",
+        "outbound",
+        "claude-code",
+        "codex",
+        "email"
+      ],
+      "verdict": "worth-testing",
+      "source": "github",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": false,
+      "take": {
+        "en": "Outbound sales agent that runs on your machine on the Claude Code or Codex plan you already pay for.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most founders still bolt a separate cold-email SaaS onto a coding-agent stack. Franco keeps GTM on the same subscription: it prospects, drafts or plays approved sequences from your mailbox, reads replies, and logs every fact with a source — with human review before send unless you flip autopilot.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Franco is an open-source outbound sales agent from Gortex AI. It runs a local heartbeat that ranks handle-replies, send-due-mail, write-sequences, and prospecting without asking a model what to do next. Scout, Writer, Sender, Handler, and Analyst jobs stay mostly plain Python; the model only writes when you choose generated or raad mode. Approved-copy mode sends your signed sequences word for word with compliance footers and suppressions enforced in code. MIT. Python 3.11+, Claude Pro/Max or Codex, Google Workspace recommended.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "pipx install franco, franco init a home folder, set mail and verifier keys, franco gmail auth, then franco dashboard and franco run. Import contacts, researched accounts, or suppressions as CSV. Campaigns start in preview so nothing leaves until someone signs off. Every 15 minutes the loop wakes, respects quiet hours and usage budget, stages the outbox with human-like pacing and a daily cap, and classifies replies so sequences stop on opt-out or bounce. Docker image and CLAUDE.md setup path ship if you prefer containers or agent-led install.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not another coding harness and not a closed outbound SaaS. Franco is a local sales worker that burns your existing Claude Code or Codex subscription instead of a second model bill, with review gates and sourced facts as the product, complementary to trycrm-style agent CRMs that own the notebook rather than the mailbox.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Franco is the outbound sales agent that runs on Claude Code or Codex you already pay for. local heartbeat, sourced facts, review before send, no second model bill.\n\nhttps://nimaaksoy.com/radar/franco",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "If your team already lives in Claude Code or Codex, Franco turns that same subscription into a local outbound sales agent. It prospects, stages sequences from your mailbox, handles replies, and keeps every claim sourced — with human review before send unless you enable autopilot.\n\nhttps://nimaaksoy.com/radar/franco",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "trycrm",
+          "url": "https://nimaaksoy.com/radar/trycrm"
+        },
+        {
+          "name": "LCU",
+          "url": "https://nimaaksoy.com/radar/lcu"
+        },
+        {
+          "name": "Andee",
+          "url": "https://nimaaksoy.com/radar/andee"
+        }
+      ]
+    }
+  ]
+}
