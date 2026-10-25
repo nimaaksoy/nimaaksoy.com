@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-25",
+  "items": [
+    {
+      "slug": "plannotator",
+      "name": "Plannotator",
+      "url": "https://github.com/backnotprop/plannotator",
+      "image": "https://opengraph.githubassets.com/1/backnotprop/plannotator",
+      "homepage": "https://plannotator.ai",
+      "tags": [
+        "code-review",
+        "plan-mode",
+        "claude-code",
+        "codex",
+        "agents"
+      ],
+      "verdict": "worth-testing",
+      "source": "github",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": true,
+      "take": {
+        "en": "Local browser surface to annotate agent plans, diffs, and HTML, then send the markup straight back to the agent.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Coding agents dump long plans and big diffs into the terminal where review is painful. Plannotator turns that moment into a real markup pass — comment on the plan or PR, suggest code, and one click feeds the notes into the same Claude Code, Codex, OpenCode, or Pi session so the agent keeps going with your intent, not a vague \"looks fine.\"",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Plannotator is an open-source local review app for AI coding agents. It hooks into Claude Code, Codex, Copilot CLI, Gemini CLI, OpenCode, Kiro, Droid, Amp, and Pi. When the agent proposes a plan, HTML artifact, or finished code, work opens in the browser so you annotate markdown, specs, messages, and side-by-side diffs. Comments and suggestions go back to the agent. Inbox mode is one window where several agents leave questions and files while they keep running; replies land as the next turn. Herdr Annotate brings the same loop into the terminal. MIT-style OSS with docs at plannotator.ai.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install from the docs, connect the plugin or hooks for your agent, then run plannotator so plans and reviews open locally. Mark up plans and HTML, review Git, GitButler, jj, Perforce, GitHub, or GitLab diffs, and send feedback with one action. Use plannotator inbox for multi-agent questions without holding a session open, or plannotator inbox mcp for any agent over MCP. Optional Herdr plugin keeps annotations in the same data directory as the app.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not another coding harness and not a passive diff dump. Plannotator is the human-in-the-loop review UI that sits beside the agents you already run — plans and code get real annotations, and the product job is closing the loop back into the agent, complementary to meat-style reading diffs and to harnesses that only execute.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Plannotator is the local review UI for coding agents. annotate plans, diffs, and HTML in the browser, send feedback straight back to Claude Code / Codex / OpenCode / Pi. finally a real loop, not terminal soup.\\n\\nhttps://nimaaksoy.com/radar/plannotator",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "If your team ships with coding agents, review is still the weak link. Plannotator opens plans, diffs, and HTML in a local browser, lets you annotate and suggest, then feeds that markup back into the same agent session — plus an inbox for multi-agent questions without blocking the run.\\n\\nhttps://nimaaksoy.com/radar/plannotator",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "meat",
+          "url": "https://nimaaksoy.com/radar/meat"
+        },
+        {
+          "name": "Harness²",
+          "url": "https://nimaaksoy.com/radar/harness2"
+        },
+        {
+          "name": "Andee",
+          "url": "https://nimaaksoy.com/radar/andee"
+        }
+      ]
+    }
+  ]
+}
