@@ -620,6 +620,10 @@
       "stars": 552,
       "repo": "GortexAI/franco",
       "fetchedAt": "2026-10-24T15:15:56Z"
+    },
+    "plannotator": {
+      "stars": 9624,
+      "fetchedAt": "2026-10-25T07:04:55Z"
     }
   },
   "byRepo": {
@@ -1216,6 +1220,10 @@
       "stars": 552,
       "slug": "franco",
       "fetchedAt": "2026-10-24T15:15:56Z"
+    },
+    "backnotprop/plannotator": {
+      "stars": 9624,
+      "fetchedAt": "2026-10-25T07:04:55Z"
     }
   },
   "errors": [
