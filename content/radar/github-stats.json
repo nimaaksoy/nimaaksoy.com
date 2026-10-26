@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T07:05:52Z",
+  "updatedAt": "2026-10-26T07:06:28.000Z",
   "source": "github-api",
   "repoCount": 109,
   "itemCount": 124,
@@ -624,6 +624,10 @@
     "plannotator": {
       "stars": 9624,
       "fetchedAt": "2026-10-25T07:04:55Z"
+    },
+    "sandbox-runtime": {
+      "stars": 6640,
+      "fetchedAt": "2026-10-26T07:06:28.000Z"
     }
   },
   "byRepo": {
@@ -1224,6 +1228,11 @@
     "backnotprop/plannotator": {
       "stars": 9624,
       "fetchedAt": "2026-10-25T07:04:55Z"
+    },
+    "anthropics/sandbox-runtime": {
+      "stars": 6640,
+      "fetchedAt": "2026-10-26T07:06:28.000Z",
+      "slug": "sandbox-runtime"
     }
   },
   "errors": [
@@ -1378,5 +1387,5 @@
       "reset": "1785697432"
     }
   ],
-  "generatedAt": "2026-10-07T07:07:40Z"
+  "generatedAt": "2026-10-26T07:06:28.000Z"
 }
