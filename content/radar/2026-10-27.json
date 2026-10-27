@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-27",
+  "items": [
+    {
+      "slug": "blaze",
+      "name": "blaze",
+      "url": "https://github.com/indexable-inc/blaze",
+      "image": "https://opengraph.githubassets.com/1/indexable-inc/blaze",
+      "homepage": "https://ix.dev/blaze",
+      "tags": ["rust", "compiler", "incremental", "developer-tools", "hot-reload"],
+      "verdict": "must-watch",
+      "source": "github",
+      "hasDemo": false,
+      "hasApi": false,
+      "hasMcp": false,
+      "take": {
+        "en": "Same cargo commands, rebuilds that finish in tens of milliseconds — a rust-analyzer daemon that compiles only what you changed.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Rust edit loops still wait on full crate rebuilds even when you touched one function. blaze keeps the program compiled in memory and patches only the changed code, so founders shipping CLI tools, games, and big Rust services get a feedback loop that feels like a scripting language without leaving cargo.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "blaze is an open-source Rust build tool from Indexable. You run `blaze build`, `run`, and `test` (or `cargo blaze …`) like cargo. The first build still uses cargo while a long-running ra-jit daemon loads the workspace from rust-analyzer’s query database. After that, edits recompile only the functions that changed and stitch the new machine code into the binary cargo already produced — the Finished line shows `[ra-jit]`. Benchmarks on real projects report roughly 10× faster rebuilds on macOS arm64 and higher on Linux, with about 20 ms from save to a running program when live edits are on. Install is a one-line script from ix.dev; macOS Apple silicon and Linux are supported today.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install with `curl -fsSL https://ix.dev/blaze | sh`, then in any Rust project run `blaze run` or `cargo blaze build`. Wait once for the daemon to load. Change a function and build again — expect tens to hundreds of milliseconds instead of full cargo times. Optional `cargo blaze enable` routes plain cargo through blaze for editors and agents. For live programs, depend on `ra-jit-live`, poll it each frame, and keep state while functions swap in under a millisecond. Use `cargo blaze status` and `stop` to inspect or shut down the daemon.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not another wrapper that only caches target dirs, and not a full fork of rustc as your CI compiler. blaze is a build daemon beside cargo: rustc stays the reference, unsupported cases fall back visibly, and the product job is millisecond local rebuilds plus optional live patch of a running process.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "blaze is wild. same cargo commands, but after the first load it rebuilds only the functions you changed — tens of ms on real Rust projects, optional live patch into a running program.\n\nhttps://nimaaksoy.com/radar/blaze",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Rust edit loops still pay full crate rebuild cost for one-function changes. blaze keeps a rust-analyzer-based daemon warm and patches only what moved — cargo-compatible commands, millisecond local rebuilds, optional live edits.\n\nhttps://nimaaksoy.com/radar/blaze",
+          "fa": ""
+        }
+      }
+    }
+  ]
+}
