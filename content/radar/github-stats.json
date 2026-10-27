@@ -628,6 +628,10 @@
     "sandbox-runtime": {
       "stars": 6640,
       "fetchedAt": "2026-10-26T07:06:28.000Z"
+    },
+    "blaze": {
+      "stars": 916,
+      "fetchedAt": "2026-10-27T07:04:52Z"
     }
   },
   "byRepo": {
@@ -1233,6 +1237,10 @@
       "stars": 6640,
       "fetchedAt": "2026-10-26T07:06:28.000Z",
       "slug": "sandbox-runtime"
+    },
+    "indexable-inc/blaze": {
+      "stars": 916,
+      "fetchedAt": "2026-10-27T07:04:52Z"
     }
   },
   "errors": [
