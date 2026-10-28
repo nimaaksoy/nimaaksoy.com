@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-28",
+  "items": [
+    {
+      "slug": "egm",
+      "name": "Elephant-Goldfish Model",
+      "url": "https://github.com/google/elephant-goldfish-model",
+      "image": "https://opengraph.githubassets.com/1/google/elephant-goldfish-model",
+      "homepage": "https://egm.dev",
+      "tags": ["spec-driven", "design-review", "agent-skills", "google", "claude-code"],
+      "verdict": "must-watch",
+      "source": "github",
+      "hasDemo": false,
+      "hasApi": false,
+      "hasMcp": false,
+      "take": {
+        "en": "Google's open workflow for agent design: draft specs with full project context, then stress-test them with zero-context reviewers before anyone writes code.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Agents that design and implement in one long chat bake in unstated assumptions. EGM splits the job: an elephant agent holds the brief and drafts the design, then fresh goldfish subagents review only the document and cited sources — so founders catch blind spots while the cost of a rewrite is still a markdown file, not a half-built feature.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Elephant-Goldfish Model (EGM) is Google's open-source skill pack for spec-driven design with coding agents. Thousands of Google engineers use it. The elephant skill keeps project context and turns a feature idea into a concept brief and design draft. Goldfish reviewers spawn in clean sessions, read the draft plus referenced material, and flag missing requirements, unclear trade-offs, and implementation risk. You own the architectural calls and only approve the design before implementation. Plugins ship for Antigravity, Claude Code, and Codex, with docs and the full workflow at egm.dev.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install the plugin for your agent (agy plugin install, or the Claude/Codex marketplace install for egm). In a session that can spawn subagents, run brainstorm on a real feature that needs design decisions, then draft, then review on the saved design_draft path. Address the findings you care about, approve the design, and only then ask the coding agent to implement. Optional skills cover bootstrap docs for an existing codebase, a review loop of configured reviewers, and drift reports that compare checked-in designs to current source.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not GitHub Spec Kit's implement-against-a-spec pipeline, and not a plan-annotation UI. EGM's core product is the context split itself: deep-context drafting plus mandatory zero-context review before code, so the design is stress-tested by agents that never saw the chat that produced it.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Google open-sourced the Elephant-Goldfish Model. one agent drafts the design with full context, fresh zero-context reviewers stress-test it before anyone writes code. that is a real fix for agent blind spots, not another coding harness.\n\nhttps://nimaaksoy.com/radar/egm",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "EGM (Elephant-Goldfish Model) is Google's open workflow for agent-written designs: draft with full project context, then review with fresh subagents that never saw the chat. Specs get stress-tested while changes are still cheap.\n\nhttps://nimaaksoy.com/radar/egm",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {"name": "Spec Kit", "url": "https://nimaaksoy.com/radar/spec-kit"},
+        {"name": "Plannotator", "url": "https://nimaaksoy.com/radar/plannotator"}
+      ]
+    }
+  ]
+}
