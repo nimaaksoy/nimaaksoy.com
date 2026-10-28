@@ -632,6 +632,10 @@
     "blaze": {
       "stars": 916,
       "fetchedAt": "2026-10-27T07:04:52Z"
+    },
+    "egm": {
+      "stars": 3665,
+      "fetchedAt": "2026-10-28T07:06:24.000Z"
     }
   },
   "byRepo": {
@@ -1241,6 +1245,10 @@
     "indexable-inc/blaze": {
       "stars": 916,
       "fetchedAt": "2026-10-27T07:04:52Z"
+    },
+    "google/elephant-goldfish-model": {
+      "stars": 3665,
+      "fetchedAt": "2026-10-28T07:06:24.000Z"
     }
   },
   "errors": [
