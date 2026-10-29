@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-29",
+  "items": [
+    {
+      "slug": "thinkrail",
+      "name": "ThinkRail",
+      "url": "https://github.com/JetBrains/thinkrail",
+      "image": "https://opengraph.githubassets.com/1/JetBrains/thinkrail",
+      "homepage": "https://thinkrail.ai/",
+      "tags": ["agentic-ide", "jetbrains", "pi-agent", "worktrees", "spec-driven", "vibe-coding"],
+      "verdict": "must-watch",
+      "source": "github",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": true,
+      "take": {
+        "en": "JetBrains' open agentic IDE: pi coding agent in a real workbench, each job on its own git worktree, with living specs the agent keeps current.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most agent coding still dumps changes into your main checkout or lives in a thin terminal UI. ThinkRail gives founders a JetBrains-grade shell where agents run in parallel workspaces, intent lives in a SPEC graph next to the code, and PR publish/merge is one click away — so multi-agent work feels like product engineering, not chat roulette.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "ThinkRail is a JetBrains incubator project: an agentic IDE built around the open pi coding agent. You open a git repo as a project, cut workspaces as git worktrees (each with its own branch), and run concurrent pi sessions with live cost and token readouts. A graph of SPEC.md files sits beside the code; dedicated tools let the agent read and maintain that graph so product intent survives the session. Skills and workflows cover setup, design brainstorming, and shipping PRs through your own gh. MCP servers plug in with chat-level approval for non-read-only tools. Desktop app and a thinkrail CLI that opens the same UI in the browser both ship; auth is JetBrains AI or whatever providers you already configured for pi.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install the desktop build for your OS or the CLI from GitHub releases. Open a repo, create a workspace worktree for the feature, start a pi chat, and keep the plan in the shared plan UI. Review diffs in the Monaco workbench, leave anchored comments that go back into chat, then push and open a PR from the topbar. Point ThinkRail at your existing ~/.pi/agent config, or set env overrides in Settings. Connect MCP servers from Settings and approve write tools as needed.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not another terminal coding harness and not a plain IDE plugin. ThinkRail is the full workbench: isolated worktrees, living specs as ground truth, multi-session pi with cost meters, and first-class GitHub PR flow — from the same JetBrains org that ships IntelliJ.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "JetBrains open-sourced ThinkRail. real IDE around the pi agent, each job on its own git worktree, living specs the agent keeps next to the code. that is agent coding as product engineering, not another chat box.\\n\\nhttps://nimaaksoy.com/radar/thinkrail",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "ThinkRail is JetBrains' open agentic IDE: pi coding agent in a real workbench, isolated git worktrees per job, and a SPEC graph the agent maintains so intent survives the session. Desktop or CLI, your existing pi providers.\\n\\nhttps://nimaaksoy.com/radar/thinkrail",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {"name": "OpenWorker", "url": "https://nimaaksoy.com/radar/openworker"},
+        {"name": "Spec Kit", "url": "https://nimaaksoy.com/radar/spec-kit"},
+        {"name": "EGM", "url": "https://nimaaksoy.com/radar/egm"}
+      ]
+    }
+  ]
+}
