@@ -636,6 +636,10 @@
     "egm": {
       "stars": 3665,
       "fetchedAt": "2026-10-28T07:06:24.000Z"
+    },
+    "thinkrail": {
+      "stars": 5398,
+      "fetchedAt": "2026-10-29T07:05:08Z"
     }
   },
   "byRepo": {
@@ -1249,6 +1253,10 @@
     "google/elephant-goldfish-model": {
       "stars": 3665,
       "fetchedAt": "2026-10-28T07:06:24.000Z"
+    },
+    "JetBrains/thinkrail": {
+      "stars": 5398,
+      "fetchedAt": "2026-10-29T07:05:08Z"
     }
   },
   "errors": [
