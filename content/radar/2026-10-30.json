@@ -7,7 +7,13 @@
       "url": "https://github.com/qybaihe/bla",
       "image": "https://opengraph.githubassets.com/1/qybaihe/bla",
       "homepage": "https://bla.tools",
-      "tags": ["security", "adversarial-ai", "mcp", "reverse-engineering", "electron"],
+      "tags": [
+        "security",
+        "adversarial-ai",
+        "mcp",
+        "reverse-engineering",
+        "electron"
+      ],
       "verdict": "must-watch",
       "source": "github",
       "hasDemo": false,
@@ -35,17 +41,23 @@
       },
       "share": {
         "x": {
-          "en": "REA reverse-engineers release builds in one pass. BLA is the Counter-REA half: harden Electron, JS, WASM, models and more so analyzers hit budgets and decoys while runtime stays the same.\\n\\nhttps://nimaaksoy.com/radar/bla",
+          "en": "REA reverse-engineers release builds in one pass. BLA is the Counter-REA half: harden Electron, JS, WASM, models and more so analyzers hit budgets and decoys while runtime stays the same.\n\nhttps://nimaaksoy.com/radar/bla",
           "fa": ""
         },
         "linkedin": {
-          "en": "If AI agents can reverse your Electron app or JS bundle, you need a defensive pass before ship. BLA hardens release artifacts against tools like REA — poison, exhaust, hallucinate — with runtime left equivalent.\\n\\nhttps://nimaaksoy.com/radar/bla",
+          "en": "If AI agents can reverse your Electron app or JS bundle, you need a defensive pass before ship. BLA hardens release artifacts against tools like REA — poison, exhaust, hallucinate — with runtime left equivalent.\n\nhttps://nimaaksoy.com/radar/bla",
           "fa": ""
         }
       },
       "similar": [
-        {"name": "REA", "url": "https://nimaaksoy.com/radar/rea"},
-        {"name": "Deepsec", "url": "https://nimaaksoy.com/radar/deepsec"}
+        {
+          "name": "REA",
+          "url": "https://nimaaksoy.com/radar/rea"
+        },
+        {
+          "name": "Deepsec",
+          "url": "https://nimaaksoy.com/radar/deepsec"
+        }
       ]
     }
   ]
