@@ -640,6 +640,11 @@
     "thinkrail": {
       "stars": 5398,
       "fetchedAt": "2026-10-29T07:05:08Z"
+    },
+    "bla": {
+      "stars": 1025,
+      "fetchedAt": "2026-10-30T07:09:17.000Z",
+      "repo": "qybaihe/bla"
     }
   },
   "byRepo": {
@@ -1257,6 +1262,10 @@
     "JetBrains/thinkrail": {
       "stars": 5398,
       "fetchedAt": "2026-10-29T07:05:08Z"
+    },
+    "qybaihe/bla": {
+      "stars": 1025,
+      "fetchedAt": "2026-10-30T07:09:17.000Z"
     }
   },
   "errors": [
