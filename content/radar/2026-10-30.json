@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-30",
+  "items": [
+    {
+      "slug": "bla",
+      "name": "BLA",
+      "url": "https://github.com/qybaihe/bla",
+      "image": "https://opengraph.githubassets.com/1/qybaihe/bla",
+      "homepage": "https://bla.tools",
+      "tags": ["security", "adversarial-ai", "mcp", "reverse-engineering", "electron"],
+      "verdict": "must-watch",
+      "source": "github",
+      "hasDemo": false,
+      "hasApi": false,
+      "hasMcp": true,
+      "take": {
+        "en": "Counter-REA for the builds you ship: poison, exhaust, and confuse AI reverse-engineering agents while runtime stays the same.",
+        "fa": ""
+      },
+      "why": {
+        "en": "REA and friends can open a release artifact and rebuild the product story in one pass. Founders shipping Electron apps, JS bundles, WASM, models, and binaries need a defensive half of that story — harden the artifact so analyzers hit budgets and decoys instead of a clean map of your internals.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "BLA (Blind LLM Agents) is an open-source Counter-REA toolkit (MIT, npm bla-agents). You point it at the build you own. It plants format-valid canaries and decoy control flow, densifies structures past documented analyzer budgets, and leaves ambiguous rabbit holes — while users still get equivalent runtime. Coverage spans JS, Electron ASAR and fuses, WASM, SQLite, safetensors/GGUF, Go buildinfo, BEAM, EVM bytecode, PCAP, and more. Empirical red-team runs against real REA record capacity errors and redaction failures on hardened samples. Setup registers an MCP server and agent skill so you can say harden my software against REA from Claude Code, Cursor, and similar hosts.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Need Node 22.23.4+ or 24.x. Run npx bla-agents setup to wire MCP and the skill, then npx bla-agents harden . in the project (or bla defend on a known path). The pipeline audits, protects, and verifies; optional npx bla-agents benchmark walks a 14-target showcase. Agents can call bla_harden after setup. Full CLI stages and MCP catalog live in the docs; product site is bla.tools.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not another obfuscator marketed as security theater, and not Deepsec-style agent behavior audits. BLA is the explicit counter to AI reverse-engineering agents like REA: measured budget hits and decoys on release formats, with runtime equivalence as the product promise.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "REA reverse-engineers release builds in one pass. BLA is the Counter-REA half: harden Electron, JS, WASM, models and more so analyzers hit budgets and decoys while runtime stays the same.\\n\\nhttps://nimaaksoy.com/radar/bla",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "If AI agents can reverse your Electron app or JS bundle, you need a defensive pass before ship. BLA hardens release artifacts against tools like REA — poison, exhaust, hallucinate — with runtime left equivalent.\\n\\nhttps://nimaaksoy.com/radar/bla",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {"name": "REA", "url": "https://nimaaksoy.com/radar/rea"},
+        {"name": "Deepsec", "url": "https://nimaaksoy.com/radar/deepsec"}
+      ]
+    }
+  ]
+}
