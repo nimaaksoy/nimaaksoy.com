@@ -645,6 +645,10 @@
       "stars": 1025,
       "fetchedAt": "2026-10-30T07:09:17.000Z",
       "repo": "qybaihe/bla"
+    },
+    "agent-desktop": {
+      "stars": 2689,
+      "fetchedAt": "2026-10-31T07:06:19.000Z"
     }
   },
   "byRepo": {
@@ -1266,6 +1270,10 @@
     "qybaihe/bla": {
       "stars": 1025,
       "fetchedAt": "2026-10-30T07:09:17.000Z"
+    },
+    "vercel-labs/agent-desktop": {
+      "stars": 2689,
+      "fetchedAt": "2026-10-31T07:06:19.000Z"
     }
   },
   "errors": [
