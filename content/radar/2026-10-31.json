@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-31",
+  "items": [
+    {
+      "slug": "agent-desktop",
+      "name": "Agent Desktop",
+      "url": "https://github.com/vercel-labs/agent-desktop",
+      "image": "https://opengraph.githubassets.com/1/vercel-labs/agent-desktop",
+      "homepage": "https://agent-browser.dev/desktop",
+      "tags": [
+        "computer-use",
+        "accessibility",
+        "desktop-automation",
+        "ai-agents",
+        "rust",
+        "cli"
+      ],
+      "verdict": "must-watch",
+      "source": "github",
+      "hasDemo": false,
+      "hasApi": true,
+      "hasMcp": true,
+      "take": {
+        "en": "Vercel Labs computer use that reads real OS accessibility trees — stable refs, retry-safe actions, no pixel guessing.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Pixel computer-use is brittle on real desktops. If your agent needs Finder, Slack, IDEs, or native apps — not just a browser — you want structured UI trees and actions that fail cleanly when the screen changes, so loops can re-snapshot instead of clicking the wrong thing.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Agent Desktop is an open-source CLI and C library (Apache-2.0, Rust) from Vercel Labs for macOS, Windows, and Linux. It snapshots any app through the OS accessibility tree and returns JSON with a ref on every actionable element. Your agent clicks, types, or sets values on those refs, then snapshots again to verify. Headless by default: no pointer dance and no focus steal unless you pass --headed. npm package agent-desktop ships native binaries; skills wire the loop into coding agents.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install with npm install -g agent-desktop, grant Accessibility on macOS if needed, then run agent-desktop snapshot --app Finder -i, act with agent-desktop click @snapshot:ref, and snapshot again. Dense UIs start with --skeleton then drill with --root. Errors carry codes and a retry disposition so agents only retry when safe. Load agent guidance with agent-desktop skills get desktop (and platform), or npx skills add from the repo. Docs and product page: agent-browser.dev/desktop.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not another browser scraper and not vision-only computer use. Page Agent and Chrome DevTools MCP own the web DOM; Agent Desktop owns native desktop apps via accessibility APIs, with snapshot-scoped refs that go stale on purpose when the UI moves.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Vercel Labs shipped Agent Desktop: computer use through OS accessibility trees, not pixels. Snapshot gets stable refs, actions retry cleanly, works on macOS/Windows/Linux native apps.\n\nhttps://nimaaksoy.com/radar/agent-desktop",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "If your agents need real desktop apps — not only the browser — Agent Desktop from Vercel Labs is worth a look. It drives UI through accessibility trees with snapshot-scoped refs instead of fragile pixel matching.\n\nhttps://nimaaksoy.com/radar/agent-desktop",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "Page Agent",
+          "url": "https://nimaaksoy.com/radar/page-agent"
+        },
+        {
+          "name": "chrome-devtools-mcp",
+          "url": "https://nimaaksoy.com/radar/chrome-devtools-mcp"
+        },
+        {
+          "name": "Cloudflare OS",
+          "url": "https://nimaaksoy.com/radar/cloudflare-os"
+        }
+      ]
+    }
+  ]
+}
