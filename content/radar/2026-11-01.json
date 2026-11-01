@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-01",
+  "items": [
+    {
+      "slug": "sandstorm",
+      "name": "Sandstorm",
+      "url": "https://github.com/deeplethe/sandstorm",
+      "image": "https://opengraph.githubassets.com/1/deeplethe/sandstorm",
+      "homepage": "https://deeplethe.com",
+      "tags": [
+        "agent-infrastructure",
+        "sandbox",
+        "gvisor",
+        "firecracker",
+        "rust",
+        "self-hosted"
+      ],
+      "verdict": "must-watch",
+      "source": "github",
+      "hasDemo": false,
+      "hasApi": true,
+      "hasMcp": false,
+      "take": {
+        "en": "Pack thousands of agent sandboxes on cheap machines by freezing idle ones and waking them on traffic.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Agent fleets burn money sitting warm. If you run code-exec, tools, or multi-tenant agents, density is the product: Sandstorm lets one box hold far more sessions than it can keep running, without waiting on a cold Docker start every time work shows up.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Sandstorm is an open-source (Apache-2.0) Rust control plane from DeepLethe for self-hosted AI agent sandboxes. One binary, sandstormd, can act as master, node, and web console. Idle sandboxes move through hot, frozen, snapshot-on-disk, and detached tiers so memory frees up while wake stays fast. Backends are gVisor containers (default, no KVM) and Firecracker microVMs, each with its own network namespace, schedulable across a fleet.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "On Linux with cgroup v2 and runsc on PATH, build the console and sandstormd, then run sandstormd serve --master --node. Open the local HTTPS console, sign in with the API token, create a template from an image, and start sandboxes. Scale with scripts/fleet.sh across SSH hosts; nodes join by address or dial out from behind NAT. Wake-on-traffic hits a gateway that restores the sandbox and forwards the request. Everything the console does is also on the HTTP API.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not a local policy sandbox like Anthropic sandbox-runtime, and not a single-machine Docker wrapper. Sandstorm is fleet density infra: checkpoint-restore lifecycle, multi-node placement, and warm restores measured in tens to hundreds of milliseconds so agent code can sleep cheap and wake on demand.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Sandstorm is the density layer agent fleets actually need. Freeze idle sandboxes, snapshot to disk, wake on traffic — thousands of sessions on machines that could never keep them all hot.\n\nhttps://nimaaksoy.com/radar/sandstorm",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Most agent sandboxes waste RAM while the model thinks. Sandstorm freezes and snapshots idle ones, then restores them when traffic hits — gVisor or Firecracker, one control plane, self-hosted.\n\nhttps://nimaaksoy.com/radar/sandstorm",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "Sandbox Runtime",
+          "url": "https://nimaaksoy.com/radar/sandbox-runtime"
+        }
+      ]
+    }
+  ]
+}
