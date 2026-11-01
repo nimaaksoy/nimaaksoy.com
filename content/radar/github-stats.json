@@ -649,6 +649,10 @@
     "agent-desktop": {
       "stars": 2689,
       "fetchedAt": "2026-10-31T07:06:19.000Z"
+    },
+    "sandstorm": {
+      "stars": 3559,
+      "fetchedAt": "2026-11-01T07:06:58Z"
     }
   },
   "byRepo": {
@@ -1274,6 +1278,10 @@
     "vercel-labs/agent-desktop": {
       "stars": 2689,
       "fetchedAt": "2026-10-31T07:06:19.000Z"
+    },
+    "deeplethe/sandstorm": {
+      "stars": 3559,
+      "fetchedAt": "2026-11-01T07:06:58Z"
     }
   },
   "errors": [
