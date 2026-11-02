@@ -653,6 +653,10 @@
     "sandstorm": {
       "stars": 3559,
       "fetchedAt": "2026-11-01T07:06:58Z"
+    },
+    "craft-anything": {
+      "stars": 1744,
+      "fetchedAt": "2026-11-02T07:05:54Z"
     }
   },
   "byRepo": {
@@ -1282,6 +1286,10 @@
     "deeplethe/sandstorm": {
       "stars": 3559,
       "fetchedAt": "2026-11-01T07:06:58Z"
+    },
+    "storytold/craft-anything": {
+      "stars": 1744,
+      "fetchedAt": "2026-11-02T07:05:54Z"
     }
   },
   "errors": [
