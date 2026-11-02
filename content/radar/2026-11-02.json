@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-02",
+  "items": [
+    {
+      "slug": "craft-anything",
+      "name": "Craft Anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "image": "https://opengraph.githubassets.com/1/storytold/craft-anything",
+      "homepage": "https://getartcraft.com/",
+      "tags": [
+        "reverse-engineering",
+        "coding-agents",
+        "mcp",
+        "rust",
+        "clean-room",
+        "desktop"
+      ],
+      "verdict": "must-watch",
+      "source": "github",
+      "hasDemo": false,
+      "hasApi": false,
+      "hasMcp": true,
+      "take": {
+        "en": "Point it at a site, app, or game, then have a coding agent rebuild your own version and check it against the original.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Founders still reverse-engineer by hand or paste screenshots into a chat. Craft Anything turns inspection, clean-room rebuild, and visual/behaviour checks into one loop your own Claude Code session can run — so you keep the evidence trail and a real project folder, not a one-shot prompt.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Craft Anything is an open-source (Apache-2.0 / MIT) pure-Rust engine from the ArtCraft suite. It studies websites, desktop and phone apps, games, and files with real inspection tools, then drives a local coding agent to build a new project in the stack you name. A check step compares the build to the original and refines until it is close. Default Clean room mode never reads inside the target — only what a visitor can see. Deep mode unlocks full reverse-engineering, including Ghidra when installed. Early alpha, with a desktop app, CLI, and MCP server.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install a release build or cargo run the desktop app, or cargo install the craft-anything-cli. Sign in a local Claude Code (Codex adapter exists). Point at a URL or binary, say what you want, and start. The flow is Study → Build → Check → Ready, with approval cards for anything outside your rules. From the CLI: craft-anything-cli rebuild https://example.com \"Recreate this website\". Every tool is also an MCP tool via craft-anything-cli mcp, so any agent can drive the same engine without the GUI.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not another chat wrapper that guesses from a screenshot, and not REA-style reverse-engineering alone. Craft Anything owns the full product loop: evidence-backed study, agent rebuild into a real repo, multi-width and behaviour checks, plus clean-room defaults so you can recreate without reading source you should not copy.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Craft Anything is wild. point it at a website, app, or game, study with real tools, then let Claude Code rebuild your own version and check it against the original — clean room by default, MCP for any agent.\\n\\nhttps://nimaaksoy.com/radar/craft-anything",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Craft Anything turns reverse-engineering into a rebuild loop. Study a target with 300+ tools, have a local coding agent craft a new project, then compare and refine. Clean room mode stays outside the original; Deep mode goes all the way in.\\n\\nhttps://nimaaksoy.com/radar/craft-anything",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "REA",
+          "url": "https://nimaaksoy.com/radar/rea"
+        },
+        {
+          "name": "PhotoCraft",
+          "url": "https://nimaaksoy.com/radar/photocraft"
+        }
+      ]
+    }
+  ]
+}
