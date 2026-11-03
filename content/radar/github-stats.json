@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T07:06:28.000Z",
+  "updatedAt": "2026-11-03T07:06:48Z",
   "source": "github-api",
   "repoCount": 109,
   "itemCount": 124,
@@ -657,6 +657,10 @@
     "craft-anything": {
       "stars": 1744,
       "fetchedAt": "2026-11-02T07:05:54Z"
+    },
+    "dsh-superagent": {
+      "stars": 14544,
+      "fetchedAt": "2026-11-03T07:06:48Z"
     }
   },
   "byRepo": {
@@ -1290,6 +1294,10 @@
     "storytold/craft-anything": {
       "stars": 1744,
       "fetchedAt": "2026-11-02T07:05:54Z"
+    },
+    "deepseek-ai/dsh-superagent-prototype": {
+      "stars": 14544,
+      "fetchedAt": "2026-11-03T07:06:48Z"
     }
   },
   "errors": [
