@@ -1,0 +1,69 @@
+{
+  "date": "2026-11-03",
+  "items": [
+    {
+      "slug": "dsh-superagent",
+      "name": "dsh-superagent",
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
+      "image": "https://opengraph.githubassets.com/1/deepseek-ai/dsh-superagent-prototype",
+      "homepage": "https://www.deepseek.com/en/harness/",
+      "tags": [
+        "autonomous-agents",
+        "deepseek",
+        "github",
+        "agent-ops",
+        "research-prototype",
+        "dsh"
+      ],
+      "verdict": "must-watch",
+      "source": "github",
+      "hasDemo": false,
+      "hasApi": false,
+      "hasMcp": false,
+      "take": {
+        "en": "DeepSeek's research prototype for a proactive coding agent that watches one GitHub repo, opens real work, and stays quiet unless a person must act.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most coding agents burn a team's attention with noise. dsh-superagent is built around the opposite rule: take as little attention as possible and only speak when someone can use a result or must decide. That is the missing ops layer if you want agents on a real product repo without drowning Slack and PR review.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "dsh-superagent is an MIT research prototype from DeepSeek, not a finished product. It ships as a DeepSeek Harness (dsh) plugin aimed at one GitHub repository, with optional Feishu. Allowed people ask for work; the agent opens a ticket, works in its own session and directory, and answers in the same thread — often with a pull request. A web panel surfaces only what needs a human. The numbered docs (philosophy, domain model, authorization, execution) are the real deliverable: a full design for autonomous team agents that refuse busywork.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "You need DeepSeek Harness plus this bundle. Ask your coding agent to read SETUP.md and walk the setup with you one short question at a time. Point it at a single owner/name repo, a dedicated GitHub bot account, and a short allow-list of who may request work. Default accept mode is observe: proactive candidates are recorded without acting until you trust the behaviour. Live work uses git worktrees per ticket, worker sessions under dsh, and channel replies back to GitHub (and Feishu if enabled).",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not another desktop multi-agent app and not a generic coding TUI. The product story is authorization and attention: Sources, Triggers, Eval, Mandates, and Tickets decide when work may start, how far it may go, and when silence is the right answer. DeepSeek published it as reference architecture from internal practice — adapt before you run it on production traffic.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "DeepSeek open-sourced dsh-superagent: a research prototype for a proactive repo agent that only talks when a person must act or can use a result. the philosophy docs alone are worth the star.\n\nhttps://nimaaksoy.com/radar/dsh-superagent",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "dsh-superagent is DeepSeek's reference design for autonomous coding agents on a real GitHub repo. Listen for allowed asks, open tickets, ship PRs, and stay quiet unless a human must decide. Research prototype on DeepSeek Harness — read the philosophy first.\n\nhttps://nimaaksoy.com/radar/dsh-superagent",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "Agent Desktop",
+          "url": "https://nimaaksoy.com/radar/agent-desktop"
+        },
+        {
+          "name": "Sandstorm",
+          "url": "https://nimaaksoy.com/radar/sandstorm"
+        },
+        {
+          "name": "Craft Anything",
+          "url": "https://nimaaksoy.com/radar/craft-anything"
+        }
+      ]
+    }
+  ]
+}
