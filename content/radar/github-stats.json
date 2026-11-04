@@ -661,6 +661,11 @@
     "dsh-superagent": {
       "stars": 14544,
       "fetchedAt": "2026-11-03T07:06:48Z"
+    },
+    "auto-ontology": {
+      "stars": 3367,
+      "fetchedAt": "2026-11-04T07:06:26Z",
+      "repo": "NVIDIA/auto-ontology"
     }
   },
   "byRepo": {
@@ -1298,6 +1303,16 @@
     "deepseek-ai/dsh-superagent-prototype": {
       "stars": 14544,
       "fetchedAt": "2026-11-03T07:06:48Z"
+    },
+    "NVIDIA/auto-ontology": {
+      "stars": 3367,
+      "fetchedAt": "2026-11-04T07:06:26Z",
+      "slug": "auto-ontology"
+    },
+    "nvidia/auto-ontology": {
+      "stars": 3367,
+      "fetchedAt": "2026-11-04T07:06:26Z",
+      "slug": "auto-ontology"
     }
   },
   "errors": [
