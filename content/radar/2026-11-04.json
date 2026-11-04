@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-04",
+  "items": [
+    {
+      "slug": "auto-ontology",
+      "name": "Auto-Ontology",
+      "url": "https://github.com/NVIDIA/auto-ontology",
+      "image": "https://opengraph.githubassets.com/1/NVIDIA/auto-ontology",
+      "homepage": "https://github.com/NVIDIA/auto-ontology",
+      "tags": [
+        "nvidia",
+        "ontology",
+        "text-to-sql",
+        "mcp",
+        "agents",
+        "enterprise-data",
+        "github"
+      ],
+      "verdict": "must-watch",
+      "source": "github",
+      "hasDemo": true,
+      "hasApi": true,
+      "hasMcp": true,
+      "take": {
+        "en": "NVIDIA's open context layer that turns database metadata into a certified ontology so agents answer analytics questions with less wrong SQL.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Paste-the-schema into an agent still invents joins and measures. Founders shipping internal data agents need one place where revenue, customers, and joins are defined once, reviewed by people, then exposed to any harness. That is what gates trust on real warehouse questions.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Auto-Ontology is an Apache-2.0 service you run next to your databases. It compiles schemas into a semantic graph of business terms, reviewed SQL attributes, and table relationships, then serves that context through a web UI, REST API, agent skills, and an MCP server. Agents resolve terms before they write SQL, check whether a question is answerable, and return the SQL plus the steps they took. A companion eval repo compares ontology-backed answers against schema-only baselines on BIRD and other benchmarks.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Docker Compose stands up the Next.js UI, FastAPI backend, ingestion service, MCP server, and Postgres with pgvector. Point connection strings at your sources, run semantic compilation, then certify terms in the UI. Connect any MCP client to the read-only tools, or use Chat in the app. Each answer can show SQL, rows, CSV, and charts. Import and export semantic models via Apache Ossie YAML when you already own a model.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not another text-to-SQL chatbot and not a generic vector RAG pack. The product is the certified ontology itself: discover from metadata, ground one definition per concept, let humans certify, then expose the same layer to every agent. Wrong confident answers are the failure mode it is built to reduce.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "NVIDIA open-sourced Auto-Ontology: a context layer that compiles your databases into a certified semantic graph so agents stop guessing joins and measures. MCP + API + UI, with evals against schema-only baselines.\n\nhttps://nimaaksoy.com/radar/auto-ontology",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Auto-Ontology from NVIDIA is an open context service for agentic analytics. It builds a certified ontology from database metadata, then serves terms, joins, and reviewed SQL through MCP, API, and a web UI so agents can check answerability before they run a query.\n\nhttps://nimaaksoy.com/radar/auto-ontology",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "codebase-memory-mcp",
+          "url": "https://nimaaksoy.com/radar/codebase-memory-mcp"
+        },
+        {
+          "name": "PageIndex",
+          "url": "https://nimaaksoy.com/radar/pageindex"
+        },
+        {
+          "name": "OpenViking",
+          "url": "https://nimaaksoy.com/radar/openviking"
+        }
+      ]
+    }
+  ]
+}
