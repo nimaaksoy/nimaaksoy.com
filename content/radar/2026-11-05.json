@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-05",
+  "items": [
+    {
+      "slug": "rea-video",
+      "name": "rea-video",
+      "url": "https://github.com/JuneYaooo/rea-video",
+      "image": "https://opengraph.githubassets.com/1/JuneYaooo/rea-video",
+      "homepage": "https://github.com/JuneYaooo/rea-video",
+      "tags": [
+        "video",
+        "reverse-engineering",
+        "agents",
+        "aigc-detection",
+        "remotion",
+        "short-video",
+        "github"
+      ],
+      "verdict": "must-watch",
+      "source": "github",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": false,
+      "take": {
+        "en": "Point an agent at any short video and get a shot-by-shot breakdown of how it was filmed, AI-made, or coded — plus a remake plan.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Founders copying viral product clips still guess camera setups, prompts, and cuts by eye. rea-video turns that into evidence and a recipe: what was live, what was generated, what was motion graphics, and how to rebuild it with your own assets instead of a vague \"make something like this\" prompt.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "rea-video is an open-source Python CLI built for coding agents (Claude Code, Codex, and anything that can run shell). Feed it a local video and it splits shots, separates voice/music/effects, gathers frame and audio evidence, then decides per shot whether the picture was live footage, AI video, avatar, 3D, code/template, screen recording, or a mix. You get a one-line mix summary, a remake plan (film vs generate vs code), and a full HTML report with frames, prompts, lighting notes, and caption timing. Optional vision models (Gemini or Doubao) raise accuracy on platform-recompressed downloads; tools-only mode stays offline and free on original files.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install ffmpeg and Python 3.10+, then ask your agent to install the repo and break down a path or download. The pipeline is split → gather evidence → decide with hard signals first → plan remakes batched for real video-model limits. Captions export to SRT/ASS. Pair with the author's cheap-claude-video / capsule-cinema flow if you want AI shots regenerated on the original timeline; live shots stay a shooting plan, code shots become a Remotion project.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not REA (apps and binaries) and not a one-click lookalike renderer like Hypit. The product is understanding production: live vs AI vs code per shot, then a cheap remake recipe. Hypit ships a new video; rea-video ships the forensic brief those tools skip.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "rea-video is wild. drop any short into an agent and get a shot-by-shot report: live vs AI vs code, captions, audio, and a real remake plan — not another \"make it like this\" guess.\n\nhttps://nimaaksoy.com/radar/rea-video",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "rea-video turns viral video reverse-engineering into an agent workflow. It labels each shot as live, AI, avatar, 3D, code, or screen capture, then hands you a film / generate / Remotion remake plan with a full HTML report.\n\nhttps://nimaaksoy.com/radar/rea-video",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "REA",
+          "url": "https://nimaaksoy.com/radar/rea"
+        },
+        {
+          "name": "Craft Anything",
+          "url": "https://nimaaksoy.com/radar/craft-anything"
+        },
+        {
+          "name": "OpenMontage",
+          "url": "https://nimaaksoy.com/radar/openmontage"
+        }
+      ]
+    }
+  ]
+}
