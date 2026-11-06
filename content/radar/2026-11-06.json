@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-06",
+  "items": [
+    {
+      "slug": "openmausbot",
+      "name": "OpenMausBot",
+      "url": "https://github.com/milind-soni/OpenMausBot",
+      "image": "https://opengraph.githubassets.com/1/milind-soni/OpenMausBot",
+      "homepage": "https://www.openmausbot.com/",
+      "tags": ["agents", "desktop", "computer-use", "self-hosted"],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "source": "github",
+      "take": {
+        "en": "Open-source Grok Bot shape: a messaging app where every chat is a real agent with its own model, computer, and apps.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Closed products like Grok Bot, Meta Muse, OpenAI dots, and Cue by Manus all put a roster of personal agents behind their cloud. OpenMausBot rebuilds that shape local-first: Electron chat UI, bots as contacts, and each bot running on the Claude, Codex, or Grok CLI you already pay for. Transcripts and keys stay under ~/.openmausbot. No affiliation with xAI — it is the independent open alternative to that product category.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Founders keep getting locked into one vendor’s agent cloud with one model and one shared machine. OpenMausBot lets you run a whole team on your machine, mix models per bot, and keep approval gates on shell, files, and host control. That is the product people actually want when they search for an open Muse or open Grok Bot.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install the desktop app, point engines at your local Claude/Codex/Grok CLIs, and add bots like contacts. Each bot can spin a cloud Linux desktop, an isolated local VM, or — with explicit opt-in — host control on macOS or Ubuntu. Risky actions show as Allow/Deny cards in chat. Composio connects Gmail, Slack, GitHub, Notion, and hundreds more. Channels split Work vs Personal without cloning bots; you can import whole teams from Markdown playbooks.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Not another coding TUI or single coworker window. The unit is a messaging roster of agents, each with its own computer and apps — the same UX metaphor as Grok Bot, rebuilt open and bring-your-own-agent.",
+        "fa": ""
+      },
+      "similar": [
+        {
+          "name": "OpenWorker",
+          "url": "https://nimaaksoy.com/radar/openworker"
+        },
+        {
+          "name": "Agent Desktop",
+          "url": "https://nimaaksoy.com/radar/agent-desktop"
+        },
+        {
+          "name": "qm",
+          "url": "https://nimaaksoy.com/radar/qm"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "OpenMausBot is the open Grok Bot shape people keep asking for. messaging app of real agents, each with its own model, computer, and apps, on the CLIs you already run.\n\nhttps://nimaaksoy.com/radar/openmausbot",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Closed personal-agent apps all put the model and the computer on the vendor side. OpenMausBot keeps the messaging-roster shape and runs it local-first on Claude, Codex, or Grok CLIs you already have.\n\nhttps://nimaaksoy.com/radar/openmausbot",
+          "fa": ""
+        }
+      }
+    }
+  ]
+}
