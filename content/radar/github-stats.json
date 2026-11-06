@@ -671,6 +671,10 @@
       "stars": 1445,
       "fetchedAt": "2026-11-05T07:05:21Z",
       "repo": "JuneYaooo/rea-video"
+    },
+    "openmausbot": {
+      "stars": 13846,
+      "fetchedAt": "2026-11-06T07:08:14Z"
     }
   },
   "byRepo": {
@@ -1328,6 +1332,10 @@
       "stars": 1445,
       "fetchedAt": "2026-11-05T07:05:21Z",
       "slug": "rea-video"
+    },
+    "milind-soni/OpenMausBot": {
+      "stars": 13846,
+      "fetchedAt": "2026-11-06T07:08:14Z"
     }
   },
   "errors": [
