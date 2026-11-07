@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-07",
+  "items": [
+    {
+      "slug": "vork",
+      "name": "vork",
+      "url": "https://github.com/voyager-so/vork",
+      "image": "https://opengraph.githubassets.com/1/voyager-so/vork",
+      "homepage": "https://voyager.so/vork",
+      "tags": ["3d", "vfx", "agents", "rendering", "rust"],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "source": "github",
+      "take": {
+        "en": "A headless 3D and VFX engine built for agents — they write the scene as code, render on GPU, inspect the frame, and revise. No editor to drive.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most creative stacks still assume a human in Blender or After Effects. vork flips that: agents own the shot loop end to end, so product teams can ship real rendered 3D and VFX without a video model or a timeline UI.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "vork is Voyager’s rendering kernel: Rust plus Slang on Vulkan or Metal, free during the research preview. There is no GUI. An agent (or you) authors a scene, calls render, looks at the PNG or MP4, then edits the program. Ordinary shots are scene JSON; weird shots get GPU programs for materials, light paths, simulation, and compositing. Examples go from a first sphere to a million-bird murmuration, VFX over real footage, and a black-hole lensing shot — none of that is generative video.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install the release for Linux/Windows NVIDIA or Apple Silicon Metal, then paste a short prompt to your coding agent: read vork help, make a small scene, render a preview, refine camera and light, then final. Save scene JSON (Python and TypeScript SDKs ship in the install folder), run vork render shot.json --profile std/previs, inspect the image, and loop. Frame ranges mux to MP4 when you need a clip.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Blender and Nuke expose knobs for people. vork keeps the thin kernel agents cannot invent on the fly — geometry, ray queries, GPU time — and lets the agent write the rest as code mid-shot. That is the opposite of OpenMontage-style edit pipelines and rea-video-style reverse engineering: this is forward production for agent drivers.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "vork is a real shift for agent creative work. headless 3D/VFX on GPU, scene as code, no timeline UI. agent writes, renders, looks, revises. not another video model wrapper.\n\nhttps://nimaaksoy.com/radar/vork",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Creative tools still assume a human in the DCC. vork is a headless 3D and VFX engine where the agent owns the shot: write scene code, render on GPU, inspect, revise. Worth a look if you are building agent-native media pipelines.\n\nhttps://nimaaksoy.com/radar/vork",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {"name": "OpenMontage", "url": "https://nimaaksoy.com/radar/openmontage"},
+        {"name": "rea-video", "url": "https://nimaaksoy.com/radar/rea-video"},
+        {"name": "HyperFrames", "url": "https://nimaaksoy.com/radar/hyperframes"},
+        {"name": "PhotoCraft", "url": "https://nimaaksoy.com/radar/photocraft"}
+      ]
+    }
+  ]
+}
