@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-08",
+  "items": [
+    {
+      "slug": "astryx",
+      "name": "Astryx",
+      "url": "https://github.com/meta/astryx",
+      "image": "https://opengraph.githubassets.com/1/meta/astryx",
+      "homepage": "https://astryx.atmeta.com",
+      "tags": ["design-system", "react", "agents", "ui", "meta"],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "source": "github",
+      "take": {
+        "en": "Meta open-sourced the design system behind 13,000+ internal apps — 150+ components, themes, and a CLI built so people and coding agents build the same way.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most AI UI stacks still fight a closed component library or a pile of one-off Tailwind. Astryx gives founders Meta-grade primitives plus agent-friendly docs and CLI, so product agents and humans ship from one source of truth instead of inventing a new button every session.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Astryx grew inside Meta for about eight years and is now public under MIT. It ships typed React 19 components on StyleX under the hood, but consumers just import CSS and components — no styling lock-in. Themes are CSS custom properties, so brand can change without forking. Open internals and swizzle let you eject full component source when you need ownership. Docs, Storybook, and a live sandbox sit next to an npm CLI for lists, templates, scaffolding, themes, and codemods.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install @astryxdesign/core plus a theme and StyleX, optionally add the CLI globally so every agent can call astryx. Drop in the theme provider and CSS imports in Next, Vite, or plain React. Use the CLI to list components, pull templates, and run docs commands the same way a human would. Agents get the same reference surface; people get Storybook and the sandbox at astryx.atmeta.com.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Hallmark and Impeccable polish vibe-coded UI after the fact. shadcn-style kits give copy-paste parts. Astryx is the full system Meta already ran at scale, with theming and a CLI designed so agents and humans share one API instead of reverse-engineering screenshots.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Meta just open-sourced Astryx — the design system behind 13k+ internal apps. 150+ components, real theming, CLI built for people and coding agents together. not another vibe-UI skill pack.\n\nhttps://nimaaksoy.com/radar/astryx",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Astryx is Meta’s long-running internal design system, now open source. React 19 components, brand-level themes, and a CLI aimed at both humans and AI assistants. Worth a look if your agents keep reinventing UI primitives.\n\nhttps://nimaaksoy.com/radar/astryx",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {"name": "Hallmark", "url": "https://nimaaksoy.com/radar/hallmark"},
+        {"name": "Impeccable", "url": "https://nimaaksoy.com/radar/impeccable"},
+        {"name": "json-render", "url": "https://nimaaksoy.com/radar/json-render"},
+        {"name": "shadcn/lint", "url": "https://nimaaksoy.com/radar/shadcn-lint"}
+      ]
+    }
+  ]
+}
