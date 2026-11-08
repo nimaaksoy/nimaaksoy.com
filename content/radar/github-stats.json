@@ -679,6 +679,11 @@
     "vork": {
       "stars": 494,
       "fetchedAt": "2026-11-07T07:06:11.000Z"
+    },
+    "astryx": {
+      "stars": 14778,
+      "fetchedAt": "2026-11-08T07:06:19Z",
+      "repo": "meta/astryx"
     }
   },
   "byRepo": {
@@ -1344,6 +1349,11 @@
     "voyager-so/vork": {
       "stars": 494,
       "fetchedAt": "2026-11-07T07:06:11.000Z"
+    },
+    "meta/astryx": {
+      "stars": 14778,
+      "fetchedAt": "2026-11-08T07:06:19Z",
+      "slug": "astryx"
     }
   },
   "errors": [
