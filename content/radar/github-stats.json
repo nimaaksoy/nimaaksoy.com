@@ -684,6 +684,11 @@
       "stars": 14778,
       "fetchedAt": "2026-11-08T07:06:19Z",
       "repo": "meta/astryx"
+    },
+    "pinky": {
+      "stars": 1083,
+      "fetchedAt": "2026-11-09T07:04:47Z",
+      "repo": "DIYgod/pinky"
     }
   },
   "byRepo": {
@@ -1354,6 +1359,11 @@
       "stars": 14778,
       "fetchedAt": "2026-11-08T07:06:19Z",
       "slug": "astryx"
+    },
+    "DIYgod/pinky": {
+      "stars": 1083,
+      "fetchedAt": "2026-11-09T07:04:47Z",
+      "slug": "pinky"
     }
   },
   "errors": [
