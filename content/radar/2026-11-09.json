@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-09",
+  "items": [
+    {
+      "slug": "pinky",
+      "name": "Pinky",
+      "url": "https://github.com/DIYgod/pinky",
+      "image": "https://opengraph.githubassets.com/1/DIYgod/pinky",
+      "homepage": "https://github.com/DIYgod/pinky/releases/latest",
+      "tags": ["mobile-agents", "mcp", "human-in-the-loop", "iphone", "android"],
+      "verdict": "must-watch",
+      "hasMcp": true,
+      "source": "github",
+      "take": {
+        "en": "Any MCP agent can drive a real iPhone or Android from your computer — while you approve the risky taps.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Phone agents usually mean either blind GUI automation or a full runtime living on the device. Pinky is the missing middle: Claude Code, Codex, Cursor, or any MCP client runs on your laptop, sees the phone screen, and acts through a gateway that holds payments, sends, and other high-risk steps until you click Allow. Founders who want agents to book, reply, or install on a real phone without handing over the keys finally have an open native app for that loop.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Pinky is a tiny native desktop app (macOS, Windows, Linux — no Electron) that mirrors iPhone and Android, exposes phone control as an MCP server, and enforces safety outside the model. Banking and password apps stay invisible by default. Agents never see the unlock PIN. Runs record steps, screenshots, and screen video for local audit. Status is pre-alpha, but end-to-end Claude Code runs on real Android USB and iOS 27 are already documented.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install the desktop app, add a phone over USB or Wi-Fi, and connect an agent from Settings or via pinkyctl mcp. The agent gets MCP tools for screen, taps, typing, and apps. When a payment or send button shows up, Pinky freezes that action in the gateway until you allow it. On newer Android the agent can work on a hidden second screen so your main UI stays yours. Take over any time from the mirror; touch the phone and the agent pauses.",
+        "fa": ""
+      },
+      "different": {
+        "en": "PalmClaw runs the whole agent on-device with typed tools. Browser stacks only drive the web. Pinky keeps your existing coding agents on the computer and gives them a real phone with human-gated risk, multi-OS clients, and a permanent local record — not another prompt that says please ask first.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Pinky lets any MCP agent drive a real iPhone or Android from your laptop — and holds the risky taps until you allow them. not another blind phone bot.\n\nhttps://nimaaksoy.com/radar/pinky",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Pinky is an open native app that turns Claude Code, Codex, Cursor, or any MCP agent into a phone operator with human-in-the-loop approvals. Real iOS and Android, local audit trail, risk rules outside the model.\n\nhttps://nimaaksoy.com/radar/pinky",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "PalmClaw",
+          "url": "https://nimaaksoy.com/radar/palmclaw"
+        },
+        {
+          "name": "Agent Desktop",
+          "url": "https://nimaaksoy.com/radar/agent-desktop"
+        },
+        {
+          "name": "Chrome DevTools MCP",
+          "url": "https://nimaaksoy.com/radar/chrome-devtools-mcp"
+        }
+      ]
+    }
+  ]
+}
