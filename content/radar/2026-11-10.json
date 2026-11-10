@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-10",
+  "items": [
+    {
+      "slug": "exact",
+      "name": "Exact",
+      "url": "https://github.com/expo/exact",
+      "image": "https://opengraph.githubassets.com/1/expo/exact",
+      "homepage": "https://github.com/expo/exact",
+      "tags": ["agents", "rust", "cross-platform", "mobile", "ui"],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "source": "github",
+      "take": {
+        "en": "Expo’s Charlie Cheever open-sourced Exact: one Contract UI runs native on web, iOS, macOS, and Linux — and agents can build, drive, and test it on every host.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most agent app stacks still mean React Native plus flaky screenshots, or a webview pretending to be native. Exact gives founders a real agent-native runtime: the same ten ops work on every platform, tests do not flake on timers, and one source ships without a JS bridge in the UI path. If you are building products where coding agents own the app loop, this is the clearest new frame since Expo itself.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Exact is a cross-platform application runtime written mostly in Rust. You describe the interface in Contract, a small typed declarative language, and put data logic in TypeScript or Rust. A compiler bakes a plan; the web host drives the real DOM with a ~20 KB runtime, while macOS and iOS draw with AppKit and UIKit, and Linux paints on the GPU. There is no webview and no JavaScript bridge in the UI. The project is MIT, pre-1.0, and changes fast on purpose — Expo’s main React framework is not going away.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install Rust, Bun, Chrome, and Xcode on a Mac, run the setup script, then clone or `exact new`. Put views and actions in Contract and list state in TypeScript or Rust. Agents drive hosts through ten shared ops: tree, screenshot, tap, type, state, layout, logs, clock, prefer, perf. The clock is agent-owned, so you advance time instead of sleeping. Write `app.test.contract` once and run it unchanged on web, macOS, and the iOS Simulator. Human loop stays on the fast web target; native hosts get swept behind you.",
+        "fa": ""
+      },
+      "different": {
+        "en": "React Native and Expo still optimize for people writing JS components. Browser stacks only own the web. Exact assumes agents write much of the app, keeps Contract small enough for a context window, and proves the same build on native controls without a second test harness. Pre-alpha, but the agent driver and multi-host test story are the product, not a demo slide.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Exact just dropped from Expo’s Charlie Cheever. one Contract UI runs native on web, iOS, macOS, Linux — and agents can build, drive, and test it with the same ten ops. not another RN wrapper.\\n\\nhttps://nimaaksoy.com/radar/exact",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Exact is an agent-native app framework from Expo co-founder Charlie Cheever. Contract for UI, TypeScript or Rust for data, real native hosts without a webview bridge, and one agent driver across platforms. Pre-alpha and worth watching if your agents ship product UI.\\n\\nhttps://nimaaksoy.com/radar/exact",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "Pinky",
+          "url": "https://nimaaksoy.com/radar/pinky"
+        },
+        {
+          "name": "Agent Desktop",
+          "url": "https://nimaaksoy.com/radar/agent-desktop"
+        },
+        {
+          "name": "Astryx",
+          "url": "https://nimaaksoy.com/radar/astryx"
+        }
+      ]
+    }
+  ]
+}
