@@ -689,6 +689,10 @@
       "stars": 1083,
       "fetchedAt": "2026-11-09T07:04:47Z",
       "repo": "DIYgod/pinky"
+    },
+    "exact": {
+      "stars": 1324,
+      "fetchedAt": "2026-11-10T07:07:24Z"
     }
   },
   "byRepo": {
@@ -1364,6 +1368,10 @@
       "stars": 1083,
       "fetchedAt": "2026-11-09T07:04:47Z",
       "slug": "pinky"
+    },
+    "expo/exact": {
+      "stars": 1324,
+      "fetchedAt": "2026-11-10T07:07:24Z"
     }
   },
   "errors": [
