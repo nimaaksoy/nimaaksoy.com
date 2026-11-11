@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-11",
+  "items": [
+    {
+      "slug": "edge0",
+      "name": "Edge0",
+      "url": "https://github.com/Edge0-AI/Edge0",
+      "image": "https://opengraph.githubassets.com/1/Edge0-AI/Edge0",
+      "homepage": "https://edge0.ai",
+      "tags": ["local-inference", "moe", "llm", "edge", "mobile"],
+      "verdict": "must-watch",
+      "hasDemo": false,
+      "hasApi": true,
+      "source": "github",
+      "take": {
+        "en": "Run a 35B MoE in about 2.5 GB of RAM. Experts stream from SSD, and a trained prerouter loads the next step before you stall.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Founders still treat big MoE models as a cloud bill. Edge0 turns that into a laptop and phone product: peak memory tracks the active experts, not the full parameter count, and the same native engine ships on Mac, iPhone, Android, and Windows with an OpenAI-compatible local server. If you care about private or offline agents without a 70B GPU farm, this is the practical stack of the week.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Edge0 is an open-source streaming MoE inference framework built around three pieces that ship together: SSD expert offload, Recover-LoRA adapters that claw quality back after int4, and a trained prerouter that predicts which experts the next token needs so loads overlap the forward pass. The team reports up to about 59% better decode throughput when storage is the bottleneck. Checkpoints for a 35B-A3B and an 8B-A1B tier live on Hugging Face and ModelScope with the adapters and prerouter heads included. A unified GGML-based engine (edge0-infer) replaces the older per-platform Python paths with one C++ API, CLI, and chat examples.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Build or install edge0-infer, pull a released Edge0 checkpoint with the asset tools, and convert it for the engine. Run the CLI or the local OpenAI-compatible server, or link the native CMake target in-process. Routed experts land in a fixed slot budget per layer from disk; prerouter mode prepares the next token’s experts in the background while the current token runs. Multi-turn chat reuses earlier compute so only new messages pay full cost. Prefill and decode can sit on different backends on the same device, for example Metal prefill with CPU decode.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Generic offload runtimes still wait on the model’s live routing before they touch disk. Edge0 co-trains the router prediction, the LoRA recovery, and the checkpoint as one unit, then ships the same engine across desktop and mobile. It is not another chat wrapper on a hosted API — it is a memory-bounded sparse MoE runtime you can actually put on consumer silicon.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Edge0 is wild. a 35B MoE in ~2.5 GB RAM by streaming experts from SSD, with a trained prerouter that loads the next step before you stall. same engine on Mac, iPhone, Android, Windows.\n\nhttps://nimaaksoy.com/radar/edge0",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Edge0 open-sources streaming MoE inference for consumer hardware: SSD expert offload, Recover-LoRA, and a trained prerouter so a 35B-class sparse model can run around a few GB of RAM on Mac, phone, and Windows — with a local OpenAI-compatible server.\n\nhttps://nimaaksoy.com/radar/edge0",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "Colibri",
+          "url": "https://nimaaksoy.com/radar/colibri"
+        },
+        {
+          "name": "Paritok",
+          "url": "https://nimaaksoy.com/radar/paritok"
+        }
+      ]
+    }
+  ]
+}
