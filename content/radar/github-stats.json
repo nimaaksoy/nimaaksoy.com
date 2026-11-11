@@ -693,6 +693,10 @@
     "exact": {
       "stars": 1324,
       "fetchedAt": "2026-11-10T07:07:24Z"
+    },
+    "edge0": {
+      "stars": 9678,
+      "fetchedAt": "2026-11-11T07:06:11Z"
     }
   },
   "byRepo": {
@@ -1372,6 +1376,10 @@
     "expo/exact": {
       "stars": 1324,
       "fetchedAt": "2026-11-10T07:07:24Z"
+    },
+    "Edge0-AI/Edge0": {
+      "stars": 9678,
+      "fetchedAt": "2026-11-11T07:06:11Z"
     }
   },
   "errors": [
