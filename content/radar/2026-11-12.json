@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-12",
+  "items": [
+    {
+      "slug": "aws-emulator",
+      "name": "AWS Emulator",
+      "url": "https://github.com/aws/aws-emulator",
+      "image": "https://opengraph.githubassets.com/1/aws/aws-emulator",
+      "homepage": "https://docs.aws.amazon.com/emulator/latest/userguide/what-is-service.html",
+      "tags": ["aws", "local-dev", "testing", "ci", "agents", "rust"],
+      "verdict": "must-watch",
+      "hasDemo": false,
+      "hasApi": true,
+      "source": "github",
+      "take": {
+        "en": "AWS open-sourced a local emulator of its APIs — same CLI and SDKs, no cloud account, built for CI and coding agents.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most teams still burn real AWS calls (and surprise bills) just to exercise S3, Dynamo, or Lambda in tests. AWS Emulator gives you an official local endpoint so founders can keep agent loops and CI green offline, then only pay when they deploy. That is a bigger shift than another third-party mock stack.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "AWS Emulator is a Rust workspace that serves AWS-shaped APIs on your machine. Point the AWS CLI or any SDK at its endpoint and your code talks to emulated resources instead of the real cloud. There is no GUI — it is a local HTTPS service (default 127.0.0.1:9297) or an embedded in-process client for Rust tests. Releases publish fidelity scores per service, and gaps live in the repo’s issues tree so you can see what matches production today.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install a package or Docker image and run aws-emulator, or add the embedded crate as a Rust dev-dependency. Set the usual endpoint env vars so CLI and SDKs hit the local server. Coding agents can install the aws-emulator skill via AWS agent-toolkit and wire setup themselves. Turn telemetry off with a flag, EMULATOR_TELEMETRY, or config.toml if you want zero phone-home on a laptop.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Community mocks reverse-engineer the surface. This is AWS’s own emulator with Smithy-driven services, release fidelity scores, and a first-class path for AI coding agents. It is for build and test only — not production or security validation — but for local agent and CI work that is exactly the job.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "AWS just open-sourced a local emulator of its APIs. same CLI/SDKs, no account required, and a skill so coding agents can set it up. real offline CI and agent loops without burning cloud calls.\n\nhttps://nimaaksoy.com/radar/aws-emulator",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "AWS Emulator is now open source: a local endpoint that speaks AWS APIs so you can run CLI, SDK, CI, and coding-agent workflows without an account or live cloud calls. Official docs, fidelity scores per service, and an agent skill for setup.\n\nhttps://nimaaksoy.com/radar/aws-emulator",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "Sandbox Runtime",
+          "url": "https://nimaaksoy.com/radar/sandbox-runtime"
+        },
+        {
+          "name": "Sandstorm",
+          "url": "https://nimaaksoy.com/radar/sandstorm"
+        }
+      ]
+    }
+  ]
+}
