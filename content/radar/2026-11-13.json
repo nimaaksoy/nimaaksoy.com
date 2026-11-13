@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-13",
+  "items": [
+    {
+      "slug": "ui-sdk",
+      "name": "UI SDK",
+      "url": "https://github.com/vercel-labs/ui",
+      "image": "https://opengraph.githubassets.com/1/vercel-labs/ui",
+      "homepage": "https://ui-sdk.dev",
+      "tags": ["ui", "agents", "accessibility", "react", "headless", "vercel"],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": true,
+      "source": "github",
+      "take": {
+        "en": "Vercel Labs open-sourced UI SDK: behavior primitives (focus, selection, popups, drag) so coding agents build real accessible UI across React, Vue, Svelte, Solid, and web components.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Agents still spit out pretty buttons that break keyboard nav, focus traps, and ARIA. UI SDK puts the hard interaction rules in a shared core your agent can compose, so you get product UI that works like a human-built component library without hand-writing every behavior twice.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "UI SDK is a headless behavior library, not a styled design system. Core packages define primitives like focus recovery, selection, typeahead, dismissal, and popups with the ARIA they need. Framework adapters render the same parts in React, Vue, Svelte, Solid, or web components. Docs live at ui-sdk.dev, and a skill install path teaches agents how to define primitives instead of inventing one-off components.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install @ui-sdk/core plus an adapter such as @ui-sdk/react. Define a primitive with definePrimitive (state, api, slots), then createParts in your framework and mount the parts as normal components. Give the agent the skill with npx skills add vercel-labs/ui --skill ui-sdk so it writes the behavior layer for you. Same primitive definition ports across the five adapters.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Astryx and shadcn-style kits hand you finished components. Hallmark and Impeccable polish vibe UI after the fact. UI SDK is the missing middle: agent-first behavior bricks that stay framework-agnostic, so the interaction model is correct before anyone picks a theme.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Vercel Labs shipped UI SDK — behavior primitives so coding agents build accessible UI (focus, selection, popups, drag) across React, Vue, Svelte, Solid, and web components. not another pretty component dump.\\n\\nhttps://nimaaksoy.com/radar/ui-sdk",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "UI SDK from Vercel Labs is a headless behavior library aimed at coding agents. Shared core for focus, selection, popups, and ARIA, with adapters for five UI stacks. Useful if your agents keep shipping buttons that look fine and fail keyboard and a11y.\\n\\nhttps://nimaaksoy.com/radar/ui-sdk",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {"name": "Astryx", "url": "https://nimaaksoy.com/radar/astryx"},
+        {"name": "Exact", "url": "https://nimaaksoy.com/radar/exact"},
+        {"name": "json-render", "url": "https://nimaaksoy.com/radar/json-render"},
+        {"name": "Hallmark", "url": "https://nimaaksoy.com/radar/hallmark"}
+      ]
+    }
+  ]
+}
