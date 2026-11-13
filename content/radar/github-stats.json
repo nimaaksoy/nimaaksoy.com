@@ -697,6 +697,10 @@
     "edge0": {
       "stars": 9678,
       "fetchedAt": "2026-11-11T07:06:11Z"
+    },
+    "ui-sdk": {
+      "stars": 2299,
+      "fetchedAt": "2026-11-13T07:06:03Z"
     }
   },
   "byRepo": {
@@ -1380,6 +1384,10 @@
     "Edge0-AI/Edge0": {
       "stars": 9678,
       "fetchedAt": "2026-11-11T07:06:11Z"
+    },
+    "vercel-labs/ui": {
+      "stars": 2299,
+      "fetchedAt": "2026-11-13T07:06:03Z"
     }
   },
   "errors": [
