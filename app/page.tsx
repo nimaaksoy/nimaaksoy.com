@@ -1,18 +1,19 @@
 "use client";
 
 import {
+  IconActivityHeartbeat,
   IconBrain,
   IconBrandMedium,
   IconBrandX,
   IconBrandYoutube,
   IconCalendarEvent,
+  IconCircleDot,
   IconGlassFull,
   IconMail,
   IconMapPin,
   IconMountain,
   IconMusic,
   IconPlane,
-  IconUsersGroup,
 } from "@tabler/icons-react";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { useEffect, useMemo, useRef, useState, type ComponentType } from "react";
@@ -451,7 +452,7 @@ export default function Home() {
           >
             <div className="mx-auto max-w-[1180px]">
               <div className="grid gap-10 md:gap-12 lg:grid-cols-[300px_1fr]">
-                <motion.div variants={itemVariants} className="flex flex-col justify-between gap-10 lg:gap-0">
+                <motion.div variants={itemVariants} className="flex flex-col gap-10">
                   <div>
                     <p className="font-jetbrains text-[11px] uppercase tracking-[0.16em] text-[#7F7F7F]">
                       CURRENT FOCUS
@@ -483,45 +484,57 @@ export default function Home() {
 
                 <motion.div variants={itemVariants} className="border-b border-[#1F1F1F]">
                   {/* Vocaler.ai */}
-                  <article className="border-t border-[#1F1F1F] py-9">
+                  <article className="min-w-0 border-t border-[#1F1F1F] py-9">
                     <div className="grid gap-8 md:grid-cols-2">
                       <div>
                         <p className="font-jetbrains text-[11px] tracking-[0.14em] text-[#7F7F7F]">
                           01 / 01
                         </p>
-                        <h3 className="mt-3 font-monroe text-[32px] font-light leading-[1.1] text-[#EAEAEA]">
+                        <h3 className="mt-3 font-monroe text-[32px] font-semibold leading-[1.1] text-[#EAEAEA]">
                           Vocaler.ai
                         </h3>
                         <p className="mt-2 max-w-xs font-monroe text-[16px] italic text-[#9A9A9A]">
-                          Create, release, and grow music in one place.
+                          Make the music you want to hear.
                         </p>
-                        <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#1F1F1F] px-3 py-1 font-jetbrains text-[10px] tracking-[0.14em] text-[#FF3B30]">
-                          <span className="h-1.5 w-1.5 rounded-full bg-[#FF3B30]" /> RAISING PRE-SEED
+                        <p className="mt-4 font-monroe text-[16px] text-[#BDBDBD]">
+                          Create music with leading AI models, release your songs, and build your own audience. All in one place.
+                        </p>
+                        <span className="mt-5 inline-flex items-center gap-2 font-jetbrains text-[11px] tracking-[0.12em] text-[#FF3B30]">
+                          <IconCircleDot size={14} aria-hidden="true" /> LIVE &amp; OPEN TO EVERYONE
                         </span>
                       </div>
 
-                      <div className="border-l border-[#1F1F1F] pl-6 md:pl-8">
+                      <div className="border-t border-[#1F1F1F] pt-8 md:border-l md:border-t-0 md:pl-8 md:pt-0">
                         <div className="flex items-center gap-2">
-                          <IconUsersGroup size={18} stroke={1.8} className="text-[#FF3B30]" />
+                          <IconActivityHeartbeat size={18} stroke={1.8} aria-hidden="true" className="shrink-0 text-[#FF3B30]" />
                           <p className="font-jetbrains text-[10px] uppercase tracking-[0.14em] text-[#FF3B30]">
-                            BUILDING OUR OWN MUSIC MODEL
+                            YOUR NEXT FAVORITE SONG DOESN&apos;T EXIST YET
                           </p>
                         </div>
                         <p className="mt-3 font-monroe text-[16px] italic text-[#9A9A9A]">
-                          We&apos;re looking for the right investor to help us take Vocaler from platform to proprietary AI.
+                          What if you could create exactly the music you want to hear? Give Vocaler a try. No music skills needed.
                         </p>
                         <div className="mt-6 flex flex-wrap gap-3">
                           <a
-                            href="https://vocaler.ai/"
+                            href="https://vocaler.ai/studio/"
                             target="_blank"
                             rel="noopener follow"
                             className="inline-flex items-center rounded-full border border-[#FF3B30] px-5 py-2.5 font-jetbrains text-[12px] uppercase tracking-[0.12em] text-[#FF3B30] transition hover:bg-[#FF3B30]/10"
                           >
-                            VIEW PROJECT →
+                            CREATE YOUR FIRST SONG <span aria-hidden="true" className="ml-2">→</span>
                           </a>
                         </div>
                       </div>
                     </div>
+                    <iframe
+                      src="https://vocaler.ai/embed/nima"
+                      width="100%"
+                      height={352}
+                      className="mt-8 block w-full rounded-xl border-0"
+                      allow="autoplay; encrypted-media"
+                      loading="lazy"
+                      title="Nima on Vocaler"
+                    />
                   </article>
                 </motion.div>
               </div>
