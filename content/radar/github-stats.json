@@ -701,6 +701,10 @@
     "ui-sdk": {
       "stars": 2299,
       "fetchedAt": "2026-11-13T07:06:03Z"
+    },
+    "modern-web-guidance": {
+      "stars": 11749,
+      "fetchedAt": "2026-11-14T07:06:43Z"
     }
   },
   "byRepo": {
@@ -1388,6 +1392,10 @@
     "vercel-labs/ui": {
       "stars": 2299,
       "fetchedAt": "2026-11-13T07:06:03Z"
+    },
+    "GoogleChrome/modern-web-guidance": {
+      "stars": 11749,
+      "fetchedAt": "2026-11-14T07:06:43Z"
     }
   },
   "errors": [
