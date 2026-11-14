@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-14",
+  "items": [
+    {
+      "slug": "modern-web-guidance",
+      "name": "Modern Web Guidance",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance",
+      "image": "https://opengraph.githubassets.com/1/GoogleChrome/modern-web-guidance",
+      "homepage": "https://developer.chrome.com/docs/modern-web-guidance",
+      "tags": ["web", "skills", "coding-agents", "css", "a11y", "chrome"],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": false,
+      "source": "github",
+      "take": {
+        "en": "Chrome, Edge, Firefox, and MDN ship agent skills that push coding agents off legacy web patterns toward native platform APIs.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Coding agents still write jQuery-era dialogs, heavy polyfills, and layout hacks because training data is full of old code. Modern Web Guidance injects short, curated platform guides into the agent context so founders get View Transitions, Popover, anchor positioning, and real a11y instead of another bloated JS widget.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Modern Web Guidance is a skill pack plus CLI stewarded by Google Chrome, Microsoft Edge, Mozilla Firefox, and MDN. It covers hundreds of modern CSS, HTML, DOM, performance, forms, accessibility, and built-in browser AI APIs. Guides are token-efficient and eval-pruned so agents get the patterns models usually mishandle, with browser compatibility baked in.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Run npx modern-web-guidance@latest install and point it at your coding agent. Search or retrieve a guide by topic, or run legacy-scan on a repo to flag outdated patterns. The skill returns targeted markdown into the agent context when the model is writing UI, layout, or forms.",
+        "fa": ""
+      },
+      "different": {
+        "en": "UI SDK gives agents behavior primitives. Impeccable and Hallmark polish design taste. This is the browser vendors' own playbook: what the platform can do natively now, so agents stop reinventing it in JavaScript.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Chrome + Edge + Firefox + MDN shipped Modern Web Guidance — agent skills that stop coding agents from writing legacy web junk and push native APIs (View Transitions, Popover, anchor positioning, a11y) instead.\n\nhttps://nimaaksoy.com/radar/modern-web-guidance",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Modern Web Guidance is a multi-browser skill pack for coding agents. Chrome, Edge, Firefox, and MDN curate short platform guides so agents use native web APIs instead of bloated legacy patterns. CLI install, search, retrieve, and legacy-scan on a repo.\n\nhttps://nimaaksoy.com/radar/modern-web-guidance",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {"name": "UI SDK", "url": "https://nimaaksoy.com/radar/ui-sdk"},
+        {"name": "Impeccable", "url": "https://nimaaksoy.com/radar/impeccable"},
+        {"name": "Hallmark", "url": "https://nimaaksoy.com/radar/hallmark"}
+      ]
+    }
+  ]
+}
