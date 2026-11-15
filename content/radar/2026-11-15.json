@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-15",
+  "items": [
+    {
+      "slug": "ag-ui",
+      "name": "AG-UI",
+      "url": "https://github.com/ag-ui-protocol/ag-ui",
+      "image": "https://opengraph.githubassets.com/1/ag-ui-protocol/ag-ui",
+      "homepage": "https://ag-ui.com",
+      "tags": ["agents", "protocol", "frontend", "generative-ui", "mcp", "copilotkit"],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": true,
+      "source": "github",
+      "take": {
+        "en": "The open event protocol that wires AI agents into real product UIs — chat, shared state, generative UI, and human-in-the-loop — the way MCP wires tools.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most agent demos still die at a chat box. Founders building in-app copilots need a standard pipe for streaming tokens, tool calls, UI components, and approvals. AG-UI is that pipe: MCP gives tools, A2A gives agent-to-agent, AG-UI brings the agent into the frontend so you stop inventing a private event schema for every product.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "AG-UI is an MIT-licensed Agent-User Interaction Protocol. Agent backends emit a small set of typed events (run start, tokens, tools, reasoning, shared state, finish) over transports like SSE or WebSockets. Apps send a simple compatible input and get a stream they can render. The stack ships SDKs, middleware for loose format matching, a reference HTTP connector, and the AG-UI Dojo with live demos. It grew out of CopilotKit and now has first-party or partner support across LangGraph, CrewAI, Microsoft Agent Framework, Google ADK, Mastra, Pydantic AI, Agno, LlamaIndex, and more.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Scaffold with npx create-ag-ui-app, or point an existing agent framework at the AG-UI client and emit the standard events from your run loop. The frontend listens for stream events and updates chat, generative UI parts, and shared state. Use the Dojo to try framework demos, then wire human-in-the-loop and frontend tools when the agent needs a decision or a browser-side action.",
+        "fa": ""
+      },
+      "different": {
+        "en": "UI SDK and json-render help agents build components. AG-UI is the transport and contract between any agent backend and any user-facing app — not another component library, and not MCP. It is the missing third protocol in the agent stack for product UI.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "MCP gives agents tools. A2A gives agents other agents. AG-UI is the open protocol that actually puts agents inside your product UI — streaming, shared state, generative UI, human-in-the-loop.\n\nhttps://nimaaksoy.com/radar/ag-ui",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "AG-UI is the Agent-User Interaction Protocol: a standard event stream so AI agents can drive real frontends (chat, shared state, generative UI, approvals). It sits next to MCP and A2A, with wide framework support and an open Dojo.\n\nhttps://nimaaksoy.com/radar/ag-ui",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {"name": "UI SDK", "url": "https://nimaaksoy.com/radar/ui-sdk"},
+        {"name": "json-render", "url": "https://nimaaksoy.com/radar/json-render"},
+        {"name": "Exact", "url": "https://nimaaksoy.com/radar/exact"}
+      ]
+    }
+  ]
+}
