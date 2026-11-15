@@ -705,6 +705,11 @@
     "modern-web-guidance": {
       "stars": 11749,
       "fetchedAt": "2026-11-14T07:06:43Z"
+    },
+    "ag-ui": {
+      "stars": 17465,
+      "repo": "ag-ui-protocol/ag-ui",
+      "fetchedAt": "2026-11-15T07:05:31Z"
     }
   },
   "byRepo": {
@@ -1396,6 +1401,11 @@
     "GoogleChrome/modern-web-guidance": {
       "stars": 11749,
       "fetchedAt": "2026-11-14T07:06:43Z"
+    },
+    "ag-ui-protocol/ag-ui": {
+      "stars": 17465,
+      "fetchedAt": "2026-11-15T07:05:31Z",
+      "slug": "ag-ui"
     }
   },
   "errors": [
