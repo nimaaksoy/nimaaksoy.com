@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-16",
+  "items": [
+    {
+      "slug": "tokeneconomizer",
+      "name": "TokenEconomizer",
+      "url": "https://github.com/microsoft/TokenEconomizer",
+      "image": "https://opengraph.githubassets.com/1/microsoft/TokenEconomizer",
+      "homepage": "https://tokeneconomizer.github.io/",
+      "tags": ["agents", "coding-agents", "cost", "tokens", "microsoft", "claude-code", "codex"],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": false,
+      "source": "github",
+      "take": {
+        "en": "Microsoft Research + Berkeley plugin that cuts coding-agent token cost 18–31% without changing the agent — it learns your repo’s waste across sessions.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Founders burn money when agents relearn the same pytest flag, reload unused tools every turn, and loop on the same failure. TokenEconomizer sits outside Claude Code, Codex, Copilot CLI, and Pi and fixes that over time. Real SWE-Bench savings, not a blog tip.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "TokenEconomizer is an Apache-2.0 black-box controller from Microsoft Research, UC Berkeley, and Microsoft Security. It never patches model weights or agent code. Across sessions in one repository it builds three policies: micro-skills that inject proven repo facts at session start, tool pruning that drops definitions the agent never uses, and a failure-loop guard that redirects stuck turns. On 277 SWE-Bench tasks it cut mean cost 18.4–30.9% across five agent–model pairs and was cheaper in every repository cell. It stacks with RTK. State stays local under ~/.tokeneconomizer.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Clone the repo and install the plugin for your agent (Claude Code, Codex, Copilot CLI, or Pi install git:…). Work as usual. After sessions it updates repo state: confirmed facts become session-start context, idle tools drop via the agent’s own settings, and a judge can add one redirect when a turn is stuck. Check with /tokeneconomizer:status or te status. Experimental hooks exist for Cursor, Grok Build, opencode, Hermes, and more.",
+        "fa": ""
+      },
+      "different": {
+        "en": "cost-xray shows where tokens go. RTK shrinks shell noise. Paritok compresses payloads at a gateway. TokenEconomizer is the controller that changes what the unchanged agent loads and retries next time, from experience in that repo.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "Microsoft Research + Berkeley shipped TokenEconomizer — a plugin that cuts coding-agent bills ~18–31% without touching the agent. It learns your repo: inject facts, prune dead tools, break failure loops. Claude Code, Codex, Copilot CLI, Pi.\n\nhttps://nimaaksoy.com/radar/tokeneconomizer",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "TokenEconomizer is an open-source cost controller for coding agents from Microsoft Research and UC Berkeley. It leaves Claude Code, Codex, Copilot CLI, and Pi unchanged and cuts measured SWE-Bench cost by learning repo-specific waste across sessions — micro-skills, tool pruning, and failure-loop redirects.\n\nhttps://nimaaksoy.com/radar/tokeneconomizer",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {"name": "RTK", "url": "https://nimaaksoy.com/radar/rtk"},
+        {"name": "cost-xray", "url": "https://nimaaksoy.com/radar/cost-xray"},
+        {"name": "Paritok", "url": "https://nimaaksoy.com/radar/paritok"}
+      ]
+    }
+  ]
+}
