@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-03T07:06:48Z",
+  "updatedAt": "2026-11-16T07:09:02Z",
   "source": "github-api",
   "repoCount": 109,
   "itemCount": 124,
@@ -710,6 +710,11 @@
       "stars": 17465,
       "repo": "ag-ui-protocol/ag-ui",
       "fetchedAt": "2026-11-15T07:05:31Z"
+    },
+    "tokeneconomizer": {
+      "stars": 6752,
+      "repo": "microsoft/TokenEconomizer",
+      "fetchedAt": "2026-11-16T07:09:02Z"
     }
   },
   "byRepo": {
@@ -1406,6 +1411,10 @@
       "stars": 17465,
       "fetchedAt": "2026-11-15T07:05:31Z",
       "slug": "ag-ui"
+    },
+    "microsoft/TokenEconomizer": {
+      "stars": 6752,
+      "fetchedAt": "2026-11-16T07:09:02Z"
     }
   },
   "errors": [
