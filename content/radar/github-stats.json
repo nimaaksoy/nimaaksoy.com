@@ -715,6 +715,11 @@
       "stars": 6752,
       "repo": "microsoft/TokenEconomizer",
       "fetchedAt": "2026-11-16T07:09:02Z"
+    },
+    "skillevaluator": {
+      "stars": 2983,
+      "fetchedAt": "2026-11-17T07:06:16Z",
+      "repo": "NVIDIA/SkillEvaluator"
     }
   },
   "byRepo": {
@@ -1415,6 +1420,11 @@
     "microsoft/TokenEconomizer": {
       "stars": 6752,
       "fetchedAt": "2026-11-16T07:09:02Z"
+    },
+    "NVIDIA/SkillEvaluator": {
+      "stars": 2983,
+      "fetchedAt": "2026-11-17T07:06:16Z",
+      "slug": "skillevaluator"
     }
   },
   "errors": [
