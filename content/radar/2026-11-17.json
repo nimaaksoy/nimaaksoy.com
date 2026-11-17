@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-17",
+  "items": [
+    {
+      "slug": "skillevaluator",
+      "name": "SkillEvaluator",
+      "url": "https://github.com/NVIDIA/SkillEvaluator",
+      "image": "https://opengraph.githubassets.com/1/NVIDIA/SkillEvaluator",
+      "homepage": "https://docs.nvidia.com/skills/skillevaluator/",
+      "tags": [
+        "agents",
+        "skills",
+        "evaluation",
+        "nvidia",
+        "claude-code",
+        "codex",
+        "mcp",
+        "ci"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": false,
+      "source": "github",
+      "take": {
+        "en": "NVIDIA’s open stack that grades agent skills — static quality, overlap, harness fit, and live with/without runs — so you know a skill actually helps before you ship it.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Everyone is dumping SKILL.md packs. Almost nobody measures whether they change agent outcomes. Founders shipping skills into Claude Code, Codex, Hermes, or CI need gates beyond vibes and a security scan. SkillEvaluator is that gate: quality score, dedupe, harness load checks, and sandboxed live eval.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "SkillEvaluator is Apache-2.0 from NVIDIA, part of the Verified Skills pipeline. It targets the Agent Skills folder format. Three independent tiers: Tier 1 validation (well-formed, safe, harness-compatible — can pull SkillSpector and Gitleaks), Tier 2 semantic overlap against a skill catalog, Tier 3 live agent evaluation that compares task results with and without the skill in a sandbox (Harbor by default). CLI and PyPI package, CI init templates, and an agent skill so you can ask “is my skill any good?” from the coding agent itself. Research paper on arXiv.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "pip install skillevaluator or uv tool install. Run skillevaluator validate ./my-skill --tiers 1 with no key for static quality and harness-check across Codex, Claude Code, OpenCode, Hermes, OpenClaw, Copilot CLI. Add LLM provider keys for rubric scores. For full stack: doctor, then validate with tiers 1–3 and Docker sandbox. skillevaluator ci init drops a PR that checks every skill change. Or npx skills add NVIDIA/SkillEvaluator and ask the agent to review a skill path.",
+        "fa": ""
+      },
+      "different": {
+        "en": "SkillSpector scans skills for injection and exfil. SkillOpt and Skill Recorder create or optimize skills. SkillEvaluator answers a different question: is this skill loadable, non-overlapping, and does it move the agent’s real task score — with CI and live A/B-style runs, not only a security badge.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "NVIDIA open-sourced SkillEvaluator — grade agent skills before you ship them. Static quality, overlap, harness load checks, and live with/without agent runs. Complements SkillSpector (security) with real impact eval.\n\nhttps://nimaaksoy.com/radar/skillevaluator",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "SkillEvaluator is NVIDIA’s open multi-tier framework for evaluating AI agent skills: quality gates, semantic overlap, harness compatibility, synthetic eval sets, and sandboxed live runs that measure whether a skill actually improves agent behavior. Fits Claude Code, Codex, Hermes, and CI.\n\nhttps://nimaaksoy.com/radar/skillevaluator",
+          "fa": ""
+        }
+      },
+      "similar": [
+        {
+          "name": "SkillSpector",
+          "url": "https://nimaaksoy.com/radar/skillspector"
+        },
+        {
+          "name": "SkillOpt",
+          "url": "https://nimaaksoy.com/radar/skillopt"
+        },
+        {
+          "name": "Skill Recorder",
+          "url": "https://nimaaksoy.com/radar/skill-recorder"
+        }
+      ]
+    }
+  ]
+}
