@@ -700,7 +700,7 @@
     },
     "ui-sdk": {
       "stars": 2299,
-      "fetchedAt": "2026-11-13T07:06:03Z"
+      "fetchedAt": "2026-11-18T07:06:00Z"
     },
     "modern-web-guidance": {
       "stars": 11749,
@@ -720,6 +720,10 @@
       "stars": 2983,
       "fetchedAt": "2026-11-17T07:06:16Z",
       "repo": "NVIDIA/SkillEvaluator"
+    },
+    "rust-anything": {
+      "stars": 1894,
+      "fetchedAt": "2026-11-18T07:06:10.000Z"
     }
   },
   "byRepo": {
@@ -1406,7 +1410,7 @@
     },
     "vercel-labs/ui": {
       "stars": 2299,
-      "fetchedAt": "2026-11-13T07:06:03Z"
+      "fetchedAt": "2026-11-18T07:06:00Z"
     },
     "GoogleChrome/modern-web-guidance": {
       "stars": 11749,
@@ -1425,6 +1429,10 @@
       "stars": 2983,
       "fetchedAt": "2026-11-17T07:06:16Z",
       "slug": "skillevaluator"
+    },
+    "erkamyaman/rust-anything": {
+      "stars": 1894,
+      "fetchedAt": "2026-11-18T07:06:10.000Z"
     }
   },
   "errors": [
