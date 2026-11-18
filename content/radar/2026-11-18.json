@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-18",
+  "items": [
+    {
+      "slug": "rust-anything",
+      "name": "rust-anything",
+      "url": "https://github.com/erkamyaman/rust-anything",
+      "image": "https://opengraph.githubassets.com/1/erkamyaman/rust-anything",
+      "homepage": "https://www.npmjs.com/package/rust-anything",
+      "tags": [
+        "rust",
+        "migration",
+        "performance",
+        "agents",
+        "mcp",
+        "typescript",
+        "python",
+        "ffi"
+      ],
+      "verdict": "must-watch",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": true,
+      "source": "github",
+      "take": {
+        "en": "Rewrite hot paths (or a whole app) into Rust one unit at a time — your coding agent writes the Rust, rust-anything records the original behavior and refuses to ship until every case matches.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Most “port to Rust” work dies in silent behavior drift. Founders sitting on slow Node, Python, Go, Ruby, or Java code need a gate that proves the port is identical before callers switch. rust-anything turns migration into a profile → bridge → record → diff → bench → gate loop your agent can run, not a weekend rewrite gamble.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "rust-anything is an MIT CLI plus MCP server and agent skill for Claude Code, Codex, Cursor, and Gemini CLI. It does not auto-translate code. It profiles real workloads, plans port order, scaffolds a Rust crate and language bridge (napi/wasm, PyO3, cgo, JNI, and more), records what the original returns or throws on edge cases, replays those cases against Rust, benches both sides, can shadow in production, and only passes gate when behavior, API, and quality checks line up. Supports TypeScript/JavaScript, Python, C, Go, Ruby, Java, with PHP and C# in preview. Batch modes keep work in Rust across many inputs.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install with cargo install rust-anything or npm install -g rust-anything, then rust-anything setup so your agent gets the MCP tools and skill. Profile a workload, analyze the repo for units and risks, bridge a hot function or module, record cases from the original, let the agent fill port.rs, then diff, bench, optional shadow, and gate. For a full app, app record and a Rust front door keep the original as reference while units lift one by one.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Coding agents can spit Rust. They cannot reliably invent the behavior contract. rust-anything is the missing contract and ship gate: recorded cases, bridges that keep the original API, and a done signal that is replay-proof — not another harness or generic refactor prompt.",
+        "fa": ""
+      },
+      "share": {
+        "x": {
+          "en": "rust-anything is the sane way to move slow code to Rust with a coding agent. It records what your app does today, scaffolds the bridge, and blocks ship until every replayed case matches. Profile, port, prove.\n\nhttps://nimaaksoy.com/radar/rust-anything",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "rust-anything lets you rewrite hot paths or whole apps into Rust unit by unit while keeping the original as the behavior source of truth. Your agent writes the Rust; the tool profiles, bridges, records edge cases, diffs, benches, and gates until replay is clean. Works with Claude Code, Codex, Cursor, and more across TS, Python, Go, Ruby, Java, and C.\n\nhttps://nimaaksoy.com/radar/rust-anything",
+          "fa": ""
+        }
+      }
+    }
+  ]
+}
