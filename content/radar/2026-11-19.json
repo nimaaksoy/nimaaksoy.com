@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-19",
+  "items": [
+    {
+      "slug": "agent-access",
+      "name": "Agent Access",
+      "url": "https://github.com/bitwarden/agent-access",
+      "image": "https://opengraph.githubassets.com/1/bitwarden/agent-access",
+      "tags": [
+        "agents",
+        "credentials",
+        "bitwarden",
+        "protocol",
+        "security",
+        "cli"
+      ],
+      "verdict": "worth-testing",
+      "hasDemo": true,
+      "hasApi": false,
+      "hasMcp": false,
+      "source": "github",
+      "take": {
+        "en": "Bitwarden’s open protocol so an agent can use one saved login without ever seeing your whole vault.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Coding agents keep asking for GitHub tokens, database passwords, and deploy keys. The usual fix is pasting the secret into the prompt, or handing the agent the entire password manager. Agent Access is the missing middle. You approve a pairing, the agent asks for one domain, and the secret can go straight into a command’s environment instead of the chat.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Agent Access is an Apache-2.0 protocol, CLI (aac), and SDK from Bitwarden. A credential provider sits on your side. Bitwarden CLI is built in, and any password manager can implement the same protocol. A remote agent or script connects through an end-to-end encrypted tunnel (Noise) and requests one credential by domain or vault item id. The spec is still a v0 draft by Anders Åberg and Bernd Schoolmann, with contributors from Dashlane and OpenAI. The CLI has stable releases through v0.11.0, and the README still calls the project an early preview.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install the aac binary, run aac listen next to the Bitwarden CLI, and unlock the vault. That prints a pairing token. On the agent machine, aac connect --token … --domain github.com --output json fetches that one item. Prefer aac run --domain github.com --env GH_TOKEN=password -- your-command so the secret is injected into the child process and never printed. Python, JavaScript/WASM, and Rust clients can make the same request from code. A demo provider (aac listen --provider example) lets you try the tunnel without a real vault.",
+        "fa": ""
+      },
+      "different": {
+        "en": "OAuth is better when the service already has it. A full vault token is worse. Sandbox Runtime locks files and network. It does not decide which password an agent may see. Agent Access is the credential gate: one item, user-mediated, encrypted tunnel, and an env-inject path so the model context stays clean.",
+        "fa": ""
+      },
+      "similar": [
+        {
+          "name": "Sandbox Runtime",
+          "url": "https://nimaaksoy.com/radar/sandbox-runtime"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "Bitwarden open-sourced Agent Access. Your agent pairs with your password manager, asks for one login, and can get it as env vars instead of a pasted secret or a full vault dump. Protocol is still early. The useful part is already there.\n\nhttps://nimaaksoy.com/radar/agent-access",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Agents keep asking for tokens and passwords. Pasting them into the prompt, or unlocking the whole vault, is a bad trade. Bitwarden’s Agent Access is an open protocol and CLI that pairs an agent to your password manager, returns one credential, and can inject it into a command so it never lands in the chat. Still an early v0 spec. Worth testing before you hand an agent a vault token.\n\nhttps://nimaaksoy.com/radar/agent-access",
+          "fa": ""
+        }
+      }
+    }
+  ]
+}
