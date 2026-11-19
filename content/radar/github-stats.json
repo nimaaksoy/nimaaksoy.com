@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T07:09:02Z",
+  "updatedAt": "2026-11-19T07:10:31Z",
   "source": "github-api",
   "repoCount": 109,
   "itemCount": 124,
@@ -724,6 +724,11 @@
     "rust-anything": {
       "stars": 1894,
       "fetchedAt": "2026-11-18T07:06:10.000Z"
+    },
+    "agent-access": {
+      "stars": 464,
+      "repo": "bitwarden/agent-access",
+      "fetchedAt": "2026-11-19T07:10:31Z"
     }
   },
   "byRepo": {
@@ -1433,6 +1438,11 @@
     "erkamyaman/rust-anything": {
       "stars": 1894,
       "fetchedAt": "2026-11-18T07:06:10.000Z"
+    },
+    "bitwarden/agent-access": {
+      "stars": 464,
+      "slug": "agent-access",
+      "fetchedAt": "2026-11-19T07:10:31Z"
     }
   },
   "errors": [
