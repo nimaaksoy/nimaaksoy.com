@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-19T07:10:31Z",
+  "updatedAt": "2026-11-20T07:08:33Z",
   "source": "github-api",
-  "repoCount": 109,
-  "itemCount": 124,
+  "repoCount": 110,
+  "itemCount": 125,
   "bySlug": {
     "opencut": {
       "stars": 80500,
@@ -729,6 +729,11 @@
       "stars": 464,
       "repo": "bitwarden/agent-access",
       "fetchedAt": "2026-11-19T07:10:31Z"
+    },
+    "loopforge": {
+      "stars": 5122,
+      "repo": "Tencent/LoopForge",
+      "fetchedAt": "2026-11-20T07:08:33Z"
     }
   },
   "byRepo": {
@@ -1443,6 +1448,11 @@
       "stars": 464,
       "slug": "agent-access",
       "fetchedAt": "2026-11-19T07:10:31Z"
+    },
+    "Tencent/LoopForge": {
+      "stars": 5122,
+      "slug": "loopforge",
+      "fetchedAt": "2026-11-20T07:08:33Z"
     }
   },
   "errors": [
