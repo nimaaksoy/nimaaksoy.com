@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-20",
+  "items": [
+    {
+      "slug": "loopforge",
+      "name": "LoopForge",
+      "url": "https://github.com/Tencent/LoopForge",
+      "image": "https://opengraph.githubassets.com/1/Tencent/LoopForge",
+      "homepage": "https://loopforge.cn",
+      "tags": [
+        "agents",
+        "workflow",
+        "self-hosted",
+        "sop",
+        "coding-agents",
+        "tencent"
+      ],
+      "verdict": "worth-testing",
+      "hasDemo": true,
+      "hasApi": true,
+      "hasMcp": true,
+      "source": "github",
+      "take": {
+        "en": "Tencent’s self-hosted desk that runs coding agents through the same delivery steps, then waits for a person before anything ships.",
+        "fa": ""
+      },
+      "why": {
+        "en": "A coding agent still ships like a lucky run. It can skip tests, review its own diff, or stop halfway. If your team already uses Claude Code or Codex, the missing piece is the layer around the CLI: who does which job, in which sandbox, with which checks, and who has to sign off.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "LoopForge is an MIT platform from Tencent, at v0.4.0 as of November 17. You describe the work to Main Bot. It opens a Docker sandbox, checks out the repo, and can open a pull request. When a way of working is worth repeating, you save it as an SOP made of agent steps, plain scripts, and human gates. Built-in flows cover backend, frontend, bug-fix, and product docs. Ten CLIs can do the work, including CodeBuddy, Codex, Claude Code, OpenCode, Cursor CLI, and DeepSeek Harness. Management pages are in English and Chinese. The chat workbench is still Chinese.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Clone the repo and run ./start.sh. Docker Compose starts MySQL and the app on port 8090. The first account is the admin. A demo SOP needs no API key: a script writes a report, then the run waits for you to approve it. For real work, add a key for the CLI you want, connect GitHub if you want pull requests, and either chat or run an SOP. At a human gate you approve, add context, or send the work back to an earlier step.",
+        "fa": ""
+      },
+      "different": {
+        "en": "The coding CLIs stay the workers. General workflow builders are not built for repo delivery. LoopForge is the team desk around those CLIs: separated roles, a sandbox with the real repo, script checks where a model is the wrong tool, and a sign-off before merge. Docker socket access is for a trusted team, not a public multi-tenant host.",
+        "fa": ""
+      },
+      "similar": [
+        {
+          "name": "LoopX",
+          "url": "https://nimaaksoy.com/radar/loopx"
+        },
+        {
+          "name": "Paperclip",
+          "url": "https://nimaaksoy.com/radar/paperclip"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "Tencent open-sourced LoopForge. Your coding agents still do the work. This puts them in a sandbox, runs the same SOP every time, and stops at a human gate before merge. Self-hosted. Chat UI is still Chinese.\n\nhttps://nimaaksoy.com/radar/loopforge",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Coding agents still depend on one lucky session. LoopForge is Tencent’s self-hosted desk around Claude Code, Codex, and eight other CLIs. Roles, Docker sandboxes, script checks, and a person who has to approve before merge. Chat workbench is still Chinese. The delivery model is the useful part.\n\nhttps://nimaaksoy.com/radar/loopforge",
+          "fa": ""
+        }
+      }
+    }
+  ]
+}
