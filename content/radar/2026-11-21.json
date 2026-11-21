@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-21",
+  "items": [
+    {
+      "slug": "opensre",
+      "name": "OpenSRE",
+      "url": "https://github.com/Tracer-Cloud/opensre",
+      "image": "https://opengraph.githubassets.com/1/Tracer-Cloud/opensre",
+      "homepage": "https://opensre.com",
+      "tags": ["agents", "ci", "reliability", "self-hosted", "devops"],
+      "verdict": "worth-testing",
+      "hasApi": true,
+      "source": "github",
+      "take": {
+        "en": "A CLI agent that reads a red CI run, splits pipeline bugs from code bugs, and pushes a fix for you to review.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Coding agents write more of the diff. They do not sit with a red main. Re-running the job hides flakes, and the person who can read the log is usually in another fire. OpenSRE does that read on your infra, with your model keys, and stops at a patch a person can reject.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "OpenSRE is Tracer Cloud's Apache-2.0 agent for CI reliability. It is still marked public alpha. You run it as a local shell, a one-shot command, or an in-process Python session. It connects to GitHub, GitLab, Jenkins, Kubernetes, and the usual log and trace tools. First launch can use their hosted model. A container path lets you bring Anthropic, OpenAI, Gemini, Bedrock, Ollama, or OpenRouter instead.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install from their script, run opensre, and sign in. Ask why a check failed, or let a failed run start the job. It pulls the failed logs, recent commits, and related traces, masks secrets before an external model call, and tests causes in a tool loop. When it has a fix, it pushes that fix to the PR branch. You review it. Slack, PagerDuty, or Telegram can get the summary. Headless use is opensre ask plus the question.",
+        "fa": ""
+      },
+      "different": {
+        "en": "This is not another coding harness and not a delivery desk. LoopForge runs the steps before merge. Tracely freezes a production failure into a test gate. OpenSRE starts after the check is already red, and its job is the investigation plus a patch you can throw away. Alpha means you read the diff. It does not merge itself.",
+        "fa": ""
+      },
+      "similar": [
+        {
+          "name": "Tracely",
+          "url": "https://nimaaksoy.com/radar/tracely"
+        },
+        {
+          "name": "LoopForge",
+          "url": "https://nimaaksoy.com/radar/loopforge"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "CI went red. The agent that wrote the code is the wrong one to debug the pipeline. OpenSRE reads the failed run, splits a bad workflow from a bad commit, and pushes a fix for review. Your keys. Still public alpha.\n\nhttps://nimaaksoy.com/radar/opensre",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Red builds still eat the afternoon. OpenSRE is an open-source CI agent that reads the failed run, tells pipeline bugs from code bugs, and leaves a patch on the PR for a person to review. Self-hosted if you want your own models. Public alpha, so treat the fix as a suggestion.\n\nhttps://nimaaksoy.com/radar/opensre",
+          "fa": ""
+        }
+      }
+    }
+  ]
+}
