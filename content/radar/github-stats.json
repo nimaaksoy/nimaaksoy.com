@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T07:08:33Z",
+  "updatedAt": "2026-11-21T07:09:34Z",
   "source": "github-api",
   "repoCount": 110,
   "itemCount": 125,
@@ -734,6 +734,11 @@
       "stars": 5122,
       "repo": "Tencent/LoopForge",
       "fetchedAt": "2026-11-20T07:08:33Z"
+    },
+    "opensre": {
+      "stars": 13714,
+      "repo": "Tracer-Cloud/opensre",
+      "fetchedAt": "2026-11-21T07:09:34Z"
     }
   },
   "byRepo": {
@@ -1453,6 +1458,11 @@
       "stars": 5122,
       "slug": "loopforge",
       "fetchedAt": "2026-11-20T07:08:33Z"
+    },
+    "Tracer-Cloud/opensre": {
+      "stars": 13714,
+      "slug": "opensre",
+      "fetchedAt": "2026-11-21T07:09:34Z"
     }
   },
   "errors": [
