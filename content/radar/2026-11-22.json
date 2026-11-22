@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-22",
+  "items": [
+    {
+      "slug": "raea",
+      "name": "raea",
+      "url": "https://github.com/shinyobjectz/raea",
+      "image": "https://opengraph.githubassets.com/1/shinyobjectz/raea",
+      "homepage": "https://raea.io",
+      "tags": ["video", "agents", "gpu", "3d", "react"],
+      "verdict": "worth-testing",
+      "hasDemo": true,
+      "source": "github",
+      "take": {
+        "en": "An agent writes React. raea renders that file on your GPU into a film, a 3D scene, or a small game.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Product films still leave the codebase. A coding agent can write the frames, but most render paths are a browser timeline or a cloud editor. raea keeps the render on the machine you already have, and the agent can pull one frame, look at it, and fix it before you watch.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "raea is a local render engine for video, motion, 3D, and games. You describe the piece. Your agent writes a React and TypeScript composition. A Rust runtime built on Bevy draws it on your GPU and writes an MP4. The same file can play live as a game or open as a scene you walk through. The desktop app holds the chat, the feed, and a timeline you can trim by hand. The current release is 0.1.8.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install the CLI from raea.io. It adds skills so Claude Code knows how to write and check a composition. Ask for the film. The agent writes the file, runs raea render, and can save one frame as a PNG to inspect. raea check flags clipped text, weak contrast, and loudness before export. raea play runs the file live. raea export-game turns a game into its own program.",
+        "fa": ""
+      },
+      "different": {
+        "en": "HyperFrames turns HTML into a deterministic MP4 in a browser. raea draws on the GPU through Bevy, so one composition can be a film, a walkable scene, or a game. The license is Functional Source License 1.1. Use it and change it. Do not ship a hosted product that replaces raea. Each version becomes Apache-2.0 two years after release.",
+        "fa": ""
+      },
+      "similar": [
+        {
+          "name": "HyperFrames",
+          "url": "https://nimaaksoy.com/radar/hyperframes"
+        },
+        {
+          "name": "OpenMontage",
+          "url": "https://nimaaksoy.com/radar/openmontage"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "Your agent already writes React. raea renders that code on your GPU into a film, a 3D scene, or a game, then lets the agent look at a frame and fix it. Free engine. Still young.\n\nhttps://nimaaksoy.com/radar/raea",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "If product videos still leave the repo, raea is worth a test. It is a local render engine: the agent writes React and TypeScript, your GPU makes the MP4, and the same file can be a 3D scene or a small game.\n\nhttps://nimaaksoy.com/radar/raea",
+          "fa": ""
+        }
+      }
+    }
+  ]
+}
