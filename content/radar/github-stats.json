@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-21T07:09:34Z",
+  "updatedAt": "2026-11-22T07:07:28Z",
   "source": "github-api",
-  "repoCount": 110,
-  "itemCount": 125,
+  "repoCount": 142,
+  "itemCount": 154,
   "bySlug": {
     "opencut": {
       "stars": 80500,
@@ -739,6 +739,11 @@
       "stars": 13714,
       "repo": "Tracer-Cloud/opensre",
       "fetchedAt": "2026-11-21T07:09:34Z"
+    },
+    "raea": {
+      "stars": 3482,
+      "repo": "shinyobjectz/raea",
+      "fetchedAt": "2026-11-22T07:07:28Z"
     }
   },
   "byRepo": {
@@ -1463,6 +1468,11 @@
       "stars": 13714,
       "slug": "opensre",
       "fetchedAt": "2026-11-21T07:09:34Z"
+    },
+    "shinyobjectz/raea": {
+      "stars": 3482,
+      "slug": "raea",
+      "fetchedAt": "2026-11-22T07:07:28Z"
     }
   },
   "errors": [
