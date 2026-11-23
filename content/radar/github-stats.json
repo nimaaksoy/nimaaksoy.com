@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-22T07:07:28Z",
+  "updatedAt": "2026-11-23T07:12:00Z",
   "source": "github-api",
-  "repoCount": 142,
-  "itemCount": 154,
+  "repoCount": 143,
+  "itemCount": 155,
   "bySlug": {
     "opencut": {
       "stars": 80500,
@@ -744,6 +744,11 @@
       "stars": 3482,
       "repo": "shinyobjectz/raea",
       "fetchedAt": "2026-11-22T07:07:28Z"
+    },
+    "mobile-agent-testers": {
+      "stars": 861,
+      "repo": "pierridotite/mobile-agent-testers",
+      "fetchedAt": "2026-11-23T07:12:00Z"
     }
   },
   "byRepo": {
@@ -1473,6 +1478,11 @@
       "stars": 3482,
       "slug": "raea",
       "fetchedAt": "2026-11-22T07:07:28Z"
+    },
+    "pierridotite/mobile-agent-testers": {
+      "stars": 861,
+      "slug": "mobile-agent-testers",
+      "fetchedAt": "2026-11-23T07:12:00Z"
     }
   },
   "errors": [
