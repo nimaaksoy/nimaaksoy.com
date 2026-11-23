@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-23",
+  "items": [
+    {
+      "slug": "mobile-agent-testers",
+      "name": "Mobile Agent Testers",
+      "url": "https://github.com/pierridotite/mobile-agent-testers",
+      "image": "https://opengraph.githubassets.com/1/pierridotite/mobile-agent-testers",
+      "tags": ["agents", "mobile", "testing", "github-actions", "qa"],
+      "verdict": "worth-testing",
+      "hasDemo": true,
+      "source": "github",
+      "take": {
+        "en": "Twenty Claude Code testers use your mobile app at once, each on its own phone, and send back bug reports with screenshots.",
+        "fa": ""
+      },
+      "why": {
+        "en": "The bugs that block a release often live on one language, one text size, or one small phone. You will not script all of those. This puts that pass on GitHub's free runners, so a founder pays for the model instead of a device lab.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Mobile Agent Testers is Pierre Raffalli's MIT workflow. Each tester is a Claude Code agent with its own iOS Simulator or Android emulator on GitHub Actions. A persona sets the device, language, text size, and what the person is trying to do. The agent taps through your app like a new user, or walks one feature you name, then writes a report with numbered screenshots. A public run on LocalSend found 46 distinct bugs across 20 phones. On an iPhone SE in Swedish at the largest text size, you could not send a message at all.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Make a public repo from the template and run setup.sh with a Claude subscription or API key. Start the workflow with your app and a short list of personas. Android jobs use Linux runners. iOS jobs use GitHub's macOS runners, so you do not need a Mac. Reports are encrypted on the runner. collect.sh decrypts them on your machine. Published runs cost about $0.15 to $0.55 in model use per phone. Private repos can test a prebuilt APK, but then you spend your own Actions minutes, and macOS minutes count ten times.",
+        "fa": ""
+      },
+      "different": {
+        "en": "e2e authors a path and replays it. Pinky lets one agent drive the phone in your hand. This looks for bugs nobody wrote a test for, on many devices in one run, and two runs will not return the same list. A few agents have mistaken the simulator keyboard for the app. Read the screenshots before you file anything.",
+        "fa": ""
+      },
+      "similar": [
+        {
+          "name": "e2e",
+          "url": "https://nimaaksoy.com/radar/tester-e2e"
+        },
+        {
+          "name": "Pinky",
+          "url": "https://nimaaksoy.com/radar/pinky"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "Your scripted tests only catch the path you already wrote. Mobile Agent Testers puts twenty Claude agents on twenty phones in one GitHub Actions run, in different languages and text sizes, and sends screenshots back. Public runners are free. You pay the model.\n\nhttps://nimaaksoy.com/radar/mobile-agent-testers",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "Mobile bugs hide on one language and one text size. Mobile Agent Testers runs Claude Code on iOS Simulators and Android emulators in parallel, on GitHub's free runners, and writes reports you decrypt yourself. It explores. It does not replace the tests you already trust.\n\nhttps://nimaaksoy.com/radar/mobile-agent-testers",
+          "fa": ""
+        }
+      }
+    }
+  ]
+}
