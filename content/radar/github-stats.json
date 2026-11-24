@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-23T07:12:00Z",
+  "updatedAt": "2026-11-24T07:10:33Z",
   "source": "github-api",
-  "repoCount": 143,
-  "itemCount": 155,
+  "repoCount": 144,
+  "itemCount": 156,
   "bySlug": {
     "opencut": {
       "stars": 80500,
@@ -749,6 +749,11 @@
       "stars": 861,
       "repo": "pierridotite/mobile-agent-testers",
       "fetchedAt": "2026-11-23T07:12:00Z"
+    },
+    "safe-anything": {
+      "stars": 530,
+      "repo": "erkamyaman/safe-anything",
+      "fetchedAt": "2026-11-24T07:10:33Z"
     }
   },
   "byRepo": {
@@ -1483,6 +1488,11 @@
       "stars": 861,
       "slug": "mobile-agent-testers",
       "fetchedAt": "2026-11-23T07:12:00Z"
+    },
+    "erkamyaman/safe-anything": {
+      "stars": 530,
+      "slug": "safe-anything",
+      "fetchedAt": "2026-11-24T07:10:33Z"
     }
   },
   "errors": [
