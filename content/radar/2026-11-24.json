@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-24",
+  "items": [
+    {
+      "slug": "safe-anything",
+      "name": "safe-anything",
+      "url": "https://github.com/erkamyaman/safe-anything",
+      "image": "https://opengraph.githubassets.com/1/erkamyaman/safe-anything",
+      "tags": ["agents", "security", "rust", "cli", "mcp"],
+      "verdict": "worth-testing",
+      "hasMcp": true,
+      "source": "github",
+      "take": {
+        "en": "One local scan reads the files that decide what your coding agent is allowed to do.",
+        "fa": ""
+      },
+      "why": {
+        "en": "A founder will review a diff. They will not open every skill, hook, and MCP config a teammate dropped in. That is where a skipped permission check, a token, or a curl-to-shell line usually sits. This looks there before the agent runs.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "safe-anything is a Rust scanner by erKam Yaman, MIT, first published two days ago. Point it at a folder. It checks code for injection and XSS across nine languages, looks for leaked keys, and checks locked dependencies against OSV. The agent pass reads Claude, Codex, Cursor, Copilot, Gemini, and OpenCode settings, plus skills and hooks. It is also an MCP server, so the agent can run the same scan before a commit.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install it with cargo or npx, then run it on the repo. Nothing is uploaded. It follows .gitignore and redacts secrets in the report. A high or critical finding exits with code 1, so a pre-commit hook or GitHub Action can fail the job. Pass --offline to skip the dependency lookup. Before you copy someone else's skill in, clone it to a temp folder and scan that copy.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Destructive Command Guard stops a bad shell command at the moment it would run. deepsec sends agents through a large repo hunting old multi-file bugs. This is a rules pass on the grant files: skipped permissions, an unpinned npx MCP server, a skill that reads an SSH key, invisible characters in a rules file. A bug that does not match a rule will not show up. The same author shipped rust-anything. That one ports slow functions. This one only reports lines.",
+        "fa": ""
+      },
+      "similar": [
+        {
+          "name": "Destructive Command Guard",
+          "url": "https://nimaaksoy.com/radar/destructive-command-guard"
+        },
+        {
+          "name": "deepsec",
+          "url": "https://nimaaksoy.com/radar/deepsec"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "The risky line is often not in the app. It is in the file that tells your agent it can skip permissions, or a hook that pipes curl into a shell. safe-anything scans those files on your machine. Two days old. Nothing uploaded.\n\nhttps://nimaaksoy.com/radar/safe-anything",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "If agents already commit to your repo, the permission files are part of the product. safe-anything is a local Rust scan for skipped permissions, plaintext MCP tokens, unpinned servers, and the usual injection bugs. It exits non-zero on a high finding, so CI can fail the job. Still new. Read the line before you treat it as a breach.\n\nhttps://nimaaksoy.com/radar/safe-anything",
+          "fa": ""
+        }
+      }
+    }
+  ]
+}
