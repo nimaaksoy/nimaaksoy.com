@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-25",
+  "items": [
+    {
+      "slug": "gemini-api-cli",
+      "name": "Gemini API CLI",
+      "url": "https://github.com/google-gemini/gemini-api-cli",
+      "image": "https://opengraph.githubassets.com/1/google-gemini/gemini-api-cli",
+      "homepage": "https://ai.google.dev/gemini-api/docs",
+      "tags": ["agents", "cli", "gemini", "media"],
+      "verdict": "worth-testing",
+      "hasApi": true,
+      "source": "github",
+      "take": {
+        "en": "One binary lets the coding agent you already run ask Gemini for an image, a voiceover, a PDF read, or a background job.",
+        "fa": ""
+      },
+      "why": {
+        "en": "Asset work still leaves the repo. You paste a prompt into another app, then drop the file back. This keeps that step in the same shell session. The agent gets a path or an id and continues. You still pay Google for the call.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Gemini API CLI is Google's experimental Go binary, Apache-2.0, release v0.5.0 on November 20. It is not a coding agent. Codex, Claude Code, or any tool with a shell plans the work. gemini-api writes or edits an image, speech, music, or video, reads a PDF or a YouTube link, or starts a managed Gemini agent and returns an interaction id. Each run is stateless. The binary prints its own flags and request schemas, so the agent can look them up instead of you pasting docs into the prompt. Google does not take pull requests on this repo.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install the release binary and set a Gemini API key, or store it with gemini-api configure. Add a short note to the agent's instructions. It can then run gemini-api image with --out, gemini-api analyze on a file, or gemini-api agent run for a longer job. --dry-run checks the request and prints it with credentials redacted, and does not call the network. Media commands print only the written file path. --agent-mode puts JSON errors on stderr. Files sent through the Files API are kept for 48 hours.",
+        "fa": ""
+      },
+      "different": {
+        "en": "OmniRoute chooses which model your coding tool talks to. This does not sit in front of that session. It adds jobs the host agent cannot do itself, then hands back a file or an id. The README still calls it experimental. A flag or a default model can move. Read --help on the version you installed before you trust a command in CI.",
+        "fa": ""
+      },
+      "similar": [
+        {
+          "name": "OmniRoute",
+          "url": "https://nimaaksoy.com/radar/omniroute"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "Your coding agent can edit the repo. It still cannot drop a mascot or read a PDF unless you wire a second SDK. Google's Gemini API CLI is one binary for that. Experimental. Apache-2.0. They do not take pull requests.\n\nhttps://nimaaksoy.com/radar/gemini-api-cli",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "If image and file work keeps leaving the coding session, Gemini API CLI is the bridge. One Go binary, your Gemini key, and the agent you already run can write media, read a file, or start a managed agent and keep the id. Still experimental. v0.5.0.\n\nhttps://nimaaksoy.com/radar/gemini-api-cli",
+          "fa": ""
+        }
+      }
+    }
+  ]
+}
