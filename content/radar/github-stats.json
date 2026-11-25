@@ -754,6 +754,11 @@
       "stars": 530,
       "repo": "erkamyaman/safe-anything",
       "fetchedAt": "2026-11-24T07:10:33Z"
+    },
+    "gemini-api-cli": {
+      "stars": 2612,
+      "repo": "google-gemini/gemini-api-cli",
+      "fetchedAt": "2026-11-25T07:11:35Z"
     }
   },
   "byRepo": {
@@ -1493,6 +1498,11 @@
       "stars": 530,
       "slug": "safe-anything",
       "fetchedAt": "2026-11-24T07:10:33Z"
+    },
+    "google-gemini/gemini-api-cli": {
+      "stars": 2612,
+      "slug": "gemini-api-cli",
+      "fetchedAt": "2026-11-25T07:11:35Z"
     }
   },
   "errors": [
