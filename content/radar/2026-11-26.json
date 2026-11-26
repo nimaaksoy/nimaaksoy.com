@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-26",
+  "items": [
+    {
+      "slug": "app-store-compliance",
+      "name": "App Store Compliance",
+      "url": "https://github.com/mjmirza/app-store-compliance",
+      "image": "https://opengraph.githubassets.com/1/mjmirza/app-store-compliance",
+      "homepage": "https://mjmirza.github.io/app-store-compliance/",
+      "tags": ["mobile", "app-store", "agents", "compliance"],
+      "verdict": "worth-testing",
+      "source": "github",
+      "take": {
+        "en": "A local scan of your iOS or Android project names the store-rejection risks before you upload.",
+        "fa": ""
+      },
+      "why": {
+        "en": "A rejection costs a week, and the usual causes are boring. A missing privacy manifest. A purpose string that does not match the feature. A demo login that is dead. Coding agents ship apps faster. They do not read Apple's rules. This puts that check on your machine, next to the project.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "App Store Compliance is Mirza's playbook and guard, version 2.5.2, updated yesterday. It holds 124 rejection patterns for the App Store and Google Play, each tied to a guideline. Point the script at the app folder. It reads Info.plist, the privacy manifest, AndroidManifest, Gradle and Xcode settings, and SDK names. A critical finding prints the file, the line, and a fix. A clean run prints CLEAR. That is not an approval. The reviewer still checks a live demo account, the listing, and privacy labels a scan cannot see.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Clone the repo and run the guard on the folder that holds the Xcode or Android project. Nothing is uploaded and the app is not changed. You can also install a hook so Claude Code, Codex, Cursor, Gemini CLI, and the other listed tools block submit commands such as eas submit or fastlane while a critical risk is still there. Copy the readiness template into the app and mark each manual check pass or fail. A fail blocks the same way a missing purpose string does. The report prints how old its sources are. Past 60 days, it says the rule pack is stale.",
+        "fa": ""
+      },
+      "different": {
+        "en": "Mobile Agent Testers puts agents on phones to find bugs nobody scripted. This does not tap the app. It reads the project against store rules, and it will not tell you your idea is too close to another app. safe-anything scans the files that grant an agent permissions. This scans the app you are about to submit. The licence is OpenRoots ORA 2.3, not MIT. Free at or below $20 million in annual revenue. Above that there is a small royalty. Training a model on the repo is not included.",
+        "fa": ""
+      },
+      "similar": [
+        {
+          "name": "Mobile Agent Testers",
+          "url": "https://nimaaksoy.com/radar/mobile-agent-testers"
+        },
+        {
+          "name": "safe-anything",
+          "url": "https://nimaaksoy.com/radar/safe-anything"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "You can ship a mobile app in an afternoon now. Apple can still bounce it for a missing privacy manifest. App Store Compliance is a local scan of the project, 124 store patterns, version 2.5.2. CLEAR is not an approval. The licence is not MIT.\n\nhttps://nimaaksoy.com/radar/app-store-compliance",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "If an agent is building the iOS or Android app, the store rules are still yours. App Store Compliance scans the project for 124 App Store and Play rejection patterns and can block the upload while a critical one is open. It cannot see a dead demo login or a privacy label that does not match traffic. Read those yourself. Licence is OpenRoots ORA 2.3.\n\nhttps://nimaaksoy.com/radar/app-store-compliance",
+          "fa": ""
+        }
+      }
+    }
+  ]
+}
