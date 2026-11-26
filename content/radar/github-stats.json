@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T07:10:33Z",
+  "updatedAt": "2026-11-26T07:12:00Z",
   "source": "github-api",
   "repoCount": 144,
   "itemCount": 156,
@@ -759,6 +759,11 @@
       "stars": 2612,
       "repo": "google-gemini/gemini-api-cli",
       "fetchedAt": "2026-11-25T07:11:35Z"
+    },
+    "app-store-compliance": {
+      "stars": 6636,
+      "repo": "mjmirza/app-store-compliance",
+      "fetchedAt": "2026-11-26T07:12:00Z"
     }
   },
   "byRepo": {
@@ -1503,6 +1508,11 @@
       "stars": 2612,
       "slug": "gemini-api-cli",
       "fetchedAt": "2026-11-25T07:11:35Z"
+    },
+    "mjmirza/app-store-compliance": {
+      "stars": 6636,
+      "slug": "app-store-compliance",
+      "fetchedAt": "2026-11-26T07:12:00Z"
     }
   },
   "errors": [
