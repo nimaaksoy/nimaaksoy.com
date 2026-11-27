@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-27",
+  "items": [
+    {
+      "slug": "nod",
+      "name": "Nod",
+      "url": "https://github.com/n8n-io/nod",
+      "image": "https://opengraph.githubassets.com/1/n8n-io/nod",
+      "homepage": "https://nod.n8n.io/",
+      "tags": ["agents", "personal-agent", "computer-use", "self-hosted"],
+      "verdict": "worth-testing",
+      "hasMcp": true,
+      "source": "github",
+      "take": {
+        "en": "n8n's open agent that does the web errand on your machine, and waits for a yes before it sends or pays.",
+        "fa": ""
+      },
+      "why": {
+        "en": "A founder afternoon still dies in billing portals, trial cancels, and the reply you owe. A chat can draft the words. It cannot sit in the logged-in page until the job is done. This is that missing step, and it stops when the action was not in what you asked.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Nod is a personal agent from the team behind n8n, Apache-2.0, release 0.10.0 on November 26. It is not the n8n workflow product, and you do not need n8n installed. You talk to it in the desktop app, on Telegram, or on WhatsApp. It runs a Linux workspace and a Chromium browser in containers on the same machine. It can read Gmail, Calendar, Slack, and Notion, watch a page on a schedule, and finish a form. Still marked research preview. The safety check is a model's judgment, not a hard rule engine.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "Install the Mac app, or the Windows 11 preview. Linux is a Flatpak preview. Connect OpenAI, Anthropic, Gemini, or another provider, or sign in with ChatGPT Plus or Pro. Then connect the apps and ask for the job. Since 0.10.0 it keeps one browser and gives each chat, task, and schedule its own tab, so a later run can reuse a website sign-in. A Vault types passwords, codes, and cards on the page. Those secrets do not go to the model. Provider keys stay in the server, not in the sandbox. If the laptop sleeps, scheduled jobs stop. A hosted always-on version is still on their list.",
+        "fa": ""
+      },
+      "different": {
+        "en": "OpenMausBot is a chat roster of agents, each with its own computer. LCU lets a coding agent click your desktop. Nod is one assistant for the errand: chase an invoice, cancel a trial, write the call brief, draft the Slack reply and send it only after you say yes. It cannot make a phone call. App connections go through a service n8n hosts by default, and usage sharing is on until you turn it off in settings. Their October lab, on GPT-6.1 Sol in simulated sites, finished 98 percent of 226 errands and logged no unsafe action in those 678 runs. They say that is not a guarantee. In a separate 240-decision check, Claude Haiku 5.5 let 8 unsafe actions through.",
+        "fa": ""
+      },
+      "similar": [
+        {
+          "name": "OpenMausBot",
+          "url": "https://nimaaksoy.com/radar/openmausbot"
+        },
+        {
+          "name": "LCU",
+          "url": "https://nimaaksoy.com/radar/lcu"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "A chat will write the email. It will not sit in the billing page until the invoice is paid. Nod is n8n's open agent for that. It runs on your machine and waits for a yes before it sends or pays. Research preview. Release 0.10.0.\n\nhttps://nimaaksoy.com/radar/nod",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "If the afternoon still disappears into tabs, logins, and forms, Nod is the open agent n8n shipped for that work. It has its own browser on your computer, you can reach it from Telegram or WhatsApp, and it asks before an action falls outside what you asked. Still a research preview. You bring the model. You do not need n8n.\n\nhttps://nimaaksoy.com/radar/nod",
+          "fa": ""
+        }
+      }
+    }
+  ]
+}
