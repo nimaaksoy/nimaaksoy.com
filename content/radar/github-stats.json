@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-26T07:12:00Z",
+  "updatedAt": "2026-11-27T07:21:18Z",
   "source": "github-api",
-  "repoCount": 144,
-  "itemCount": 156,
+  "repoCount": 145,
+  "itemCount": 157,
   "bySlug": {
     "opencut": {
       "stars": 80500,
@@ -764,6 +764,11 @@
       "stars": 6636,
       "repo": "mjmirza/app-store-compliance",
       "fetchedAt": "2026-11-26T07:12:00Z"
+    },
+    "nod": {
+      "stars": 4084,
+      "repo": "n8n-io/nod",
+      "fetchedAt": "2026-11-27T07:21:18Z"
     }
   },
   "byRepo": {
@@ -1513,6 +1518,11 @@
       "stars": 6636,
       "slug": "app-store-compliance",
       "fetchedAt": "2026-11-26T07:12:00Z"
+    },
+    "n8n-io/nod": {
+      "stars": 4084,
+      "slug": "nod",
+      "fetchedAt": "2026-11-27T07:21:18Z"
     }
   },
   "errors": [
