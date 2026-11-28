@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-28",
+  "items": [
+    {
+      "slug": "open-artifact",
+      "name": "Open Artifact",
+      "url": "https://github.com/JimLiu/open-artifact",
+      "image": "https://opengraph.githubassets.com/1/JimLiu/open-artifact",
+      "homepage": "https://openartifact.net/",
+      "tags": ["agents", "artifacts", "local-first", "design"],
+      "verdict": "worth-testing",
+      "hasMcp": true,
+      "source": "github",
+      "take": {
+        "en": "Your coding agent can write the deck. This is the local page where you fix a line, leave a comment, and send that note back.",
+        "fa": ""
+      },
+      "why": {
+        "en": "The file the agent drops in the repo is not the thing you send a cofounder. You still open Slides or Figma for the last edit, and the agent never sees what you changed. This keeps that edit on your machine, in the same session.",
+        "fa": ""
+      },
+      "explanation": {
+        "en": "Open Artifact is Jim Liu's Apache-2.0 project. Release v0.18.0 landed this morning. The repo used to be called baoyu-design. One daemon on your computer serves a folder of plain files as a slide deck, a UI canvas, a design system, a whiteboard, a spreadsheet, a dashboard, a doc, a short film, or a free HTML page. No account and no upload. The agent you already run writes the folder.",
+        "fa": ""
+      },
+      "howItWorks": {
+        "en": "You need Node.js 22.18 or newer. Add the plugin for Claude Code, Codex, Cursor, Copilot, Antigravity, Pi, Hermes, or DeepSeek Harness, then ask for the thing in a new session. The agent writes the files and the daemon opens an editor at 127.0.0.1. Change a title, move a note, leave a comment, then export PDF, PPTX, PNG, or XLSX. Send to agent puts those comments back in the session. If the app shows MCP Apps, the page can sit inside the chat.",
+        "fa": ""
+      },
+      "different": {
+        "en": "AG-UI is the event stream that wires an agent into a product screen. This is the file format and the editors for the deck and the sheet you hand someone. raea turns a React file into a film. A short film is only one of nine types here, and the point is the comment that goes back. A shared site is optional. The default never leaves the machine. The repo under this name is eleven days old.",
+        "fa": ""
+      },
+      "similar": [
+        {
+          "name": "AG-UI",
+          "url": "https://nimaaksoy.com/radar/ag-ui"
+        },
+        {
+          "name": "raea",
+          "url": "https://nimaaksoy.com/radar/raea"
+        }
+      ],
+      "share": {
+        "x": {
+          "en": "The agent wrote the pitch. You still open Slides to fix one line, and it never sees the fix. Open Artifact is the local editor for that deck, the sheet, and the doc. Comments go back to the same session. Apache-2.0. v0.18.0 this morning.\n\nhttps://nimaaksoy.com/radar/open-artifact",
+          "fa": ""
+        },
+        "linkedin": {
+          "en": "If the agent keeps handing you a file you cannot send, Open Artifact is the page in between. It opens slides, designs, sheets, and docs on your machine, and sends your comments back into Claude Code, Codex, or whichever agent wrote them. No account. v0.18.0.\n\nhttps://nimaaksoy.com/radar/open-artifact",
+          "fa": ""
+        }
+      }
+    }
+  ]
+}
