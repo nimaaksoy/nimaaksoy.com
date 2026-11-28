@@ -769,6 +769,11 @@
       "stars": 4084,
       "repo": "n8n-io/nod",
       "fetchedAt": "2026-11-27T07:21:18Z"
+    },
+    "open-artifact": {
+      "stars": 714,
+      "repo": "JimLiu/open-artifact",
+      "fetchedAt": "2026-11-28T07:10:21Z"
     }
   },
   "byRepo": {
@@ -1523,6 +1528,11 @@
       "stars": 4084,
       "slug": "nod",
       "fetchedAt": "2026-11-27T07:21:18Z"
+    },
+    "JimLiu/open-artifact": {
+      "stars": 714,
+      "slug": "open-artifact",
+      "fetchedAt": "2026-11-28T07:10:21Z"
     }
   },
   "errors": [
